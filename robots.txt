@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# サイトマップの場所
 Sitemap: https://gene10969.github.io/gene-site/sitemap.xml
