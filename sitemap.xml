@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/</loc>
-    <lastmod>2025-11-11</lastmod>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/menu.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/about.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/access.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/news.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/voice.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://gene10969.github.io/gene-site/privacy.html</loc>
-    <lastmod>2025-11-11</lastmod>
-  </url>
-
+  <url><loc>https://gene10969.github.io/gene-site/index.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/menu.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/about.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/access.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/news.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/voice.html</loc></url>
+  <url><loc>https://gene10969.github.io/gene-site/privacy.html</loc></url>
 </urlset>
