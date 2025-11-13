@@ -1,10 +1,13 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   initGeneLoader();
   initGeneParticles();
+  initNavToggle();
 });
 
-// トップページだけのローディング演出
+/**
+ * トップページだけのローディング演出
+ * body に with-loader クラスがあるときだけ動く
+ */
 function initGeneLoader() {
   const body = document.body;
   if (!body.classList.contains("with-loader")) return;
@@ -23,13 +26,15 @@ function initGeneLoader() {
   }, totalTime);
 }
 
-// 全ページ共通のキラキラ粒子
+/**
+ * 全ページ共通のキラキラ粒子
+ */
 function initGeneParticles() {
   const body = document.body;
   const container = document.createElement("div");
   container.className = "gene-particles";
 
-  const PARTICLE_COUNT = 28;
+  const PARTICLE_COUNT = 28; // 中くらいの量
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
     const p = document.createElement("span");
@@ -49,4 +54,19 @@ function initGeneParticles() {
   }
 
   body.appendChild(container);
+}
+
+/**
+ * スマホ用ナビ開閉
+ */
+function initNavToggle() {
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("nav");
+  if (!btn || !nav) return;
+
+  btn.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("is-open");
+  });
 }
