@@ -2,120 +2,114 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>静けさの中で整う — 大阪市中央区の自律神経整体 gene｜アトピー性皮膚炎の根本ケア</title>
-  <meta name="description" content="大阪市中央区の自律神経整体サロン gene。アトピー性皮膚炎や睡眠・ストレスなど自律神経の乱れを、静けさの中で整える施術で根本からケアします。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>静けさの中で整う — 大阪市中央区の自律神経整体 gene</title>
+  <meta name="description" content="アトピー性皮膚炎や自律神経の乱れを、ホテルライクな静けさの中で整える整体 gene（大阪市中央区）。">
 
-  <!-- フォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./assets/style.css">
-  <link rel="stylesheet" href="./assets/effects.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/effects.css">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
   <!-- OGP -->
-  <link rel="canonical" href="https://gene10969.github.io/gene-site/">
   <meta property="og:title" content="静けさの中で整う — 自律神経整体 gene（大阪市中央区）">
-  <meta property="og:description" content="アトピー性皮膚炎や自律神経の乱れを、静けさの中で整える整体。ホテルライクな空間で心身を整える時間を。">
-  <meta property="og:image" content="https://gene10969.github.io/gene-site/assets/img/og_hero.webp">
+  <meta property="og:description" content="アトピー性皮膚炎・自律神経ケア専門の整体 gene。静かなホテルライク空間で整える時間を。">
+  <meta property="og:image" content="assets/img/og_hero.webp">
   <meta property="og:url" content="https://gene10969.github.io/gene-site/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="自律神経整体 gene">
+
   <meta name="format-detection" content="telephone=no">
-  <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "自律神経整体サロン gene",
-    "image": "https://gene10969.github.io/gene-site/assets/img/og_hero.jpg",
-    "url": "https://gene10969.github.io/gene-site/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "JP",
-      "addressRegion": "大阪府",
-      "addressLocality": "大阪市中央区",
-      "streetAddress": "大阪市中央区南船場1-10-12 ラインビルド南船場703",
-      "postalCode": "000-0000"
-    },
-    "priceRange": "¥¥",
-    "openingHours": "Mo-Su 10:00-20:00",
-    "areaServed": "大阪市中央区",
-    "keywords": "大阪市中央区 自律神経整体, アトピー 整体, 自律神経 乱れ 改善",
-    "sameAs": []
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "自律神経整体サロン gene",
+  "image": "assets/img/og_hero.webp",
+  "url": "https://gene10969.github.io/gene-site/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "大阪府",
+    "addressLocality": "大阪市中央区",
+    "streetAddress": "大阪市中央区南船場1-10-12 ラインビルド南船場703"
   }
+}
   </script>
 </head>
-<body class="with-loader">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="./index.html">
-        <img src="./assets/img/logo-gene.svg" alt="gene ロゴ">
-      </a>
-      <button class="nav-toggle" aria-controls="nav" aria-expanded="false" aria-label="メニューを開閉">☰</button>
-      <nav id="nav" class="site-nav" aria-label="主なナビゲーション">
-        <ul>
-          <li><a href="./index.html">トップ</a></li>
-          <li><a href="./menu.html">施術・メニュー</a></li>
-          <li><a href="./about.html">geneについて</a></li>
-          <li><a href="./access.html">アクセス・ご予約</a></li>
-          <li><a href="./news.html">お知らせ</a></li>
-          <li><a href="./voice.html">お客様の声</a></li>
-        </ul>
-      </nav>
-      <a class="cta" href="./access.html#reservation">ご予約はこちら</a>
+
+<body>
+
+<!-- ▼ ローディング円 -->
+<div id="loading-circle"></div>
+
+<!-- ▼ ロゴ表示 -->
+<div id="loading-logo">
+  <img src="assets/img/logo-gene.svg" alt="gene ロゴ">
+</div>
+
+<!-- ▼ 光の粒エフェクト -->
+<div class="particles"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo-gene.svg" alt="gene ロゴ">
+    </a>
+    <button class="nav-toggle">☰</button>
+
+    <nav id="nav" class="site-nav">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="menu.html">施術・メニュー</a></li>
+        <li><a href="about.html">geneについて</a></li>
+        <li><a href="access.html">アクセス・ご予約</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="voice.html">お客様の声</a></li>
+      </ul>
+    </nav>
+
+    <a class="cta" href="access.html#reservation">ご予約はこちら</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <picture>
+      <source srcset="assets/img/og_hero.webp" type="image/webp">
+      <img src="assets/img/og_hero.jpg" alt="ホテルライクな施術空間">
+    </picture>
+
+    <div class="hero-copy">
+      <h1>静けさの中で整う.</h1>
+      <p>自律神経整体 × アトピー性皮膚炎ケア</p>
+      <a class="btn-primary" href="https://lin.ee/clwwVre">LINEで予約する</a>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main>
-    <section class="hero">
-      <picture>
-        <source srcset="./assets/img/og_hero.webp" type="image/webp">
-        <img src="./assets/img/og_hero.jpg" alt="静けさの中で整う、ホテルライクな施術空間">
-      </picture>
-      <div class="hero-copy">
-        <p class="hero-label">大阪市中央区・自律神経整体</p>
-        <h1>静けさの中で整う。</h1>
-        <p class="hero-lead">
-          アトピー性皮膚炎や、眠れない夜。<br>
-          「頑張る」を手放し、ただ整うための時間を。
-        </p>
-        <a class="btn-primary" href="https://lin.ee/clwwVre">LINEで予約する</a>
-      </div>
-    </section>
-
-    <section class="container section">
-      <h2>自律神経から、アトピー性皮膚炎を見直す。</h2>
-      <p>
-        かゆみや肌荒れだけを追いかけるのではなく、<br>
-        自律神経・呼吸・睡眠・こころの緊張まで含めて整えていくことで、<br>
-        からだ全体として「戻りやすい状態」を少しずつ変えていきます。
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container grid-3">
-      <div>
-        <p class="brand">自律神経整体サロン gene</p>
-        <p>大阪市中央区（詳細は予約確定後にご案内）</p>
-      </div>
-      <div>
-        <p>営業時間：10:00-20:00（不定休）</p>
-        <p>電話：現在はLINEにてご連絡を承っております。</p>
-      </div>
-      <div class="footer-links">
-        <a href="./privacy.html">プライバシーポリシー</a>
-        <a href="./sitemap.xml">サイトマップ</a>
-      </div>
+<footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <p class="brand">自律神経整体サロン gene</p>
+      <p>大阪市中央区（詳細は予約確定後にご案内）</p>
     </div>
-    <p class="copy">© 2025 gene</p>
-  </footer>
+    <div>
+      <p>営業時間：10:00-20:00（不定休）</p>
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="sitemap.xml">サイトマップ</a>
+    </div>
+  </div>
+  <p class="copy">© 2025 gene</p>
+</footer>
 
-  <script src="./assets/script.js" defer></script>
+<script src="assets/script.js" defer></script>
 </body>
 </html>
