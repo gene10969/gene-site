@@ -9,6 +9,11 @@
 
 <body>
 
+  <!-- ▼ ローディング画面（黒背景＋中央の丸 1つ） -->
+  <div id="loading-screen">
+    <div class="loading-circle"></div>
+  </div>
+
   <header class="site-header">
     <div class="header-inner">
       <div class="logo">
@@ -29,12 +34,32 @@
   <section class="hero">
     <img src="assets/img/header.jpg" alt="">
     <div class="hero-copy">
-      <h1>静けさの中で整う</h1>
-      <p>自律神経整体サロン gene</p>
+      <h1 class="fadein-copy delay1">静けさの中で整う</h1>
+      <p class="fadein-copy delay2">自律神経整体サロン gene</p>
+    </div>
+  </section>
 
-      <div class="loading">
-        <span class="loading-circle"></span>
-        <span class="loading-circle"></span>
+  <main class="container page-content">
+    <h2>ごあいさつ</h2>
+    <p>ここに文章が入ります。</p>
+  </main>
+
+  <footer class="footer">
+    <p>© gene Salon</p>
+  </footer>
+
+  <div class="particles"></div>
+
+  <!-- ▼ ローディングをフェードアウトする JS -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      loader.classList.add("hide");
+    });
+  </script>
+
+</body>
+</html>        <span class="loading-circle"></span>
         <span class="loading-circle"></span>
       </div>
     </div>
