@@ -236,3 +236,75 @@ p, li { font-size: 1.05rem; }
   position: relative;
   z-index: 2;       /* ← 文字をロゴの上に */
 }
+/* ============================
+   ▼ ローディング画面（黒背景）
+============================ */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1.8s ease;
+}
+
+#loading-screen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ============================
+   ▼ 中央に 1つ点滅する丸
+============================ */
+#loading-screen .loading-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(217, 193, 126, 0.95);
+  animation: loadingBlink 1.4s infinite ease-in-out;
+}
+
+@keyframes loadingBlink {
+  0%, 80%, 100% { opacity: 0.15; }
+  40% { opacity: 1; }
+}
+
+/* ============================
+   ▼ 背景ロゴのフェードイン
+============================ */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: url("assets/img/logo.png") no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: logoAppear 2s ease forwards;
+  animation-delay: 1.2s; /* ローディング後に出現 */
+}
+
+@keyframes logoAppear {
+  from { opacity: 0; }
+  to { opacity: 0.08; }
+}
+
+/* ============================
+   ▼ コピー文のフェードイン
+============================ */
+.fadein-copy {
+  opacity: 0;
+  animation: fadeText 1.8s ease forwards;
+}
+
+.delay1 { animation-delay: 2.0s; }
+.delay2 { animation-delay: 2.6s; }
+
+@keyframes fadeText {
+  to { opacity: 1; }
+}
