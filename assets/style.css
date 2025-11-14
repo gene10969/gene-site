@@ -212,3 +212,27 @@ p, li { font-size: 1.05rem; }
   }
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: url("assets/img/logo.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.08;    /* ← ホテルライクな薄さ */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;       /* ← 文字をロゴの上に */
+}
