@@ -336,3 +336,50 @@ p, li { font-size: 1.05rem; }
   0%, 80%, 100% { opacity: 0.15; }
   40% { opacity: 1; }
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: url("assets/img/logo.png") no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: logoAppear 2s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes logoAppear {
+  from { opacity: 0; }
+  to   { opacity: 0.08; }
+}.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: url("assets/img/logo.png") no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: logoAppear 2s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes logoAppear {
+  from { opacity: 0; }
+  to   { opacity: 0.08; }
+}.fadein-copy {
+  opacity: 0;
+  animation: fadeText 1.8s ease forwards;
+}
+
+.delay1 { animation-delay: 2.0s; }
+.delay2 { animation-delay: 2.6s; }
+
+@keyframes fadeText {
+  to { opacity: 1; }
+}
