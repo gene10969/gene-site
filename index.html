@@ -2,65 +2,30 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta viewport="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
-
-  <!-- ★絶対にこのパスが正しい（GitHub Pages対応） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-
-  <!-- =========================
-       ローディング（必要なら残す）
-  ========================== -->
-  <div id="loading-screen">
-    <div class="loading">
-      <div class="loading-circle"></div>
-      <div class="loading-circle"></div>
-      <div class="loading-circle"></div>
-    </div>
+  <div id="opening-ring">
+    <div class="ring"></div>
   </div>
-
-  <!-- =========================
-       ヘッダー
-  ========================== -->
-  <header class="site-header">
-    <div class="header-inner">
-      
-      <!-- ロゴ -->
-      <div class="logo">
-        <img src="assets/img/logo.png" alt="gene ロゴ">
-      </div>
-
-      <!-- ナビゲーション -->
-      <nav class="site-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="access.html">アクセス</a></li>
-          <li><a href="menu.html">メニュー</a></li>
-          <li><a href="voice.html">お客様の声</a></li>
-          <li><a href="reserve.html">予約</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-  <!-- =========================
-       粒子アニメーション（背景）
-  ========================== -->
-  <div class="particles"></div>
-
-  <!-- =========================
-       ヒーローエリア
-  ========================== -->
-  <section class="hero">
-    <div class="hero-copy">
-      <h1 class="fadein-copy delay1">静けさの中で整う</h1>
-      <p class="fadein-copy delay2">自律神経整体サロン gene</p>
-    </div>
-  </section>
-
+  <div id="opening-logo">
+    <img src="assets/img/logo.svg" alt="gene ロゴ" class="logo-big">
+    <h1>本質から整う</h1>
+    <p>自律神経整体サロン gene</p>
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+      const ring = document.getElementById("opening-ring");
+      const logo = document.getElementById("opening-logo");
+      ring.classList.add("show");
+      setTimeout(() => ring.classList.add("fadeout"), 2800);
+      setTimeout(() => logo.classList.add("show"), 3200);
+    });
+  </script>
 </body>
 </html>
