@@ -135,9 +135,9 @@ p, li { font-size: 1.05rem; }
   max-width: 900px;
   background: url("assets/img/logo_clean.svg") no-repeat center;
   background-size: contain;
-  opacity: 0.10;
+  opacity: 0.06;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2; /* 粒子アニメより上に */
 }
 
 /* ============================
@@ -175,7 +175,7 @@ p, li { font-size: 1.05rem; }
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
 }
 
 .particles::before,
