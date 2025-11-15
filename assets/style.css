@@ -147,11 +147,13 @@ p, li { font-size: 1.05rem; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  background: url("assets/img/logo.svg") no-repeat center;
+  /* 画面の7〜8割を占める大きめロゴ（Aを選んだので大きめ） */
+  width: 70vw;
+  max-width: 900px;
+  /* height は自動でOK：aspect-ratio 相当は contain に任せる */
+  background: url("assets/img/logo_cropped.png") no-repeat center;
   background-size: contain;
-  opacity: 0.08; /* ホテルライクな薄さ */
+  opacity: 0.06;  /* 上品に薄く（強すぎたら 0.05〜0.04 に下げてもOK） */
   pointer-events: none;
   z-index: 1;
 }
