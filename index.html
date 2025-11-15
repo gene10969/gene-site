@@ -4,65 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
+
+  <!-- ★絶対にこのパスが正しい（GitHub Pages対応） -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-   <div id="loading-screen">
-    <div class="loading-circle"></div>
-  </div>
-
-<header class="site-header">
-  <div class="header-inner">
-
-    <!-- ロゴ -->
-    <div class="logo">
-      <img src="assets/img/logo.png" alt="gene ロゴ">
+  <!-- =========================
+       ローディング（必要なら残す）
+  ========================== -->
+  <div id="loading-screen">
+    <div class="loading">
+      <div class="loading-circle"></div>
+      <div class="loading-circle"></div>
+      <div class="loading-circle"></div>
     </div>
-
-    <!-- ナビゲーション -->
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="access.html">アクセス</a></li>
-        <li><a href="menu.html">メニュー</a></li>
-        <li><a href="voice.html">お客様の声</a></li>
-        <li><a href="reserve.html">予約</a></li>
-      </ul>
-    </nav>
-
   </div>
-</header>
 
+  <!-- =========================
+       ヘッダー
+  ========================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      
+      <!-- ロゴ -->
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="gene ロゴ">
+      </div>
+
+      <!-- ナビゲーション -->
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="voice.html">お客様の声</a></li>
+          <li><a href="reserve.html">予約</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- =========================
+       粒子アニメーション（背景）
+  ========================== -->
+  <div class="particles"></div>
+
+  <!-- =========================
+       ヒーローエリア
+  ========================== -->
   <section class="hero">
-
     <div class="hero-copy">
       <h1 class="fadein-copy delay1">静けさの中で整う</h1>
       <p class="fadein-copy delay2">自律神経整体サロン gene</p>
     </div>
-  </section>
-
-  <main class="container page-content">
-    <h2>ごあいさつ</h2>
-    <p>ここに文章が入ります。</p>
-  </main>
-
-  <footer class="footer">
-    <p>© gene Salon</p>
-  </footer>
-
-  <div class="particles"></div>
-
-  <script>
-    window.addEventListener("load", () => {
-      const loader = document.getElementById("loading-screen");
-      loader.classList.add("hide");
-    });
-  </script>
-
-</body>
-</html>    </div>
   </section>
 
 </body>
