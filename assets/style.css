@@ -1,207 +1,48 @@
-/* ============================
-   基本設定
-============================ */
 html, body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #eee;
   font-family: 'Noto Serif JP', serif;
-  line-height: 1.8;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: 90%;
-  max-width: 1080px;
-  margin: auto;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: #d9c17e;
-  margin-bottom: 0.6em;
-}
-
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.6rem; }
-h3 { font-size: 1.3rem; }
-
-p, li { font-size: 1.05rem; }
-
-.btn-primary {
-  display: inline-block;
-  background: #d9c17e;
-  color: #000;
-  padding: 12px 26px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.btn-primary:hover {
-  opacity: 0.8;
-}
-
-/* ============================
-   ヘッダー（常に最前面）
-============================ */
-.site-header {
-  position: relative;
-  z-index: 20;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.logo img {
-  height: 56px;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.site-nav a {
-  color: #eee;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.site-nav a:hover {
-  color: #d9c17e;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #d9c17e;
-  background: none;
-  border: none;
-}
-
-/* ============================
-   ヒーローエリア（背景ロゴ + 中央揃え）
-============================ */
-.hero {
-  position: relative;
-  text-align: center;
   overflow: hidden;
-  min-height: 90vh; /* ← 高さ必須 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
-.hero-copy {
-  position: relative;
-  z-index: 3;
-  color: #eee;
+img { max-width: 100%; display: block; }
+#opening-ring {
+  position: fixed; inset: 0; display:flex; justify-content:center; align-items:center;
+  opacity:0; transition:opacity 1.2s ease; pointer-events:none;
 }
-
-.hero-copy h1 {
-  font-size: 2.8rem;
-  margin-bottom: 12px;
+#opening-ring.show { opacity:1; }
+#opening-ring.fadeout { opacity:0; transition:opacity 1.6s ease; }
+.ring {
+  width:180px; height:180px; border:4px solid #d9c17e; border-radius:50%;
+  animation:blink 2s ease-in-out infinite;
 }
-
-.hero-copy p {
-  font-size: 1.2rem;
-  margin-bottom: 22px;
-}
-
-/* --- 背景ロゴ（うっすら中央に配置） --- */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70vw;
-  max-width: 900px;
-  background: url("assets/img/logo_clean.svg") no-repeat center;
-  background-size: contain;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 2; /* 粒子アニメより上に */
-}
-
-/* ============================
-   点滅アニメーション（loading）
-============================ */
-.loading {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-.loading-circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 215, 100, 0.9);
-  animation: blink 1.4s infinite ease-in-out both;
-  display: inline-block;
-}
-
 @keyframes blink {
-  0%, 80%, 100% { opacity: 0.1; }
-  40% { opacity: 1; }
+  0% { opacity:0.3; transform:scale(0.98); }
+  50% { opacity:1; transform:scale(1.05); }
+  100% { opacity:0.3; transform:scale(0.98); }
 }
-
-/* ============================
-   粒子アニメーション（光の粒）
-============================ */
-.particles {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
+#opening-logo {
+  position: fixed; inset:0; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  opacity:0; transition:opacity 1.6s ease; pointer-events:none;
 }
-
-.particles::before,
-.particles::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background-image:
-    radial-gradient(2px 2px at 20% 20%, rgba(255, 215, 150, 0.7), transparent),
-    radial-gradient(3px 3px at 80% 10%, rgba(255, 230, 180, 0.8), transparent),
-    radial-gradient(2px 2px at 40% 70%, rgba(255, 200, 130, 0.6), transparent),
-    radial-gradient(2px 2px at 60% 40%, rgba(255, 255, 200, 0.8), transparent),
-    radial-gradient(2px 2px at 30% 90%, rgba(255, 255, 255, 0.5), transparent);
-  animation: fall 12s linear infinite;
-  transform: translateX(-50%);
+#opening-logo.show { opacity:1; }
+.logo-big {
+  width:300px; margin-bottom:28px; opacity:0;
+  animation:logoFade 2.8s ease forwards;
 }
-
-.particles::after {
-  animation-delay: -6s;
-  opacity: 0.6;
+@keyframes logoFade {
+  0% { opacity:0; transform:scale(0.8);}
+  100% { opacity:1; transform:scale(1);}
 }
-
-@keyframes fall {
-  0% { transform: translate(-50%, -50%); }
-  100% { transform: translate(-50%, 100%); }
+#opening-logo h1 {
+  font-family:'Playfair Display', serif; color:#d9c17e;
+  font-size:2rem; margin:10px 0 6px 0; opacity:0;
+  animation:textFade 3.5s 0.6s ease forwards;
 }
+#opening-logo p {
+  font-size:1.2rem; opacity:0;
+  animation:textFade 3.5s 1s ease forwards;
+}
+@keyframes textFade { to { opacity:1; } }
