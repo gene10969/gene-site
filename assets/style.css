@@ -54,6 +54,10 @@ p, li { font-size: 1.05rem; }
 .btn-primary:hover {
   opacity: 0.8;
 }
+.site-header {
+  position: relative;
+  z-index: 10; 
+}
 
 /* ------------------------------
    ヘッダー
