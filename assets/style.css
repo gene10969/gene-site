@@ -1,3 +1,6 @@
+/* ============================
+   基本設定
+============================ */
 html, body {
   margin: 0;
   padding: 0;
@@ -46,20 +49,19 @@ p, li { font-size: 1.05rem; }
   opacity: 0.8;
 }
 
-/* =========================
-    ▼ ヘッダーを最前面に戻す
-========================= */
-
+/* ============================
+   ヘッダー（常に最前面）
+============================ */
 .site-header {
   position: relative;
-  z-index: 50;   /* ← 最前面に配置 */
+  z-index: 20;
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 10px 0;
 }
 
 .logo img {
@@ -93,39 +95,36 @@ p, li { font-size: 1.05rem; }
   border: none;
 }
 
-/* =========================
-      ▼ HEROセクション修正
-========================= */
-
+/* ============================
+   ヒーローエリア（背景ロゴ + 中央揃え）
+============================ */
 .hero {
   position: relative;
   text-align: center;
   overflow: hidden;
-  height: 78vh;      /* ← 背景ロゴのために高さを固定 */
+  min-height: 90vh; /* ← 高さ必須 */
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  z-index: 1;        /* ← ヘッダーより下 */
+  align-items: center;
 }
 
-/* hero内部のテキスト */
 .hero-copy {
   position: relative;
-  z-index: 3;        /* ← 背景ロゴの上に */
+  z-index: 3;
   color: #eee;
 }
 
 .hero-copy h1 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   margin-bottom: 12px;
 }
 
 .hero-copy p {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin-bottom: 22px;
 }
 
-/* ▼ 背面ロゴ（透かし） */
+/* --- 背景ロゴ（うっすら中央に配置） --- */
 .hero::before {
   content: "";
   position: absolute;
@@ -134,17 +133,16 @@ p, li { font-size: 1.05rem; }
   transform: translate(-50%, -50%);
   width: 70vw;
   max-width: 900px;
-  background: url("assets/img/logo.svg") no-repeat center;
+  background: url("assets/img/logo_cropped.png") no-repeat center;
   background-size: contain;
   opacity: 0.06;
   pointer-events: none;
-  z-index: 0;        /* ← テキストより下 */
+  z-index: 1;
 }
 
-/* =========================
-        ▼ ローディング点滅
-========================= */
-
+/* ============================
+   点滅アニメーション（loading）
+============================ */
 .loading {
   display: flex;
   gap: 8px;
@@ -166,10 +164,9 @@ p, li { font-size: 1.05rem; }
   40% { opacity: 1; }
 }
 
-/* =========================
-       ▼ ゴールド粒子
-========================= */
-
+/* ============================
+   粒子アニメーション（光の粒）
+============================ */
 .particles {
   pointer-events: none;
   position: fixed;
@@ -178,7 +175,7 @@ p, li { font-size: 1.05rem; }
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 2;   /* ← Heroロゴより上、ヘッダーより下 */
+  z-index: 2;
 }
 
 .particles::before,
@@ -205,10 +202,6 @@ p, li { font-size: 1.05rem; }
 }
 
 @keyframes fall {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, 100%);
-  }
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-50%, 100%); }
 }
