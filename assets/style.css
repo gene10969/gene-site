@@ -1,6 +1,3 @@
-/* ------------------------------
-   基本
------------------------------- */
 html, body {
   margin: 0;
   padding: 0;
@@ -22,9 +19,6 @@ img {
   margin: auto;
 }
 
-/* ------------------------------
-   フォント・色
------------------------------- */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: #d9c17e;
@@ -37,9 +31,6 @@ h3 { font-size: 1.3rem; }
 
 p, li { font-size: 1.05rem; }
 
-/* ------------------------------
-   ボタン
------------------------------- */
 .btn-primary {
   display: inline-block;
   background: #d9c17e;
@@ -59,9 +50,6 @@ p, li { font-size: 1.05rem; }
   z-index: 10; 
 }
 
-/* ------------------------------
-   ヘッダー
------------------------------- */
 .site-header {
   background: rgba(0, 0, 0, 0.7);
   border-bottom: solid 1px rgba(255,255,255,0.1);
@@ -82,7 +70,6 @@ p, li { font-size: 1.05rem; }
   height: 56px;
 }
 
-/* ナビゲーション */
 .site-nav ul {
   list-style: none;
   display: flex;
@@ -110,13 +97,10 @@ p, li { font-size: 1.05rem; }
   border: none;
 }
 
-/* ------------------------------
-   ヒーローエリア
------------------------------- */
 .hero {
   position: relative;
   text-align: center;
-  overflow: hidden; /* ← 背面ロゴのため追加 */
+  overflow: hidden;
 }
 
 .hero img {
@@ -128,7 +112,7 @@ p, li { font-size: 1.05rem; }
 
 .hero-copy {
   position: relative;
-  z-index: 3; /* ← テキストを背面ロゴより前に */
+  z-index: 3;
   color: #eee;
 }
 
@@ -142,9 +126,6 @@ p, li { font-size: 1.05rem; }
   margin-bottom: 22px;
 }
 
-/* =========================
-   Hero 背面ロゴ（今回追加）
-========================= */
 .hero::before {
   content: "";
   position: absolute;
@@ -159,10 +140,6 @@ p, li { font-size: 1.05rem; }
   pointer-events: none;
   z-index: 0;
 }
-
-/* ------------------------------
-   点滅する円（loading-circle）
------------------------------- */
 
 .loading {
   display: flex;
@@ -185,9 +162,6 @@ p, li { font-size: 1.05rem; }
   40% { opacity: 1; }
 }
 
-/* ------------------------------
-   降ってくる光の粒
------------------------------- */
 .particles {
   pointer-events: none;
   position: fixed;
@@ -222,7 +196,6 @@ p, li { font-size: 1.05rem; }
   opacity: 0.6;
 }
 
-/* 降下アニメーション */
 @keyframes fall {
   0% {
     transform: translate(-50%, -50%);
