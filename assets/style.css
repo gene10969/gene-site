@@ -151,13 +151,11 @@ p, li { font-size: 1.05rem; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* 画面の7〜8割を占める大きめロゴ（Aを選んだので大きめ） */
   width: 70vw;
   max-width: 900px;
-  /* height は自動でOK：aspect-ratio 相当は contain に任せる */
   background: url("assets/img/logo.svg") no-repeat center;
   background-size: contain;
-  opacity: 0.06;  /* 上品に薄く（強すぎたら 0.05〜0.04 に下げてもOK） */
+  opacity: 0.06;
   pointer-events: none;
   z-index: 0;
 }
