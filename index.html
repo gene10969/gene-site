@@ -2,30 +2,41 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta viewport="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
+
+  <!-- ▼ 金色のぼかし輪っか -->
   <div id="opening-ring">
-    <div class="ring"></div>
+    <div class="ring-blur"></div>
   </div>
+
+  <!-- ▼ ロゴ表示 -->
   <div id="opening-logo">
     <img src="assets/img/logo.svg" alt="gene ロゴ" class="logo-big">
     <h1>本質から整う</h1>
     <p>自律神経整体サロン gene</p>
   </div>
+
   <script>
     window.addEventListener("load", () => {
       const ring = document.getElementById("opening-ring");
       const logo = document.getElementById("opening-logo");
+
       ring.classList.add("show");
+
       setTimeout(() => ring.classList.add("fadeout"), 2800);
       setTimeout(() => logo.classList.add("show"), 3200);
     });
   </script>
+
 </body>
 </html>
