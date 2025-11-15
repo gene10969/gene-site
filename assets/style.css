@@ -124,7 +124,7 @@ p, li { font-size: 1.05rem; }
 
 .hero-copy {
   position: relative;
-  z-index: 2; /* ← テキストを背面ロゴより前に */
+  z-index: 3; /* ← テキストを背面ロゴより前に */
   color: #eee;
 }
 
@@ -151,11 +151,11 @@ p, li { font-size: 1.05rem; }
   width: 70vw;
   max-width: 900px;
   /* height は自動でOK：aspect-ratio 相当は contain に任せる */
-  background: url("assets/img/logo_cropped.png") no-repeat center;
+  background: url("assets/img/logo.svg") no-repeat center;
   background-size: contain;
   opacity: 0.06;  /* 上品に薄く（強すぎたら 0.05〜0.04 に下げてもOK） */
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* ------------------------------
