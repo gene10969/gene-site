@@ -22,18 +22,16 @@
   <div class="ring-blur"></div>
 </div>
 
+<!-- ロゴ（最初も後も同じ位置） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
 
-<!-- ロゴの高さ分だけ置く（スクロール暴発防止） -->
-<div id="logo-space"></div>
-
 <main class="main-content">
 
-  <!-- ロゴの直下に見せるが位置はCSSで最適化 -->
+  <!-- すぐ下に固定して出す -->
   <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
@@ -47,10 +45,11 @@
 
 <script>
   window.addEventListener("load", () => {
-    const ring     = document.getElementById("opening-ring");
-    const logo     = document.getElementById("opening-logo");
-    const nav      = document.querySelector(".global-nav");
-    const lineBtn  = document.querySelector(".line-btn");
+
+    const ring    = document.getElementById("opening-ring");
+    const logo    = document.getElementById("opening-logo");
+    const nav     = document.querySelector(".global-nav");
+    const lineBtn = document.querySelector(".line-btn");
 
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
@@ -58,14 +57,14 @@
     setTimeout(() => { logo.classList.add("show"); }, 2600);
 
     setTimeout(() => {
-      if (nav) nav.classList.add("show");
-      if (lineBtn) lineBtn.classList.add("show");
+      nav.classList.add("show");
+      lineBtn.classList.add("show");
     }, 2600);
 
+    /* 固定解除しても位置が変わらないよう top を維持 */
     setTimeout(() => { logo.classList.remove("locked"); }, 3600);
   });
 
-  // PCもスマホも速く反応するように 50px で表示
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       document.getElementById("info-card").classList.add("show");
