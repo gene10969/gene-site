@@ -279,3 +279,35 @@ body.subpage {
 .voice-card img:empty {
   display: none;
 }
+
+/* ============================
+   フッター（全ページ共通）
+============================ */
+.site-footer {
+  width: 100%;
+  padding: 50px 0 60px;
+  background: #000;
+  border-top: 1px solid #d9c17e33;
+  margin-top: 100px;
+}
+
+.footer-inner {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-name {
+  color: #d9c17e;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.footer-copy {
+  color: #bbb;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
