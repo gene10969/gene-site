@@ -24,6 +24,7 @@ img { max-width: 100%; display: block; }
   opacity: 0;
   pointer-events: none;
   transition: opacity 1.2s ease;
+  z-index: 5;
 }
 
 #opening-ring.show { opacity: 1; }
@@ -50,15 +51,16 @@ img { max-width: 100%; display: block; }
    opening-logo（神域）
 ------------------------------------------- */
 #opening-logo {
-  position: relative;    /* 表示後：スクロールに入る */
+  position: relative;
   padding-top: 120px;
-  padding-bottom: 50px;
-  opacity: 0;
+  padding-bottom: 40px;
   text-align: center;
+  opacity: 0;
   transition: opacity 1.6s ease;
+  z-index: 10;
 }
 
-/* 表示中は固定・中央に絶対配置（神域） */
+/* ロゴが中央に固定されるモード */
 #opening-logo.locked {
   position: fixed;
   inset: 0;
@@ -70,9 +72,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
-#opening-logo.show {
-  opacity: 1;
-}
+#opening-logo.show { opacity: 1; }
 
 .logo-big {
   width: 90vw;
@@ -83,7 +83,7 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes logoFade {
-  0%   { opacity: 0; transform: scale(0.8); }
+  0% { opacity: 0; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1); }
 }
 
@@ -105,7 +105,7 @@ img { max-width: 100%; display: block; }
 @keyframes textFade { to { opacity: 1; } }
 
 /* -------------------------------------------
-   ナビ（右上固定）
+   ナビ（固定）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -113,8 +113,8 @@ img { max-width: 100%; display: block; }
   right: 40px;
   display: flex;
   gap: 28px;
-  z-index: 30;
   opacity: 0;
+  z-index: 20;
 }
 
 .global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
@@ -127,16 +127,15 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   main-content（スクロール領域）
+   main-content（神域の下）
 ------------------------------------------- */
 .main-content {
-  margin-top: 0;
-  padding-top: 20px;
+  margin-top: 20px;
   padding-bottom: 200px;
 }
 
 /* -------------------------------------------
-   お知らせカード（ロゴと同タイミング）
+   お知らせカード（ロゴと同時）
 ------------------------------------------- */
 .info-card {
   width: 85%;
@@ -151,8 +150,8 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
   color: #eee;
 
-  opacity: 0;                      /* ← 初期非表示 */
-  transform: translateY(-25px);    /* ← 初期位置を上へずらす（瞬間表示を防止） */
+  opacity: 0;
+  transform: translateY(-25px);  /* ← 初期位置が上なので一瞬出ない */
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
@@ -168,7 +167,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   LINEボタン
+   LINE
 ------------------------------------------- */
 .line-btn {
   position: fixed;
@@ -181,11 +180,11 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
-  z-index: 40;
   opacity: 0;
+  z-index: 30;
   transition: opacity 1.2s ease, transform 0.2s ease;
 }
 
