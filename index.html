@@ -11,9 +11,6 @@
 </head>
 <body>
 
-<!-- ▼ ロゴの通常位置の高さ確保（ジャンプ防止） -->
-<div id="logo-space"></div>
-
 <!-- ナビ -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
@@ -22,7 +19,7 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- ゴールド輪っか -->
+<!-- オープニング輪っか -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
@@ -33,6 +30,9 @@
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
+
+<!-- ▼ ロゴの通常位置の高さ確保 ※位置はここが正しい -->
+<div id="logo-space"></div>
 
 <!-- ページ本体 -->
 <main class="main-content">
@@ -59,29 +59,24 @@
     const nav      = document.querySelector(".global-nav");
     const lineBtn  = document.querySelector(".line-btn");
 
-    // 輪っか
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-    // ロゴ表示
     setTimeout(() => {
       logo.classList.add("show");
     }, 2600);
 
-    // ナビ・LINE
     setTimeout(() => {
       if (nav)     nav.classList.add("show");
       if (lineBtn) lineBtn.classList.add("show");
     }, 2600);
 
-    // ロゴの固定解除
     setTimeout(() => {
       logo.classList.remove("locked");
     }, 3600);
 
   });
 
-  /* ▼ スクロール100pxでお知らせカードを出現 */
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       document.getElementById("info-card").classList.add("show");
