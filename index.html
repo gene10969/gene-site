@@ -22,7 +22,7 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- ロゴ（全端末で上から100pxに固定される） -->
+<!-- ロゴ（読み込み中のみ中央固定） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
@@ -59,9 +59,10 @@
       lineBtn.classList.add("show");
     }, 2600);
 
+    // 固定解除 → 通常の flow に戻す（重なり問題の根本解決）
     setTimeout(() => {
       logo.classList.remove("locked");
-      logo.classList.add("fixed-final");
+      logo.classList.add("final-pos");
     }, 3600);
   });
 
