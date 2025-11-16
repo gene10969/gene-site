@@ -103,10 +103,11 @@ img {
   opacity: 1;
 }
 
+/* ▼ ロゴ中央固定のために必要な部分（これが消えるとズレる） */
 .logo-big {
   width: 90vw;
   max-width: 1000px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px; /* ← この行が超重要。左右中央に固定。 */
   opacity: 0;
   animation: logoFade 2.8s ease forwards;
 }
@@ -144,7 +145,7 @@ img {
 }
 
 /* ============================
-   ナビゲーション
+   ナビ
 ============================ */
 .global-nav {
   position: fixed;
@@ -177,22 +178,20 @@ img {
 }
 
 /* ============================
-   お知らせカード
+   お知らせカード（スクロール表示）
 ============================ */
 .info-card {
   width: 85%;
   max-width: 380px;
   margin: 0 auto 40px;
   padding: 20px 22px;
-
   background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
-
   opacity: 0;
-  transform: translateY(0); /* ← 初期位置そのまま */
+  transform: translateY(0);
   transition: opacity 1.2s ease;
 }
 
