@@ -65,12 +65,17 @@
     // 3. ロゴを表示
     setTimeout(() => logo.classList.add("show"), 3200);
 
-    // 4. ナビ・お知らせカード・LINEボタンをロゴと同時に表示
+    // 4. ナビ + お知らせ + LINE を表示
     setTimeout(() => {
       document.querySelector('.global-nav').classList.add('show');
       document.querySelector('.info-card').classList.add('show');
       document.querySelector('.line-btn').classList.add('show');
     }, 3200);
+
+    // 5. ロゴ退場（上へフェードアウト）
+    setTimeout(() => {
+      logo.classList.add("fadeout");
+    }, 5200);
   });
 </script>
 
