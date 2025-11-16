@@ -10,13 +10,10 @@ html, body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
 /* -------------------------------------------
-   ① ゴールドのぼかし輪っか
+   ゴールドの輪っか（opening-ring）
 ------------------------------------------- */
 #opening-ring {
   position: fixed;
@@ -27,91 +24,99 @@ img {
   opacity: 0;
   pointer-events: none;
   transition: opacity 1.2s ease;
+  z-index: 5;
 }
 
-#opening-ring.show {
-  opacity: 1;
-}
-
-#opening-ring.fadeout {
-  opacity: 0;
-  transition: opacity 1.6s ease;
-}
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
 
 .ring-blur {
   width: 260px;
   height: 260px;
   border-radius: 50%;
   border: 4px solid #d9c17e;
-
   box-shadow:
     0 0 35px rgba(217,193,126,0.55),
     0 0 70px rgba(217,193,126,0.45),
     0 0 110px rgba(217,193,126,0.3);
-
-  animation: glowBlink 2.4s ease-in-out infinite;
+  animation: glowBlink 2.4s infinite ease-in-out;
 }
 
 @keyframes glowBlink {
-  0%   { opacity: 0.4; transform: scale(0.96); }
-  50%  { opacity: 1;   transform: scale(1.05); }
-  100% { opacity: 0.4; transform: scale(0.96); }
+  0%,100% { opacity: 0.4; transform: scale(0.96); }
+  50%    { opacity: 1;   transform: scale(1.05); }
 }
 
 /* -------------------------------------------
-   ② 神域ロゴ（黒背景ごと固定）
+   ロゴ（神域）
 ------------------------------------------- */
-#opening-logo {
-  width: 100%;
-  text-align: center;
-  padding-top: 120px;
-  padding-bottom: 40px;
-  opacity: 0;
-  transition: opacity 1.6s ease;
-}
 
-#opening-logo.show {
-  opacity: 1;
-}
-
+/* ▼ 表示中は全画面レイヤーに固定して左右中央・上下中央 */
 #opening-logo.locked {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+
   width: 100vw;
   height: 100vh;
 
   display: flex;
-  justify-content: center;    /* ← 左右中央 */
-  align-items: center;        /* ← 上下中央 */
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 
-  margin: 0;
+  text-align: center;
   padding: 0;
+  margin: 0;
   z-index: 10;
   pointer-events: none;
 }
 
-/* ロゴ画像 */
+/* ▼ 表示後は普通のページ要素として上部に配置される */
+#opening-logo {
+  position: relative;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 1.6s ease;
+}
+
+#opening-logo.show { opacity: 1; }
+
 .logo-big {
   width: 90vw;
   max-width: 1000px;
   margin-bottom: 40px;
+  opacity: 0;
+  animation: logoFade 2.8s ease forwards;
 }
 
-/* キャッチコピー */
+@keyframes logoFade {
+  0%   { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
 #opening-logo h1 {
   font-family: 'Playfair Display', serif;
   color: #d9c17e;
   font-size: 2.2rem;
-  margin: 5px 0 10px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: textFade 3.2s 0.8s ease forwards;
 }
 
 #opening-logo p {
   font-size: 1.3rem;
+  opacity: 0;
+  animation: textFade 3.2s 1.2s ease forwards;
 }
 
+@keyframes textFade { to { opacity: 1; } }
+
 /* -------------------------------------------
-   ③ ナビ（右上）
+   ナビ（右上固定）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -120,15 +125,10 @@ img {
   display: flex;
   gap: 28px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.6s ease;
-  z-index: 30;
+  z-index: 20;
 }
 
-.global-nav.show {
-  opacity: 1;
-  pointer-events: auto;
-}
+.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
 
 .global-nav a {
   color: #d9c17e;
@@ -137,62 +137,47 @@ img {
   font-size: 1.2rem;
 }
 
-.global-nav a:hover {
-  opacity: 0.6;
+/* -------------------------------------------
+   ページ本体（スクロール領域）
+------------------------------------------- */
+.main-content {
+  margin-top: 20px;
+  padding-bottom: 200px;
 }
 
 /* -------------------------------------------
-   ④ お知らせカード
+   お知らせカード（スクロール100px以上で出現）
 ------------------------------------------- */
-#info-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
 .info-card {
   width: 85%;
   max-width: 380px;
-  padding: 20px;
+  margin: 0 auto 40px;
+  padding: 20px 22px;
 
-  background: rgba(20, 20, 20, 0.85);
+  background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
+
   opacity: 0;
-  pointer-events: none;
-  transform: translateY(-20px);
-  transition: opacity 1.6s ease, transform 1.6s ease;
+  transform: translateY(-25px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .info-card.show {
   opacity: 1;
-  pointer-events: auto;
   transform: translateY(0);
 }
 
 .info-card h3 {
   color: #d9c17e;
-  margin: 0 0 6px;
+  margin-bottom: 6px;
   font-family: 'Playfair Display', serif;
 }
 
 /* -------------------------------------------
-   ⑤ メイン領域
-------------------------------------------- */
-.main-content {
-  width: 100%;
-  padding: 120px 0 200px;
-}
-
-.blank {
-  height: 100vh;
-}
-
-/* -------------------------------------------
-   ⑥ LINEボタン
+   LINE
 ------------------------------------------- */
 .line-btn {
   position: fixed;
@@ -205,21 +190,13 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.6s ease;
-  z-index: 40;
+  z-index: 30;
+  transition: opacity 1.2s ease, transform 0.2s ease;
 }
 
-.line-btn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.line-btn:hover {
-  transform: scale(1.1);
-}
+.line-btn.show { opacity: 1; }
+.line-btn:hover { transform: scale(1.1); }
