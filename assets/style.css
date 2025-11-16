@@ -7,7 +7,7 @@ html, body {
   background: #000;
   color: #eee;
   font-family: 'Noto Serif JP', serif;
-  overflow: hidden;
+  overflow-x: hidden;   /* ← scrollを許可、横だけ隠す */
 }
 
 img {
@@ -59,10 +59,10 @@ img {
 }
 
 /* -------------------------------------------
-   ② ロゴ演出
+   ② ロゴ演出（神域）
 ------------------------------------------- */
 #opening-logo {
-  position: fixed;
+  position: fixed;     /* ← ロゴは固定（神域） */
   inset: 0;
   display: flex;
   flex-direction: column;
@@ -83,7 +83,6 @@ img {
   max-width: 1000px;
   margin-bottom: 40px;
   opacity: 0;
-
   animation: logoFade 2.8s ease forwards;
 }
 
@@ -93,7 +92,7 @@ img {
 }
 
 /* -------------------------------------------
-   ③ キャッチコピー
+   ③ キャッチコピー（神域）
 ------------------------------------------- */
 #opening-logo h1 {
   font-family: 'Playfair Display', serif;
@@ -101,7 +100,6 @@ img {
   font-size: 2.2rem;
   margin: 5px 0 10px;
   opacity: 0;
-
   animation: textFade 3.2s 0.8s ease forwards;
 }
 
@@ -116,7 +114,7 @@ img {
 }
 
 /* -------------------------------------------
-   追加パーツの初期状態（ふわっと降りる演出対応）
+   ④ 登場アニメ（ふわっと降りる）
 ------------------------------------------- */
 .hidden {
   opacity: 0;
@@ -132,7 +130,40 @@ img {
 }
 
 /* -------------------------------------------
-   ナビ（右上）
+   ⑤ 通常スクロール領域
+      opening-logo は固定なので、
+      その下にページ内容を表示
+------------------------------------------- */
+.main-content {
+  margin-top: 100vh; /* ロゴ分の高さを空ける */
+  padding-top: 50px; /* ロゴとお知らせカードの間の余白 */
+}
+
+/* -------------------------------------------
+   ⑥ お知らせカード（中央配置＋ガラス風）
+------------------------------------------- */
+.info-card {
+  margin: 0 auto;
+  width: 85%;
+  max-width: 380px;
+  padding: 20px 22px;
+
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid #d9c17e55;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 22px rgba(0,0,0,0.4);
+  color: #eee;
+}
+
+.info-card h3 {
+  color: #d9c17e;
+  margin: 0 0 6px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* -------------------------------------------
+   ⑦ ナビ（右上）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -155,32 +186,7 @@ img {
 }
 
 /* -------------------------------------------
-   お知らせカード（ロゴの下に配置）
-------------------------------------------- */
-.info-card {
-  margin: 40px auto 0;
-  width: 85%;
-  max-width: 380px;
-  padding: 20px 22px;
-
-  background: rgba(20, 20, 20, 0.85);
-  border: 1px solid #d9c17e55;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 22px rgba(0,0,0,0.4);
-  color: #eee;
-
-  z-index: 25;
-}
-
-.info-card h3 {
-  color: #d9c17e;
-  margin: 0 0 6px;
-  font-family: 'Playfair Display', serif;
-}
-
-/* -------------------------------------------
-   LINEボタン
+   ⑧ LINEボタン（遅れて登場）
 ------------------------------------------- */
 .line-btn {
   position: fixed;
