@@ -53,20 +53,31 @@
 
 <script>
   window.addEventListener("load", () => {
-    const ring = document.getElementById("opening-ring");
+    const ring  = document.getElementById("opening-ring");
+    const logo  = document.getElementById("opening-logo");
+    const nav   = document.querySelector(".global-nav");
+    const info  = document.querySelector(".info-card");
+    const line  = document.querySelector(".line-btn");
 
-    // 1. 輪っか表示
+    // 1. 輪っかを表示
     ring.classList.add("show");
 
-    // 2. 輪っかフェードアウト
-    setTimeout(() => ring.classList.add("fadeout"), 2800);
-
-    // 3. ナビ + お知らせ + LINE を表示
+    // 2. 輪っかフェードアウト（先に消える）
     setTimeout(() => {
-      document.querySelector('.global-nav').classList.add('show');
-      document.querySelector('.info-card').classList.add('show');
-      document.querySelector('.line-btn').classList.add('show');
-    }, 3200);
+      ring.classList.add("fadeout");
+    }, 2000); // 2.0秒後に消え始める
+
+    // 3. ロゴ＆神域テキストを表示（輪っかのあと）
+    setTimeout(() => {
+      logo.classList.add("show");
+    }, 2600); // 2.6秒後にロゴ登場
+
+    // 4. ナビ・お知らせカード・LINE を少し遅れて表示
+    setTimeout(() => {
+      nav.classList.add("show");
+      info.classList.add("show");
+      line.classList.add("show");
+    }, 3000); // 3.0秒後に一緒にふわっと出る
   });
 </script>
 
