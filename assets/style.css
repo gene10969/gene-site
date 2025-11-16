@@ -13,7 +13,7 @@ html, body {
 img { max-width: 100%; display: block; }
 
 /* -------------------------------------------
-   ① ゴールドのぼかし輪っか
+   opening-ring（輪っか）
 ------------------------------------------- */
 #opening-ring {
   position: fixed;
@@ -27,7 +27,7 @@ img { max-width: 100%; display: block; }
 }
 
 #opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; transition: opacity 1.6s ease; }
+#opening-ring.fadeout { opacity: 0; }
 
 .ring-blur {
   width: 260px;
@@ -42,29 +42,32 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes glowBlink {
-  0% { opacity: 0.4; transform: scale(0.96); }
-  50% { opacity: 1;   transform: scale(1.05); }
-  100% { opacity: 0.4; transform: scale(0.96); }
+  0%,100% { opacity: 0.4; transform: scale(0.96); }
+  50%    { opacity: 1;   transform: scale(1.05); }
 }
 
 /* -------------------------------------------
-   ② opening-logo（神域）
-   表示中は .locked（固定）
-   表示後は fixedを解除 → 通常スクロール
+   opening-logo（神域）
 ------------------------------------------- */
 #opening-logo {
-  position: relative;     /* ← 最終形態（スクロールさせる） */
+  position: relative;    /* 表示後：スクロールに入る */
   padding-top: 120px;
-  padding-bottom: 40px;
-  text-align: center;
+  padding-bottom: 50px;
   opacity: 0;
+  text-align: center;
   transition: opacity 1.6s ease;
 }
 
+/* 表示中は固定・中央に絶対配置（神域） */
 #opening-logo.locked {
-  position: fixed;         /* ← 表示時だけ固定（神域） */
+  position: fixed;
   inset: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #opening-logo.show {
@@ -80,7 +83,7 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes logoFade {
-  0% { opacity: 0; transform: scale(0.8); }
+  0%   { opacity: 0; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1); }
 }
 
@@ -88,7 +91,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Playfair Display', serif;
   color: #d9c17e;
   font-size: 2.2rem;
-  margin: 5px 0 10px;
+  margin-bottom: 10px;
   opacity: 0;
   animation: textFade 3.2s 0.8s ease forwards;
 }
@@ -102,21 +105,7 @@ img { max-width: 100%; display: block; }
 @keyframes textFade { to { opacity: 1; } }
 
 /* -------------------------------------------
-   ③ フェードイン（ナビ / お知らせ / LINE）
-------------------------------------------- */
-.hidden {
-  opacity: 0;
-  transform: translateY(-12px);
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-/* -------------------------------------------
-   ④ メニューバー（固定）
+   ナビ（右上固定）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -128,6 +117,8 @@ img { max-width: 100%; display: block; }
   opacity: 0;
 }
 
+.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
+
 .global-nav a {
   color: #d9c17e;
   font-family: 'Playfair Display', serif;
@@ -135,18 +126,17 @@ img { max-width: 100%; display: block; }
   font-size: 1.2rem;
 }
 
-.global-nav.show { opacity: 1; }
-
 /* -------------------------------------------
-   ⑤ main-content（神域の下）
+   main-content（スクロール領域）
 ------------------------------------------- */
 .main-content {
-  margin-top: 20px;
-  padding-bottom: 180px;
+  margin-top: 0;
+  padding-top: 20px;
+  padding-bottom: 200px;
 }
 
 /* -------------------------------------------
-   ⑥ お知らせカード（ロゴの真下に自然に配置 → その後ページと一緒にスクロール）
+   お知らせカード（ロゴと同タイミング）
 ------------------------------------------- */
 .info-card {
   width: 85%;
@@ -154,12 +144,21 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 40px;
   padding: 20px 22px;
 
-  background: rgba(20, 20, 20, 0.85);
+  background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
   color: #eee;
+
+  opacity: 0;                      /* ← 初期非表示 */
+  transform: translateY(-25px);    /* ← 初期位置を上へずらす（瞬間表示を防止） */
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.info-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .info-card h3 {
@@ -169,7 +168,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   ⑦ LINE
+   LINEボタン
 ------------------------------------------- */
 .line-btn {
   position: fixed;
