@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<!-- ナビ -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -19,25 +18,21 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- ゴールド輪っか -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
 
-<!-- ロゴ（中央固定） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
 
-<!-- ロゴ固定解除後の位置合わせ（今回は0px） -->
 <div id="logo-space"></div>
 
-<!-- ページ本体 -->
 <main class="main-content">
 
-  <!-- お知らせ（ロゴ直下） -->
+  <!-- 初期状態では完全非表示（CSS で display:none） -->
   <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
@@ -47,10 +42,8 @@
 
 </main>
 
-<!-- LINE -->
 <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
 
-<!-- スクリプト -->
 <script>
   window.addEventListener("load", () => {
 
@@ -74,12 +67,13 @@
     setTimeout(() => {
       logo.classList.remove("locked");
     }, 3600);
-
   });
 
+  // ▼ページ読み込み時に info-card は完全非表示 → スクロールしたら表示
   window.addEventListener("scroll", () => {
+    const info = document.getElementById("info-card");
     if (window.scrollY > 100) {
-      document.getElementById("info-card").classList.add("show");
+      info.classList.add("show");
     }
   });
 </script>
