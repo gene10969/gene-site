@@ -10,7 +10,10 @@ html, body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
 /* -------------------------------------------
    ゴールドの輪っか（opening-ring）
@@ -27,8 +30,13 @@ img { max-width: 100%; display: block; }
   z-index: 5;
 }
 
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
+#opening-ring.show {
+  opacity: 1;
+}
+
+#opening-ring.fadeout {
+  opacity: 0;
+}
 
 .ring-blur {
   width: 260px;
@@ -43,8 +51,14 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes glowBlink {
-  0%,100% { opacity: 0.4; transform: scale(0.96); }
-  50%    { opacity: 1;   transform: scale(1.05); }
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 /* -------------------------------------------
@@ -83,19 +97,28 @@ img { max-width: 100%; display: block; }
   transition: opacity 1.6s ease;
 }
 
-#opening-logo.show { opacity: 1; }
+#opening-logo.show {
+  opacity: 1;
+}
 
+/* ロゴ画像を左右中央に揃える */
 .logo-big {
   width: 90vw;
   max-width: 1000px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;  /* ← 中央寄せ（左右のど真ん中） */
   opacity: 0;
   animation: logoFade 2.8s ease forwards;
 }
 
 @keyframes logoFade {
-  0%   { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 #opening-logo h1 {
@@ -113,7 +136,11 @@ img { max-width: 100%; display: block; }
   animation: textFade 3.2s 1.2s ease forwards;
 }
 
-@keyframes textFade { to { opacity: 1; } }
+@keyframes textFade {
+  to {
+    opacity: 1;
+  }
+}
 
 /* -------------------------------------------
    ナビ（右上固定）
@@ -128,7 +155,10 @@ img { max-width: 100%; display: block; }
   z-index: 20;
 }
 
-.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
+.global-nav.show {
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
 
 .global-nav a {
   color: #d9c17e;
@@ -146,7 +176,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   お知らせカード（スクロール100px以上で出現）
+   お知らせカード（ロゴと同時にふわっと表示）
 ------------------------------------------- */
 .info-card {
   width: 85%;
@@ -154,11 +184,11 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 40px;
   padding: 20px 22px;
 
-  background: rgba(20,20,20,0.85);
+  background: rgba(20, 20, 20, 0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 0 22px rgba(0,0,0,0.4);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.4);
 
   opacity: 0;
   transform: translateY(-25px);
@@ -198,5 +228,10 @@ img { max-width: 100%; display: block; }
   transition: opacity 1.2s ease, transform 0.2s ease;
 }
 
-.line-btn.show { opacity: 1; }
-.line-btn:hover { transform: scale(1.1); }
+.line-btn.show {
+  opacity: 1;
+}
+
+.line-btn:hover {
+  transform: scale(1.1);
+}
