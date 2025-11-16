@@ -51,31 +51,22 @@
   <!-- ▼ LINE -->
   <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
 
-  <script>
+<script>
   window.addEventListener("load", () => {
     const ring = document.getElementById("opening-ring");
-    const logo = document.getElementById("opening-logo");
 
-    // 1. 輪っかを表示
+    // 1. 輪っか表示
     ring.classList.add("show");
 
-    // 2. 輪っかをフェードアウト
+    // 2. 輪っかフェードアウト
     setTimeout(() => ring.classList.add("fadeout"), 2800);
 
-    // 3. ロゴを表示
-    setTimeout(() => logo.classList.add("show"), 3200);
-
-    // 4. ナビ + お知らせ + LINE を表示
+    // 3. ナビ + お知らせ + LINE を表示
     setTimeout(() => {
       document.querySelector('.global-nav').classList.add('show');
       document.querySelector('.info-card').classList.add('show');
       document.querySelector('.line-btn').classList.add('show');
     }, 3200);
-
-    // 5. ロゴ退場（上へフェードアウト）
-    setTimeout(() => {
-      logo.classList.add("fadeout");
-    }, 5200);
   });
 </script>
 
