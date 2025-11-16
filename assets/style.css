@@ -260,3 +260,22 @@ body.subpage {
   border-radius: 14px;
   filter: grayscale(40%) brightness(0.9);
 }
+
+/* ============================
+   メニュー & 口コミ 画像
+============================ */
+.menu-img,
+.voice-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  filter: brightness(0.9);
+}
+
+/* 画像が無い時の崩れを防止するための最低高さ */
+.menu-card img:empty,
+.voice-card img:empty {
+  display: none;
+}
