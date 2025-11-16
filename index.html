@@ -4,53 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
-
+  <link rel="stylesheet" href="assets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- ▼ ゴールドのぼかし輪 -->
-  <div id="opening-ring">
-    <div class="ring-blur"></div>
-  </div>
+<!-- ▼ メニューバー（固定表示） -->
+<nav class="global-nav hidden">
+  <a href="index.html">Home</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="voice.html">お客様の声</a>
+</nav>
 
-  <!-- ▼ ロゴ（神域パーツ） -->
-  <div id="opening-logo">
-    <img src="assets/img/logo.svg" alt="gene ロゴ" class="logo-big">
-    <h1>内面の調和が静かに整う</h1>
-    <p>自律神経整体サロン gene</p>
-  </div>
-  
-<!-- ▼ 通常スクロール領域（ここにお知らせカードを置く） -->
-<div class="main-content">
-  <div class="info-card hidden">
-    <h3>お知らせ</h3>
-    <p>◉ 新規のお客様のご予約を受付中です。</p>
-  </div>
+<!-- ▼ 輪っか -->
+<div id="opening-ring">
+  <div class="ring-blur"></div>
 </div>
 
-<!-- ▼ ナビ（ロゴと同時に表示） -->
-  <nav class="global-nav hidden">
-    <a href="index.html">Home</a>
-    <a href="menu.html">メニュー</a>
-    <a href="access.html">アクセス</a>
-    <a href="voice.html">お客様の声</a>
-  </nav>
+<!-- ▼ ロゴ ＆ キャッチ（神域） -->
+<div id="opening-logo">
+  <img src="assets/img/logo.svg" alt="gene ロゴ" class="logo-big">
+  <h1>内面の調和が静かに整う</h1>
+  <p>自律神経整体サロン gene</p>
+</div>
 
-  <!-- ▼ お知らせ -->
+<!-- ▼ ページ本体 -->
+<div class="main-content">
+
+  <!-- ▼ お知らせカード（ロゴと同時に表示） -->
   <div class="info-card hidden">
     <h3>お知らせ</h3>
-    <p>◉ 新規のお客様のご予約を受付中です。</p>
+    <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
-  <!-- ▼ LINE -->
-  <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
+</div>
 
+<!-- ▼ LINE -->
+<a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
+
+<!-- ▼ 表示アニメーション -->
 <script>
   window.addEventListener("load", () => {
     const ring = document.getElementById("opening-ring");
@@ -59,18 +54,18 @@
     // 1. 輪っか表示
     ring.classList.add("show");
 
-    // 2. 輪っかフェードアウト
-    setTimeout(() => ring.classList.add("fadeout"), 2000);
+    // 2. 早めに輪っかフェードアウト
+    setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-    // 3. ロゴ
+    // 3. ロゴ（神域）表示
     setTimeout(() => logo.classList.add("show"), 2600);
 
-    // 4. ナビ・お知らせ・LINE
+    // 4. メニュー / お知らせ / LINE をロゴと同時に表示
     setTimeout(() => {
       document.querySelector(".global-nav").classList.add("show");
       document.querySelector(".info-card").classList.add("show");
       document.querySelector(".line-btn").classList.add("show");
-    }, 3000);
+    }, 2600);
   });
 </script>
 
