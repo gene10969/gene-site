@@ -1,197 +1,93 @@
-/* -------------------------------------------
-   基本設定
-------------------------------------------- */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  color: #eee;
-  font-family: 'Noto Serif JP', serif;
-  overflow-x: hidden;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自律神経整体サロン gene</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ▼ ロゴの通常位置の高さ確保（画面ジャンプ防止） -->
+<div id="logo-space"></div>
+
+<!-- ナビ -->
+<nav class="global-nav hidden">
+  <a href="index.html">Home</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="voice.html">お客様の声</a>
+</nav>
+
+/* ▼ ロゴ通常位置スペース（ジャンプ防止） */
+#logo-space {
+  height: 300px;   /* ロゴ＋テキストの高さ分。必要なら微調整可 */
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+<!-- ゴールド輪っか -->
+<div id="opening-ring">
+  <div class="ring-blur"></div>
+</div>
 
-/* -------------------------------------------
-   ゴールドの輪っか（opening-ring）
-------------------------------------------- */
-#opening-ring {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.2s ease;
-  z-index: 5;
-}
+<!-- ロゴ（神域：中央固定） -->
+<div id="opening-logo" class="locked">
+  <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
+  <h1>内面の調和が静かに整う</h1>
+  <p>自律神経整体サロン gene</p>
+</div>
 
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
+<!-- ページ本体 -->
+<main class="main-content">
 
-.ring-blur {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  border: 4px solid #d9c17e;
-  box-shadow:
-    0 0 35px rgba(217,193,126,0.55),
-    0 0 70px rgba(217,193,126,0.45),
-    0 0 110px rgba(217,193,126,0.3);
-  animation: glowBlink 2.4s infinite ease-in-out;
-}
+  <!-- お知らせ（スクロールで出現） -->
+  <div class="info-card" id="info-card">
+    <h3>お知らせ</h3>
+    <p>◎ 新規のお客様のご予約を受付中です。</p>
+  </div>
 
-@keyframes glowBlink {
-  0%, 100% { opacity: 0.4; transform: scale(0.96); }
-  50%      { opacity: 1;   transform: scale(1.05); }
-}
+  <div style="height: 2000px;"></div>
 
-/* -------------------------------------------
-   ロゴ（神域）
-------------------------------------------- */
-#opening-logo.locked {
-  position: fixed;
-  top: 0;
-  left: 0;
+</main>
 
-  width: 100vw;
-  height: 100vh;
+<!-- LINE -->
+<a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+<!-- スクリプト -->
+<script>
+  window.addEventListener("load", () => {
 
-  text-align: center;
-  z-index: 10;
-  pointer-events: none;
-}
+    const ring     = document.getElementById("opening-ring");
+    const logo     = document.getElementById("opening-logo");
+    const nav      = document.querySelector(".global-nav");
+    const lineBtn  = document.querySelector(".line-btn");
 
-#opening-logo {
-  position: relative;
-  width: 100%;
-  padding-top: 120px;
-  padding-bottom: 40px;
-  opacity: 0;
-  text-align: center;
-  transition: opacity 1.6s ease;
-}
+    ring.classList.add("show");
+    setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-#opening-logo.show { opacity: 1; }
+    setTimeout(() => {
+      logo.classList.add("show");
+    }, 2600);
 
-/* ロゴ中央揃え */
-.logo-big {
-  width: 90vw;
-  max-width: 1000px;
-  margin: 0 auto 40px;
-  opacity: 0;
-  animation: logoFade 2.8s ease forwards;
-}
+    setTimeout(() => {
+      if (nav)     nav.classList.add("show");
+      if (lineBtn) lineBtn.classList.add("show");
+    }, 2600);
 
-@keyframes logoFade {
-  0%   { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
+    setTimeout(() => {
+      logo.classList.remove("locked");
+    }, 3600);
 
-#opening-logo h1 {
-  font-family: 'Playfair Display', serif;
-  color: #d9c17e;
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  opacity: 0;
-  animation: textFade 3.2s 0.8s ease forwards;
-}
+  });
 
-#opening-logo p {
-  font-size: 1.3rem;
-  opacity: 0;
-  animation: textFade 3.2s 1.2s ease forwards;
-}
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      document.getElementById("info-card").classList.add("show");
+    }
+  });
+</script>
 
-@keyframes textFade { to { opacity: 1; } }
-
-/* -------------------------------------------
-   ナビ
-------------------------------------------- */
-.global-nav {
-  position: fixed;
-  top: 30px;
-  right: 40px;
-  display: flex;
-  gap: 28px;
-  opacity: 0;
-  z-index: 20;
-}
-
-.global-nav.show {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-}
-
-.global-nav a {
-  color: #d9c17e;
-  font-family: 'Playfair Display', serif;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-/* -------------------------------------------
-   ページ本体
-------------------------------------------- */
-.main-content {
-  margin-top: 20px;
-  padding-bottom: 200px;
-}
-
-/* -------------------------------------------
-   お知らせ（スクロールで出現）
-------------------------------------------- */
-.info-card {
-  width: 85%;
-  max-width: 380px;
-  margin: 0 auto 40px;
-  padding: 20px 22px;
-
-  background: rgba(20,20,20,0.85);
-  border: 1px solid #d9c17e55;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 22px rgba(0,0,0,0.4);
-
-  opacity: 0;
-  transform: translateY(0);   /* ← 落下アニメ完全削除 */
-  transition: opacity 1.2s ease;
-}
-
-.info-card.show {
-  opacity: 1;
-}
-
-/* -------------------------------------------
-   LINE
-------------------------------------------- */
-.line-btn {
-  position: fixed;
-  bottom: 40px;
-  right: 35px;
-  width: 65px;
-  height: 65px;
-  background: #06C755;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  opacity: 0;
-  z-index: 30;
-  transition: opacity 1.2s ease, transform 0.2s ease;
-}
-
-.line-btn.show { opacity: 1; }
-.line-btn:hover { transform: scale(1.1); }
+</body>
+</html>
