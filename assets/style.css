@@ -1,6 +1,4 @@
-/* ============================
-   基本設定
-============================ */
+/* ============================ 基本 ============================ */
 html, body {
   margin: 0;
   padding: 0;
@@ -11,21 +9,12 @@ html, body {
   scroll-behavior: smooth;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
-/* ============================
-   ロゴ高さスペース（すぐ下に配置するため0px）
-============================ */
-#logo-space {
-  height: 0;
-}
+/* ============================ ロゴスペース ============================ */
+#logo-space { height: 0; }
 
-/* ============================
-   ゴールド輪っか
-============================ */
+/* ============================ 輪っか ============================ */
 #opening-ring {
   position: fixed;
   inset: 0;
@@ -58,9 +47,7 @@ img {
   50%      { opacity: 1;   transform: scale(1.05); }
 }
 
-/* ============================
-   ロゴ
-============================ */
+/* ============================ ロゴ ============================ */
 #opening-logo.locked {
   position: fixed;
   top: 0;
@@ -118,9 +105,7 @@ img {
 
 @keyframes textFade { to { opacity: 1; } }
 
-/* ============================
-   ナビ
-============================ */
+/* ============================ ナビ ============================ */
 .global-nav {
   position: fixed;
   top: 30px;
@@ -138,37 +123,39 @@ img {
 
 .global-nav a {
   color: #d9c17e;
-  font-family: 'Playfair Display', serif;
+  font-family: 'PlayfairDisplay', serif;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
-/* ============================
-   メイン
-============================ */
+/* ============================ メイン ============================ */
 .main-content {
   margin-top: 20px;
   padding-bottom: 200px;
 }
 
-/* ============================
-   お知らせ（ロゴ直下）
-============================ */
+/* ============================ info-card ============================ */
 .info-card {
   width: 85%;
   max-width: 380px;
   margin: 0 auto 40px;
   padding: 20px 22px;
+
   background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
+
+  display: none;      /* ← 初期状態は完全消失 */
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 
-.info-card.show { opacity: 1; }
+.info-card.show {
+  display: block;     /* ← スクロール後に出現 */
+  opacity: 1;
+}
 
 .info-card h3 {
   color: #d9c17e;
@@ -176,9 +163,7 @@ img {
   font-family: 'Playfair Display', serif;
 }
 
-/* ============================
-   LINE
-============================ */
+/* ============================ LINE ============================ */
 .line-btn {
   position: fixed;
   bottom: 40px;
