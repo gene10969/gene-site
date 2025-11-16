@@ -59,7 +59,7 @@ img {
 }
 
 /* -------------------------------------------
-   ② ロゴ演出
+   ② ロゴ演出（表示 → 上へフェードアウト）
 ------------------------------------------- */
 #opening-logo {
   position: fixed;
@@ -69,13 +69,19 @@ img {
   justify-content: center;
   align-items: center;
   text-align: center;
-
   opacity: 0;
   transition: opacity 1.6s ease;
+  pointer-events: none;
 }
 
 #opening-logo.show {
   opacity: 1;
+}
+
+#opening-logo.fadeout {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
 }
 
 .logo-big {
@@ -100,7 +106,6 @@ img {
   font-size: 2.2rem;
   margin: 5px 0 10px;
   opacity: 0;
-
   animation: textFade 3.2s 0.8s ease forwards;
 }
 
@@ -115,7 +120,7 @@ img {
 }
 
 /* -------------------------------------------
-   ④ 初期状態（ふわっと降りる）
+   ④ 初期状態 → show のアニメ
 ------------------------------------------- */
 .hidden {
   opacity: 0;
@@ -132,11 +137,10 @@ img {
 
 /* -------------------------------------------
    ⑤ メインコンテンツ（スクロール領域）
-   お知らせカードの高さ分、下げて開始する
 ------------------------------------------- */
 .main-content {
-  padding-top: 260px; /* お知らせカードのぶん下げ */
-  min-height: 120vh;  /* ← これが超重要：ページを“画面より長く”する */
+  padding-top: 260px;  /* お知らせが固定なので下げて開始 */
+  min-height: 150vh;   /* ← 画面より長くして確実にスクロール */
 }
 
 /* -------------------------------------------
@@ -144,7 +148,7 @@ img {
 ------------------------------------------- */
 .info-card {
   position: fixed;
-  top: calc(50vh + 160px);  /* ← ロゴの下あたりに固定で配置 */
+  top: calc(50vh + 160px);  /* ロゴの直下に配置 */
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
@@ -190,7 +194,7 @@ img {
 }
 
 /* -------------------------------------------
-   ⑧ LINEボタン（遅れて表示）
+   ⑧ LINEボタン（固定・遅れて登場）
 ------------------------------------------- */
 .line-btn {
   position: fixed;
