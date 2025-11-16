@@ -7,7 +7,7 @@ html, body {
   background: #000;
   color: #eee;
   font-family: 'Noto Serif JP', serif;
-  overflow-x: hidden;   /* ← scrollを許可、横だけ隠す */
+  overflow-x: hidden;
 }
 
 img {
@@ -59,10 +59,10 @@ img {
 }
 
 /* -------------------------------------------
-   ② ロゴ演出（神域）
+   ② ロゴ演出
 ------------------------------------------- */
 #opening-logo {
-  position: fixed;     /* ← ロゴは固定（神域） */
+  position: fixed;
   inset: 0;
   display: flex;
   flex-direction: column;
@@ -92,7 +92,7 @@ img {
 }
 
 /* -------------------------------------------
-   ③ キャッチコピー（神域）
+   ③ キャッチコピー
 ------------------------------------------- */
 #opening-logo h1 {
   font-family: 'Playfair Display', serif;
@@ -100,6 +100,7 @@ img {
   font-size: 2.2rem;
   margin: 5px 0 10px;
   opacity: 0;
+
   animation: textFade 3.2s 0.8s ease forwards;
 }
 
@@ -114,7 +115,7 @@ img {
 }
 
 /* -------------------------------------------
-   ④ 登場アニメ（ふわっと降りる）
+   ④ 初期状態（ふわっと降りる）
 ------------------------------------------- */
 .hidden {
   opacity: 0;
@@ -130,20 +131,21 @@ img {
 }
 
 /* -------------------------------------------
-   ⑤ 通常スクロール領域
-      opening-logo は固定なので、
-      その下にページ内容を表示
+   ⑤ メインコンテンツ（スクロール領域）
+   お知らせカードの高さ分、下げて開始する
 ------------------------------------------- */
 .main-content {
-  margin-top: 100vh; /* ロゴ分の高さを空ける */
-  padding-top: 50px; /* ロゴとお知らせカードの間の余白 */
+  padding-top: 260px; /* ← お知らせカードの高さぶん下にずらす */
 }
 
 /* -------------------------------------------
-   ⑥ お知らせカード（中央配置＋ガラス風）
+   ⑥ お知らせカード（固定位置）
 ------------------------------------------- */
 .info-card {
-  margin: 0 auto;
+  position: fixed;
+  top: calc(50vh + 160px);  /* ← ロゴの下あたりに固定で配置 */
+  left: 50%;
+  transform: translateX(-50%);
   width: 85%;
   max-width: 380px;
   padding: 20px 22px;
@@ -154,6 +156,7 @@ img {
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
   color: #eee;
+  z-index: 20;
 }
 
 .info-card h3 {
@@ -186,7 +189,7 @@ img {
 }
 
 /* -------------------------------------------
-   ⑧ LINEボタン（遅れて登場）
+   ⑧ LINEボタン（遅れて表示）
 ------------------------------------------- */
 .line-btn {
   position: fixed;
