@@ -34,14 +34,14 @@
 <!-- ページ本体 -->
 <main class="main-content">
 
-  <!-- お知らせ（最初は非表示。スクロール100px以上で出現） -->
-  <div class="info-card hidden" id="info-card">
+  <!-- お知らせ（ロゴと同じタイミングで表示） -->
+  <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
   <div style="height: 2000px;"></div>
-  <!-- ↑ ページとして自然にスクロールできるダミー。必要に応じて中身追加して良い -->
+  <!-- ↑ ページとして自然にスクロールできるダミー。必要に応じて中身追加してOK -->
 
 </main>
 
@@ -52,20 +52,26 @@
 <script>
   window.addEventListener("load", () => {
 
-    const ring = document.getElementById("opening-ring");
-    const logo = document.getElementById("opening-logo");
+    const ring     = document.getElementById("opening-ring");
+    const logo     = document.getElementById("opening-logo");
+    const nav      = document.querySelector(".global-nav");
+    const lineBtn  = document.querySelector(".line-btn");
+    const infoCard = document.getElementById("info-card");
 
-    // 輪っか
+    // 輪っか表示
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
 
     // ロゴ（神域）
-    setTimeout(() => logo.classList.add("show"), 2600);
-
-    // ナビ・LINE（ロゴと同時）
     setTimeout(() => {
-      document.querySelector(".global-nav").classList.add("show");
-      document.querySelector(".line-btn").classList.add("show");
+      logo.classList.add("show");
+    }, 2600);
+
+    // ナビ・LINE・お知らせカード（ロゴと同じタイミング）
+    setTimeout(() => {
+      if (nav)     nav.classList.add("show");
+      if (lineBtn) lineBtn.classList.add("show");
+      if (infoCard) infoCard.classList.add("show");
     }, 2600);
 
     // ロゴの固定解除（スクロールできるようになる）
@@ -75,12 +81,13 @@
 
   });
 
-  /* ▼ スクロール100pxでお知らせカードをふわっと出現 */
+  /* スクロールでのお知らせ表示は廃止
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       document.getElementById("info-card").classList.add("show");
     }
   });
+  */
 </script>
 
 </body>
