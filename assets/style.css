@@ -63,15 +63,21 @@ img { max-width: 100%; display: block; }
 /* ロゴが中央に固定されるモード */
 #opening-logo.locked {
   position: fixed;
-  inset: 0;
-  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* ← 完全中央 */
+  
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
 
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+}
 #opening-logo.show { opacity: 1; }
 
 .logo-big {
