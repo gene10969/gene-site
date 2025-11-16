@@ -11,6 +11,9 @@
 </head>
 <body>
 
+<!-- ▼ ロゴの通常位置の高さ確保（ジャンプ防止） -->
+<div id="logo-space"></div>
+
 <!-- ナビ -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
@@ -24,8 +27,6 @@
   <div class="ring-blur"></div>
 </div>
 
-<div id="logo-space"></div>
-
 <!-- ロゴ（神域：中央固定） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
@@ -36,7 +37,7 @@
 <!-- ページ本体 -->
 <main class="main-content">
 
-  <!-- お知らせ（最初は非表示。スクロールで出現） -->
+  <!-- お知らせ（スクロールで出現） -->
   <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
@@ -67,7 +68,7 @@
       logo.classList.add("show");
     }, 2600);
 
-    // ナビ・LINE（ロゴと同時タイミング）
+    // ナビ・LINE
     setTimeout(() => {
       if (nav)     nav.classList.add("show");
       if (lineBtn) lineBtn.classList.add("show");
@@ -80,7 +81,7 @@
 
   });
 
-  /* ▼ スクロール100pxでお知らせカードを出現（落下アニメなし） */
+  /* ▼ スクロール100pxでお知らせカードを出現 */
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       document.getElementById("info-card").classList.add("show");
