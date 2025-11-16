@@ -180,3 +180,67 @@ img { max-width: 100%; display: block; }
 
 .line-btn.show { opacity: 1; }
 .line-btn:hover { transform: scale(1.1); }
+
+/* ============================
+   サブページ共通
+============================ */
+body.subpage {
+  padding-top: 120px; /* メニューバーとの余白 */
+}
+
+/* ============================
+   メニュータイトル
+============================ */
+.page-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #d9c17e;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* ============================
+   メニューカード3つ
+============================ */
+.menu-container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto 120px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.menu-card {
+  background: rgba(20,20,20,0.85);
+  border: 1px solid #d9c17e55;
+  border-radius: 14px;
+  padding: 30px 24px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 22px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+.menu-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #d9c17e;
+  margin-bottom: 14px;
+}
+
+.menu-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.menu-card .price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #d9c17e;
+  text-align: right;
+}
