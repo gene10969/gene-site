@@ -13,7 +13,7 @@ html, body {
 img { max-width: 100%; display: block; }
 
 /* -------------------------------------------
-   opening-ring（輪っか）
+   ゴールドの輪っか（opening-ring）
 ------------------------------------------- */
 #opening-ring {
   position: fixed;
@@ -48,36 +48,42 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   opening-logo（神域）
+   ロゴ（神域）
 ------------------------------------------- */
-#opening-logo {
-  position: relative;
-  padding-top: 120px;
-  padding-bottom: 40px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 1.6s ease;
-  z-index: 10;
-}
 
-/* ロゴが中央に固定されるモード */
+/* 表示中：画面中央に100%固定する絶対安定レイヤー */
 #opening-logo.locked {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);  /* ← 完全中央 */
-  
-  width: 100%;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
 
+  text-align: center;
   padding: 0;
   margin: 0;
+
   z-index: 10;
+  pointer-events: none;
 }
+
+/* 固定解除後（通常のセクションに戻る） */
+#opening-logo {
+  position: relative;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 1.6s ease;
+}
+
 #opening-logo.show { opacity: 1; }
 
 .logo-big {
@@ -89,7 +95,7 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes logoFade {
-  0% { opacity: 0; transform: scale(0.8); }
+  0%   { opacity: 0; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1); }
 }
 
@@ -111,7 +117,7 @@ img { max-width: 100%; display: block; }
 @keyframes textFade { to { opacity: 1; } }
 
 /* -------------------------------------------
-   ナビ（固定）
+   ナビ（右上固定）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -133,7 +139,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   main-content（神域の下）
+   ページ本体（スクロール領域）
 ------------------------------------------- */
 .main-content {
   margin-top: 20px;
@@ -141,7 +147,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* -------------------------------------------
-   お知らせカード（ロゴと同時）
+   お知らせカード（ロゴと同タイミングで出る）
 ------------------------------------------- */
 .info-card {
   width: 85%;
@@ -154,10 +160,9 @@ img { max-width: 100%; display: block; }
   border-radius: 14px;
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
-  color: #eee;
 
   opacity: 0;
-  transform: translateY(-25px);  /* ← 初期位置が上なので一瞬出ない */
+  transform: translateY(-25px);
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
