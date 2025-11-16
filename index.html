@@ -22,7 +22,7 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- ロゴ（最初も後も同じ位置） -->
+<!-- ロゴ（全端末で上から100pxに固定される） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
@@ -31,14 +31,12 @@
 
 <main class="main-content">
 
-  <!-- すぐ下に固定して出す -->
   <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
   <div style="height: 2000px;"></div>
-
 </main>
 
 <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
@@ -61,8 +59,10 @@
       lineBtn.classList.add("show");
     }, 2600);
 
-    /* 固定解除しても位置が変わらないよう top を維持 */
-    setTimeout(() => { logo.classList.remove("locked"); }, 3600);
+    setTimeout(() => {
+      logo.classList.remove("locked");
+      logo.classList.add("fixed-final");
+    }, 3600);
   });
 
   window.addEventListener("scroll", () => {
