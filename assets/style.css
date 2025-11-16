@@ -16,7 +16,7 @@ img {
 }
 
 /* -------------------------------------------
-   ① ゴールドのぼかし輪っか（画面中央）
+   ゴールドのぼかし輪っか（神域）
 ------------------------------------------- */
 #opening-ring {
   position: fixed;
@@ -29,14 +29,8 @@ img {
   transition: opacity 1.2s ease;
 }
 
-#opening-ring.show {
-  opacity: 1;
-}
-
-#opening-ring.fadeout {
-  opacity: 0;
-  transition: opacity 1.6s ease;
-}
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; transition: opacity 1.6s ease; }
 
 .ring-blur {
   width: 260px;
@@ -57,7 +51,7 @@ img {
 }
 
 /* -------------------------------------------
-   ② opening-logo（神域・画面中央固定）
+   opening-logo（神域） ※絶対固定
 ------------------------------------------- */
 #opening-logo {
   position: fixed;
@@ -68,13 +62,11 @@ img {
   align-items: center;
   text-align: center;
   opacity: 0;
-  pointer-events: none; /* ← 背面のスクロールを妨げない */
+  pointer-events: none; /* 背後へスクロールを通す */
   transition: opacity 1.6s ease;
 }
 
-#opening-logo.show {
-  opacity: 1;
-}
+#opening-logo.show { opacity: 1; }
 
 .logo-big {
   width: 90vw;
@@ -89,9 +81,7 @@ img {
   100% { opacity: 1; transform: scale(1); }
 }
 
-/* -------------------------------------------
-   ③ キャッチコピー（神域）
-------------------------------------------- */
+/* キャッチコピー */
 #opening-logo h1 {
   font-family: 'Playfair Display', serif;
   color: #d9c17e;
@@ -107,12 +97,10 @@ img {
   animation: textFade 3.2s 1.2s ease forwards;
 }
 
-@keyframes textFade {
-  to { opacity: 1; }
-}
+@keyframes textFade { to { opacity: 1; } }
 
 /* -------------------------------------------
-   ④ フェードイン＋降りてくるアニメ（ナビ・お知らせ・LINE）
+   フェードイン（ナビ / お知らせ / LINE）
 ------------------------------------------- */
 .hidden {
   opacity: 0;
@@ -126,16 +114,16 @@ img {
 }
 
 /* -------------------------------------------
-   ⑤ main-content（opening-logo の下から開始）
+   main-content（ページ本体） ※スクロール領域
 ------------------------------------------- */
 .main-content {
-  margin-top: 100vh;  /* ← 神域の直下からページをスタート */
+  margin-top: 100vh;      /* ← opening-logo の直下から開始 */
   padding: 60px 0 120px;
-  min-height: 150vh; /* 十分なスクロール量を確保 */
+  min-height: 200vh;      /* ← ★★これが超重要★★ */
 }
 
 /* -------------------------------------------
-   ⑥ お知らせカード（ふわっと降りてきて、その後スクロール）
+   お知らせカード（スクロール対象）
 ------------------------------------------- */
 .info-card {
   width: 85%;
@@ -153,12 +141,12 @@ img {
 
 .info-card h3 {
   color: #d9c17e;
-  margin: 0 0 6px;
+  margin-bottom: 6px;
   font-family: 'Playfair Display', serif;
 }
 
 /* -------------------------------------------
-   ⑦ ナビ（右上固定）
+   ナビ（右上固定）
 ------------------------------------------- */
 .global-nav {
   position: fixed;
@@ -170,10 +158,7 @@ img {
   opacity: 0;
 }
 
-.global-nav.show {
-  opacity: 1;
-  transition: opacity 1.6s ease;
-}
+.global-nav.show { opacity: 1; transition: opacity 1.6s ease; }
 
 .global-nav a {
   color: #d9c17e;
@@ -182,12 +167,8 @@ img {
   font-size: 1.2rem;
 }
 
-.global-nav a:hover {
-  opacity: 0.6;
-}
-
 /* -------------------------------------------
-   ⑧ LINEボタン（右下固定）
+   LINEボタン
 ------------------------------------------- */
 .line-btn {
   position: fixed;
@@ -208,10 +189,6 @@ img {
   transition: opacity 1.6s ease, transform 0.2s ease;
 }
 
-.line-btn.show {
-  opacity: 1;
-}
+.line-btn.show { opacity: 1; }
 
-.line-btn:hover {
-  transform: scale(1.1);
-}
+.line-btn:hover { transform: scale(1.1); }
