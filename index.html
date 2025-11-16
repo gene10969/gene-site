@@ -28,11 +28,12 @@
   <p>自律神経整体サロン gene</p>
 </div>
 
+<!-- ロゴの高さ分だけ置く（スクロール暴発防止） -->
 <div id="logo-space"></div>
 
 <main class="main-content">
 
-  <!-- 初期状態では完全非表示（CSS で display:none） -->
+  <!-- ロゴの直下に見せるが位置はCSSで最適化 -->
   <div class="info-card" id="info-card">
     <h3>お知らせ</h3>
     <p>◎ 新規のお客様のご予約を受付中です。</p>
@@ -46,7 +47,6 @@
 
 <script>
   window.addEventListener("load", () => {
-
     const ring     = document.getElementById("opening-ring");
     const logo     = document.getElementById("opening-logo");
     const nav      = document.querySelector(".global-nav");
@@ -55,25 +55,20 @@
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-    setTimeout(() => {
-      logo.classList.add("show");
-    }, 2600);
+    setTimeout(() => { logo.classList.add("show"); }, 2600);
 
     setTimeout(() => {
-      if (nav)     nav.classList.add("show");
+      if (nav) nav.classList.add("show");
       if (lineBtn) lineBtn.classList.add("show");
     }, 2600);
 
-    setTimeout(() => {
-      logo.classList.remove("locked");
-    }, 3600);
+    setTimeout(() => { logo.classList.remove("locked"); }, 3600);
   });
 
-  // ▼ページ読み込み時に info-card は完全非表示 → スクロールしたら表示
+  // PCもスマホも速く反応するように 50px で表示
   window.addEventListener("scroll", () => {
-    const info = document.getElementById("info-card");
-    if (window.scrollY > 100) {
-      info.classList.add("show");
+    if (window.scrollY > 50) {
+      document.getElementById("info-card").classList.add("show");
     }
   });
 </script>
