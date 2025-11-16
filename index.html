@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- メニューバー -->
+<!-- ▼ ナビ -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -19,59 +16,61 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- ゴールドの輪っか -->
+<!-- ▼ ゴールドぼかし輪っか -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
 
-<!-- ロゴ（神域・表示中は画面中央固定） -->
+<!-- ▼ 神域ロゴ（黒背景も含む） -->
 <div id="opening-logo" class="locked">
-  <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
+  <img src="assets/img/logo.svg" alt="gene ロゴ" class="logo-big">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
 
-<!-- ページ本体 -->
-<main class="main-content">
-
-  <!-- お知らせカード -->
+<!-- ▼ お知らせカード -->
+<div id="info-wrapper">
   <div class="info-card hidden">
     <h3>お知らせ</h3>
-    <p>◎ 新規のお客様のご予約を受付中です。</p>
+    <p> ◎ 新規のお客様のご予約を受付中です。</p>
   </div>
+</div>
 
+<!-- ▼ メイン領域（後で内容追加する場所） -->
+<main class="main-content">
+  <div class="blank"></div>
 </main>
 
-<!-- LINE -->
+<!-- ▼ LINEボタン -->
 <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
 
-<!-- アニメーション -->
 <script>
-  window.addEventListener("load", () => {
+window.addEventListener("load", () => {
 
-    const ring = document.getElementById("opening-ring");
-    const logo = document.getElementById("opening-logo");
+  const ring = document.getElementById("opening-ring");
+  const logo = document.getElementById("opening-logo");
+  const nav = document.querySelector(".global-nav");
+  const info = document.querySelector(".info-card");
+  const line = document.querySelector(".line-btn");
 
-    // 輪っか出現
-    ring.classList.add("show");
-    setTimeout(() => ring.classList.add("fadeout"), 2200);
+  // ① 輪っか → ロゴの順に表示
+  setTimeout(() => ring.classList.add("show"), 100);
+  setTimeout(() => ring.classList.add("fadeout"), 1800);
 
-    // ロゴ（神域）
-    setTimeout(() => logo.classList.add("show"), 2600);
+  setTimeout(() => logo.classList.add("show"), 2600);
 
-    // ナビ・お知らせ・LINE
-    setTimeout(() => {
-      document.querySelector(".global-nav").classList.add("show");
-      document.querySelector(".info-card").classList.add("show");
-      document.querySelector(".line-btn").classList.add("show");
-    }, 2600);
+  // ② ロゴ固定解除（スクロール可能に）
+  setTimeout(() => {
+    logo.classList.remove("locked");
+  }, 4300);
 
-    // ロゴ中央固定 → 表示後に解除して通常スクロールへ
-    setTimeout(() => {
-      logo.classList.remove("locked");
-    }, 3600);
-
-  });
+  // ③ ナビ・お知らせ・LINE を同時に表示
+  setTimeout(() => {
+    nav.classList.add("show");
+    info.classList.add("show");
+    line.classList.add("show");
+  }, 4600);
+});
 </script>
 
 </body>
