@@ -17,10 +17,10 @@ img {
 }
 
 /* ============================
-   ロゴスペース（ジャンプ防止）
+   ロゴ高さスペース（調整済み）
 ============================ */
 #logo-space {
-  height: 300px; /* ロゴ＋テキストの高さ分 */
+  height: 900px; 
 }
 
 /* ============================
@@ -38,13 +38,8 @@ img {
   z-index: 5;
 }
 
-#opening-ring.show {
-  opacity: 1;
-}
-
-#opening-ring.fadeout {
-  opacity: 0;
-}
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
 
 .ring-blur {
   width: 260px;
@@ -59,18 +54,12 @@ img {
 }
 
 @keyframes glowBlink {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(0.96);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
+  0%, 100% { opacity: 0.4; transform: scale(0.96); }
+  50%      { opacity: 1;   transform: scale(1.05); }
 }
 
 /* ============================
-   ロゴ表示（中央→通常位置）
+   ロゴ（中央固定→通常）
 ============================ */
 #opening-logo.locked {
   position: fixed;
@@ -83,8 +72,6 @@ img {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 0;
-  margin: 0;
   z-index: 10;
   pointer-events: none;
 }
@@ -93,34 +80,25 @@ img {
   position: relative;
   width: 100%;
   padding-top: 120px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   opacity: 0;
   text-align: center;
   transition: opacity 1.6s ease;
 }
 
-#opening-logo.show {
-  opacity: 1;
-}
+#opening-logo.show { opacity: 1; }
 
-/* ▼ ロゴ中央固定のために必要な部分（これが消えるとズレる） */
 .logo-big {
   width: 90vw;
   max-width: 1000px;
-  margin: 0 auto 40px; /* ← この行が超重要。左右中央に固定。 */
+  margin: 0 auto 20px;
   opacity: 0;
   animation: logoFade 2.8s ease forwards;
 }
 
 @keyframes logoFade {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 #opening-logo h1 {
@@ -138,11 +116,7 @@ img {
   animation: textFade 3.2s 1.2s ease forwards;
 }
 
-@keyframes textFade {
-  to {
-    opacity: 1;
-  }
-}
+@keyframes textFade { to { opacity: 1; } }
 
 /* ============================
    ナビ
@@ -170,7 +144,7 @@ img {
 }
 
 /* ============================
-   メインコンテンツ
+   メイン
 ============================ */
 .main-content {
   margin-top: 20px;
@@ -178,12 +152,12 @@ img {
 }
 
 /* ============================
-   お知らせカード（スクロール表示）
+   お知らせ（ロゴすぐ下）
 ============================ */
 .info-card {
   width: 85%;
   max-width: 380px;
-  margin: 0 auto 40px;
+  margin: 20px auto 40px;
   padding: 20px 22px;
   background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
@@ -191,13 +165,10 @@ img {
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
   opacity: 0;
-  transform: translateY(0);
   transition: opacity 1.2s ease;
 }
 
-.info-card.show {
-  opacity: 1;
-}
+.info-card.show { opacity: 1; }
 
 .info-card h3 {
   color: #d9c17e;
@@ -206,7 +177,7 @@ img {
 }
 
 /* ============================
-   LINEボタン
+   LINE
 ============================ */
 .line-btn {
   position: fixed;
@@ -227,10 +198,5 @@ img {
   transition: opacity 1.2s ease, transform 0.2s ease;
 }
 
-.line-btn.show {
-  opacity: 1;
-}
-
-.line-btn:hover {
-  transform: scale(1.1);
-}
+.line-btn.show { opacity: 1; }
+.line-btn:hover { transform: scale(1.1); }
