@@ -1,4 +1,3 @@
-/* ============================ 基本 ============================ */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,15 +5,16 @@ html, body {
   color: #eee;
   font-family: 'Noto Serif JP', serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 img { max-width: 100%; display: block; }
 
-/* ============================ ロゴスペース ============================ */
-#logo-space { height: 0; }
+/* ロゴの実高さに合わせてスペース確保（スクロール暴発防止） */
+#logo-space {
+  height: 680px;
+}
 
-/* ============================ 輪っか ============================ */
+/* 輪っか */
 #opening-ring {
   position: fixed;
   inset: 0;
@@ -47,13 +47,10 @@ img { max-width: 100%; display: block; }
   50%      { opacity: 1;   transform: scale(1.05); }
 }
 
-/* ============================ ロゴ ============================ */
+/* ロゴ */
 #opening-logo.locked {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,7 +102,7 @@ img { max-width: 100%; display: block; }
 
 @keyframes textFade { to { opacity: 1; } }
 
-/* ============================ ナビ ============================ */
+/* ナビ */
 .global-nav {
   position: fixed;
   top: 30px;
@@ -116,10 +113,7 @@ img { max-width: 100%; display: block; }
   z-index: 20;
 }
 
-.global-nav.show {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-}
+.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
 
 .global-nav a {
   color: #d9c17e;
@@ -128,17 +122,20 @@ img { max-width: 100%; display: block; }
   font-size: 1.2rem;
 }
 
-/* ============================ メイン ============================ */
+/* メイン */
 .main-content {
   margin-top: 20px;
   padding-bottom: 200px;
 }
 
-/* ============================ info-card ============================ */
+/* info-card（ロゴ直下に見せる） */
 .info-card {
   width: 85%;
   max-width: 380px;
-  margin: 0 auto 40px;
+
+  /* ← これでロゴに近づける（視覚的に直下になる） */
+  margin: -40px auto 40px;
+
   padding: 20px 22px;
 
   background: rgba(20,20,20,0.85);
@@ -147,13 +144,13 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(6px);
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
 
-  display: none;      /* ← 初期状態は完全消失 */
+  display: none;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 
 .info-card.show {
-  display: block;     /* ← スクロール後に出現 */
+  display: block;
   opacity: 1;
 }
 
@@ -163,7 +160,7 @@ img { max-width: 100%; display: block; }
   font-family: 'Playfair Display', serif;
 }
 
-/* ============================ LINE ============================ */
+/* LINE */
 .line-btn {
   position: fixed;
   bottom: 40px;
