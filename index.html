@@ -50,27 +50,27 @@
   <a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
 
   <script>
-    window.addEventListener("load", () => {
-      const ring = document.getElementById("opening-ring");
-      const logo = document.getElementById("opening-logo");
+  window.addEventListener("load", () => {
+    const ring = document.getElementById("opening-ring");
+    const logo = document.getElementById("opening-logo");
 
-      // 1. 輪っか表示
-      ring.classList.add("show");
+    // 1. 輪っかを表示
+    ring.classList.add("show");
 
-      // 2. 輪っか消す
-      setTimeout(() => ring.classList.add("fadeout"), 2800);
+    // 2. 輪っかをフェードアウト
+    setTimeout(() => ring.classList.add("fadeout"), 2800);
 
-      // 3. ロゴ表示
-      setTimeout(() => logo.classList.add("show"), 3200);
+    // 3. ロゴを表示
+    setTimeout(() => logo.classList.add("show"), 3200);
 
-      // 4. ナビ・お知らせ・LINEを同時に表示
-      setTimeout(() => {
-        document.querySelector('.global-nav').classList.add('show');
-        document.querySelector('.info-card').classList.add('show');
-        document.querySelector('.line-btn').classList.add('show');
-      }, 3200);
-    });
-  </script>
+    // 4. ナビ・お知らせカード・LINEボタンをロゴと同時に表示
+    setTimeout(() => {
+      document.querySelector('.global-nav').classList.add('show');
+      document.querySelector('.info-card').classList.add('show');
+      document.querySelector('.line-btn').classList.add('show');
+    }, 3200);
+  });
+</script>
 
 </body>
 </html>
