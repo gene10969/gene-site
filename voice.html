@@ -8,7 +8,7 @@
 </head>
 <body class="subpage">
 
-<nav class="global-nav show">
+<nav class="global-nav">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
@@ -45,29 +45,20 @@
 
 </main>
 
-<a href="#" class="back-to-top" id="backToTop">▲</a>
+<a href="#" class="back-to-top" id="bt3">▲</a>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-name">自律神経整体サロン gene</p>
     <p class="footer-copy">© gene. All Rights Reserved.</p>
-
-    <div class="footer-sitemap">
-      <a href="index.html">Home</a>
-      <a href="menu.html">メニュー</a>
-      <a href="access.html">アクセス</a>
-      <a href="voice.html">お客様の声</a>
-    </div>
   </div>
 </footer>
 
 <script>
-  const backToTop = document.getElementById("backToTop");
+  const bt3element = document.getElementById("bt3");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300)
-      backToTop.classList.add("show");
-    else
-      backToTop.classList.remove("show");
+    if (window.scrollY > 300) bt3element.classList.add("show");
+    else bt3element.classList.remove("show");
   });
 </script>
 
