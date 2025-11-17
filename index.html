@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -35,15 +32,14 @@
     <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
-  <div style="height:2000px;"></div>
+  <div style="height: 2000px;"></div>
 </main>
 
-<!-- ▼ index用：ロゴと同時に表示する予約ボタン -->
+<!-- ▼ index 専用：ロゴと同時に表示される予約ボタン -->
 <a href="https://lin.ee/JnE05bP" class="reserve-btn-top" id="reserveTop" target="_blank">
   ご予約はこちら
 </a>
 
-<!-- ▼ トップへ戻る -->
 <a href="#" class="back-to-top" id="backToTop">▲</a>
 
 <footer class="site-footer">
@@ -74,7 +70,7 @@
 
     setTimeout(() => {
       nav.classList.add("show");
-      rsv.classList.add("show");   /* ← ロゴと同時に予約ボタン表示 */
+      rsv.classList.add("show");
     }, 2600);
 
     setTimeout(() => {
@@ -85,8 +81,10 @@
 
   const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) backToTop.classList.add("show");
-    else backToTop.classList.remove("show");
+    if (window.scrollY > 300)
+      backToTop.classList.add("show");
+    else
+      backToTop.classList.remove("show");
   });
 </script>
 
