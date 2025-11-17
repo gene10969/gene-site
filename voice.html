@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お客様の声 | 自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="subpage">
 
@@ -18,6 +15,8 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub" target="_blank">予約</a>
+
 <main class="menu-container">
 
   <h1 class="page-title">お客様の声</h1>
@@ -25,30 +24,21 @@
   <div class="menu-grid">
 
     <div class="menu-card">
-      <img src="assets/img/voice01.jpg" class="voice-img" alt="">
+      <img src="assets/img/voice01.jpg" class="voice-img">
       <h2>30代 女性 / 自律神経の乱れ</h2>
-      <p>
-        身体が軽くなり、頭のざわつきが静まりました。  
-        久しぶりに深い呼吸ができました。
-      </p>
+      <p>施術後、身体の重さが抜け頭のざわつきが静まりました。</p>
     </div>
 
     <div class="menu-card">
-      <img src="assets/img/voice02.jpg" class="voice-img" alt="">
+      <img src="assets/img/voice02.jpg" class="voice-img">
       <h2>40代 男性 / 睡眠の悩み</h2>
-      <p>
-        当日の夜から深く眠れ、  
-        朝のだるさが消えました。
-      </p>
+      <p>当日の夜から深く眠れ、朝のだるさが消えました。</p>
     </div>
 
     <div class="menu-card">
-      <img src="assets/img/voice03.jpg" class="voice-img" alt="">
+      <img src="assets/img/voice03.jpg" class="voice-img">
       <h2>20代 女性 / 不安と疲労</h2>
-      <p>
-        呼吸が楽になり、  
-        心まで落ち着く感覚がありました。
-      </p>
+      <p>呼吸が楽になり心まで落ち着く感覚がありました。</p>
     </div>
 
   </div>
@@ -56,7 +46,6 @@
 </main>
 
 <a href="#" class="back-to-top" id="backToTop">▲</a>
-<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -75,11 +64,8 @@
 <script>
   const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    if (window.scrollY > 300) backToTop.classList.add("show");
+    else backToTop.classList.remove("show");
   });
 </script>
 
