@@ -15,10 +15,8 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- ▼ 全サブページ共通：右上固定の予約ボタン -->
-<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub" target="_blank">
-  予約
-</a>
+<!-- ▼ サブページ用：ナビ右下に固定 -->
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub" target="_blank">予約</a>
 
 <main class="menu-container">
 
@@ -27,24 +25,24 @@
   <div class="menu-grid">
 
     <div class="menu-card">
-      <img src="assets/img/menu01.jpg" class="menu-img" alt="">
+      <img src="assets/img/menu01.jpg" class="menu-img">
       <h2>自律神経整体（60分）</h2>
       <p>呼吸・筋膜・神経を整え深部から調律します。</p>
       <div class="price">8,800円</div>
     </div>
 
     <div class="menu-card">
-      <img src="assets/img/menu02.jpg" class="menu-img" alt="">
+      <img src="assets/img/menu02.jpg" class="menu-img">
       <h2>深部リンパデトックス（70分）</h2>
       <p>深層リンパを開放し疲労回復と自律神経を整えます。</p>
       <div class="price">9,900円</div>
     </div>
 
     <div class="menu-card">
-      <img src="assets/img/menu03.jpg" class="menu-img" alt="">
+      <img src="assets/img/menu03.jpg" class="menu-img">
       <h2>睡眠改善セッション（45分）</h2>
       <p>入眠困難・浅い睡眠に特化した改善セッション。</p>
-      <div class="price">6,600円</div>
+      <divの class="price">6,600円</div>
     </div>
 
   </div>
@@ -70,8 +68,10 @@
 <script>
   const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) backToTop.classList.add("show");
-    else backToTop.classList.remove("show");
+    if (window.scrollY > 300)
+      backToTop.classList.add("show");
+    else
+      backToTop.classList.remove("show");
   });
 </script>
 
