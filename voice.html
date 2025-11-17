@@ -1,75 +1,341 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お客様の声 | 自律神経整体サロン gene</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body class="subpage">
+/* -------------------------------------------
+   基本設定
+------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #eee;
+  font-family: 'Noto Serif JP', serif;
+  overflow-x: hidden;
+}
 
-<nav class="global-nav show">
-  <a href="index.html">Home</a>
-  <a href="menu.html">メニュー</a>
-  <a href="access.html">アクセス</a>
-  <a href="voice.html">お客様の声</a>
-</nav>
+img { max-width: 100%; display: block; }
 
-<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub" target="_blank">予約</a>
+/* -------------------------------------------
+   ナビ（右上）
+------------------------------------------- */
+.global-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  z-index: 30;
+}
 
-<main class="menu-container">
+.global-nav.show {
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
 
-  <h1 class="page-title">お客様の声</h1>
+/* スマホで改行しないよう縮小 */
+@media (max-width: 480px) {
+  .global-nav {
+    gap: 14px;
+    right: 10px;
+  }
+  .global-nav a {
+    font-size: 0.95rem;
+  }
+}
 
-  <div class="menu-grid">
+.global-nav a {
+  color: #d9c17e;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  font-size: 1.15rem;
+}
 
-    <div class="menu-card">
-      <img src="assets/img/voice01.jpg" class="voice-img">
-      <h2>30代 女性 / 自律神経の乱れ</h2>
-      <p>施術後、身体の重さが抜け頭のざわつきが静まりました。</p>
-    </div>
 
-    <div class="menu-card">
-      <img src="assets/img/voice02.jpg" class="voice-img">
-      <h2>40代 男性 / 睡眠の悩み</h2>
-      <p>当日の夜から深く眠れ、朝のだるさが消えました。</p>
-    </div>
+/* -------------------------------------------
+   開幕演出（ロゴ・輪っか）
+------------------------------------------- */
+/* （従来どおり：変更なし） */
+#opening-ring {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 5;
+}
 
-    <div class="menu-card">
-      <img src="assets/img/voice03.jpg" class="voice-img">
-      <h2>20代 女性 / 不安と疲労</h2>
-      <p>呼吸が楽になり心まで落ち着く感覚がありました。</p>
-    </div>
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
 
-  </div>
+.ring-blur {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 4px solid #d9c17e;
+  box-shadow:
+    0 0 35px rgba(217,193,126,0.55),
+    0 0 70px rgba(217,193,126,0.45),
+    0 0 110px rgba(217,193,126,0.3);
+  animation: glowBlink 2.4s infinite ease-in-out;
+}
 
-</main>
+@keyframes glowBlink {
+  0%, 100% { opacity: 0.4; transform: scale(0.96); }
+  50%      { opacity: 1;   transform: scale(1.05); }
+}
 
-<a href="#" class="back-to-top" id="backToTop">▲</a>
+#opening-logo.locked {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-name">自律神経整体サロン gene</p>
-    <p class="footer-copy">© gene. All Rights Reserved.</p>
+#opening-logo.final-pos {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+}
 
-    <div class="footer-sitemap">
-      <a href="index.html">Home</a>
-      <a href="menu.html">メニュー</a>
-      <a href="access.html">アクセス</a>
-      <a href="voice.html">お客様の声</a>
-    </div>
-  </div>
-</footer>
+#opening-logo { opacity: 0; transition: opacity 1.6s ease; }
+#opening-logo.show { opacity: 1; }
 
-<script>
-  const backToTop = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300)
-      backToTop.classList.add("show");
-    else
-      backToTop.classList.remove("show");
-  });
-</script>
+.logo-big {
+  width: 90vw;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  opacity: 0;
+  animation: logoFade 2.8s ease forwards;
+}
 
-</body>
-</html>
+@keyframes logoFade {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+#opening-logo h1 {
+  font-family: 'Playfair Display', serif;
+  color: #d9c17e;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: textFade 3.2s 0.8s ease forwards;
+}
+
+#opening-logo p {
+  font-size: 1.3rem;
+  opacity: 0;
+  animation: textFade 3.2s 1.2s ease forwards;
+}
+
+@keyframes textFade { to { opacity: 1; } }
+
+
+/* -------------------------------------------
+   お知らせ（トップページのみ）
+------------------------------------------- */
+.info-card {
+  width: 85%;
+  max-width: 380px;
+  margin: 20px auto 40px;
+  padding: 20px 22px;
+  background: rgba(20,20,20,0.85);
+  border: 1px solid #d9c17e55;
+  border-radius: 14px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  backdrop-filter: blur(6px);
+}
+.info-card.show { display: block; opacity: 1; }
+
+
+/* -------------------------------------------
+   ページトップへ戻る
+------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 120px;
+  right: 35px;
+  width: 48px;
+  height: 48px;
+  background: rgba(217,193,126,0.85);
+  color: #000;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 40;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* -------------------------------------------
+   予約ボタン
+------------------------------------------- */
+
+/* ▼ index：中央下・ロゴと同時 */
+.reserve-btn-top {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  background: #d9c17e;
+  color: #000;
+  font-size: 1.15rem;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  text-decoration: none;
+  z-index: 50;
+}
+.reserve-btn-top.show { opacity: 1; }
+
+/* ▼ サブページ：右上のナビすぐ下に固定 */
+.reserve-btn-sub {
+  position: fixed;
+  top: 70px;
+  right: 22px;
+  padding: 10px 16px;
+  background: #d9c17e;
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.4);
+  z-index: 45;
+}
+
+@media(max-width: 480px) {
+  .reserve-btn-sub {
+    top: 60px;
+    right: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* -------------------------------------------
+   サブページ全体
+------------------------------------------- */
+body.subpage { padding-top: 120px; }
+
+
+/* -------------------------------------------
+   メニュー・アクセス・口コミ 共通
+------------------------------------------- */
+.page-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #d9c17e;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.menu-container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto 120px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 32px;
+}
+
+.menu-card {
+  background: rgba(20,20,20,0.85);
+  border-radius: 14px;
+  border: 1px solid #d9c17e55;
+  backdrop-filter: blur(6px);
+  padding: 30px 24px;
+  box-shadow: 0 0 22px rgba(0,0,0,0.4);
+}
+
+.menu-img,
+.voice-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+
+/* -------------------------------------------
+   Google Map（世界地図を通常サイズに修正）
+------------------------------------------- */
+.map-wrap {
+  margin-top: 60px;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 380px;
+  border-radius: 14px;
+  border: 1px solid #d9c17e55;
+  filter: grayscale(35%) brightness(0.92);
+}
+
+
+/* -------------------------------------------
+   フッター
+------------------------------------------- */
+.site-footer {
+  width: 100%;
+  padding: 50px 0 60px;
+  background: #000;
+  border-top: 1px solid #d9c17e33;
+  margin-top: 100px;
+}
+
+.footer-inner {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-name {
+  color: #d9c17e;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-copy {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.footer-sitemap {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.footer-sitemap a {
+  color: #bbb;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.footer-sitemap a:hover {
+  color: #d9c17e;
+}
