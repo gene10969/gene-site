@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<!-- ロゴ中央演出（固定） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -36,17 +35,17 @@
     <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
-  <div style="height: 2000px;"></div>
-
+  <div style="height:2000px;"></div>
 </main>
 
-<!-- ▼ ページトップボタン -->
+<!-- ▼ index用：ロゴと同時に表示する予約ボタン -->
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-top" id="reserveTop" target="_blank">
+  ご予約はこちら
+</a>
+
+<!-- ▼ トップへ戻る -->
 <a href="#" class="back-to-top" id="backToTop">▲</a>
 
-<!-- ▼ 下部固定の予約ボタン -->
-<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
-
-<!-- ▼ フッター -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-name">自律神経整体サロン gene</p>
@@ -63,19 +62,19 @@
 
 <script>
   window.addEventListener("load", () => {
-
-    const ring    = document.getElementById("opening-ring");
-    const logo    = document.getElementById("opening-logo");
-    const nav     = document.querySelector(".global-nav");
-    const lineBtn = document.querySelector(".line-btn");
+    const ring  = document.getElementById("opening-ring");
+    const logo  = document.getElementById("opening-logo");
+    const nav   = document.querySelector(".global-nav");
+    const rsv   = document.getElementById("reserveTop");
 
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-    setTimeout(() => { logo.classList.add("show"); }, 2600);
+    setTimeout(() => logo.classList.add("show"), 2600);
 
     setTimeout(() => {
       nav.classList.add("show");
+      rsv.classList.add("show");   /* ← ロゴと同時に予約ボタン表示 */
     }, 2600);
 
     setTimeout(() => {
@@ -84,21 +83,10 @@
     }, 3600);
   });
 
-  /* お知らせ表示 */
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      document.getElementById("info-card").classList.add("show");
-    }
-  });
-
-  /* ページトップボタン表示 */
   const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    if (window.scrollY > 300) backToTop.classList.add("show");
+    else backToTop.classList.remove("show");
   });
 </script>
 
