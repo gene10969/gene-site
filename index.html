@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<!-- ナビ -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -15,12 +16,11 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
+<!-- opening -->
+<div id="opening-ring"><div class="ring-blur"></div></div>
 
 <div id="opening-logo" class="locked">
-  <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
+  <img src="assets/img/logo.svg" class="logo-big">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
@@ -32,13 +32,12 @@
     <p>◎ 新規のお客様のご予約を受付中です。</p>
   </div>
 
-  <div style="height: 2000px;"></div>
+  <div style="height:2000px;"></div>
+
 </main>
 
-<!-- ▼ index 専用：ロゴと同時に表示される予約ボタン -->
-<a href="https://lin.ee/JnE05bP" class="reserve-btn-top" id="reserveTop" target="_blank">
-  ご予約はこちら
-</a>
+<!-- ▼ 全ページ共通の予約ボタン位置に統一 -->
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub show" id="reserveBtnIndex">予約</a>
 
 <a href="#" class="back-to-top" id="backToTop">▲</a>
 
@@ -46,7 +45,6 @@
   <div class="footer-inner">
     <p class="footer-name">自律神経整体サロン gene</p>
     <p class="footer-copy">© gene. All Rights Reserved.</p>
-
     <div class="footer-sitemap">
       <a href="index.html">Home</a>
       <a href="menu.html">メニュー</a>
@@ -58,10 +56,9 @@
 
 <script>
   window.addEventListener("load", () => {
-    const ring  = document.getElementById("opening-ring");
-    const logo  = document.getElementById("opening-logo");
-    const nav   = document.querySelector(".global-nav");
-    const rsv   = document.getElementById("reserveTop");
+    const ring = document.getElementById("opening-ring");
+    const logo = document.getElementById("opening-logo");
+    const nav  = document.querySelector(".global-nav");
 
     ring.classList.add("show");
     setTimeout(() => ring.classList.add("fadeout"), 2200);
@@ -70,7 +67,6 @@
 
     setTimeout(() => {
       nav.classList.add("show");
-      rsv.classList.add("show");
     }, 2600);
 
     setTimeout(() => {
@@ -79,14 +75,4 @@
     }, 3600);
   });
 
-  const backToTop = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300)
-      backToTop.classList.add("show");
-    else
-      backToTop.classList.remove("show");
-  });
-</script>
-
-</body>
-</html>
+  /* scroll */
