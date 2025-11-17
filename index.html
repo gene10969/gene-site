@@ -8,15 +8,18 @@
 </head>
 <body>
 
-<nav class="global-nav">
+<!-- ナビ（非表示で開始） -->
+<nav class="global-nav nav-hide">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub">予約</a>
+<!-- 予約（非表示で開始） -->
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub reserve-hide">予約</a>
 
+<!-- opening -->
 <div id="opening-ring"><div class="ring-blur"></div></div>
 
 <div id="opening-logo" class="locked">
@@ -47,25 +50,50 @@
 
 <script>
   window.addEventListener("load", () => {
+
     const ring = document.getElementById("opening-ring");
     const logo = document.getElementById("opening-logo");
+    const nav  = document.querySelector(".global-nav");
+    const rsv  = document.querySelector(".reserve-btn-sub");
 
+    /* 1. 輪っか表示 */
     ring.classList.add("show");
-    setTimeout(() => ring.classList.add("fadeout"), 2200);
 
-    setTimeout(() => logo.classList.add("show"), 2600);
+    /* 2. 輪っか → フェードアウト */
+    setTimeout(() => {
+      ring.classList.add("fadeout");
+    }, 2200);
 
+    /* 3. ロゴ表示 */
+    setTimeout(() => {
+      logo.classList.add("show");
+    }, 2600);
+
+    /* 4. ロゴ位置固定を解除して中央に配置する */
     setTimeout(() => {
       logo.classList.remove("locked");
       logo.classList.add("final-pos");
     }, 3600);
+
+    /* 5. 輪っかが完全に消えた後、メニュー＆予約フェードイン */
+    setTimeout(() => {
+      nav.classList.remove("nav-hide");
+      nav.classList.add("show");
+
+      rsv.classList.remove("reserve-hide");
+      rsv.classList.add("show");
+    }, 3800);
+
   });
 
+  /* info 表示 */
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50)
+    if (window.scrollY > 50) {
       document.getElementById("info-card").classList.add("show");
+    }
   });
 
+  /* back to top */
   const bt = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) bt.classList.add("show");
