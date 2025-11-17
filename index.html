@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<!-- ロゴ中央演出（固定） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -22,7 +23,6 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- ロゴ（読み込み中のみ中央固定） -->
 <div id="opening-logo" class="locked">
   <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
@@ -37,9 +37,29 @@
   </div>
 
   <div style="height: 2000px;"></div>
+
 </main>
 
-<a href="https://lin.ee/JnE05bP" class="line-btn hidden" target="_blank">LINE</a>
+<!-- ▼ ページトップボタン -->
+<a href="#" class="back-to-top" id="backToTop">▲</a>
+
+<!-- ▼ 下部固定の予約ボタン -->
+<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
+
+<!-- ▼ フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">自律神経整体サロン gene</p>
+    <p class="footer-copy">© gene. All Rights Reserved.</p>
+
+    <div class="footer-sitemap">
+      <a href="index.html">Home</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+      <a href="voice.html">お客様の声</a>
+    </div>
+  </div>
+</footer>
 
 <script>
   window.addEventListener("load", () => {
@@ -56,24 +76,23 @@
 
     setTimeout(() => {
       nav.classList.add("show");
-      lineBtn.classList.add("show");
     }, 2600);
 
-    // 固定解除 → 通常の flow に戻す（重なり問題の根本解決）
     setTimeout(() => {
       logo.classList.remove("locked");
       logo.classList.add("final-pos");
     }, 3600);
   });
 
+  /* お知らせ表示 */
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       document.getElementById("info-card").classList.add("show");
     }
   });
-  
-const backToTop = document.getElementById("backToTop");
 
+  /* ページトップボタン表示 */
+  const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       backToTop.classList.add("show");
@@ -81,15 +100,7 @@ const backToTop = document.getElementById("backToTop");
       backToTop.classList.remove("show");
     }
   });
-  
 </script>
-  
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-name">自律神経整体サロン gene</p>
-    <p class="footer-copy">© gene. All Rights Reserved.</p>
-  </div>
-</footer>
 
 </body>
 </html>
