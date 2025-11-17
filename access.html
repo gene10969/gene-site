@@ -23,8 +23,6 @@
   <h1 class="page-title">アクセス</h1>
 
   <div class="menu-grid">
-
-    <!-- アクセス情報 -->
     <div class="menu-card">
       <h2>所在地</h2>
       <p>
@@ -45,30 +43,47 @@
 
     <div class="menu-card">
       <h2>営業時間</h2>
-      <p>
-        10:00〜20:00（不定休）<br>
-        完全予約制
-      </p>
+      <p>10:00〜20:00（不定休）<br>完全予約制</p>
     </div>
-
   </div>
 
-  <!-- Googleマップ -->
   <div class="map-wrap">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.4808!2d135.506!3d34.6769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z44CSNTQyLTAwODEg5aSn6Ziq5bqc5aSn5a2m5Yy65Y2X5rSl5bGxMTAtMTAtMTI!5e0!3m2!1sja!2sjp!4v0000000000"
+      src="https://www.google.com/maps/embed?pb=!1m18!..."
       loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
 
 </main>
 
-  <footer class="site-footer">
+<a href="#" class="back-to-top" id="backToTop">▲</a>
+<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
+
+<footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-name">自律神経整体サロン gene</p>
     <p class="footer-copy">© gene. All Rights Reserved.</p>
+
+    <div class="footer-sitemap">
+      <a href="index.html">Home</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+      <a href="voice.html">お客様の声</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+</script>
 
 </body>
 </html>
