@@ -24,35 +24,32 @@
 
   <div class="menu-grid">
 
-    <!-- ▼ メニュー① -->
     <div class="menu-card">
       <img src="assets/img/menu01.jpg" class="menu-img" alt="">
       <h2>自律神経整体（60分）</h2>
       <p>
         呼吸・筋膜・神経の流れを整え、  
-        乱れた自律神経を深部から調律します。
+        深部から調律する整体セッション。
       </p>
       <div class="price">8,800円</div>
     </div>
 
-    <!-- ▼ メニュー② -->
     <div class="menu-card">
       <img src="assets/img/menu02.jpg" class="menu-img" alt="">
       <h2>深部リンパデトックス（70分）</h2>
       <p>
-        深層リンパをゆっくり開放し、  
-        むくみ・疲労・過緊張を和らげます。
+        深層リンパの詰まりを整え、  
+        むくみ・疲労・自律神経をリセット。
       </p>
       <div class="price">9,900円</div>
     </div>
 
-    <!-- ▼ メニュー③ -->
     <div class="menu-card">
       <img src="assets/img/menu03.jpg" class="menu-img" alt="">
       <h2>睡眠改善セッション（45分）</h2>
       <p>
-        入眠のしづらさ、浅い睡眠、  
-        夜間覚醒などを整える特化セッション。
+        入眠・浅い睡眠・夜間覚醒の  
+        特化ケアで休息の質を引き上げます。
       </p>
       <div class="price">6,600円</div>
     </div>
@@ -60,13 +57,37 @@
   </div>
 
 </main>
-  
+
+<!-- ページトップ -->
+<a href="#" class="back-to-top" id="backToTop">▲</a>
+
+<!-- 予約ボタン -->
+<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-name">自律神経整体サロン gene</p>
     <p class="footer-copy">© gene. All Rights Reserved.</p>
+
+    <div class="footer-sitemap">
+      <a href="index.html">Home</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+      <a href="voice.html">お客様の声</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+</script>
 
 </body>
 </html>
