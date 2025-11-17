@@ -24,33 +24,30 @@
 
   <div class="menu-grid">
 
-    <!-- ▼ 口コミ① -->
     <div class="menu-card">
       <img src="assets/img/voice01.jpg" class="voice-img" alt="">
       <h2>30代 女性 / 自律神経の乱れ</h2>
       <p>
-        施術後、身体の重さがスッと抜けて、  
-        ずっと続いていた頭のざわつきが静まりました。
+        身体が軽くなり、頭のざわつきが静まりました。  
+        久しぶりに深い呼吸ができました。
       </p>
     </div>
 
-    <!-- ▼ 口コミ② -->
     <div class="menu-card">
       <img src="assets/img/voice02.jpg" class="voice-img" alt="">
       <h2>40代 男性 / 睡眠の悩み</h2>
       <p>
-        眠りが浅く毎日しんどかったのですが、  
-        セッション当日の夜から深く眠れました。
+        当日の夜から深く眠れ、  
+        朝のだるさが消えました。
       </p>
     </div>
 
-    <!-- ▼ 口コミ③ -->
     <div class="menu-card">
       <img src="assets/img/voice03.jpg" class="voice-img" alt="">
-      <h2>20代 女性 / 疲労と不安</h2>
+      <h2>20代 女性 / 不安と疲労</h2>
       <p>
-        肩こりや不安感でずっとしんどかったのですが、  
-        施術後は身体が軽く、呼吸が楽になりました。
+        呼吸が楽になり、  
+        心まで落ち着く感覚がありました。
       </p>
     </div>
 
@@ -58,26 +55,33 @@
 
 </main>
 
-<footer class="site-footer">
- <div class="footer-inner">
-   <p class="footer-name">自律神経整体サロン gene</p>
-   <p class="footer-copy">© gene. All Rights Reserved.</p>
- </div>
-  
- <div class="footer-sitemap">
-  <a href="index.html">Home</a>
-  <a href="menu.html">メニュー</a>
-  <a href="access.html">アクセス</a>
-  <a href="voice.html">お客様の声</a>
- </div>
+<a href="#" class="back-to-top" id="backToTop">▲</a>
+<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
 
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">自律神経整体サロン gene</p>
+    <p class="footer-copy">© gene. All Rights Reserved.</p>
+
+    <div class="footer-sitemap">
+      <a href="index.html">Home</a>
+      <a href="menu.html">メニュー</a>
+      <a href="access.html">アクセス</a>
+      <a href="voice.html">お客様の声</a>
+    </div>
+  </div>
 </footer>
 
-<a href="#" class="back-to-top" id="backToTop">▲</a>
-  
-<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">
-  ご予約はこちら
-</a>
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+</script>
 
 </body>
 </html>
