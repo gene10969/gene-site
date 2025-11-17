@@ -311,3 +311,77 @@ body.subpage {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
+
+/* =========================================
+   ページトップへ戻るボタン
+========================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 120px;
+  right: 35px;
+  width: 48px;
+  height: 48px;
+  background: rgba(217,193,126,0.85);
+  color: #000;
+  text-decoration: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 50;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================================
+   下部固定の予約ボタン
+========================================= */
+.fixed-reserve-btn {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  background: #d9c17e;
+  color: #000;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.15rem;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.4);
+  z-index: 49;
+  opacity: 0.92;
+}
+
+.fixed-reserve-btn:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   フッターサイトマップ
+========================================= */
+.footer-sitemap {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.footer-sitemap a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-sitemap a:hover {
+  color: #d9c17e;
+}
