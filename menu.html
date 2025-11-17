@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メニュー | 自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="subpage">
 
@@ -18,6 +15,11 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
+<!-- ▼ 全サブページ共通：右上固定の予約ボタン -->
+<a href="https://lin.ee/JnE05bP" class="reserve-btn-sub" target="_blank">
+  予約
+</a>
+
 <main class="menu-container">
 
   <h1 class="page-title">メニュー</h1>
@@ -27,30 +29,21 @@
     <div class="menu-card">
       <img src="assets/img/menu01.jpg" class="menu-img" alt="">
       <h2>自律神経整体（60分）</h2>
-      <p>
-        呼吸・筋膜・神経の流れを整え、  
-        深部から調律する整体セッション。
-      </p>
+      <p>呼吸・筋膜・神経を整え深部から調律します。</p>
       <div class="price">8,800円</div>
     </div>
 
     <div class="menu-card">
       <img src="assets/img/menu02.jpg" class="menu-img" alt="">
       <h2>深部リンパデトックス（70分）</h2>
-      <p>
-        深層リンパの詰まりを整え、  
-        むくみ・疲労・自律神経をリセット。
-      </p>
+      <p>深層リンパを開放し疲労回復と自律神経を整えます。</p>
       <div class="price">9,900円</div>
     </div>
 
     <div class="menu-card">
       <img src="assets/img/menu03.jpg" class="menu-img" alt="">
       <h2>睡眠改善セッション（45分）</h2>
-      <p>
-        入眠・浅い睡眠・夜間覚醒の  
-        特化ケアで休息の質を引き上げます。
-      </p>
+      <p>入眠困難・浅い睡眠に特化した改善セッション。</p>
       <div class="price">6,600円</div>
     </div>
 
@@ -58,11 +51,7 @@
 
 </main>
 
-<!-- ページトップ -->
 <a href="#" class="back-to-top" id="backToTop">▲</a>
-
-<!-- 予約ボタン -->
-<a href="https://lin.ee/JnE05bP" class="fixed-reserve-btn" target="_blank">ご予約はこちら</a>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -81,11 +70,8 @@
 <script>
   const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
+    if (window.scrollY > 300) backToTop.classList.add("show");
+    else backToTop.classList.remove("show");
   });
 </script>
 
