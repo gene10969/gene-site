@@ -159,10 +159,11 @@ img {
    予約ボタン（右固定）
 =============================== */
 
+/* 予約ボタン（右上固定） */
 .reserve-btn-sub {
   position: fixed;
-  right: 20px;
-  bottom: 120px;
+  top: 20px;
+  right: 120px;  /* メニューバーの右下に来る位置 */
   width: 48px;
   height: 48px;
   background: #d9c17e;
@@ -174,6 +175,7 @@ img {
   justify-content: center;
   align-items: center;
   opacity: 1;
+  transition: opacity 1.2s ease;
 }
 
 .reserve-btn-sub.reserve-hide {
