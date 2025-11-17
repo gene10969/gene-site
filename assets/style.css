@@ -12,10 +12,47 @@ html, body {
 
 img { max-width: 100%; display: block; }
 
+/* -------------------------------------------
+   ナビ（右上）
+------------------------------------------- */
+.global-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  z-index: 30;
+}
+
+.global-nav.show {
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+/* スマホで改行しないよう縮小 */
+@media (max-width: 480px) {
+  .global-nav {
+    gap: 14px;
+    right: 10px;
+  }
+  .global-nav a {
+    font-size: 0.95rem;
+  }
+}
+
+.global-nav a {
+  color: #d9c17e;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
 
 /* -------------------------------------------
-   開幕のゴールド輪っか
+   開幕演出（ロゴ・輪っか）
 ------------------------------------------- */
+/* （従来どおり：変更なし） */
 #opening-ring {
   position: fixed;
   inset: 0;
@@ -48,10 +85,6 @@ img { max-width: 100%; display: block; }
   50%      { opacity: 1;   transform: scale(1.05); }
 }
 
-
-/* -------------------------------------------
-   ロゴ（固定演出→最終位置）
-------------------------------------------- */
 #opening-logo.locked {
   position: fixed;
   inset: 0;
@@ -60,24 +93,16 @@ img { max-width: 100%; display: block; }
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  pointer-events: none;
 }
 
 #opening-logo.final-pos {
   position: relative;
-  margin-top: 100px;
   text-align: center;
-  opacity: 1;
+  margin-top: 100px;
 }
 
-#opening-logo {
-  opacity: 0;
-  transition: opacity 1.6s ease;
-}
-
-#opening-logo.show {
-  opacity: 1;
-}
+#opening-logo { opacity: 0; transition: opacity 1.6s ease; }
+#opening-logo.show { opacity: 1; }
 
 .logo-big {
   width: 90vw;
@@ -111,67 +136,106 @@ img { max-width: 100%; display: block; }
 
 
 /* -------------------------------------------
-   ナビ（右上固定）
-------------------------------------------- */
-.global-nav {
-  position: fixed;
-  top: 30px;
-  right: 40px;
-  display: flex;
-  gap: 28px;
-  opacity: 0;
-  z-index: 20;
-}
-
-.global-nav.show {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-}
-
-.global-nav a {
-  color: #d9c17e;
-  font-family: 'Playfair Display', serif;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-
-/* -------------------------------------------
-   お知らせカード（トップのみ）
+   お知らせ（トップページのみ）
 ------------------------------------------- */
 .info-card {
   width: 85%;
   max-width: 380px;
   margin: 20px auto 40px;
   padding: 20px 22px;
-
   background: rgba(20,20,20,0.85);
   border: 1px solid #d9c17e55;
   border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 22px rgba(0,0,0,0.4);
-
   display: none;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
+  backdrop-filter: blur(6px);
 }
-
-.info-card.show {
-  display: block;
-  opacity: 1;
-}
+.info-card.show { display: block; opacity: 1; }
 
 
 /* -------------------------------------------
-   サブページ共通余白
+   ページトップへ戻る
 ------------------------------------------- */
-body.subpage {
-  padding-top: 120px;
+.back-to-top {
+  position: fixed;
+  bottom: 120px;
+  right: 35px;
+  width: 48px;
+  height: 48px;
+  background: rgba(217,193,126,0.85);
+  color: #000;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 40;
+}
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
 /* -------------------------------------------
-   メニュー・アクセス・口コミ共通
+   予約ボタン
+------------------------------------------- */
+
+/* ▼ index：中央下・ロゴと同時 */
+.reserve-btn-top {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  background: #d9c17e;
+  color: #000;
+  font-size: 1.15rem;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  text-decoration: none;
+  z-index: 50;
+}
+.reserve-btn-top.show { opacity: 1; }
+
+/* ▼ サブページ：右上のナビすぐ下に固定 */
+.reserve-btn-sub {
+  position: fixed;
+  top: 70px;
+  right: 22px;
+  padding: 10px 16px;
+  background: #d9c17e;
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.4);
+  z-index: 45;
+}
+
+@media(max-width: 480px) {
+  .reserve-btn-sub {
+    top: 60px;
+    right: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* -------------------------------------------
+   サブページ全体
+------------------------------------------- */
+body.subpage { padding-top: 120px; }
+
+
+/* -------------------------------------------
+   メニュー・アクセス・口コミ 共通
 ------------------------------------------- */
 .page-title {
   text-align: center;
@@ -189,45 +253,19 @@ body.subpage {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
   gap: 32px;
 }
 
 .menu-card {
   background: rgba(20,20,20,0.85);
-  border: 1px solid #d9c17e55;
   border-radius: 14px;
-  padding: 30px 24px;
+  border: 1px solid #d9c17e55;
   backdrop-filter: blur(6px);
+  padding: 30px 24px;
   box-shadow: 0 0 22px rgba(0,0,0,0.4);
-  text-align: left;
 }
 
-.menu-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  color: #d9c17e;
-  margin-bottom: 14px;
-}
-
-.menu-card p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #ddd;
-  margin-bottom: 30px;
-}
-
-.menu-card .price {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  color: #d9c17e;
-  text-align: right;
-}
-
-
-/* -------------------------------------------
-   メニュー & 口コミ画像
-------------------------------------------- */
 .menu-img,
 .voice-img {
   width: 100%;
@@ -235,24 +273,22 @@ body.subpage {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 18px;
-  filter: brightness(0.9);
 }
 
 
 /* -------------------------------------------
-   Googleマップ
+   Google Map（世界地図を通常サイズに修正）
 ------------------------------------------- */
 .map-wrap {
   margin-top: 60px;
-  width: 100%;
 }
 
 .map-wrap iframe {
   width: 100%;
   height: 380px;
-  border: 1px solid #d9c17e55;
   border-radius: 14px;
-  filter: grayscale(40%) brightness(0.9);
+  border: 1px solid #d9c17e55;
+  filter: grayscale(35%) brightness(0.92);
 }
 
 
@@ -276,16 +312,14 @@ body.subpage {
 
 .footer-name {
   color: #d9c17e;
-  font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   margin-bottom: 12px;
-  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
 }
 
 .footer-copy {
   color: #bbb;
   font-size: 0.9rem;
-  letter-spacing: 0.5px;
 }
 
 .footer-sitemap {
@@ -298,65 +332,10 @@ body.subpage {
 
 .footer-sitemap a {
   color: #bbb;
-  text-decoration: none;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .footer-sitemap a:hover {
   color: #d9c17e;
-}
-
-
-/* -------------------------------------------
-   ページトップに戻るボタン
-------------------------------------------- */
-.back-to-top {
-  position: fixed;
-  bottom: 120px;
-  right: 35px;
-  width: 48px;
-  height: 48px;
-  background: rgba(217,193,126,0.85);
-  color: #000;
-  text-decoration: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 50;
-}
-
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-/* -------------------------------------------
-   下部固定の予約ボタン
-------------------------------------------- */
-.fixed-reserve-btn {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 14px 28px;
-  background: #d9c17e;
-  color: #000;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.15rem;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 0 18px rgba(0,0,0,0.4);
-  z-index: 49;
-  opacity: 0.92;
-}
-
-.fixed-reserve-btn:hover {
-  opacity: 1;
 }
