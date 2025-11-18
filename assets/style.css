@@ -1,4 +1,3 @@
-/* assets/style.css */
 /* ============================
    基本設定
 ============================ */
@@ -27,7 +26,7 @@ img {
 }
 
 /* ============================
-   大きな透過ロゴ（全ページ共通）
+   大きな透過ロゴ（サイズ最大化）
 ============================ */
 #global-logo-bg {
   position: fixed;
@@ -35,19 +34,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;          /* 最初は非表示 */
+  opacity: 0;
   pointer-events: none;
   z-index: 0;
   transition: opacity 1.8s ease;
 }
 
 #global-logo-bg img {
-  width: 42vw;
-  opacity: 0.18;
+  width: 78vw;     /* ← 今回の最大化ポイント（元42vw → 78vw） */
+  opacity: 0.18;   /* 濃さは現状維持 */
 }
 
 #global-logo-bg.fade-in {
-  opacity: 1;          /* JSでクラス付与後にフェードイン */
+  opacity: 1;
 }
 
 /* ============================
@@ -100,7 +99,7 @@ img {
 }
 
 /* ============================
-   opening リング（index専用）
+   opening リング（濃さ強化版）
 ============================ */
 #opening-ring {
   position: fixed;
