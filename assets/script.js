@@ -1,54 +1,35 @@
-// ナビ開閉
-document.querySelector('.nav-toggle')?.addEventListener('click', () => {
-  const nav = document.getElementById('nav');
-  nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-});
-
-// ローディング（トップページのみ）
-window.addEventListener('load', () => {
-  const circle = document.getElementById('loading-circle');
-  const logo = document.getElementById('loading-logo');
-
-  if (circle && logo) {// ▼ ナビ開閉
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("nav");
-
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      nav.style.display = nav.style.display === "block" ? "none" : "block";
-    });
-  }
-});
-
-// ▼ トップページ専用ローディング
+<script>
 window.addEventListener("load", () => {
-  const circle = document.getElementById("loading-circle");
-  const logo = document.getElementById("loading-logo");
 
-  if (circle && logo) {
-    setTimeout(() => {
-      circle.classList.add("hide");
-      logo.classList.add("show");
-    }, 600);
+  const ring   = document.getElementById("opening-ring");
+  const logo   = document.getElementById("opening-logo");
+  const nav    = document.querySelector(".global-nav");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
 
-    setTimeout(() => {
-      logo.classList.add("fadeout");
-    }, 1400);
+  /* 輪っか表示 */
+  ring.classList.add("show");
+  setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-    setTimeout(() => {
-      circle.remove();
-      logo.remove();
-    }, 2400);
-  }
+  /* ロゴ表示（中央で固定） */
+  setTimeout(()=> logo.classList.add("show"), 2600);
+
+  /* メニューバー & 予約ボタン表示 */
+  setTimeout(()=>{
+    nav.classList.add("show");
+    rsvBtn.classList.add("show");
+  }, 2600);
+
+  /* ★ ロゴ固定解除：ここが最重要（アニメ後はスクロールOK） */
+  setTimeout(()=>{
+    logo.classList.remove("locked");
+  }, 3600);
+
 });
 
-      circle.classList.add('hide');
-      logo.classList.add('show');
-    }, 600);
-
-    setTimeout(() => {
-      document.body.classList.add('loaded');
-    }, 1400);
+/* スクロールでお知らせ表示 */
+window.addEventListener("scroll", ()=>{
+  if(window.scrollY > 100){
+    document.getElementById("info-card").classList.add("show");
   }
 });
+</script>
