@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<!-- 全ページ共通：大きく薄い背景ロゴ -->
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="geneロゴ">
+</div>
+
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -18,14 +23,6 @@
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
 <div id="opening-ring"><div class="ring-blur"></div></div>
-
-<div id="logo-space"></div>
-
-<div id="opening-logo" class="locked">
-  <img src="assets/img/logo.svg" class="logo-big" alt="">
-  <h1>内面の調和が静かに整う</h1>
-  <p>自律神経整体サロン gene</p>
-</div>
 
 <div class="info-card" id="info-card">
   <h3>お知らせ</h3>
@@ -43,31 +40,21 @@
 window.addEventListener("load", () => {
 
   const ring   = document.getElementById("opening-ring");
-  const logo   = document.getElementById("opening-logo");
   const nav    = document.querySelector(".global-nav");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
 
-  /* 輪っか表示 */
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-  /* ロゴ表示（中央で固定） */
-  setTimeout(()=> logo.classList.add("show"), 2600);
-
-  /* メニューバー & 予約ボタン表示 */
   setTimeout(()=>{
     nav.classList.add("show");
     rsvBtn.classList.add("show");
+    bgLogo.classList.add("fade-in");
   }, 2600);
-
-  /* ★ ロゴ固定解除：ここが最重要（アニメ後はスクロールOK） */
-  setTimeout(()=>{
-    logo.classList.remove("locked");
-  }, 3600);
 
 });
 
-/* スクロールでお知らせ表示 */
 window.addEventListener("scroll", ()=>{
   if(window.scrollY > 100){
     document.getElementById("info-card").classList.add("show");
