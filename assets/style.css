@@ -159,11 +159,11 @@ img {
    予約ボタン（右固定）
 =============================== */
 
-/* 予約ボタン（右上固定位置調整済み） */
+/* 予約ボタン（右上固定・さらに右端へ寄せた最適位置） */
 .reserve-btn-sub {
   position: fixed;
-  top: 72px;       /* ← 重ならない最適な高さ */
-  right: 120px;
+  top: 72px;      /* メニューと重ならない最適位置 */
+  right: 40px;    /* ← もっと右端へ寄せた */
   width: 48px;
   height: 48px;
   background: #d9c17e;
@@ -180,8 +180,8 @@ img {
 
 @media (max-width: 480px) {
   .reserve-btn-sub {
-    top: 68px;      /* スマホもメニューと重ならない高さ */
-    right: 90px;
+    top: 68px;
+    right: 28px;    /* スマホはこの位置が一番きれい */
   }
 }
 
