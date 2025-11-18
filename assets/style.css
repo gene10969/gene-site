@@ -26,13 +26,13 @@ img {
   max-width: 900px;
   transform: translate(-50%, -50%);
   opacity: 0;
-  z-index: 1;
+  z-index: 40;              /* ← nav(50) より下、背景より上で確実に表示 */
   pointer-events: none;
 }
 
 #global-logo-bg img {
   width: 100%;
-  opacity: 0.12;  /* 薄さ */
+  opacity: 0.12;            /* あなたが選んだ薄さ A */
 }
 
 .fade-start { opacity: 0; }
@@ -48,9 +48,10 @@ img {
   display: flex;
   gap: 28px;
   opacity: 0;
-  z-index: 50;
+  z-index: 50;               /* 最前面 */
   transition: opacity 1.2s ease;
 }
+
 .global-nav.show { opacity: 1; }
 
 .global-nav a {
@@ -76,10 +77,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50;
+  z-index: 50;               /* nav と同階層 */
   opacity: 0;
   transition: opacity 1.2s ease;
 }
+
 .reserve-btn-sub.show { opacity: 1; }
 
 @media(max-width:480px){
@@ -103,6 +105,7 @@ img {
   transition: opacity 1.2s ease;
   z-index: 5;
 }
+
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
 
@@ -111,14 +114,15 @@ img {
   height: 260px;
   border-radius: 50%;
   border: 4px solid #d9c17e;
-  box-shadow: 0 0 35px rgba(217,193,126,0.55),
-              0 0 70px rgba(217,193,126,0.45),
-              0 0 110px rgba(217,193,126,0.3);
+  box-shadow:
+    0 0 35px rgba(217,193,126,0.55),
+    0 0 70px rgba(217,193,126,0.45),
+    0 0 110px rgba(217,193,126,0.3);
   animation: glowBlink 2.4s infinite ease-in-out;
 }
 
 /* ====================================
-   お知らせカード
+   index：お知らせカード
 ==================================== */
 .info-card {
   width: 85%;
@@ -139,7 +143,7 @@ img {
 }
 
 /* ====================================
-   サブページ
+   サブページ共通設定
 ==================================== */
 .subpage {
   padding-top: 160px;
@@ -154,7 +158,7 @@ img {
 }
 
 /* ====================================
-   カードレイアウト
+   カードレイアウト（menu / voice）
 ==================================== */
 .menu-container {
   width: 90%;
@@ -173,7 +177,7 @@ img {
 }
 
 /* ====================================
-   MAPカード
+   MAPカード（access）
 ==================================== */
 .map-card {
   width: 90%;
