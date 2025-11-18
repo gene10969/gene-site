@@ -16,13 +16,12 @@ img {
   display: block;
 }
 
-/* 金色 */
 :root {
   --gold: #d9c17e;
 }
 
 /* ============================
-   大背景ロゴ（共通）
+   大背景ロゴ
 ============================ */
 #global-logo-bg {
   position: fixed;
@@ -46,7 +45,7 @@ img {
 }
 
 /* ============================
-   ナビ
+   ナビ（位置は変更しない）
 ============================ */
 .global-nav {
   position: fixed;
@@ -72,7 +71,7 @@ img {
   opacity: 1;
 }
 
-/* 予約ボタン */
+/* 予約ボタン（位置変更なし）*/
 .reserve-btn-sub {
   position: fixed;
   right: 24px;
@@ -93,7 +92,7 @@ img {
 }
 
 /* ============================
-   開始リング
+   openingリング（完全復活）
 ============================ */
 #opening-ring {
   position: fixed;
@@ -132,7 +131,7 @@ img {
 }
 
 /* ============================
-   お知らせカード（上部に一瞬出ないように修正済）
+   お知らせカード（index専用）
 ============================ */
 .info-card {
   position: fixed;
@@ -151,21 +150,21 @@ img {
   transform: translate(-50%, 10px);
 }
 
+/* 他ページで左端に行ってしまう問題を修正 */
+body:not(.index) .info-card {
+  display: none !important;
+}
+
 .info-card.show {
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
-.info-card h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--gold);
-  margin-bottom: 8px;
-  font-size: 1.3rem;
-}
-
-.info-card p {
-  font-size: 1rem;
-  line-height: 1.6;
+/* ============================
+   ページスペース（以前の2000pxを削除）
+============================ */
+.page-space {
+  height: 900px; /* 必要最低限の余白に調整 */
 }
 
 /* ============================
