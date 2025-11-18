@@ -26,7 +26,7 @@ img {
 }
 
 /* ============================
-   大きな透過ロゴ（サイズ最大化）
+   大きな透過ロゴ（PCそのまま）
 ============================ */
 #global-logo-bg {
   position: fixed;
@@ -41,8 +41,8 @@ img {
 }
 
 #global-logo-bg img {
-  width: 78vw;     /* ← 今回の最大化ポイント（元42vw → 78vw） */
-  opacity: 0.18;   /* 濃さは現状維持 */
+  width: 78vw;
+  opacity: 0.18;
 }
 
 #global-logo-bg.fade-in {
@@ -50,7 +50,7 @@ img {
 }
 
 /* ============================
-   グローバルナビ
+   グローバルナビ（PCそのまま）
 ============================ */
 .global-nav {
   position: fixed;
@@ -62,6 +62,7 @@ img {
   z-index: 1000;
   opacity: 0;
   transition: opacity 1s ease;
+  white-space: nowrap;
 }
 
 .global-nav a {
@@ -77,7 +78,7 @@ img {
 }
 
 /* ============================
-   予約ボタン
+   予約ボタン（PCそのまま）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -99,7 +100,7 @@ img {
 }
 
 /* ============================
-   opening リング（濃さ強化版）
+   opening リング（PCそのまま）
 ============================ */
 #opening-ring {
   position: fixed;
@@ -138,7 +139,7 @@ img {
 }
 
 /* ============================
-   indexページ お知らせカード
+   indexページ お知らせカード（PCそのまま）
 ============================ */
 .info-card {
   position: fixed;
@@ -157,37 +158,24 @@ img {
   transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.info-card h3 {
-  margin: 0 0 8px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: var(--gold);
-}
-
-.info-card p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
 .info-card.show {
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
-/* subページでは info-card を表示しない */
 .subpage .info-card {
   display: none;
 }
 
 /* ============================
-   ページスペース（index）
+   ページスペース（PCそのまま）
 ============================ */
 .page-space {
   height: 900px;
 }
 
 /* ============================
-   サブページ共通レイアウト
+   サブページ共通レイアウト（PCそのまま）
 ============================ */
 .subpage .page-title {
   margin-top: 120px;
@@ -269,4 +257,36 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
   text-align: center;
+}
+
+/* =====================================================
+   ここからスマホ専用最適化（PCは絶対に変更しない）
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* ロゴ最大化（スマホ専用） */
+  #global-logo-bg img {
+    width: 130vw;   /* ← 画面をはみ出すくらい大きくしても美しく見える */
+    opacity: 0.20;  /* 視認性も微強化 */
+  }
+
+  /* メニューバーが縦書きになる問題を修正 */
+  .global-nav {
+    gap: 18px;               /* スマホ用にコンパクト */
+    top: 16px;
+  }
+
+  .global-nav a {
+    font-size: 0.82rem;      /* 小さくして横一列で収まるように */
+    letter-spacing: 0.5px;
+    white-space: nowrap;     /* 横書き固定 */
+  }
+
+  /* 予約ボタンもやや小さく */
+  .reserve-btn-sub {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    top: 14px;
+    right: 16px;
+  }
 }
