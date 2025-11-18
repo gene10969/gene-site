@@ -5,66 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>メニュー | 自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body class="subpage">
 
-<nav class="global-nav">
+<nav class="global-nav show">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank">予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub show" target="_blank">予約</a>
 
+<h1 class="page-title">メニュー</h1>
 
-<main class="menu-container">
+<div class="menu-container">
 
-  <h1 class="page-title">メニュー</h1>
-
-  <div class="menu-grid">
-
-    <div class="menu-card">
-      <img src="assets/img/menu01.jpg" class="menu-img">
-      <h2>自律神経整体（60分）</h2>
-      <p>呼吸・筋膜・神経を整え深層から調律します。</p>
-      <p>8,800円</p>
-    </div>
-
-    <div class="menu-card">
-      <img src="assets/img/menu02.jpg" class="menu-img">
-      <h2>深部リンパデトックス（70分）</h2>
-      <p>深層リンパを開放し疲労回復と自律神経を整えます。</p>
-      <p>9,900円</p>
-    </div>
-
-    <div class="menu-card">
-      <img src="assets/img/menu03.jpg" class="menu-img">
-      <h2>睡眠改善セッション（45分）</h2>
-      <p>入眠困難・浅い睡眠に特化した調整セッション。</p>
-      <p>6,600円</p>
-    </div>
-
+  <div class="menu-card">
+    <h2>整体</h2>
+    <p>身体の歪みを整え、自律神経を整調します。</p>
   </div>
 
-</main>
-
-<a href="#" class="back-to-top" id="backToTop">▲</a>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-name">自律神経整体サロン gene</p>
-    <p class="footer-copy">© gene. All Rights Reserved.</p>
+  <div class="menu-card">
+    <h2>メンタルケア</h2>
+    <p>ストレス・緊張を解放する特別施術。</p>
   </div>
-</footer>
 
-<script>
-  const bt = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) bt.classList.add("show");
-    else bt.classList.remove("show");
-  });
-</script>
+  <div class="menu-card">
+    <h2>体質改善</h2>
+    <p>睡眠・胃腸・冷えなど、内面から調整。</p>
+  </div>
+
+</div>
 
 </body>
 </html>
