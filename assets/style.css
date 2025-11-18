@@ -1,12 +1,13 @@
-/* ====================================
+/* ============================
    基本設定
-==================================== */
+============================ */
 html, body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #eee;
   font-family: 'Noto Serif JP', serif;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -15,205 +16,164 @@ img {
   display: block;
 }
 
-/* ====================================
-   背景ロゴ（全ページ共通）
-==================================== */
+/* 金色 */
+:root {
+  --gold: #d9c17e;
+}
+
+/* ============================
+   大背景ロゴ（共通）
+============================ */
 #global-logo-bg {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 65vw;
-  max-width: 900px;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  z-index: 40;              /* ← nav(50) より下、背景より上で確実に表示 */
   pointer-events: none;
+  z-index: -1;
+  transition: opacity 1.8s ease;
 }
 
-#global-logo-bg img {
-  width: 100%;
-  opacity: 0.12;            /* あなたが選んだ薄さ A */
+#global-logo-bg.fade-start img {
+  width: 40vw;
+  opacity: 0.06;
 }
 
-.fade-start { opacity: 0; }
-.fade-in { opacity: 1; transition: opacity 2.0s ease; }
+#global-logo-bg.fade-in {
+  opacity: 1;
+}
 
-/* ====================================
-   メニューバー
-==================================== */
+/* ============================
+   ナビ
+============================ */
 .global-nav {
   position: fixed;
-  top: 30px;
-  right: 40px;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 28px;
+  gap: 36px;
+  z-index: 1000;
   opacity: 0;
-  z-index: 50;               /* 最前面 */
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
 }
-
-.global-nav.show { opacity: 1; }
 
 .global-nav a {
-  color: #d9c17e;
+  color: var(--gold);
   font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
   text-decoration: none;
-  font-size: 1.15rem;
+  letter-spacing: 1px;
 }
 
-/* ====================================
-   予約ボタン
-==================================== */
+.global-nav.show {
+  opacity: 1;
+}
+
+/* 予約ボタン */
 .reserve-btn-sub {
   position: fixed;
-  top: 72px;
-  right: 40px;
-  width: 48px;
-  height: 48px;
-  background: #d9c17e;
+  right: 24px;
+  top: 20px;
+  background: var(--gold);
   color: #000;
-  border-radius: 50%;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;               /* nav と同階層 */
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 1000;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1s ease;
 }
 
-.reserve-btn-sub.show { opacity: 1; }
-
-@media(max-width:480px){
-  .reserve-btn-sub{
-    top: 68px;
-    right: 28px;
-  }
+.reserve-btn-sub.show {
+  opacity: 1;
 }
 
-/* ====================================
-   輪っか（index only）
-==================================== */
+/* ============================
+   開始リング
+============================ */
 #opening-ring {
   position: fixed;
   inset: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   opacity: 0;
+  z-index: 2000;
   pointer-events: none;
   transition: opacity 1.2s ease;
-  z-index: 5;
 }
 
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
+#opening-ring.show {
+  opacity: 1;
+}
+
+#opening-ring.fadeout {
+  opacity: 0;
+}
 
 .ring-blur {
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
+  border: 2px solid var(--gold);
   border-radius: 50%;
-  border: 4px solid #d9c17e;
-  box-shadow:
-    0 0 35px rgba(217,193,126,0.55),
-    0 0 70px rgba(217,193,126,0.45),
-    0 0 110px rgba(217,193,126,0.3);
-  animation: glowBlink 2.4s infinite ease-in-out;
+  filter: blur(5px);
+  opacity: 0.55;
+  animation: ringPulse 2.2s ease-out forwards;
 }
 
-/* ====================================
-   index：お知らせカード
-==================================== */
+@keyframes ringPulse {
+  0%   { transform: scale(0.3); opacity: 0.2; }
+  80%  { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+
+/* ============================
+   お知らせカード（上部に一瞬出ないように修正済）
+============================ */
 .info-card {
-  width: 85%;
-  max-width: 380px;
-  margin: 380px auto 40px;
-  padding: 20px 22px;
-  background: rgba(20,20,20,.85);
-  border: 1px solid #d9c17e55;
-  border-radius: 14px;
+  position: fixed;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-50%);
+  width: 86%;
+  max-width: 420px;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 20px;
   opacity: 0;
-  transform: translateY(-25px);
-  transition: 1.2s;
+  z-index: 900;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  transform: translate(-50%, 10px);
 }
 
 .info-card.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
-/* ====================================
-   サブページ共通設定
-==================================== */
-.subpage {
-  padding-top: 160px;
-}
-
-.page-title {
-  text-align: center;
+.info-card h3 {
   font-family: 'Playfair Display', serif;
-  color: #d9c17e;
-  font-size: 2rem;
-  margin-bottom: 60px;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
-/* ====================================
-   カードレイアウト（menu / voice）
-==================================== */
-.menu-container {
-  width: 90%;
-  max-width: 1080px;
-  margin: auto;
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.menu-card {
-  background: rgba(25,25,25,.8);
-  padding: 28px;
-  border-radius: 14px;
-  border: 1px solid #d9c17e55;
-}
-
-/* ====================================
-   MAPカード（access）
-==================================== */
-.map-card {
-  width: 90%;
-  max-width: 1080px;
-  margin: 60px auto;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  overflow: hidden;
-  position: relative;
-}
-
-.map-info {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: rgba(255,255,255,.85);
-  padding: 12px 18px;
-  border-radius: 12px;
-}
-
-.map-card iframe {
-  width: 100%;
-  height: 420px;
-  border: 0;
-}
-
-/* ====================================
-   フッター
-==================================== */
-footer {
-  margin-top: 80px;
-  padding: 40px 0;
-  text-align: center;
-  color: #d9c17e;
-  font-family: 'Playfair Display', serif;
+.info-card p {
   font-size: 1rem;
-  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* ============================
+   フッター
+============================ */
+footer {
+  padding: 60px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
 }
