@@ -22,7 +22,7 @@
 
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<!-- openingリング（修正済：確実に表示される） -->
+<!-- openingリング -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
@@ -33,7 +33,6 @@
   <p>◎ 新規のお客様のご予約を受付中です。</p>
 </div>
 
-<!-- 余計な高さ削除済み -->
 <div class="page-space"></div>
 
 <footer>
@@ -49,20 +48,32 @@ window.addEventListener("load", () => {
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
 
-  // リングを確実に表示 → フェードアウト
+  /* -------------------------
+     1. openingリング表示
+  ------------------------- */
   ring.classList.add("show");
-  setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-  // ナビ / 予約 / ロゴ 同時表示
+  /* -------------------------
+     2. openingリング消える
+  ------------------------- */
+  setTimeout(()=> {
+    ring.classList.add("fadeout");
+  }, 2200);
+
+  /* -------------------------
+     3. ロゴ・ナビ・予約ボタン 同時表示
+        （輪っかが消え始めた後）
+  ------------------------- */
   setTimeout(()=>{
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
-  }, 2600);
+  }, 2600);   // ← ここが “完全同期” を実現している部分
 
 });
 
-// お知らせカード（indexだけ機能）
+
+/* スクロールでお知らせカード表示 */
 window.addEventListener("scroll", ()=>{
   const card = document.getElementById("info-card");
   if(card && window.scrollY > 100){
