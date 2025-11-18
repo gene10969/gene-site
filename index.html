@@ -5,30 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ナビ（非表示で開始） -->
-<nav class="global-nav nav-hide">
+<!-- メニューバー -->
+<nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- 予約（非表示で開始） -->
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank">予約</a>
+<!-- 予約ボタン（メニューバーと同タイミング表示） -->
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
+<!-- 輪っか -->
+<div id="opening-ring">
+  <div class="ring-blur"></div>
+</div>
 
-<!-- opening -->
-<div id="opening-ring"><div class="ring-blur"></div></div>
+<!-- ロゴの通常位置確保 -->
+<div id="logo-space"></div>
 
+<!-- ロゴ（神域） -->
 <div id="opening-logo" class="locked">
-  <img src="assets/img/logo.svg" class="logo-big">
+  <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
 
+<!-- メイン -->
 <main class="main-content">
 
   <div class="info-card" id="info-card">
@@ -37,69 +46,35 @@
   </div>
 
   <div style="height:2000px;"></div>
-
 </main>
 
-<a href="#" class="back-to-top" id="backToTop">▲</a>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-name">自律神経整体サロン gene</p>
-    <p class="footer-copy">© gene. All Rights Reserved.</p>
-  </div>
-</footer>
-
 <script>
-  window.addEventListener("load", () => {
+window.addEventListener("load", () => {
 
-    const ring = document.getElementById("opening-ring");
-    const logo = document.getElementById("opening-logo");
-    const nav  = document.querySelector(".global-nav");
-    const rsv  = document.querySelector(".reserve-btn-sub");
+  const ring   = document.getElementById("opening-ring");
+  const logo   = document.getElementById("opening-logo");
+  const nav    = document.querySelector(".global-nav");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
 
-    /* 1. 輪っか表示 */
-    ring.classList.add("show");
+  ring.classList.add("show");
+  setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-    /* 2. 輪っか → フェードアウト */
-    setTimeout(() => {
-      ring.classList.add("fadeout");
-    }, 2200);
+  setTimeout(()=> logo.classList.add("show"), 2600);
 
-    /* 3. ロゴ表示 */
-    setTimeout(() => {
-      logo.classList.add("show");
-    }, 2600);
+  /* ▼ メニューバーと予約ボタンを同時表示 */
+  setTimeout(()=>{
+    nav.classList.add("show");
+    rsvBtn.classList.add("show");
+  }, 2600);
 
-    /* 4. ロゴ位置固定を解除して中央に配置する */
-    setTimeout(() => {
-      logo.classList.remove("locked");
-      logo.classList.add("final-pos");
-    }, 3600);
+  setTimeout(()=> logo.classList.remove("locked"), 3600);
+});
 
-    /* 5. 輪っかが完全に消えた後、メニュー＆予約フェードイン */
-    setTimeout(() => {
-      nav.classList.remove("nav-hide");
-      nav.classList.add("show");
-
-      rsv.classList.remove("reserve-hide");
-      rsv.classList.add("show");
-    }, 3800);
-
-  });
-
-  /* info 表示 */
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      document.getElementById("info-card").classList.add("show");
-    }
-  });
-
-  /* back to top */
-  const bt = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) bt.classList.add("show");
-    else bt.classList.remove("show");
-  });
+window.addEventListener("scroll", ()=>{
+  if(window.scrollY > 100){
+    document.getElementById("info-card").classList.add("show");
+  }
+});
 </script>
 
 </body>
