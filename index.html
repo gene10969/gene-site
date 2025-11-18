@@ -22,8 +22,12 @@
 
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<div id="opening-ring"><div class="ring-blur"></div></div>
+<!-- 開始リング -->
+<div id="opening-ring">
+  <div class="ring-blur"></div>
+</div>
 
+<!-- お知らせカード（スクロール後出現） -->
 <div class="info-card" id="info-card">
   <h3>お知らせ</h3>
   <p>◎ 新規のお客様のご予約を受付中です。</p>
@@ -44,9 +48,11 @@ window.addEventListener("load", () => {
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
 
+  // リング表示 → フェードアウト
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
+  // ナビ / 予約ボタン / 大背景ロゴを同時表示
   setTimeout(()=>{
     nav.classList.add("show");
     rsvBtn.classList.add("show");
@@ -55,6 +61,7 @@ window.addEventListener("load", () => {
 
 });
 
+// お知らせカード（スクロール100pxで出現）
 window.addEventListener("scroll", ()=>{
   if(window.scrollY > 100){
     document.getElementById("info-card").classList.add("show");
