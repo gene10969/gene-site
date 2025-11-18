@@ -23,9 +23,10 @@ img { max-width: 100%; display: block; }
   gap: 28px;
   opacity: 0;
   z-index: 40;
+  transition: opacity 1.2s ease;
 }
 
-.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
+.global-nav.show { opacity: 1; }
 
 .global-nav a {
   color: #d9c17e;
@@ -35,7 +36,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================
-   予約ボタン（右上固定）
+   予約ボタン
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -47,14 +48,13 @@ img { max-width: 100%; display: block; }
   color: #000;
   border-radius: 50%;
   font-weight: bold;
-  z-index: 40;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 40;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
-
 .reserve-btn-sub.show { opacity: 1; }
 
 @media(max-width:480px){
@@ -78,7 +78,6 @@ img { max-width: 100%; display: block; }
   transition: opacity 1.2s ease;
   z-index: 5;
 }
-
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
 
@@ -94,40 +93,39 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes glowBlink {
-  0%,100% { opacity:.4; transform:scale(.96); }
-  50% { opacity:1; transform:scale(1.05); }
+  0%,100% { opacity: .4; transform: scale(.96); }
+  50%     { opacity: 1;  transform: scale(1.05); }
 }
 
 /* ============================
-   ロゴ
+   ロゴ（1px も動かない固定）
 ============================ */
-#logo-space {
-  height: 360px; /* ← B指定：予約ボタンの少し下に自然配置される高さ */
-}
 
+/* ロゴのスペースは残す（スクロール用） */
+#logo-space { height: 360px; }
+
+/* ロゴ固定（表示開始位置から絶対に動かない） */
+#opening-logo,
 #opening-logo.locked {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: fixed;     /* ← スクロール後も絶対位置固定 */
+  top: 140px;          /* ← 予約ボタンの下、ゆったり距離（指定 B） */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   text-align: center;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 1.6s ease;
   pointer-events: none;
 }
 
-#opening-logo {
-  position: relative;
-  width: 100%;
-  padding-top: 40px;  /* 予約ボタンの下で自然に見える絶妙高さ */
-  padding-bottom: 40px;
-  opacity: 0;
-  text-align: center;
-  transition: opacity 1.6s ease;
-}
-
 #opening-logo.show { opacity: 1; }
+
+.logo-big {
+  width: 90vw;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
 
 /* ============================
    お知らせ
@@ -135,7 +133,7 @@ img { max-width: 100%; display: block; }
 .info-card {
   width: 85%;
   max-width: 380px;
-  margin: 0 auto 40px;
+  margin: 420px auto 40px; /* ← ロゴが固定のため位置を下へ */
   padding: 20px 22px;
   background: rgba(20,20,20,.85);
   border: 1px solid #d9c17e55;
@@ -144,14 +142,13 @@ img { max-width: 100%; display: block; }
   transform: translateY(-25px);
   transition: 1.2s;
 }
-
 .info-card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* ============================
-   サブページ共通
+   サブページ
 ============================ */
 .subpage { padding-top: 140px; }
 
@@ -164,7 +161,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================
-   カード
+   カードレイアウト
 ============================ */
 .menu-container {
   width: 90%;
@@ -183,7 +180,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================
-   Map（白カード）
+   MAPカード
 ============================ */
 .map-card {
   width: 90%;
@@ -209,4 +206,17 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 420px;
   border: 0;
+}
+
+/* ============================
+   フッター（A）
+============================ */
+footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  text-align: center;
+  color: #d9c17e;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  opacity: 0.8;
 }
