@@ -12,6 +12,7 @@ window.addEventListener("load", () => {
 
   /* ロゴ表示（中央で固定） */
   setTimeout(()=> logo.classList.add("show"), 2600);
+  setTimeout(()=> logo.classList.remove("locked"), 3600);
 
   /* メニューバー & 予約ボタン表示 */
   setTimeout(()=>{
