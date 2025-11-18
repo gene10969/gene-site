@@ -1,6 +1,6 @@
-/* ============================
+/* ====================================
    基本設定
-============================ */
+==================================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -10,11 +10,37 @@ html, body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-/* ============================
+/* ====================================
+   背景ロゴ（全ページ共通）
+==================================== */
+#global-logo-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 65vw;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#global-logo-bg img {
+  width: 100%;
+  opacity: 0.12;  /* 薄さ */
+}
+
+.fade-start { opacity: 0; }
+.fade-in { opacity: 1; transition: opacity 2.0s ease; }
+
+/* ====================================
    メニューバー
-============================ */
+==================================== */
 .global-nav {
   position: fixed;
   top: 30px;
@@ -22,10 +48,9 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 28px;
   opacity: 0;
-  z-index: 40;
+  z-index: 50;
   transition: opacity 1.2s ease;
 }
-
 .global-nav.show { opacity: 1; }
 
 .global-nav a {
@@ -35,9 +60,9 @@ img { max-width: 100%; display: block; }
   font-size: 1.15rem;
 }
 
-/* ============================
+/* ====================================
    予約ボタン
-============================ */
+==================================== */
 .reserve-btn-sub {
   position: fixed;
   top: 72px;
@@ -51,7 +76,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 40;
+  z-index: 50;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -64,9 +89,9 @@ img { max-width: 100%; display: block; }
   }
 }
 
-/* ============================
-   輪っか
-============================ */
+/* ====================================
+   輪っか（index only）
+==================================== */
 #opening-ring {
   position: fixed;
   inset: 0;
@@ -92,55 +117,13 @@ img { max-width: 100%; display: block; }
   animation: glowBlink 2.4s infinite ease-in-out;
 }
 
-@keyframes glowBlink {
-  0%,100% { opacity: .4; transform: scale(.96); }
-  50%     { opacity: 1;  transform: scale(1.05); }
-}
-
-/* ============================
-   ロゴ（1px も動かない固定）
-============================ */
-
-/* ロゴのスペースは残す（スクロール用） */
-#logo-space { height: 360px; }
-
-/* ロゴ固定（表示開始位置から絶対に動かない） */
-#opening-logo,
-#opening-logo.show { opacity: 1 !important; }
-
-/* アニメ中（固定・絶対に動かない） */
-#opening-logo.locked {
-  position: fixed;
-  top: 140px;        /* ← あなたが気に入っていた位置を維持 */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 1.6s ease;
-  pointer-events: none;
-}
-
-/* アニメ後（通常のページレイアウト） */
-#opening-logo {
-  position: relative;
-  width: 100%;
-  padding-top: 40px;     /* 固定解除後も自然に見える高さ */
-  padding-bottom: 40px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 1.6s ease;
-}
-
-
-/* ============================
-   お知らせ
-============================ */
+/* ====================================
+   お知らせカード
+==================================== */
 .info-card {
   width: 85%;
   max-width: 380px;
-  margin: 420px auto 40px; /* ← ロゴが固定のため位置を下へ */
+  margin: 380px auto 40px;
   padding: 20px 22px;
   background: rgba(20,20,20,.85);
   border: 1px solid #d9c17e55;
@@ -149,15 +132,18 @@ img { max-width: 100%; display: block; }
   transform: translateY(-25px);
   transition: 1.2s;
 }
+
 .info-card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ============================
+/* ====================================
    サブページ
-============================ */
-.subpage { padding-top: 140px; }
+==================================== */
+.subpage {
+  padding-top: 160px;
+}
 
 .page-title {
   text-align: center;
@@ -167,9 +153,9 @@ img { max-width: 100%; display: block; }
   margin-bottom: 60px;
 }
 
-/* ============================
+/* ====================================
    カードレイアウト
-============================ */
+==================================== */
 .menu-container {
   width: 90%;
   max-width: 1080px;
@@ -186,9 +172,9 @@ img { max-width: 100%; display: block; }
   border: 1px solid #d9c17e55;
 }
 
-/* ============================
+/* ====================================
    MAPカード
-============================ */
+==================================== */
 .map-card {
   width: 90%;
   max-width: 1080px;
@@ -215,9 +201,9 @@ img { max-width: 100%; display: block; }
   border: 0;
 }
 
-/* ============================
-   フッター（A）
-============================ */
+/* ====================================
+   フッター
+==================================== */
 footer {
   margin-top: 80px;
   padding: 40px 0;
