@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -13,14 +14,14 @@
   <img src="assets/img/logo.svg" alt="geneロゴ">
 </div>
 
-<nav class="global-nav hidden">
+<nav class="global-nav">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank">予約</a>
 
 <!-- openingリング -->
 <div id="opening-ring">
@@ -48,32 +49,24 @@ window.addEventListener("load", () => {
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
 
-  /* -------------------------
-     1. openingリング表示
-  ------------------------- */
+  // 1. openingリング表示
   ring.classList.add("show");
 
-  /* -------------------------
-     2. openingリング消える
-  ------------------------- */
+  // 2. openingリングをフェードアウト
   setTimeout(()=> {
     ring.classList.add("fadeout");
   }, 2200);
 
-  /* -------------------------
-     3. ロゴ・ナビ・予約ボタン 同時表示
-        （輪っかが消え始めた後）
-  ------------------------- */
+  // 3. リングの後でロゴ・ナビ・予約ボタンを同時フェードイン
   setTimeout(()=>{
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
-  }, 2600);   // ← ここが “完全同期” を実現している部分
+  }, 2600);
 
 });
 
-
-/* スクロールでお知らせカード表示 */
+// スクロールでお知らせカード表示
 window.addEventListener("scroll", ()=>{
   const card = document.getElementById("info-card");
   if(card && window.scrollY > 100){
