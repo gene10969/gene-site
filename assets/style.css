@@ -1,147 +1,125 @@
-/* ===============================
+/* ============================
    基本設定
-=============================== */
+============================ */
 html, body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #eee;
   font-family: 'Noto Serif JP', serif;
-  line-height: 1.8;
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
-/* ===============================
-   ナビ（全ページ共通）
-=============================== */
+/* ============================
+   メニューバー
+============================ */
 .global-nav {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 40px;
   display: flex;
-  gap: 20px;
-  z-index: 20;
-  opacity: 1;
-  font-size: 1.05rem;
+  gap: 28px;
+  opacity: 0;
+  z-index: 40;
+  transition: opacity 1.2s ease;
 }
+
+.global-nav.show { opacity: 1; }
 
 .global-nav a {
   color: #d9c17e;
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
+  font-size: 1.15rem;
 }
 
-.global-nav.nav-hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.global-nav.show {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-  pointer-events: auto;
-}
-
-/* ===============================
-   opening（輪っか）
-=============================== */
-
+/* ============================
+   輪っか
+============================ */
 #opening-ring {
   position: fixed;
   inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50;
   opacity: 0;
-  transition: opacity 0.8s ease;
   pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 5;
 }
 
-#opening-ring.show {
-  opacity: 1;
-}
-
-#opening-ring.fadeout {
-  opacity: 0;
-}
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
 
 .ring-blur {
   width: 260px;
   height: 260px;
   border-radius: 50%;
   border: 4px solid #d9c17e;
-  box-shadow: 0 0 35px rgba(217,193,126,0.6), 0 0 70px rgba(217,193,126,0.3);
+  box-shadow: 0 0 35px rgba(217,193,126,0.55),
+              0 0 70px rgba(217,193,126,0.45),
+              0 0 110px rgba(217,193,126,0.3);
+  animation: glowBlink 2.4s infinite ease-in-out;
 }
 
-/* ===============================
-   opening ロゴ
-=============================== */
-
-#opening-logo {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 30;
-  opacity: 0;
-  text-align: center;
+@keyframes glowBlink {
+  0%,100% { opacity: .4; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
-#opening-logo.show {
-  opacity: 1;
-  transition: opacity 1s ease;
-}
+/* ============================
+   ロゴ
+============================ */
+#logo-space { height: 300px; }
 
 #opening-logo.locked {
   position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
 }
 
-#opening-logo.final-pos {
+#opening-logo {
   position: relative;
-  margin-top: 100px;
-  opacity: 1;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 40px;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 1.6s ease;
 }
 
-#opening-logo img.logo-big {
-  width: 600px;
-  max-width: 85%;
+#opening-logo.show { opacity: 1; }
+
+.logo-big {
+  width: 90vw;
+  max-width: 1000px;
+  margin-bottom: 40px;
 }
 
-#opening-logo h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  color: #d9c17e;
-  margin-top: 20px;
-}
-
-#opening-logo p {
-  font-size: 1.15rem;
-  margin-top: 6px;
-  opacity: 0.95;
-}
-
-/* ===============================
-   お知らせ info-card
-=============================== */
-
+/* ============================
+   お知らせ
+============================ */
 .info-card {
   width: 85%;
-  max-width: 850px;
-  margin: 130px auto 0;
+  max-width: 380px;
+  margin: 0 auto 40px;
   padding: 20px 22px;
-  background: rgba(20,20,20,0.85);
+  background: rgba(20,20,20,.85);
+  border: 1px solid #d9c17e55;
   border-radius: 14px;
-  border: 1px solid rgba(217,193,126,0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 22px rgba(0,0,0,.4);
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease, transform 0.6s ease;
+  transform: translateY(-25px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .info-card.show {
@@ -149,21 +127,13 @@ img {
   transform: translateY(0);
 }
 
-.info-card h3 {
-  color: #d9c17e;
-  font-size: 1.3rem;
-  margin: 0 0 6px 0;
-}
-
-/* ===============================
-   予約ボタン（右固定）
-=============================== */
-
-/* 予約ボタン（右上固定・さらに右端へ寄せた最適位置） */
+/* ============================
+   予約ボタン（右上固定）
+============================ */
 .reserve-btn-sub {
   position: fixed;
-  top: 72px;      /* メニューと重ならない最適位置 */
-  right: 40px;    /* ← もっと右端へ寄せた */
+  top: 72px;
+  right: 40px;
   width: 48px;
   height: 48px;
   background: #d9c17e;
@@ -174,185 +144,93 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 1.2s ease;
 }
 
-@media (max-width: 480px) {
-  .reserve-btn-sub {
+.reserve-btn-sub.show { opacity: 1; }
+
+@media(max-width:480px){
+  .reserve-btn-sub{
     top: 68px;
-    right: 28px;    /* スマホはこの位置が一番きれい */
+    right: 28px;
   }
 }
 
-.reserve-btn-sub.reserve-hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.reserve-btn-sub.show {
-  opacity: 1;
-  transition: opacity 1.2s ease;
-  pointer-events: auto;
-}
-
-/* ===============================
-   ページタイトル
-=============================== */
+/* ============================
+   サブページ共通
+============================ */
+.subpage { padding-top: 140px; }
 
 .page-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
   color: #d9c17e;
   font-size: 2rem;
-  margin-top: 120px;
-  margin-bottom: 40px;
-}
-
-/* ===============================
-   カード（メニュー / アクセス用）
-=============================== */
-
-.menu-container,
-.access-container,
-.voice-container {
-  width: 90%;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
   margin-bottom: 60px;
 }
 
+.menu-container {
+  width: 90%;
+  max-width: 1080px;
+  margin: auto;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .menu-card {
-  background: rgba(20, 20, 20, 0.85);
+  background: rgba(25,25,25,.8);
+  padding: 28px;
   border-radius: 14px;
-  border: 1px solid rgba(217,193,126,0.55);
-  padding: 22px;
+  border: 1px solid #d9c17e55;
+  box-shadow: 0 0 14px rgba(0,0,0,.35);
 }
 
-.menu-card h3 {
-  color: #d9c17e;
+.menu-card h2 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
+  color: #d9c17e;
+  margin-bottom: 14px;
 }
 
-/* ===============================
-   Google Map
-=============================== */
-
-.map-wrap {
+/* ============================
+   Map（白カード・左上情報）
+============================ */
+.map-card {
   width: 90%;
   max-width: 1080px;
   margin: 60px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  position: relative;
+  overflow: hidden;
 }
 
-.map-wrap iframe {
-  width: 100%;
-  height: 420px;
-  border: 0;
-  border-radius: 14px;
-  filter: grayscale(35%) brightness(0.92);
-}
-
-/* ===============================
-   お客様の声（写真＋テキスト対応）
-=============================== */
-
-.voice-item {
-  background: rgba(20,20,20,0.85);
-  border-radius: 14px;
-  border: 1px solid rgba(217,193,126,0.55);
-  padding: 22px;
-  margin-bottom: 40px;
-}
-
-.voice-item-img {
-  width: 100%;
-  max-width: 260px;
+.map-info {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(255,255,255,.85);
+  padding: 12px 18px;
   border-radius: 12px;
-  margin-bottom: 10px;
+  font-size: .95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
 
-/* ===============================
-   トップへ戻る
-=============================== */
+.map-address { color:#000; margin-bottom:6px; }
 
-.back-to-top {
-  position: fixed;
-  right: 22px;
-  bottom: 40px;
-  background: rgba(0,0,0,0.7);
-  color: #d9c17e;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  text-decoration: none;
-  pointer-events: none;
-  z-index: 40;
+.map-route {
+  background:#d9c17e;
+  color:#000;
+  padding:6px 12px;
+  border-radius:8px;
+  font-weight:bold;
+  text-decoration:none;
 }
 
-.back-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.8s ease;
-}
-
-/* ===============================
-   フッター
-=============================== */
-
-.site-footer {
-  padding: 70px 0;
-  background: #000;
-  text-align: center;
-}
-
-.footer-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: #d9c17e;
-  margin-bottom: 10px;
-}
-
-.footer-copy {
-  color: #bbb;
-  font-size: 0.9rem;
-}
-
-/* ===============================
-   スマホ対応
-=============================== */
-@media (max-width: 480px) {
-
-  .global-nav {
-    gap: 12px;
-    font-size: 0.9rem;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reserve-btn-sub {
-    right: 16px;
-    bottom: 90px;
-  }
-
-  #opening-logo img.logo-big {
-    width: 88%;
-  }
-
-  .map-wrap iframe {
-    height: 300px;
-  }
+.map-card iframe {
+  width:100%;
+  height:420px;
+  border:0;
 }
