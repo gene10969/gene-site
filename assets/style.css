@@ -23,108 +23,15 @@ img { max-width: 100%; display: block; }
   gap: 28px;
   opacity: 0;
   z-index: 40;
-  transition: opacity 1.2s ease;
 }
 
-.global-nav.show { opacity: 1; }
+.global-nav.show { opacity: 1; transition: opacity 1.2s ease; }
 
 .global-nav a {
   color: #d9c17e;
   font-family: 'Playfair Display', serif;
   text-decoration: none;
   font-size: 1.15rem;
-}
-
-/* ============================
-   輪っか
-============================ */
-#opening-ring {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.2s ease;
-  z-index: 5;
-}
-
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
-
-.ring-blur {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  border: 4px solid #d9c17e;
-  box-shadow: 0 0 35px rgba(217,193,126,0.55),
-              0 0 70px rgba(217,193,126,0.45),
-              0 0 110px rgba(217,193,126,0.3);
-  animation: glowBlink 2.4s infinite ease-in-out;
-}
-
-@keyframes glowBlink {
-  0%,100% { opacity: .4; transform: scale(.96); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-/* ============================
-   ロゴ
-============================ */
-#logo-space { height: 300px; }
-
-#opening-logo.locked {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  z-index: 10;
-  pointer-events: none;
-}
-
-#opening-logo {
-  position: relative;
-  width: 100%;
-  padding-top: 120px;
-  padding-bottom: 40px;
-  opacity: 0;
-  text-align: center;
-  transition: opacity 1.6s ease;
-}
-
-#opening-logo.show { opacity: 1; }
-
-.logo-big {
-  width: 90vw;
-  max-width: 1000px;
-  margin-bottom: 40px;
-}
-
-/* ============================
-   お知らせ
-============================ */
-.info-card {
-  width: 85%;
-  max-width: 380px;
-  margin: 0 auto 40px;
-  padding: 20px 22px;
-  background: rgba(20,20,20,.85);
-  border: 1px solid #d9c17e55;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 22px rgba(0,0,0,.4);
-  opacity: 0;
-  transform: translateY(-25px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.info-card.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ============================
@@ -158,6 +65,92 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================
+   輪っか
+============================ */
+#opening-ring {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+  z-index: 5;
+}
+
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
+
+.ring-blur {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 4px solid #d9c17e;
+  box-shadow: 0 0 35px rgba(217,193,126,0.55),
+              0 0 70px rgba(217,193,126,0.45),
+              0 0 110px rgba(217,193,126,0.3);
+  animation: glowBlink 2.4s infinite ease-in-out;
+}
+
+@keyframes glowBlink {
+  0%,100% { opacity:.4; transform:scale(.96); }
+  50% { opacity:1; transform:scale(1.05); }
+}
+
+/* ============================
+   ロゴ
+============================ */
+#logo-space {
+  height: 360px; /* ← B指定：予約ボタンの少し下に自然配置される高さ */
+}
+
+#opening-logo.locked {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#opening-logo {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;  /* 予約ボタンの下で自然に見える絶妙高さ */
+  padding-bottom: 40px;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 1.6s ease;
+}
+
+#opening-logo.show { opacity: 1; }
+
+/* ============================
+   お知らせ
+============================ */
+.info-card {
+  width: 85%;
+  max-width: 380px;
+  margin: 0 auto 40px;
+  padding: 20px 22px;
+  background: rgba(20,20,20,.85);
+  border: 1px solid #d9c17e55;
+  border-radius: 14px;
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: 1.2s;
+}
+
+.info-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
    サブページ共通
 ============================ */
 .subpage { padding-top: 140px; }
@@ -170,6 +163,9 @@ img { max-width: 100%; display: block; }
   margin-bottom: 60px;
 }
 
+/* ============================
+   カード
+============================ */
 .menu-container {
   width: 90%;
   max-width: 1080px;
@@ -184,17 +180,10 @@ img { max-width: 100%; display: block; }
   padding: 28px;
   border-radius: 14px;
   border: 1px solid #d9c17e55;
-  box-shadow: 0 0 14px rgba(0,0,0,.35);
-}
-
-.menu-card h2 {
-  font-family: 'Playfair Display', serif;
-  color: #d9c17e;
-  margin-bottom: 14px;
 }
 
 /* ============================
-   Map（白カード・左上情報）
+   Map（白カード）
 ============================ */
 .map-card {
   width: 90%;
@@ -203,8 +192,8 @@ img { max-width: 100%; display: block; }
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .map-info {
@@ -214,23 +203,10 @@ img { max-width: 100%; display: block; }
   background: rgba(255,255,255,.85);
   padding: 12px 18px;
   border-radius: 12px;
-  font-size: .95rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-}
-
-.map-address { color:#000; margin-bottom:6px; }
-
-.map-route {
-  background:#d9c17e;
-  color:#000;
-  padding:6px 12px;
-  border-radius:8px;
-  font-weight:bold;
-  text-decoration:none;
 }
 
 .map-card iframe {
-  width:100%;
-  height:420px;
-  border:0;
+  width: 100%;
+  height: 420px;
+  border: 0;
 }
