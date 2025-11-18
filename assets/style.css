@@ -1,3 +1,4 @@
+/* assets/style.css */
 /* ============================
    基本設定
 ============================ */
@@ -26,7 +27,7 @@ img {
 }
 
 /* ============================
-   大きな透過ロゴ（濃く強化）
+   大きな透過ロゴ（全ページ共通）
 ============================ */
 #global-logo-bg {
   position: fixed;
@@ -34,7 +35,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+  opacity: 0;          /* 最初は非表示 */
   pointer-events: none;
   z-index: 0;
   transition: opacity 1.8s ease;
@@ -42,7 +43,11 @@ img {
 
 #global-logo-bg img {
   width: 42vw;
-  opacity: 0.18;   /* ← 元 0.06 → 3倍に強化して明確に見える */
+  opacity: 0.18;
+}
+
+#global-logo-bg.fade-in {
+  opacity: 1;          /* JSでクラス付与後にフェードイン */
 }
 
 /* ============================
@@ -95,7 +100,7 @@ img {
 }
 
 /* ============================
-   opening リング（濃さ強化）
+   opening リング（index専用）
 ============================ */
 #opening-ring {
   position: fixed;
@@ -121,9 +126,9 @@ img {
   width: 310px;
   height: 310px;
   border-radius: 50%;
-  border: 4px solid var(--gold); /* ← 太くして明確化 */
-  filter: blur(2px);             /* ← ぼかし減らして輪郭をはっきり */
-  opacity: 0.85;                 /* ← 元 0.55 → はっきり強化 */
+  border: 4px solid var(--gold);
+  filter: blur(2px);
+  opacity: 0.85;
   animation: ringPulse 2.2s ease-out forwards;
 }
 
@@ -170,12 +175,13 @@ img {
   transform: translate(-50%, 0);
 }
 
+/* subページでは info-card を表示しない */
 .subpage .info-card {
   display: none;
 }
 
 /* ============================
-   ページスペース
+   ページスペース（index）
 ============================ */
 .page-space {
   height: 900px;
