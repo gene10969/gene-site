@@ -106,9 +106,10 @@ img { max-width: 100%; display: block; }
 
 /* ロゴ固定（表示開始位置から絶対に動かない） */
 #opening-logo,
+/* アニメ中（固定・絶対に動かない） */
 #opening-logo.locked {
-  position: fixed;     /* ← スクロール後も絶対位置固定 */
-  top: 140px;          /* ← 予約ボタンの下、ゆったり距離（指定 B） */
+  position: fixed;
+  top: 140px;        /* ← あなたが気に入っていた位置を維持 */
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -119,13 +120,17 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-#opening-logo.show { opacity: 1; }
-
-.logo-big {
-  width: 90vw;
-  max-width: 1000px;
-  margin-bottom: 40px;
+/* アニメ後（通常のページレイアウト） */
+#opening-logo {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;     /* 固定解除後も自然に見える高さ */
+  padding-bottom: 40px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.6s ease;
 }
+
 
 /* ============================
    お知らせ
