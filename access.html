@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>アクセス | gene</title>
-<link rel="stylesheet" href="assets/style.css"></head>
+<link rel="stylesheet" href="assets/style.css">
+</head>
 <body class="subpage">
+
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="geneロゴ">
+</div>
 
 <nav class="global-nav show">
   <a href="index.html">Home</a>
@@ -51,6 +58,12 @@
   自律神経整体サロン gene<br>
   © gene. All Rights Reserved.
 </footer>
+
+<script>
+window.addEventListener("load", () => {
+  document.getElementById("global-logo-bg").classList.add("fade-in");
+});
+</script>
 
 </body>
 </html>
