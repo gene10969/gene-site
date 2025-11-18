@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- メニューバー -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -19,61 +15,48 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- 予約ボタン（navと同時表示） -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<!-- 輪っか -->
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
+<div id="opening-ring"><div class="ring-blur"></div></div>
 
-<!-- ロゴの通常位置確保（高さは後でCSSでコントロール） -->
 <div id="logo-space"></div>
 
-<!-- ロゴ（神域：アニメ開始時は中央固定） -->
 <div id="opening-logo" class="locked">
-  <img src="assets/img/logo.svg" class="logo-big" alt="geneロゴ">
+  <img src="assets/img/logo.svg" class="logo-big" alt="">
   <h1>内面の調和が静かに整う</h1>
   <p>自律神経整体サロン gene</p>
 </div>
 
-<main class="main-content">
+<div class="info-card" id="info-card">
+  <h3>お知らせ</h3>
+  <p>◎ 新規のお客様のご予約を受付中です。</p>
+</div>
 
-  <div class="info-card" id="info-card">
-    <h3>お知らせ</h3>
-    <p>◎ 新規のお客様のご予約を受付中です。</p>
-  </div>
+<div style="height:2000px;"></div>
 
-  <div style="height:2000px;"></div>
-
-</main>
+<footer>
+  自律神経整体サロン gene<br>
+  © gene. All Rights Reserved.
+</footer>
 
 <script>
 window.addEventListener("load", () => {
+  const ring = document.getElementById("opening-ring");
+  const logo = document.getElementById("opening-logo");
+  const nav  = document.querySelector(".global-nav");
+  const btn  = document.querySelector(".reserve-btn-sub");
 
-  const ring   = document.getElementById("opening-ring");
-  const logo   = document.getElementById("opening-logo");
-  const nav    = document.querySelector(".global-nav");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-
-  // 輪っか
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-  // ロゴ
   setTimeout(()=> logo.classList.add("show"), 2600);
 
-  // nav + 予約ボタン（同時）
   setTimeout(()=>{
     nav.classList.add("show");
-    rsvBtn.classList.add("show");
+    btn.classList.add("show");
   }, 2600);
-
-  // ロゴ固定解除
-  setTimeout(()=> logo.classList.remove("locked"), 3600);
 });
 
-// スクロール100pxでお知らせ出現
 window.addEventListener("scroll", ()=>{
   if(window.scrollY > 100){
     document.getElementById("info-card").classList.add("show");
