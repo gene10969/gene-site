@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,32 +8,49 @@
 </head>
 <body>
 
-<!-- 全ページ共通：大きく薄い背景ロゴ -->
+<!-- 背景ロゴ -->
 <div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="geneロゴ">
+  <img src="assets/img/logo.svg" alt="">
 </div>
 
-<nav class="global-nav">
+<!-- ナビ -->
+<nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub" target="_blank">予約</a>
+<!-- 予約ボタン -->
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
 <!-- openingリング -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
 
-<!-- indexページだけに表示するお知らせカード -->
-<div class="info-card index-only" id="info-card">
-  <h3>お知らせ</h3>
-  <p>◎ 新規のお客様のご予約を受付中です。</p>
-</div>
+<!-- index専用カード群 -->
+<div class="index-card-wrap">
 
-<div class="page-space"></div>
+  <!-- お知らせカード（既存） -->
+  <div class="info-card index-only fade-card">
+    <h3>お知らせ</h3>
+    <p>◎ 新規のお客様のご予約を受付中です。</p>
+  </div>
+
+  <!-- ★ 追加1：当院について -->
+  <div class="info-card fade-card">
+    <h3>当院について</h3>
+    <p>ここに自由に内容を編集できます。</p>
+  </div>
+
+  <!-- ★ 追加2：オーナー紹介 -->
+  <div class="info-card fade-card">
+    <h3>オーナー紹介</h3>
+    <p>ここに自由に内容を編集できます。</p>
+  </div>
+
+</div>
 
 <footer>
   自律神経整体サロン gene<br>
@@ -48,30 +64,20 @@ window.addEventListener("load", () => {
   const nav    = document.querySelector(".global-nav");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
+  const cards  = document.querySelectorAll(".fade-card");
 
-  // 1. openingリング表示
+  /* opening リング */
   ring.classList.add("show");
+  setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-  // 2. openingリングをフェードアウト
-  setTimeout(()=> {
-    ring.classList.add("fadeout");
-  }, 2200);
-
-  // 3. リングの後でロゴ・ナビ・予約ボタンを同時フェードイン
+  /* ロゴ + ナビ + 予約ボタン + カード群 */
   setTimeout(()=>{
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
+    cards.forEach(c => c.classList.add("show"));
   }, 2600);
 
-});
-
-// スクロールでお知らせカード表示
-window.addEventListener("scroll", ()=>{
-  const card = document.getElementById("info-card");
-  if(card && window.scrollY > 100){
-    card.classList.add("show");
-  }
 });
 </script>
 
