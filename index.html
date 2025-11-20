@@ -8,18 +8,23 @@
 </head>
 <body>
 
-<!-- ▼ 中央でゆっくり点滅する “神域の輪っか” -->
-<div id="center-ring">
+<!-- ▼ ロゴの大きな透過背景（以前の仕様に復元） -->
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="">
+</div>
+
+<!-- ▼ opening の輪っか（ロゴ前にフェードアウト） -->
+<div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
 
-<!-- ▼ ロゴ＋文章（同時出現） -->
+<!-- ▼ ロゴとキャッチコピー（中央） -->
 <div id="hero-logo" class="hidden">
   <img src="assets/img/logo.svg" class="logo-big" alt="">
   <h1 class="tagline">内面の調和が静かに整う</h1>
 </div>
 
-<!-- ▼ ナビ（現状維持） -->
+<!-- ▼ メニューバー（中央配置に復元） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -27,12 +32,11 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- ▼ 予約ボタン（現状維持） -->
+<!-- ▼ 予約ボタン -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<!-- ▼ カード2種（この後ふわっと出る） -->
+<!-- ▼ カード2枚 -->
 <div id="index-cards">
-
   <div class="info-card card-hidden">
     <h3>当院について</h3>
     <p>ここに自由に内容を編集できます。</p>
@@ -42,7 +46,6 @@
     <h3>オーナー紹介</h3>
     <p>ここに自由に内容を編集できます。</p>
   </div>
-
 </div>
 
 <footer>
@@ -53,27 +56,29 @@
 <script>
 window.addEventListener("load", () => {
 
-  const ring    = document.getElementById("center-ring");
+  const ring    = document.getElementById("opening-ring");
   const hero    = document.getElementById("hero-logo");
   const nav     = document.querySelector(".global-nav");
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const cards   = document.querySelectorAll(".card-hidden");
 
-  /* ① 輪っか：中央でフェードイン → 常時ゆらぎ点滅 */
+  /* ① 輪っか → ふわっと出る → ロゴの前にフェードアウト */
   ring.classList.add("show");
+  setTimeout(()=> ring.classList.add("fadeout"), 1400);  
+  setTimeout(()=> ring.style.display = "none", 2400);
 
-  /* ② ロゴ + タグライン + ナビ + 予約ボタン */
+  /* ② ロゴ、キャッチコピー、ナビ、予約ボタン → 同時出現（中央） */
   setTimeout(()=>{
-    hero.classList.remove("hidden");
     hero.classList.add("show");
     nav.classList.add("show");
     rsvBtn.classList.add("show");
-  }, 1800);
+    document.getElementById("global-logo-bg").classList.add("fade-in");
+  }, 2400);
 
-  /* ③ カード2枚ふわっと出現 */
+  /* ③ カード2枚 → 少し後にふわっと */
   setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
-  }, 2600);
+  }, 3200);
 
 });
 </script>
