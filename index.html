@@ -8,12 +8,18 @@
 </head>
 <body>
 
-<!-- 背景ロゴ -->
-<div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="">
+<!-- ▼ 中央でゆっくり点滅する “神域の輪っか” -->
+<div id="center-ring">
+  <div class="ring-blur"></div>
 </div>
 
-<!-- ナビ -->
+<!-- ▼ ロゴ＋文章（同時出現） -->
+<div id="hero-logo" class="hidden">
+  <img src="assets/img/logo.svg" class="logo-big" alt="">
+  <h1 class="tagline">内面の調和が静かに整う</h1>
+</div>
+
+<!-- ▼ ナビ（現状維持） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -21,31 +27,18 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
-<!-- 予約ボタン -->
+<!-- ▼ 予約ボタン（現状維持） -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<!-- openingリング -->
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
+<!-- ▼ カード2種（この後ふわっと出る） -->
+<div id="index-cards">
 
-<!-- index専用カード群 -->
-<div class="index-card-wrap">
-
-  <!-- お知らせカード（既存） -->
-  <div class="info-card index-only fade-card">
-    <h3>お知らせ</h3>
-    <p>◎ 新規のお客様のご予約を受付中です。</p>
-  </div>
-
-  <!-- ★ 追加1：当院について -->
-  <div class="info-card fade-card">
+  <div class="info-card card-hidden">
     <h3>当院について</h3>
     <p>ここに自由に内容を編集できます。</p>
   </div>
 
-  <!-- ★ 追加2：オーナー紹介 -->
-  <div class="info-card fade-card">
+  <div class="info-card card-hidden">
     <h3>オーナー紹介</h3>
     <p>ここに自由に内容を編集できます。</p>
   </div>
@@ -60,21 +53,25 @@
 <script>
 window.addEventListener("load", () => {
 
-  const ring   = document.getElementById("opening-ring");
-  const nav    = document.querySelector(".global-nav");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const bgLogo = document.getElementById("global-logo-bg");
-  const cards  = document.querySelectorAll(".fade-card");
+  const ring    = document.getElementById("center-ring");
+  const hero    = document.getElementById("hero-logo");
+  const nav     = document.querySelector(".global-nav");
+  const rsvBtn  = document.querySelector(".reserve-btn-sub");
+  const cards   = document.querySelectorAll(".card-hidden");
 
-  /* opening リング */
+  /* ① 輪っか：中央でフェードイン → 常時ゆらぎ点滅 */
   ring.classList.add("show");
-  setTimeout(()=> ring.classList.add("fadeout"), 2200);
 
-  /* ロゴ + ナビ + 予約ボタン + カード群 */
+  /* ② ロゴ + タグライン + ナビ + 予約ボタン */
   setTimeout(()=>{
+    hero.classList.remove("hidden");
+    hero.classList.add("show");
     nav.classList.add("show");
     rsvBtn.classList.add("show");
-    bgLogo.classList.add("fade-in");
+  }, 1800);
+
+  /* ③ カード2枚ふわっと出現 */
+  setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
   }, 2600);
 
