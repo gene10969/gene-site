@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- ▼ ロゴの大きな透過背景（以前の仕様に復元） -->
+<!-- ▼ 全ページ共通：大きな透過ロゴ（正しい仕様） -->
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
@@ -18,13 +18,12 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- ▼ ロゴとキャッチコピー（中央） -->
+<!-- ▼ hero-logo：重複ロゴを削除し、タグラインのみ残す -->
 <div id="hero-logo" class="hidden">
-  <img src="assets/img/logo.svg" class="logo-big" alt="">
   <h1 class="tagline">内面の調和が静かに整う</h1>
 </div>
 
-<!-- ▼ メニューバー（中央配置に復元） -->
+<!-- ▼ メニューバー（中央配置） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -61,21 +60,22 @@ window.addEventListener("load", () => {
   const nav     = document.querySelector(".global-nav");
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const cards   = document.querySelectorAll(".card-hidden");
+  const bgLogo  = document.getElementById("global-logo-bg");
 
   /* ① 輪っか → ふわっと出る → ロゴの前にフェードアウト */
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 1400);  
   setTimeout(()=> ring.style.display = "none", 2400);
 
-  /* ② ロゴ、キャッチコピー、ナビ、予約ボタン → 同時出現（中央） */
+  /* ② hero-logo（タグライン）＋ ナビ ＋ 予約ボタン ＋ 背景ロゴフェードイン */
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
     rsvBtn.classList.add("show");
-    document.getElementById("global-logo-bg").classList.add("fade-in");
+    bgLogo.classList.add("fade-in");
   }, 2400);
 
-  /* ③ カード2枚 → 少し後にふわっと */
+  /* ③ カード2枚 → ふわっと出現 */
   setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
   }, 3200);
