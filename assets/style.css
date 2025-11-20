@@ -64,13 +64,8 @@ h1, h2, h3 {
   z-index: 30;
 }
 
-#opening-ring.show {
-  opacity: 1;
-}
-
-#opening-ring.fadeout {
-  opacity: 0;
-}
+#opening-ring.show { opacity: 1; }
+#opening-ring.fadeout { opacity: 0; }
 
 #opening-ring .ring-blur {
   width: 100%;
@@ -117,11 +112,11 @@ h1, h2, h3 {
 
 
 /* ============================
-   メニューバー
+   メニューバー（ここだけ変更）
 ============================ */
 .global-nav {
   position: fixed;
-  top: 20px;
+  top: 32px;                  /* ← 変更：20px → 32px */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -131,9 +126,7 @@ h1, h2, h3 {
   z-index: 50;
 }
 
-.global-nav.show {
-  opacity: 1;
-}
+.global-nav.show { opacity: 1; }
 
 .global-nav a {
   color: #d9c17e;
@@ -142,7 +135,7 @@ h1, h2, h3 {
 
 
 /* ============================
-   予約ボタン
+   予約ボタン（右上）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -158,9 +151,7 @@ h1, h2, h3 {
   z-index: 50;
 }
 
-.reserve-btn-sub.show {
-  opacity: 1;
-}
+.reserve-btn-sub.show { opacity: 1; }
 
 
 /* ============================
@@ -214,7 +205,7 @@ h1, h2, h3 {
 
 
 /* ============================
-   MAPカード
+   MAPカード（access）
 ============================ */
 .map-card {
   width: 90%;
