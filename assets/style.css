@@ -11,7 +11,10 @@ html, body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
@@ -19,9 +22,8 @@ h1, h2, h3 {
   margin-bottom: 0.6em;
 }
 
-
 /* ============================
-   全ページ共通：大きな透過ロゴ（以前の仕様に完全復元）
+   全ページ共通：大きな透過ロゴ（復元・最重要箇所）
 ============================ */
 #global-logo-bg {
   position: fixed;
@@ -30,21 +32,20 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  z-index: -1;
+  z-index: 0;              /* ← 全ページで確実に見えるように復元 */
   pointer-events: none;
 }
 
 #global-logo-bg img {
-  width: 80%;
-  max-width: 650px;
-  opacity: 0.07;
+  width: 78vw;             /* 画面いっぱいに大きく表示 */
+  max-width: 720px;
+  opacity: 0.18;           /* しっかり分かる濃さで透過 */
 }
 
 #global-logo-bg.fade-in {
   opacity: 1;
   transition: opacity 2.2s ease;
 }
-
 
 /* ============================
    opening の輪っか（index専用）
@@ -61,8 +62,13 @@ h1, h2, h3 {
   z-index: 30;
 }
 
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
+#opening-ring.show {
+  opacity: 1;
+}
+
+#opening-ring.fadeout {
+  opacity: 0;
+}
 
 #opening-ring .ring-blur {
   width: 100%;
@@ -74,14 +80,13 @@ h1, h2, h3 {
 }
 
 @keyframes pulse {
-  0%   { transform: scale(1); opacity: 0.5; }
+  0%   { transform: scale(1);   opacity: 0.5; }
   50%  { transform: scale(1.18); opacity: 0.85; }
-  100% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1);   opacity: 0.5; }
 }
 
-
 /* ============================
-   index：ロゴ＆キャッチコピー（中央固定）
+   index：ロゴ＆キャッチコピー（中央）
 ============================ */
 #hero-logo {
   opacity: 0;
@@ -108,9 +113,8 @@ h1, h2, h3 {
   color: #d9c17e;
 }
 
-
 /* ============================
-   メニューバー（以前の中央配置に戻す）
+   メニューバー（中央配置）
 ============================ */
 .global-nav {
   position: fixed;
@@ -124,13 +128,14 @@ h1, h2, h3 {
   z-index: 50;
 }
 
-.global-nav.show { opacity: 1; }
+.global-nav.show {
+  opacity: 1;
+}
 
 .global-nav a {
   color: #d9c17e;
   text-decoration: none;
 }
-
 
 /* ============================
    予約ボタン（右上）
@@ -149,8 +154,9 @@ h1, h2, h3 {
   z-index: 50;
 }
 
-.reserve-btn-sub.show { opacity: 1; }
-
+.reserve-btn-sub.show {
+  opacity: 1;
+}
 
 /* ============================
    index：カード2枚（縦に表示）
@@ -179,9 +185,8 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-
 /* ============================
-   サブページ：カード（以前の表示状態に完全復元）
+   サブページ：カード（以前の表示状態に復元）
 ============================ */
 .menu-container {
   width: 90%;
@@ -198,10 +203,9 @@ h1, h2, h3 {
   padding: 22px;
   border-radius: 12px;
   backdrop-filter: blur(5px);
-  opacity: 1;       /* ← 表示されない問題を解消 */
-  transform: none;  /* ← 上書きアニメの干渉を排除 */
+  opacity: 1;
+  transform: none;
 }
-
 
 /* ============================
    MAP カード（access）
@@ -230,7 +234,6 @@ h1, h2, h3 {
   border-bottom: 1px solid #d9c17e;
 }
 
-
 /* ============================
    フッター
 ============================ */
@@ -240,20 +243,26 @@ footer {
   color: #d9c17e99;
 }
 
-
 /* ============================
    スマホ調整
 ============================ */
 @media (max-width: 480px) {
 
-  .global-nav { gap: 10px; font-size: 0.8rem; }
+  .global-nav {
+    gap: 10px;
+    font-size: 0.8rem;
+  }
 
   .reserve-btn-sub {
     font-size: 0.8rem;
     padding: 5px 12px;
   }
 
-  .logo-big { width: 220px; }
+  .logo-big {
+    width: 220px;
+  }
 
-  .tagline { font-size: 1.05rem; }
+  .tagline {
+    font-size: 1.05rem;
+  }
 }
