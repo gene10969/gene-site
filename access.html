@@ -8,10 +8,12 @@
 </head>
 <body class="subpage">
 
+<!-- 透過ロゴ -->
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
 
+<!-- ナビ -->
 <nav class="global-nav show">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -19,6 +21,7 @@
   <a href="voice.html">お客様の声</a>
 </nav>
 
+<!-- 予約 -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub show" target="_blank">予約</a>
 
 <h1 class="page-title">アクセス</h1>
@@ -42,20 +45,23 @@
 
 </div>
 
+<!-- MAPカード -->
 <div class="map-card">
 
   <div class="map-info">
     <div>大阪市中央区南船場1-10-12</div>
-    <a class="map-route" href="https://www.google.com/maps/dir/?api=1&destination=大阪市中央区南船場1-10-12" target="_blank">経路案内</a>
+    <a class="map-route" 
+       href="https://www.google.com/maps/dir/?api=1&destination=大阪市中央区南船場1-10-12" 
+       target="_blank">経路案内</a>
   </div>
 
-  <!-- 建物名「ラインビルド南船場」が表示される正式版 -->
-  <iframe
-    src="https://www.google.com/maps?q=大阪市中央区南船場1-10-12 ラインビルド南船場&z=17&output=embed"
-    style="width:100%; height:260px; border:0;"
-    allowfullscreen
-    loading="lazy">
-  </iframe>
+  <!-- 画像版マップ（赤ピン × ズーム17） -->
+  <a href="https://maps.google.com/?q=大阪市中央区南船場1-10-12+ラインビルド南船場" target="_blank">
+    <img 
+      src="https://maps.googleapis.com/maps/api/staticmap?center=34.675460209979704,135.50822341079444&zoom=17&size=600x400&markers=color:red%7C34.675460209979704,135.50822341079444&scale=2"
+      alt="地図（ラインビルド南船場）"
+      style="width:100%; border-radius:12px; display:block;">
+  </a>
 
 </div>
 
