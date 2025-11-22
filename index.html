@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大阪 自律神経専門整体院 gene</title>
+  <title>自律神経整体サロン gene</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<!-- ▼ 全ページ共通：大きな透過ロゴ（正しい仕様） -->
+<!-- ▼ 全ページ共通：大きな透過ロゴ -->
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
 
-<!-- ▼ opening の輪っか（ロゴ前にフェードアウト） -->
+<!-- ▼ opening の輪っか -->
 <div id="opening-ring">
   <div class="ring-blur"></div>
 </div>
 
-<!-- ▼ hero-logo：重複ロゴを削除し、タグラインのみ残す -->
+<!-- ▼ タグラインのみ -->
 <div id="hero-logo" class="hidden">
   <h1 class="tagline">内面の調和が静かに整う</h1>
 </div>
 
-<!-- ▼ メニューバー（中央配置） -->
+<!-- ▼ ナビ（中央） -->
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
@@ -34,12 +34,13 @@
 <!-- ▼ 予約ボタン -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<!-- ▼ カード2枚 -->
+<!-- ▼ INDEX カード2枚（カード1枚目に文章反映） -->
 <div id="index-cards">
   <div class="info-card card-hidden">
-    <h3>初めての方へ</h3>
-    <p>はじめまして。
-大阪 自律神経専門整体院 gene（ジーン） の高田裕基と申します。
+    <h3>当院について</h3>
+    <p style="white-space: pre-line;">
+はじめまして。
+大阪 自律神経専門整体院 gene（ジーン）の高田裕基と申します。
 
 私は国家資格である柔道整復師として、関東・大阪に複数店舗を展開する整骨院グループに8年間在籍し、院長として新人教育・技術指導・院の運営に携わってきました。
 その中で、アトピー性皮膚炎・めまい・耳鳴り・パニック障害など、自律神経の乱れから生じるさまざまな症状で悩まれている多くの患者さまを担当してきました。
@@ -60,24 +61,27 @@
 現在は治療の成果もあり薬に頼らず安定した状態を保っていますが、姉の子ども2人もアトピー体質で悩んでおり、現在も治療を続けています。
 
 アトピーや自律神経の症状には、生活習慣だけでなく遺伝的要素も大きく関わります。
-だからこそ大阪 自律神経専門整体院 gene では、
-「本質＝gene」 を理解し、
-「遺伝子＝gene」レベルで体質を整え、
-「根本＝gene」から再発しない身体へ導く
-唯一の整体院を目指しています。
+だからこそ大阪 自律神経専門整体院 geneでは、
+
+<span style="color:#d9c17e; font-size:1.15em;">「本質＝gene」</span>
+<span style="color:#d9c17e; font-size:1.15em;">「遺伝子＝gene」</span>
+<span style="color:#d9c17e; font-size:1.15em;">「根本＝gene」</span>
+
+を理解し、体質を整え、再発しない身体へ導く唯一の整体院を目指しています。
 
 本気で体質を変えたい方、これ以上同じ悩みを繰り返したくない方は、ぜひ一度ご相談ください。
-あなたの未来が変わるきっかけになることをお約束します。</p>
+あなたの未来が変わるきっかけになることをお約束します。
+    </p>
   </div>
 
   <div class="info-card card-hidden">
-    <h3>お知らせ</h3>
-    <p>12月3日オープン</p>
+    <h3>オーナー紹介</h3>
+    <p>自由に内容を編集できます。</p>
   </div>
 </div>
 
 <footer>
-  大阪 自律神経専門整体院 gene<br>
+  自律神経整体サロン gene<br>
   © gene. All Rights Reserved.
 </footer>
 
@@ -91,12 +95,10 @@ window.addEventListener("load", () => {
   const cards   = document.querySelectorAll(".card-hidden");
   const bgLogo  = document.getElementById("global-logo-bg");
 
-  /* ① 輪っか → ふわっと出る → ロゴの前にフェードアウト */
   ring.classList.add("show");
-  setTimeout(()=> ring.classList.add("fadeout"), 1400);  
+  setTimeout(()=> ring.classList.add("fadeout"), 1400);
   setTimeout(()=> ring.style.display = "none", 2400);
 
-  /* ② hero-logo（タグライン）＋ ナビ ＋ 予約ボタン ＋ 背景ロゴフェードイン */
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
@@ -104,7 +106,6 @@ window.addEventListener("load", () => {
     bgLogo.classList.add("fade-in");
   }, 2400);
 
-  /* ③ カード2枚 → ふわっと出現 */
   setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
   }, 3200);
