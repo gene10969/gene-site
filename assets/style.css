@@ -22,6 +22,7 @@ h1, h2, h3 {
   margin-bottom: 0.6em;
 }
 
+
 /* ============================
    全ページ共通：大きな透過ロゴ
 ============================ */
@@ -46,6 +47,7 @@ h1, h2, h3 {
   opacity: 1;
   transition: opacity 2.2s ease;
 }
+
 
 /* ============================
    opening の輪っか
@@ -84,15 +86,16 @@ h1, h2, h3 {
   100% { transform: scale(1); opacity: 0.5; }
 }
 
+
 /* ============================
-   index：ロゴ＆キャッチコピー
+   index：新キャッチコピー
 ============================ */
 #hero-logo {
   opacity: 0;
   transform: translateY(20px);
   text-align: center;
   position: relative;
-  margin-top: 220px;
+  margin-top: 180px;
   transition: all 1.6s ease;
 }
 
@@ -101,14 +104,28 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-.tagline {
-  margin-top: 4px;
-  font-size: 1.35rem;
+/* 大見出し（ゴールド・大きめ） */
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
   color: #d9c17e;
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
 }
 
+/* サブキャッチ */
+.sub-catch {
+  text-align: center;
+  font-size: 1.08rem;
+  color: #eee;
+  line-height: 1.9;
+  opacity: 0.95;
+}
+
+
 /* ============================
-   ページタイトル
+   ページタイトル（サブページ）
 ============================ */
 .page-title {
   text-align: center;
@@ -118,8 +135,9 @@ h1, h2, h3 {
   color: #d9c17e;
 }
 
+
 /* ============================
-   メニューバー（PC）
+   メニューバー
 ============================ */
 .global-nav {
   position: fixed;
@@ -138,7 +156,9 @@ h1, h2, h3 {
 .global-nav a {
   color: #d9c17e;
   text-decoration: none;
+  white-space: nowrap;
 }
+
 
 /* ============================
    予約ボタン
@@ -159,8 +179,9 @@ h1, h2, h3 {
 
 .reserve-btn-sub.show { opacity: 1; }
 
+
 /* ============================
-   index：カード
+   INDEX：カード
 ============================ */
 #index-cards {
   width: 90%;
@@ -186,6 +207,7 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
+
 /* ============================
    サブページ：カード
 ============================ */
@@ -203,12 +225,12 @@ h1, h2, h3 {
   border: 1px solid #d9c17e55;
   padding: 22px;
   border-radius: 12px;
-  backdrop-filter: blur(5px);
   opacity: 1;
 }
 
+
 /* ============================
-   MAPカード
+   MAP / access
 ============================ */
 .map-card {
   width: 90%;
@@ -218,21 +240,8 @@ h1, h2, h3 {
   border: 1px solid #d9c17e55;
   padding: 18px;
   border-radius: 12px;
-  opacity: 1;
 }
 
-.map-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
-  color: #d9c17e;
-}
-
-.map-route {
-  color: #d9c17e;
-  text-decoration: none;
-  border-bottom: 1px solid #d9c17e;
-}
 
 /* ============================
    フッター
@@ -243,15 +252,16 @@ footer {
   color: #d9c17e99;
 }
 
+
 /* ============================
-   スマホ調整（ここだけ変更）
+   スマホ調整
 ============================ */
 @media (max-width: 480px) {
 
   .global-nav {
-    font-size: 0.78rem;   /* ← 少しだけ縮小（改行防止） */
-    gap: 8px;             /* ← 項目間を少し詰める */
-    white-space: nowrap;  /* ← 1行で固定 */
+    font-size: 0.78rem;
+    gap: 8px;
+    white-space: nowrap;
   }
 
   .reserve-btn-sub {
@@ -259,69 +269,13 @@ footer {
     padding: 5px 12px;
   }
 
-  .tagline {
-    font-size: 1.15rem;
+  .main-title {
+    font-size: 1.7rem;
   }
-   
-   .hero-title {
-  text-align: center;
-  margin-top: 1.4rem;
-  opacity: 0;
-  animation: fadeIn 1.8s ease forwards;
-}
 
-.hero-title h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.3rem;
-  color: #d9c17e;
-  letter-spacing: 0.05em;
-}
-
-.top-copy {
-  text-align: center;
-  color: #d9c17e;
-  margin-top: 1.6rem;
-  line-height: 1.9;
-  opacity: 0;
-  animation: fadeIn 2.6s ease forwards;
-}
-
-.top-copy h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
-  margin-bottom: 0.5rem;
-}
-
-.top-copy p { font-size: 1.05rem; color: #eee; }
-.top-copy .sub { font-size: 0.92rem; margin-top: 0.7rem; }
-
-.news-area {
-  width: 92%;
-  margin: 2.6rem auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.news-card {
-  border: 1px solid #d9c17e;
-  padding: 1.2rem;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-  text-align: left;
-}
-
-.news-card h3 { color: #d9c17e; margin-bottom: 0.7rem; }
-.news-card p { font-size: 0.98rem; }
-
-@media (max-width: 768px) {
-  .hero-title h1 { font-size: 1.7rem; }
-  .top-copy h2 { font-size: 1.4rem; }
-  .top-copy p { font-size: 0.95rem; }
-  .top-copy .sub { font-size: 0.88rem; }
-  .news-area { margin-top: 2rem; }
-}
-
+  .sub-catch {
+    font-size: 0.95rem;
+  }
 
   .page-title {
     margin-top: 150px;
