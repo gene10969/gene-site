@@ -278,6 +278,25 @@ footer {
   .menu-container {
     margin: 40px auto 50px auto; /* ← ここも変更 */
   }
+   /* 既存の全コードそのまま */
+
+/* オープン記念価格フェードアニメ */
+.fade-price {
+  opacity: 0;
+  color: #d9c17e;
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: opacity 1.8s ease, transform 1.8s ease;
+  transform: translateY(6px);
+}
+
+.fade-price.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 既存のレスポンシブ、他すべて完全維持 */
+
 
   .page-title {
     margin-top: 150px;
