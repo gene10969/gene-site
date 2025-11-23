@@ -262,6 +262,66 @@ footer {
   .tagline {
     font-size: 1.15rem;
   }
+   
+   .hero-title {
+  text-align: center;
+  margin-top: 1.4rem;
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+.hero-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #d9c17e;
+  letter-spacing: 0.05em;
+}
+
+.top-copy {
+  text-align: center;
+  color: #d9c17e;
+  margin-top: 1.6rem;
+  line-height: 1.9;
+  opacity: 0;
+  animation: fadeIn 2.6s ease forwards;
+}
+
+.top-copy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.top-copy p { font-size: 1.05rem; color: #eee; }
+.top-copy .sub { font-size: 0.92rem; margin-top: 0.7rem; }
+
+.news-area {
+  width: 92%;
+  margin: 2.6rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.news-card {
+  border: 1px solid #d9c17e;
+  padding: 1.2rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  text-align: left;
+}
+
+.news-card h3 { color: #d9c17e; margin-bottom: 0.7rem; }
+.news-card p { font-size: 0.98rem; }
+
+@media (max-width: 768px) {
+  .hero-title h1 { font-size: 1.7rem; }
+  .top-copy h2 { font-size: 1.4rem; }
+  .top-copy p { font-size: 0.95rem; }
+  .top-copy .sub { font-size: 0.88rem; }
+  .news-area { margin-top: 2rem; }
+}
+
 
   .page-title {
     margin-top: 150px;
