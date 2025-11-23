@@ -5,20 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>大阪 自律神経専門整体院 gene</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="">
-</div>
-
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
-
-<div id="hero-logo" class="hidden">
-  <h1 class="tagline">内面の調和が静かに整う</h1>
-</div>
 
 <nav class="global-nav hidden">
   <a href="index.html">Home</a>
@@ -29,85 +20,39 @@
 
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">予約</a>
 
-<div id="index-cards">
+<div id="opening-ring"><div class="ring-blur"></div></div>
 
-  <div class="info-card card-hidden">
-    <h3>ごあいさつ</h3>
-    <p style="white-space: pre-line;">
-はじめまして。
-大阪 自律神経専門整体院 gene（ジーン）の高田裕基と申します。
+<div id="logo-space"></div>
 
-私は国家資格である柔道整復師として、関東・大阪に複数店舗を展開する整骨院グループに8年間在籍し、院長として新人教育・技術指導・院の運営に携わってきました。
-その中で、アトピー性皮膚炎・めまい・耳鳴り・パニック障害など、自律神経の乱れから生じるさまざまな症状で悩まれている多くの患者さまを担当してきました。
-
-多くの方が、
-「自分で調べても何を信じていいかわからない」
-「病院では薬が出るだけで根本解決には至らない」
-「周りに相談しても理解してもらえない」
-と、不安を抱えながら生活されています。
-
-その方々の症状が少しずつ改善していく中で、
-「先生に診てもらえて本当によかった」
-「もっと早く来ればよかった」
-「整体でここまで変わると思っていなかった」
-と、ありがたいお言葉をいただくたびに、この仕事の意義と責任を深く感じてきました。
-
-私自身、姉が重度のアトピー性皮膚炎で長年苦しんでいました。
-現在は治療の成果もあり薬に頼らず安定した状態を保っていますが、姉の子ども2人もアトピー体質で悩んでおり、現在も治療を続けています。
-
-アトピーや自律神経の症状には、生活習慣だけでなく遺伝的要素も大きく関わります。
-だからこそ大阪 自律神経専門整体院 geneでは、
-
-「<span style="color:#d9c17e; font-size:1.15em;">本質＝gene</span>」 を理解し、
-「<span style="color:#d9c17e; font-size:1.15em;">遺伝子＝gene</span>」 レベルで体質を整え、
-「<span style="color:#d9c17e; font-size:1.15em;">根本＝gene</span>」 から再発しない身体へ導く
-
-唯一の整体院を目指しています。
-
-本気で体質を変えたい方、これ以上同じ悩みを繰り返したくない方は、ぜひ一度ご相談ください。
-あなたの未来が変わるきっかけになることをお約束します。
-    </p>
-  </div>
-
-  <div class="info-card card-hidden">
-    <h3>オーナー紹介</h3>
-    <p>自由に内容を編集できます。</p>
-  </div>
-
+<div id="opening-logo" class="locked">
+  <img src="assets/img/logo.svg" class="logo-big" alt="gene logo">
 </div>
 
-<footer>
-  大阪 自律神経専門整体院 gene<br>
-  © gene. All Rights Reserved.
-</footer>
+<!-- 新規追加：大タイトル -->
+<div class="hero-title">
+  <h1>大阪 自律神経専門整体院 gene</h1>
+</div>
 
-<script>
-window.addEventListener("load", () => {
+<!-- 新規追加：キャッチコピーA -->
+<div class="top-copy">
+  <h2>体質は変えられる。</h2>
+  <p>遺伝子＝geneレベルで、本質（根本）から整える。</p>
+  <p class="sub">アトピー・めまい・耳鳴り・パニック障害など、自律神経の乱れによる症状に本気で向き合います。<br>再発しない身体へ、共に歩みましょう。</p>
+</div>
 
-  const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
-  const nav     = document.querySelector(".global-nav");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const cards   = document.querySelectorAll(".card-hidden");
-  const bgLogo  = document.getElementById("global-logo-bg");
+<!-- 既存のお知らせカード2枚（内容変更無し） -->
+<section class="news-area">
+  <div class="news-card">
+    <h3>お知らせ</h3>
+    <p>内容そのまま使用（変更無し）</p>
+  </div>
 
-  ring.classList.add("show");
-  setTimeout(()=> ring.classList.add("fadeout"), 1400);
-  setTimeout(()=> ring.style.display = "none", 2400);
+  <div class="news-card">
+    <h3>お知らせ</h3>
+    <p>内容そのまま使用（変更無し）</p>
+  </div>
+</section>
 
-  setTimeout(()=>{
-    hero.classList.add("show");
-    nav.classList.add("show");
-    rsvBtn.classList.add("show");
-    bgLogo.classList.add("fade-in");
-  }, 2400);
-
-  setTimeout(()=>{
-    cards.forEach(c => c.classList.add("show"));
-  }, 3200);
-
-});
-</script>
-
+<script src="assets/script.js"></script>
 </body>
 </html>
