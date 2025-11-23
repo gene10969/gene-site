@@ -227,3 +227,25 @@ footer {
   margin: 20px auto 80px auto;
   padding: 14px;
 }
+
+.map-button-wrap {
+  width: 90%;
+  max-width: 760px;
+  margin: 10px auto 16px auto;
+  text-align: center;
+}
+
+.map-open-btn {
+  display: inline-block;
+  background: #d9c17e;
+  color: #000;
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.map-open-btn:hover {
+  opacity: 0.75;
+}
