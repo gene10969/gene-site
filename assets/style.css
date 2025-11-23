@@ -218,4 +218,12 @@ footer {
     margin-bottom: 28px;
     font-size: 1.6rem;
   }
+   
+}
+/* MAPカードのサイズ調整 */
+.small-map {
+  width: 90%;
+  max-width: 620px;
+  margin: 20px auto 80px auto;
+  padding: 14px;
 }
