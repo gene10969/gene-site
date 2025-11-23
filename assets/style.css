@@ -19,17 +19,32 @@ h1, h2, h3 {
   margin-bottom: 0.6em;
 }
 
+/* ============================
+   INDEX：メインロゴ位置（復元）
+============================ */
+#hero-logo {
+  opacity: 0;
+  transform: translateY(20px);
+  text-align: center;
+  position: relative;
+  margin-top: 180px; /* 元の値 */
+  transition: all 1.6s ease;
+}
+
+#hero-logo.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ============================
-   ページタイトル (復元)
+   ページタイトル (サブページのみ)
 ============================ */
-.page-title {
+.subpage .page-title {
   text-align: center;
   margin-top: 140px;
   margin-bottom: 40px;
   font-size: 2.0rem;
 }
-
 
 /* ============================
    大背景ロゴ
@@ -56,10 +71,7 @@ h1, h2, h3 {
   transition: opacity 2.2s ease;
 }
 
-
-/* ============================
-   Openingリング
-============================ */
+/* Openingリング */
 #opening-ring {
   position: fixed;
   top: 43%;
@@ -94,10 +106,7 @@ h1, h2, h3 {
   100% { transform: scale(1); opacity: 0.5; }
 }
 
-
-/* ============================
-   ヘッダーと予約ボタン
-============================ */
+/* ナビゲーション */
 .global-nav {
   position: fixed;
   top: 32px;
@@ -118,6 +127,7 @@ h1, h2, h3 {
   white-space: nowrap;
 }
 
+/* 予約ボタン */
 .reserve-btn-sub {
   position: fixed;
   top: 20px;
@@ -134,14 +144,36 @@ h1, h2, h3 {
 
 .reserve-btn-sub.show { opacity: 1; }
 
+/* INDEXカード */
+#index-cards {
+  width: 90%;
+  max-width: 700px;
+  margin: 70px auto 120px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
 
-/* ============================
-   サブページカード
-============================ */
+#index-cards .info-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #d9c17e55;
+  padding: 22px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s ease;
+}
+
+#index-cards .info-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* サブページカード */
 .menu-container {
   width: 90%;
   max-width: 760px;
-  margin: 0 auto 60px auto;
+  margin: 40px auto 60px auto;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -152,23 +184,16 @@ h1, h2, h3 {
   border: 1px solid #d9c17e55;
   padding: 22px;
   border-radius: 12px;
-  opacity: 1;
 }
 
-
-/* ============================
-   Footer
-============================ */
+/* footer */
 footer {
   text-align: center;
   padding: 50px 0 70px 0;
   color: #d9c17e99;
 }
 
-
-/* ============================
-   オープン記念フェード演出（修復済）
-============================ */
+/* オープン記念演出 */
 .fade-price {
   opacity: 0;
   color: #d9c17e;
@@ -183,15 +208,12 @@ footer {
   transform: translateY(0);
 }
 
-
-/* ============================
-   スマホ調整
-============================ */
+/* スマホ調整 */
 @media (max-width: 480px) {
   .global-nav { font-size: 0.78rem; gap: 8px; }
   .reserve-btn-sub { font-size: 0.8rem; padding: 5px 12px; }
 
-  .page-title {
+  .subpage .page-title {
     margin-top: 120px;
     margin-bottom: 28px;
     font-size: 1.6rem;
