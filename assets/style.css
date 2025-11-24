@@ -249,3 +249,24 @@ footer {
 .map-open-btn:hover {
   opacity: 0.75;
 }
+
+.station-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.station-table th {
+  text-align: left;
+  font-weight: 600;
+  padding: 4px 8px;
+  color: #d9c17e;
+  white-space: nowrap;
+}
+
+.station-table td {
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
