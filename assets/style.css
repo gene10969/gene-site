@@ -270,3 +270,39 @@ footer {
   white-space: nowrap;
 }
 
+/* ============================
+   スマホ：最寄駅表の最適化
+============================ */
+@media (max-width: 480px) {
+
+  /* 表をブロック化して見切れ防止 */
+  .station-table {
+    display: block;
+    width: 100%;
+  }
+
+  .station-table tr {
+    display: block;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+  }
+
+  .station-table th {
+    display: none; /* 見切れるのでヘッダー非表示 */
+  }
+
+  .station-table td {
+    display: block;
+    padding: 4px 0;
+    white-space: normal; /* 折り返し許可 */
+    font-size: 1rem;
+  }
+
+  /* 駅名だけ少し強調 */
+  .station-table td:first-child {
+    font-size: 1.1rem;
+    color: #d9c17e;
+    font-weight: 600;
+  }
+}
