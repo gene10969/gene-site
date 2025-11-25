@@ -24,22 +24,45 @@
 
 <div class="menu-container">
 
-  <!-- 最寄駅 表形式復元 -->
+  <!-- 最寄駅（表形式で見やすく改善） -->
   <div class="menu-card">
     <h2>最寄駅</h2>
-    <p>
-<strong>大阪メトロ</strong><br><br>
-<table style="border-collapse:collapse; width:100%; line-height:1.8;">
-<tr><td><strong>長堀橋駅</strong>（徒歩5分）</td><td>北改札口 1番出口（エスカレーター）</td></tr>
-<tr><td>長堀鶴見緑地線 / 堺筋線</td><td></td></tr>
 
-<tr><td><strong>松屋町駅</strong>（徒歩6分）</td><td>1番出口（エスカレーター / 地上付近のみ階段）</td></tr>
-<tr><td>長堀鶴見緑地線</td><td>5番出口（エレベーター）</td></tr>
+    <table class="station-table" style="width:100%; border-collapse:collapse; line-height:1.9;">
+      <tr>
+        <th style="width:32%;">駅名</th>
+        <th style="width:33%;">路線</th>
+        <th style="width:35%;">出口</th>
+      </tr>
 
-<tr><td><strong>心斎橋駅</strong>（徒歩15分）</td><td>北8出口（エスカレーター）</td></tr>
-<tr><td>御堂筋線</td><td>北9出口（エレベーター）</td></tr>
-</table>
-    </p>
+      <tr>
+        <td><strong style="color:#d9c17e;">長堀橋駅</strong><br>（徒歩5分）</td>
+        <td>長堀鶴見緑地線 / 堺筋線</td>
+        <td>
+          北改札口<br>
+          1番出口（エスカレーター）
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong style="color:#d9c17e;">松屋町駅</strong><br>（徒歩6分）</td>
+        <td>長堀鶴見緑地線</td>
+        <td>
+          1番出口（エスカレーター / 階段）<br>
+          5番出口（エレベーター）
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong style="color:#d9c17e;">心斎橋駅</strong><br>（徒歩15分）</td>
+        <td>御堂筋線</td>
+        <td>
+          北8出口（エスカレーター）<br>
+          北9出口（エレベーター）
+        </td>
+      </tr>
+    </table>
+
   </div>
 
   <!-- アクセス案内 -->
@@ -53,16 +76,39 @@
   </div>
 
   <!-- MAP -->
- <div class="menu-card">
-  <h2>MAP</h2>
-  <div class="map-frame">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.86471494256017!2d135.50822341079444!3d34.675460209979704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e73db4dcd54d%3A0x32cc3175f3c26b12!2z5pel5pys44CB5aSn6Ziq5bqc56aP5bC-5YyW5Ye65YmN5rW35L-d!5e0!3m2!1sja!2sjp!4v1763580865574!5m2!1sja!2sjp"
-      width="100%" height="260" style="border:0; border-radius:12px;" allowfullscreen loading="lazy">
-    </iframe>
+  <div class="menu-card">
+    <h2>MAP</h2>
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.86471494256017!2d135.50822341079444!3d34.675460209979704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e73db4dcd54d%3A0x32cc3175f3c26b12!2z5pel5pys44CB5aSn6Ziq5bqc56aP5bC-5YyW5Ye65YmN5rW35L-d!5e0!3m2!1sja!2sjp!4v1763580865574!5m2!1sja!2sjp"
+        width="100%" height="260" style="border:0; border-radius:12px;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
   </div>
+
 </div>
 
+<p style="text-align:center; margin-top:16px;">
+  <a href="https://maps.app.goo.gl/ZtxoiZGVx6r8LoCk7"
+     target="_blank"
+     style="display:inline-block; padding:10px 24px; border:1px solid #d9c17e; color:#d9c17e; border-radius:6px; font-size:1.1rem; text-decoration:none;">
+     Google MAPで見る
+  </a>
+</p>
+
+<footer>
+  大阪 自律神経専門整体院 gene<br>
+  © gene. All Rights Reserved.
+</footer>
+
+<script>
+window.addEventListener("load", () => {
+  document.getElementById("global-logo-bg").classList.add("fade-in");
+});
+</script>
+
+</body>
+</html>
 <p style="text-align:center; margin-top:16px;">
   <a href="https://maps.app.goo.gl/ZtxoiZGVx6r8LoCk7"
      target="_blank"
