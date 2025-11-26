@@ -27,7 +27,7 @@ h1, h2, h3 {
   transform: translateY(20px);
   text-align: center;
   position: relative;
-  margin-top: 180px; /* 元の値 */
+  margin-top: 180px;
   transition: all 1.6s ease;
 }
 
@@ -37,7 +37,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   ページタイトル (サブページのみ)
+   ページタイトル
 ============================ */
 .subpage .page-title {
   text-align: center;
@@ -218,8 +218,8 @@ footer {
     margin-bottom: 28px;
     font-size: 1.6rem;
   }
-   
 }
+
 /* MAPカードのサイズ調整 */
 .small-map {
   width: 90%;
@@ -250,6 +250,7 @@ footer {
   opacity: 0.75;
 }
 
+/* 最寄駅 表の調整（←今回の修正点） */
 .station-table {
   width: 100%;
   border-collapse: collapse;
@@ -267,42 +268,6 @@ footer {
 
 .station-table td {
   padding: 4px 8px;
-  white-space: nowrap;
-}
-
-/* ============================
-   スマホ：最寄駅表の最適化
-============================ */
-@media (max-width: 480px) {
-
-  /* 表をブロック化して見切れ防止 */
-  .station-table {
-    display: block;
-    width: 100%;
-  }
-
-  .station-table tr {
-    display: block;
-    margin-bottom: 18px;
-    border-bottom: 1px solid #444;
-    padding-bottom: 8px;
-  }
-
-  .station-table th {
-    display: none; /* 見切れるのでヘッダー非表示 */
-  }
-
-  .station-table td {
-    display: block;
-    padding: 4px 0;
-    white-space: normal; /* 折り返し許可 */
-    font-size: 1rem;
-  }
-
-  /* 駅名だけ少し強調 */
-  .station-table td:first-child {
-    font-size: 1.1rem;
-    color: #d9c17e;
-    font-weight: 600;
-  }
+  white-space: normal; /* ← 修正済み */
+  vertical-align: top;
 }
