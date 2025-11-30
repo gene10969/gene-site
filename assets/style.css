@@ -130,27 +130,29 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン（今回ここだけ修正）
+   予約ボタン（二行対応・強調）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
   top: 20px;
   right: 20px;
   background: #d9c17e;
-  padding: 8px 16px;        /* 少し大きめ */
-  border-radius: 4px;
+  padding: 10px 18px;   /* 大きく強調 */
+  border-radius: 6px;
   color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
   text-decoration: none;
   z-index: 50;
 
-  white-space: normal;      /* ← 二行表示を許可 */
-  line-height: 1.2;         /* ← 行間 */
-  text-align: center;       /* ← 中央揃え */
-  font-weight: 600;
-}
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.25;
 
+  white-space: normal;  /* 二行表示 */
+  font-size: 0.95rem;   /* 視認性を向上 */
+}
 .reserve-btn-sub.show { opacity: 1; }
 
 /* ============================
