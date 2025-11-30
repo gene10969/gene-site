@@ -274,25 +274,36 @@ footer {
 }
 
 /* ============================
-   最寄駅 表
+   最寄駅 表（視認性アップ）
 ============================ */
 .station-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.7;
+  border: 1px solid #555;  /* 表全体の外枠 */
+}
+
+.station-table th,
+.station-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #444; /* 横線で行ごとに区切り */
 }
 
 .station-table th {
   text-align: left;
   font-weight: 600;
-  padding: 4px 8px;
+  background: rgba(217,193,126,0.08); /* 見出し背景を少し強調 */
   color: #d9c17e;
   white-space: nowrap;
 }
 
-.station-table td {
-  padding: 4px 8px;
-  white-space: normal;      /* ← 修正済み。はみ出し防止 */
-  vertical-align: top;
+.station-table tr:last-child td {
+  border-bottom: none; /* 最下行の線は消す */
 }
+
+.station-table td {
+  vertical-align: top;
+  white-space: normal; /* スマホ時のはみ出し防止 */
+}
+
