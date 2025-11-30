@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<div class="particles"></div>
+
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
@@ -31,10 +33,10 @@
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
   <a href="voice.html" style="display:none;">お客様の声</a>
 </nav>
 
-<!-- ここを修正：LINE予約 二行表示 + showタイミング制御 -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
   LINE<br>予約
 </a>
@@ -105,7 +107,6 @@ window.addEventListener("load", () => {
   setTimeout(()=> ring.classList.add("fadeout"), 1400);
   setTimeout(()=> ring.style.display = "none", 2400);
 
-  /* リング終了後に表示する要素 */
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
