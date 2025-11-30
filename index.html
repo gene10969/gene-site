@@ -48,8 +48,8 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- パンくずリスト -->
-<nav class="breadcrumb">
+<!-- パンくずリスト（初期は非表示） -->
+<nav class="breadcrumb" style="opacity:0;">
   <a href="index.html">ホーム</a> ＞ <span>トップ</span>
 </nav>
 
@@ -141,6 +141,7 @@ window.addEventListener("load", () => {
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const cards   = document.querySelectorAll(".card-hidden");
   const bgLogo  = document.getElementById("global-logo-bg");
+  const breadcrumb = document.querySelector(".breadcrumb");
 
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 1400);
@@ -151,6 +152,7 @@ window.addEventListener("load", () => {
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
+    breadcrumb.style.opacity = "1"; // ← パンくずを演出後に表示
   }, 2400);
 
   setTimeout(()=>{
