@@ -20,7 +20,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   INDEX：メインロゴ位置（復元）
+   INDEX：メインロゴ位置
 ============================ */
 #hero-logo {
   opacity: 0;
@@ -106,7 +106,9 @@ h1, h2, h3 {
   100% { transform: scale(1); opacity: 0.5; }
 }
 
-/* ナビゲーション */
+/* ============================
+   ナビゲーション
+============================ */
 .global-nav {
   position: fixed;
   top: 32px;
@@ -127,24 +129,33 @@ h1, h2, h3 {
   white-space: nowrap;
 }
 
-/* 予約ボタン */
+/* ============================
+   予約ボタン（今回ここだけ修正）
+============================ */
 .reserve-btn-sub {
   position: fixed;
   top: 20px;
   right: 20px;
   background: #d9c17e;
-  padding: 6px 14px;
+  padding: 8px 16px;        /* 少し大きめ */
   border-radius: 4px;
   color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
   text-decoration: none;
   z-index: 50;
+
+  white-space: normal;      /* ← 二行表示を許可 */
+  line-height: 1.2;         /* ← 行間 */
+  text-align: center;       /* ← 中央揃え */
+  font-weight: 600;
 }
 
 .reserve-btn-sub.show { opacity: 1; }
 
-/* INDEXカード */
+/* ============================
+   INDEXカード
+============================ */
 #index-cards {
   width: 90%;
   max-width: 700px;
@@ -169,7 +180,9 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-/* サブページカード */
+/* ============================
+   サブページカード
+============================ */
 .menu-container {
   width: 90%;
   max-width: 760px;
@@ -186,14 +199,18 @@ h1, h2, h3 {
   border-radius: 12px;
 }
 
-/* footer */
+/* ============================
+   footer
+============================ */
 footer {
   text-align: center;
   padding: 50px 0 70px 0;
   color: #d9c17e99;
 }
 
-/* オープン記念演出 */
+/* ============================
+   オープン記念演出
+============================ */
 .fade-price {
   opacity: 0;
   color: #d9c17e;
@@ -208,10 +225,12 @@ footer {
   transform: translateY(0);
 }
 
-/* スマホ調整 */
+/* ============================
+   スマホ調整
+============================ */
 @media (max-width: 480px) {
   .global-nav { font-size: 0.78rem; gap: 8px; }
-  .reserve-btn-sub { font-size: 0.8rem; padding: 5px 12px; }
+  .reserve-btn-sub { font-size: 0.8rem; padding: 6px 14px; }
 
   .subpage .page-title {
     margin-top: 120px;
@@ -220,7 +239,9 @@ footer {
   }
 }
 
-/* MAPカードのサイズ調整 */
+/* ============================
+   MAPカード
+============================ */
 .small-map {
   width: 90%;
   max-width: 620px;
@@ -250,7 +271,9 @@ footer {
   opacity: 0.75;
 }
 
-/* 最寄駅 表の調整（←今回の修正点） */
+/* ============================
+   最寄駅 表
+============================ */
 .station-table {
   width: 100%;
   border-collapse: collapse;
@@ -268,6 +291,6 @@ footer {
 
 .station-table td {
   padding: 4px 8px;
-  white-space: normal; /* ← 修正済み */
+  white-space: normal;      /* ← 修正済み。はみ出し防止 */
   vertical-align: top;
 }
