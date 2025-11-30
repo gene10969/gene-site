@@ -302,6 +302,35 @@ footer {
   border-bottom: none; /* 最下行の線は消す */
 }
 
+/* ============================
+   パンくずリスト（修正）
+============================ */
+.breadcrumb {
+  width: 90%;
+  max-width: 760px;
+  margin: 120px auto 8px auto;
+  font-size: 0.8rem;
+  color: #d9c17e; /* ← ゴールドに統一 */
+  opacity: 0; /* ← 最初は非表示 */
+  transition: opacity 1.2s ease;
+}
+
+.breadcrumb.show {
+  opacity: 1; /* ← 表示 */
+}
+
+.breadcrumb a {
+  color: #d9c17e; /* ← リンクも統一 */
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    margin-top: 100px;
+    font-size: 0.75rem;
+  }
+}
+
 .station-table td {
   vertical-align: top;
   white-space: normal; /* スマホ時のはみ出し防止 */
