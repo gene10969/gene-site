@@ -16,7 +16,6 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- ここを変更：内面の～削除し新要素へ変更 -->
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">大阪 自律神経専門整体院 gene</h1>
   <p class="sub-catch">
@@ -35,10 +34,10 @@
   <a href="voice.html" style="display:none;">お客様の声</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub show" target="_blank">
+<!-- ここを修正：LINE予約 二行表示 + showタイミング制御 -->
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
   LINE<br>予約
 </a>
-
 
 <div id="index-cards">
 
@@ -61,7 +60,6 @@
 「先生に診てもらえて本当によかった」
 「もっと早く来ればよかった」
 「整体でここまで変わると思っていなかった」
-「遠くからでも来てよかった」
 と、ありがたいお言葉をいただくたびに、この仕事の意義と責任を深く感じてきました。
 
 私自身、姉が重度のアトピーで長年苦しんでいました。
@@ -107,6 +105,7 @@ window.addEventListener("load", () => {
   setTimeout(()=> ring.classList.add("fadeout"), 1400);
   setTimeout(()=> ring.style.display = "none", 2400);
 
+  /* リング終了後に表示する要素 */
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
