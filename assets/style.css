@@ -11,10 +11,7 @@ html, body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
@@ -23,7 +20,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   INDEX：メインロゴ位置
+   INDEX ロゴ位置
 ============================ */
 #hero-logo {
   opacity: 0;
@@ -33,7 +30,6 @@ h1, h2, h3 {
   margin-top: 180px;
   transition: all 1.6s ease;
 }
-
 #hero-logo.show {
   opacity: 1;
   transform: translateY(0);
@@ -44,7 +40,7 @@ h1, h2, h3 {
 ============================ */
 .subpage .page-title {
   text-align: center;
-  margin-top: 140px;
+  margin-top: 180px;
   margin-bottom: 40px;
   font-size: 2.0rem;
 }
@@ -59,22 +55,22 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  z-index: 0;
   pointer-events: none;
+  z-index: 0;
 }
-
 #global-logo-bg img {
   width: 78vw;
   max-width: 720px;
   opacity: 0.18;
 }
-
 #global-logo-bg.fade-in {
   opacity: 1;
   transition: opacity 2.2s ease;
 }
 
-/* Openingリング */
+/* ============================
+   Openingリング
+============================ */
 #opening-ring {
   position: fixed;
   top: 43%;
@@ -86,10 +82,8 @@ h1, h2, h3 {
   transition: opacity 1.5s ease;
   z-index: 30;
 }
-
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
-
 #opening-ring .ring-blur {
   width: 100%;
   height: 100%;
@@ -97,12 +91,7 @@ h1, h2, h3 {
   border-radius: 50%;
   opacity: 0.65;
   animation: pulse 3.6s ease-in-out infinite;
-  box-shadow:
-    0 0 25px rgba(217,193,126,0.35),
-    0 0 60px rgba(217,193,126,0.25),
-    0 0 90px rgba(217,193,126,0.15);
 }
-
 @keyframes pulse {
   0%   { transform: scale(1); opacity: 0.5; }
   50%  { transform: scale(1.18); opacity: 0.9; }
@@ -110,23 +99,21 @@ h1, h2, h3 {
 }
 
 /* ============================
-   パンくず固定
+   固定パンくず（INDEX以外）
 ============================ */
 .breadcrumb-fixed {
   position: fixed;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 110px; /* カード左端位置に合わせた高さ */
+  left: 5%;
+  transform: none;
   color: #d9c17e;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   opacity: 0;
-  white-space: nowrap;
-  transition: opacity 1.4s ease;
+  transition: opacity 1.2s ease;
   z-index: 20;
+  white-space: nowrap;
 }
-
 .breadcrumb-fixed.show { opacity: 1; }
-
 .breadcrumb-fixed a {
   color: #d9c17e;
   text-decoration: none;
@@ -140,14 +127,12 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 100px;
+  margin-top: 140px;
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 5;
 }
-
 .global-nav.show { opacity: 1; }
-
 .global-nav a {
   color: #d9c17e;
   text-decoration: none;
@@ -156,27 +141,25 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン
+   予約ボタン（常時2行）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
-  top: 32px;
+  top: 150px; /* メニューバーより下に配置 */
   right: 20px;
   background: #d9c17e;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 12px;
+  border-radius: 6px;
   color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
-  text-decoration: none;
+  white-space: normal;
+  line-height: 1.25;
+  width: 78px;
+  text-align: center;
   font-weight: 600;
   z-index: 50;
-
-  white-space: normal;
-  line-height: 1.2;
-  text-align: center;
 }
-
 .reserve-btn-sub.show { opacity: 1; }
 
 /* ============================
@@ -190,7 +173,6 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 28px;
 }
-
 #index-cards .info-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
@@ -200,7 +182,6 @@ h1, h2, h3 {
   transform: translateY(20px);
   transition: all 1.2s ease;
 }
-
 #index-cards .info-card.show {
   opacity: 1;
   transform: translateY(0);
@@ -212,59 +193,26 @@ h1, h2, h3 {
 .menu-container {
   width: 90%;
   max-width: 760px;
-  margin: 40px auto 60px auto;
+  margin: 180px auto 60px auto;
   display: flex;
   flex-direction: column;
   gap: 26px;
 }
 
-.menu-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid #d9c17e55;
-  padding: 22px;
-  border-radius: 12px;
-}
-
 /* ============================
-   MAPカード
-============================ */
-.small-map {
-  width: 90%;
-  max-width: 620px;
-  margin: 20px auto 80px auto;
-  padding: 14px;
-}
-
-.map-open-btn {
-  display: inline-block;
-  background: #d9c17e;
-  color: #000;
-  padding: 10px 26px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* ============================
-   最寄駅 表
+   MAP周り
 ============================ */
 .station-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 1.05rem;
-  line-height: 1.8;
 }
-
-.station-table th,
-.station-table td {
+.station-table th, .station-table td {
   border: 1px solid #d9c17e33;
-  padding: 6px 8px;
+  padding: 8px;
 }
-
 .station-table th {
   background: rgba(217,193,126,0.06);
   color: #d9c17e;
-  font-weight: 600;
 }
 
 /* ============================
@@ -274,13 +222,18 @@ footer {
   text-align: center;
   padding: 50px 0 70px 0;
   color: #d9c17e99;
-  font-size: 0.95rem;
 }
+footer p { margin: 4px 0; }
 
 /* ============================
    スマホ調整
 ============================ */
 @media (max-width: 480px) {
+
+  .breadcrumb-fixed {
+    top: 90px;
+    left: 5%;
+  }
 
   .global-nav {
     margin-top: 140px;
@@ -288,22 +241,16 @@ footer {
     gap: 6px;
   }
 
-  .breadcrumb-fixed {
-    top: 20px;
-    font-size: 0.82rem;
-  }
-
   .reserve-btn-sub {
-    top: 60px;
+    top: 160px;
     right: 10px;
     font-size: 0.78rem;
-    width: 76px;
-    padding: 10px 8px;
-    line-height: 1.25;
+    width: 74px;
+    padding: 10px 6px;
   }
 
   .subpage .page-title {
-    margin-top: 160px;
+    margin-top: 240px;
     font-size: 1.6rem;
   }
 }
