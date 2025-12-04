@@ -3,71 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>よくある質問 | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene に寄せられるよくある質問をご紹介します。施術内容、服装、支払い、アクセス、予約についてご確認いただけます。">
-
-<!-- OGP -->
-<meta property="og:title" content="よくある質問 | 大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="施術、支払い、アクセス、予約などよくある質問をご案内します。">
-<meta property="og:url" content="https://gene10969.github.io/gene-site/faq.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/og_hero.webp">
-
+<title>よくある質問（FAQ） | 大阪 自律神経専門整体院 gene</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="subpage">
 
-<div class="particles"></div>
-
 <div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
+  <img src="assets/img/logo.svg" alt="">
 </div>
 
-<nav class="global-nav show">
+<!-- ★固定パンくず -->
+<nav class="breadcrumb-fixed hidden">
+  <a href="index.html">ホーム</a> ＞ <span>よくある質問</span>
+</nav>
+
+<nav class="global-nav hidden">
   <a href="index.html">Home</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="voice.html" style="display:none;">お客様の声</a>
+  <a href="faq.html">FAQ</a>
+  <a href="news.html">お知らせ</a>
+  <a href="voice.html">改善写真</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub show" target="_blank">
-  LINE<br>予約
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE予約
 </a>
 
-<h1 class="page-title">よくある質問</h1>
+<h1 class="page-title">よくある質問（FAQ）</h1>
 
 <div class="menu-container">
 
   <div class="menu-card">
-    <h2>施術について</h2>
-    <p><strong>Q1：どんな施術ですか？</strong><br>
-    A：過剰な刺激を行わず、自律神経のバランスを整える施術です。ただし、症状の内容によっては刺激のある施術もあります。</p>
+    <h2>どんな施術ですか？</h2>
+    <p>過剰な刺激を行わず、自律神経のバランスを整える施術です。ただし、症状の内容によっては刺激のある施術を行う場合がありますがお声がけをいたします。</p>
   </div>
 
   <div class="menu-card">
-    <h2>来院時のご準備</h2>
-    <p><strong>Q2：服装に指定はありますか？</strong><br>
-    A：お着替えのご用意はございますが、なるべくリラックスできる動きやすい服装でお越しください。</p>
+    <h2>服装に指定はありますか？</h2>
+    <p>お着替えのご用意はございますが、なるべくリラックスできる動きやすい服装でお越しください。</p>
   </div>
 
   <div class="menu-card">
-    <h2>お支払いについて</h2>
-    <p><strong>Q3：支払い方法は何がありますか？</strong><br>
-    A：現金のみです。（キャッシュレス決済は現在申請中）</p>
+    <h2>支払い方法は何がありますか？</h2>
+    <p>現金のみです。（キャッシュレス決済は現在申請中です）</p>
+  </div>
+
+<div class="menu-card">
+    <h2>健康保険は使えますか？</h2>
+    <p>完全実費施術となりますので「各種健康保健」は適用外となります。</p>
+  </div>
+  
+  <div class="menu-card">
+    <h2>予約なしでも大丈夫ですか？</h2>
+    <p>当院は男性院長1人で施術しておりますので、完全予約制になります。空きがありましたら当日予約も承りますので、LINEでお問い合わせください。</p>
   </div>
 
   <div class="menu-card">
-    <h2>予約について</h2>
-    <p><strong>Q4：予約なしでも行けますか？</strong><br>
-    A：完全予約制です。LINEから事前にご予約ください。</p>
-  </div>
-
-  <div class="menu-card">
-    <h2>アクセスについて</h2>
-    <p><strong>Q5：駐車場や駐輪場はありますか？</strong><br>
-    A：どちらもございません。近隣のパーキングをご利用ください。</p>
+    <h2>駐車場や駐輪場はありますか？</h2>
+    <p>近隣のコインパーキングをご利用ください。駐輪場も建物敷地内にはございません。</p>
   </div>
 
 </div>
@@ -83,6 +77,12 @@
 <script>
 window.addEventListener("load", () => {
   document.getElementById("global-logo-bg").classList.add("fade-in");
+
+  setTimeout(()=>{
+    document.querySelector(".breadcrumb-fixed").classList.add("show");
+    document.querySelector(".global-nav").classList.add("show");
+    document.querySelector(".reserve-btn-sub").classList.add("show");
+  }, 2400);
 });
 </script>
 
