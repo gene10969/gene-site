@@ -224,21 +224,19 @@ footer {
   }
 }
 
-/* ===================================================
-   ★今回追加：固定パンくず （FAQから共通仕様へ）
-=================================================== */
+/* 固定パンくず（位置調整：カード左枠線上に揃える） */
 .breadcrumb-fixed {
   position: fixed;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.85rem;
+  top: 95px; /* 以前より少し下げカード高さと揃える */
+  left: 5%; /* カード左枠（90%幅）に合わせる */
+  transform: none; /* 中央寄せを解除 */
+  font-size: 0.88rem;
   color: #d9c17e;
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 60;
   background: rgba(0,0,0,0.45);
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
 }
 .breadcrumb-fixed.show {
@@ -248,3 +246,4 @@ footer {
   color: #d9c17e;
   text-decoration: none;
 }
+
