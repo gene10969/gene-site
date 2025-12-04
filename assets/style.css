@@ -30,7 +30,6 @@ h1, h2, h3 {
   margin-top: 180px;
   transition: all 1.6s ease;
 }
-
 #hero-logo.show {
   opacity: 1;
   transform: translateY(0);
@@ -59,13 +58,11 @@ h1, h2, h3 {
   z-index: 0;
   pointer-events: none;
 }
-
 #global-logo-bg img {
   width: 78vw;
   max-width: 720px;
   opacity: 0.18;
 }
-
 #global-logo-bg.fade-in {
   opacity: 1;
   transition: opacity 2.2s ease;
@@ -83,10 +80,8 @@ h1, h2, h3 {
   transition: opacity 1.5s ease;
   z-index: 30;
 }
-
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
-
 #opening-ring .ring-blur {
   width: 100%;
   height: 100%;
@@ -99,7 +94,6 @@ h1, h2, h3 {
     0 0 60px rgba(217,193,126,0.25),
     0 0 90px rgba(217,193,126,0.15);
 }
-
 @keyframes pulse {
   0%   { transform: scale(1); opacity: 0.5; }
   50%  { transform: scale(1.18); opacity: 0.9; }
@@ -120,9 +114,7 @@ h1, h2, h3 {
   transition: opacity 1.2s ease;
   z-index: 50;
 }
-
 .global-nav.show { opacity: 1; }
-
 .global-nav a {
   color: #d9c17e;
   text-decoration: none;
@@ -130,28 +122,24 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン（二行対応・強調）
+   予約ボタン（二行化）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
   top: 20px;
   right: 20px;
   background: #d9c17e;
-  padding: 10px 18px;   /* 大きく強調 */
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 4px;
   color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
   text-decoration: none;
   z-index: 50;
-
-  display: inline-block;
+  white-space: normal;
+  line-height: 1.2;
   text-align: center;
-  font-weight: 700;
-  line-height: 1.25;
-
-  white-space: normal;  /* 二行表示 */
-  font-size: 0.95rem;   /* 視認性を向上 */
+  font-weight: 600;
 }
 .reserve-btn-sub.show { opacity: 1; }
 
@@ -166,7 +154,6 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 28px;
 }
-
 #index-cards .info-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
@@ -176,7 +163,6 @@ h1, h2, h3 {
   transform: translateY(20px);
   transition: all 1.2s ease;
 }
-
 #index-cards .info-card.show {
   opacity: 1;
   transform: translateY(0);
@@ -193,12 +179,26 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 26px;
 }
-
 .menu-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
   padding: 22px;
   border-radius: 12px;
+}
+
+/* ============================
+   MAP表
+============================ */
+.station-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  border: 1px solid #d9c17e55;
+}
+.station-table th, .station-table td {
+  border: 1px solid #d9c17e55;
+  padding: 6px 8px;
 }
 
 /* ============================
@@ -208,23 +208,6 @@ footer {
   text-align: center;
   padding: 50px 0 70px 0;
   color: #d9c17e99;
-}
-
-/* ============================
-   オープン記念演出
-============================ */
-.fade-price {
-  opacity: 0;
-  color: #d9c17e;
-  font-size: 1.25rem;
-  font-weight: bold;
-  transition: opacity 1.8s ease, transform 1.8s ease;
-  transform: translateY(6px);
-}
-
-.fade-price.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ============================
@@ -241,98 +224,27 @@ footer {
   }
 }
 
-/* ============================
-   MAPカード
-============================ */
-.small-map {
-  width: 90%;
-  max-width: 620px;
-  margin: 20px auto 80px auto;
-  padding: 14px;
-}
-
-.map-button-wrap {
-  width: 90%;
-  max-width: 760px;
-  margin: 10px auto 16px auto;
-  text-align: center;
-}
-
-.map-open-btn {
-  display: inline-block;
-  background: #d9c17e;
-  color: #000;
-  padding: 10px 26px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.map-open-btn:hover {
-  opacity: 0.75;
-}
-
-/* ============================
-   最寄駅 表（視認性アップ）
-============================ */
-.station-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  border: 1px solid #555;  /* 表全体の外枠 */
-}
-
-.station-table th,
-.station-table td {
-  padding: 10px 8px;
-  border-bottom: 1px solid #444; /* 横線で行ごとに区切り */
-}
-
-.station-table th {
-  text-align: left;
-  font-weight: 600;
-  background: rgba(217,193,126,0.08); /* 見出し背景を少し強調 */
+/* ===================================================
+   ★今回追加：固定パンくず （FAQから共通仕様へ）
+=================================================== */
+.breadcrumb-fixed {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
   color: #d9c17e;
-  white-space: nowrap;
-}
-
-.station-table tr:last-child td {
-  border-bottom: none; /* 最下行の線は消す */
-}
-
-/* ============================
-   パンくずリスト（修正）
-============================ */
-.breadcrumb {
-  width: 90%;
-  max-width: 760px;
-  margin: 120px auto 8px auto;
-  font-size: 0.8rem;
-  color: #d9c17e; /* ← ゴールドに統一 */
-  opacity: 0; /* ← 最初は非表示 */
+  opacity: 0;
   transition: opacity 1.2s ease;
+  z-index: 60;
+  background: rgba(0,0,0,0.45);
+  padding: 5px 10px;
+  border-radius: 4px;
 }
-
-.breadcrumb.show {
-  opacity: 1; /* ← 表示 */
+.breadcrumb-fixed.show {
+  opacity: 1;
 }
-
-.breadcrumb a {
-  color: #d9c17e; /* ← リンクも統一 */
+.breadcrumb-fixed a {
+  color: #d9c17e;
   text-decoration: none;
 }
-
-@media (max-width: 480px) {
-  .breadcrumb {
-    margin-top: 100px;
-    font-size: 0.75rem;
-  }
-}
-
-.station-table td {
-  vertical-align: top;
-  white-space: normal; /* スマホ時のはみ出し防止 */
-}
-
