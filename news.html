@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>お知らせ・ブログ | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="自律神経整体 gene のお知らせとブログ。季節の体調管理やアトピー、自律神経ケアなどのお役立ち情報を発信しています。">
+<title>お知らせ | 大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="自律神経整体 gene のお知らせ。季節の体調管理やアトピー、自律神経ケアなどのお役立ち情報を発信しています。">
 
 <!-- OGP -->
-<meta property="og:title" content="お知らせ・ブログ | 大阪 自律神経専門整体院 gene">
+<meta property="og:title" content="お知らせ | 大阪 自律神経専門整体院 gene">
 <meta property="og:description" content="季節のケアや自律神経改善に役立つ情報を更新しています。">
 <meta property="og:url" content="https://gene10969.github.io/gene-site/news.html">
 <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
   <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
 </div>
 
-  <!-- ★固定パンくず -->
+<!-- ★固定パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>お知らせ</span>
 </nav>
@@ -39,13 +39,13 @@
   <a href="voice.html">改善写真</a>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub show" target="_blank">
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
   LINE<br>予約
 </a>
 
 <h1 class="page-title">お知らせ</h1>
 
-<main class="container">
+<main class="menu-container">
   
   <article class="menu-card">
     <h2>季節の変わり目と自律神経</h2>
@@ -72,6 +72,11 @@
 <script>
 window.addEventListener("load", () => {
   document.getElementById("global-logo-bg").classList.add("fade-in");
+  setTimeout(()=>{
+    document.querySelector(".breadcrumb-fixed").classList.add("show");
+    document.querySelector(".global-nav").classList.add("show");
+    document.querySelector(".reserve-btn-sub").classList.add("show");
+  }, 2400);
 });
 </script>
 
