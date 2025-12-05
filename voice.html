@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>お客様の声 | 大阪 自律神経専門整体院 gene</title>
+<link rel="stylesheet" href="assets/style.css">
 <meta name="description" content="自律神経整体 gene に寄せられたお客様の声をご紹介します。Before/Afterや体験談などを随時掲載していきます。">
 
 <!-- OGP -->
@@ -76,6 +76,12 @@
 <script>
 window.addEventListener("load", () => {
   document.getElementById("global-logo-bg").classList.add("fade-in");
+
+  setTimeout(()=>{
+    document.querySelector(".breadcrumb-fixed").classList.add("show");
+    document.querySelector(".global-nav").classList.add("show");
+    document.querySelector(".reserve-btn-sub").classList.add("show");
+  }, 2400);
 });
 </script>
 
