@@ -14,25 +14,6 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og_hero.webp">
 
-<!-- パンくず構造化データ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "ホーム",
-    "item": "https://gene10969.github.io/gene-site/index.html"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "トップ",
-    "item": "https://gene10969.github.io/gene-site/index.html"
-  }]
-}
-</script>
-
 <link rel="stylesheet" href="assets/style.css">
 </head>
 
@@ -48,10 +29,23 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- パンくずリスト（初期は非表示） -->
-<nav class="breadcrumb" style="opacity:0;">
+<!-- ★固定パンくず -->
+<nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>トップ</span>
 </nav>
+
+<nav class="global-nav hidden">
+  <a href="index.html">ホーム</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="news.html">お知らせ</a>
+  <a href="voice.html">改善写真</a>
+</nav>
+
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
 
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">大阪 自律神経専門整体院 gene</h1>
@@ -63,19 +57,6 @@
     再発しない身体へ、共に歩みましょう。
   </p>
 </div>
-
-<nav class="global-nav hidden">
-  <a href="index.html">ホーム</a>
-  <a href="menu.html">メニュー</a>
-  <a href="access.html">アクセス</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="news.html">お知らせ</a>
-  <a href="news.html">改善写真</a>
-</nav>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
 
 <div id="index-cards">
 
@@ -141,18 +122,19 @@ window.addEventListener("load", () => {
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const cards   = document.querySelectorAll(".card-hidden");
   const bgLogo  = document.getElementById("global-logo-bg");
-  const breadcrumb = document.querySelector(".breadcrumb");
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
 
   ring.classList.add("show");
   setTimeout(()=> ring.classList.add("fadeout"), 1400);
   setTimeout(()=> ring.style.display = "none", 2400);
 
+  // ★統一アニメーション
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
-    breadcrumb.style.opacity = "1"; // ← パンくずを演出後に表示
+    breadcrumb.classList.add("show");
   }, 2400);
 
   setTimeout(()=>{
