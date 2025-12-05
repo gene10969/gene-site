@@ -11,7 +11,10 @@ html, body {
   overflow-x: hidden;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
@@ -20,7 +23,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   INDEX ロゴ位置
+   INDEX：メインロゴ位置
 ============================ */
 #hero-logo {
   opacity: 0;
@@ -30,6 +33,7 @@ h1, h2, h3 {
   margin-top: 180px;
   transition: all 1.6s ease;
 }
+
 #hero-logo.show {
   opacity: 1;
   transform: translateY(0);
@@ -40,7 +44,7 @@ h1, h2, h3 {
 ============================ */
 .subpage .page-title {
   text-align: center;
-  margin-top: 180px;
+  margin-top: 160px;
   margin-bottom: 40px;
   font-size: 2.0rem;
 }
@@ -55,22 +59,22 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
 }
+
 #global-logo-bg img {
   width: 78vw;
   max-width: 720px;
   opacity: 0.18;
 }
+
 #global-logo-bg.fade-in {
   opacity: 1;
   transition: opacity 2.2s ease;
 }
 
-/* ============================
-   Openingリング
-============================ */
+/* Openingリング */
 #opening-ring {
   position: fixed;
   top: 43%;
@@ -82,8 +86,10 @@ h1, h2, h3 {
   transition: opacity 1.5s ease;
   z-index: 30;
 }
+
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
+
 #opening-ring .ring-blur {
   width: 100%;
   height: 100%;
@@ -91,7 +97,12 @@ h1, h2, h3 {
   border-radius: 50%;
   opacity: 0.65;
   animation: pulse 3.6s ease-in-out infinite;
+  box-shadow:
+    0 0 25px rgba(217,193,126,0.35),
+    0 0 60px rgba(217,193,126,0.25),
+    0 0 90px rgba(217,193,126,0.15);
 }
+
 @keyframes pulse {
   0%   { transform: scale(1); opacity: 0.5; }
   50%  { transform: scale(1.18); opacity: 0.9; }
@@ -99,21 +110,26 @@ h1, h2, h3 {
 }
 
 /* ============================
-   固定パンくず（INDEX以外）
+   固定パンくず（サブページ用）
+   ┗ カード左端に揃え、以前の高さ付近に
 ============================ */
 .breadcrumb-fixed {
   position: fixed;
-  top: 110px; /* カード左端位置に合わせた高さ */
-  left: 5%;
-  transform: none;
+  top: 95px;        /* 以前とほぼ同じ高さに調整 */
+  left: 5%;         /* .menu-container（幅90%）と左端を揃える */
+  transform: none;  /* 中央寄せ解除 */
   color: #d9c17e;
   font-size: 0.9rem;
   opacity: 0;
+  white-space: nowrap;
   transition: opacity 1.2s ease;
   z-index: 20;
-  white-space: nowrap;
 }
-.breadcrumb-fixed.show { opacity: 1; }
+
+.breadcrumb-fixed.show {
+  opacity: 1;
+}
+
 .breadcrumb-fixed a {
   color: #d9c17e;
   text-decoration: none;
@@ -127,12 +143,16 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 140px;
+  margin-top: 140px;       /* パンくずの下に来るよう調整 */
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 5;
 }
-.global-nav.show { opacity: 1; }
+
+.global-nav.show {
+  opacity: 1;
+}
+
 .global-nav a {
   color: #d9c17e;
   text-decoration: none;
@@ -141,26 +161,31 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン（常時2行）
+   予約ボタン（PC・SPとも2行・ナビより下）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
-  top: 150px; /* メニューバーより下に配置 */
-  right: 20px;
+  top: 190px;        /* ナビゲーションより下の高さに固定 */
+  right: 24px;
   background: #d9c17e;
-  padding: 10px 12px;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 4px;
   color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
-  white-space: normal;
-  line-height: 1.25;
-  width: 78px;
-  text-align: center;
+  text-decoration: none;
   font-weight: 600;
   z-index: 50;
+
+  white-space: normal;   /* 2行表示許可（LINE予約） */
+  line-height: 1.25;
+  text-align: center;
+  font-size: 0.9rem;
 }
-.reserve-btn-sub.show { opacity: 1; }
+
+.reserve-btn-sub.show {
+  opacity: 1;
+}
 
 /* ============================
    INDEXカード
@@ -173,6 +198,7 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 28px;
 }
+
 #index-cards .info-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
@@ -182,6 +208,7 @@ h1, h2, h3 {
   transform: translateY(20px);
   transition: all 1.2s ease;
 }
+
 #index-cards .info-card.show {
   opacity: 1;
   transform: translateY(0);
@@ -193,26 +220,69 @@ h1, h2, h3 {
 .menu-container {
   width: 90%;
   max-width: 760px;
-  margin: 180px auto 60px auto;
+  margin: 40px auto 60px auto;
   display: flex;
   flex-direction: column;
   gap: 26px;
 }
 
+.menu-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #d9c17e55;
+  padding: 22px;
+  border-radius: 12px;
+}
+
 /* ============================
-   MAP周り
+   MAP 周り
+============================ */
+.small-map {
+  width: 90%;
+  max-width: 620px;
+  margin: 20px auto 80px auto;
+  padding: 14px;
+}
+
+.map-open-btn {
+  display: inline-block;
+  background: #d9c17e;
+  color: #000;
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.map-open-btn:hover {
+  opacity: 0.78;
+}
+
+/* ============================
+   最寄駅 表
 ============================ */
 .station-table {
   width: 100%;
   border-collapse: collapse;
-}
-.station-table th, .station-table td {
+  font-size: 1.05rem;
+  line-height: 1.8;
   border: 1px solid #d9c17e33;
-  padding: 8px;
 }
+
+.station-table th,
+.station-table td {
+  border: 1px solid #d9c17e33;
+  padding: 6px 8px;
+}
+
 .station-table th {
   background: rgba(217,193,126,0.06);
   color: #d9c17e;
+  font-weight: 600;
+}
+
+.station-table td {
+  white-space: normal;
+  vertical-align: top;
 }
 
 /* ============================
@@ -222,8 +292,8 @@ footer {
   text-align: center;
   padding: 50px 0 70px 0;
   color: #d9c17e99;
+  font-size: 0.95rem;
 }
-footer p { margin: 4px 0; }
 
 /* ============================
    スマホ調整
@@ -231,8 +301,9 @@ footer p { margin: 4px 0; }
 @media (max-width: 480px) {
 
   .breadcrumb-fixed {
-    top: 90px;
+    top: 70px;        /* スマホでは少し下げて見やすく */
     left: 5%;
+    font-size: 0.8rem;
   }
 
   .global-nav {
@@ -242,15 +313,16 @@ footer p { margin: 4px 0; }
   }
 
   .reserve-btn-sub {
-    top: 160px;
-    right: 10px;
-    font-size: 0.78rem;
-    width: 74px;
-    padding: 10px 6px;
+    top: 220px;      /* スマホでもナビのさらに下に配置 */
+    right: 12px;
+    font-size: 0.8rem;
+    width: 80px;     /* 自然に2行になる幅 */
+    padding: 10px 8px;
+    line-height: 1.25;
   }
 
   .subpage .page-title {
-    margin-top: 240px;
+    margin-top: 210px;
     font-size: 1.6rem;
   }
 }
