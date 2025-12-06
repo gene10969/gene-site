@@ -293,7 +293,7 @@ footer {
 }
 
 /* ============================
-   スマホ調整（右上固定 + 表最適化）
+   スマホ調整
 ============================ */
 @media (max-width: 480px) {
 
@@ -309,7 +309,6 @@ footer {
     gap: 6px;
   }
 
-  /* ★ スマホ右上固定 */
   .reserve-btn-sub {
     top: 70px !important;
     right: 12px !important;
@@ -321,24 +320,32 @@ footer {
     white-space: normal;
   }
 
-  /* ★スマホでの駅表を読みやすく */
-  .station-table {
-    font-size: 0.82rem;
-    line-height: 1.6;
+  /* ★ 駅名＋徒歩時間：別行かつ余白（B案） */
+  .station-table strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1rem;
   }
 
-  .station-table strong {
-    font-size: 1.02rem;
+  /* 徒歩時間を別行に確実に */
+  .station-table strong + br {
+    display: none;
+  }
+
+  /* ★ 路線間の余白（読みやすく） */
+  .station-table td br + br {
     display: block;
-    margin-bottom: 2px;
+    content: "";
+    margin-bottom: 6px;
+  }
+
+  .station-table {
+    font-size: 0.82rem;
+    line-height: 1.55;
   }
 
   .station-table td {
     font-size: 0.78rem;
-  }
-
-  .station-table td br {
-    line-height: 1.25;
   }
 
   .subpage .page-title {
