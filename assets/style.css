@@ -159,7 +159,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン：透過ゴールド（PC/タブレット）
+   予約ボタン：透過ゴールド
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -293,7 +293,7 @@ footer {
 }
 
 /* ============================
-   スマホ調整（右上・パンくず高さ）
+   スマホ調整（右上固定 + 表最適化）
 ============================ */
 @media (max-width: 480px) {
 
@@ -309,7 +309,7 @@ footer {
     gap: 6px;
   }
 
-  /* ★スマホ右上固定・パンくずと同高さ */
+  /* ★ スマホ右上固定 */
   .reserve-btn-sub {
     top: 70px !important;
     right: 12px !important;
@@ -319,6 +319,26 @@ footer {
     line-height: 1.25;
     border-radius: 6px;
     white-space: normal;
+  }
+
+  /* ★スマホでの駅表を読みやすく */
+  .station-table {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .station-table strong {
+    font-size: 1.02rem;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .station-table td {
+    font-size: 0.78rem;
+  }
+
+  .station-table td br {
+    line-height: 1.25;
   }
 
   .subpage .page-title {
