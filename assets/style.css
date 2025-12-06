@@ -110,7 +110,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   固定パンくず（サブページ）
+   固定パンくず
 ============================ */
 .breadcrumb-fixed {
   position: fixed;
@@ -159,7 +159,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン（透過ゴールド仕様）
+   予約ボタン：透過ゴールド（PC/タブレット）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -171,7 +171,7 @@ h1, h2, h3 {
   transition: opacity 1.2s ease, background 0.3s ease, color 0.3s ease;
   text-decoration: none;
   font-weight: 600;
-  z-index: 50;
+  z-index: 999;
   white-space: normal;
   line-height: 1.25;
   text-align: center;
@@ -238,7 +238,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   MAP 周り
+   MAP ボタン
 ============================ */
 .map-open-btn {
   display: inline-block;
@@ -293,7 +293,7 @@ footer {
 }
 
 /* ============================
-   スマホ調整（右上固定仕様）
+   スマホ調整（右上・パンくず高さ）
 ============================ */
 @media (max-width: 480px) {
 
@@ -309,14 +309,14 @@ footer {
     gap: 6px;
   }
 
-  /* ★ここ重要：スマホ右上固定／折り返し幅 */
+  /* ★スマホ右上固定・パンくずと同高さ */
   .reserve-btn-sub {
-    top: 12px;
-    right: 12px;
+    top: 70px !important;
+    right: 12px !important;
     width: auto;
-    padding: 10px 10px;
+    padding: 10px 9px;
     font-size: 0.78rem;
-    line-height: 1.2;
+    line-height: 1.25;
     border-radius: 6px;
     white-space: normal;
   }
