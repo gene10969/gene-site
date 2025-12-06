@@ -277,6 +277,14 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
+/* 駅名＋徒歩：HTMLは
+   <td><strong>長堀橋駅</strong><br>（徒歩5分）</td>
+   を前提とし、strongを1行目、その下に徒歩時間の1行目 */
+.station-table td:first-child strong {
+  display: block;
+}
+
+/* 他のセルは折り返し可（路線や出口のテキストのため） */
 .station-table td {
   white-space: normal;
   vertical-align: top;
@@ -320,32 +328,19 @@ footer {
     white-space: normal;
   }
 
-  /* ★ 駅名＋徒歩時間：別行かつ余白（B案） */
-  .station-table strong {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 1rem;
+  /* スマホ時の駅名＋徒歩：1行ずつに収める前提で少し小さめに */
+  .station-table td:first-child {
+    white-space: nowrap;          /* 駅名行も徒歩行も途中で折り返さない */
+    font-size: 0.9rem;
   }
 
-  /* 徒歩時間を別行に確実に */
-  .station-table strong + br {
-    display: none;
-  }
-
-  /* ★ 路線間の余白（読みやすく） */
-  .station-table td br + br {
-    display: block;
-    content: "";
-    margin-bottom: 6px;
+  .station-table td:first-child strong {
+    font-size: 0.95rem;          /* 駅名を少し強調 */
   }
 
   .station-table {
     font-size: 0.82rem;
-    line-height: 1.55;
-  }
-
-  .station-table td {
-    font-size: 0.78rem;
+    line-height: 1.6;
   }
 
   .subpage .page-title {
