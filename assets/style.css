@@ -110,7 +110,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   固定パンくず（サブページ用）
+   固定パンくず（サブページ）
 ============================ */
 .breadcrumb-fixed {
   position: fixed;
@@ -134,7 +134,7 @@ h1, h2, h3 {
 }
 
 /* ============================
-   ナビゲーション（固定解除）
+   ナビゲーション
 ============================ */
 .global-nav {
   width: 100%;
@@ -177,7 +177,6 @@ h1, h2, h3 {
   text-align: center;
   font-size: 0.9rem;
 
-  /* ★ゴールド透過仕様 */
   background: rgba(217,193,126,0.18);
   border: 2px solid #d9c17e;
   color: #d9c17e;
@@ -294,7 +293,7 @@ footer {
 }
 
 /* ============================
-   スマホ調整
+   スマホ調整（右上固定仕様）
 ============================ */
 @media (max-width: 480px) {
 
@@ -310,13 +309,16 @@ footer {
     gap: 6px;
   }
 
+  /* ★ここ重要：スマホ右上固定／折り返し幅 */
   .reserve-btn-sub {
-    top: 220px;
+    top: 12px;
     right: 12px;
-    font-size: 0.8rem;
-    width: 80px;
-    padding: 10px 8px;
-    line-height: 1.25;
+    width: auto;
+    padding: 10px 10px;
+    font-size: 0.78rem;
+    line-height: 1.2;
+    border-radius: 6px;
+    white-space: normal;
   }
 
   .subpage .page-title {
