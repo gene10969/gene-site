@@ -111,13 +111,11 @@ h1, h2, h3 {
 
 /* ============================
    固定パンくず（サブページ用）
-   ┗ カード左端に揃え、以前の高さ付近に
 ============================ */
 .breadcrumb-fixed {
   position: fixed;
-  top: 95px;        /* 以前とほぼ同じ高さに調整 */
-  left: 5%;         /* .menu-container（幅90%）と左端を揃える */
-  transform: none;  /* 中央寄せ解除 */
+  top: 95px;
+  left: 5%;
   color: #d9c17e;
   font-size: 0.9rem;
   opacity: 0;
@@ -143,7 +141,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   gap: 18px;
-  margin-top: 140px;       /* パンくずの下に来るよう調整 */
+  margin-top: 140px;
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 5;
@@ -161,30 +159,37 @@ h1, h2, h3 {
 }
 
 /* ============================
-   予約ボタン（PC・SPとも2行・ナビより下）
+   予約ボタン（透過ゴールド仕様）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
-  top: 190px;        /* ナビゲーションより下の高さに固定 */
+  top: 190px;
   right: 24px;
-  background: #d9c17e;
   padding: 10px 14px;
   border-radius: 4px;
-  color: #000;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.2s ease, background 0.3s ease, color 0.3s ease;
   text-decoration: none;
   font-weight: 600;
   z-index: 50;
-
-  white-space: normal;   /* 2行表示許可（LINE予約） */
+  white-space: normal;
   line-height: 1.25;
   text-align: center;
   font-size: 0.9rem;
+
+  /* ★ゴールド透過仕様 */
+  background: rgba(217,193,126,0.18);
+  border: 2px solid #d9c17e;
+  color: #d9c17e;
 }
 
 .reserve-btn-sub.show {
   opacity: 1;
+}
+
+.reserve-btn-sub:hover {
+  background: rgba(217,193,126,0.45);
+  color: #fff;
 }
 
 /* ============================
@@ -236,13 +241,6 @@ h1, h2, h3 {
 /* ============================
    MAP 周り
 ============================ */
-.small-map {
-  width: 90%;
-  max-width: 620px;
-  margin: 20px auto 80px auto;
-  padding: 14px;
-}
-
 .map-open-btn {
   display: inline-block;
   background: #d9c17e;
@@ -301,7 +299,7 @@ footer {
 @media (max-width: 480px) {
 
   .breadcrumb-fixed {
-    top: 70px;        /* スマホでは少し下げて見やすく */
+    top: 70px;
     left: 5%;
     font-size: 0.8rem;
   }
@@ -313,10 +311,10 @@ footer {
   }
 
   .reserve-btn-sub {
-    top: 220px;      /* スマホでもナビのさらに下に配置 */
+    top: 220px;
     right: 12px;
     font-size: 0.8rem;
-    width: 80px;     /* 自然に2行になる幅 */
+    width: 80px;
     padding: 10px 8px;
     line-height: 1.25;
   }
