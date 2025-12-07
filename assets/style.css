@@ -30,7 +30,7 @@ h1, h2, h3 {
   transform: translateY(20px);
   text-align: center;
   position: relative;
-  margin-top: 200px;
+  margin-top: 250px;
   transition: all 1.6s ease;
 }
 
@@ -40,53 +40,78 @@ h1, h2, h3 {
 }
 
 /* ============================
-   ページタイトル
+   breadcrumb（トップページ）
 ============================ */
-.subpage .page-title {
-  text-align: center;
-  margin-top: 160px;
-  margin-bottom: 40px;
-  font-size: 2.0rem;
+.breadcrumb {
+  position: fixed;
+  top: 95px;
+  left: 5%;
+  opacity: 0;
+  color: #d9c17e;
+  z-index: 20;
+  transition: opacity 1.2s ease;
+}
+.breadcrumb a { color: #d9c17e; text-decoration: none; }
+
+/* ============================
+   GLOBAL NAV（タイトルより上）
+============================ */
+.global-nav {
+  position: fixed;
+  top: 135px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 30;
+}
+.global-nav.show { opacity: 1; }
+.global-nav a {
+  color: #d9c17e;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 /* ============================
-   大背景ロゴ
+   予約ボタン（透過）
 ============================ */
-#global-logo-bg {
+.reserve-btn-sub {
   position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 195px;
+  right: 24px;
+  background: rgba(217,193,126,0.4);
+  padding: 10px 14px;
+  border-radius: 4px;
+  color: #000;
   opacity: 0;
-  z-index: 0;
-  pointer-events: none;
+  transition: opacity 1.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 50;
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
+  font-size: 0.9rem;
 }
+.reserve-btn-sub.show { opacity: 1; }
 
-#global-logo-bg img {
-  width: 78vw;
-  max-width: 720px;
-  opacity: 0.18;
-}
-
-#global-logo-bg.fade-in {
-  opacity: 1;
-  transition: opacity 2.2s ease;
-}
-
-/* Openingリング */
+/* ============================
+   Openingリング
+============================ */
 #opening-ring {
   position: fixed;
-  top: 43%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 190px;
   height: 190px;
   opacity: 0;
   transition: opacity 1.5s ease;
-  z-index: 30;
+  z-index: 40;
 }
-
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
 
@@ -110,75 +135,27 @@ h1, h2, h3 {
 }
 
 /* ============================
-   固定パンくず（サブページ）
+   大背景ロゴ
 ============================ */
-.breadcrumb-fixed {
+#global-logo-bg {
   position: fixed;
-  top: 95px;
-  left: 5%;
-  color: #d9c17e;
+  inset: 0;
+  z-index: 0;
   opacity: 0;
-  transition: opacity 1.2s ease;
-  z-index: 20;
-}
-.breadcrumb-fixed.show { opacity: 1; }
-.breadcrumb-fixed a { color: #d9c17e; text-decoration: none; }
-
-/* ============================
-   トップページ breadcrumb
-============================ */
-.breadcrumb {
-  position: fixed;
-  top: 95px;
-  left: 5%;
-  color: #d9c17e;
-  opacity: 0;
-  z-index: 20;
-  transition: opacity 1.2s ease;
-}
-.breadcrumb a { color: #d9c17e; text-decoration: none; }
-
-/* ============================
-   ナビゲーション
-============================ */
-.global-nav {
-  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-top: 140px;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  align-items: center;
+  pointer-events: none;
 }
-.global-nav.show { opacity: 1; }
-.global-nav a {
-  color: #d9c17e;
-  text-decoration: none;
-  white-space: nowrap;
+#global-logo-bg img {
+  width: 78vw;
+  max-width: 720px;
+  opacity: 0.18;
 }
-
-/* ============================
-   予約ボタン（透過）
-============================ */
-.reserve-btn-sub {
-  position: fixed;
-  top: 190px;
-  right: 24px;
-  background: rgba(217,193,126,0.4);
-  padding: 10px 14px;
-  border-radius: 4px;
-  color: #000;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 50;
-  white-space: normal;
-  line-height: 1.25;
-  text-align: center;
-  font-size: 0.9rem;
+#global-logo-bg.fade-in {
+  opacity: 1;
+  transition: opacity 2.2s ease;
 }
-.reserve-btn-sub.show { opacity: 1; }
 
 /* ============================
    INDEX カード
@@ -186,7 +163,7 @@ h1, h2, h3 {
 #index-cards {
   width: 90%;
   max-width: 700px;
-  margin: 70px auto 120px;
+  margin: 90px auto 140px;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -206,24 +183,6 @@ h1, h2, h3 {
 }
 
 /* ============================
-   サブページカード
-============================ */
-.menu-container {
-  width: 90%;
-  max-width: 760px;
-  margin: 40px auto 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-}
-.menu-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid #d9c17e55;
-  padding: 22px;
-  border-radius: 12px;
-}
-
-/* ============================
    footer
 ============================ */
 footer {
@@ -238,27 +197,25 @@ footer {
 ============================ */
 @media (max-width: 480px) {
 
-  .breadcrumb,
-  .breadcrumb-fixed {
+  .breadcrumb {
     top: 70px;
     font-size: 0.8rem;
   }
 
   .global-nav {
-    margin-top: 140px;
+    top: 105px;
     font-size: 0.75rem;
     gap: 6px;
   }
 
   .reserve-btn-sub {
-    top: 220px;
+    top: 165px;
     right: 12px;
-    font-size: 0.8rem;
-    width: 80px;
+    font-size: 0.78rem;
+    width: 76px;
   }
 
-  .subpage .page-title {
-    margin-top: 210px;
-    font-size: 1.6rem;
+  #hero-logo {
+    margin-top: 260px;
   }
 }
