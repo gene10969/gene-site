@@ -135,32 +135,38 @@
 <script>
 window.addEventListener("load", () => {
 
-  const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
-  const nav     = document.querySelector(".global-nav");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const cards   = document.querySelectorAll(".card-hidden");
-  const bgLogo  = document.getElementById("global-logo-bg");
+  const ring       = document.getElementById("opening-ring");
+  const hero       = document.getElementById("hero-logo");
+  const nav        = document.querySelector(".global-nav");
+  const rsvBtn     = document.querySelector(".reserve-btn-sub");
+  const cards      = document.querySelectorAll(".card-hidden");
+  const bgLogo     = document.getElementById("global-logo-bg");
   const breadcrumb = document.querySelector(".breadcrumb");
 
+  // Openingリング表示
   ring.classList.add("show");
-  setTimeout(()=> ring.classList.add("fadeout"), 1400);
-  setTimeout(()=> ring.style.display = "none", 2400);
 
+  // 徐々にフェード → 消去
+  setTimeout(()=> ring.classList.add("fadeout"), 1500);
+  setTimeout(()=> ring.style.display = "none", 2300);
+
+  // リング終了後 → ロゴとナビなど表示開始
   setTimeout(()=>{
     hero.classList.add("show");
     nav.classList.add("show");
     rsvBtn.classList.add("show");
     bgLogo.classList.add("fade-in");
-    breadcrumb.style.opacity = "1"; // ← パンくずを演出後に表示
+    breadcrumb.style.opacity = "1";
   }, 2400);
 
+  // カード（ごあいさつ・お知らせ）
   setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
-  }, 3200);
+  }, 3000);
 
 });
 </script>
+
 
 </body>
 </html>
