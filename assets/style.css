@@ -428,3 +428,21 @@ footer {
 .breadcrumb-fixed span {
   color: #d9c17e;
 }
+
+.station-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.station-detail .line {
+  color: #d9c17e;
+  font-weight: 600;
+}
+
+.station-detail .exit {
+  color: #eee;
+  font-size: 0.95rem;
+}
+
