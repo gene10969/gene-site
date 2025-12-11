@@ -405,4 +405,16 @@ footer {
 .breadcrumb a:hover {
   opacity: 0.75;
 }
+/* ============================
+   パンくずの色を必ずゴールドに統一
+============================ */
+.breadcrumb-fixed a,
+.breadcrumb-fixed span {
+  color: #d9c17e !important;
+  text-decoration: none !important;
+}
+
+.breadcrumb-fixed a:hover {
+  opacity: 0.75 !important;
+}
 
