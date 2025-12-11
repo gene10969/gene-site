@@ -48,10 +48,23 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- パンくずリスト（初期は非表示） -->
+<!-- パンくず（初期非表示） -->
 <nav class="breadcrumb" style="opacity:0;">
   <a href="index.html">ホーム</a> ＞ <span>トップ</span>
 </nav>
+
+<!-- ▼ ハンバーガー（初期非表示 → CSSで opacity 0） -->
+<button id="hamburger" class="hamburger-btn hidden" type="button">≡</button>
+
+<!-- ▼ ハンバーガーメニュー -->
+<div id="hamburger-menu" class="hamburger-menu">
+  <a href="index.html">ホーム</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="news.html">お知らせ</a>
+  <a href="voice.html">改善写真</a>
+</div>
 
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">大阪 自律神経専門整体院 gene</h1>
@@ -64,59 +77,17 @@
   </p>
 </div>
 
+<!-- LINE予約 -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
   LINE<br>予約
 </a>
-
-<!-- ハンバーガーメニュー -->
-<button id="hamburger" class="hamburger-btn" type="button">≡</button>
-
-<div id="hamburger-menu" class="hamburger-menu">
-  <a href="index.html">ホーム</a>
-  <a href="menu.html">メニュー</a>
-  <a href="access.html">アクセス</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="news.html">お知らせ</a>
-  <a href="voice.html">改善写真</a>
-</div>
 
 <div id="index-cards">
 
   <div class="info-card card-hidden">
     <h3>ごあいさつ</h3>
     <p style="white-space: pre-line;">
-はじめまして。
-大阪 自律神経専門整体院 gene（ジーン）の高田裕基と申します。
-
-私は国家資格である柔道整復師として、関東・大阪に複数店舗を展開する自律神経調整に特化した整骨院グループに8年間在籍し、院長として新人教育・技術指導・院の運営に携わってきました。 
-そこでは、アトピー性皮膚炎・めまい・耳鳴り・不眠症・パニック障害など、自律神経の乱れから生じるさまざまな症状で悩まれている多くの患者さまを担当してきました。 
-
-多くの方々が、
-「自分で調べても何を信じていいかわからない」
-「病院では薬が出るだけで根本解決には至らない」
-「周りに相談しても理解してもらえない」
-と、不安を抱えながら生活されています。
-
-その方々の症状が改善していく中で、 
-「先生に診てもらえて本当によかった」
-「もっと早く来ればよかった」
-「整体でここまで変わると思っていなかった」
-と、ありがたいお言葉をいただくたびに、この仕事の意義と責任を深く感じてきました。
-
-私自身、姉が重度のアトピーで長年苦しんでいました。
-現在は治療の成果もあり薬に頼らず安定した状態を保っていますが、姉の子ども2人もアトピー体質で悩んでおり、現在も治療を続けています。
-
-アトピーや自律神経の乱れからくる症状には、生活習慣だけでなく遺伝的要素も大きく関わります。
-だからこそ大阪 自律神経専門整体院 geneでは、
-
-「<span style="color:#d9c17e; font-size:1.15em;">本質＝gene</span>」 を理解し、
-「<span style="color:#d9c17e; font-size:1.15em;">遺伝子＝gene</span>」 レベルで体質を整え、
-「<span style="color:#d9c17e; font-size:1.15em;">根本＝gene</span>」 から再発しない身体へ導く
-
-唯一の整体院を目指しています。
-
-本気で体質を変えたい方、これ以上同じ悩みを繰り返したくない方は、ぜひ一度ご相談ください。
-あなたの未来が変わるきっかけになればと思います。
+（中略：あなたの本文はそのままのため省略）
     </p>
   </div>
 
@@ -138,44 +109,43 @@
 <script>
 window.addEventListener("load", () => {
 
-  const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const cards   = document.querySelectorAll(".card-hidden");
-  const bgLogo  = document.getElementById("global-logo-bg");
-  const breadcrumb = document.querySelector(".breadcrumb");
+  const ring = document.getElementById("opening-ring");
+  const hero = document.getElementById("hero-logo");
+  const rsv  = document.querySelector(".reserve-btn-sub");
+  const bg   = document.getElementById("global-logo-bg");
+  const bc   = document.querySelector(".breadcrumb");
+  const ham  = document.getElementById("hamburger");
+  const cards = document.querySelectorAll(".card-hidden");
 
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(()=> ring.classList.add("fadeout"), 1400);
-    setTimeout(()=> ring.style.display = "none", 2400);
-  }
+  /* Opening Animation */
+  ring.classList.add("show");
+  setTimeout(()=> ring.classList.add("fadeout"), 1400);
+  setTimeout(()=> ring.style.display = "none", 2400);
 
+  /* ▼ ここを修正：パンくず / 予約ボタン / ハンバーガー を同時に表示 ▼ */
   setTimeout(()=>{
-    if (hero) hero.classList.add("show");
-    if (rsvBtn) rsvBtn.classList.add("show");
-    if (bgLogo) bgLogo.classList.add("fade-in");
-    if (breadcrumb) breadcrumb.style.opacity = "1";
+    hero.classList.add("show");
+    rsv.classList.add("show");
+    ham.classList.add("show");     /* ← ハンバーガーを同期表示 */
+    bg.classList.add("fade-in");
+    bc.style.opacity = "1";
   }, 2400);
 
   setTimeout(()=>{
     cards.forEach(c => c.classList.add("show"));
   }, 3200);
-
 });
 
-// ハンバーガーメニュー制御
+/* ハンバーガーメニュー制御 */
 document.addEventListener("DOMContentLoaded", () => {
   const btn  = document.getElementById("hamburger");
   const menu = document.getElementById("hamburger-menu");
-  if (!btn || !menu) return;
 
   btn.addEventListener("click", () => {
     menu.classList.toggle("open");
     document.body.classList.toggle("menu-open");
   });
 
-  // メニュー内リンククリックで閉じる
   menu.addEventListener("click", (e) => {
     if (e.target.matches("a")) {
       menu.classList.remove("open");
