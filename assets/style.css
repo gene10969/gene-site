@@ -394,4 +394,15 @@ footer {
   opacity: 1;
   top: 95px;             /* 表示時の位置を固定（ズレ防止） */
 }
+/* ============================
+   サブページのパンくずカラー補正
+============================ */
+.breadcrumb a,
+.breadcrumb span {
+  color: #d9c17e !important;
+}
+
+.breadcrumb a:hover {
+  opacity: 0.75;
+}
 
