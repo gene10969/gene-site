@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
   ============================ */
   const ring    = document.getElementById("opening-ring");
   const hero    = document.getElementById("hero-logo");
-  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const breadcrumb = document.querySelector(".breadcrumb");
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const bgLogo  = document.getElementById("global-logo-bg");
   const cards   = document.querySelectorAll(".card-hidden");
@@ -177,7 +177,6 @@ window.addEventListener("load", () => {
   /* ============================
      ハンバーガーメニュー開閉
   ============================ */
-
   if (hamburgerBtn && menuPanel) {
     // 開く
     hamburgerBtn.addEventListener("click", () => {
@@ -185,15 +184,15 @@ window.addEventListener("load", () => {
       document.body.classList.add("menu-open");
     });
 
-    // メニュー外クリックで閉じる
-    menuPanel.addEventListener("click", (e) => {
-      if (e.target === menuPanel) {   // 背景をタップした場合のみ閉じる
+    // 背景タップで閉じる
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
         menuPanel.classList.remove("open");
         document.body.classList.remove("menu-open");
       }
     });
 
-    // メニュー内リンクを押したときにも閉じる
+    // リンクタップで閉じる
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -204,10 +203,10 @@ window.addEventListener("load", () => {
 
 
   /* ============================
-     上に戻るボタン（フェード表示）
+     上に戻るボタン（大型ゴールド）
   ============================ */
 
-  // ボタン作成（HTMLを一切編集しない方式）
+  // ボタン作成
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
