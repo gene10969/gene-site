@@ -462,3 +462,27 @@ footer {
 .station-detail .station-exit {
   color: #fff !important;
 }
+/* 横3列の駅一覧を見やすく */
+.station-table.station-wide th,
+.station-table.station-wide td {
+  color: #fff !important;
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 1.05rem;
+  vertical-align: top;
+}
+
+.station-table.station-wide {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.station-table.station-wide th {
+  font-weight: 600;
+  border-bottom: 1px solid #d9c17e55;
+}
+
+.station-table.station-wide td {
+  border-bottom: 1px solid #ffffff15;
+}
