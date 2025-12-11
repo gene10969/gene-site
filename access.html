@@ -12,23 +12,26 @@
   <img src="assets/img/logo.svg" alt="">
 </div>
 
-<!-- ★固定パンくず -->
+<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>アクセス</span>
 </nav>
 
-<nav class="global-nav hidden">
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
+
+<!-- ハンバーガーメニュー -->
+<button id="hamburger" class="hamburger-btn" type="button">≡</button>
+
+<div id="hamburger-menu" class="hamburger-menu">
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
-</nav>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+</div>
 
 <h1 class="page-title">アクセス</h1>
 
@@ -51,31 +54,28 @@
         <!-- 長堀橋駅 -->
         <tr>
           <td>
-            <strong>長堀橋駅</strong><br><br>
-            （徒歩5分）
+            <span class="station-name"><strong>長堀橋駅</strong></span>
+            <span class="station-walk">（徒歩5分）</span>
           </td>
           <td>
-            長堀鶴見緑地線<br><br>
-            堺筋線
+            長堀鶴見緑地線<br>堺筋線
           </td>
           <td>
-            北改札口 1番出口<br>
-            （エスカレーター）
+            北改札口 1番出口（エスカレーター）
           </td>
         </tr>
 
         <!-- 松屋町駅 -->
         <tr>
           <td>
-            <strong>松屋町駅</strong><br><br>
-            （徒歩6分）
+            <span class="station-name"><strong>松屋町駅</strong></span>
+            <span class="station-walk">（徒歩6分）</span>
           </td>
           <td>
             長堀鶴見緑地線
           </td>
           <td>
-            1番出口<br>
-            （エスカレーター / 地上付近のみ階段）<br>
+            1番出口（エスカレーター / 地上付近のみ階段）<br>
             5番出口（エレベーター）
           </td>
         </tr>
@@ -83,8 +83,8 @@
         <!-- 心斎橋駅 -->
         <tr>
           <td>
-            <strong>心斎橋駅</strong><br><br>
-            （徒歩15分）
+            <span class="station-name"><strong>心斎橋駅</strong></span>
+            <span class="station-walk">（徒歩15分）</span>
           </td>
           <td>
             御堂筋線
@@ -135,21 +135,39 @@
 
 <footer>
   大阪 自律神経専門整体院 gene<br>
-  営業時間：11:00〜21:00（不定休）<br>
-  最終受付：初診 20:00 / 二回目以降 20:30<br>
-  住所：大阪市中央区南船場1-10-12 ラインビルド南船場703<br>
   © gene. All Rights Reserved.
 </footer>
 
 <script>
 window.addEventListener("load", () => {
-  document.getElementById("global-logo-bg").classList.add("fade-in");
+  const bgLogo = document.getElementById("global-logo-bg");
+  if (bgLogo) bgLogo.classList.add("fade-in");
 
   setTimeout(()=>{
-    document.querySelector(".breadcrumb-fixed").classList.add("show");
-    document.querySelector(".global-nav").classList.add("show");
-    document.querySelector(".reserve-btn-sub").classList.add("show");
+    const bc = document.querySelector(".breadcrumb-fixed");
+    const rsv = document.querySelector(".reserve-btn-sub");
+    if (bc) bc.classList.add("show");
+    if (rsv) rsv.classList.add("show");
   }, 2400);
+});
+
+// ハンバーガーメニュー制御
+document.addEventListener("DOMContentLoaded", () => {
+  const btn  = document.getElementById("hamburger");
+  const menu = document.getElementById("hamburger-menu");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+  });
+
+  menu.addEventListener("click", (e) => {
+    if (e.target.matches("a")) {
+      menu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    }
+  });
 });
 </script>
 
