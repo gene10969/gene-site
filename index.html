@@ -185,6 +185,14 @@ window.addEventListener("load", () => {
       menuPanel.classList.add("open");
       document.body.classList.add("menu-open");
     });
+  /* × ボタンで閉じる */
+  const closeBtn = document.querySelector(".menu-close-btn");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
+  }
 
     // 背景タップで閉じる
     menuPanel.addEventListener("click", e => {
