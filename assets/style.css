@@ -349,4 +349,32 @@ footer {
     font-size: 0.82rem;
   }
 }
+/* ============================
+   ハンバーガーメニュー：閉じるボタン（×）
+============================ */
+.menu-close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 2.6rem;
+  background: none;
+  border: none;
+  color: #d9c17e;
+  cursor: pointer;
+  z-index: 1001;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.menu-close-btn:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .menu-close-btn {
+    top: 22px;
+    right: 22px;
+    font-size: 2.4rem;
+  }
+}
 
