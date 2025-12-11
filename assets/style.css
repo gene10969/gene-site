@@ -418,3 +418,13 @@ footer {
   opacity: 0.75 !important;
 }
 
+/* パンくずの ＞ を金色に統一 */
+.breadcrumb,
+.breadcrumb-fixed {
+  color: #d9c17e;
+}
+
+.breadcrumb span,
+.breadcrumb-fixed span {
+  color: #d9c17e;
+}
