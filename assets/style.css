@@ -518,3 +518,26 @@ footer {
     bottom: auto;   /* 念のため解除 */
   }
 }
+/* ============================
+   スマホのみ：LINE予約ボタン調整
+   ┗ パンくずと同じ高さ・文字幅・半透明
+============================ */
+@media (max-width: 768px) {
+
+  .reserve-btn-sub {
+    top: 70px;              /* パンくずと同じ高さ */
+    right: 12px;
+
+    width: auto;            /* 文字幅に合わせる */
+    padding: 8px 10px;      /* 文字に対して最小限の余白 */
+    line-height: 1.2;
+
+    background: rgba(217,193,126,0.65); /* ゴールド半透明 */
+    color: #000;
+
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;    /* 不要な改行防止 */
+  }
+
+}
