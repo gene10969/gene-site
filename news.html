@@ -25,7 +25,6 @@
   <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
 </div>
 
-  <!-- ★固定パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>お知らせ</span>
 </nav>
@@ -34,13 +33,9 @@
   LINE<br>予約
 </a>
 
-<!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
-<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
-
-  <!-- × ボタン -->
   <button class="menu-close-btn">×</button>
 
   <a href="index.html">ホーム</a>
@@ -49,7 +44,6 @@
   <a href="faq.html">よくある質問</a>
   <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
-
 </div>
 
 <h1 class="page-title">お知らせ</h1>
@@ -70,8 +64,8 @@
 
 </main>
 
-<button id="backToTop">↑</button>
-  
+<!-- ここにあった backToTop ボタンは削除 -->
+
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
@@ -83,9 +77,6 @@
 <script>
 window.addEventListener("load", () => {
 
-  /* ============================
-     Opening Animation（共通）
-  ============================ */
   const ring    = document.getElementById("opening-ring");
   const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
@@ -99,7 +90,6 @@ window.addEventListener("load", () => {
     setTimeout(()=> ring.style.display = "none", 2400);
   }
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
@@ -108,9 +98,6 @@ window.addEventListener("load", () => {
   }, 2400);
 
 
-  /* ============================
-     ハンバーガーメニュー開閉
-  ============================ */
   const closeBtn = document.querySelector(".menu-close-btn");
 
   if (hamburgerBtn && menuPanel) {
@@ -119,7 +106,6 @@ window.addEventListener("load", () => {
       document.body.classList.add("menu-open");
     });
 
-    // 背景タップで閉じる
     menuPanel.addEventListener("click", e => {
       if (e.target === menuPanel) {
         menuPanel.classList.remove("open");
@@ -127,7 +113,6 @@ window.addEventListener("load", () => {
       }
     });
 
-    // × ボタンで閉じる
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -135,7 +120,6 @@ window.addEventListener("load", () => {
       });
     }
 
-    // リンクタップで閉じる
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -144,10 +128,7 @@ window.addEventListener("load", () => {
     });
   }
 
-
-  /* ============================
-     上に戻るボタン（共通）
-  ============================ */
+  /* 上へ戻るボタン（index と同じ処理） */
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
