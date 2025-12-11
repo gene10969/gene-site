@@ -446,3 +446,19 @@ footer {
   font-size: 0.95rem;
 }
 
+/* 最寄駅カード：縦並びにする */
+.station-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+}
+
+/* 最寄駅カード内の文字はすべて白 */
+.station-table td,
+.station-table th,
+.station-detail div,
+.station-detail .station-line,
+.station-detail .station-exit {
+  color: #fff !important;
+}
