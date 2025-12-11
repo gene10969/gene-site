@@ -486,3 +486,25 @@ footer {
 .station-table.station-wide td {
   border-bottom: 1px solid #ffffff15;
 }
+
+/* アクセスマップ拡大（長堀橋〜松屋町 駅間が入る幅） */
+.access-map {
+  width: 100%;
+  max-width: 1100px; /* PC時は広め */
+  margin: 40px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 500px; /* 長堀橋〜松屋町をしっかり見せるサイズ */
+  border: none;
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .access-map iframe {
+    height: 380px;
+  }
+}
