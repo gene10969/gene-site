@@ -30,8 +30,9 @@ h1, h2, h3 {
   transform: translateY(20px);
   text-align: center;
   position: relative;
-  margin-top: 250px;
+  margin-top: 220px;
   transition: all 1.6s ease;
+  padding: 0 16px;
 }
 
 #hero-logo.show {
@@ -39,79 +40,66 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-/* ============================
-   breadcrumb（トップページ）
-============================ */
-.breadcrumb {
-  position: fixed;
-  top: 95px;
-  left: 5%;
-  opacity: 0;
-  color: #d9c17e;
-  z-index: 20;
-  transition: opacity 1.2s ease;
+.main-title {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
 }
-.breadcrumb a { color: #d9c17e; text-decoration: none; }
+
+.sub-catch {
+  font-size: 1rem;
+  line-height: 1.9;
+}
 
 /* ============================
-   GLOBAL NAV（タイトルより上）
+   サブページ：ページタイトル
 ============================ */
-.global-nav {
+.subpage .page-title {
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 40px;
+  font-size: 2.0rem;
+}
+
+/* ============================
+   大背景ロゴ
+============================ */
+#global-logo-bg {
   position: fixed;
-  top: 135px;
-  width: 100%;
+  inset: 0;
   display: flex;
   justify-content: center;
-  gap: 18px;
+  align-items: center;
   opacity: 0;
-  transition: opacity 1.2s ease;
-  z-index: 30;
-}
-.global-nav.show { opacity: 1; }
-.global-nav a {
-  color: #d9c17e;
-  text-decoration: none;
-  white-space: nowrap;
-  font-weight: 500;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* ============================
-   予約ボタン（透過）
-============================ */
-.reserve-btn-sub {
-  position: fixed;
-  top: 195px;
-  right: 24px;
-  background: rgba(217,193,126,0.4);
-  padding: 10px 14px;
-  border-radius: 4px;
-  color: #000;
-  opacity: 0;
-  transition: opacity 1.2s ease;
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 50;
-  white-space: normal;
-  line-height: 1.25;
-  text-align: center;
-  font-size: 0.9rem;
+#global-logo-bg img {
+  width: 78vw;
+  max-width: 720px;
+  opacity: 0.18;
 }
-.reserve-btn-sub.show { opacity: 1; }
+
+#global-logo-bg.fade-in {
+  opacity: 1;
+  transition: opacity 2.2s ease;
+}
 
 /* ============================
    Openingリング
 ============================ */
 #opening-ring {
   position: fixed;
-  top: 42%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 190px;
   height: 190px;
   opacity: 0;
   transition: opacity 1.5s ease;
-  z-index: 40;
+  z-index: 30;
 }
+
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
 
@@ -135,39 +123,142 @@ h1, h2, h3 {
 }
 
 /* ============================
-   大背景ロゴ
+   パンくず
 ============================ */
-#global-logo-bg {
+.breadcrumb-fixed {
   position: fixed;
-  inset: 0;
-  z-index: 0;
+  top: 95px;
+  left: 5%;
+  color: #d9c17e;
+  font-size: 0.9rem;
   opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 1.2s ease;
+  z-index: 40;
 }
-#global-logo-bg img {
-  width: 78vw;
-  max-width: 720px;
-  opacity: 0.18;
-}
-#global-logo-bg.fade-in {
+
+.breadcrumb-fixed.show {
   opacity: 1;
-  transition: opacity 2.2s ease;
+}
+
+.breadcrumb-fixed a {
+  color: #d9c17e;
+  text-decoration: none;
+}
+
+/* トップページ用パンくず（opacity は JS で制御） */
+.breadcrumb {
+  position: fixed;
+  top: 95px;
+  left: 5%;
+  color: #d9c17e;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  z-index: 40;
+}
+
+.breadcrumb a {
+  color: #d9c17e;
+  text-decoration: none;
 }
 
 /* ============================
-   INDEX カード
+   予約ボタン（LINE）
+============================ */
+.reserve-btn-sub {
+  position: fixed;
+  top: 150px;
+  right: 24px;
+  background: rgba(217,193,126,0.18);
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 1px solid #d9c17e;
+  color: #d9c17e;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 80;
+
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.reserve-btn-sub.show {
+  opacity: 1;
+}
+
+/* ============================
+   ハンバーガーメニュー
+============================ */
+.hamburger-btn {
+  position: fixed;
+  top: 100px; /* パンくずより下、LINE予約より上 */
+  right: 24px;
+  font-size: 2.0rem;
+  color: #d9c17e;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 90;
+  padding: 0;
+}
+
+.hamburger-btn:focus {
+  outline: none;
+}
+
+/* 全画面フェードメニュー */
+.hamburger-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.94);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 999;
+}
+
+.hamburger-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hamburger-menu a {
+  color: #d9c17e;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 20px;
+}
+
+.hamburger-menu a:hover {
+  opacity: 0.7;
+}
+
+/* メニュー表示中はスクロールロック */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ============================
+   INDEXカード
 ============================ */
 #index-cards {
   width: 90%;
   max-width: 700px;
-  margin: 90px auto 140px;
+  margin: 90px auto 140px auto;
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
+
 #index-cards .info-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
@@ -177,9 +268,87 @@ h1, h2, h3 {
   transform: translateY(20px);
   transition: all 1.2s ease;
 }
+
 #index-cards .info-card.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================
+   サブページカード
+============================ */
+.menu-container {
+  width: 90%;
+  max-width: 760px;
+  margin: 40px auto 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.menu-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #d9c17e55;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+/* ============================
+   MAP / ボタン
+============================ */
+.map-frame {
+  margin-top: 10px;
+}
+
+.map-open-btn {
+  display: inline-block;
+  background: #d9c17e;
+  color: #000;
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.map-open-btn:hover {
+  opacity: 0.78;
+}
+
+/* ============================
+   最寄駅 表
+============================ */
+.station-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  border: 1px solid #d9c17e33;
+}
+
+.station-table th,
+.station-table td {
+  border: 1px solid #d9c17e33;
+  padding: 6px 8px;
+}
+
+.station-table th {
+  background: rgba(217,193,126,0.06);
+  color: #d9c17e;
+  font-weight: 600;
+}
+
+.station-table td {
+  white-space: normal;
+  vertical-align: top;
+}
+
+.station-name {
+  display: block;
+}
+
+.station-walk {
+  display: block;
+  margin-top: 4px;
 }
 
 /* ============================
@@ -187,7 +356,7 @@ h1, h2, h3 {
 ============================ */
 footer {
   text-align: center;
-  padding: 50px 0 70px;
+  padding: 50px 0 70px 0;
   color: #d9c17e99;
   font-size: 0.95rem;
 }
@@ -198,24 +367,40 @@ footer {
 @media (max-width: 480px) {
 
   .breadcrumb {
-    top: 70px;
+    top: 60px;
     font-size: 0.8rem;
   }
 
-  .global-nav {
-    top: 105px;
-    font-size: 0.75rem;
-    gap: 6px;
+  .breadcrumb-fixed {
+    top: 60px;
+    font-size: 0.8rem;
+  }
+
+  .hamburger-btn {
+    top: 90px;
+    right: 12px;
+    font-size: 1.8rem;
   }
 
   .reserve-btn-sub {
-    top: 165px;
+    top: 135px;
     right: 12px;
-    font-size: 0.78rem;
-    width: 76px;
+    font-size: 0.8rem;
+    width: 80px;
+    padding: 8px 8px;
   }
 
   #hero-logo {
-    margin-top: 260px;
+    margin-top: 220px;
+  }
+
+  .subpage .page-title {
+    margin-top: 200px;
+    font-size: 1.7rem;
+  }
+
+  .station-table {
+    font-size: 0.86rem;
+    line-height: 1.6;
   }
 }
