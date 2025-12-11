@@ -13,8 +13,6 @@
 <meta property="og:url" content="https://gene10969.github.io/gene-site/voice.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/og_hero.webp">
-
-<link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body class="subpage">
@@ -27,21 +25,24 @@
 
 <!-- ★固定パンくず -->
 <nav class="breadcrumb-fixed hidden">
-  <a href="index.html">ホーム</a> ＞ <span>お客様の声</span>
+  <a href="index.html">ホーム</a> ＞ <span>よくある質問</span>
 </nav>
 
-<nav class="global-nav hidden">
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
+
+<!-- ハンバーガーメニュー -->
+<button id="hamburger" class="hamburger-btn" type="button">≡</button>
+
+<div id="hamburger-menu" class="hamburger-menu">
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
-</nav>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+</div>
 
 <h1 class="page-title">お客様の声</h1>
 
@@ -74,13 +75,34 @@
 
 <script>
 window.addEventListener("load", () => {
-  document.getElementById("global-logo-bg").classList.add("fade-in");
+  const bgLogo = document.getElementById("global-logo-bg");
+  if (bgLogo) bgLogo.classList.add("fade-in");
 
   setTimeout(()=>{
-    document.querySelector(".breadcrumb-fixed").classList.add("show");
-    document.querySelector(".global-nav").classList.add("show");
-    document.querySelector(".reserve-btn-sub").classList.add("show");
+    const bc = document.querySelector(".breadcrumb-fixed");
+    const rsv = document.querySelector(".reserve-btn-sub");
+    if (bc) bc.classList.add("show");
+    if (rsv) rsv.classList.add("show");
   }, 2400);
+});
+
+// ハンバーガーメニュー制御
+document.addEventListener("DOMContentLoaded", () => {
+  const btn  = document.getElementById("hamburger");
+  const menu = document.getElementById("hamburger-menu");
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+  });
+
+  menu.addEventListener("click", (e) => {
+    if (e.target.matches("a")) {
+      menu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    }
+  });
 });
 </script>
 
