@@ -140,34 +140,93 @@
 
 <script>
 window.addEventListener("load", () => {
-  const bgLogo = document.getElementById("global-logo-bg");
-  if (bgLogo) bgLogo.classList.add("fade-in");
 
+  /* ============================
+     Opening Animation（共通）
+  ============================ */
+  const ring    = document.getElementById("opening-ring");
+  const hero    = document.getElementById("hero-logo");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const rsvBtn  = document.querySelector(".reserve-btn-sub");
+  const bgLogo  = document.getElementById("global-logo-bg");
+  const cards   = document.querySelectorAll(".card-hidden");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+
+  if (ring) {
+    ring.classList.add("show");
+    setTimeout(()=> ring.classList.add("fadeout"), 1400);
+    setTimeout(()=> ring.style.display = "none", 2400);
+  }
+
+  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
-    const bc = document.querySelector(".breadcrumb-fixed");
-    const rsv = document.querySelector(".reserve-btn-sub");
-    if (bc) bc.classList.add("show");
-    if (rsv) rsv.classList.add("show");
+    if (breadcrumb) breadcrumb.style.opacity = "1";
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
-});
 
-// ハンバーガーメニュー制御
-document.addEventListener("DOMContentLoaded", () => {
-  const btn  = document.getElementById("hamburger");
-  const menu = document.getElementById("hamburger-menu");
-  if (!btn || !menu) return;
+  /* index専用：タイトル、カード */
+  setTimeout(()=>{
+    if (hero) hero.classList.add("show");
+    cards.forEach(c => c.classList.add("show"));
+  }, 2600);
 
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-  });
 
-  menu.addEventListener("click", (e) => {
-    if (e.target.matches("a")) {
-      menu.classList.remove("open");
-      document.body.classList.remove("menu-open");
+  /* ============================
+     ハンバーガーメニュー開閉
+  ============================ */
+
+  if (hamburgerBtn && menuPanel) {
+    // 開く
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
+    });
+
+    // メニュー外クリックで閉じる
+    menuPanel.addEventListener("click", (e) => {
+      if (e.target === menuPanel) {   // 背景をタップした場合のみ閉じる
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    // メニュー内リンクを押したときにも閉じる
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+
+  /* ============================
+     上に戻るボタン（フェード表示）
+  ============================ */
+
+  // ボタン作成（HTMLを一切編集しない方式）
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  // スクロールでフェードイン
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
     }
   });
+
+  // クリックでトップへ
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
 });
 </script>
 
