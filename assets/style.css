@@ -508,3 +508,13 @@ footer {
     height: 380px;
   }
 }
+/* ============================
+   スマホのみ：LINE予約ボタンを最上部へ
+============================ */
+@media (max-width: 768px) {
+  .reserve-btn-sub {
+    top: 12px;      /* 画面最上部 */
+    right: 12px;
+    bottom: auto;   /* 念のため解除 */
+  }
+}
