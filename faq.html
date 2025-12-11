@@ -21,16 +21,22 @@
   LINE<br>予約
 </a>
 
-<!-- ハンバーガーメニュー -->
-<button id="hamburger" class="hamburger-btn" type="button">≡</button>
+<!-- ハンバーガーアイコン -->
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
 
+<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
+
+  <!-- × ボタン -->
+  <button class="menu-close-btn">×</button>
+
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
+
 </div>
 
 <h1 class="page-title">よくある質問</h1>
@@ -79,34 +85,89 @@
 
 <script>
 window.addEventListener("load", () => {
-  const bgLogo = document.getElementById("global-logo-bg");
-  if (bgLogo) bgLogo.classList.add("fade-in");
 
+  /* ============================
+     Opening Animation（共通）
+  ============================ */
+  const ring    = document.getElementById("opening-ring");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const rsvBtn  = document.querySelector(".reserve-btn-sub");
+  const bgLogo  = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+
+  if (ring) {
+    ring.classList.add("show");
+    setTimeout(()=> ring.classList.add("fadeout"), 1400);
+    setTimeout(()=> ring.style.display = "none", 2400);
+  }
+
+  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
-    const bc = document.querySelector(".breadcrumb-fixed");
-    const rsv = document.querySelector(".reserve-btn-sub");
-    if (bc) bc.classList.add("show");
-    if (rsv) rsv.classList.add("show");
+    if (breadcrumb) breadcrumb.classList.add("show");
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
-});
 
-// ハンバーガーメニュー制御
-document.addEventListener("DOMContentLoaded", () => {
-  const btn  = document.getElementById("hamburger");
-  const menu = document.getElementById("hamburger-menu");
-  if (!btn || !menu) return;
 
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-  });
+  /* ============================
+     ハンバーガーメニュー開閉
+  ============================ */
+  const closeBtn = document.querySelector(".menu-close-btn");
 
-  menu.addEventListener("click", (e) => {
-    if (e.target.matches("a")) {
-      menu.classList.remove("open");
-      document.body.classList.remove("menu-open");
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
+    });
+
+    // 背景タップで閉じる
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    // × ボタンで閉じる
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    // リンクタップで閉じる
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+
+  /* ============================
+     上に戻るボタン（共通）
+  ============================ */
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
     }
   });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
 });
 </script>
 
