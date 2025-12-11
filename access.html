@@ -21,16 +21,22 @@
   LINE<br>予約
 </a>
 
-<!-- ハンバーガーメニュー -->
-<button id="hamburger" class="hamburger-btn" type="button">≡</button>
+<!-- ハンバーガーアイコン -->
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
 
+<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
+
+  <!-- × ボタン -->
+  <button class="menu-close-btn">×</button>
+
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
+
 </div>
 
 <h1 class="page-title">アクセス</h1>
@@ -135,6 +141,9 @@
 
 <footer>
   大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+  住所：大阪市中央区南船場1-10-12 ラインビルド南船場703<br>
   © gene. All Rights Reserved.
 </footer>
 
@@ -145,11 +154,9 @@ window.addEventListener("load", () => {
      Opening Animation（共通）
   ============================ */
   const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
   const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
   const rsvBtn  = document.querySelector(".reserve-btn-sub");
   const bgLogo  = document.getElementById("global-logo-bg");
-  const cards   = document.querySelectorAll(".card-hidden");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
@@ -161,39 +168,41 @@ window.addEventListener("load", () => {
 
   /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
-    if (breadcrumb) breadcrumb.style.opacity = "1";
+    if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
 
-  /* index専用：タイトル、カード */
-  setTimeout(()=>{
-    if (hero) hero.classList.add("show");
-    cards.forEach(c => c.classList.add("show"));
-  }, 2600);
-
 
   /* ============================
      ハンバーガーメニュー開閉
   ============================ */
+  const closeBtn = document.querySelector(".menu-close-btn");
 
   if (hamburgerBtn && menuPanel) {
-    // 開く
     hamburgerBtn.addEventListener("click", () => {
       menuPanel.classList.add("open");
       document.body.classList.add("menu-open");
     });
 
-    // メニュー外クリックで閉じる
-    menuPanel.addEventListener("click", (e) => {
-      if (e.target === menuPanel) {   // 背景をタップした場合のみ閉じる
+    // 背景タップで閉じる
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
         menuPanel.classList.remove("open");
         document.body.classList.remove("menu-open");
       }
     });
 
-    // メニュー内リンクを押したときにも閉じる
+    // × ボタンで閉じる
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    // リンクタップで閉じる
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -204,16 +213,13 @@ window.addEventListener("load", () => {
 
 
   /* ============================
-     上に戻るボタン（フェード表示）
+     上に戻るボタン（共通）
   ============================ */
-
-  // ボタン作成（HTMLを一切編集しない方式）
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
 
-  // スクロールでフェードイン
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
       toTopBtn.classList.add("show");
@@ -222,7 +228,6 @@ window.addEventListener("load", () => {
     }
   });
 
-  // クリックでトップへ
   toTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
