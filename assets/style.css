@@ -30,9 +30,8 @@ h1, h2, h3 {
   transform: translateY(20px);
   text-align: center;
   position: relative;
-  margin-top: 220px;
+  margin-top: 250px;
   transition: all 1.6s ease;
-  padding: 0 16px;
 }
 
 #hero-logo.show {
@@ -40,22 +39,12 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-.main-title {
-  font-size: 2.1rem;
-  margin-bottom: 1rem;
-}
-
-.sub-catch {
-  font-size: 1rem;
-  line-height: 1.9;
-}
-
 /* ============================
-   サブページ：ページタイトル
+   ページタイトル
 ============================ */
 .subpage .page-title {
   text-align: center;
-  margin-top: 180px;
+  margin-top: 160px;
   margin-bottom: 40px;
   font-size: 2.0rem;
 }
@@ -90,16 +79,15 @@ h1, h2, h3 {
 ============================ */
 #opening-ring {
   position: fixed;
-  top: 43%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 190px;
   height: 190px;
   opacity: 0;
   transition: opacity 1.5s ease;
-  z-index: 30;
+  z-index: 40;
 }
-
 #opening-ring.show { opacity: 1; }
 #opening-ring.fadeout { opacity: 0; }
 
@@ -123,69 +111,40 @@ h1, h2, h3 {
 }
 
 /* ============================
-   パンくず
+   breadcrumb（トップ）
 ============================ */
-.breadcrumb-fixed {
-  position: fixed;
-  top: 95px;
-  left: 5%;
-  color: #d9c17e;
-  font-size: 0.9rem;
-  opacity: 0;
-  white-space: nowrap;
-  transition: opacity 1.2s ease;
-  z-index: 40;
-}
-
-.breadcrumb-fixed.show {
-  opacity: 1;
-}
-
-.breadcrumb-fixed a {
-  color: #d9c17e;
-  text-decoration: none;
-}
-
-/* トップページ用パンくず（opacity は JS で制御） */
 .breadcrumb {
   position: fixed;
   top: 95px;
   left: 5%;
+  opacity: 0;
   color: #d9c17e;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  z-index: 40;
+  z-index: 20;
+  transition: opacity 1.2s ease;
 }
-
-.breadcrumb a {
-  color: #d9c17e;
-  text-decoration: none;
-}
+.breadcrumb a { color: #d9c17e; text-decoration: none; }
 
 /* ============================
-   予約ボタン（LINE）
+   予約ボタン（透過）
 ============================ */
 .reserve-btn-sub {
   position: fixed;
-  top: 150px;
+  top: 195px;
   right: 24px;
-  background: rgba(217,193,126,0.18);
+  background: rgba(217,193,126,0.4);
   padding: 10px 14px;
   border-radius: 4px;
-  border: 1px solid #d9c17e;
-  color: #d9c17e;
+  color: #000;
   opacity: 0;
   transition: opacity 1.2s ease;
   text-decoration: none;
   font-weight: 600;
-  z-index: 80;
-
+  z-index: 50;
   white-space: normal;
   line-height: 1.25;
   text-align: center;
   font-size: 0.9rem;
 }
-
 .reserve-btn-sub.show {
   opacity: 1;
 }
@@ -193,33 +152,46 @@ h1, h2, h3 {
 /* ============================
    ハンバーガーメニュー
 ============================ */
+
+/* 初期状態：非表示扱い（JSで .show を付けると表示） */
 .hamburger-btn {
   position: fixed;
-  top: 100px; /* パンくずより下、LINE予約より上 */
+  top: 140px;
   right: 24px;
-  font-size: 2.0rem;
+  font-size: 2.2rem;
   color: #d9c17e;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 90;
-  padding: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1000;
 }
 
-.hamburger-btn:focus {
-  outline: none;
+/* show が付いたときに表示 */
+.hamburger-btn.show {
+  opacity: 1;
 }
 
-/* 全画面フェードメニュー */
+/* スマホ位置調整 */
+@media (max-width: 480px) {
+  .hamburger-btn {
+    top: 165px;
+    right: 12px;
+    font-size: 1.9rem;
+  }
+}
+
+/* メニュー本体：全画面フェード型 */
 .hamburger-menu {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.94);
+  background: rgba(0,0,0,0.92);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 28px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -234,31 +206,29 @@ h1, h2, h3 {
 .hamburger-menu a {
   color: #d9c17e;
   text-decoration: none;
-  font-size: 1.2rem;
-  padding: 8px 20px;
+  font-size: 1.6rem;
+  font-family: 'Playfair Display', serif;
 }
-
 .hamburger-menu a:hover {
   opacity: 0.7;
 }
 
-/* メニュー表示中はスクロールロック */
+/* 背景固定スクロール防止 */
 body.menu-open {
   overflow: hidden;
 }
 
 /* ============================
-   INDEXカード
+   INDEX カード
 ============================ */
 #index-cards {
   width: 90%;
   max-width: 700px;
-  margin: 90px auto 140px auto;
+  margin: 90px auto 140px;
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
-
 #index-cards .info-card {
   background: rgba(255,255,255,0.06);
   border: 1px solid #d9c17e55;
@@ -268,7 +238,6 @@ body.menu-open {
   transform: translateY(20px);
   transition: all 1.2s ease;
 }
-
 #index-cards .info-card.show {
   opacity: 1;
   transform: translateY(0);
@@ -294,12 +263,8 @@ body.menu-open {
 }
 
 /* ============================
-   MAP / ボタン
+   MAPボタン
 ============================ */
-.map-frame {
-  margin-top: 10px;
-}
-
 .map-open-btn {
   display: inline-block;
   background: #d9c17e;
@@ -310,53 +275,12 @@ body.menu-open {
   text-decoration: none;
 }
 
-.map-open-btn:hover {
-  opacity: 0.78;
-}
-
-/* ============================
-   最寄駅 表
-============================ */
-.station-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  border: 1px solid #d9c17e33;
-}
-
-.station-table th,
-.station-table td {
-  border: 1px solid #d9c17e33;
-  padding: 6px 8px;
-}
-
-.station-table th {
-  background: rgba(217,193,126,0.06);
-  color: #d9c17e;
-  font-weight: 600;
-}
-
-.station-table td {
-  white-space: normal;
-  vertical-align: top;
-}
-
-.station-name {
-  display: block;
-}
-
-.station-walk {
-  display: block;
-  margin-top: 4px;
-}
-
 /* ============================
    footer
 ============================ */
 footer {
   text-align: center;
-  padding: 50px 0 70px 0;
+  padding: 50px 0 70px;
   color: #d9c17e99;
   font-size: 0.95rem;
 }
@@ -367,40 +291,18 @@ footer {
 @media (max-width: 480px) {
 
   .breadcrumb {
-    top: 60px;
+    top: 70px;
     font-size: 0.8rem;
-  }
-
-  .breadcrumb-fixed {
-    top: 60px;
-    font-size: 0.8rem;
-  }
-
-  .hamburger-btn {
-    top: 90px;
-    right: 12px;
-    font-size: 1.8rem;
   }
 
   .reserve-btn-sub {
-    top: 135px;
-    right: 12px;
-    font-size: 0.8rem;
+    top: 190px;
+    right: 10px;
     width: 80px;
-    padding: 8px 8px;
+    font-size: 0.82rem;
   }
 
   #hero-logo {
-    margin-top: 220px;
-  }
-
-  .subpage .page-title {
-    margin-top: 200px;
-    font-size: 1.7rem;
-  }
-
-  .station-table {
-    font-size: 0.86rem;
-    line-height: 1.6;
+    margin-top: 260px;
   }
 }
