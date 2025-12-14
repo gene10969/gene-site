@@ -3,86 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>改善写真 | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene の改善写真。アトピー症状のBefore / Afterをご紹介します。得られる結果には個人差があります。">
+
+<meta name="description" content="大阪 自律神経専門整体院 gene の改善写真。アトピーなど自律神経症状の実際の変化をご紹介します。">
 
 <link rel="stylesheet" href="assets/style.css">
-
-<style>
-/* voice専用：背景ロゴを除去 */
-#global-logo-bg { display:none !important; }
-
-/* 症例ブロック */
-.case-block { margin-bottom: 90px; }
-
-.case-title {
-  color: #d9c17e;
-  font-size: 1.45rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* 部位ブロック */
-.part-block { margin-bottom: 46px; }
-
-.part-title {
-  color: #d9c17e;
-  margin-bottom: 14px;
-  font-size: 1.05rem;
-}
-
-/* スライダー */
-.slider {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 14px;
-}
-.slider::-webkit-scrollbar {
-  height: 6px;
-}
-.slider::-webkit-scrollbar-thumb {
-  background: #d9c17e55;
-  border-radius: 3px;
-}
-
-.slide {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  text-align: center;
-}
-.slide img {
-  max-width: 260px;
-  border-radius: 6px;
-  display: block;
-}
-.slide span {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.75rem;
-  color: #d9c17e;
-}
-
-/* 注意文 */
-.notice-text {
-  text-align: center;
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-top: 60px;
-}
-
-/* CTA */
-.voice-cta {
-  text-align: center;
-  margin: 60px 0 20px;
-}
-</style>
+<link rel="stylesheet" href="assets/swiper-bundle.min.css">
 </head>
 
-<body class="subpage">
+<body class="subpage voice-page">
 
+<!-- ※ voiceページでは背景ロゴを表示しない -->
+<!-- <div id="global-logo-bg"></div> -->
+
+<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>改善写真</span>
 </nav>
@@ -91,6 +25,7 @@
   LINE<br>予約
 </a>
 
+<!-- ハンバーガー -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
 <div id="hamburger-menu" class="hamburger-menu">
@@ -106,191 +41,209 @@
 
 <div class="menu-container">
 
-<!-- ================= 症例1 ================= -->
-<div class="case-block">
-  <div class="case-title">症例 1</div>
+<p style="text-align:center; font-size:0.9rem; color:#ccc;">
+※得られる結果には個人差があります
+</p>
 
-  <!-- face -->
-  <div class="part-block">
-    <div class="part-title">顔</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case1/month0_face.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case1/month3_face.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case1/month6_face.webp"><span>6か月目</span></div>
+<!-- =========================
+   症例1
+========================= -->
+<div class="menu-card">
+  <h2>症例1（症状レベル：重）</h2>
+
+  <div class="case-block">
+
+    <!-- face / body_front / neck / ankle -->
+    <div class="swiper case-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- 初回 -->
+        <div class="swiper-slide">
+          <img src="cases/case1/month0_face.webp" alt="">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month0_body_front.webp" alt="">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month0_neck.webp" alt="">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month0_ankle.webp" alt="">
+          <p class="month-label">初回</p>
+        </div>
+
+        <!-- 最終 -->
+        <div class="swiper-slide">
+          <img src="cases/case1/month12_face.webp" alt="">
+          <p class="month-label">12か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month12_body_front.webp" alt="">
+          <p class="month-label">12か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month12_neck.webp" alt="">
+          <p class="month-label">12か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case1/month12_ankle.webp" alt="">
+          <p class="month-label">12か月目</p>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-  </div>
 
-  <!-- body_front -->
-  <div class="part-block">
-    <div class="part-title">上半身（正面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case1/month0_body_front.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case1/month3_body_front.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case1/month6_body_front.webp"><span>6か月目</span></div>
-    </div>
   </div>
+</div>
 
-  <!-- neck -->
-  <div class="part-block">
-    <div class="part-title">後頸部</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case1/month0_neck.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case1/month3_neck.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case1/month6_neck.webp"><span>6か月目</span></div>
-    </div>
-  </div>
+<!-- =========================
+   症例2
+========================= -->
+<div class="menu-card">
+  <h2>症例2（症状レベル：中）</h2>
 
-  <!-- ankle -->
-  <div class="part-block">
-    <div class="part-title">足首</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case1/month0_ankle.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case1/month3_ankle.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case1/month6_ankle.webp"><span>6か月目</span></div>
+  <div class="case-block">
+    <div class="swiper case-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="cases/case2/month0_body_front.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month0_body_back.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month0_forearm.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month0_leg.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month0_ankle.webp">
+          <p class="month-label">初回</p>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="cases/case2/month4_body_front.webp">
+          <p class="month-label">4か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month4_body_back.webp">
+          <p class="month-label">4か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month4_forearm.webp">
+          <p class="month-label">4か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month4_leg.webp">
+          <p class="month-label">4か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case2/month4_ankle.webp">
+          <p class="month-label">4か月目</p>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
 
-<!-- ================= 症例2 ================= -->
-<div class="case-block">
-  <div class="case-title">症例 2</div>
+<!-- =========================
+   症例3
+========================= -->
+<div class="menu-card">
+  <h2>症例3（症状レベル：軽）</h2>
 
-  <!-- body_front -->
-  <div class="part-block">
-    <div class="part-title">上半身（正面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case2/month0_body_front.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case2/month3_body_front.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case2/month6_body_front.webp"><span>6か月目</span></div>
+  <div class="case-block">
+    <div class="swiper case-swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="cases/case3/month0_forearm_front.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month0_forearm_back.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month0_ankle_left.webp">
+          <p class="month-label">初回</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month0_ankle_right.webp">
+          <p class="month-label">初回</p>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="cases/case3/month3_forearm_front.webp">
+          <p class="month-label">3か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month3_forearm_back.webp">
+          <p class="month-label">3か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month3_ankle_left.webp">
+          <p class="month-label">3か月目</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="cases/case3/month3_ankle_right.webp">
+          <p class="month-label">3か月目</p>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
-
-  <!-- body_back -->
-  <div class="part-block">
-    <div class="part-title">上半身（背面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case2/month0_body_back.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case2/month3_body_back.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case2/month6_body_back.webp"><span>6か月目</span></div>
-    </div>
-  </div>
-
-  <!-- forearm -->
-  <div class="part-block">
-    <div class="part-title">前腕</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case2/month0_forearm.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case2/month3_forearm.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case2/month6_forearm.webp"><span>6か月目</span></div>
-    </div>
-  </div>
-
-  <!-- leg -->
-  <div class="part-block">
-    <div class="part-title">下肢（後面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case2/month0_leg.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case2/month3_leg.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case2/month6_leg.webp"><span>6か月目</span></div>
-    </div>
-  </div>
-
-  <!-- ankle -->
-  <div class="part-block">
-    <div class="part-title">足首</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case2/month0_ankle.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case2/month3_ankle.webp"><span>3か月目</span></div>
-      <div class="slide"><img src="cases/case2/month6_ankle.webp"><span>6か月目</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= 症例3 ================= -->
-<div class="case-block">
-  <div class="case-title">症例 3</div>
-
-  <!-- forearm_front -->
-  <div class="part-block">
-    <div class="part-title">前腕（正面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case3/month0_forearm_front.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case3/month3_forearm_front.webp"><span>3か月目</span></div>
-    </div>
-  </div>
-
-  <!-- forearm_back -->
-  <div class="part-block">
-    <div class="part-title">前腕（背面）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case3/month0_forearm_back.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case3/month3_forearm_back.webp"><span>3か月目</span></div>
-    </div>
-  </div>
-
-  <!-- ankle_right -->
-  <div class="part-block">
-    <div class="part-title">足首（右）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case3/month0_ankle_right.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case3/month3_ankle_right.webp"><span>3か月目</span></div>
-    </div>
-  </div>
-
-  <!-- ankle_left -->
-  <div class="part-block">
-    <div class="part-title">足首（左）</div>
-    <div class="slider">
-      <div class="slide"><img src="cases/case3/month0_ankle_left.webp"><span>初回</span></div>
-      <div class="slide"><img src="cases/case3/month3_ankle_left.webp"><span>3か月目</span></div>
-    </div>
-  </div>
-</div>
-
-<div class="notice-text">
-※ 写真はすべて掲載許可を得ています。<br>
-※ 得られる結果には個人差があります。
-</div>
-
-<div class="voice-cta">
-  <a href="https://lin.ee/6bBKc67" class="map-open-btn" target="_blank">
-    自分の症状も相談してみる
-  </a>
 </div>
 
 </div>
 
 <footer>
-大阪 自律神経専門整体院 gene<br>
-営業時間：11:00〜21:00（不定休）<br>
-住所：大阪市中央区南船場1-10-12 ラインビルド南船場703
+  大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  © gene. All Rights Reserved.
 </footer>
 
+<script src="assets/swiper-bundle.min.js"></script>
 <script>
 window.addEventListener("load", () => {
-  const breadcrumb = document.querySelector(".breadcrumb-fixed");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const menuPanel = document.getElementById("hamburger-menu");
 
-  setTimeout(()=>{
-    breadcrumb.classList.add("show");
-    hamburgerBtn.classList.add("show");
-    rsvBtn.classList.add("show");
-  }, 600);
+  setTimeout(() => {
+    document.querySelectorAll(".breadcrumb-fixed, .reserve-btn-sub, .hamburger-btn")
+      .forEach(el => el.classList.add("show"));
+  }, 2400);
 
-  hamburgerBtn.addEventListener("click", () => {
-    menuPanel.classList.add("open");
-    document.body.classList.add("menu-open");
+  document.querySelectorAll(".case-swiper").forEach(swiperEl => {
+    new Swiper(swiperEl, {
+      loop: false,
+      pagination: {
+        el: swiperEl.querySelector(".swiper-pagination"),
+        clickable: true
+      },
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        }
+      }
+    });
   });
 
-  document.querySelector(".menu-close-btn").addEventListener("click", () => {
-    menuPanel.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  });
 });
 </script>
 
 </body>
 </html>
-
