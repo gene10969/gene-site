@@ -541,3 +541,36 @@ footer {
   }
 
 }
+/* ============================
+   voiceページのみ：背景ロゴを非表示
+============================ */
+.voice-page #global-logo-bg {
+  display: none;
+}
+
+/* ============================
+   改善写真：横並びスライダー
+============================ */
+.voice-page .image-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+}
+
+.voice-page .image-slider img {
+  flex: 0 0 auto;
+  width: 260px;
+  max-width: 80%;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  background: #000;
+}
+
+/* スマホ最適化 */
+@media (max-width: 768px) {
+  .voice-page .image-slider img {
+    width: 220px;
+  }
+}
