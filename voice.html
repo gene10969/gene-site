@@ -217,19 +217,26 @@
 <script>
 window.addEventListener("load", () => {
 
+  /* 表示制御（既存そのまま） */
   setTimeout(() => {
     document.querySelectorAll(".breadcrumb-fixed, .reserve-btn-sub, .hamburger-btn")
       .forEach(el => el.classList.add("show"));
   }, 2400);
 
-  document.querySelectorAll(".case-swiper").forEach(swiperEl => {
-    new Swiper(swiperEl, {
+  /* === ここが重要 === */
+  document.querySelectorAll(".case-swiper").forEach(el => {
+    new Swiper(el, {
       loop: false,
-      slidesPerView: 1.15,
+      slidesPerView: 1.2,
       spaceBetween: 16,
       pagination: {
-        el: swiperEl.querySelector(".swiper-pagination"),
+        el: el.querySelector(".swiper-pagination"),
         clickable: true
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        }
       }
     });
   });
