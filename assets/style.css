@@ -549,40 +549,44 @@ footer {
 }
 
 /* ============================
-   改善写真：横並びスライダー
+   改善写真スライダー（元の大きさに戻す）
 ============================ */
+
 .voice-page .image-slider {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.voice-page .image-slider figure {
+  flex: 0 0 auto;
+  width: 85%;                 /* ← 以前と同じ大きさ */
+  max-width: 420px;
+  scroll-snap-align: start;
+  margin: 0;
 }
 
 .voice-page .image-slider img {
-  flex: 0 0 auto;
-  width: 260px;
-  max-width: 80%;
-  border-radius: 10px;
-  scroll-snap-align: start;
-  background: #000;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
-/* スマホ最適化 */
-@media (max-width: 768px) {
-  .voice-page .image-slider img {
-    width: 220px;
-  }
-}
-/* 改善写真：月数ラベル */
-.voice-page .image-slider figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* 月数表示 */
 .voice-page .image-slider figcaption {
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #d9c17e;
+  text-align: center;
+}
+
+/* PCでは少し大きく */
+@media (min-width: 768px) {
+  .voice-page .image-slider figure {
+    width: 360px;
+  }
 }
