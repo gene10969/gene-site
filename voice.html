@@ -276,13 +276,8 @@ window.addEventListener("load", () => {
         el: swiperEl.querySelector(".swiper-pagination"),
         clickable: true
       },
-      slidesPerView: 1.2,
-      spaceBetween: 16,
-      breakpoints: {
-        768: {
-          slidesPerView: 3
-        }
-      }
+      slidesPerView: 1.2,      // ← PCでも必ずスライダーになる
+      spaceBetween: 16
     });
   });
 
