@@ -9,6 +9,58 @@
 
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/swiper-bundle.min.css">
+
+<!-- voice.html のみ：スライダー表示を確実化（他ページ影響なし） -->
+<style>
+/* Swiper領域を“横スライダー”として成立させる最低限 */
+.voice-page .case-swiper{
+  width: 100%;
+  margin: 10px 0 26px 0;
+  padding-bottom: 10px;
+}
+.voice-page .case-swiper .swiper-wrapper{
+  align-items: stretch;
+}
+.voice-page .case-swiper .swiper-slide{
+  height: auto;
+}
+.voice-page .case-swiper img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.voice-page .case-swiper .swiper-slide p{
+  margin: 6px 0 0 0;
+  text-align: center;
+  color: #d9c17e;
+  font-size: 0.9rem;
+}
+
+/* 横長バー（progressbar）を“部位ごとの下部”に確実に表示 */
+.voice-page .case-swiper .swiper-pagination{
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.voice-page .case-swiper .swiper-pagination-progressbar{
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(217,193,126,0.25);
+}
+
+.voice-page .case-swiper .swiper-pagination-progressbar-fill{
+  background: #d9c17e;
+  border-radius: 999px;
+}
+</style>
+
 </head>
 
 <body class="subpage voice-page">
@@ -49,9 +101,9 @@
 <h3>顔</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_face.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_face.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_face.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_face.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_face.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_face.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -59,9 +111,9 @@
 <h3>上半身（正面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_body_front.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_body_front.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_body_front.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_body_front.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_body_front.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_body_front.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -69,9 +121,9 @@
 <h3>後頸部</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_neck.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_neck.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_neck.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_neck.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_neck.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_neck.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -79,9 +131,9 @@
 <h3>足首</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_ankle.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_ankle.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_ankle.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_ankle.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_ankle.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_ankle.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -96,9 +148,9 @@
 <h3>上半身（正面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_front.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_front.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_front.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_body_front.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_body_front.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_body_front.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -106,9 +158,9 @@
 <h3>上半身（背面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_back.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_back.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_back.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_body_back.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_body_back.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_body_back.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -116,9 +168,9 @@
 <h3>前腕</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_forearm.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_forearm.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_forearm.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_forearm.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_forearm.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_forearm.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -126,9 +178,9 @@
 <h3>下肢</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_leg.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_leg.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_leg.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_leg.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_leg.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_leg.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -136,9 +188,9 @@
 <h3>足首</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_ankle.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_ankle.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_ankle.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_ankle.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_ankle.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_ankle.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -153,9 +205,9 @@
 <h3>前腕（正面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_front.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_front.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month6_forearm_front.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_forearm_front.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_forearm_front.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month6_forearm_front.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -163,9 +215,9 @@
 <h3>前腕（背面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_back.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_back.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month6_forearm_back.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_forearm_back.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_forearm_back.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month6_forearm_back.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -173,9 +225,9 @@
 <h3>足首（右）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_right.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_right.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month6_ankle_right.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_ankle_right.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_ankle_right.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month6_ankle_right.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -183,9 +235,9 @@
 <h3>足首（左）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_left.webp"><p>0ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_left.webp"><p>3ヶ月目</p></div>
-    <div class="swiper-slide"><img src="cases/case3/month6_ankle_left.webp"><p>6ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_ankle_left.webp" alt=""><p>0ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_ankle_left.webp" alt=""><p>3ヶ月目</p></div>
+    <div class="swiper-slide"><img src="cases/case3/month6_ankle_left.webp" alt=""><p>6ヶ月目</p></div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
@@ -196,6 +248,8 @@
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+  住所：大阪市中央区南船場1-10-12 ラインビルド南船場703<br>
   © gene. All Rights Reserved.
 </footer>
 
@@ -203,27 +257,28 @@
 <script>
 window.addEventListener("load", () => {
 
-setTimeout(() => {
-document.querySelectorAll(".breadcrumb-fixed, .reserve-btn-sub, .hamburger-btn")
-.forEach(el => el.classList.add("show"));
-}, 2400);
+  setTimeout(() => {
+    document.querySelectorAll(".breadcrumb-fixed, .reserve-btn-sub, .hamburger-btn")
+      .forEach(el => el.classList.add("show"));
+  }, 2400);
 
-document.querySelectorAll(".case-swiper").forEach(el => {
-new Swiper(el, {
-slidesPerView: 1.2,
-spaceBetween: 16,
-loop: false,
-pagination: {
-el: el.querySelector(".swiper-pagination"),
-type: "progressbar"
-},
-breakpoints: {
-768: {
-slidesPerView: 3
-}
-}
-});
-});
+  /* スライダー（部位ごと） */
+  document.querySelectorAll(".case-swiper").forEach(el => {
+    new Swiper(el, {
+      loop: false,
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      pagination: {
+        el: el.querySelector(".swiper-pagination"),
+        type: "progressbar"
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        }
+      }
+    });
+  });
 
 });
 </script>
