@@ -571,9 +571,7 @@ footer {
   color: #d9c17e;
 }
 
-/* ============================
-   Swiper（共通）
-============================ */
+/* Swiper：基本（PC / SP 共通） */
 .voice-page .case-swiper {
   width: 100%;
   overflow: hidden;
@@ -582,6 +580,7 @@ footer {
 }
 
 .voice-page .case-swiper .swiper-slide {
+  width: auto;        /* ← これが重要 */
   flex-shrink: 0;
 }
 
@@ -593,27 +592,7 @@ footer {
   display: block;
 }
 
-/* ============================
-   PC：2枚分表示してスライド
-============================ */
-@media (min-width: 1024px) {
-  .voice-page .case-swiper .swiper-slide {
-    width: calc(50% - 12px);
-  }
-}
-
-/* ============================
-   タブレット
-============================ */
-@media (max-width: 1023px) {
-  .voice-page .case-swiper .swiper-slide {
-    width: auto;
-  }
-}
-
-/* ============================
-   スマホ（今の良い状態を維持）
-============================ */
+/* スマホだけ高さを下げる（これは元からOK） */
 @media (max-width: 768px) {
   .voice-page .case-swiper .swiper-slide img {
     height: 220px;
@@ -625,6 +604,7 @@ footer {
     height: 200px;
   }
 }
+
 
 /* ============================
    スクロールバー（写真下・ゴールド）
