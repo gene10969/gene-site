@@ -31,11 +31,11 @@
   <button class="menu-close-btn">×</button>
 
   <a href="index.html">ホーム</a>
-<a href="menu.html">メニュー</a>
-<a href="access.html">アクセス</a>
-<a href="faq.html">よくある質問</a>
-<!-- <a href="news.html">お知らせ</a> -->
-<a href="voice.html">改善写真</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <!-- <a href="news.html">お知らせ</a> -->
+  <a href="voice.html">改善写真</a>
 
 </div>
 
@@ -47,12 +47,12 @@
   <div class="menu-card">
     <h2>理念</h2>
     <p>
-大阪 自律神経専門整体院 gene では、  
-自律神経の乱れによる症状に対して、  
-<strong style="color:#d9c17e;">「本質」「遺伝子」「根本」</strong>から改善を目指します。  
+大阪 自律神経専門整体院 gene では、<br>
+自律神経の乱れによる症状に対して、<br>
+<strong style="color:#d9c17e;">「本質」「遺伝子」「根本」</strong>から改善を目指します。<br><br>
 
-原因を正確に見極め、  
-身体を「遺伝子レベル」で整えることで、  
+原因を正確に見極め、<br>
+身体を「遺伝子レベル」で整えることで、<br>
 <strong>再発しない身体づくり</strong>へと導きます。
     </p>
   </div>
@@ -79,30 +79,35 @@
   <div class="menu-card">
     <h2>症状特化プログラム</h2>
 
-    <p><strong style="color:#d9c17e;">gene Atopy Program</strong><br>
-アトピー・皮膚症状特化コース</p>
+    <p>
+<strong style="color:#d9c17e;">gene Atopy Program</strong><br>
+アトピー・皮膚症状特化コース
+    </p>
 
-    <p><strong style="color:#d9c17e;">gene Neuro Balance Program</strong><br>
-めまい / 耳鳴り / パニック障害など</p>
+    <p>
+<strong style="color:#d9c17e;">gene Neuro Balance Program</strong><br>
+めまい / 耳鳴り / パニック障害など
+    </p>
 
-    <p><strong style="color:#d9c17e;">gene Sleep & Stress Program</strong><br>
-不眠症 / 慢性疲労 / 自律神経バランス改善</p>
+    <p>
+<strong style="color:#d9c17e;">gene Sleep & Stress Program</strong><br>
+不眠症 / 慢性疲労 / 自律神経バランス改善
+    </p>
 
-    <p><strong style="color:#d9c17e;">gene Body Structural Program</strong><br>
-足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状</p>
+    <p>
+<strong style="color:#d9c17e;">gene Body Structural Program</strong><br>
+足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状
+    </p>
 
     <hr style="border-color:#444; margin:22px 0;">
 
+    <!-- 回数券（文言変更部分） -->
     <h3 style="margin-top:10px;">回数券</h3>
     <p>
-Primal 回数券（10回） ¥50,000<br>
-有効期限：6ヶ月
-</p>
-
-    <p>
-Primal 回数券（20回） ¥100,000<br>
-有効期限：12ヶ月
-</p>
+各種回数券もご用意しております。<br>
+症状の経過や通院頻度に合わせて、<br>
+無理のないペースでご利用いただけます。
+    </p>
 
   </div>
 
@@ -119,13 +124,10 @@ Primal 回数券（20回） ¥100,000<br>
 <script>
 window.addEventListener("load", () => {
 
-  /* ============================
-     Opening Animation（共通）
-  ============================ */
-  const ring    = document.getElementById("opening-ring");
+  const ring = document.getElementById("opening-ring");
   const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const bgLogo  = document.getElementById("global-logo-bg");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
@@ -135,55 +137,39 @@ window.addEventListener("load", () => {
     setTimeout(()=> ring.style.display = "none", 2400);
   }
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
-    if (breadcrumb) breadcrumb.classList.add("show");
-    if (hamburgerBtn) hamburgerBtn.classList.add("show");
-    if (rsvBtn) rsvBtn.classList.add("show");
-    if (bgLogo) bgLogo.classList.add("fade-in");
+    breadcrumb?.classList.add("show");
+    hamburgerBtn?.classList.add("show");
+    rsvBtn?.classList.add("show");
+    bgLogo?.classList.add("fade-in");
   }, 2400);
 
-
-  /* ============================
-     ハンバーガーメニュー開閉
-  ============================ */
   const closeBtn = document.querySelector(".menu-close-btn");
 
-  if (hamburgerBtn && menuPanel) {
-    hamburgerBtn.addEventListener("click", () => {
-      menuPanel.classList.add("open");
-      document.body.classList.add("menu-open");
-    });
+  hamburgerBtn?.addEventListener("click", () => {
+    menuPanel.classList.add("open");
+    document.body.classList.add("menu-open");
+  });
 
-    // 背景タップで閉じる
-    menuPanel.addEventListener("click", e => {
-      if (e.target === menuPanel) {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      }
-    });
+  closeBtn?.addEventListener("click", () => {
+    menuPanel.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
 
-    // × ボタンで閉じる
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
+  menuPanel?.addEventListener("click", e => {
+    if (e.target === menuPanel) {
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
     }
+  });
 
-    // リンクタップで閉じる
-    menuPanel.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
+  menuPanel?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
     });
-  }
+  });
 
-
-  /* ============================
-     上に戻るボタン（共通）
-  ============================ */
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
