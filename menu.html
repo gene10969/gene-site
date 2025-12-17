@@ -12,7 +12,6 @@
   <img src="assets/img/logo.svg" alt="">
 </div>
 
-<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>メニュー</span>
 </nav>
@@ -21,10 +20,8 @@
   LINE<br>予約
 </a>
 
-<!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
-<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
@@ -38,7 +35,7 @@
 
 <div class="menu-container">
 
-  <!-- 理念（中央揃え／PC改行増やさず／3語は常に1行） -->
+  <!-- 理念 -->
   <div class="menu-card philosophy">
     <h2>理念</h2>
     <p class="philosophy-text">
@@ -60,12 +57,10 @@
       <strong style="color:#d9c17e;">gene First Diagnosis</strong><br>
       自律神経評価 + 各プログラム選択 + 施術 + 生活指導
     </p>
-
     <p>
       <strong style="color:#d9c17e; font-size:1.25rem;">初回限定 ¥3,300（税込）</strong>
       &nbsp;&nbsp;<span style="text-decoration: line-through; color:#aaa;">¥7,700（税込）</span><br>
-      所要時間：約60分
-      <br><br>
+      所要時間：約60分<br><br>
       二回目以降：¥5,500（税込）<br>
       所要時間：約30分
     </p>
@@ -96,8 +91,6 @@
       無理のないペースでご利用いただけます。
     </p>
 
-  </div>
-
 </div>
 
 <footer>
@@ -119,30 +112,30 @@ window.addEventListener("load", () => {
   const closeBtn = document.querySelector(".menu-close-btn");
 
   setTimeout(()=>{
-    breadcrumb?.classList.add("show");
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
+    breadcrumb.classList.add("show");
+    hamburgerBtn.classList.add("show");
+    rsvBtn.classList.add("show");
+    bgLogo.classList.add("fade-in");
   }, 2400);
 
-  hamburgerBtn?.addEventListener("click", ()=>{
+  hamburgerBtn.addEventListener("click", ()=>{
     menuPanel.classList.add("open");
     document.body.classList.add("menu-open");
   });
 
-  closeBtn?.addEventListener("click", ()=>{
+  closeBtn.addEventListener("click", ()=>{
     menuPanel.classList.remove("open");
     document.body.classList.remove("menu-open");
   });
 
-  menuPanel?.addEventListener("click", e=>{
-    if(e.target===menuPanel){
+  menuPanel.addEventListener("click", e=>{
+    if(e.target === menuPanel){
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     }
   });
 
-  menuPanel?.querySelectorAll("a").forEach(link=>{
+  menuPanel.querySelectorAll("a").forEach(link=>{
     link.addEventListener("click", ()=>{
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
