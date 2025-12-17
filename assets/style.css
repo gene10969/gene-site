@@ -934,4 +934,21 @@ footer {
     display: block;
   }
 }
+/* ============================
+   access：最寄駅表 スマホのみ改行対応
+   ┗ PC表示は一切変更しない
+============================ */
+
+@media (max-width: 768px) {
+
+  /* 路線・出口セル内の「 / 」を改行に見せる */
+  .station-table td {
+    white-space: pre-line;
+  }
+
+  /* 「 / 」を実質的に改行として扱う */
+  .station-table td {
+    word-break: keep-all;
+  }
+}
 
