@@ -647,3 +647,20 @@ footer {
   background: #d9c17e;
   border-radius: 2px;
 }
+/* ============================
+   voice：PC時はスライダー自体を細くする
+   ┗ スマホ表示は一切変更しない
+============================ */
+
+/* PCのみ */
+@media (min-width: 1024px) {
+
+  /* スライダー全体の幅を「縦長画像2枚分」に制限 */
+  .voice-page .case-swiper {
+    width: 520px;          /* 縦長画像 約260px × 2 */
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
