@@ -233,6 +233,34 @@ document.querySelectorAll('.case-swiper').forEach(el=>{
     }
   });
 });
+  <script>
+/* ============================
+   voice：CTA スクロール表示
+============================ */
+window.addEventListener("scroll", () => {
+  const cta = document.querySelector(".voice-cta");
+  if (!cta) return;
+
+  const rect = cta.getBoundingClientRect();
+  const triggerPoint = window.innerHeight * 0.8;
+
+  if (rect.top < triggerPoint) {
+    cta.classList.add("show");
+  }
+});
+  <script>
+/* ============================
+   voice：上部UIを必ず表示
+============================ */
+window.addEventListener("load", () => {
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const reserveBtn = document.querySelector(".reserve-btn-sub");
+
+  if (breadcrumb) breadcrumb.classList.add("show");
+  if (hamburgerBtn) hamburgerBtn.classList.add("show");
+  if (reserveBtn) reserveBtn.classList.add("show");
+});
 </script>
 
 </body>
