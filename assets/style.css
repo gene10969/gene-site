@@ -541,54 +541,18 @@ footer {
   }
 
 }
+/* ============================
+   既存CSS（途中までは完全にそのまま）
+============================ */
+/* ……（ここまではあなたが貼ってくれた内容と完全一致）…… */
+
+/* ============================
+   voiceページ専用
+============================ */
 .voice-page #global-logo-bg {
   display: none;
 }
 
-.case-note {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-.voice-page h3 {
-  margin: 22px 0 8px;
-  font-size: 1.1rem;
-  color: #d9c17e;
-}
-
-/* Swiper */
-.voice-page .swiper {
-  padding-bottom: 16px;
-}
-
-.voice-page .swiper-slide img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.voice-page .swiper-slide span {
-  display: block;
-  text-align: center;
-  margin-top: 6px;
-  font-size: 0.85rem;
-  color: #d9c17e;
-}
-
-/* 横長ゴールドバー */
-.voice-page .swiper-pagination-progressbar {
-  background: rgba(255,255,255,0.15);
-  height: 4px;
-}
-
-.voice-page .swiper-pagination-progressbar-fill {
-  background: #d9c17e;
-}
-
-/* ============================
-   voice：レイアウト崩れ修正（voiceページのみ）
-   ┗ 他ページ影響なし
-============================ */
 .voice-page .voice-wrap {
   width: 90%;
   max-width: 900px;
@@ -601,7 +565,15 @@ footer {
   margin-bottom: 60px;
 }
 
-/* Swiper：横スライダーとして安定させる（画像サイズは固定） */
+.voice-page h3 {
+  margin: 22px 0 8px;
+  font-size: 1.1rem;
+  color: #d9c17e;
+}
+
+/* ============================
+   Swiper（共通）
+============================ */
 .voice-page .case-swiper {
   width: 100%;
   overflow: hidden;
@@ -610,7 +582,6 @@ footer {
 }
 
 .voice-page .case-swiper .swiper-slide {
-  width: auto !important;
   flex-shrink: 0;
 }
 
@@ -622,6 +593,27 @@ footer {
   display: block;
 }
 
+/* ============================
+   PC：2枚分表示してスライド
+============================ */
+@media (min-width: 1024px) {
+  .voice-page .case-swiper .swiper-slide {
+    width: calc(50% - 12px);
+  }
+}
+
+/* ============================
+   タブレット
+============================ */
+@media (max-width: 1023px) {
+  .voice-page .case-swiper .swiper-slide {
+    width: auto;
+  }
+}
+
+/* ============================
+   スマホ（今の良い状態を維持）
+============================ */
 @media (max-width: 768px) {
   .voice-page .case-swiper .swiper-slide img {
     height: 220px;
@@ -634,7 +626,9 @@ footer {
   }
 }
 
-/* スクロールバー：写真の下にゴールドで表示（ドットなし） */
+/* ============================
+   スクロールバー（写真下・ゴールド）
+============================ */
 .voice-page .case-swiper .swiper-scrollbar {
   position: relative;
   margin-top: 12px;
@@ -644,6 +638,11 @@ footer {
 }
 
 .voice-page .case-swiper .swiper-scrollbar-drag {
+  height: 4px;
+  background: #d9c17e;
+  border-radius: 2px;
+}
+
   height: 4px;
   background: #d9c17e;
   border-radius: 2px;
