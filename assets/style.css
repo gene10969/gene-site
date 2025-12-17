@@ -998,4 +998,43 @@ footer {
     white-space: pre-line;
   }
 }
+/* ============================
+   access：最寄駅 スマホ専用表示
+============================ */
+
+/* PCではテーブルのみ表示 */
+.station-sp {
+  display: none;
+}
+
+/* スマホではテーブルを隠し、縦レイアウトを表示 */
+@media (max-width: 768px) {
+
+  .station-table {
+    display: none;
+  }
+
+  .station-sp {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .station-sp-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .station-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  .station-line,
+  .station-exit {
+    font-size: 0.95rem;
+    color: #ddd;
+    line-height: 1.6;
+  }
+}
 
