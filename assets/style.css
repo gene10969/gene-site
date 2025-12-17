@@ -648,6 +648,33 @@ footer {
   margin-bottom: 80px;
   background: rgba(255,255,255,0.03);
 }
+/* 写真＋中央アイコン用ラッパー */
+.image-overlay-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* 中央アイコン */
+.image-overlay-wrap .center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  /* 見た目調整 */
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
+  padding: 10px;
+
+  pointer-events: none; /* 操作の邪魔をしない */
+}
+
+/* アイコンサイズ（スマホ基準） */
+.image-overlay-wrap .center-icon img {
+  width: 42px;
+  height: auto;
+}
 
 
   height: 4px;
