@@ -636,6 +636,18 @@ footer {
 .voice-page .case > h2 {
   text-align: center;
 }
+/* ============================
+   voice：症例ごとにゴールドの囲い
+   ┗ 他ページ影響なし
+============================ */
+
+.voice-page .case {
+  border: 1px solid rgba(217,193,126,0.45);
+  border-radius: 12px;
+  padding: 28px 22px 34px;
+  margin-bottom: 80px;
+  background: rgba(255,255,255,0.03);
+}
 
 
   height: 4px;
