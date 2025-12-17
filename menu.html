@@ -12,6 +12,7 @@
   <img src="assets/img/logo.svg" alt="">
 </div>
 
+<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>メニュー</span>
 </nav>
@@ -20,8 +21,10 @@
   LINE<br>予約
 </a>
 
+<!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
+<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
@@ -35,17 +38,18 @@
 
 <div class="menu-container">
 
-  <!-- 理念（中央揃え） -->
-  <div class="menu-card" style="text-align:center;">
+  <!-- 理念（中央揃え／PC改行増やさず／3語は常に1行） -->
+  <div class="menu-card philosophy">
     <h2>理念</h2>
-    <p>
-大阪 自律神経専門整体院 gene では、<br>
-自律神経の乱れによる症状に対して、<br>
-<strong style="color:#d9c17e;">「本質」「遺伝子」「根本」</strong>から改善を目指します。<br><br>
+    <p class="philosophy-text">
+      大阪 自律神経専門整体院 gene では、<br>
+      自律神経の乱れによる症状に対して、<br>
+      <strong class="philosophy-keywords">「本質」「遺伝子」「根本」</strong>
+      から改善を目指します。<br><br>
 
-原因を正確に見極め、<br>
-身体を「遺伝子レベル」で整えることで、<br>
-<strong>再発しない身体づくり</strong>へと導きます。
+      原因を正確に見極め、<br>
+      身体を「遺伝子レベル」で整えることで、<br>
+      <strong>再発しない身体づくり</strong>へと導きます。
     </p>
   </div>
 
@@ -53,17 +57,17 @@
   <div class="menu-card">
     <h2>初回施術</h2>
     <p>
-<strong style="color:#d9c17e;">gene First Diagnosis</strong><br>
-自律神経評価 + 各プログラム選択 + 施術 + 生活指導
+      <strong style="color:#d9c17e;">gene First Diagnosis</strong><br>
+      自律神経評価 + 各プログラム選択 + 施術 + 生活指導
     </p>
 
     <p>
-<strong style="color:#d9c17e; font-size:1.25rem;">初回限定 ¥3,300（税込）</strong>
-&nbsp;&nbsp;<span style="text-decoration: line-through; color:#aaa;">¥7,700（税込）</span><br>
-所要時間：約60分
-<br><br>
-二回目以降：¥5,500（税込）<br>
-所要時間：約30分
+      <strong style="color:#d9c17e; font-size:1.25rem;">初回限定 ¥3,300（税込）</strong>
+      &nbsp;&nbsp;<span style="text-decoration: line-through; color:#aaa;">¥7,700（税込）</span><br>
+      所要時間：約60分
+      <br><br>
+      二回目以降：¥5,500（税込）<br>
+      所要時間：約30分
     </p>
   </div>
 
@@ -72,24 +76,24 @@
     <h2>症状特化プログラム</h2>
 
     <p><strong style="color:#d9c17e;">gene Atopy Program</strong><br>
-アトピー・皮膚症状特化コース</p>
+    アトピー・皮膚症状特化コース</p>
 
     <p><strong style="color:#d9c17e;">gene Neuro Balance Program</strong><br>
-めまい / 耳鳴り / パニック障害など</p>
+    めまい / 耳鳴り / パニック障害など</p>
 
     <p><strong style="color:#d9c17e;">gene Sleep & Stress Program</strong><br>
-不眠症 / 慢性疲労 / 自律神経バランス改善</p>
+    不眠症 / 慢性疲労 / 自律神経バランス改善</p>
 
     <p><strong style="color:#d9c17e;">gene Body Structural Program</strong><br>
-足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状</p>
+    足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状</p>
 
     <hr style="border-color:#444; margin:22px 0;">
 
     <h3 style="margin-top:10px;">回数券</h3>
     <p>
-各種回数券もご用意しております。<br>
-症状の経過や通院頻度に合わせて、<br>
-無理のないペースでご利用いただけます。
+      各種回数券もご用意しております。<br>
+      症状の経過や通院頻度に合わせて、<br>
+      無理のないペースでご利用いただけます。
     </p>
 
   </div>
@@ -112,6 +116,7 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const closeBtn = document.querySelector(".menu-close-btn");
 
   setTimeout(()=>{
     breadcrumb?.classList.add("show");
@@ -119,8 +124,6 @@ window.addEventListener("load", () => {
     rsvBtn?.classList.add("show");
     bgLogo?.classList.add("fade-in");
   }, 2400);
-
-  const closeBtn = document.querySelector(".menu-close-btn");
 
   hamburgerBtn?.addEventListener("click", ()=>{
     menuPanel.classList.add("open");
