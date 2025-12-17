@@ -730,6 +730,20 @@ footer {
     font-size: 1.05rem;
   }
 }
+/* ============================
+   voice：CTA フェードイン（スクロール）
+============================ */
+
+.voice-page .voice-cta {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.voice-page .voice-cta.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
   height: 4px;
