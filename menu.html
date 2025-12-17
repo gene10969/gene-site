@@ -12,7 +12,6 @@
   <img src="assets/img/logo.svg" alt="">
 </div>
 
-<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
   <a href="index.html">ホーム</a> ＞ <span>メニュー</span>
 </nav>
@@ -21,30 +20,23 @@
   LINE<br>予約
 </a>
 
-<!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
-<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
-
-  <!-- × ボタン -->
   <button class="menu-close-btn">×</button>
-
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
-  <!-- <a href="news.html">お知らせ</a> -->
   <a href="voice.html">改善写真</a>
-
 </div>
 
 <h1 class="page-title">メニュー</h1>
 
 <div class="menu-container">
 
-  <!-- 理念ストーリー -->
-  <div class="menu-card">
+  <!-- 理念（中央揃え） -->
+  <div class="menu-card" style="text-align:center;">
     <h2>理念</h2>
     <p>
 大阪 自律神経専門整体院 gene では、<br>
@@ -79,29 +71,20 @@
   <div class="menu-card">
     <h2>症状特化プログラム</h2>
 
-    <p>
-<strong style="color:#d9c17e;">gene Atopy Program</strong><br>
-アトピー・皮膚症状特化コース
-    </p>
+    <p><strong style="color:#d9c17e;">gene Atopy Program</strong><br>
+アトピー・皮膚症状特化コース</p>
 
-    <p>
-<strong style="color:#d9c17e;">gene Neuro Balance Program</strong><br>
-めまい / 耳鳴り / パニック障害など
-    </p>
+    <p><strong style="color:#d9c17e;">gene Neuro Balance Program</strong><br>
+めまい / 耳鳴り / パニック障害など</p>
 
-    <p>
-<strong style="color:#d9c17e;">gene Sleep & Stress Program</strong><br>
-不眠症 / 慢性疲労 / 自律神経バランス改善
-    </p>
+    <p><strong style="color:#d9c17e;">gene Sleep & Stress Program</strong><br>
+不眠症 / 慢性疲労 / 自律神経バランス改善</p>
 
-    <p>
-<strong style="color:#d9c17e;">gene Body Structural Program</strong><br>
-足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状
-    </p>
+    <p><strong style="color:#d9c17e;">gene Body Structural Program</strong><br>
+足底筋膜炎 / 顎関節症 / 腱鞘炎 など筋肉・骨格系の症状</p>
 
     <hr style="border-color:#444; margin:22px 0;">
 
-    <!-- 回数券（文言変更部分） -->
     <h3 style="margin-top:10px;">回数券</h3>
     <p>
 各種回数券もご用意しております。<br>
@@ -124,18 +107,11 @@
 <script>
 window.addEventListener("load", () => {
 
-  const ring = document.getElementById("opening-ring");
-  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
-
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(()=> ring.classList.add("fadeout"), 1400);
-    setTimeout(()=> ring.style.display = "none", 2400);
-  }
 
   setTimeout(()=>{
     breadcrumb?.classList.add("show");
@@ -146,45 +122,28 @@ window.addEventListener("load", () => {
 
   const closeBtn = document.querySelector(".menu-close-btn");
 
-  hamburgerBtn?.addEventListener("click", () => {
+  hamburgerBtn?.addEventListener("click", ()=>{
     menuPanel.classList.add("open");
     document.body.classList.add("menu-open");
   });
 
-  closeBtn?.addEventListener("click", () => {
+  closeBtn?.addEventListener("click", ()=>{
     menuPanel.classList.remove("open");
     document.body.classList.remove("menu-open");
   });
 
-  menuPanel?.addEventListener("click", e => {
-    if (e.target === menuPanel) {
+  menuPanel?.addEventListener("click", e=>{
+    if(e.target===menuPanel){
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     }
   });
 
-  menuPanel?.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+  menuPanel?.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click", ()=>{
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     });
-  });
-
-  const toTopBtn = document.createElement("div");
-  toTopBtn.id = "to-top-btn";
-  toTopBtn.textContent = "▲";
-  document.body.appendChild(toTopBtn);
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
-  });
-
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
 });
