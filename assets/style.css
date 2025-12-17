@@ -856,3 +856,11 @@ footer {
   background: #d9c17e;
   border-radius: 2px;
 }
+
+.voice-page .case-note {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
