@@ -744,6 +744,112 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* ============================
+   voiceページ専用
+============================ */
+.voice-page #global-logo-bg {
+  display: none;
+}
+
+.voice-page .voice-wrap {
+  width: 90%;
+  max-width: 900px;
+  margin: 170px auto 80px;
+}
+
+.voice-page .case {
+  border: 1px solid rgba(217,193,126,0.45);
+  border-radius: 12px;
+  padding: 28px 22px 34px;
+  margin-bottom: 80px;
+  background: rgba(255,255,255,0.03);
+}
+
+.voice-page .case > h2 {
+  text-align: center;
+}
+
+.voice-page h3 {
+  margin: 22px 0 8px;
+  font-size: 1.1rem;
+  color: #d9c17e;
+}
+
+/* Swiper */
+.voice-page .case-swiper {
+  width: 100%;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.voice-page .swiper-slide {
+  width: auto;
+}
+
+.voice-page .swiper-slide img {
+  height: 260px;
+  width: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .voice-page .swiper-slide img { height: 220px; }
+}
+@media (max-width: 480px) {
+  .voice-page .swiper-slide img { height: 200px; }
+}
+
+/* 月数 */
+.voice-page .swiper-slide span {
+  display: block;
+  text-align: center;
+  color: #d9c17e;
+  margin-top: 6px;
+}
+
+/* スクロールバー */
+.voice-page .swiper-scrollbar {
+  height: 4px;
+  background: rgba(217,193,126,0.25);
+}
+.voice-page .swiper-scrollbar-drag {
+  background: #d9c17e;
+}
+
+/* CTA */
+.voice-page .voice-cta {
+  margin: 120px auto 40px;
+  padding: 48px 24px;
+  max-width: 720px;
+  text-align: center;
+  border: 1px solid rgba(217,193,126,0.45);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.voice-page .voice-cta.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.voice-page .voice-cta-text {
+  color: #d9c17e;
+  font-size: 1.15rem;
+}
+.voice-page .voice-cta-sub {
+  color: #ccc;
+  font-size: .95rem;
+  margin-bottom: 28px;
+}
+.voice-page .voice-cta-btn {
+  background: rgba(217,193,126,.9);
+  color:#000;
+  padding:14px 32px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
 
 
   height: 4px;
