@@ -584,3 +584,67 @@ footer {
 .voice-page .swiper-pagination-progressbar-fill {
   background: #d9c17e;
 }
+
+/* ============================
+   voice：レイアウト崩れ修正（voiceページのみ）
+   ┗ 他ページ影響なし
+============================ */
+.voice-page .voice-wrap {
+  width: 90%;
+  max-width: 900px;
+  margin: 170px auto 80px;
+  position: relative;
+  z-index: 5;
+}
+
+.voice-page .case {
+  margin-bottom: 60px;
+}
+
+/* Swiper：横スライダーとして安定させる（画像サイズは固定） */
+.voice-page .case-swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.voice-page .case-swiper .swiper-slide {
+  width: auto !important;
+  flex-shrink: 0;
+}
+
+.voice-page .case-swiper .swiper-slide img {
+  height: 260px;
+  width: auto;
+  max-width: none;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .voice-page .case-swiper .swiper-slide img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .voice-page .case-swiper .swiper-slide img {
+    height: 200px;
+  }
+}
+
+/* スクロールバー：写真の下にゴールドで表示（ドットなし） */
+.voice-page .case-swiper .swiper-scrollbar {
+  position: relative;
+  margin-top: 12px;
+  height: 4px;
+  background: rgba(217,193,126,0.25);
+  border-radius: 2px;
+}
+
+.voice-page .case-swiper .swiper-scrollbar-drag {
+  height: 4px;
+  background: #d9c17e;
+  border-radius: 2px;
+}
