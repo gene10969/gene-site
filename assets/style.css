@@ -541,52 +541,46 @@ footer {
   }
 
 }
-/* ============================
-   voiceページのみ：背景ロゴを非表示
-============================ */
 .voice-page #global-logo-bg {
   display: none;
 }
 
-/* ============================
-   改善写真スライダー（元の大きさに戻す）
-============================ */
-
-.voice-page .image-slider {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 8px;
-}
-
-.voice-page .image-slider figure {
-  flex: 0 0 auto;
-  width: 85%;                 /* ← 以前と同じ大きさ */
-  max-width: 420px;
-  scroll-snap-align: start;
-  margin: 0;
-}
-
-.voice-page .image-slider img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-}
-
-/* 月数表示 */
-.voice-page .image-slider figcaption {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: #d9c17e;
+.case-note {
   text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
 }
 
-/* PCでは少し大きく */
-@media (min-width: 768px) {
-  .voice-page .image-slider figure {
-    width: 360px;
-  }
+.voice-page h3 {
+  margin: 22px 0 8px;
+  font-size: 1.1rem;
+  color: #d9c17e;
+}
+
+/* Swiper */
+.voice-page .swiper {
+  padding-bottom: 16px;
+}
+
+.voice-page .swiper-slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.voice-page .swiper-slide span {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #d9c17e;
+}
+
+/* 横長ゴールドバー */
+.voice-page .swiper-pagination-progressbar {
+  background: rgba(255,255,255,0.15);
+  height: 4px;
+}
+
+.voice-page .swiper-pagination-progressbar-fill {
+  background: #d9c17e;
 }
