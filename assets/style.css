@@ -863,4 +863,38 @@ footer {
   font-size: 0.85rem;
   color: #aaa;
 }
+/* ============================
+   menu：理念カード 最終調整
+   ┗ 他ページ影響なし
+============================ */
+
+.menu-card.philosophy {
+  text-align: center;
+}
+
+/* 共通テキスト */
+.menu-card.philosophy .philosophy-text {
+  line-height: 1.9;
+}
+
+/* 「本質」「遺伝子」「根本」：常に1行 */
+.menu-card.philosophy .philosophy-keywords {
+  color: #d9c17e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* PC：改行増やさず、文字だけ少し大きく */
+@media (min-width: 769px) {
+  .menu-card.philosophy .philosophy-text {
+    font-size: 1.15rem;
+  }
+}
+
+/* スマホ：カード拡張せず、可読性重視 */
+@media (max-width: 768px) {
+  .menu-card.philosophy .philosophy-text {
+    font-size: 1.05rem;
+  }
+}
 
