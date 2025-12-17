@@ -675,6 +675,61 @@ footer {
   width: 42px;
   height: auto;
 }
+/* ============================
+   voice：予約導線CTA
+   ┗ 他ページ影響なし
+============================ */
+
+.voice-page .voice-cta {
+  margin: 120px auto 40px;
+  padding: 48px 24px;
+  max-width: 720px;
+  text-align: center;
+
+  border: 1px solid rgba(217,193,126,0.45);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+
+.voice-page .voice-cta-text {
+  font-size: 1.15rem;
+  color: #d9c17e;
+  margin-bottom: 14px;
+}
+
+.voice-page .voice-cta-sub {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.voice-page .voice-cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: rgba(217,193,126,0.9);
+  color: #000;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.voice-page .voice-cta-btn:hover {
+  opacity: 0.85;
+}
+
+/* スマホ微調整 */
+@media (max-width: 480px) {
+  .voice-page .voice-cta {
+    margin-top: 90px;
+    padding: 36px 18px;
+  }
+
+  .voice-page .voice-cta-text {
+    font-size: 1.05rem;
+  }
+}
 
 
   height: 4px;
