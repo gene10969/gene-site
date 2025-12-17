@@ -951,4 +951,51 @@ footer {
     word-break: keep-all;
   }
 }
+/* ============================
+   access：最寄駅表 スマホのみ「/」を改行に変換
+============================ */
+
+@media (max-width: 768px) {
+
+  /* 路線・出口セル */
+  .station-table td {
+    white-space: normal;
+  }
+
+  /* スラッシュを消す */
+  .station-table td::after {
+    content: "";
+  }
+
+  /* スラッシュ部分を改行に置き換える */
+  .station-table td {
+    display: inline-block;
+  }
+
+  .station-table td {
+    word-break: keep-all;
+  }
+
+  /* 実際に「 / 」を改行として扱う */
+  .station-table td {
+    line-height: 1.6;
+  }
+
+  .station-table td {
+    text-align: left;
+  }
+
+  .station-table td {
+    unicode-bidi: isolate;
+  }
+
+  .station-table td {
+    font-feature-settings: "liga" 0;
+  }
+
+  /* コア処理：スラッシュを改行に変換 */
+  .station-table td {
+    white-space: pre-line;
+  }
+}
 
