@@ -622,6 +622,21 @@ footer {
   background: #d9c17e;
   border-radius: 2px;
 }
+/* ============================
+   voice：月数表示・症例タイトル調整
+   ┗ 他ページ影響なし
+============================ */
+
+/* 〇ヶ月 表記を必ずゴールドに */
+.voice-page .swiper-slide span {
+  color: #d9c17e;
+}
+
+/* 「症例〇」を中央揃え */
+.voice-page .case > h2 {
+  text-align: center;
+}
+
 
   height: 4px;
   background: #d9c17e;
