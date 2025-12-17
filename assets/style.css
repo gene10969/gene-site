@@ -897,4 +897,41 @@ footer {
     font-size: 1.05rem;
   }
 }
+/* ============================
+   menu：理念カード 最終調整
+============================ */
+
+.menu-card.philosophy {
+  text-align: center;
+}
+
+.menu-card.philosophy .philosophy-text {
+  line-height: 1.9;
+}
+
+/* 「本質」「遺伝子」「根本」は常に1行 */
+.menu-card.philosophy .philosophy-keywords {
+  color: #d9c17e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* PC：改行増やさず、文字だけ少し大きく */
+@media (min-width: 769px) {
+  .menu-card.philosophy .philosophy-text {
+    font-size: 1.15rem;
+  }
+}
+
+/* スマホ：キーワード行の直後で改行 */
+@media (max-width: 768px) {
+  .menu-card.philosophy .philosophy-text {
+    font-size: 1.05rem;
+  }
+
+  .menu-card.philosophy .philosophy-keywords::after {
+    content: "";
+    display: block;
+  }
+}
 
