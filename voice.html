@@ -13,18 +13,39 @@
 
 <body class="subpage voice-page">
 
-<nav class="global-nav">
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="">
+</div>
+
+<!-- パンくず（menuと完全同一構造） -->
+<nav class="breadcrumb-fixed hidden">
+  <a href="index.html">ホーム</a> ＞ <span>改善写真</span>
+</nav>
+
+<!-- LINE予約（menuと完全同一） -->
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
+
+<!-- ハンバーガー -->
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
+
+<!-- ハンバーガーメニュー -->
+<div id="hamburger-menu" class="hamburger-menu">
+  <button class="menu-close-btn">×</button>
+
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
-  <a href="news.html">お知らせ</a>
   <a href="voice.html">改善写真</a>
-</nav>
+</div>
 
 <main class="voice-wrap">
 
-<!-- 症例1 -->
+<!-- ============================
+   症例1
+============================ -->
 <section class="case">
 <h2>症例1</h2>
 
@@ -69,7 +90,9 @@
 </div>
 </section>
 
-<!-- 症例2 -->
+<!-- ============================
+   症例2
+============================ -->
 <section class="case">
 <h2>症例2</h2>
 
@@ -124,7 +147,9 @@
 </div>
 </section>
 
-<!-- 症例3 -->
+<!-- ============================
+   症例3
+============================ -->
 <section class="case">
 <h2>症例3</h2>
 
@@ -176,6 +201,76 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+
+  const ring = document.getElementById("opening-ring");
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+
+  if (ring) {
+    ring.classList.add("show");
+    setTimeout(()=> ring.classList.add("fadeout"), 1400);
+    setTimeout(()=> ring.style.display = "none", 2400);
+  }
+
+  setTimeout(()=> {
+    if (breadcrumb) breadcrumb.classList.add("show");
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
+  }, 2400);
+
+  const closeBtn = document.querySelector(".menu-close-btn");
+
+  hamburgerBtn.addEventListener("click", () => {
+    menuPanel.classList.add("open");
+    document.body.classList.add("menu-open");
+  });
+
+  menuPanel.addEventListener("click", e => {
+    if (e.target === menuPanel) {
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menuPanel.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+
+  menuPanel.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+});
+</script>
+
 <script>
 document.querySelectorAll('.case-swiper').forEach(el=>{
   new Swiper(el,{
