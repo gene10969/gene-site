@@ -986,3 +986,18 @@ body.voice-page footer{
   position: relative !important;
   z-index: 10 !important;
 }
+/* ============================
+   voiceページ：スクロール終端が切れる問題の最終修正
+============================ */
+body.voice-page {
+  min-height: 100vh;
+}
+
+body.voice-page main {
+  min-height: 100vh;
+}
+
+/* footer が必ず画面下に現れるようにする */
+body.voice-page footer {
+  padding-bottom: 120px; /* ▲ 上へボタン分の余白 */
+}
