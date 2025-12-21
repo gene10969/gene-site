@@ -1068,3 +1068,17 @@ body.voice-page footer {
   opacity: 1 !important;
   z-index: 1 !important;
 }
+/* ============================
+   上へ戻るボタン：強制表示修正（voice含む全ページ）
+============================ */
+#to-top-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto !important;
+  z-index: 9999 !important;
+}
+
+#to-top-btn.show {
+  opacity: 1 !important;
+}
