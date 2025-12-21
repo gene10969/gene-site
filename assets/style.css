@@ -1115,3 +1115,9 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+/* ============================
+   voiceページ：フッター被り防止
+============================ */
+.voice-page .voice-wrap {
+  padding-bottom: 140px;
+}
