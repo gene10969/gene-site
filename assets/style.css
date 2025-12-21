@@ -969,3 +969,20 @@ footer {
 .voice-page #global-logo-bg {
   display: none !important;
 }
+/* ============================
+   voiceページ：最下部が消える/真っ黒になる対策（確定版）
+   - 背景固定レイヤーを完全停止
+   - 本文/フッターを必ず前面に固定
+============================ */
+body.voice-page #global-logo-bg{
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+body.voice-page main,
+body.voice-page .voice-wrap,
+body.voice-page footer{
+  position: relative !important;
+  z-index: 10 !important;
+}
