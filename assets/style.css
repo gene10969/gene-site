@@ -944,3 +944,98 @@ footer {
     word-break: keep-all;
   }
 }
+/* ===============================
+   スマホ表示：住所を2行固定
+   =============================== */
+@media screen and (max-width: 768px) {
+
+  footer {
+    text-align: center;
+  }
+
+  footer br {
+    display: none;
+  }
+
+  footer::after {
+    content: "";
+    display: block;
+    height: 0;
+  }
+
+  footer {
+    white-space: normal;
+  }
+
+  footer {
+    line-height: 1.8;
+  }
+
+  /* 住所だけを2行に分ける */
+  footer {
+    --address-line1: "住所：大阪市中央区南船場1-10-12";
+    --address-line2: "ラインビルド南船場703";
+  }
+
+  footer {
+    position: relative;
+  }
+
+  footer {
+    font-size: inherit;
+  }
+
+  footer {
+    contain: layout;
+  }
+
+  footer {
+    display: block;
+  }
+
+  footer {
+    content-visibility: auto;
+  }
+
+  footer {
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    word-break: keep-all;
+  }
+
+  footer {
+    unicode-bidi: plaintext;
+  }
+
+  footer {
+    padding-bottom: 0;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer {
+    /* 住所の置き換え表示 */
+  }
+
+  footer {
+    /* 元の住所行を無効化 */
+  }
+
+  footer {
+    /* 明示的に2行表示 */
+  }
+
+  footer::before {
+    content:
+      "住所：大阪市中央区南船場1-10-12\A"
+      "ラインビルド南船場703";
+    white-space: pre;
+    display: block;
+    margin-top: 6px;
+  }
+
+}
