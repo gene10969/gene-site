@@ -955,3 +955,163 @@ footer {
     display: block;
   }
 }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>お知らせ | 大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="自律神経整体 gene のお知らせ。季節の体調管理やアトピー、自律神経ケアなどのお役立ち情報を発信しています。">
+
+<!-- OGP -->
+<meta property="og:title" content="お知らせ | 大阪 自律神経専門整体院 gene">
+<meta property="og:description" content="季節のケアや自律神経改善に役立つ情報を更新しています。">
+<meta property="og:url" content="https://gene10969.github.io/gene-site/news.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="assets/img/og_hero.webp">
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="subpage">
+
+<div class="particles"></div>
+
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
+</div>
+
+<nav class="breadcrumb-fixed hidden">
+  <a href="index.html">ホーム</a> ＞ <span>お知らせ</span>
+</nav>
+  
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
+
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
+
+<div id="hamburger-menu" class="hamburger-menu">
+  <button class="menu-close-btn">×</button>
+
+  <a href="index.html">ホーム</a>
+<a href="menu.html">メニュー</a>
+<a href="access.html">アクセス</a>
+<a href="faq.html">よくある質問</a>
+<!-- <a href="news.html">お知らせ</a> -->
+<a href="voice.html">改善写真</a>
+
+</div>
+
+<h1 class="page-title">お知らせ</h1>
+
+<main class="container">
+
+  <article class="menu-card">
+    <h2>季節の変わり目と自律神経</h2>
+    <time datetime="2025-11-11">2025/11/11</time>
+    <p>寒暖差で自律神経が乱れやすい季節。呼吸・入浴・睡眠を整えることで負担を減らしていきましょう。</p>
+  </article>
+
+  <article class="menu-card">
+    <h2>アトピーと睡眠の関係</h2>
+    <time datetime="2025-11-11">2025/11/11</time>
+    <p>皮膚の回復には深い睡眠が必要です。夜のルーティンを整えることで改善の速度が変わります。</p>
+  </article>
+
+</main>
+
+<!-- ここにあった backToTop ボタンは削除 -->
+
+<footer>
+  大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+
+  <span class="address">
+    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
+    <span class="address-line2">ラインビルド南船場703</span>
+  </span><br>
+
+  © gene. All Rights Reserved.
+</footer>
+
+
+<script>
+window.addEventListener("load", () => {
+
+  const ring    = document.getElementById("opening-ring");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const rsvBtn  = document.querySelector(".reserve-btn-sub");
+  const bgLogo  = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+
+  if (ring) {
+    ring.classList.add("show");
+    setTimeout(()=> ring.classList.add("fadeout"), 1400);
+    setTimeout(()=> ring.style.display = "none", 2400);
+  }
+
+  setTimeout(()=>{
+    if (breadcrumb) breadcrumb.classList.add("show");
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
+  }, 2400);
+
+
+  const closeBtn = document.querySelector(".menu-close-btn");
+
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
+    });
+
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+  /* 上へ戻るボタン（index と同じ処理） */
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+});
+</script>
+
+</body>
+</html>
