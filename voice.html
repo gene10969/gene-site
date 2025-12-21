@@ -229,64 +229,58 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
 
   setTimeout(()=>{
-    breadcrumb?.classList.add("show");
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
+    breadcrumb.classList.add("show");
+    hamburgerBtn.classList.add("show");
+    rsvBtn.classList.add("show");
+    bgLogo.classList.add("fade-in");
   }, 2400);
 
   const menuPanel = document.getElementById("hamburger-menu");
   const closeBtn = document.querySelector(".menu-close-btn");
 
-  hamburgerBtn?.addEventListener("click", ()=>{
+  hamburgerBtn.addEventListener("click", ()=>{
     menuPanel.classList.add("open");
     document.body.classList.add("menu-open");
   });
 
-  closeBtn?.addEventListener("click", ()=>{
+  closeBtn.addEventListener("click", ()=>{
     menuPanel.classList.remove("open");
     document.body.classList.remove("menu-open");
   });
 
-  menuPanel?.addEventListener("click", e=>{
+  menuPanel.addEventListener("click", e=>{
     if(e.target===menuPanel){
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     }
   });
 
-  menuPanel?.querySelectorAll("a").forEach(link=>{
+  menuPanel.querySelectorAll("a").forEach(link=>{
     link.addEventListener("click", ()=>{
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     });
   });
 
-});
-</script>
-
-<!-- ============================
-     上へ戻るボタン（voice専用・追加）
-============================ -->
-<script>
-(() => {
+  /* 上へ戻るボタン */
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
+  window.addEventListener("scroll", ()=>{
+    if(window.scrollY > 400){
       toTopBtn.classList.add("show");
-    } else {
+    }else{
       toTopBtn.classList.remove("show");
     }
   });
 
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  toTopBtn.addEventListener("click", ()=>{
+    window.scrollTo({top:0, behavior:"smooth"});
   });
-})();
+
+});
 </script>
 
 </body>
