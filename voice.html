@@ -191,7 +191,6 @@
 <p class="case-note">※得られる結果には個人差があります</p>
 </section>
 
-<!-- CTA -->
 <section class="voice-cta">
   <p class="voice-cta-text">写真で見た変化は、特別な人だけのものではありません。</p>
   <p class="voice-cta-sub">あなたの状態に合わせて、自律神経から静かに整えていきます。</p>
@@ -201,16 +200,14 @@
 </main>
 
 <footer>
-  大阪 自律神経専門整体院 gene<br>
-  営業時間：11:00〜21:00（不定休）<br>
-  最終受付：初診 20:00 / 二回目以降 20:30<br>
-
-  <span class="address">
-    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
-    <span class="address-line2">ラインビルド南船場703</span>
-  </span><br>
-
-  © gene. All Rights Reserved.
+  大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+  <span class="address">
+    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
+    <span class="address-line2">ラインビルド南船場703</span>
+  </span><br>
+  © gene. All Rights Reserved.
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -266,14 +263,30 @@ window.addEventListener("load", () => {
   });
 
 });
+</script>
 
-window.addEventListener("scroll", ()=>{
-  const cta=document.querySelector(".voice-cta");
-  if(!cta)return;
-  if(cta.getBoundingClientRect().top < window.innerHeight*0.8){
-    cta.classList.add("show");
-  }
-});
+<!-- ============================
+     上へ戻るボタン（voice専用・追加）
+============================ -->
+<script>
+(() => {
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
 </script>
 
 </body>
