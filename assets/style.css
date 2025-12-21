@@ -1035,3 +1035,36 @@ body.voice-page footer {
   position: relative;
   z-index: 1;
 }
+/* =====================================
+   voiceページ：スクロール・高さを完全復旧（最終）
+===================================== */
+
+/* html / body を強制的に通常スクロールへ */
+html body.voice-page {
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+/* menu-open が残っても影響させない */
+html body.voice-page.menu-open {
+  overflow-y: auto !important;
+}
+
+/* main を必ず通常フローに戻す */
+body.voice-page main {
+  position: relative !important;
+  display: block !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* footer を強制的に描画 */
+body.voice-page footer {
+  position: relative !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
