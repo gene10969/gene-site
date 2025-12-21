@@ -216,34 +216,65 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 <script>
-/* ============================
-   上へ戻るボタン（voice）
-============================ */
 window.addEventListener("load", () => {
 
-  const toTopBtn = document.createElement("div");
-  toTopBtn.id = "to-top-btn";
-  toTopBtn.textContent = "▲";
-  document.body.appendChild(toTopBtn);
+  document.querySelectorAll('.case-swiper').forEach(el=>{
+    new Swiper(el,{
+      slidesPerView:'auto',
+      spaceBetween:24,
+      scrollbar:{ el:el.querySelector('.swiper-scrollbar'), draggable:true }
+    });
+  });
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const bgLogo = document.getElementById("global-logo-bg");
+
+  setTimeout(()=>{
+    breadcrumb?.classList.add("show");
+    hamburgerBtn?.classList.add("show");
+    rsvBtn?.classList.add("show");
+    bgLogo?.classList.add("fade-in");
+  }, 2400);
+
+  const menuPanel = document.getElementById("hamburger-menu");
+  const closeBtn = document.querySelector(".menu-close-btn");
+
+  hamburgerBtn?.addEventListener("click", ()=>{
+    menuPanel.classList.add("open");
+    document.body.classList.add("menu-open");
+  });
+
+  closeBtn?.addEventListener("click", ()=>{
+    menuPanel.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+
+  menuPanel?.addEventListener("click", e=>{
+    if(e.target===menuPanel){
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
     }
   });
 
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  menuPanel?.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click", ()=>{
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
     });
   });
 
 });
-</script>
 
+window.addEventListener("scroll", ()=>{
+  const cta=document.querySelector(".voice-cta");
+  if(!cta)return;
+  if(cta.getBoundingClientRect().top < window.innerHeight*0.8){
+    cta.classList.add("show");
+  }
+});
+</script>
 
 </body>
 </html>
