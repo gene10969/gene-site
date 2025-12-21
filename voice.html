@@ -275,6 +275,33 @@ window.addEventListener("scroll", ()=>{
     cta.classList.add("show");
   }
 });
+  <script>
+/* ============================
+   上に戻るボタン（共通）
+============================ */
+(() => {
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+})();
+</script>
+
 </script>
 
 </body>
