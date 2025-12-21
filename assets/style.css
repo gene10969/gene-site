@@ -934,3 +934,13 @@ footer {
     display: block;
   }
 }
+/* ============================
+   footer：menuページのスマホ改行崩れ防止
+   ※ 他ページ影響なし
+============================ */
+@media (max-width: 480px) {
+  .subpage footer {
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+}
