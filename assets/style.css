@@ -1001,3 +1001,17 @@ body.voice-page main {
 body.voice-page footer {
   padding-bottom: 120px; /* ▲ 上へボタン分の余白 */
 }
+/* ============================
+   voiceページ：menu-open によるスクロール不能を無効化
+============================ */
+body.voice-page.menu-open {
+  overflow: auto !important;
+}
+/* voiceページ：最下部保証 */
+body.voice-page {
+  min-height: 100vh;
+}
+
+body.voice-page main {
+  padding-bottom: 160px; /* ▲ボタン＋余白 */
+}
