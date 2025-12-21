@@ -962,3 +962,10 @@ footer {
 .voice-page .voice-wrap {
   padding-bottom: 140px;
 }
+/* ============================
+   voiceページ：背景ロゴを完全無効化
+   （フッター被りの根本原因）
+============================ */
+.voice-page #global-logo-bg {
+  display: none !important;
+}
