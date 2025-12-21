@@ -934,3 +934,24 @@ footer {
     display: block;
   }
 }
+/* 共通（PC含む） */
+.address {
+  display: inline;
+}
+
+.address-line1,
+.address-line2 {
+  display: inline;
+}
+
+/* スマホ表示だけ */
+@media screen and (max-width: 768px) {
+  .address {
+    display: block;
+  }
+
+  .address-line1,
+  .address-line2 {
+    display: block;
+  }
+}
