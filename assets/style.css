@@ -1015,3 +1015,23 @@ body.voice-page {
 body.voice-page main {
   padding-bottom: 160px; /* ▲ボタン＋余白 */
 }
+/* ============================
+   voiceページ：スクロール封鎖の完全解除（確定）
+============================ */
+
+/* ハンバーガー由来の overflow:hidden を無効化 */
+body.voice-page {
+  overflow-y: auto !important;
+}
+
+/* menu-open が残っても voice では必ずスクロール可 */
+body.voice-page.menu-open {
+  overflow-y: auto !important;
+}
+
+/* 念のため main / footer を通常フローに固定 */
+body.voice-page main,
+body.voice-page footer {
+  position: relative;
+  z-index: 1;
+}
