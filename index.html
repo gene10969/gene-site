@@ -151,6 +151,23 @@
 window.addEventListener("load", () => {
 
   /* ============================
+     Openingリング：初回のみ表示
+     （同一タブ内2回目以降は非表示）
+  ============================ */
+  const openingRing = document.getElementById("opening-ring");
+
+  if (openingRing) {
+    const hasShownRing = sessionStorage.getItem("openingRingShown");
+
+    if (hasShownRing) {
+      /* 2回目以降：即座に非表示 */
+      openingRing.style.display = "none";
+    } else {
+      /* 初回：表示フラグを保存 */
+      sessionStorage.setItem("openingRingShown", "true");
+    }
+  }
+  /* ============================
      Opening Animation（共通）
   ============================ */
   const ring    = document.getElementById("opening-ring");
