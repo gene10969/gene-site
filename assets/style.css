@@ -1182,3 +1182,32 @@ body.voice-page #to-top-btn {
 .voice-page .voice-wrap > .voice-cta:first-child {
   margin-top: 24px;
 }
+/* ============================
+   voice：CTAの中央固定を完全解除
+============================ */
+
+.voice-page .voice-cta {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+
+  margin: 24px auto 60px !important;
+}
+
+/* voice-wrap 側の中央寄せも解除 */
+.voice-page .voice-wrap {
+  display: block !important;
+  align-items: initial !important;
+  justify-content: initial !important;
+  min-height: auto !important;
+  padding-top: 24px !important;
+}
+
+/* 念のため：親が flex の場合も解除 */
+.voice-page main,
+.voice-page main.voice-wrap {
+  display: block !important;
+}
