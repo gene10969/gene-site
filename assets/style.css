@@ -1211,3 +1211,32 @@ body.voice-page #to-top-btn {
 .voice-page main.voice-wrap {
   display: block !important;
 }
+/* ============================
+   voice：無駄な黒余白を完全除去
+============================ */
+
+/* メイン全体の上余白を削除 */
+.voice-page .voice-wrap {
+  margin-top: 40px !important;
+  padding-top: 0 !important;
+  min-height: auto !important;
+}
+
+/* CTAは通常フローに戻す */
+.voice-page .voice-cta {
+  position: static !important;
+  transform: none !important;
+  margin: 40px auto 60px !important;
+}
+
+/* body / main の高さ拘束を解除 */
+body.voice-page,
+body.voice-page main {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* footer 直前の謎余白対策 */
+.voice-page main {
+  padding-bottom: 0 !important;
+}
