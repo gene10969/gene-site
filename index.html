@@ -150,21 +150,28 @@
 <script>
 window.addEventListener("load", () => {
 
-  /* ============================
-     Openingリング：初回のみ表示
-     （同一タブ内2回目以降は非表示）
-  ============================ */
   const openingRing = document.getElementById("opening-ring");
+  const hero = document.getElementById("index-hero");
 
-  if (openingRing) {
-    const hasShownRing = sessionStorage.getItem("openingRingShown");
+  const hasShownRing = sessionStorage.getItem("openingRingShown");
+
+  if (openingRing && hero) {
 
     if (hasShownRing) {
-      /* 2回目以降：即座に非表示 */
+      /* 2回目以降：輪っかなし → 即表示 */
       openingRing.style.display = "none";
+      hero.classList.add("show");
+
     } else {
-      /* 初回：表示フラグを保存 */
+      /* 初回：輪っかあり → 従来どおり */
       sessionStorage.setItem("openingRingShown", "true");
+
+      openingRing.classList.add("show");
+
+      setTimeout(() => {
+        openingRing.classList.add("fadeout");
+        hero.classList.add("show");
+      }, 2400);
     }
   }
   /* ============================
