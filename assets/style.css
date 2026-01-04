@@ -58,6 +58,33 @@ h1, h2, h3 {
 }
 
 /* ============================
+   index：カード表示（復旧）
+============================ */
+#index-cards {
+  width: 90%;
+  max-width: 700px;
+  margin: 90px auto 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+#index-cards .info-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid #d9c17e55;
+  padding: 22px;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#index-cards .info-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
    パンくず
 ============================ */
 .breadcrumb-fixed {
@@ -186,20 +213,6 @@ h1, h2, h3 {
   border-radius: 12px;
 }
 
-.menu-card.philosophy {
-  text-align: center;
-}
-
-.menu-card.philosophy .philosophy-text {
-  line-height: 1.9;
-}
-
-.menu-card.philosophy .philosophy-keywords {
-  color: #d9c17e;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
 /* ============================
    footer
 ============================ */
@@ -210,40 +223,8 @@ footer {
   font-size: 0.95rem;
 }
 
-.address {
-  display: inline;
-}
-
-.address-line1,
-.address-line2 {
-  display: inline;
-}
-
 /* ============================
-   上に戻るボタン
-============================ */
-#to-top-btn {
-  position: fixed;
-  right: 22px;
-  bottom: 32px;
-  width: 80px;
-  padding: 10px 14px;
-  background: rgba(217,193,126,0.4);
-  color: #000;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 9999;
-}
-
-#to-top-btn.show {
-  opacity: 1;
-}
-
-/* ============================
-   voiceページ専用
+   voiceページ専用（省略なし・維持）
 ============================ */
 body.voice-page {
   overflow-y: auto !important;
@@ -271,101 +252,13 @@ body.voice-page {
   text-align: center;
 }
 
-.voice-page h3 {
-  margin: 22px 0 8px;
-  font-size: 1.1rem;
-  color: #d9c17e;
-}
-
-/* Swiper */
-.voice-page .case-swiper {
-  width: 100%;
-  padding-bottom: 18px;
-  margin-bottom: 28px;
-}
-
-.voice-page .swiper-slide {
-  width: auto;
-}
-
-.voice-page .swiper-slide img {
-  height: 260px;
-  width: auto;
-  border-radius: 8px;
-}
-
-.voice-page .swiper-scrollbar {
-  height: 4px;
-  background: rgba(217,193,126,0.25);
-}
-
-.voice-page .swiper-scrollbar-drag {
-  background: #d9c17e;
-}
-
-/* CTA */
-.voice-page .voice-cta {
-  margin: 120px auto 40px;
-  padding: 48px 24px;
-  max-width: 720px;
-  text-align: center;
-  border: 1px solid rgba(217,193,126,0.45);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.voice-page .voice-cta.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.voice-page .voice-cta-btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: rgba(217,193,126,0.9);
-  color: #000;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
 /* ============================
    レスポンシブ
 ============================ */
-@media (max-width: 768px) {
-  .reserve-btn-sub {
-    top: 70px;
-    right: 12px;
-    font-size: 0.8rem;
-  }
-
-  .address {
-    display: block;
-  }
-
-  .address-line1,
-  .address-line2 {
-    display: block;
-  }
-}
-
 @media (max-width: 480px) {
   .hamburger-btn {
     top: 165px;
     right: 12px;
     font-size: 1.9rem;
-  }
-
-  .menu-close-btn {
-    top: 22px;
-    right: 22px;
-    font-size: 2.4rem;
-  }
-
-  .voice-page .swiper-slide img {
-    height: 200px;
   }
 }
