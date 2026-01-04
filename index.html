@@ -151,28 +151,46 @@
 window.addEventListener("load", () => {
 
   const openingRing = document.getElementById("opening-ring");
-  const hero = document.getElementById("index-hero");
+  const heroLogo = document.getElementById("hero-logo");
+  const indexCards = document.getElementById("index-cards");
 
   const hasShownRing = sessionStorage.getItem("openingRingShown");
 
-  if (openingRing && hero) {
-
-    if (hasShownRing) {
-      /* 2回目以降：輪っかなし → 即表示 */
+  if (hasShownRing) {
+    /* 2回目以降：輪っかなし → 即表示 */
+    if (openingRing) {
       openingRing.style.display = "none";
-      hero.classList.add("show");
-
-    } else {
-      /* 初回：輪っかあり → 従来どおり */
-      sessionStorage.setItem("openingRingShown", "true");
-
-      openingRing.classList.add("show");
-
-      setTimeout(() => {
-        openingRing.classList.add("fadeout");
-        hero.classList.add("show");
-      }, 2400);
     }
+    if (heroLogo) {
+      heroLogo.classList.add("show");
+    }
+    if (indexCards) {
+      indexCards.querySelectorAll(".info-card").forEach(card => {
+        card.classList.add("show");
+      });
+    }
+
+  } else {
+    /* 初回：輪っかあり */
+    sessionStorage.setItem("openingRingShown", "true");
+
+    if (openingRing) {
+      openingRing.classList.add("show");
+    }
+
+    setTimeout(() => {
+      if (openingRing) {
+        openingRing.classList.add("fadeout");
+      }
+      if (heroLogo) {
+        heroLogo.classList.add("show");
+      }
+      if (indexCards) {
+        indexCards.querySelectorAll(".info-card").forEach(card => {
+          card.classList.add("show");
+        });
+      }
+    }, 2400);
   }
   /* ============================
      Opening Animation（共通）
