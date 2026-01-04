@@ -23,30 +23,13 @@ h1, h2, h3 {
 }
 
 /* ============================
-   INDEX：メインロゴ位置
-============================ */
-#hero-logo {
-  opacity: 0;
-  transform: translateY(20px);
-  text-align: center;
-  position: relative;
-  margin-top: 250px;
-  transition: all 1.6s ease;
-}
-
-#hero-logo.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================
    ページタイトル
 ============================ */
 .subpage .page-title {
   text-align: center;
   margin-top: 160px;
   margin-bottom: 40px;
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 /* ============================
@@ -59,8 +42,13 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  z-index: 0;
   pointer-events: none;
+  z-index: 0;
+}
+
+#global-logo-bg.fade-in {
+  opacity: 1;
+  transition: opacity 2.2s ease;
 }
 
 #global-logo-bg img {
@@ -69,63 +57,34 @@ h1, h2, h3 {
   opacity: 0.18;
 }
 
-#global-logo-bg.fade-in {
-  opacity: 1;
-  transition: opacity 2.2s ease;
-}
-
 /* ============================
-   Openingリング
+   パンくず
 ============================ */
-#opening-ring {
-  position: fixed;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 190px;
-  height: 190px;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-  z-index: 40;
-}
-#opening-ring.show { opacity: 1; }
-#opening-ring.fadeout { opacity: 0; }
-
-#opening-ring .ring-blur {
-  width: 100%;
-  height: 100%;
-  border: 3px solid #d9c17e;
-  border-radius: 50%;
-  opacity: 0.65;
-  animation: pulse 3.6s ease-in-out infinite;
-  box-shadow:
-    0 0 25px rgba(217,193,126,0.35),
-    0 0 60px rgba(217,193,126,0.25),
-    0 0 90px rgba(217,193,126,0.15);
-}
-
-@keyframes pulse {
-  0%   { transform: scale(1); opacity: 0.5; }
-  50%  { transform: scale(1.18); opacity: 0.9; }
-  100% { transform: scale(1); opacity: 0.5; }
-}
-
-/* ============================
-   breadcrumb（トップ）
-============================ */
-.breadcrumb {
+.breadcrumb-fixed {
   position: fixed;
   top: 95px;
   left: 5%;
   opacity: 0;
-  color: #d9c17e;
-  z-index: 20;
   transition: opacity 1.2s ease;
+  z-index: 20;
 }
-.breadcrumb a { color: #d9c17e; text-decoration: none; }
+
+.breadcrumb-fixed.show {
+  opacity: 1;
+}
+
+.breadcrumb-fixed a,
+.breadcrumb-fixed span {
+  color: #d9c17e;
+  text-decoration: none;
+}
+
+.breadcrumb-fixed a:hover {
+  opacity: 0.75;
+}
 
 /* ============================
-   予約ボタン（透過）
+   LINE予約ボタン
 ============================ */
 .reserve-btn-sub {
   position: fixed;
@@ -135,16 +94,16 @@ h1, h2, h3 {
   padding: 10px 14px;
   border-radius: 4px;
   color: #000;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.25;
   opacity: 0;
   transition: opacity 1.2s ease;
   text-decoration: none;
-  font-weight: 600;
   z-index: 50;
-  white-space: normal;
-  line-height: 1.25;
-  text-align: center;
-  font-size: 0.9rem;
 }
+
 .reserve-btn-sub.show {
   opacity: 1;
 }
@@ -152,37 +111,24 @@ h1, h2, h3 {
 /* ============================
    ハンバーガーメニュー
 ============================ */
-
-/* 初期状態：非表示扱い（JSで .show を付けると表示） */
 .hamburger-btn {
   position: fixed;
   top: 140px;
   right: 24px;
   font-size: 2.2rem;
-  color: #d9c17e;
   background: none;
   border: none;
+  color: #d9c17e;
   cursor: pointer;
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 1000;
 }
 
-/* show が付いたときに表示 */
 .hamburger-btn.show {
   opacity: 1;
 }
 
-/* スマホ位置調整 */
-@media (max-width: 480px) {
-  .hamburger-btn {
-    top: 165px;
-    right: 12px;
-    font-size: 1.9rem;
-  }
-}
-
-/* メニュー本体：全画面フェード型 */
 .hamburger-menu {
   position: fixed;
   inset: 0;
@@ -204,43 +150,21 @@ h1, h2, h3 {
 }
 
 .hamburger-menu a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
   color: #d9c17e;
   text-decoration: none;
-  font-size: 1.6rem;
-  font-family: 'Playfair Display', serif;
-}
-.hamburger-menu a:hover {
-  opacity: 0.7;
 }
 
-/* 背景固定スクロール防止 */
-body.menu-open {
-  overflow: hidden;
-}
-
-/* ============================
-   INDEX カード
-============================ */
-#index-cards {
-  width: 90%;
-  max-width: 700px;
-  margin: 90px auto 140px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-#index-cards .info-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid #d9c17e55;
-  padding: 22px;
-  border-radius: 12px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1.2s ease;
-}
-#index-cards .info-card.show {
-  opacity: 1;
-  transform: translateY(0);
+.menu-close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 2.6rem;
+  background: none;
+  border: none;
+  color: #d9c17e;
+  cursor: pointer;
 }
 
 /* ============================
@@ -249,7 +173,7 @@ body.menu-open {
 .menu-container {
   width: 90%;
   max-width: 760px;
-  margin: 40px auto 60px auto;
+  margin: 40px auto 60px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -262,17 +186,18 @@ body.menu-open {
   border-radius: 12px;
 }
 
-/* ============================
-   MAPボタン
-============================ */
-.map-open-btn {
-  display: inline-block;
-  background: #d9c17e;
-  color: #000;
-  padding: 10px 26px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
+.menu-card.philosophy {
+  text-align: center;
+}
+
+.menu-card.philosophy .philosophy-text {
+  line-height: 1.9;
+}
+
+.menu-card.philosophy .philosophy-keywords {
+  color: #d9c17e;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* ============================
@@ -285,476 +210,53 @@ footer {
   font-size: 0.95rem;
 }
 
-/* ============================
-   スマホ調整
-============================ */
-@media (max-width: 480px) {
-
-  .breadcrumb {
-    top: 70px;
-    font-size: 0.8rem;
-  }
-
-  .reserve-btn-sub {
-    top: 190px;
-    right: 10px;
-    width: 80px;
-    font-size: 0.82rem;
-  }
-
-  #hero-logo {
-    margin-top: 260px;
-  }
+.address {
+  display: inline;
 }
+
+.address-line1,
+.address-line2 {
+  display: inline;
+}
+
 /* ============================
-   上に戻るボタン（LINE予約と同サイズ）
+   上に戻るボタン
 ============================ */
 #to-top-btn {
   position: fixed;
   right: 22px;
   bottom: 32px;
-
-  /* LINE予約ボタンと同サイズ感に統一 */
-  width: 80px;             /* スマホ時と同程度の自然な幅 */
+  width: 80px;
   padding: 10px 14px;
-  height: auto;
-
-  background: rgba(217,193,126,0.4); /* LINE予約と同じ透過ゴールド */
+  background: rgba(217,193,126,0.4);
   color: #000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 4px;      /* LINE予約と同じ角丸 */
-  font-size: 0.9rem;       /* LINE予約と同じ文字バランス */
+  border-radius: 4px;
+  font-size: 0.9rem;
   font-weight: 600;
-
-  cursor: pointer;
   opacity: 0;
   transition: opacity 0.4s ease;
-  z-index: 999;
+  z-index: 9999;
 }
 
 #to-top-btn.show {
   opacity: 1;
 }
 
-@media (max-width: 480px) {
-  #to-top-btn {
-    right: 12px;
-    bottom: 28px;
-    width: 80px;           /* スマホ幅でも自然な大きさ */
-    padding: 10px 10px;
-    font-size: 0.82rem;
-  }
-}
-/* ============================
-   ハンバーガーメニュー：閉じるボタン（×）
-============================ */
-.menu-close-btn {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: 2.6rem;
-  background: none;
-  border: none;
-  color: #d9c17e;
-  cursor: pointer;
-  z-index: 1001;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.menu-close-btn:hover {
-  opacity: 0.6;
-}
-
-@media (max-width: 480px) {
-  .menu-close-btn {
-    top: 22px;
-    right: 22px;
-    font-size: 2.4rem;
-  }
-   
-}
-/* ============================
-   サブページ パンくずの修正
-============================ */
-.breadcrumb-fixed {
-  position: fixed;
-  top: 95px;             /* 以前の正常位置に戻す */
-  left: 5%;
-  opacity: 0;
-  transition: opacity 1.2s ease, top 1.2s ease;
-  z-index: 20;
-}
-
-.breadcrumb-fixed.show {
-  opacity: 1;
-  top: 95px;             /* 表示時の位置を固定（ズレ防止） */
-}
-/* ============================
-   サブページのパンくずカラー補正
-============================ */
-.breadcrumb a,
-.breadcrumb span {
-  color: #d9c17e !important;
-}
-
-.breadcrumb a:hover {
-  opacity: 0.75;
-}
-/* ============================
-   パンくずの色を必ずゴールドに統一
-============================ */
-.breadcrumb-fixed a,
-.breadcrumb-fixed span {
-  color: #d9c17e !important;
-  text-decoration: none !important;
-}
-
-.breadcrumb-fixed a:hover {
-  opacity: 0.75 !important;
-}
-
-/* パンくずの ＞ を金色に統一 */
-.breadcrumb,
-.breadcrumb-fixed {
-  color: #d9c17e;
-}
-
-.breadcrumb span,
-.breadcrumb-fixed span {
-  color: #d9c17e;
-}
-
-.station-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 4px 0;
-}
-
-.station-detail .line {
-  color: #d9c17e;
-  font-weight: 600;
-}
-
-.station-detail .exit {
-  color: #eee;
-  font-size: 0.95rem;
-}
-
-/* 最寄駅カード：縦並びにする */
-.station-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 6px 0;
-}
-
-/* 最寄駅カード内の文字はすべて白 */
-.station-table td,
-.station-table th,
-.station-detail div,
-.station-detail .station-line,
-.station-detail .station-exit {
-  color: #fff !important;
-}
-/* 横3列の駅一覧を見やすく */
-.station-table.station-wide th,
-.station-table.station-wide td {
-  color: #fff !important;
-  text-align: left;
-  padding: 10px 12px;
-  font-size: 1.05rem;
-  vertical-align: top;
-}
-
-.station-table.station-wide {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.station-table.station-wide th {
-  font-weight: 600;
-  border-bottom: 1px solid #d9c17e55;
-}
-
-.station-table.station-wide td {
-  border-bottom: 1px solid #ffffff15;
-}
-
-/* アクセスマップ拡大（長堀橋〜松屋町 駅間が入る幅） */
-.access-map {
-  width: 100%;
-  max-width: 1100px; /* PC時は広め */
-  margin: 40px auto;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.access-map iframe {
-  width: 100%;
-  height: 500px; /* 長堀橋〜松屋町をしっかり見せるサイズ */
-  border: none;
-}
-
-/* スマホ最適化 */
-@media (max-width: 768px) {
-  .access-map iframe {
-    height: 380px;
-  }
-}
-/* ============================
-   スマホのみ：LINE予約ボタンを最上部へ
-============================ */
-@media (max-width: 768px) {
-  .reserve-btn-sub {
-    top: 12px;      /* 画面最上部 */
-    right: 12px;
-    bottom: auto;   /* 念のため解除 */
-  }
-}
-/* ============================
-   スマホのみ：LINE予約ボタン調整
-   ┗ パンくずと同じ高さ・文字幅・半透明
-============================ */
-@media (max-width: 768px) {
-
-  .reserve-btn-sub {
-    top: 70px;              /* パンくずと同じ高さ */
-    right: 12px;
-
-    width: auto;            /* 文字幅に合わせる */
-    padding: 8px 10px;      /* 文字に対して最小限の余白 */
-    line-height: 1.2;
-
-    background: rgba(217,193,126,0.65); /* ゴールド半透明 */
-    color: #000;
-
-    font-size: 0.8rem;
-    text-align: center;
-    white-space: nowrap;    /* 不要な改行防止 */
-  }
-
-}
-/* ============================
-   既存CSS（途中までは完全にそのまま）
-============================ */
-/* ……（ここまではあなたが貼ってくれた内容と完全一致）…… */
-
 /* ============================
    voiceページ専用
 ============================ */
+body.voice-page {
+  overflow-y: auto !important;
+}
+
 .voice-page #global-logo-bg {
-  display: none;
+  display: none !important;
 }
 
 .voice-page .voice-wrap {
   width: 90%;
   max-width: 900px;
-  margin: 170px auto 80px;
-  position: relative;
-  z-index: 5;
-}
-
-.voice-page .case {
-  margin-bottom: 60px;
-}
-
-.voice-page h3 {
-  margin: 22px 0 8px;
-  font-size: 1.1rem;
-  color: #d9c17e;
-}
-
-/* Swiper：基本（PC / SP 共通） */
-.voice-page .case-swiper {
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 18px;
-  margin-bottom: 28px;
-}
-
-.voice-page .case-swiper .swiper-slide {
-  width: auto;        /* ← これが重要 */
-  flex-shrink: 0;
-}
-
-.voice-page .case-swiper .swiper-slide img {
-  height: 260px;
-  width: auto;
-  max-width: none;
-  border-radius: 8px;
-  display: block;
-}
-
-/* スマホだけ高さを下げる（これは元からOK） */
-@media (max-width: 768px) {
-  .voice-page .case-swiper .swiper-slide img {
-    height: 220px;
-  }
-}
-
-@media (max-width: 480px) {
-  .voice-page .case-swiper .swiper-slide img {
-    height: 200px;
-  }
-}
-
-
-/* ============================
-   スクロールバー（写真下・ゴールド）
-============================ */
-.voice-page .case-swiper .swiper-scrollbar {
-  position: relative;
-  margin-top: 12px;
-  height: 4px;
-  background: rgba(217,193,126,0.25);
-  border-radius: 2px;
-}
-
-.voice-page .case-swiper .swiper-scrollbar-drag {
-  height: 4px;
-  background: #d9c17e;
-  border-radius: 2px;
-}
-/* ============================
-   voice：月数表示・症例タイトル調整
-   ┗ 他ページ影響なし
-============================ */
-
-/* 〇ヶ月 表記を必ずゴールドに */
-.voice-page .swiper-slide span {
-  color: #d9c17e;
-}
-
-/* 「症例〇」を中央揃え */
-.voice-page .case > h2 {
-  text-align: center;
-}
-/* ============================
-   voice：症例ごとにゴールドの囲い
-   ┗ 他ページ影響なし
-============================ */
-
-.voice-page .case {
-  border: 1px solid rgba(217,193,126,0.45);
-  border-radius: 12px;
-  padding: 28px 22px 34px;
-  margin-bottom: 80px;
-  background: rgba(255,255,255,0.03);
-}
-/* 写真＋中央アイコン用ラッパー */
-.image-overlay-wrap {
-  position: relative;
-  display: inline-block;
-}
-
-/* 中央アイコン */
-.image-overlay-wrap .center-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-
-  /* 見た目調整 */
-  background: rgba(0,0,0,0.45);
-  border-radius: 12px;
-  padding: 10px;
-
-  pointer-events: none; /* 操作の邪魔をしない */
-}
-
-/* アイコンサイズ（スマホ基準） */
-.image-overlay-wrap .center-icon img {
-  width: 42px;
-  height: auto;
-}
-/* ============================
-   voice：予約導線CTA
-   ┗ 他ページ影響なし
-============================ */
-
-.voice-page .voice-cta {
-  margin: 120px auto 40px;
-  padding: 48px 24px;
-  max-width: 720px;
-  text-align: center;
-
-  border: 1px solid rgba(217,193,126,0.45);
-  border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-}
-
-.voice-page .voice-cta-text {
-  font-size: 1.15rem;
-  color: #d9c17e;
-  margin-bottom: 14px;
-}
-
-.voice-page .voice-cta-sub {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-bottom: 28px;
-  line-height: 1.7;
-}
-
-.voice-page .voice-cta-btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: rgba(217,193,126,0.9);
-  color: #000;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.voice-page .voice-cta-btn:hover {
-  opacity: 0.85;
-}
-
-/* スマホ微調整 */
-@media (max-width: 480px) {
-  .voice-page .voice-cta {
-    margin-top: 90px;
-    padding: 36px 18px;
-  }
-
-  .voice-page .voice-cta-text {
-    font-size: 1.05rem;
-  }
-}
-/* ============================
-   voice：CTA フェードイン（スクロール）
-============================ */
-
-.voice-page .voice-cta {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.voice-page .voice-cta.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* ============================
-   voiceページ専用
-============================ */
-.voice-page #global-logo-bg {
-  display: none;
-}
-
-.voice-page .voice-wrap {
-  width: 90%;
-  max-width: 900px;
-  margin: 170px auto 80px;
+  margin: 170px auto 140px;
 }
 
 .voice-page .case {
@@ -792,26 +294,11 @@ footer {
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-  .voice-page .swiper-slide img { height: 220px; }
-}
-@media (max-width: 480px) {
-  .voice-page .swiper-slide img { height: 200px; }
-}
-
-/* 月数 */
-.voice-page .swiper-slide span {
-  display: block;
-  text-align: center;
-  color: #d9c17e;
-  margin-top: 6px;
-}
-
-/* スクロールバー */
 .voice-page .swiper-scrollbar {
   height: 4px;
   background: rgba(217,193,126,0.25);
 }
+
 .voice-page .swiper-scrollbar-drag {
   background: #d9c17e;
 }
@@ -827,125 +314,34 @@ footer {
   background: rgba(255,255,255,0.04);
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity .9s ease, transform .9s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
+
 .voice-page .voice-cta.show {
   opacity: 1;
   transform: translateY(0);
 }
-.voice-page .voice-cta-text {
-  color: #d9c17e;
-  font-size: 1.15rem;
-}
-.voice-page .voice-cta-sub {
-  color: #ccc;
-  font-size: .95rem;
-  margin-bottom: 28px;
-}
+
 .voice-page .voice-cta-btn {
-  background: rgba(217,193,126,.9);
-  color:#000;
-  padding:14px 32px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-
-  height: 4px;
-  background: #d9c17e;
-  border-radius: 2px;
-}
-
-.voice-page .case-note {
-  margin-top: 24px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-/* ============================
-   menu：理念カード 最終調整
-   ┗ 他ページ影響なし
-============================ */
-
-.menu-card.philosophy {
-  text-align: center;
-}
-
-/* 共通テキスト */
-.menu-card.philosophy .philosophy-text {
-  line-height: 1.9;
-}
-
-/* 「本質」「遺伝子」「根本」：常に1行 */
-.menu-card.philosophy .philosophy-keywords {
-  color: #d9c17e;
+  display: inline-block;
+  padding: 14px 32px;
+  background: rgba(217,193,126,0.9);
+  color: #000;
   font-weight: 600;
-  white-space: nowrap;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
-/* PC：改行増やさず、文字だけ少し大きく */
-@media (min-width: 769px) {
-  .menu-card.philosophy .philosophy-text {
-    font-size: 1.15rem;
-  }
-}
-
-/* スマホ：カード拡張せず、可読性重視 */
-@media (max-width: 768px) {
-  .menu-card.philosophy .philosophy-text {
-    font-size: 1.05rem;
-  }
-}
 /* ============================
-   menu：理念カード 最終調整
+   レスポンシブ
 ============================ */
-
-.menu-card.philosophy {
-  text-align: center;
-}
-
-.menu-card.philosophy .philosophy-text {
-  line-height: 1.9;
-}
-
-/* 「本質」「遺伝子」「根本」は常に1行 */
-.menu-card.philosophy .philosophy-keywords {
-  color: #d9c17e;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* PC：改行増やさず、文字だけ少し大きく */
-@media (min-width: 769px) {
-  .menu-card.philosophy .philosophy-text {
-    font-size: 1.15rem;
-  }
-}
-
-/* スマホ：キーワード行の直後で改行 */
 @media (max-width: 768px) {
-  .menu-card.philosophy .philosophy-text {
-    font-size: 1.05rem;
+  .reserve-btn-sub {
+    top: 70px;
+    right: 12px;
+    font-size: 0.8rem;
   }
 
-  .menu-card.philosophy .philosophy-keywords::after {
-    content: "";
-    display: block;
-  }
-}
-/* 共通（PC含む） */
-.address {
-  display: inline;
-}
-
-.address-line1,
-.address-line2 {
-  display: inline;
-}
-
-/* スマホ表示だけ */
-@media screen and (max-width: 768px) {
   .address {
     display: block;
   }
@@ -956,148 +352,20 @@ footer {
   }
 }
 
-/* ============================
-   voiceページ：フッター被り防止
-============================ */
-.voice-page .voice-wrap {
-  padding-bottom: 140px;
-}
-/* ============================
-   voiceページ：背景ロゴを完全無効化
-   （フッター被りの根本原因）
-============================ */
-.voice-page #global-logo-bg {
-  display: none !important;
-}
-/* ============================
-   voiceページ：最下部が消える/真っ黒になる対策（確定版）
-   - 背景固定レイヤーを完全停止
-   - 本文/フッターを必ず前面に固定
-============================ */
-body.voice-page #global-logo-bg{
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
+@media (max-width: 480px) {
+  .hamburger-btn {
+    top: 165px;
+    right: 12px;
+    font-size: 1.9rem;
+  }
 
-body.voice-page main,
-body.voice-page .voice-wrap,
-body.voice-page footer{
-  position: relative !important;
-  z-index: 10 !important;
-}
-/* ============================
-   voiceページ：スクロール終端が切れる問題の最終修正
-============================ */
-body.voice-page {
-  min-height: 100vh;
-}
+  .menu-close-btn {
+    top: 22px;
+    right: 22px;
+    font-size: 2.4rem;
+  }
 
-body.voice-page main {
-  min-height: 100vh;
-}
-
-/* footer が必ず画面下に現れるようにする */
-body.voice-page footer {
-  padding-bottom: 120px; /* ▲ 上へボタン分の余白 */
-}
-/* ============================
-   voiceページ：menu-open によるスクロール不能を無効化
-============================ */
-body.voice-page.menu-open {
-  overflow: auto !important;
-}
-/* voiceページ：最下部保証 */
-body.voice-page {
-  min-height: 100vh;
-}
-
-body.voice-page main {
-  padding-bottom: 160px; /* ▲ボタン＋余白 */
-}
-/* ============================
-   voiceページ：スクロール封鎖の完全解除（確定）
-============================ */
-
-/* ハンバーガー由来の overflow:hidden を無効化 */
-body.voice-page {
-  overflow-y: auto !important;
-}
-
-/* menu-open が残っても voice では必ずスクロール可 */
-body.voice-page.menu-open {
-  overflow-y: auto !important;
-}
-
-/* 念のため main / footer を通常フローに固定 */
-body.voice-page main,
-body.voice-page footer {
-  position: relative;
-  z-index: 1;
-}
-/* =====================================
-   voiceページ：スクロール・高さを完全復旧（最終）
-===================================== */
-
-/* html / body を強制的に通常スクロールへ */
-html body.voice-page {
-  overflow-y: auto !important;
-  height: auto !important;
-  min-height: 100vh !important;
-}
-
-/* menu-open が残っても影響させない */
-html body.voice-page.menu-open {
-  overflow-y: auto !important;
-}
-
-/* main を必ず通常フローに戻す */
-body.voice-page main {
-  position: relative !important;
-  display: block !important;
-  height: auto !important;
-  min-height: auto !important;
-  overflow: visible !important;
-}
-
-/* footer を強制的に描画 */
-body.voice-page footer {
-  position: relative !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 1 !important;
-}
-/* ============================
-   上へ戻るボタン：強制表示修正（voice含む全ページ）
-============================ */
-#to-top-btn {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  pointer-events: auto !important;
-  z-index: 9999 !important;
-}
-
-#to-top-btn.show {
-  opacity: 1 !important;
-}
-.voice-page .voice-back-top {
-  margin: 32px auto 0;
-  text-align: center;
-}
-
-.voice-page .voice-back-top a {
-  display: inline-block;
-  padding: 10px 24px;
-  background: rgba(217,193,126,0.4);
-  color: #000;
-  font-weight: 600;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.voice-page .voice-back-top a:hover {
-  opacity: 0.85;
+  .voice-page .swiper-slide img {
+    height: 200px;
+  }
 }
