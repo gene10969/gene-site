@@ -1240,3 +1240,37 @@ body.voice-page main {
 .voice-page main {
   padding-bottom: 0 !important;
 }
+/* ============================
+   全ページ：高さ・余白の最終固定
+============================ */
+
+/* body / main の不要な高さ拘束を完全解除 */
+body,
+body main {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* サブページ共通：上の謎余白を排除 */
+.subpage main {
+  margin-top: 40px !important;
+  padding-top: 0 !important;
+}
+
+/* voice 専用：カード直下配置を保証 */
+.voice-page .voice-wrap {
+  margin-top: 40px !important;
+  padding-bottom: 0 !important;
+}
+
+/* CTA は必ず通常フロー */
+.voice-page .voice-cta {
+  position: static !important;
+  transform: none !important;
+  margin: 40px auto 60px !important;
+}
+
+/* footer 直前の黒余白を完全除去 */
+.subpage main {
+  padding-bottom: 0 !important;
+}
