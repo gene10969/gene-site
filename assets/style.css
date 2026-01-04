@@ -1127,3 +1127,39 @@ body.voice-page footer {
 body.voice-page #to-top-btn {
   display: flex !important;
 }
+/* ============================
+   voice：無駄な余白の完全除去
+============================ */
+
+/* voice ページは高さ固定を解除 */
+.voice-page .voice-wrap {
+  min-height: auto;
+  padding-top: 60px;   /* パンくず分のみ確保 */
+  padding-bottom: 60px;
+}
+
+/* 症例ブロック間の余白を適正化 */
+.voice-page .case {
+  margin-bottom: 80px;
+}
+
+/* 最後の症例の下だけ余白を詰める */
+.voice-page .case:last-of-type {
+  margin-bottom: 40px;
+}
+
+/* CTA が画面中央に吸い寄せられるのを防ぐ */
+.voice-page .voice-cta {
+  margin: 60px auto 0;
+  position: relative;
+}
+
+/* footer が中央に浮き上がるのを防止 */
+.voice-page footer {
+  margin-top: 80px;
+}
+
+/* 念のため body の不要な余白を除去 */
+.voice-page body {
+  min-height: auto;
+}
