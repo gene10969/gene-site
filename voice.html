@@ -154,3 +154,159 @@ window.addEventListener("scroll", ()=>{
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>改善写真 | 大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="大阪 自律神経専門整体院 gene の改善写真。実際の変化をご紹介します。">
+
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+
+<body class="subpage voice-page">
+<a id="top"></a>
+
+<div id="global-logo-bg" class="fade-start">
+  <img src="assets/img/logo.svg" alt="">
+</div>
+
+<nav class="breadcrumb-fixed hidden">
+  <a href="index.html">ホーム</a> ＞ <span>改善写真</span>
+</nav>
+
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+  LINE<br>予約
+</a>
+
+<button id="hamburger-btn" class="hamburger-btn">≡</button>
+
+<div id="hamburger-menu" class="hamburger-menu">
+  <button class="menu-close-btn">×</button>
+  <a href="index.html">ホーム</a>
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">改善写真</a>
+</div>
+
+<main class="voice-wrap">
+
+<!-- （症例1〜3、CTA など：あなたのコードそのまま） -->
+
+<section class="voice-cta">
+  <p class="voice-cta-text">写真で見た変化は、特別な人だけのものではありません。</p>
+  <p class="voice-cta-sub">あなたの状態に合わせて、自律神経から静かに整えていきます。</p>
+  <a href="https://lin.ee/6bBKc67" class="voice-cta-btn" target="_blank">LINEで予約する</a>
+</section>
+
+<div class="voice-back-top">
+  <a href="#top">ページ上部へ戻る</a>
+</div>
+
+</main>
+
+<footer>
+  大阪 自律神経専門整体院 gene<br>
+  営業時間：11:00〜21:00（不定休）<br>
+  最終受付：初診 20:00 / 二回目以降 20:30<br>
+  <span class="address">
+    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
+    <span class="address-line2">ラインビルド南船場703</span>
+  </span><br>
+  © gene. All Rights Reserved.
+</footer>
+
+<!-- ▲ 上へ戻るボタン（menu と完全共通） -->
+<div id="to-top-btn">▲</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+
+  document.querySelectorAll('.case-swiper').forEach(el=>{
+    new Swiper(el,{
+      slidesPerView:'auto',
+      spaceBetween:24,
+      scrollbar:{ el:el.querySelector('.swiper-scrollbar'), draggable:true }
+    });
+  });
+
+  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const bgLogo = document.getElementById("global-logo-bg");
+
+  setTimeout(()=>{
+    breadcrumb?.classList.add("show");
+    hamburgerBtn?.classList.add("show");
+    rsvBtn?.classList.add("show");
+    bgLogo?.classList.add("fade-in");
+  }, 2400);
+
+  const menuPanel = document.getElementById("hamburger-menu");
+  const closeBtn = document.querySelector(".menu-close-btn");
+
+  hamburgerBtn?.addEventListener("click", ()=>{
+    menuPanel.classList.add("open");
+    document.body.classList.add("menu-open");
+  });
+
+  closeBtn?.addEventListener("click", ()=>{
+    menuPanel.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+
+  menuPanel?.addEventListener("click", e=>{
+    if(e.target===menuPanel){
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  menuPanel?.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click", ()=>{
+      menuPanel.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    });
+  });
+
+});
+
+/* 上へ戻るボタン：menu と完全共通 */
+document.addEventListener("DOMContentLoaded", () => {
+  const toTopBtn = document.getElementById("to-top-btn");
+  if (!toTopBtn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+/* CTA フェードイン */
+window.addEventListener("scroll", ()=>{
+  const cta=document.querySelector(".voice-cta");
+  if(!cta)return;
+  if(cta.getBoundingClientRect().top < window.innerHeight*0.8){
+    cta.classList.add("show");
+  }
+});
+</script>
+
+</body>
+</html>
