@@ -107,6 +107,24 @@ h1, h2, h3 {
     opacity: 0.5;
   }
 }
+/* ============================
+   index：ヒーロー初期非表示（復旧）
+============================ */
+
+/* ヒーロー全体 */
+#index-hero,
+#index-hero * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* JSで show が付いた後 */
+#index-hero.show,
+#index-hero.show * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+}
 
 /* ============================
    index：カード表示（復旧）
