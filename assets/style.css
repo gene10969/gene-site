@@ -1103,3 +1103,27 @@ body.voice-page footer {
 .voice-page .voice-back-top a:hover {
   opacity: 0.85;
 }
+/* ============================
+   voice：中央の「ページへ戻る」を使わない
+============================ */
+.voice-page .voice-back-top {
+  display: none !important;
+}
+/* ============================
+   上部へ戻るボタン：全ページ共通で有効化
+============================ */
+#to-top-btn {
+  display: flex !important;
+  opacity: 0;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+#to-top-btn.show {
+  opacity: 1;
+}
+
+/* voiceページでも必ず有効 */
+body.voice-page #to-top-btn {
+  display: flex !important;
+}
