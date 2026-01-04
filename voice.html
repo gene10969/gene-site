@@ -12,7 +12,6 @@
 </head>
 
 <body class="subpage voice-page">
-<a id="top"></a>
 
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
@@ -39,8 +38,63 @@
 
 <main class="voice-wrap">
 
-<!-- ※ 症例1〜3のSwiper構成はそのまま -->
+<!-- ============================
+   症例1
+============================ -->
+<section class="case">
+<h2>症例1</h2>
 
+<h3>顔</h3>
+<div class="swiper case-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="cases/case1/month0_face.webp"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_face.webp"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_face.webp"><span>6か月目</span></div>
+  </div>
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<p class="case-note">※得られる結果には個人差があります</p>
+</section>
+
+<!-- ============================
+   症例2
+============================ -->
+<section class="case">
+<h2>症例2</h2>
+
+<h3>体</h3>
+<div class="swiper case-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="cases/case2/month0_body.webp"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_body.webp"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_body.webp"><span>6か月目</span></div>
+  </div>
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<p class="case-note">※得られる結果には個人差があります</p>
+</section>
+
+<!-- ============================
+   症例3
+============================ -->
+<section class="case">
+<h2>症例3</h2>
+
+<h3>前腕</h3>
+<div class="swiper case-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="cases/case3/month0_forearm.webp"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_forearm.webp"><span>3か月目</span></div>
+  </div>
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<p class="case-note">※得られる結果には個人差があります</p>
+</section>
+
+<!-- CTA -->
 <section class="voice-cta">
   <p class="voice-cta-text">写真で見た変化は、特別な人だけのものではありません。</p>
   <p class="voice-cta-sub">あなたの状態に合わせて、自律神経から静かに整えていきます。</p>
@@ -60,7 +114,7 @@
   © gene. All Rights Reserved.
 </footer>
 
-<!-- ▲ 上へ戻るボタン（全ページ共通） -->
+<!-- ▲ 上へ戻る -->
 <div id="to-top-btn">▲</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -114,35 +168,24 @@ window.addEventListener("load", () => {
       document.body.classList.remove("menu-open");
     });
   });
-
 });
 
-/* 上へ戻るボタン（menu / voice 共通） */
-document.addEventListener("DOMContentLoaded", () => {
-  const toTopBtn = document.getElementById("to-top-btn");
-  if (!toTopBtn) return;
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
+/* 上へ戻る */
+document.addEventListener("DOMContentLoaded", ()=>{
+  const btn=document.getElementById("to-top-btn");
+  if(!btn)return;
+  window.addEventListener("scroll",()=>{
+    btn.classList.toggle("show",window.scrollY>200);
   });
-
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+  btn.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:"smooth"});
   });
 });
 
-/* CTA フェードイン */
-window.addEventListener("scroll", ()=>{
+/* CTA表示 */
+window.addEventListener("scroll",()=>{
   const cta=document.querySelector(".voice-cta");
-  if(!cta)return;
-  if(cta.getBoundingClientRect().top < window.innerHeight*0.8){
+  if(cta && cta.getBoundingClientRect().top < window.innerHeight*0.8){
     cta.classList.add("show");
   }
 });
