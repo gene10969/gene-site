@@ -7,14 +7,12 @@
 <title>院長プロフィール｜大阪 自律神経専門整体院 gene</title>
 <meta name="description" content="大阪 自律神経専門整体院 gene 院長プロフィール。自律神経に特化した理由、施術の考え方、大切にしていること、初めての方へのメッセージ。">
 
-<!-- OGP -->
 <meta property="og:title" content="院長プロフィール｜大阪 自律神経専門整体院 gene">
 <meta property="og:description" content="自律神経に着目した施術方針と想い。安心感を大切に、身体全体の調整機能を整える施術を行っています。">
 <meta property="og:url" content="https://gene10969.github.io/gene-site/profile.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/og_hero.webp">
+<meta property="og:image" content="assets/img/profile/profile_main.webp">
 
-<!-- パンくず構造化データ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,6 +32,166 @@
 </script>
 
 <link rel="stylesheet" href="assets/style.css">
+
+<style>
+.profile-hero-card{
+  max-width: 980px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.profile-hero-card.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.profile-hero-inner{
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  background: rgba(10,10,10,.72);
+  border: 1px solid rgba(217,193,126,.22);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter: blur(6px);
+}
+.profile-main-photo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  border: 1px solid rgba(217,193,126,.24);
+}
+.profile-copy h2{
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.45;
+  color: #f4ead0;
+  margin: 0 0 18px;
+  font-weight: 500;
+}
+.profile-name-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.profile-role{
+  font-size: .9rem;
+  color: rgba(255,255,255,.72);
+  letter-spacing: .08em;
+}
+.profile-name{
+  font-size: 1.25rem;
+  color: #d9c17e;
+  letter-spacing: .08em;
+}
+.profile-lead{
+  white-space: pre-line;
+  line-height: 2.05;
+  color: rgba(255,255,255,.9);
+  margin: 0 0 22px;
+}
+.profile-badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.profile-badges span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(217,193,126,.3);
+  color: #f3e6bf;
+  background: rgba(217,193,126,.08);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+.profile-section-image{
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  margin: 10px 0 18px;
+  border: 1px solid rgba(217,193,126,.22);
+}
+.profile-quote{
+  margin-top: 18px;
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(217,193,126,.22);
+  background: rgba(217,193,126,.06);
+}
+.profile-quote p{
+  margin: 0;
+  line-height: 2;
+  color: rgba(255,255,255,.9);
+  white-space: pre-line;
+}
+.profile-mini-title{
+  color: #d9c17e;
+  font-size: .95rem;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+.profile-cta-card{
+  text-align: center;
+}
+.profile-cta-card p{
+  white-space: pre-line;
+}
+.profile-cta-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #111;
+  background: #d9c17e;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.profile-cta-link:hover{
+  transform: translateY(-2px);
+  opacity: .92;
+}
+@media (max-width: 860px){
+  .profile-hero-inner{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+  .profile-copy h2{
+    font-size: 1.55rem;
+  }
+}
+@media (max-width: 640px){
+  .profile-hero-card{
+    padding: 0 16px;
+    margin-top: 24px;
+  }
+  .profile-hero-inner{
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .profile-main-photo{
+    border-radius: 14px;
+  }
+  .profile-lead{
+    line-height: 1.95;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -48,23 +206,18 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- パンくず（初期非表示） -->
 <nav class="breadcrumb" style="opacity:0;">
   <a href="index.html">ホーム</a> ＞ <span>院長プロフィール</span>
 </nav>
 
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
-<!-- ▼必須：これが無いと開かない -->
 <div id="hamburger-menu" class="hamburger-menu">
-  <!-- × ボタン -->
   <button class="menu-close-btn">×</button>
-
   <a href="index.html">ホーム</a>
   <a href="menu.html">メニュー</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
-  <!-- <a href="news.html">お知らせ</a> -->
   <a href="voice.html">改善写真</a>
   <a href="profile.html">院長プロフィール</a>
 </div>
@@ -77,14 +230,40 @@
   </p>
 </div>
 
-<!-- LINE予約（そのまま維持） -->
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
   LINE<br>予約
 </a>
 
+<section class="profile-hero-card">
+  <div class="profile-hero-inner">
+    <div class="profile-photo-wrap">
+      <img src="assets/img/profile/profile_main.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="profile-main-photo">
+    </div>
+    <div class="profile-copy">
+      <div class="profile-name-wrap">
+        <span class="profile-role">大阪 自律神経専門整体院 gene</span>
+        <span class="profile-name">院長　高田 裕基</span>
+      </div>
+      <h2>不安を抱えたまま毎日を過ごす方が、
+静かに安心へ向かえる場所でありたい。</h2>
+      <p class="profile-lead">慢性的な不調は、見た目には分かりにくく、
+周囲にも理解されにくいことがあります。
+
+だからこそ私は、
+症状だけを見るのではなく、
+身体全体の状態とその背景を丁寧に確認しながら、
+安心して通える施術を大切にしています。</p>
+      <div class="profile-badges">
+        <span>柔道整復師</span>
+        <span>自律神経調整分野に8年間従事</span>
+        <span>院長経験あり</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="index-cards">
 
-  <!-- ▼追加：ごあいさつ（必須文章） -->
   <div class="info-card card-hidden">
     <h3>ごあいさつ</h3>
     <p style="white-space: pre-line;">
@@ -123,16 +302,12 @@
     </p>
   </div>
 
-  <!-- ▼既存：以下はそのまま -->
   <div class="info-card card-hidden">
     <h3>はじめまして</h3>
-
-    <!-- 任意：プロフィール写真（不要ならこのimg行ごと削除OK） -->
-    <!-- <img src="assets/img/profile/profile_main.webp" alt="院長プロフィール写真" style="width:100%; height:auto; border-radius:14px; margin:10px 0 14px;"> -->
-
+    <img src="assets/img/profile/profile_main.webp" alt="院長プロフィール写真" class="profile-section-image">
     <p style="white-space: pre-line;">
 はじめまして。
-大阪 自律神経専門整体院 gene の院長です。
+大阪 自律神経専門整体院 gene 院長の高田 裕基です。
 
 慢性的な不調が続くと、検査では大きな異常が見つからないにもかかわらず、
 「なぜ良くならないのか分からない」という状態に陥ることがあります。
@@ -164,10 +339,7 @@
 
   <div class="info-card card-hidden">
     <h3>施術の考え方</h3>
-
-    <!-- 任意：施術写真（不要なら削除OK） -->
-    <!-- <img src="assets/img/profile/treatment.webp" alt="施術中の写真" style="width:100%; height:auto; border-radius:14px; margin:10px 0 14px;"> -->
-
+    <img src="assets/img/profile/profile_sub.webp" alt="カウンセリング時の院長写真" class="profile-section-image">
     <p style="white-space: pre-line;">
 当院では、強い刺激や矯正を主とする方法は行っていません。
 
@@ -202,14 +374,15 @@
 症状の出ている部位だけを見るのではなく、
 身体全体の連動性を確認することを重視しています。
     </p>
+    <div class="profile-quote">
+      <div class="profile-mini-title">大切にしている視点</div>
+      <p>症状が出ている場所だけではなく、
+身体全体のつながりを見ながら整えていくことを大切にしています。</p>
+    </div>
   </div>
 
   <div class="info-card card-hidden">
     <h3>大切にしていること</h3>
-
-    <!-- 任意：カウンセリング写真（不要なら削除OK） -->
-    <!-- <img src="assets/img/profile/counseling.webp" alt="カウンセリング中の写真" style="width:100%; height:auto; border-radius:14px; margin:10px 0 14px;"> -->
-
     <p style="white-space: pre-line;">
 専門性を追求する一方で、
 私が最も大切にしているのは“安心感”です。
@@ -255,6 +428,15 @@
     </p>
   </div>
 
+  <div class="info-card card-hidden profile-cta-card">
+    <h3>ご相談・ご予約はこちら</h3>
+    <p>初めての方も、現在のお悩みを整理するところから
+丁寧に対応しています。
+
+ご相談・ご予約はLINEから承っています。</p>
+    <a href="https://lin.ee/6bBKc67" class="profile-cta-link" target="_blank" rel="noopener">LINEで予約する</a>
+  </div>
+
 </div>
 
 <footer>
@@ -276,25 +458,26 @@ window.addEventListener("load", () => {
   const openingRing = document.getElementById("opening-ring");
   const heroLogo = document.getElementById("hero-logo");
   const indexCards = document.getElementById("index-cards");
+  const profileHeroCard = document.querySelector(".profile-hero-card");
 
   const hasShownRing = sessionStorage.getItem("openingRingShown");
 
   if (hasShownRing) {
-    /* 2回目以降：輪っかなし → 即表示 */
     if (openingRing) {
       openingRing.style.display = "none";
     }
     if (heroLogo) {
       heroLogo.classList.add("show");
     }
+    if (profileHeroCard) {
+      profileHeroCard.classList.add("show");
+    }
     if (indexCards) {
       indexCards.querySelectorAll(".info-card").forEach(card => {
         card.classList.add("show");
       });
     }
-
   } else {
-    /* 初回：輪っかあり */
     sessionStorage.setItem("openingRingShown", "true");
 
     if (openingRing) {
@@ -308,6 +491,9 @@ window.addEventListener("load", () => {
       if (heroLogo) {
         heroLogo.classList.add("show");
       }
+      if (profileHeroCard) {
+        profileHeroCard.classList.add("show");
+      }
       if (indexCards) {
         indexCards.querySelectorAll(".info-card").forEach(card => {
           card.classList.add("show");
@@ -316,15 +502,12 @@ window.addEventListener("load", () => {
     }, 2400);
   }
 
-  /* ============================
-     Opening Animation（共通）
-  ============================ */
-  const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
+  const ring = document.getElementById("opening-ring");
+  const hero = document.getElementById("hero-logo");
   const breadcrumb = document.querySelector(".breadcrumb");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const bgLogo  = document.getElementById("global-logo-bg");
-  const cards   = document.querySelectorAll(".card-hidden");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
@@ -334,7 +517,6 @@ window.addEventListener("load", () => {
     setTimeout(()=> ring.style.display = "none", 2400);
   }
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
     if (breadcrumb) breadcrumb.style.opacity = "1";
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
@@ -342,23 +524,18 @@ window.addEventListener("load", () => {
     if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
 
-  /* タイトル、カード */
   setTimeout(()=>{
     if (hero) hero.classList.add("show");
+    if (profileHeroCard) profileHeroCard.classList.add("show");
     cards.forEach(c => c.classList.add("show"));
   }, 2600);
 
-  /* ============================
-     ハンバーガーメニュー開閉
-  ============================ */
   if (hamburgerBtn && menuPanel) {
-    // 開く
     hamburgerBtn.addEventListener("click", () => {
       menuPanel.classList.add("open");
       document.body.classList.add("menu-open");
     });
 
-    /* × ボタンで閉じる */
     const closeBtn = document.querySelector(".menu-close-btn");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -367,7 +544,6 @@ window.addEventListener("load", () => {
       });
     }
 
-    // 背景タップで閉じる
     menuPanel.addEventListener("click", e => {
       if (e.target === menuPanel) {
         menuPanel.classList.remove("open");
@@ -375,7 +551,6 @@ window.addEventListener("load", () => {
       }
     });
 
-    // リンクタップで閉じる
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -384,17 +559,11 @@ window.addEventListener("load", () => {
     });
   }
 
-  /* ============================
-     上に戻るボタン（大型ゴールド）
-  ============================ */
-
-  // ボタン作成
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
 
-  // スクロールでフェードイン
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
       toTopBtn.classList.add("show");
@@ -403,7 +572,6 @@ window.addEventListener("load", () => {
     }
   });
 
-  // クリックでトップへ
   toTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
