@@ -4,36 +4,176 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="自律神経専門。大阪市中央区の整体院gene。アトピー、めまい、耳鳴り、不眠症、パニック障害など、自律神経の乱れからくる症状に根本から向き合います。">
+<title>大阪 自律神経専門整体院 gene｜南船場の自律神経専門整体</title>
+<meta name="description" content="大阪・南船場の自律神経専門整体院 gene。めまい・不眠・動悸・慢性的な不調など、自律神経の乱れによるお悩みに対し、身体全体のバランスから丁寧に整えます。">
 
-<!-- OGP -->
 <meta property="og:title" content="大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="自律神経専門整体。アトピー、めまい、耳鳴り、不眠症、パニック障害など根本回復へ。">
-<meta property="og:url" content="https://gene10969.github.io/gene-site/index.html">
+<meta property="og:description" content="自律神経の乱れによる不調を、身体全体のバランスから丁寧に整える整体院。初めての方も安心してご相談ください。">
+<meta property="og:url" content="https://gene-seitai.com/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/og_hero.webp">
-
-<!-- パンくず構造化データ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "ホーム",
-    "item": "https://gene10969.github.io/gene-site/index.html"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "トップ",
-    "item": "https://gene10969.github.io/gene-site/index.html"
-  }]
-}
-</script>
+<meta property="og:image" content="profile_main.webp">
 
 <link rel="stylesheet" href="assets/style.css">
+
+<style>
+.top-hero-card{
+  max-width: 980px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.top-hero-card.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.top-hero-inner{
+  display: grid;
+  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  background: rgba(10,10,10,.72);
+  border: 1px solid rgba(217,193,126,.22);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter: blur(6px);
+}
+.top-main-photo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  border: 1px solid rgba(217,193,126,.24);
+}
+.top-copy h2{
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.45;
+  color: #f4ead0;
+  margin: 0 0 18px;
+  font-weight: 500;
+}
+.top-name-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.top-role{
+  font-size: .9rem;
+  color: rgba(255,255,255,.72);
+  letter-spacing: .08em;
+}
+.top-name{
+  font-size: 1.25rem;
+  color: #d9c17e;
+  letter-spacing: .08em;
+}
+.top-lead{
+  white-space: pre-line;
+  line-height: 2.05;
+  color: rgba(255,255,255,.9);
+  margin: 0 0 22px;
+}
+.top-badges{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.top-badges span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(217,193,126,.3);
+  color: #f3e6bf;
+  background: rgba(217,193,126,.08);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+.top-section-image{
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  margin: 10px 0 18px;
+  border: 1px solid rgba(217,193,126,.22);
+}
+.top-quote{
+  margin-top: 18px;
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(217,193,126,.22);
+  background: rgba(217,193,126,.06);
+}
+.top-quote p{
+  margin: 0;
+  line-height: 2;
+  color: rgba(255,255,255,.9);
+  white-space: pre-line;
+}
+.top-mini-title{
+  color: #d9c17e;
+  font-size: .95rem;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+.top-cta-card{
+  text-align: center;
+}
+.top-cta-card p{
+  white-space: pre-line;
+}
+.top-cta-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #111;
+  background: #d9c17e;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.top-cta-link:hover{
+  transform: translateY(-2px);
+  opacity: .92;
+}
+@media (max-width: 860px){
+  .top-hero-inner{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+  .top-copy h2{
+    font-size: 1.55rem;
+  }
+}
+@media (max-width: 640px){
+  .top-hero-card{
+    padding: 0 16px;
+    margin-top: 24px;
+  }
+  .top-hero-inner{
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .top-main-photo{
+    border-radius: 14px;
+  }
+  .top-lead{
+    line-height: 1.95;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -48,87 +188,221 @@
   <div class="ring-blur"></div>
 </div>
 
-<!-- パンくず（初期非表示） -->
-<nav class="breadcrumb" style="opacity:0;">
-  <a href="index.html">ホーム</a> ＞ <span>トップ</span>
-</nav>
-
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
-<!-- ▼必須：これが無いと開かない -->
 <div id="hamburger-menu" class="hamburger-menu">
-<!-- × ボタン -->
-<button class="menu-close-btn">×</button>
-  
+  <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
-<a href="menu.html">メニュー</a>
-<a href="access.html">アクセス</a>
-<a href="faq.html">よくある質問</a>
-<!-- <a href="news.html">お知らせ</a> -->
-<a href="voice.html">改善写真</a>
-
+  <a href="menu.html">メニュー</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">改善写真</a>
+  <a href="profile.html">院長プロフィール</a>
 </div>
-
 
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">大阪 自律神経専門整体院 gene</h1>
   <p class="sub-catch">
-    体質は変えられる。<br>
-    遺伝子レベルで、本質を根本から整える。<br><br>
-    アトピー・めまい・耳鳴り・不眠症・パニック障害など<br>
-    自律神経の乱れによる症状に、本気で向き合います。<br>
-    再発しない身体へ、共に歩みましょう。
+    原因のはっきりしない不調に悩む方へ。<br>
+    自律神経の乱れを、身体全体のバランスから整えます。
   </p>
 </div>
 
-<!-- LINE予約 -->
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
   LINE<br>予約
 </a>
+
+<section class="top-hero-card">
+  <div class="top-hero-inner">
+    <div class="top-photo-wrap">
+      <img src="profile_main.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo">
+    </div>
+    <div class="top-copy">
+      <div class="top-name-wrap">
+        <span class="top-role">大阪 自律神経専門整体院 gene</span>
+        <span class="top-name">院長　高田 裕基</span>
+      </div>
+      <h2>不安を抱えたまま毎日を過ごす方が、<br>安心へ向かえる場所でありたい。</h2>
+      <p class="top-lead">慢性的な不調は、見た目には分かりにくく、
+周囲にも理解されにくいことがあります。
+
+だからこそ私は、
+症状だけを見るのではなく、
+身体全体の状態とその背景を丁寧に確認しながら、
+安心して通える施術を大切にしています。</p>
+      <div class="top-badges">
+        <span>国家資格である柔道整復師</span>
+        <span>自律神経調整分野に8年間従事</span>
+        <span>院長・幹部経験あり</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div id="index-cards">
 
   <div class="info-card card-hidden">
+    <h3>このようなお悩みの方へ</h3>
+    <p style="white-space: pre-line;">
+めまい、耳鳴り、不眠、動悸、慢性的な疲労感、アトピー性皮膚炎、
+検査では大きな異常がないのに続く不調など、
+自律神経の乱れと関わるお悩みに対応しています。
+
+「どこに相談すればいいかわからない」
+「何をしてもすっきりしない」
+という方も、まずは一度ご相談ください。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden">
+    <h3>自律神経に特化した理由</h3>
+    <img src="neck.webp" alt="自律神経へのアプローチ（首・頭部）" class="top-section-image">
+    <p style="white-space: pre-line;">
+自律神経は、呼吸・循環・消化・体温調整・睡眠など、生命活動の基盤を担う調整機能です。
+
+強いストレスや生活リズムの乱れが続くと、
+交感神経と副交感神経の切り替えがうまくいかなくなり、局所的な症状として現れることがあります。
+
+皮膚症状、不眠、めまい、動悸、慢性的な疲労。
+これらは単独の問題ではなく、
+身体全体の調整機能の乱れとして捉える必要があります。
+
+部分的な対処ではなく、
+神経系・呼吸・筋緊張・循環の連動を整える。
+その視点から施術を組み立てています。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden">
+    <h3>施術の考え方</h3>
+    <img src="body.webp" alt="全身のバランスを整える施術" class="top-section-image">
+    <p style="white-space: pre-line;">
+当院では、強い刺激や矯正を主とする方法は行っていません。
+
+自律神経のバランスは、過度な刺激によって一時的に変化しても、身体が防御反応を起こせば元に戻ってしまうことがあります。
+
+重要なのは、
+「今の身体にとって適切な刺激量」を見極めることです。
+
+筋緊張の状態、呼吸の深さ、皮膚の緊張度、脈の反応などを確認しながら、
+神経系に過負荷をかけない範囲で調整を行います。
+
+その結果として、
+徐々に身体が本来の調整機能を取り戻していくことを目指します。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden top-cta-card">
+    <p style="white-space: pre-line;">
+まずは現在の状態を整理するところからでも大丈夫です。
+お気軽にご相談ください。
+    </p>
+    <a href="https://lin.ee/6bBKc67" class="top-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
+  </div>
+
+  <div class="info-card card-hidden">
     <h3>ごあいさつ</h3>
+
     <p style="white-space: pre-line;">
 はじめまして。
 大阪 自律神経専門整体院 gene（ジーン）の高田裕基と申します。
+    </p>
 
-私は国家資格である柔道整復師として、関東・大阪に複数店舗を展開する自律神経調整に特化した整骨院グループに8年間在籍し、院長として新人教育・技術指導・院の運営に携わってきました。 
-そこでは、アトピー性皮膚炎・めまい・耳鳴り・不眠症・パニック障害など、自律神経の乱れから生じるさまざまな症状で悩まれている多くの患者さまを担当してきました。 
+    <img src="profile_sub.webp" alt="カウンセリング時の院長写真" class="top-section-image">
 
-多くの方々が、
-「自分で調べても何を信じていいかわからない」
-「病院では薬が出るだけで根本解決には至らない」
-「周りに相談しても理解してもらえない」
-と、不安を抱えながら生活されています。
+    <p style="white-space: pre-line;">
+私は国家資格である柔道整復師として、関東・大阪に複数店舗を展開する自律神経調整に特化した整骨院グループに8年間在籍し、院長として新人教育・技術指導・院の運営に携わってきました。
+アトピー性皮膚炎・めまい・耳鳴り・不眠・パニック症状など、自律神経の乱れから生じるさまざまなお悩みと向き合ってきました。
 
-その方々の症状が改善していく中で、 
-「先生に診てもらえて本当によかった」
+多くの方が、
+「何を信じていいかわからない」
+「検査では異常がないのに良くならない」
+「周囲に理解してもらえない」
+と、不安を抱えながら日常を過ごされています。
+
+その方々の状態が少しずつ変わっていく中で、
+「先生に診てもらえてよかった」
 「もっと早く来ればよかった」
-「整体でここまで変わると思っていなかった」
-と、ありがたいお言葉をいただくたびに、この仕事の意義と責任を深く感じてきました。
+という言葉をいただくたびに、この仕事の意義と責任を強く感じてきました。
+    </p>
 
-私自身、姉が重度のアトピーで長年苦しんでいました。
-現在は治療の成果もあり薬に頼らず安定した状態を保っていますが、姉の子ども2人もアトピー体質で悩んでおり、現在も治療を続けています。
+    <p style="white-space: pre-line;">
+私自身、家族が長年アトピーに悩んでいたこともあり、体質や自律神経の乱れによる不調を身近に感じてきました。
 
-アトピーや自律神経の乱れからくる症状には、生活習慣だけでなく遺伝的要素も大きく関わります。
-だからこそ大阪 自律神経専門整体院 geneでは、
+だからこそ当院では、
 
 「<span style="color:#d9c17e; font-size:1.15em;">本質＝gene</span>」 を理解し、
 「<span style="color:#d9c17e; font-size:1.15em;">遺伝子＝gene</span>」 レベルで体質を整え、
 「<span style="color:#d9c17e; font-size:1.15em;">根本＝gene</span>」 から再発しない身体へ導く
 
-唯一の整体院を目指しています。
-
-本気で体質を変えたい方、これ以上同じ悩みを繰り返したくない方は、ぜひ一度ご相談ください。
-あなたの未来が変わるきっかけになればと思います。
+という考えを軸に施術を行っています。
     </p>
   </div>
 
   <div class="info-card card-hidden">
-    <h3>お知らせ</h3>
-    <p>ホームページをリニューアルしました</p>
+    <h3>初めての方へ</h3>
+    <p style="white-space: pre-line;">
+初めての来院は不安があって当然です。
+
+「病院では異常がないと言われた」
+「どこに相談すればいいか分からない」
+
+そのような方こそ、一度ご相談ください。
+
+身体の状態を丁寧に確認し、
+今何が起きているのかを一緒に整理していきます。
+
+初めての整体は不安もあると思いますが、
+無理な施術や通院の強制は一切ありませんのでご安心ください。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden">
+    <h3>大切にしていること</h3>
+    <p style="white-space: pre-line;">
+専門性を追求する一方で、
+私が最も大切にしているのは“安心感”です。
+
+理論があっても、
+安心できる空間でなければ身体は緩みません。
+
+無理な通院の提案はしません。
+必要以上に不安をあおることもありません。
+
+現在の状態を正直に共有し、
+現実的な見通しをお伝えします。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden">
+    <h3>最後に</h3>
+    <img src="profile_main.webp" alt="院長プロフィール写真" class="top-section-image">
+    <p style="white-space: pre-line;">
+自律神経は目に見えない調整機能ですが、
+身体の反応には必ず現れます。
+
+「どこに相談すればいいかわからない」
+「このままでいいのか不安」
+
+そう感じている方こそ、
+一度ご相談ください。
+
+無理な施術や通院の強制は一切ありません。
+
+今の状態を整理するところから、
+一緒に進めていければと思います。
+    </p>
+  </div>
+
+  <div class="info-card card-hidden top-cta-card">
+    <h3>ご相談・ご予約はこちら</h3>
+    <p style="white-space: pre-line;">
+初めての方も、現在のお悩みを整理するところから
+丁寧に対応しています。
+
+ご相談・ご予約はLINEから承っています。
+    </p>
+    <a href="https://lin.ee/6bBKc67" class="top-cta-link" target="_blank" rel="noopener">LINEで予約する</a>
   </div>
 
 </div>
@@ -146,32 +420,32 @@
   © gene. All Rights Reserved.
 </footer>
 
-
 <script>
 window.addEventListener("load", () => {
 
   const openingRing = document.getElementById("opening-ring");
   const heroLogo = document.getElementById("hero-logo");
   const indexCards = document.getElementById("index-cards");
+  const topHeroCard = document.querySelector(".top-hero-card");
 
   const hasShownRing = sessionStorage.getItem("openingRingShown");
 
   if (hasShownRing) {
-    /* 2回目以降：輪っかなし → 即表示 */
     if (openingRing) {
       openingRing.style.display = "none";
     }
     if (heroLogo) {
       heroLogo.classList.add("show");
     }
+    if (topHeroCard) {
+      topHeroCard.classList.add("show");
+    }
     if (indexCards) {
       indexCards.querySelectorAll(".info-card").forEach(card => {
         card.classList.add("show");
       });
     }
-
   } else {
-    /* 初回：輪っかあり */
     sessionStorage.setItem("openingRingShown", "true");
 
     if (openingRing) {
@@ -185,6 +459,9 @@ window.addEventListener("load", () => {
       if (heroLogo) {
         heroLogo.classList.add("show");
       }
+      if (topHeroCard) {
+        topHeroCard.classList.add("show");
+      }
       if (indexCards) {
         indexCards.querySelectorAll(".info-card").forEach(card => {
           card.classList.add("show");
@@ -192,58 +469,47 @@ window.addEventListener("load", () => {
       }
     }, 2400);
   }
-  /* ============================
-     Opening Animation（共通）
-  ============================ */
-  const ring    = document.getElementById("opening-ring");
-  const hero    = document.getElementById("hero-logo");
-  const breadcrumb = document.querySelector(".breadcrumb");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const bgLogo  = document.getElementById("global-logo-bg");
-  const cards   = document.querySelectorAll(".card-hidden");
+
+  const ring = document.getElementById("opening-ring");
+  const hero = document.getElementById("hero-logo");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
   if (ring) {
     ring.classList.add("show");
-    setTimeout(()=> ring.classList.add("fadeout"), 1400);
-    setTimeout(()=> ring.style.display = "none", 2400);
+    setTimeout(() => ring.classList.add("fadeout"), 1400);
+    setTimeout(() => ring.style.display = "none", 2400);
   }
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(()=>{
-    if (breadcrumb) breadcrumb.style.opacity = "1";
+  setTimeout(() => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
 
-  /* index専用：タイトル、カード */
-  setTimeout(()=>{
+  setTimeout(() => {
     if (hero) hero.classList.add("show");
+    if (topHeroCard) topHeroCard.classList.add("show");
     cards.forEach(c => c.classList.add("show"));
   }, 2600);
 
-
-  /* ============================
-     ハンバーガーメニュー開閉
-  ============================ */
   if (hamburgerBtn && menuPanel) {
-    // 開く
     hamburgerBtn.addEventListener("click", () => {
       menuPanel.classList.add("open");
       document.body.classList.add("menu-open");
     });
-  /* × ボタンで閉じる */
-  const closeBtn = document.querySelector(".menu-close-btn");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    });
-  }
 
-    // 背景タップで閉じる
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
     menuPanel.addEventListener("click", e => {
       if (e.target === menuPanel) {
         menuPanel.classList.remove("open");
@@ -251,7 +517,6 @@ window.addEventListener("load", () => {
       }
     });
 
-    // リンクタップで閉じる
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -260,18 +525,11 @@ window.addEventListener("load", () => {
     });
   }
 
-
-  /* ============================
-     上に戻るボタン（大型ゴールド）
-  ============================ */
-
-  // ボタン作成
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
 
-  // スクロールでフェードイン
   window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
       toTopBtn.classList.add("show");
@@ -280,7 +538,6 @@ window.addEventListener("load", () => {
     }
   });
 
-  // クリックでトップへ
   toTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
