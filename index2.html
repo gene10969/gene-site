@@ -17,187 +17,190 @@
 
 <style>
 .top-hero-card{
-  max-width: 980px;
-  margin: 32px auto 0;
-  padding: 0 20px;
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .8s ease, transform .8s ease;
+  max-width:980px;
+  margin:32px auto 0;
+  padding:0 20px;
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
 }
 .top-hero-card.show{
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 .top-hero-inner{
-  display: grid;
-  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
-  gap: 34px;
-  align-items: center;
-  background: rgba(10,10,10,.72);
-  border: 1px solid rgba(217,193,126,.22);
-  border-radius: 22px;
-  padding: 28px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.22);
-  backdrop-filter: blur(6px);
+  display:grid;
+  grid-template-columns:minmax(0,430px) minmax(0,1fr);
+  gap:34px;
+  align-items:center;
+  background:rgba(10,10,10,.72);
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
 }
 .top-main-photo{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  border: 1px solid rgba(217,193,126,.24);
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+  border:1px solid rgba(217,193,126,.24);
 }
 .top-copy h2{
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  line-height: 1.45;
-  color: #f4ead0;
-  margin: 0 0 18px;
-  font-weight: 500;
+  font-size:clamp(1.7rem, 3vw, 2.4rem);
+  line-height:1.45;
+  color:#f4ead0;
+  margin:0 0 18px;
+  font-weight:500;
 }
 .top-name-wrap{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: center;
-  margin-bottom: 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 14px;
+  align-items:center;
+  margin-bottom:18px;
 }
 .top-role{
-  font-size: .9rem;
-  color: rgba(255,255,255,.72);
-  letter-spacing: .08em;
+  font-size:.9rem;
+  color:rgba(255,255,255,.72);
+  letter-spacing:.08em;
 }
 .top-name{
-  font-size: 1.25rem;
-  color: #d9c17e;
-  letter-spacing: .08em;
+  font-size:1.25rem;
+  color:#d9c17e;
+  letter-spacing:.08em;
 }
 .top-lead{
-  white-space: pre-line;
-  line-height: 2.05;
-  color: rgba(255,255,255,.9);
-  margin: 0 0 22px;
+  white-space:pre-line;
+  line-height:2.05;
+  color:rgba(255,255,255,.9);
+  margin:0 0 22px;
 }
 .top-badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 .top-badges span{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(217,193,126,.3);
-  color: #f3e6bf;
-  background: rgba(217,193,126,.08);
-  font-size: .92rem;
-  line-height: 1.5;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.3);
+  color:#f3e6bf;
+  background:rgba(217,193,126,.08);
+  font-size:.92rem;
+  line-height:1.5;
 }
 
 #index-cards{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
+  max-width:980px;
+  margin:0 auto;
+  padding:0 20px 80px;
 }
 
 #index-cards .info-card,
 #index-cards .menu-cta-card{
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 24px;
-  padding: 28px;
+  width:100%;
+  box-sizing:border-box;
+  margin-top:24px;
+  padding:28px;
 }
 
 .card-split{
-  display: grid;
-  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
-  gap: 34px;
-  align-items: center;
+  display:grid;
+  grid-template-columns:minmax(0,400px) minmax(0,1fr);
+  gap:34px;
+  align-items:center;
+}
+.card-split.reverse{
+  grid-template-columns:minmax(0,1fr) minmax(0,400px);
 }
 .card-split.no-image{
-  grid-template-columns: 1fr;
+  grid-template-columns:1fr;
 }
 .card-media{
-  width: 100%;
+  width:100%;
 }
 .card-media img{
-  width: 100%;
-  display: block;
-  border-radius: 18px;
-  border: 1px solid rgba(217,193,126,.22);
+  width:100%;
+  display:block;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.22);
 }
 .card-content h3{
-  margin-top: 0;
+  margin-top:0;
 }
 .card-content p{
-  white-space: pre-line;
+  white-space:pre-line;
 }
 
 .top-cta-card{
-  text-align: center;
+  text-align:center;
 }
 .top-cta-card p{
-  white-space: pre-line;
+  white-space:pre-line;
 }
 .top-cta-link{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  min-height: 48px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #111;
-  background: #d9c17e;
-  font-size: 1rem;
-  letter-spacing: .06em;
-  transition: transform .25s ease, opacity .25s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  min-height:48px;
+  padding:12px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  color:#111;
+  background:#d9c17e;
+  font-size:1rem;
+  letter-spacing:.06em;
+  transition:transform .25s ease, opacity .25s ease;
 }
 .top-cta-link:hover{
-  transform: translateY(-2px);
-  opacity: .92;
+  transform:translateY(-2px);
+  opacity:.92;
 }
 
-@media (max-width: 860px){
+@media (max-width:860px){
   .top-hero-inner{
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 22px;
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:22px;
   }
   .top-copy h2{
-    font-size: 1.55rem;
+    font-size:1.55rem;
   }
-  .card-split{
-    grid-template-columns: 1fr;
-    gap: 22px;
+  .card-split,
+  .card-split.reverse{
+    grid-template-columns:1fr;
+    gap:22px;
   }
 }
-
-@media (max-width: 640px){
+@media (max-width:640px){
   .top-hero-card{
-    padding: 0 16px;
-    margin-top: 24px;
+    padding:0 16px;
+    margin-top:24px;
   }
   .top-hero-inner{
-    border-radius: 18px;
-    padding: 18px;
+    border-radius:18px;
+    padding:18px;
   }
   .top-main-photo{
-    border-radius: 14px;
+    border-radius:14px;
   }
   .top-lead{
-    line-height: 1.95;
+    line-height:1.95;
   }
   #index-cards{
-    padding: 0 16px 72px;
+    padding:0 16px 72px;
   }
   #index-cards .info-card,
   #index-cards .menu-cta-card{
-    padding: 20px;
+    padding:20px;
   }
 }
 </style>
@@ -283,10 +286,7 @@
   </div>
 
   <div class="info-card card-hidden">
-    <div class="card-split">
-      <div class="card-media">
-        <img src="assets/img/gene-neck-treatment.webp" alt="大阪 自律神経専門整体院 gene 自律神経整体 施術">
-      </div>
+    <div class="card-split reverse">
       <div class="card-content">
         <h3>自律神経に特化した理由</h3>
         <p>自律神経は、呼吸・循環・消化・体温調整・睡眠など、生命活動の基盤を担う調整機能です。
@@ -301,6 +301,9 @@
 部分的な対処ではなく、
 神経系・呼吸・筋緊張・循環の連動を整える。
 その視点から施術を組み立てています。</p>
+      </div>
+      <div class="card-media">
+        <img src="assets/img/gene-neck-treatment.webp" alt="大阪 自律神経専門整体院 gene 自律神経整体 施術">
       </div>
     </div>
   </div>
@@ -389,10 +392,7 @@
   </div>
 
   <div class="info-card card-hidden">
-    <div class="card-split">
-      <div class="card-media">
-        <img src="assets/img/gene-prone-treatment.webp" alt="大阪 自律神経専門整体院 gene 整体 施術風景">
-      </div>
+    <div class="card-split reverse">
       <div class="card-content">
         <h3>大切にしていること</h3>
         <p>専門性を追求する一方で、
@@ -406,6 +406,9 @@
 
 現在の状態を正直に共有し、
 現実的な見通しをお伝えします。</p>
+      </div>
+      <div class="card-media">
+        <img src="assets/img/gene-prone-treatment.webp" alt="大阪 自律神経専門整体院 gene 整体 施術風景">
       </div>
     </div>
   </div>
