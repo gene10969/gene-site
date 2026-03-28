@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://gene-seitai.com/voice.html</loc>
+
+    <!-- 症例1 -->
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month0_face.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month3_face.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month6_face.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month0_neck.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month3_neck.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month6_neck.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month0_body_front.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month3_body_front.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month6_body_front.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month0_ankle.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month3_ankle.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case1/month6_ankle.webp</image:loc>
+    </image:image>
+
+    <!-- 症例2 -->
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month0_forearm.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month3_forearm.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month6_forearm.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month0_body_front.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month3_body_front.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month6_body_front.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month0_body_back.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month3_body_back.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month6_body_back.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month0_leg.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month3_leg.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month6_leg.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month0_ankle.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month3_ankle.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case2/month6_ankle.webp</image:loc>
+    </image:image>
+
+    <!-- 症例3 -->
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month0_forearm_front.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month3_forearm_front.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month0_forearm_back.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month3_forearm_back.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month0_ankle_right.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month3_ankle_right.webp</image:loc>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month0_ankle_left.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://gene-seitai.com/cases/case3/month3_ankle_left.webp</image:loc>
+    </image:image>
+
+  </url>
+
+</urlset>
