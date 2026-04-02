@@ -107,8 +107,10 @@
   margin-top: 0;
   padding: 18px;
   border-radius: 18px;
-  background: rgba(0,0,0,.25);
-  backdrop-filter: blur(6px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .menu-price-title{
   color: #d9c17e;
@@ -249,10 +251,10 @@
 
 .menu-price-wrap,
 .info-card.show .menu-price-wrap{
-  background: rgba(0,0,0,.25);
-  backdrop-filter: blur(6px);
+  background: transparent;
   border: none;
   box-shadow: none;
+  backdrop-filter: none;
 }
 
 </style>
@@ -477,47 +479,76 @@ window.addEventListener("load", () => {
   const heroLogo = document.getElementById("hero-logo");
   const indexCards = document.getElementById("index-cards");
   const menuHeroCard = document.querySelector(".menu-hero-card");
-  const breadcrumb = document.querySelector(".breadcrumb");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const bgLogo = document.getElementById("global-logo-bg");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const menuPanel = document.getElementById("hamburger-menu");
+
   const hasShownRing = sessionStorage.getItem("openingRingShown");
 
   if (hasShownRing) {
-    if (openingRing) openingRing.style.display = "none";
-    heroLogo?.classList.add("show");
-    menuHeroCard?.classList.add("show");
-    indexCards?.querySelectorAll(".info-card").forEach(card => {
-      card.classList.add("show");
-    });
-    if (breadcrumb) breadcrumb.style.opacity = "1";
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
+    if (openingRing) {
+      openingRing.style.display = "none";
+    }
+    if (heroLogo) {
+      heroLogo.classList.add("show");
+    }
+    if (menuHeroCard) {
+      menuHeroCard.classList.add("show");
+    }
+    if (indexCards) {
+      indexCards.querySelectorAll(".info-card").forEach(card => {
+        card.classList.add("show");
+      });
+    }
   } else {
     sessionStorage.setItem("openingRingShown", "true");
 
     if (openingRing) {
       openingRing.classList.add("show");
-      setTimeout(() => openingRing.classList.add("fadeout"), 1400);
-      setTimeout(() => {
-        openingRing.style.display = "none";
-      }, 2400);
     }
 
     setTimeout(() => {
-      heroLogo?.classList.add("show");
-      menuHeroCard?.classList.add("show");
-      indexCards?.querySelectorAll(".info-card").forEach(card => {
-        card.classList.add("show");
-      });
-      if (breadcrumb) breadcrumb.style.opacity = "1";
-      hamburgerBtn?.classList.add("show");
-      rsvBtn?.classList.add("show");
-      bgLogo?.classList.add("fade-in");
+      if (openingRing) {
+        openingRing.classList.add("fadeout");
+      }
+      if (heroLogo) {
+        heroLogo.classList.add("show");
+      }
+      if (menuHeroCard) {
+        menuHeroCard.classList.add("show");
+      }
+      if (indexCards) {
+        indexCards.querySelectorAll(".info-card").forEach(card => {
+          card.classList.add("show");
+        });
+      }
     }, 2400);
   }
+
+  const ring = document.getElementById("opening-ring");
+  const hero = document.getElementById("hero-logo");
+  const breadcrumb = document.querySelector(".breadcrumb");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+
+  if (ring) {
+    ring.classList.add("show");
+    setTimeout(() => ring.classList.add("fadeout"), 1400);
+    setTimeout(() => ring.style.display = "none", 2400);
+  }
+
+  setTimeout(() => {
+    if (breadcrumb) breadcrumb.style.opacity = "1";
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
+  }, 2400);
+
+  setTimeout(() => {
+    if (hero) hero.classList.add("show");
+    if (menuHeroCard) menuHeroCard.classList.add("show");
+    cards.forEach(c => c.classList.add("show"));
+  }, 2600);
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {
@@ -526,10 +557,12 @@ window.addEventListener("load", () => {
     });
 
     const closeBtn = document.querySelector(".menu-close-btn");
-    closeBtn?.addEventListener("click", () => {
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
 
     menuPanel.addEventListener("click", e => {
       if (e.target === menuPanel) {
