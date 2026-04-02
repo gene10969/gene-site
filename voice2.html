@@ -4,246 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>施術内容｜gene自律神経調整整体｜大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 geneの施術内容。gene自律神経調整整体では、一人ひとりの状態に合わせて身体全体のバランスから整えていきます。">
-
-<meta property="og:title" content="gene自律神経調整整体｜大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="一人ひとりの状態に合わせて調整するオーダーメイド整体。自律神経の乱れによる不調に対応しています。">
-<meta property="og:url" content="https://gene-seitai.com/menu.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="profile_main.webp">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "ホーム",
-    "item": "https://gene-seitai.com/"
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "name": "施術内容",
-    "item": "https://gene-seitai.com/menu.html"
-  }]
-}
-</script>
+<title>院内・改善事例｜大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="大阪 自律神経専門整体院 geneの院内写真・改善事例ページ">
 
 <link rel="stylesheet" href="assets/style.css">
 
 <style>
-.menu-hero-card{
-  max-width: 980px;
-  margin: 32px auto 0;
+.voice-container{
+  max-width: 1100px;
+  margin: 120px auto 80px;
   padding: 0 20px;
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity .8s ease, transform .8s ease;
 }
-.menu-hero-card.show{
-  opacity: 1;
-  transform: translateY(0);
-}
-.menu-hero-inner{
-  display: grid;
-  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
-  gap: 34px;
-  align-items: center;
-  background: rgba(10,10,10,.72);
-  border: 1px solid rgba(217,193,126,.22);
-  border-radius: 22px;
-  padding: 28px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.22);
-  backdrop-filter: blur(6px);
-}
-.menu-main-photo{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  border: 1px solid rgba(217,193,126,.24);
-}
-.menu-copy h2{
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  line-height: 1.45;
-  color: #f4ead0;
-  margin: 0 0 18px;
-  font-weight: 500;
-}
-.menu-copy p{
-  white-space: pre-line;
-  line-height: 2.05;
-  color: rgba(255,255,255,.9);
-  margin: 0 0 22px;
-}
-.menu-badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.menu-badges span{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(217,193,126,.3);
-  color: #f3e6bf;
-  background: rgba(217,193,126,.08);
-  font-size: .92rem;
-  line-height: 1.5;
-}
-.menu-section-image{
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(217,193,126,.22);
-}
-.menu-price-wrap{
-  margin-top: 0;
-  padding: 18px;
-  border-radius: 18px;
-  border: 1px solid rgba(217,193,126,.22);
-  background: rgba(217,193,126,.06);
-}
-.menu-price-title{
+
+.voice-title{
+  text-align: center;
   color: #d9c17e;
-  font-size: 1rem;
-  letter-spacing: .08em;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.case-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.case-card{
+  border: 1px solid rgba(217,193,126,.22);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0,0,0,.25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.case-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+.case-card img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.case-content{
+  padding: 20px;
+}
+
+.case-content h3{
+  color: #d9c17e;
   margin-bottom: 10px;
 }
-.menu-price-main{
-  font-size: clamp(1.45rem, 3vw, 1.95rem);
-  color: #f4ead0;
-  line-height: 1.45;
-  margin: 0 0 8px;
-}
-.menu-price-sub{
-  color: rgba(255,255,255,.78);
-  line-height: 1.9;
-  white-space: pre-line;
-  margin: 0;
-}
-.symptom-list{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
-}
-.symptom-list div{
-  border: 1px solid rgba(217,193,126,.18);
-  background: rgba(255,255,255,.02);
-  border-radius: 14px;
-  padding: 14px 14px 12px;
-  color: rgba(255,255,255,.92);
+
+.case-content p{
+  font-size: 14px;
   line-height: 1.8;
-}
-.menu-note{
-  margin-top: 18px;
-  color: rgba(255,255,255,.76);
-  line-height: 1.95;
-  white-space: pre-line;
-}
-.menu-cta-card{
-  text-align: center;
-}
-.menu-cta-card p{
-  white-space: pre-line;
-}
-.menu-cta-link{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  min-height: 48px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #111;
-  background: #d9c17e;
-  font-size: 1rem;
-  letter-spacing: .06em;
-  transition: transform .25s ease, opacity .25s ease;
-}
-.menu-cta-link:hover{
-  transform: translateY(-2px);
-  opacity: .92;
+  color: rgba(255,255,255,.85);
 }
 
-#index-cards{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
-#index-cards .info-card{
-  margin-top: 24px;
-  overflow: hidden;
-}
-#index-cards .info-card:first-child{
-  margin-top: 32px;
-}
-.menu-cta-card{
-  margin-top: 24px;
-}
-
-.menu-split{
-  display: grid;
-  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
-  gap: 28px;
-  align-items: start;
-}
-.menu-split.reverse{
-  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
-}
-.menu-split.centered{
-  align-items: center;
-}
-.menu-split-media{
-  width: 100%;
-}
-.menu-split-content h3{
-  margin-top: 0;
-}
-.menu-split-content p{
-  white-space: pre-line;
-}
-
-@media (max-width: 860px){
-  .menu-hero-inner{
+@media (max-width: 900px){
+  .case-grid{
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 22px;
-  }
-  .menu-copy h2{
-    font-size: 1.55rem;
-  }
-  .symptom-list{
-    grid-template-columns: 1fr;
-  }
-  .menu-split,
-  .menu-split.reverse{
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-@media (max-width: 640px){
-  .menu-hero-card{
-    padding: 0 16px;
-    margin-top: 24px;
-  }
-  .menu-hero-inner{
-    border-radius: 18px;
-    padding: 18px;
-  }
-  .menu-main-photo{
-    border-radius: 14px;
-  }
-  .menu-copy p{
-    line-height: 1.95;
   }
 }
 </style>
@@ -251,342 +76,53 @@
 
 <body>
 
-<div class="particles"></div>
+<div class="voice-container">
 
-<div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
-</div>
+  <h1 class="voice-title">院内・改善事例</h1>
 
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
+  <div class="case-grid">
 
-<nav class="breadcrumb" style="opacity:0;">
-  <a href="index.html">ホーム</a> ＞ <span>施術内容</span>
-</nav>
-
-<button id="hamburger-btn" class="hamburger-btn">≡</button>
-
-<div id="hamburger-menu" class="hamburger-menu">
-  <button class="menu-close-btn">×</button>
-  <a href="index.html">ホーム</a>
-  <a href="menu.html">施術内容</a>
-  <a href="access.html">アクセス</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="voice.html">院内・改善写真</a>
-</div>
-
-<div id="hero-logo" class="hidden">
-  <h1 class="main-title">施術内容</h1>
-  <p class="sub-catch">
-    gene自律神経調整整体<br>
-    一人ひとりの状態に合わせて整えるオーダーメイド整体
-  </p>
-</div>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
-  LINE<br>予約
-</a>
-
-<section class="menu-hero-card">
-  <div class="menu-hero-inner">
-    <div class="menu-photo-wrap">
-      <img src="assets/img/gene-prone-treatment.webp" alt="gene自律神経調整整体の施術風景" class="menu-main-photo">
-    </div>
-    <div class="menu-copy">
-      <h2>メニューは一つ。<br>状態に合わせて内容を調整します。</h2>
-      <p>gene自律神経調整整体では、
-症状名ごとに施術を分けるのではなく、
-今の身体の状態を丁寧に確認しながら、
-一人ひとりに合わせて調整を行います。
-
-めまい、不眠、動悸、耳鳴り、慢性的な疲労感、
-皮膚症状などのお悩みに対しても、
-身体全体のつながりを見ながら整えていきます。</p>
-      <div class="menu-badges">
-        <span>オーダーメイド整体</span>
-        <span>身体全体を確認</span>
-        <span>強い刺激に頼らない</span>
+    <a href="case1.html" class="case-card">
+      <img src="assets/img/case1-thumb.webp" alt="症例1 ビフォーアフター">
+      <div class="case-content">
+        <h3>症例1</h3>
+        <p>
+        顔・首・体・足首の変化の経過写真です。<br>
+        初回・3か月・6か月の変化を掲載しています。
+        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </a>
 
-<div id="index-cards">
-
-  <div class="info-card card-hidden">
-    <div class="menu-split reverse centered">
-      <div class="menu-split-content">
-        <h3>gene自律神経調整整体</h3>
-        <p>当院では、自律神経の働きに関わる身体全体のバランスを確認しながら施術を行っています。
-
-呼吸の浅さ、筋緊張、皮膚の緊張感、循環の状態などを丁寧に見ていき、
-その時の身体にとって負担になりにくい刺激量で整えていきます。
-
-強い刺激や無理な矯正を主とする方法ではなく、
-身体が防御反応を起こしにくい範囲で、自然に整っていける状態を目指します。</p>
+    <a href="case2.html" class="case-card">
+      <img src="assets/img/case2-thumb.webp" alt="症例2 ビフォーアフター">
+      <div class="case-content">
+        <h3>症例2</h3>
+        <p>
+        前腕・体・脚・足首の変化の経過写真です。<br>
+        初回・3か月・6か月の変化を掲載しています。
+        </p>
       </div>
-      <div class="menu-split-media">
-        <img src="assets/img/gene-neck-treatment.webp" alt="首・頭部へのアプローチ" class="menu-section-image">
+    </a>
+
+    <a href="case3.html" class="case-card">
+      <img src="assets/img/case3-thumb.webp" alt="症例3 ビフォーアフター">
+      <div class="case-content">
+        <h3>症例3</h3>
+        <p>
+        前腕・足首の経過写真です。<br>
+        初回・3か月の変化を掲載しています。
+        </p>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <div class="info-card card-hidden">
-    <div class="menu-price-wrap">
-      <div class="menu-price-title">料金</div>
-
-      <p class="menu-price-main">
-        初回 3,300円（税込）
-      </p>
-
-      <p class="menu-price-sub">
-        はじめての方でも安心してご相談いただけるよう、
-        初回はこの価格でご案内しています。
-      </p>
-
-      <p class="menu-price-sub">
-        初回は問診・検査を含め、
-        現在の状態を丁寧に確認します。
-      </p>
-
-      <p class="menu-price-main" style="margin-top:10px;">
-        2回目以降 5,500円（税込）
-      </p>
-
-      <p class="menu-price-sub">
-        お支払い方法：現金・クレジットカード・電子マネー・QR決済に対応しています。
-      </p>
-
-      <p class="menu-price-sub" style="margin-top:10px;">
-        所要時間：初回 約60分 / 2回目以降 約30分
-      </p>
-
-      <p class="menu-price-sub">
-        ※2回目以降は状態に合わせて施術を行うため、所要時間が短くなります
-      </p>
-    </div>
-  </div>
-
-  <div class="info-card card-hidden">
-    <h3>このようなお悩みの方へ</h3>
-
-    <p style="white-space: pre-line;">
-症状名だけで施術内容を分けるのではなく、
-「今どのようなことで困っているか」に合わせて身体の状態を確認していきます。
-    </p>
-
-    <div class="symptom-list">
-      <div>ふわっとするめまいが続いている</div>
-      <div>寝つきが悪い、途中で何度も目が覚める</div>
-      <div>動悸や不安感が出ることがある</div>
-      <div>耳鳴りが続いて気になっている</div>
-      <div>慢性的に疲れが抜けない</div>
-      <div>検査では異常がないのにしんどい</div>
-      <div>アトピー性皮膚炎や皮膚の不調が気になる</div>
-      <div>常に身体に力が入っていて抜けにくい</div>
-    </div>
-
-    <p class="menu-note">
-主な対応症状：
-アトピー・皮膚症状、めまい、耳鳴り、パニック障害、不眠症、慢性疲労、
-PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱鞘炎など
-    </p>
-
-    <p class="menu-note">上記以外のお悩みでも、
-自律神経の乱れと関わる可能性がある場合は対応できることがあります。
-まずはお気軽にご相談ください。</p>
-  </div>
-
-  <div class="info-card card-hidden">
-    <div class="menu-split">
-      <div class="menu-split-media">
-        <img src="assets/img/gene-counseling-writing.webp" alt="カウンセリング時の様子" class="menu-section-image">
-      </div>
-      <div class="menu-split-content">
-        <h3>施術の考え方</h3>
-        <p>不調が出ている場所だけを見ても、
-本当の原因がそこにあるとは限りません。
-
-そのため当院では、
-症状が出ている部位だけでなく、
-身体全体のつながりを確認することを大切にしています。
-
-今の状態を丁寧に把握し、
-必要なことを必要な分だけ行う。
-それが、gene自律神経調整整体の基本的な考え方です。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="info-card card-hidden menu-cta-card">
-    <p style="white-space: pre-line;">
-どの症状として予約すればいいか迷う必要はありません。
-まずは現在の状態を整理するところからでも大丈夫です。
-
-ご相談・ご予約はLINEから承っています。
-    </p>
-    <a href="https://lin.ee/6bBKc67" class="menu-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
-  </div>
-
-  <div class="info-card card-hidden">
-    <h3>初めての方へ</h3>
-    <p style="white-space: pre-line;">
-初めての来院は不安があって当然です。
-
-「何をされるのかわからない」
-「整体は初めてで不安」
-「本当に自分の悩みを相談していいのかわからない」
-
-そのような方こそ、一度ご相談ください。
-
-無理な施術や通院の強制は一切ありません。
-現在の状態を丁寧に確認し、
-今の身体に何が起きているのかを一緒に整理していきます。
-    </p>
   </div>
 
 </div>
 
 <footer>
   大阪 自律神経専門整体院 gene<br>
-  営業時間：11:00〜21:00（不定休）<br>
-  最終受付：初診 20:00 / 二回目以降 20:30<br>
-
-  <span class="address">
-    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
-    <span class="address-line2">ラインビルド南船場703</span>
-  </span><br>
-
   © gene. All Rights Reserved.
 </footer>
-
-<script>
-window.addEventListener("load", () => {
-
-  const openingRing = document.getElementById("opening-ring");
-  const heroLogo = document.getElementById("hero-logo");
-  const indexCards = document.getElementById("index-cards");
-  const menuHeroCard = document.querySelector(".menu-hero-card");
-
-  const hasShownRing = sessionStorage.getItem("openingRingShown");
-
-  if (hasShownRing) {
-    if (openingRing) {
-      openingRing.style.display = "none";
-    }
-    if (heroLogo) {
-      heroLogo.classList.add("show");
-    }
-    if (menuHeroCard) {
-      menuHeroCard.classList.add("show");
-    }
-    if (indexCards) {
-      indexCards.querySelectorAll(".info-card").forEach(card => {
-        card.classList.add("show");
-      });
-    }
-  } else {
-    sessionStorage.setItem("openingRingShown", "true");
-
-    if (openingRing) {
-      openingRing.classList.add("show");
-    }
-
-    setTimeout(() => {
-      if (openingRing) {
-        openingRing.classList.add("fadeout");
-      }
-      if (heroLogo) {
-        heroLogo.classList.add("show");
-      }
-      if (menuHeroCard) {
-        menuHeroCard.classList.add("show");
-      }
-      if (indexCards) {
-        indexCards.querySelectorAll(".info-card").forEach(card => {
-          card.classList.add("show");
-        });
-      }
-    }, 2400);
-  }
-
-  const ring = document.getElementById("opening-ring");
-  const hero = document.getElementById("hero-logo");
-  const breadcrumb = document.querySelector(".breadcrumb");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const bgLogo = document.getElementById("global-logo-bg");
-  const cards = document.querySelectorAll(".card-hidden");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const menuPanel = document.getElementById("hamburger-menu");
-
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(() => ring.classList.add("fadeout"), 1400);
-    setTimeout(() => ring.style.display = "none", 2400);
-  }
-
-  setTimeout(() => {
-    if (breadcrumb) breadcrumb.style.opacity = "1";
-    if (hamburgerBtn) hamburgerBtn.classList.add("show");
-    if (rsvBtn) rsvBtn.classList.add("show");
-    if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 2400);
-
-  setTimeout(() => {
-    if (hero) hero.classList.add("show");
-    if (menuHeroCard) menuHeroCard.classList.add("show");
-    cards.forEach(c => c.classList.add("show"));
-  }, 2600);
-
-  if (hamburgerBtn && menuPanel) {
-    hamburgerBtn.addEventListener("click", () => {
-      menuPanel.classList.add("open");
-      document.body.classList.add("menu-open");
-    });
-
-    const closeBtn = document.querySelector(".menu-close-btn");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
-    }
-
-    menuPanel.addEventListener("click", e => {
-      if (e.target === menuPanel) {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      }
-    });
-
-    menuPanel.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
-    });
-  }
-
-  const toTopBtn = document.createElement("div");
-  toTopBtn.id = "to-top-btn";
-  toTopBtn.textContent = "▲";
-  document.body.appendChild(toTopBtn);
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
-  });
-
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-});
-</script>
 
 </body>
 </html>
