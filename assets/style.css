@@ -1335,3 +1335,22 @@ body main {
     margin:30px auto 40px;
   }
 }
+.case-navigation{
+  text-align:center;
+  margin:60px auto 40px;
+}
+
+.case-navigation a{
+  display:inline-block;
+  margin:10px 15px;
+  padding:10px 20px;
+  border:1px solid rgba(217,193,126,0.3);
+  border-radius:30px;
+  color:#d9c17e;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.case-navigation a:hover{
+  background:rgba(217,193,126,0.1);
+}
