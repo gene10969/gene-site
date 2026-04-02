@@ -1319,3 +1319,19 @@ body main {
   color: #d9c17e;
   font-weight: 500;
 }
+.case-intro-text{
+  max-width:900px;
+  margin:40px auto 60px;
+  line-height:2.2;
+  color:rgba(255,255,255,0.9);
+  font-size:1rem;
+  text-align:center;
+}
+
+@media (max-width:768px){
+  .case-intro-text{
+    text-align:left;
+    font-size:0.95rem;
+    margin:30px auto 40px;
+  }
+}
