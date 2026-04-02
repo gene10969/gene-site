@@ -1293,3 +1293,15 @@ body main {
 .case-detail-links a:visited{
   color:#d9c17e;
 }
+a{
+  color:#d9c17e;
+  text-decoration:none;
+}
+
+a:hover{
+  opacity:.7;
+}
+
+a:visited{
+  color:#d9c17e;
+}
