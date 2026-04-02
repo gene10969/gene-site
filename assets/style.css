@@ -1274,3 +1274,22 @@ body main {
 .subpage main {
   padding-bottom: 0 !important;
 }
+/* =========================
+   caseページ リンク色調整
+========================= */
+
+.case-detail-links a{
+  color:#d9c17e;
+  text-decoration:none;
+  border-bottom:1px solid rgba(217,193,126,.4);
+  padding-bottom:2px;
+  transition:.3s;
+}
+
+.case-detail-links a:hover{
+  opacity:.7;
+}
+
+.case-detail-links a:visited{
+  color:#d9c17e;
+}
