@@ -1293,15 +1293,25 @@ body main {
 .case-detail-links a:visited{
   color:#d9c17e;
 }
-a{
+.case-detail-links a{
   color:#d9c17e;
   text-decoration:none;
+  border-bottom:1px solid rgba(217,193,126,.38);
+  padding-bottom:2px;
+  transition:opacity .3s ease, border-color .3s ease;
 }
 
-a:hover{
-  opacity:.7;
+.case-detail-links a:hover{
+  opacity:.72;
+  border-bottom-color:rgba(217,193,126,.22);
 }
 
-a:visited{
+.case-detail-links a:visited{
   color:#d9c17e;
+}
+
+.case-cta-btn,
+.case-cta-btn:visited{
+  color:#111;
+  text-decoration:none;
 }
