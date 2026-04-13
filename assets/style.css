@@ -1354,3 +1354,8 @@ body main {
 .case-navigation a:hover{
   background:rgba(217,193,126,0.1);
 }
+.symptom-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:200px 20px 100px;
+}
