@@ -53,22 +53,7 @@
   margin:0 auto;
   padding:0 20px 100px;
 }
-.symptom-section{
-  margin:28px auto 0;
-  border:1px solid rgba(217,193,126,.22);
-  border-radius:22px;
-  padding:28px;
-  background:rgba(0,0,0,.18);
-}
-.symptom-section h2{
-  margin:0 0 16px;
-}
-.symptom-section p{
-  margin:0;
-  line-height:2;
-  color:rgba(255,255,255,.9);
-  white-space:pre-line;
-}
+
 .symptom-links{
   display:flex;
   justify-content:center;
@@ -76,6 +61,7 @@
   flex-wrap:wrap;
   margin:26px 0 56px;
 }
+
 .symptom-links a{
   color:#d9c17e;
   text-decoration:none;
@@ -83,13 +69,43 @@
   padding-bottom:2px;
   transition:opacity .3s ease, border-color .3s ease;
 }
+
 .symptom-links a:hover{
   opacity:.72;
   border-bottom-color:rgba(217,193,126,.22);
 }
+
 .symptom-links a:visited{
   color:#d9c17e;
 }
+
+.symptom-section{
+  margin:28px auto 0;
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  padding:28px;
+  background:rgba(0,0,0,.18);
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.symptom-section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.symptom-section h2{
+  margin:0 0 16px;
+}
+
+.symptom-section p{
+  margin:0;
+  line-height:2;
+  color:rgba(255,255,255,.9);
+  white-space:pre-line;
+}
+
 .symptom-cta{
   text-align:center;
   margin-top:70px;
@@ -98,13 +114,16 @@
   border:1px solid rgba(217,193,126,.22);
   background:rgba(217,193,126,.06);
 }
+
 .symptom-cta h2{
   margin:0 0 12px;
 }
+
 .symptom-cta p{
   margin:0;
   line-height:1.9;
 }
+
 .symptom-cta-btn{
   display:inline-block;
   padding:12px 28px;
@@ -114,6 +133,7 @@
   background:#d9c17e;
   margin-top:14px;
 }
+
 .symptom-cta-btn:visited{
   color:#111;
 }
@@ -123,16 +143,20 @@
     padding: 0 16px;
     margin-top: 24px;
   }
+
   .menu-hero-inner{
     border-radius: 18px;
     padding: 18px;
   }
+
   .menu-copy p{
     line-height: 1.95;
   }
+
   .symptom-wrap{
     padding:0 16px 80px;
   }
+
   .symptom-section{
     padding:22px 18px;
     border-radius:18px;
@@ -183,7 +207,7 @@
 <section class="menu-hero-card">
   <div class="menu-hero-inner">
     <div class="menu-copy">
-      <p>めまいは耳だけの問題とは限らず、
+      <p>めまいは、耳だけの問題とは限らず、
 首まわりの緊張、呼吸の浅さ、自律神経の乱れ、疲労の蓄積などが重なって出ていることがあります。
 
 病院で異常がないと言われてもつらさが続く場合、
@@ -194,47 +218,51 @@
 
 <main class="symptom-wrap">
 
-<div class="symptom-links">
-  <a href="menu.html">施術内容を見る</a>
-  <a href="voice.html">院内・改善事例を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank">LINEで相談する</a>
-</div>
+  <div class="symptom-links">
+    <a href="menu.html">施術内容を見る</a>
+    <a href="voice.html">院内・改善事例を見る</a>
+    <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
+  </div>
 
-<section class="symptom-section">
-<h2>来院時によくある状態</h2>
-<p>・ふわっとする感覚が続く
+  <section class="symptom-section">
+    <h2>来院時によくある状態</h2>
+    <p>・ふわっとする感覚が続く
 ・回転性ではないが常に不安定
 ・朝起きた時や人混みで強くなる
 ・病院では異常なしと言われたが改善しない</p>
-</section>
-<section class="symptom-section">
-<h2>当院の見立て</h2>
-<p>めまいそのものだけでなく、首〜後頭部の緊張、呼吸の浅さ、循環の状態、自律神経の偏りなどを確認します。
+  </section>
+
+  <section class="symptom-section">
+    <h2>当院の見立て</h2>
+    <p>めまいそのものだけでなく、首〜後頭部の緊張、呼吸の浅さ、循環の状態、自律神経の偏りなどを確認します。
 症状が出ている背景を整理しながら、身体に負担の少ない方法で整えていきます。</p>
-</section>
-<section class="symptom-section">
-<h2>施術の考え方</h2>
-<p>強い刺激や無理な矯正ではなく、今の身体が防御反応を起こしにくい範囲で調整を行います。
+  </section>
+
+  <section class="symptom-section">
+    <h2>施術の考え方</h2>
+    <p>強い刺激や無理な矯正ではなく、今の身体が防御反応を起こしにくい範囲で調整を行います。
 首だけを触るのではなく、全身のつながりを見ながら状態を整えていきます。</p>
-</section>
-<section class="symptom-section">
-<h2>このような方に</h2>
-<p>・検査では異常がないのにめまいが続く
+  </section>
+
+  <section class="symptom-section">
+    <h2>このような方に</h2>
+    <p>・検査では異常がないのにめまいが続く
 ・不安感や動悸を伴うことがある
 ・外出や仕事に支障が出ている
 ・自律神経の乱れを指摘されたことがある</p>
-</section>
-<section class="symptom-section">
-<h2>ご案内</h2>
-<p>症状の経過や感じ方には個人差があります。
-現在の状態を確認した上で、無理のない範囲で進めていきます。</p>
-</section>
+  </section>
 
-<section class="symptom-cta">
-  <h2>ご相談・ご予約はこちら</h2>
-  <p>現在の状態を整理するところからでも大丈夫です。ご相談・ご予約はLINEから承っています。</p>
-  <a href="https://lin.ee/6bBKc67" class="symptom-cta-btn" target="_blank">LINEで予約する</a>
-</section>
+  <section class="symptom-section">
+    <h2>ご案内</h2>
+    <p>症状の経過や感じ方には個人差があります。
+現在の状態を確認した上で、無理のない範囲で進めていきます。</p>
+  </section>
+
+  <section class="symptom-cta">
+    <h2>ご相談・ご予約はこちら</h2>
+    <p>現在の状態を整理するところからでも大丈夫です。ご相談・ご予約はLINEから承っています。</p>
+    <a href="https://lin.ee/6bBKc67" class="symptom-cta-btn" target="_blank" rel="noopener">LINEで予約する</a>
+  </section>
 
 </main>
 
@@ -242,10 +270,12 @@
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
   最終受付：初診 20:00 / 二回目以降 20:30<br>
+
   <span class="address">
     <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
     <span class="address-line2">ラインビルド南船場703</span>
   </span><br>
+
   © gene. All Rights Reserved.
 </footer>
 
@@ -253,57 +283,63 @@
 <script>
 window.addEventListener("load", () => {
 
+  const openingRing = document.getElementById("opening-ring");
   const heroLogo = document.getElementById("hero-logo");
   const menuHeroCard = document.querySelector(".menu-hero-card");
-  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const breadcrumb = document.querySelector(".breadcrumb");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const sections = document.querySelectorAll(".symptom-section");
 
-  setTimeout(()=>{
-    if (breadcrumb) {
-      if (breadcrumb.classList.contains("breadcrumb-fixed")) {
-        breadcrumb.classList.add("show");
-      } else {
-        breadcrumb.style.opacity = "1";
-      }
-    }
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
+  if (openingRing) {
+    openingRing.classList.add("show");
+    setTimeout(() => openingRing.classList.add("fadeout"), 1400);
+    setTimeout(() => openingRing.style.display = "none", 2400);
+  }
+
+  setTimeout(() => {
+    if (breadcrumb) breadcrumb.style.opacity = "1";
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
 
   setTimeout(() => {
-    heroLogo?.classList.add("show");
-    menuHeroCard?.classList.add("show");
+    if (heroLogo) heroLogo.classList.add("show");
+    if (menuHeroCard) menuHeroCard.classList.add("show");
+    sections.forEach(section => section.classList.add("show"));
   }, 2600);
 
-  const closeBtn = document.querySelector(".menu-close-btn");
-
-  hamburgerBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.add("open");
-    document.body.classList.add("menu-open");
-  });
-
-  closeBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  });
-
-  menuPanel?.addEventListener("click", e=>{
-    if(e.target===menuPanel){
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-
-  menuPanel?.querySelectorAll("a").forEach(link=>{
-    link.addEventListener("click", ()=>{
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
     });
-  });
+
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
 
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
