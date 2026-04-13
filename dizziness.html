@@ -3,42 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>めまいでお悩みの方へ | 大阪 自律神経専門整体院 gene</title>
 <meta name="description" content="大阪 自律神経専門整体院 gene のめまいページ。検査で異常がないめまい、ふらつき、不安感を伴う不調についてご案内しています。">
+
 <meta property="og:title" content="めまいでお悩みの方へ | 大阪 自律神経専門整体院 gene">
 <meta property="og:description" content="大阪 自律神経専門整体院 gene のめまいページ。検査で異常がないめまい、ふらつき、不安感を伴う不調についてご案内しています。">
 <meta property="og:url" content="https://gene-seitai.com/dizziness.html">
 <meta property="og:type" content="website">
+
 <link rel="stylesheet" href="assets/style.css">
 
 <style>
+.menu-hero-card{
+  max-width: 980px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.menu-hero-card.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-hero-inner{
+  display: block;
+  background: rgba(10,10,10,.72);
+  border: 1px solid rgba(217,193,126,.22);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter: blur(6px);
+}
+.menu-copy{
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.menu-copy p{
+  white-space: pre-line;
+  line-height: 2.05;
+  color: rgba(255,255,255,.9);
+  margin: 0;
+}
+
 .symptom-wrap{
   max-width:1100px;
   margin:0 auto;
-  padding:140px 20px 100px;
-}
-.symptom-head{
-  text-align:center;
-  margin:150px 0 56px;
-}
-.symptom-head h1{
-  margin:0 0 20px;
-}
-.symptom-head p{
-  max-width:920px;
-  margin:0 auto;
-  line-height:2;
-  color:rgba(255,255,255,.88);
-}
-.symptom-lead{
-  max-width:920px;
-  margin:0 auto 54px;
-  line-height:2.1;
-  color:rgba(255,255,255,.92);
-  text-align:center;
+  padding:0 20px 100px;
 }
 .symptom-section{
-  margin-bottom:28px;
+  margin:28px auto 0;
   border:1px solid rgba(217,193,126,.22);
   border-radius:22px;
   padding:28px;
@@ -58,7 +74,7 @@
   justify-content:center;
   gap:14px;
   flex-wrap:wrap;
-  margin:20px 0 56px;
+  margin:26px 0 56px;
 }
 .symptom-links a{
   color:#d9c17e;
@@ -101,17 +117,21 @@
 .symptom-cta-btn:visited{
   color:#111;
 }
-@media (max-width:768px){
+
+@media (max-width: 640px){
+  .menu-hero-card{
+    padding: 0 16px;
+    margin-top: 24px;
+  }
+  .menu-hero-inner{
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .menu-copy p{
+    line-height: 1.95;
+  }
   .symptom-wrap{
-    padding:110px 16px 80px;
-  }
-  .symptom-head{
-    margin:110px 0 42px;
-  }
-  .symptom-lead{
-    text-align:left;
-    margin-bottom:38px;
-    font-size:.96rem;
+    padding:0 16px 80px;
   }
   .symptom-section{
     padding:22px 18px;
@@ -121,41 +141,65 @@
 </style>
 
 </head>
-<body class="subpage">
+
+<body>
+
+<div class="particles"></div>
+
 <div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="">
+  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
 </div>
-<nav class="breadcrumb-fixed hidden">
-  <a href="index.html">ホーム</a> ＞ 
-  <span>めまいでお悩みの方へ</span>
+
+<div id="opening-ring">
+  <div class="ring-blur"></div>
+</div>
+
+<nav class="breadcrumb" style="opacity:0;">
+  <a href="index.html">ホーム</a> ＞ <span>めまいでお悩みの方へ</span>
 </nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
+
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
   <a href="menu.html">施術内容</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
-  <a href="voice.html">院内・改善事例</a>
+  <a href="voice.html">院内・改善写真</a>
 </div>
-<main class="symptom-wrap">
-<section class="symptom-head">
-  <h1>めまいでお悩みの方へ</h1>
-  <p>大阪 自律神経専門整体院 gene のめまいページ。</p>
-  <p>検査で異常がないめまい、ふらつき、不安感を伴う不調についてご案内しています。</p>
+
+<div id="hero-logo" class="hidden">
+  <h1 class="main-title">めまいでお悩みの方へ</h1>
+  <p class="sub-catch">
+    大阪 自律神経専門整体院 gene のめまいページ。<br>検査で異常がないめまい、ふらつき、不安感を伴う不調についてご案内しています。
+  </p>
+</div>
+
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
+  LINE<br>予約
+</a>
+
+<section class="menu-hero-card">
+  <div class="menu-hero-inner">
+    <div class="menu-copy">
+      <p>めまいは耳だけの問題とは限らず、
+首まわりの緊張、呼吸の浅さ、自律神経の乱れ、疲労の蓄積などが重なって出ていることがあります。
+
+病院で異常がないと言われてもつらさが続く場合、
+身体全体のバランスを見直すことで変化していくケースがあります。</p>
+    </div>
+  </div>
 </section>
-<div class="symptom-lead">
-  <p>めまいは、耳だけの問題とは限らず、首まわりの緊張、呼吸の浅さ、自律神経の乱れ、疲労の蓄積などが重なって出ていることがあります。
-病院で異常がないと言われてもつらさが続く場合、身体全体のバランスを見直すことで変化していくケースがあります。</p>
-</div>
+
+<main class="symptom-wrap">
+
 <div class="symptom-links">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善事例を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank">LINEで相談する</a>
 </div>
+
 <section class="symptom-section">
 <h2>来院時によくある状態</h2>
 <p>・ふわっとする感覚が続く
@@ -185,12 +229,15 @@
 <p>症状の経過や感じ方には個人差があります。
 現在の状態を確認した上で、無理のない範囲で進めていきます。</p>
 </section>
+
 <section class="symptom-cta">
   <h2>ご相談・ご予約はこちら</h2>
   <p>現在の状態を整理するところからでも大丈夫です。ご相談・ご予約はLINEから承っています。</p>
   <a href="https://lin.ee/6bBKc67" class="symptom-cta-btn" target="_blank">LINEで予約する</a>
 </section>
+
 </main>
+
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
@@ -201,23 +248,37 @@
   </span><br>
   © gene. All Rights Reserved.
 </footer>
-<div id="to-top-btn">▲</div>
+
 
 <script>
 window.addEventListener("load", () => {
-  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+
+  const heroLogo = document.getElementById("hero-logo");
+  const menuHeroCard = document.querySelector(".menu-hero-card");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
   const bgLogo = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
 
   setTimeout(()=>{
-    breadcrumb?.classList.add("show");
+    if (breadcrumb) {
+      if (breadcrumb.classList.contains("breadcrumb-fixed")) {
+        breadcrumb.classList.add("show");
+      } else {
+        breadcrumb.style.opacity = "1";
+      }
+    }
     hamburgerBtn?.classList.add("show");
     rsvBtn?.classList.add("show");
     bgLogo?.classList.add("fade-in");
   }, 2400);
 
-  const menuPanel = document.getElementById("hamburger-menu");
+  setTimeout(() => {
+    heroLogo?.classList.add("show");
+    menuHeroCard?.classList.add("show");
+  }, 2600);
+
   const closeBtn = document.querySelector(".menu-close-btn");
 
   hamburgerBtn?.addEventListener("click", ()=>{
@@ -243,16 +304,22 @@ window.addEventListener("load", () => {
       document.body.classList.remove("menu-open");
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  const btn=document.getElementById("to-top-btn");
-  if(!btn)return;
-  window.addEventListener("scroll",()=>{
-    btn.classList.toggle("show",window.scrollY>200);
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      toTopBtn.classList.add("show");
+    } else {
+      toTopBtn.classList.remove("show");
+    }
   });
-  btn.addEventListener("click",()=>{
-    window.scrollTo({top:0,behavior:"smooth"});
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 </script>
