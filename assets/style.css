@@ -54,27 +54,11 @@ h1, h2, h3 {
 /* ============================
    大背景ロゴ
 ============================ */
-#global-logo-bg {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
-}
 
-#global-logo-bg img {
-  width: 78vw;
-  max-width: 720px;
-  opacity: 0.18;
-}
 
-#global-logo-bg.fade-in {
-  opacity: 1;
-  transition: opacity 2.2s ease;
-}
+
+
+
 
 /* ============================
    Openingリング
@@ -551,9 +535,7 @@ footer {
 /* ============================
    voiceページ専用
 ============================ */
-.voice-page #global-logo-bg {
-  display: none;
-}
+.voice-page 
 
 .voice-page .voice-wrap {
   width: 90%;
@@ -749,9 +731,7 @@ footer {
 /* ============================
    voiceページ専用
 ============================ */
-.voice-page #global-logo-bg {
-  display: none;
-}
+.voice-page 
 
 .voice-page .voice-wrap {
   width: 90%;
@@ -968,19 +948,13 @@ footer {
    voiceページ：背景ロゴを完全無効化
    （フッター被りの根本原因）
 ============================ */
-.voice-page #global-logo-bg {
-  display: none !important;
-}
+.voice-page 
 /* ============================
    voiceページ：最下部が消える/真っ黒になる対策（確定版）
    - 背景固定レイヤーを完全停止
    - 本文/フッターを必ず前面に固定
 ============================ */
-body.voice-page #global-logo-bg{
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
+body.voice-page 
 
 body.voice-page main,
 body.voice-page .voice-wrap,
@@ -1358,4 +1332,185 @@ body main {
   max-width:1100px;
   margin:0 auto;
   padding:200px 20px 100px;
+}
+
+/* ============================
+   voice：背景ロゴ透かしを他ページと同様に表示
+============================ */
+body.voice-page 
+body.voice-page 
+body.voice-page main,
+body.voice-page footer{
+  position: relative;
+  z-index: 5;
+}
+
+
+.card-watermark{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:0;
+}
+.card-watermark img{
+  width:min(62%,320px);
+  opacity:0.05;
+}
+.menu-hero-inner{
+  position:relative;
+  overflow:hidden;
+}
+.menu-hero-inner > *:not(.card-watermark){
+  position:relative;
+  z-index:1;
+}
+
+/* ============================
+   症状ページ：access.html基準の静的カード表示
+============================ */
+.subpage .menu-card p{
+  line-height: 2;
+}
+
+.subpage .menu-card .map-open-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(217,193,126,.32);
+  color: #d9c17e;
+  background: rgba(217,193,126,.06);
+  text-decoration: none;
+  letter-spacing: .04em;
+  transition: opacity .25s ease, transform .25s ease, background .25s ease;
+}
+
+.subpage .menu-card .map-open-btn:hover{
+  opacity: .88;
+  transform: translateY(-1px);
+  background: rgba(217,193,126,.1);
+}
+
+.subpage .menu-card .map-open-btn:visited{
+  color: #d9c17e;
+}
+
+
+/* ============================
+   症状ページ：上部イントロ導線
+============================ */
+.symptom-lead{
+  width:90%;
+  max-width:980px;
+  margin:0 auto 22px;
+  text-align:center;
+  color:rgba(255,255,255,.9);
+  line-height:2;
+  font-size:.95rem;
+}
+
+.symptom-intro-card{
+  width:90%;
+  max-width:980px;
+  margin:0 auto 22px;
+  padding:28px;
+  border:1px solid rgba(217,193,126,.32);
+  border-radius:22px;
+  background:rgba(0,0,0,.22);
+  box-sizing:border-box;
+}
+
+.symptom-intro-card p{
+  margin:0;
+  text-align:center;
+  color:rgba(255,255,255,.92);
+  line-height:2.05;
+}
+
+.symptom-links{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  width:90%;
+  max-width:980px;
+  margin:0 auto 34px;
+}
+
+.symptom-links a{
+  color:#d9c17e;
+  text-decoration:none;
+  border-bottom:1px solid rgba(217,193,126,.38);
+  padding-bottom:2px;
+  transition:opacity .25s ease, border-color .25s ease;
+}
+
+.symptom-links a:hover{
+  opacity:.72;
+  border-bottom-color:rgba(217,193,126,.22);
+}
+
+.symptom-links a:visited{
+  color:#d9c17e;
+}
+
+@media (max-width:640px){
+  .symptom-lead{
+    text-align:left;
+    font-size:.92rem;
+  }
+
+  .symptom-intro-card{
+    padding:22px 18px;
+    border-radius:18px;
+  }
+
+  .symptom-intro-card p{
+    text-align:left;
+    line-height:1.95;
+  }
+}
+
+
+/* ============================
+   大背景ロゴ：表示タイミング統一
+============================ */
+#global-logo-bg{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  z-index:0;
+  pointer-events:none;
+  transition: opacity 1.1s ease;
+}
+
+#global-logo-bg img{
+  width:78vw;
+  max-width:760px;
+  opacity:.11;
+}
+
+#global-logo-bg.fade-in{
+  opacity:1;
+}
+
+
+
+/* ============================
+   症状ページ：上部カード透過率・表示速度最終調整
+============================ */
+.dizziness-intro-card{
+  background:rgba(255,255,255,.055) !important;
+}
+
+#global-logo-bg{
+  transition:opacity 1.1s ease !important;
 }
