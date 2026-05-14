@@ -32,6 +32,7 @@
 </script>
 
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/menu-symptom-links.css">
 
 <style>
 .menu-hero-card{
@@ -42,242 +43,57 @@
   transform: translateY(22px);
   transition: opacity .8s ease, transform .8s ease;
 }
-.menu-hero-card.show{
-  opacity: 1;
-  transform: translateY(0);
-}
+.menu-hero-card.show{ opacity:1; transform:translateY(0); }
 .menu-hero-inner{
-  display: grid;
-  grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
-  gap: 34px;
-  align-items: center;
-  background: rgba(10,10,10,.72);
-  border: 1px solid rgba(217,193,126,.22);
-  border-radius: 22px;
-  padding: 28px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.22);
-  backdrop-filter: blur(6px);
+  display:grid;
+  grid-template-columns:minmax(0,430px) minmax(0,1fr);
+  gap:34px;
+  align-items:center;
+  background:rgba(10,10,10,.72);
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
 }
-.menu-main-photo{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 18px;
-  display: block;
-  border: 1px solid rgba(217,193,126,.24);
-}
-.menu-copy h2{
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  line-height: 1.45;
-  color: #f4ead0;
-  margin: 0 0 18px;
-  font-weight: 500;
-}
-.menu-copy p{
-  white-space: pre-line;
-  line-height: 2.05;
-  color: rgba(255,255,255,.9);
-  margin: 0 0 22px;
-}
-.menu-badges{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.menu-badges span{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(217,193,126,.3);
-  color: #f3e6bf;
-  background: rgba(217,193,126,.08);
-  font-size: .92rem;
-  line-height: 1.5;
-}
-.menu-section-image{
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-  border: 1px solid rgba(217,193,126,.22);
-}
-.menu-price-wrap{
-  margin-top: 0;
-  padding: 18px;
-  border-radius: 18px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-.menu-price-title{
-  color: #d9c17e;
-  font-size: 1rem;
-  letter-spacing: .08em;
-  margin-bottom: 10px;
-}
-.menu-price-main{
-  font-size: clamp(1.45rem, 3vw, 1.95rem);
-  color: #f4ead0;
-  line-height: 1.45;
-  margin: 0 0 8px;
-}
-.menu-price-sub{
-  color: rgba(255,255,255,.78);
-  line-height: 1.9;
-  white-space: pre-line;
-  margin: 0;
-}
-.symptom-list{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
-}
-.symptom-list div{
-  border: 1px solid rgba(217,193,126,.18);
-  background: rgba(255,255,255,.02);
-  border-radius: 14px;
-  padding: 14px 14px 12px;
-  color: rgba(255,255,255,.92);
-  line-height: 1.8;
-}
-.menu-note{
-  margin-top: 18px;
-  color: rgba(255,255,255,.76);
-  line-height: 1.95;
-  white-space: pre-line;
-}
-.menu-cta-card{
-  text-align: center;
-}
-.menu-cta-card p{
-  white-space: pre-line;
-}
-.menu-cta-link{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  min-height: 48px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: #111;
-  background: #d9c17e;
-  font-size: 1rem;
-  letter-spacing: .06em;
-  transition: transform .25s ease, opacity .25s ease;
-}
-.menu-cta-link:hover{
-  transform: translateY(-2px);
-  opacity: .92;
-}
-
-#index-cards{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
-#index-cards .info-card{
-  margin-top: 24px;
-  overflow: hidden;
-}
-#index-cards .info-card:first-child{
-  margin-top: 32px;
-}
-.menu-cta-card{
-  margin-top: 24px;
-}
-
-.menu-split{
-  display: grid;
-  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
-  gap: 28px;
-  align-items: start;
-}
-.menu-split.reverse{
-  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
-}
-.menu-split.centered{
-  align-items: center;
-}
-.menu-split-media{
-  width: 100%;
-}
-.menu-split-content h3{
-  margin-top: 0;
-}
-.menu-split-content p{
-  white-space: pre-line;
-}
-
-@media (max-width: 860px){
-  .menu-hero-inner{
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 22px;
-  }
-  .menu-copy h2{
-    font-size: 1.55rem;
-  }
-  .symptom-list{
-    grid-template-columns: 1fr;
-  }
-  .menu-split,
-  .menu-split.reverse{
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-@media (max-width: 640px){
-  .menu-hero-card{
-    padding: 0 16px;
-    margin-top: 24px;
-  }
-  .menu-hero-inner{
-    border-radius: 18px;
-    padding: 18px;
-  }
-  .menu-main-photo{
-    border-radius: 14px;
-  }
-  .menu-copy p{
-    line-height: 1.95;
-  }
-}
-
-.menu-price-wrap,
-.info-card.show .menu-price-wrap{
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
+.menu-main-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;display:block;border:1px solid rgba(217,193,126,.24);}
+.menu-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.45;color:#f4ead0;margin:0 0 18px;font-weight:500;}
+.menu-copy p{white-space:pre-line;line-height:2.05;color:rgba(255,255,255,.9);margin:0 0 22px;}
+.menu-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.menu-badges span{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 14px;border-radius:999px;border:1px solid rgba(217,193,126,.3);color:#f3e6bf;background:rgba(217,193,126,.08);font-size:.92rem;line-height:1.5;}
+.menu-section-image{width:100%;display:block;border-radius:16px;border:1px solid rgba(217,193,126,.22);}
+.menu-price-wrap{margin-top:0;padding:18px;border-radius:18px;background:transparent;border:none;box-shadow:none;backdrop-filter:none;}
+.menu-price-title{color:#d9c17e;font-size:1rem;letter-spacing:.08em;margin-bottom:10px;}
+.menu-price-main{font-size:clamp(1.45rem,3vw,1.95rem);color:#f4ead0;line-height:1.45;margin:0 0 8px;}
+.menu-price-sub{color:rgba(255,255,255,.78);line-height:1.9;white-space:pre-line;margin:0;}
+.symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;}
+.symptom-list div{border:1px solid rgba(217,193,126,.18);background:rgba(255,255,255,.02);border-radius:14px;padding:14px 14px 12px;color:rgba(255,255,255,.92);line-height:1.8;}
+.menu-note{margin-top:18px;color:rgba(255,255,255,.76);line-height:1.95;white-space:pre-line;}
+.menu-cta-card{text-align:center;margin-top:24px;}
+.menu-cta-card p{white-space:pre-line;}
+.menu-cta-link{display:inline-flex;align-items:center;justify-content:center;margin-top:10px;min-height:48px;padding:12px 28px;border-radius:999px;text-decoration:none;color:#111;background:#d9c17e;font-size:1rem;letter-spacing:.06em;transition:transform .25s ease,opacity .25s ease;}
+.menu-cta-link:hover{transform:translateY(-2px);opacity:.92;}
+#index-cards{max-width:980px;margin:0 auto;padding:0 20px 80px;}
+#index-cards .info-card{margin-top:24px;overflow:hidden;}
+#index-cards .info-card:first-child{margin-top:32px;}
+.menu-split{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px;align-items:start;}
+.menu-split.reverse{grid-template-columns:minmax(0,1fr) minmax(0,360px);}
+.menu-split.centered{align-items:center;}
+.menu-split-media{width:100%;}
+.menu-split-content h3{margin-top:0;}
+.menu-split-content p{white-space:pre-line;}
+@media (max-width:860px){.menu-hero-inner{grid-template-columns:1fr;gap:24px;padding:22px}.menu-copy h2{font-size:1.55rem}.symptom-list{grid-template-columns:1fr}.menu-split,.menu-split.reverse{grid-template-columns:1fr;gap:18px}}
+@media (max-width:640px){.menu-hero-card{padding:0 16px;margin-top:24px}.menu-hero-inner{border-radius:18px;padding:18px}.menu-main-photo{border-radius:14px}.menu-copy p{line-height:1.95}}
+.menu-price-wrap,.info-card.show .menu-price-wrap{background:transparent;border:none;box-shadow:none;backdrop-filter:none;}
 </style>
 </head>
 
 <body>
-
 <div class="particles"></div>
-
-<div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ">
-</div>
-
-<div id="opening-ring">
-  <div class="ring-blur"></div>
-</div>
-
-<nav class="breadcrumb" style="opacity:0;">
-  <a href="index.html">ホーム</a> ＞ <span>施術内容</span>
-</nav>
-
+<div id="global-logo-bg" class="fade-start"><img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ"></div>
+<div id="opening-ring"><div class="ring-blur"></div></div>
+<nav class="breadcrumb" style="opacity:0;"><a href="index.html">ホーム</a> ＞ <span>施術内容</span></nav>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
-
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
@@ -286,24 +102,15 @@
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
-
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">施術内容</h1>
-  <p class="sub-catch">
-    gene自律神経調整整体<br>
-    一人ひとりの状態に合わせて整えるオーダーメイド整体
-  </p>
+  <p class="sub-catch">gene自律神経調整整体<br>一人ひとりの状態に合わせて整えるオーダーメイド整体</p>
 </div>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
-  LINE<br>予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
 
 <section class="menu-hero-card">
   <div class="menu-hero-inner">
-    <div class="menu-photo-wrap">
-      <img src="assets/img/gene-prone-treatment.webp" alt="gene自律神経調整整体の施術風景" class="menu-main-photo">
-    </div>
+    <div class="menu-photo-wrap"><img src="assets/img/gene-prone-treatment.webp" alt="gene自律神経調整整体の施術風景" class="menu-main-photo"></div>
     <div class="menu-copy">
       <h2>メニューは一つ。<br>状態に合わせて内容を調整します。</h2>
       <p>gene自律神経調整整体では、
@@ -314,17 +121,12 @@
 めまい、不眠、動悸、耳鳴り、慢性的な疲労感、
 皮膚症状などのお悩みに対しても、
 身体全体のつながりを見ながら整えていきます。</p>
-      <div class="menu-badges">
-        <span>オーダーメイド整体</span>
-        <span>身体全体を確認</span>
-        <span>強い刺激に頼らない</span>
-      </div>
+      <div class="menu-badges"><span>オーダーメイド整体</span><span>身体全体を確認</span><span>強い刺激に頼らない</span></div>
     </div>
   </div>
 </section>
 
 <div id="index-cards">
-
   <div class="info-card card-hidden">
     <div class="menu-split reverse centered">
       <div class="menu-split-content">
@@ -337,56 +139,29 @@
 強い刺激や無理な矯正を主とする方法ではなく、
 身体が防御反応を起こしにくい範囲で、自然に整っていける状態を目指します。</p>
       </div>
-      <div class="menu-split-media">
-        <img src="assets/img/gene-neck-treatment.webp" alt="首・頭部へのアプローチ" class="menu-section-image">
-      </div>
+      <div class="menu-split-media"><img src="assets/img/gene-neck-treatment.webp" alt="首・頭部へのアプローチ" class="menu-section-image"></div>
     </div>
   </div>
 
   <div class="info-card card-hidden">
     <div class="menu-price-wrap">
       <div class="menu-price-title">料金</div>
-
-      <p class="menu-price-main">
-        初回 <span class="price-gold">3,300円</span>（税込）
-      </p>
-
-      <p class="menu-price-sub">
-        はじめての方でも安心してご相談いただけるよう、
-        初回はこの価格でご案内しています。
-      </p>
-
-      <p class="menu-price-sub">
-        初回は問診・検査を含め、
-        現在の状態を丁寧に確認します。
-      </p>
-
-      <p class="menu-price-main" style="margin-top:10px;">
-        2回目以降 <span class="price-gold">5,500円</span>（税込）
-      </p>
-
-      <p class="menu-price-sub">
-        お支払い方法：現金・クレジットカード・電子マネー・QR決済に対応しています。
-      </p>
-
-      <p class="menu-price-sub" style="margin-top:10px;">
-        所要時間：初回 約60分 / 2回目以降 約30分
-      </p>
-
-      <p class="menu-price-sub">
-        ※2回目以降は状態に合わせて施術を行うため、所要時間が短くなります
-      </p>
+      <p class="menu-price-main">初回 <span class="price-gold">3,300円</span>（税込）</p>
+      <p class="menu-price-sub">はじめての方でも安心してご相談いただけるよう、
+        初回はこの価格でご案内しています。</p>
+      <p class="menu-price-sub">初回は問診・検査を含め、
+        現在の状態を丁寧に確認します。</p>
+      <p class="menu-price-main" style="margin-top:10px;">2回目以降 <span class="price-gold">5,500円</span>（税込）</p>
+      <p class="menu-price-sub">お支払い方法：現金・クレジットカード・電子マネー・QR決済に対応しています。</p>
+      <p class="menu-price-sub" style="margin-top:10px;">所要時間：初回 約60分 / 2回目以降 約30分</p>
+      <p class="menu-price-sub">※2回目以降は状態に合わせて施術を行うため、所要時間が短くなります</p>
     </div>
   </div>
 
   <div class="info-card card-hidden">
     <h3>このようなお悩みの方へ</h3>
-
-    <p style="white-space: pre-line;">
-症状名だけで施術内容を分けるのではなく、
-「今どのようなことで困っているか」に合わせて身体の状態を確認していきます。
-    </p>
-
+    <p style="white-space: pre-line;">症状名だけで施術内容を分けるのではなく、
+「今どのようなことで困っているか」に合わせて身体の状態を確認していきます。</p>
     <div class="symptom-list">
       <div>ふわっとするめまいが続いている</div>
       <div>寝つきが悪い、途中で何度も目が覚める</div>
@@ -397,23 +172,36 @@
       <div>アトピー性皮膚炎や皮膚の不調が気になる</div>
       <div>常に身体に力が入っていて抜けにくい</div>
     </div>
-
-    <p class="menu-note">
-主な対応症状：
+    <p class="menu-note">主な対応症状：
 アトピー・皮膚症状、めまい、耳鳴り、パニック障害、不眠症、慢性疲労、
-PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱鞘炎など
-    </p>
-
+PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱鞘炎など</p>
     <p class="menu-note">上記以外のお悩みでも、
 自律神経の乱れと関わる可能性がある場合は対応できることがあります。
 まずはお気軽にご相談ください。</p>
   </div>
 
+  <section class="info-card card-hidden menu-symptom-links-section" aria-labelledby="menu-symptom-links-title">
+    <h3 id="menu-symptom-links-title">症状について</h3>
+    <p class="menu-symptom-links-lead">特にご相談の多い症状について、状態の考え方をページごとにまとめています。</p>
+    <div class="menu-symptom-grid">
+      <a href="dizziness.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">めまい</span>
+        <span class="menu-symptom-text">ふわふわ感や不安定感、繰り返すめまいについて。</span>
+      </a>
+      <a href="insomnia.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">不眠</span>
+        <span class="menu-symptom-text">寝つきの悪さや途中で目が覚めるなど、睡眠のお悩みについて。</span>
+      </a>
+      <a href="headache.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">頭痛</span>
+        <span class="menu-symptom-text">慢性的な頭痛や緊張感、首肩の負担について。</span>
+      </a>
+    </div>
+  </section>
+
   <div class="info-card card-hidden">
     <div class="menu-split">
-      <div class="menu-split-media">
-        <img src="assets/img/gene-counseling-writing.webp" alt="カウンセリング時の様子" class="menu-section-image">
-      </div>
+      <div class="menu-split-media"><img src="assets/img/gene-counseling-writing.webp" alt="カウンセリング時の様子" class="menu-section-image"></div>
       <div class="menu-split-content">
         <h3>施術の考え方</h3>
         <p>不調が出ている場所だけを見ても、
@@ -431,19 +219,16 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
   </div>
 
   <div class="info-card card-hidden menu-cta-card">
-    <p style="white-space: pre-line;">
-どの症状として予約すればいいか迷う必要はありません。
+    <p style="white-space: pre-line;">どの症状として予約すればいいか迷う必要はありません。
 まずは現在の状態を整理するところからでも大丈夫です。
 
-ご相談・ご予約はLINEから承っています。
-    </p>
+ご相談・ご予約はLINEから承っています。</p>
     <a href="https://lin.ee/6bBKc67" class="menu-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
   </div>
 
   <div class="info-card card-hidden">
     <h3>初めての方へ</h3>
-    <p style="white-space: pre-line;">
-初めての来院は不安があって当然です。
+    <p style="white-space: pre-line;">初めての来院は不安があって当然です。
 
 「何をされるのかわからない」
 「整体は初めてで不安」
@@ -453,72 +238,39 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
 
 無理な施術や通院の強制は一切ありません。
 現在の状態を丁寧に確認し、
-今の身体に何が起きているのかを一緒に整理していきます。
-    </p>
+今の身体に何が起きているのかを一緒に整理していきます。</p>
   </div>
-
 </div>
 
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
   最終受付：初診 20:00 / 二回目以降 20:30<br>
-
-  <span class="address">
-    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
-    <span class="address-line2">ラインビルド南船場703</span>
-  </span><br>
-
+  <span class="address"><span class="address-line1">住所：大阪市中央区南船場1-10-12</span><span class="address-line2">ラインビルド南船場703</span></span><br>
   © gene. All Rights Reserved.
 </footer>
 
 <script>
 window.addEventListener("load", () => {
-
   const openingRing = document.getElementById("opening-ring");
   const heroLogo = document.getElementById("hero-logo");
   const indexCards = document.getElementById("index-cards");
   const menuHeroCard = document.querySelector(".menu-hero-card");
-
   const hasShownRing = sessionStorage.getItem("openingRingShown");
 
   if (hasShownRing) {
-    if (openingRing) {
-      openingRing.style.display = "none";
-    }
-    if (heroLogo) {
-      heroLogo.classList.add("show");
-    }
-    if (menuHeroCard) {
-      menuHeroCard.classList.add("show");
-    }
-    if (indexCards) {
-      indexCards.querySelectorAll(".info-card").forEach(card => {
-        card.classList.add("show");
-      });
-    }
+    if (openingRing) openingRing.style.display = "none";
+    if (heroLogo) heroLogo.classList.add("show");
+    if (menuHeroCard) menuHeroCard.classList.add("show");
+    if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
   } else {
     sessionStorage.setItem("openingRingShown", "true");
-
-    if (openingRing) {
-      openingRing.classList.add("show");
-    }
-
+    if (openingRing) openingRing.classList.add("show");
     setTimeout(() => {
-      if (openingRing) {
-        openingRing.classList.add("fadeout");
-      }
-      if (heroLogo) {
-        heroLogo.classList.add("show");
-      }
-      if (menuHeroCard) {
-        menuHeroCard.classList.add("show");
-      }
-      if (indexCards) {
-        indexCards.querySelectorAll(".info-card").forEach(card => {
-          card.classList.add("show");
-        });
-      }
+      if (openingRing) openingRing.classList.add("fadeout");
+      if (heroLogo) heroLogo.classList.add("show");
+      if (menuHeroCard) menuHeroCard.classList.add("show");
+      if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
     }, 2400);
   }
 
@@ -536,14 +288,12 @@ window.addEventListener("load", () => {
     setTimeout(() => ring.classList.add("fadeout"), 1400);
     setTimeout(() => ring.style.display = "none", 2400);
   }
-
   setTimeout(() => {
     if (breadcrumb) breadcrumb.style.opacity = "1";
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
   }, 2400);
-
   setTimeout(() => {
     if (hero) hero.classList.add("show");
     if (menuHeroCard) menuHeroCard.classList.add("show");
@@ -551,53 +301,20 @@ window.addEventListener("load", () => {
   }, 2600);
 
   if (hamburgerBtn && menuPanel) {
-    hamburgerBtn.addEventListener("click", () => {
-      menuPanel.classList.add("open");
-      document.body.classList.add("menu-open");
-    });
-
+    hamburgerBtn.addEventListener("click", () => { menuPanel.classList.add("open"); document.body.classList.add("menu-open"); });
     const closeBtn = document.querySelector(".menu-close-btn");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
-    }
-
-    menuPanel.addEventListener("click", e => {
-      if (e.target === menuPanel) {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      }
-    });
-
-    menuPanel.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      });
-    });
+    if (closeBtn) closeBtn.addEventListener("click", () => { menuPanel.classList.remove("open"); document.body.classList.remove("menu-open"); });
+    menuPanel.addEventListener("click", e => { if (e.target === menuPanel) { menuPanel.classList.remove("open"); document.body.classList.remove("menu-open"); } });
+    menuPanel.querySelectorAll("a").forEach(link => link.addEventListener("click", () => { menuPanel.classList.remove("open"); document.body.classList.remove("menu-open"); }));
   }
 
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
-  });
-
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
+  window.addEventListener("scroll", () => { toTopBtn.classList.toggle("show", window.scrollY > 400); });
+  toTopBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
 });
 </script>
-
 </body>
 </html>
