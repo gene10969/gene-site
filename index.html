@@ -477,6 +477,24 @@
   }
 }
 
+
+
+/* index mobile bottom nav timing */
+@media (max-width:768px){
+  .gene-mobile-bottom-nav{
+    opacity:0;
+    transform:translateY(100%);
+    pointer-events:none;
+    transition:opacity .7s ease, transform .7s ease;
+  }
+
+  .gene-mobile-bottom-nav.show{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+}
+
 </style>
 </head>
 
@@ -861,6 +879,8 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    const mobileBottomNav = document.querySelector(".gene-mobile-bottom-nav");
+    if (mobileBottomNav) mobileBottomNav.classList.add("show");
   }, 2400);
 
   setTimeout(() => {
