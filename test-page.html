@@ -480,6 +480,22 @@
   }
 }
 
+
+/* voice swiper mobile spacing adjustment */
+@media (max-width:768px){
+  .case-swiper .swiper-wrapper{
+    gap:14px !important;
+  }
+
+  .case-swiper .swiper-slide{
+    margin-right:0 !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    border-radius:10px;
+  }
+}
+
 </style>
 </head>
 
@@ -775,7 +791,7 @@
 
       new Swiper(el, {
         slidesPerView: "auto",
-        spaceBetween: 24,
+        spaceBetween: 14,
         freeMode: true,
         scrollbar: {
           el: el.querySelector(".swiper-scrollbar"),
