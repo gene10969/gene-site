@@ -614,9 +614,12 @@
 
 
 
-/* voice top title font alignment */
+
+
+/* voice top typography exact index match */
 @media (max-width:768px){
 
+  /* voice冒頭タイトルをindexの「大阪 自律神経専門整体院 / gene」と同系統へ強制統一 */
   .voice-section:first-of-type h1,
   .voice-section:first-of-type h2,
   .info-section:first-of-type h1,
@@ -626,53 +629,26 @@
   .voice-title,
   .page-title{
     font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
-    font-size:clamp(2.05rem, 8.2vw, 2.7rem) !important;
-    font-weight:500 !important;
-    line-height:1.45 !important;
-    letter-spacing:.08em !important;
+    font-size:2.55rem !important;
+    font-weight:700 !important;
+    line-height:1.28 !important;
+    letter-spacing:.035em !important;
     color:#d9c17e !important;
     text-align:center !important;
+    margin-top:0 !important;
+    margin-bottom:28px !important;
   }
 
+  /* voice冒頭説明文をindexの説明文と近いサイズへ */
   .voice-section:first-of-type p,
   .info-section:first-of-type p,
   .section:first-of-type p{
     font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
     font-size:1.05rem !important;
+    font-weight:400 !important;
     line-height:2.05 !important;
-    letter-spacing:.05em !important;
-    text-align:center !important;
-  }
-}
-
-
-
-/* voice top typography matched to index */
-@media (max-width:768px){
-
-  .voice-section:first-of-type h1,
-  .voice-section:first-of-type h2,
-  .info-section:first-of-type h1,
-  .info-section:first-of-type h2,
-  .section:first-of-type h1,
-  .section:first-of-type h2,
-  .voice-title,
-  .page-title{
-    font-family: serif !important;
-    font-size: 2.9rem !important;
-    font-weight: 700 !important;
-    line-height: 1.3 !important;
-    letter-spacing: .01em !important;
-    color:#d9c17e !important;
-    text-align:center !important;
-  }
-
-  .voice-section:first-of-type p,
-  .info-section:first-of-type p,
-  .section:first-of-type p{
-    font-size:1.02rem !important;
-    line-height:2 !important;
-    letter-spacing:.02em !important;
+    letter-spacing:.035em !important;
+    color:rgba(255,255,255,.9) !important;
     text-align:center !important;
   }
 }
