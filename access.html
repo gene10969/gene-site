@@ -346,6 +346,62 @@
   }
 }
 
+
+
+/* access voice mobile top alignment fix */
+@media (max-width:768px){
+
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  /* access / voice はタイトル位置を個別にindex基準へ寄せる */
+  body:has(.access-container) #hero-logo,
+  body:has(.voice-container) #hero-logo,
+  body:has(.access-container) .page-title,
+  body:has(.voice-container) .page-title,
+  body:has(#voice-cards) #hero-logo,
+  body:has(#voice-cards) .page-title{
+    padding-top:34px !important;
+    margin-top:0 !important;
+    margin-bottom:22px !important;
+  }
+
+  body:has(.access-container) main,
+  body:has(.voice-container) main,
+  body:has(#voice-cards) main,
+  body:has(.access-container) .access-container,
+  body:has(.voice-container) .voice-container,
+  body:has(#voice-cards) #voice-cards{
+    padding-top:0 !important;
+    margin-top:0 !important;
+  }
+
+  body:has(.access-container) .info-card:first-child,
+  body:has(.access-container) .access-card:first-child,
+  body:has(.access-container) .access-section:first-of-type,
+  body:has(.access-container) .access-container > *:first-child,
+  body:has(.voice-container) .info-card:first-child,
+  body:has(.voice-container) .voice-card:first-child,
+  body:has(.voice-container) .voice-container > *:first-child,
+  body:has(#voice-cards) #voice-cards > *:first-child{
+    margin-top:22px !important;
+  }
+
+  /* accessでタイトルが下がりすぎる場合の保険 */
+  body:has(.access-container) .main-title,
+  body:has(.access-container) .section-title,
+  body:has(.access-container) h1,
+  body:has(.voice-container) .main-title,
+  body:has(.voice-container) .section-title,
+  body:has(.voice-container) h1,
+  body:has(#voice-cards) .main-title,
+  body:has(#voice-cards) h1{
+    margin-top:0 !important;
+  }
+}
+
 </style>
 </head>
 <body class="subpage">
