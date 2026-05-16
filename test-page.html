@@ -3,7 +3,17 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT">
+document.querySelectorAll('.case-swiper').forEach(el=>{
+  new Swiper(el,{
+    slidesPerView:'auto',
+    spaceBetween:24,
+    freeMode:true,
+    scrollbar:{ el:el.querySelector('.swiper-scrollbar'), draggable:true }
+  });
+});
+
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -432,6 +442,53 @@
   }
 }
 
+
+
+/* gene voice mobile swiper restore */
+@media (max-width:768px){
+  .case-swiper{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:hidden !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-bottom:18px !important;
+  }
+
+  .case-swiper .swiper-wrapper{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    align-items:stretch !important;
+    gap:0 !important;
+    max-width:none !important;
+    width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    transform:translate3d(0,0,0);
+  }
+
+  .case-swiper .swiper-slide{
+    flex-shrink:0 !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+    display:block !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    width:86vw !important;
+    max-width:320px !important;
+    height:auto !important;
+    display:block !important;
+    margin:0 auto !important;
+  }
+
+  .case-swiper .swiper-scrollbar{
+    display:block !important;
+  }
+}
+
 </style>
 </head>
 
@@ -717,7 +774,7 @@
 
 <script>
 window.addEventListener("load", () => {
-  /* Swiper disabled on voice page to keep case photos centered */
+  
 const breadcrumb = document.querySelector(".breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const hamburgerBtn = document.getElementById("hamburger-btn");
