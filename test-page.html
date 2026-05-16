@@ -3,17 +3,7 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT">
-document.querySelectorAll('.case-swiper').forEach(el=>{
-  new Swiper(el,{
-    slidesPerView:'auto',
-    spaceBetween:24,
-    freeMode:true,
-    scrollbar:{ el:el.querySelector('.swiper-scrollbar'), draggable:true }
-  });
-});
-
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -444,7 +434,9 @@ document.querySelectorAll('.case-swiper').forEach(el=>{
 
 
 
-/* gene voice mobile swiper restore */
+
+
+/* gene voice mobile swiper restore corrected */
 @media (max-width:768px){
   .case-swiper{
     width:100% !important;
@@ -465,7 +457,6 @@ document.querySelectorAll('.case-swiper').forEach(el=>{
     width:100% !important;
     margin-left:0 !important;
     margin-right:0 !important;
-    transform:translate3d(0,0,0);
   }
 
   .case-swiper .swiper-slide{
@@ -771,6 +762,39 @@ document.querySelectorAll('.case-swiper').forEach(el=>{
 <div id="to-top-btn">▲</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+<script>
+(function(){
+  function initGeneMobileCaseSwiper(){
+    if (window.innerWidth > 768) return;
+    if (typeof Swiper === "undefined") return;
+
+    document.querySelectorAll(".case-swiper").forEach(function(el){
+      if (el.swiper) return;
+
+      new Swiper(el, {
+        slidesPerView: "auto",
+        spaceBetween: 24,
+        freeMode: true,
+        scrollbar: {
+          el: el.querySelector(".swiper-scrollbar"),
+          draggable: true
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGeneMobileCaseSwiper);
+  } else {
+    initGeneMobileCaseSwiper();
+  }
+
+  window.addEventListener("load", initGeneMobileCaseSwiper);
+})();
+</script>
+
 
 <script>
 window.addEventListener("load", () => {
