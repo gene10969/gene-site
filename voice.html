@@ -296,6 +296,31 @@
     line-height:1.35;
   }
 
+  
+  .gene-mobile-extra-links{
+    margin-top:12px;
+    padding-top:12px;
+    border-top:1px solid rgba(217,193,126,.18);
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-extra-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.28);
+    background:rgba(217,193,126,.075);
+    color:#d9c17e;
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
+  }
+
   .gene-mobile-symptom-grid a::after{
     content:"›";
     color:#d9c17e;
@@ -315,6 +340,185 @@
 
   #to-top-btn{
     bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* gene voice pc-only center alignment */
+@media (min-width:769px){
+
+  .case{
+    width:90% !important;
+    max-width:760px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+
+  .case-swiper{
+    width:100% !important;
+    max-width:560px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    overflow:visible !important;
+    padding:0 !important;
+  }
+
+  .case-swiper .swiper-wrapper{
+    width:auto !important;
+    max-width:560px !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:center !important;
+    align-items:flex-start !important;
+    gap:12px !important;
+    transform:none !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+
+  .case-swiper .swiper-slide{
+    flex:0 0 auto !important;
+    width:128px !important;
+    max-width:128px !important;
+    margin:0 !important;
+    text-align:center !important;
+    display:block !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    display:block !important;
+    width:128px !important;
+    max-width:128px !important;
+    height:auto !important;
+    margin:0 auto !important;
+    object-fit:cover !important;
+    border-radius:8px;
+  }
+
+  .case-swiper .swiper-slide span{
+    display:block !important;
+    width:100% !important;
+    text-align:center !important;
+    margin-top:8px !important;
+  }
+
+  .case-swiper .swiper-wrapper:has(.swiper-slide:nth-child(2):last-child){
+    max-width:268px !important;
+  }
+
+  .case-swiper .swiper-wrapper:has(.swiper-slide:nth-child(3):last-child){
+    max-width:408px !important;
+  }
+
+  .case-swiper .swiper-scrollbar{
+    display:none !important;
+  }
+}
+
+
+
+
+
+/* gene voice mobile swiper restore corrected */
+@media (max-width:768px){
+  .case-swiper{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:hidden !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-bottom:18px !important;
+  }
+
+  .case-swiper .swiper-wrapper{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    align-items:stretch !important;
+    gap:0 !important;
+    max-width:none !important;
+    width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  .case-swiper .swiper-slide{
+    flex-shrink:0 !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+    display:block !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    width:86vw !important;
+    max-width:320px !important;
+    height:auto !important;
+    display:block !important;
+    margin:0 auto !important;
+  }
+
+  .case-swiper .swiper-scrollbar{
+    display:block !important;
+  }
+}
+
+
+/* voice swiper mobile spacing adjustment */
+@media (max-width:768px){
+  .case-swiper .swiper-wrapper{
+    gap:14px !important;
+  }
+
+  .case-swiper .swiper-slide{
+    margin-right:0 !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    border-radius:10px;
+  }
+}
+
+
+
+/* voice swiper offset final */
+@media (max-width:768px){
+
+  .case-swiper{
+    padding-left:0 !important;
+    padding-right:0 !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  .case-swiper .swiper-wrapper{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .case-swiper .swiper-scrollbar{
+    width:calc(100% - 48px) !important;
+    left:24px !important;
+    right:24px !important;
+    bottom:0 !important;
+    box-sizing:border-box !important;
   }
 }
 
@@ -555,6 +759,10 @@
     <a href="fatigue.html">慢性疲労</a>
     <a href="panic.html">パニック症状</a>
   </div>
+  <div class="gene-mobile-extra-links">
+    <a href="voice.html">院内・改善写真</a>
+    <a href="faq.html">よくある質問</a>
+  </div>
 </div>
 
 <nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
@@ -597,18 +805,45 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
+
+<script>
+(function(){
+  function initGeneMobileCaseSwiper(){
+    if (window.innerWidth > 768) return;
+    if (typeof Swiper === "undefined") return;
+
+    document.querySelectorAll(".case-swiper").forEach(function(el){
+      if (el.swiper) return;
+
+      new Swiper(el, {
+        slidesPerView: "auto",
+        spaceBetween: 14,
+        slidesOffsetBefore: 24,
+        slidesOffsetAfter: 24,
+        freeMode: true,
+        scrollbar: {
+          el: el.querySelector(".swiper-scrollbar"),
+          draggable: true
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGeneMobileCaseSwiper);
+  } else {
+    initGeneMobileCaseSwiper();
+  }
+
+  window.addEventListener("load", initGeneMobileCaseSwiper);
+})();
+</script>
+
+
 <script>
 window.addEventListener("load", () => {
-
-  document.querySelectorAll('.case-swiper').forEach(el=>{
-    new Swiper(el,{
-      slidesPerView:'auto',
-      spaceBetween:24,
-      scrollbar:{ el:el.querySelector('.swiper-scrollbar'), draggable:true }
-    });
-  });
-
-  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  
+const breadcrumb = document.querySelector(".breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const bgLogo = document.getElementById("global-logo-bg");

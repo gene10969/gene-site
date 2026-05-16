@@ -137,6 +137,224 @@
   }
 }
 
+
+
+/* gene mobile bottom navigation */
+.gene-mobile-bottom-nav,
+.gene-mobile-symptom-panel,
+.gene-mobile-symptom-backdrop{
+  display:none;
+}
+
+@media (max-width: 768px){
+  body{
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .gene-mobile-bottom-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9998;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    padding:7px 8px calc(7px + env(safe-area-inset-bottom));
+    background:rgba(5,5,5,.94);
+    border-top:1px solid rgba(217,193,126,.28);
+    box-shadow:0 -12px 30px rgba(0,0,0,.42);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+
+  .gene-mobile-bottom-nav a,
+  .gene-mobile-bottom-nav button{
+    appearance:none;
+    -webkit-appearance:none;
+    border:0;
+    background:transparent;
+    color:rgba(255,255,255,.82);
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    min-width:0;
+    min-height:50px;
+    padding:4px 2px;
+    font-family:inherit;
+    letter-spacing:.04em;
+    font-size:10px;
+    line-height:1.25;
+    cursor:pointer;
+  }
+
+  .gene-mobile-bottom-nav .nav-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;
+    height:22px;
+    color:#d9c17e;
+    font-size:18px;
+    line-height:1;
+  }
+
+  .gene-mobile-bottom-nav .nav-text{
+    white-space:nowrap;
+  }
+
+  .gene-mobile-bottom-nav .line-nav{
+    color:#111;
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(217,193,126,.20);
+  }
+
+  .gene-mobile-bottom-nav .line-nav .nav-icon,
+  .gene-mobile-bottom-nav .line-nav .nav-text{
+    color:#111;
+    font-weight:600;
+  }
+
+  .gene-mobile-symptom-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:9996;
+    background:rgba(0,0,0,.38);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease;
+    display:block;
+  }
+
+  .gene-mobile-symptom-backdrop.open{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-mobile-symptom-panel{
+    position:fixed;
+    left:10px;
+    right:10px;
+    bottom:calc(72px + env(safe-area-inset-bottom));
+    z-index:9997;
+    display:block;
+    padding:16px;
+    border:1px solid rgba(217,193,126,.34);
+    border-radius:22px;
+    background:rgba(8,8,8,.96);
+    box-shadow:0 -16px 34px rgba(0,0,0,.5);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    transform:translateY(18px);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+
+  .gene-mobile-symptom-panel.open{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  .gene-mobile-symptom-panel-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    color:#d9c17e;
+    font-size:.95rem;
+    letter-spacing:.08em;
+    margin:0 0 12px;
+  }
+
+  .gene-mobile-symptom-close{
+    appearance:none;
+    -webkit-appearance:none;
+    border:1px solid rgba(217,193,126,.28);
+    background:rgba(255,255,255,.04);
+    color:#d9c17e;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    font-size:1.35rem;
+    line-height:1;
+    cursor:pointer;
+  }
+
+  .gene-mobile-symptom-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-symptom-grid a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    min-height:44px;
+    padding:11px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.22);
+    background:rgba(255,255,255,.045);
+    color:rgba(255,255,255,.92);
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
+  }
+
+  
+  .gene-mobile-extra-links{
+    margin-top:12px;
+    padding-top:12px;
+    border-top:1px solid rgba(217,193,126,.18);
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-extra-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.28);
+    background:rgba(217,193,126,.075);
+    color:#d9c17e;
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
+  }
+
+  .gene-mobile-symptom-grid a::after{
+    content:"›";
+    color:#d9c17e;
+    font-size:1.15rem;
+    line-height:1;
+  }
+}
+
+
+
+/* gene mobile bottom navigation adjustment */
+@media (max-width: 768px){
+  .reserve-btn-sub,
+  .hamburger-btn{
+    display:none !important;
+  }
+
+  #to-top-btn{
+    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
 </style>
 </head>
 
@@ -357,6 +575,54 @@
 
 </main>
 
+
+<div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
+
+<div class="gene-mobile-symptom-panel" id="gene-mobile-symptom-panel" aria-hidden="true">
+  <div class="gene-mobile-symptom-panel-title">
+    <span>症状から探す</span>
+    <button type="button" class="gene-mobile-symptom-close" id="gene-mobile-symptom-close" aria-label="症状一覧を閉じる">×</button>
+  </div>
+  <div class="gene-mobile-symptom-grid">
+    <a href="atopic.html">アトピー</a>
+    <a href="tinnitus.html">耳鳴り</a>
+    <a href="dizziness.html">めまい</a>
+    <a href="insomnia.html">不眠</a>
+    <a href="headache.html">頭痛</a>
+    <a href="palpitations.html">動悸</a>
+    <a href="fatigue.html">慢性疲労</a>
+    <a href="panic.html">パニック症状</a>
+  </div>
+  <div class="gene-mobile-extra-links">
+    <a href="voice.html">院内・改善写真</a>
+    <a href="faq.html">よくある質問</a>
+  </div>
+</div>
+
+<nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
+  <a href="index.html">
+    <span class="nav-icon">⌂</span>
+    <span class="nav-text">ホーム</span>
+  </a>
+  <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel">
+    <span class="nav-icon">＋</span>
+    <span class="nav-text">症状</span>
+  </button>
+  <a href="menu.html">
+    <span class="nav-icon">◇</span>
+    <span class="nav-text">施術内容</span>
+  </a>
+  <a href="access.html">
+    <span class="nav-icon">⌖</span>
+    <span class="nav-text">アクセス</span>
+  </a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
+    <span class="nav-icon">↗</span>
+    <span class="nav-text">LINE予約</span>
+  </a>
+</nav>
+
+
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
@@ -440,6 +706,81 @@ window.addEventListener("scroll",()=>{
     cta.classList.add("show");
   }
 });
+</script>
+
+
+<script>
+(function(){
+  function setupGeneMobileBottomNav(){
+    const toggle = document.getElementById("gene-mobile-symptom-toggle");
+    const panel = document.getElementById("gene-mobile-symptom-panel");
+    const close = document.getElementById("gene-mobile-symptom-close");
+    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+
+    if (!toggle || !panel || !backdrop) return;
+
+    function openPanel(){
+      panel.classList.add("open");
+      backdrop.classList.add("open");
+      panel.setAttribute("aria-hidden", "false");
+      toggle.setAttribute("aria-expanded", "true");
+
+      if (typeof gtag === "function") {
+        gtag("event", "mobile_symptom_menu_open", {
+          event_category: "navigation",
+          event_label: "bottom_nav_symptom"
+        });
+      }
+    }
+
+    function closePanel(){
+      panel.classList.remove("open");
+      backdrop.classList.remove("open");
+      panel.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", function(){
+      if (panel.classList.contains("open")) {
+        closePanel();
+      } else {
+        openPanel();
+      }
+    });
+
+    if (close) close.addEventListener("click", closePanel);
+    backdrop.addEventListener("click", closePanel);
+
+    panel.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        if (typeof gtag === "function") {
+          gtag("event", "symptom_link_click", {
+            event_category: "navigation",
+            event_label: link.getAttribute("href") || link.textContent.trim()
+          });
+        }
+        closePanel();
+      });
+    });
+
+    document.querySelectorAll(".gene-mobile-bottom-nav a").forEach(function(link){
+      link.addEventListener("click", function(){
+        if (typeof gtag === "function") {
+          gtag("event", "bottom_nav_click", {
+            event_category: "navigation",
+            event_label: link.getAttribute("href") || link.textContent.trim()
+          });
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneMobileBottomNav);
+  } else {
+    setupGeneMobileBottomNav();
+  }
+})();
 </script>
 
 </body>
