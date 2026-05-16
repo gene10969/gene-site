@@ -351,58 +351,186 @@
 
 
 
-/* gene voice dynamic image alignment */
+
+
+/* gene voice exact center alignment */
+.voice-section,
+.voice-wrapper,
+.voice-container,
+.voice-list,
+.voice-cards,
+#voice-cards,
+.case-section,
+.case-container,
+.case-list{
+  width:90% !important;
+  max-width:980px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.voice-section .info-card,
+.voice-wrapper .info-card,
+.voice-container .info-card,
+.voice-list .info-card,
+.voice-cards .info-card,
+#voice-cards .info-card,
+.case-section .info-card,
+.case-container .info-card,
+.case-list .info-card,
+.info-card.case-card,
+.info-card.voice-card{
+  width:100% !important;
+  max-width:980px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+
+/* 画像の親要素を中央寄せ。voiceページ内で複数画像を持つブロックに効かせる */
+.voice-section .info-card div:has(> img),
+.voice-wrapper .info-card div:has(> img),
+.voice-container .info-card div:has(> img),
+.voice-list .info-card div:has(> img),
+.voice-cards .info-card div:has(> img),
+#voice-cards .info-card div:has(> img),
+.case-section .info-card div:has(> img),
+.case-container .info-card div:has(> img),
+.case-list .info-card div:has(> img),
+.info-card.case-card div:has(> img),
+.info-card.voice-card div:has(> img),
 .case-images,
-.photo-grid{
+.photo-grid,
+.case-photo-grid,
+.voice-photo-grid,
+.before-after-grid,
+.image-grid,
+.gallery-grid{
+  width:100% !important;
+  max-width:980px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
   display:flex !important;
   flex-wrap:wrap !important;
   justify-content:center !important;
   align-items:flex-start !important;
   gap:14px !important;
-  width:100% !important;
-  max-width:980px !important;
-  margin:0 auto !important;
+  box-sizing:border-box !important;
 }
 
-.case-images img,
-.photo-grid img{
+/* 画像自体 */
+.voice-section .info-card div:has(> img) > img,
+.voice-wrapper .info-card div:has(> img) > img,
+.voice-container .info-card div:has(> img) > img,
+.voice-list .info-card div:has(> img) > img,
+.voice-cards .info-card div:has(> img) > img,
+#voice-cards .info-card div:has(> img) > img,
+.case-section .info-card div:has(> img) > img,
+.case-container .info-card div:has(> img) > img,
+.case-list .info-card div:has(> img) > img,
+.info-card.case-card div:has(> img) > img,
+.info-card.voice-card div:has(> img) > img,
+.case-images > img,
+.photo-grid > img,
+.case-photo-grid > img,
+.voice-photo-grid > img,
+.before-after-grid > img,
+.image-grid > img,
+.gallery-grid > img{
   display:block !important;
+  margin:0 !important;
   width:calc((100% - 28px) / 3) !important;
   max-width:300px !important;
   height:auto !important;
-  margin:0 !important;
   object-fit:cover !important;
 }
 
-/* 2枚画像なら中央2列 */
-.case-images:has(img:nth-child(2):last-child) img,
-.photo-grid:has(img:nth-child(2):last-child) img{
+/* 2枚だけのブロックは中央2列 */
+.voice-section .info-card div:has(> img:nth-child(2):last-child) > img,
+.voice-wrapper .info-card div:has(> img:nth-child(2):last-child) > img,
+.voice-container .info-card div:has(> img:nth-child(2):last-child) > img,
+.voice-list .info-card div:has(> img:nth-child(2):last-child) > img,
+.voice-cards .info-card div:has(> img:nth-child(2):last-child) > img,
+#voice-cards .info-card div:has(> img:nth-child(2):last-child) > img,
+.case-section .info-card div:has(> img:nth-child(2):last-child) > img,
+.case-container .info-card div:has(> img:nth-child(2):last-child) > img,
+.case-list .info-card div:has(> img:nth-child(2):last-child) > img,
+.info-card.case-card div:has(> img:nth-child(2):last-child) > img,
+.info-card.voice-card div:has(> img:nth-child(2):last-child) > img,
+.case-images:has(> img:nth-child(2):last-child) > img,
+.photo-grid:has(> img:nth-child(2):last-child) > img,
+.case-photo-grid:has(> img:nth-child(2):last-child) > img,
+.voice-photo-grid:has(> img:nth-child(2):last-child) > img,
+.before-after-grid:has(> img:nth-child(2):last-child) > img,
+.image-grid:has(> img:nth-child(2):last-child) > img,
+.gallery-grid:has(> img:nth-child(2):last-child) > img{
   width:calc((100% - 14px) / 2) !important;
-  max-width:360px !important;
+  max-width:300px !important;
 }
 
-/* 1枚 */
-.case-images:has(img:first-child:last-child) img,
-.photo-grid:has(img:first-child:last-child) img{
+/* 1枚だけ */
+.voice-section .info-card div:has(> img:first-child:last-child) > img,
+.voice-wrapper .info-card div:has(> img:first-child:last-child) > img,
+.voice-container .info-card div:has(> img:first-child:last-child) > img,
+.voice-list .info-card div:has(> img:first-child:last-child) > img,
+.voice-cards .info-card div:has(> img:first-child:last-child) > img,
+#voice-cards .info-card div:has(> img:first-child:last-child) > img,
+.case-section .info-card div:has(> img:first-child:last-child) > img,
+.case-container .info-card div:has(> img:first-child:last-child) > img,
+.case-list .info-card div:has(> img:first-child:last-child) > img,
+.info-card.case-card div:has(> img:first-child:last-child) > img,
+.info-card.voice-card div:has(> img:first-child:last-child) > img{
   width:100% !important;
   max-width:520px !important;
 }
 
 @media (max-width:768px){
+  .voice-section .info-card div:has(> img),
+  .voice-wrapper .info-card div:has(> img),
+  .voice-container .info-card div:has(> img),
+  .voice-list .info-card div:has(> img),
+  .voice-cards .info-card div:has(> img),
+  #voice-cards .info-card div:has(> img),
+  .case-section .info-card div:has(> img),
+  .case-container .info-card div:has(> img),
+  .case-list .info-card div:has(> img),
+  .info-card.case-card div:has(> img),
+  .info-card.voice-card div:has(> img),
   .case-images,
-  .photo-grid{
-    display:grid !important;
-    grid-template-columns:1fr !important;
+  .photo-grid,
+  .case-photo-grid,
+  .voice-photo-grid,
+  .before-after-grid,
+  .image-grid,
+  .gallery-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
     gap:16px !important;
   }
 
-  .case-images img,
-  .photo-grid img,
-  .case-images:has(img:nth-child(2):last-child) img,
-  .photo-grid:has(img:nth-child(2):last-child) img{
+  .voice-section .info-card div:has(> img) > img,
+  .voice-wrapper .info-card div:has(> img) > img,
+  .voice-container .info-card div:has(> img) > img,
+  .voice-list .info-card div:has(> img) > img,
+  .voice-cards .info-card div:has(> img) > img,
+  #voice-cards .info-card div:has(> img) > img,
+  .case-section .info-card div:has(> img) > img,
+  .case-container .info-card div:has(> img) > img,
+  .case-list .info-card div:has(> img) > img,
+  .info-card.case-card div:has(> img) > img,
+  .info-card.voice-card div:has(> img) > img,
+  .case-images > img,
+  .photo-grid > img,
+  .case-photo-grid > img,
+  .voice-photo-grid > img,
+  .before-after-grid > img,
+  .image-grid > img,
+  .gallery-grid > img{
     width:100% !important;
     max-width:100% !important;
-    margin:0 auto !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
   }
 }
 
