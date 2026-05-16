@@ -537,6 +537,45 @@
   }
 }
 
+
+/* voice photo align to swiper start position */
+@media (max-width:768px){
+
+  .case-swiper{
+    padding-left:24px !important;
+    padding-right:24px !important;
+    box-sizing:border-box !important;
+  }
+
+  .case-swiper .swiper-wrapper{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+
+  .case-swiper .swiper-slide:first-child{
+    margin-left:0 !important;
+  }
+
+  .case-swiper .swiper-slide{
+    width:calc(100vw - 96px) !important;
+    max-width:320px !important;
+  }
+
+  .case-swiper .swiper-slide img{
+    width:100% !important;
+    max-width:320px !important;
+    margin:0 auto !important;
+    display:block !important;
+  }
+
+  .case-swiper .swiper-scrollbar{
+    width:calc(100% - 48px) !important;
+    left:24px !important;
+    right:24px !important;
+    bottom:0 !important;
+  }
+}
+
 </style>
 </head>
 
