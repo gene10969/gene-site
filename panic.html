@@ -443,6 +443,17 @@ body.panic-page .menu-card{
   }
 }
 
+
+.panic-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.panic-fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
@@ -472,13 +483,13 @@ body.panic-page .menu-card{
   <a href="voice.html">院内・改善写真</a>
 </div>
 
-<h1 class="page-title">パニック症状でお悩みの方へ</h1>
+<h1 class="page-title panic-fade">パニック症状でお悩みの方へ</h1>
 
-<p class="dizziness-lead">
+<p class="dizziness-lead panic-fade">
   大阪 自律神経専門整体院 gene のパニック症状のページ。不安感や緊張、自律神経の不調についてご案内しています。
 </p>
 
-<div class="dizziness-intro-card">
+<div class="dizziness-intro-card panic-fade">
   <p>
     パニック症状は精神面だけでなく、<br>
     呼吸の浅さ、身体の緊張、自律神経の乱れなどが関係していることがあります。<br><br>
@@ -487,7 +498,7 @@ body.panic-page .menu-card{
   </p>
 </div>
 
-<div class="dizziness-links">
+<div class="dizziness-links panic-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善事例を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
@@ -495,7 +506,7 @@ body.panic-page .menu-card{
 
 <div class="menu-container">
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>来院時によくある状態</h2>
     <p>
       ・急な不安感がある<br>
@@ -505,7 +516,7 @@ body.panic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>当院の見立て</h2>
     <p>
       首〜胸郭の緊張、呼吸、自律神経の偏りなどを確認します。<br><br>
@@ -513,7 +524,7 @@ body.panic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>施術の考え方</h2>
     <p>
       強い刺激を避け、身体が安心しやすい範囲で調整を行います。<br><br>
@@ -521,7 +532,7 @@ body.panic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>このような方に</h2>
     <p>
       ・不安感や動悸を伴う<br>
@@ -531,7 +542,7 @@ body.panic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>ご案内</h2>
     <p>
       症状の経過や感じ方には個人差があります。<br>
@@ -539,7 +550,7 @@ body.panic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card panic-fade">
     <h2>ご相談・ご予約はこちら</h2>
     <p>
       現在の状態を整理するところからでも大丈夫です。<br>
@@ -624,15 +635,18 @@ window.addEventListener("load", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(() => {
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
+  const fadeItems = document.querySelectorAll(".panic-fade");
+
   setTimeout(() => {
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 900);
+
+    fadeItems.forEach(el=>{
+      el.classList.add("show");
+    });
+
   }, 900);
 
   const closeBtn = document.querySelector(".menu-close-btn");
