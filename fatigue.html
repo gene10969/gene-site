@@ -443,6 +443,17 @@ body.fatigue-page .menu-card{
   }
 }
 
+
+.fatigue-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.fatigue-fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
@@ -472,13 +483,13 @@ body.fatigue-page .menu-card{
   <a href="voice.html">院内・改善写真</a>
 </div>
 
-<h1 class="page-title">慢性疲労でお悩みの方へ</h1>
+<h1 class="page-title fatigue-fade">慢性疲労でお悩みの方へ</h1>
 
-<p class="dizziness-lead">
+<p class="dizziness-lead fatigue-fade">
   大阪 自律神経専門整体院 gene の慢性疲労ページ。休んでも抜けない疲労感や自律神経の不調についてご案内しています。
 </p>
 
-<div class="dizziness-intro-card">
+<div class="dizziness-intro-card fatigue-fade">
   <p>
     慢性的な疲労感は、<br>
     身体が休まらない状態、自律神経の乱れ、呼吸の浅さなどが関係していることがあります。<br><br>
@@ -487,7 +498,7 @@ body.fatigue-page .menu-card{
   </p>
 </div>
 
-<div class="dizziness-links">
+<div class="dizziness-links fatigue-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善事例を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
@@ -495,7 +506,7 @@ body.fatigue-page .menu-card{
 
 <div class="menu-container">
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>来院時によくある状態</h2>
     <p>
       ・朝から疲れている<br>
@@ -505,7 +516,7 @@ body.fatigue-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>当院の見立て</h2>
     <p>
       睡眠、呼吸、姿勢、循環、自律神経の状態などを確認します。<br><br>
@@ -513,7 +524,7 @@ body.fatigue-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>施術の考え方</h2>
     <p>
       無理な刺激ではなく、身体が休まりやすい状態を目指して調整します。<br><br>
@@ -521,7 +532,7 @@ body.fatigue-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>このような方に</h2>
     <p>
       ・休んでも疲労感が抜けない<br>
@@ -531,7 +542,7 @@ body.fatigue-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>ご案内</h2>
     <p>
       症状の経過や感じ方には個人差があります。<br>
@@ -539,7 +550,7 @@ body.fatigue-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card fatigue-fade">
     <h2>ご相談・ご予約はこちら</h2>
     <p>
       現在の状態を整理するところからでも大丈夫です。<br>
@@ -624,15 +635,18 @@ window.addEventListener("load", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(() => {
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
+  const fadeItems = document.querySelectorAll(".fatigue-fade");
+
   setTimeout(() => {
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 900);
+
+    fadeItems.forEach(el=>{
+      el.classList.add("show");
+    });
+
   }, 900);
 
   const closeBtn = document.querySelector(".menu-close-btn");
