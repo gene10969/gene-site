@@ -403,6 +403,32 @@
   }
 }
 
+
+/* access page timing: match menu.html */
+.page-title.hidden,
+.breadcrumb-fixed.hidden,
+.reserve-btn-sub.hidden,
+.menu-card.card-hidden{
+  opacity:0;
+}
+
+.page-title.hidden,
+.menu-card.card-hidden{
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.page-title.hidden.show,
+.menu-card.card-hidden.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.breadcrumb-fixed.hidden.show,
+.reserve-btn-sub.hidden.show{
+  opacity:1;
+}
+
 </style>
 </head>
 <body class="subpage">
@@ -438,12 +464,12 @@
 
 </div>
 
-<h1 class="page-title">アクセス</h1>
+<h1 class="page-title hidden">アクセス</h1>
 
 <div class="menu-container">
 
 <!-- 最寄駅 -->
-<div class="menu-card">
+<div class="menu-card card-hidden">
   <h2>最寄駅</h2>
 
   <table class="station-table station-wide">
@@ -478,7 +504,7 @@
 </div>
 
   <!-- アクセス案内 -->
-  <div class="menu-card">
+  <div class="menu-card card-hidden">
     <h2>駅からのアクセス案内</h2>
     <p>
       長堀通沿いのビルです。<br>
@@ -488,7 +514,7 @@
   </div>
 
   <!-- MAP -->
-  <div class="menu-card">
+  <div class="menu-card card-hidden">
     <h2>MAP</h2>
 
     <div class="map-frame">
@@ -579,36 +605,27 @@
 
 <script>
 window.addEventListener("load", () => {
-
-  /* ============================
-     Opening Animation（共通）
-  ============================ */
-  const ring    = document.getElementById("opening-ring");
+  const pageTitle = document.querySelector(".page-title");
+  const menuContainer = document.querySelector(".menu-container");
   const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
-  const rsvBtn  = document.querySelector(".reserve-btn-sub");
-  const bgLogo  = document.getElementById("global-logo-bg");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden, .menu-card");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(()=> ring.classList.add("fadeout"), 1400);
-    setTimeout(()=> ring.style.display = "none", 2400);
-  }
-
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(()=>{
-    if (breadcrumb) breadcrumb.classList.add("show");
+  setTimeout(() => {
+    if (breadcrumb) {
+      breadcrumb.classList.add("show");
+      breadcrumb.style.opacity = "1";
+    }
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 2400);
-
-
-  /* ============================
-     ハンバーガーメニュー開閉
-  ============================ */
-  const closeBtn = document.querySelector(".menu-close-btn");
+    if (pageTitle) pageTitle.classList.add("show");
+    if (menuContainer) menuContainer.querySelectorAll(".menu-card").forEach(card => card.classList.add("show"));
+    cards.forEach(c => c.classList.add("show"));
+  }, 900);
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {
@@ -616,15 +633,7 @@ window.addEventListener("load", () => {
       document.body.classList.add("menu-open");
     });
 
-    // 背景タップで閉じる
-    menuPanel.addEventListener("click", e => {
-      if (e.target === menuPanel) {
-        menuPanel.classList.remove("open");
-        document.body.classList.remove("menu-open");
-      }
-    });
-
-    // × ボタンで閉じる
+    const closeBtn = document.querySelector(".menu-close-btn");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -632,7 +641,13 @@ window.addEventListener("load", () => {
       });
     }
 
-    // リンクタップで閉じる
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
     menuPanel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         menuPanel.classList.remove("open");
@@ -641,27 +656,18 @@ window.addEventListener("load", () => {
     });
   }
 
-
-  /* ============================
-     上に戻るボタン（共通）
-  ============================ */
   const toTopBtn = document.createElement("div");
   toTopBtn.id = "to-top-btn";
   toTopBtn.textContent = "▲";
   document.body.appendChild(toTopBtn);
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
   });
 
   toTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
 });
 </script>
 
