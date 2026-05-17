@@ -531,6 +531,17 @@
   }
 }
 
+
+.case-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.case-fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
@@ -563,7 +574,7 @@
 
 <main class="case-detail-wrap">
 
-<section class="case-detail-head">
+<section class="case-detail-head case-fade">
 <h1>症例2</h1>
 <p>前腕・体正面・体背面・脚・足首の経過写真です。</p>
 
@@ -590,7 +601,7 @@
 </div>
 </section>
 
-<section class="case-block">
+<section class="case-block case-fade">
 <h2>前腕</h2>
 <div class="swiper case-swiper">
 <div class="swiper-wrapper">
@@ -611,7 +622,7 @@
 </div>
 </section>
 
-<section class="case-block">
+<section class="case-block case-fade">
 <h2>体（正面）</h2>
 <div class="swiper case-swiper">
 <div class="swiper-wrapper">
@@ -632,7 +643,7 @@
 </div>
 </section>
 
-<section class="case-block">
+<section class="case-block case-fade">
 <h2>体（背面）</h2>
 <div class="swiper case-swiper">
 <div class="swiper-wrapper">
@@ -653,7 +664,7 @@
 </div>
 </section>
 
-<section class="case-block">
+<section class="case-block case-fade">
 <h2>脚</h2>
 <div class="swiper case-swiper">
 <div class="swiper-wrapper">
@@ -674,7 +685,7 @@
 </div>
 </section>
 
-<section class="case-block">
+<section class="case-block case-fade">
 <h2>足首</h2>
 <div class="swiper case-swiper">
 <div class="swiper-wrapper">
@@ -696,12 +707,12 @@
 <p class="case-note">※得られる結果には個人差があります</p>
 </section>
 
-<div class="case-navigation">
+<div class="case-navigation case-fade">
   <a href="case1.html">症例1を見る</a>
   <a href="case3.html">症例3を見る</a>
 </div>
   
-<section class="case-cta">
+<section class="case-cta case-fade">
 <h2>ご相談・ご予約はこちら</h2>
 <p>ご相談・ご予約はLINEから承っています。</p>
 <a href="https://lin.ee/6bBKc67" class="case-cta-btn" target="_blank">LINEで予約する</a>
@@ -791,12 +802,19 @@ window.addEventListener("load", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const bgLogo = document.getElementById("global-logo-bg");
 
+  const fadeItems = document.querySelectorAll(".case-fade");
+
   setTimeout(()=>{
     breadcrumb?.classList.add("show");
     hamburgerBtn?.classList.add("show");
     rsvBtn?.classList.add("show");
     bgLogo?.classList.add("fade-in");
-  }, 2400);
+
+    fadeItems.forEach(el=>{
+      el.classList.add("show");
+    });
+
+  }, 900);
 
   const menuPanel = document.getElementById("hamburger-menu");
   const closeBtn = document.querySelector(".menu-close-btn");
