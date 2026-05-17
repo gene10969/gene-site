@@ -403,33 +403,6 @@
   }
 }
 
-
-
-
-
-/* menu pc display timing corrected */
-@media (min-width:769px){
-  .breadcrumb{
-    opacity:1 !important;
-  }
-
-  .hamburger-btn,
-  .reserve-btn-sub,
-  .menu-hero-card,
-  .card-hidden,
-  #index-cards .info-card{
-    transition:none !important;
-  }
-}
-
-@media (max-width:768px){
-  .gene-mobile-bottom-nav{
-    opacity:1;
-    transform:translateY(0);
-    pointer-events:auto;
-  }
-}
-
 </style>
 </head>
 <body class="subpage">
@@ -465,12 +438,12 @@
 
 </div>
 
-<h1 class="page-title">アクセス</h1>
+<h1 class="page-title hidden">アクセス</h1>
 
 <div class="menu-container">
 
 <!-- 最寄駅 -->
-<div class="menu-card">
+<div class="menu-card card-hidden">
   <h2>最寄駅</h2>
 
   <table class="station-table station-wide">
@@ -505,7 +478,7 @@
 </div>
 
   <!-- アクセス案内 -->
-  <div class="menu-card">
+  <div class="menu-card card-hidden">
     <h2>駅からのアクセス案内</h2>
     <p>
       長堀通沿いのビルです。<br>
@@ -515,7 +488,7 @@
   </div>
 
   <!-- MAP -->
-  <div class="menu-card">
+  <div class="menu-card card-hidden">
     <h2>MAP</h2>
 
     <div class="map-frame">
@@ -606,44 +579,27 @@
 
 <script>
 window.addEventListener("load", () => {
-  const heroLogo = document.getElementById("hero-logo");
-  const indexCards = document.getElementById("index-cards");
-  const menuHeroCard = document.querySelector(".menu-hero-card");
-  const breadcrumb = document.querySelector(".breadcrumb");
+  const pageTitle = document.querySelector(".page-title");
+  const menuContainer = document.querySelector(".menu-container");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
-  const cards = document.querySelectorAll(".card-hidden");
+  const cards = document.querySelectorAll(".card-hidden, .menu-card");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
-  const mobileBottomNav = document.querySelector(".gene-mobile-bottom-nav");
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-  if (!isMobile) {
-    if (breadcrumb) breadcrumb.style.opacity = "1";
+  setTimeout(() => {
+    if (breadcrumb) {
+      breadcrumb.classList.add("show");
+      breadcrumb.style.opacity = "1";
+    }
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-    if (menuHeroCard) menuHeroCard.classList.add("show");
-    if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
+    if (pageTitle) pageTitle.classList.add("show");
+    if (menuContainer) menuContainer.querySelectorAll(".menu-card").forEach(card => card.classList.add("show"));
     cards.forEach(c => c.classList.add("show"));
-
-    setTimeout(() => {
-      if (heroLogo) heroLogo.classList.add("show");
-    }, 900);
-  } else {
-    setTimeout(() => {
-      if (breadcrumb) breadcrumb.style.opacity = "1";
-      if (hamburgerBtn) hamburgerBtn.classList.add("show");
-      if (rsvBtn) rsvBtn.classList.add("show");
-      if (bgLogo) bgLogo.classList.add("fade-in");
-      if (heroLogo) heroLogo.classList.add("show");
-      if (menuHeroCard) menuHeroCard.classList.add("show");
-      if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
-      cards.forEach(c => c.classList.add("show"));
-      if (mobileBottomNav) mobileBottomNav.classList.add("show");
-    }, 900);
-  }
+  }, 900);
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {
@@ -674,20 +630,18 @@ window.addEventListener("load", () => {
     });
   }
 
-  if (!document.getElementById("to-top-btn")) {
-    const toTopBtn = document.createElement("div");
-    toTopBtn.id = "to-top-btn";
-    toTopBtn.textContent = "▲";
-    document.body.appendChild(toTopBtn);
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
 
-    window.addEventListener("scroll", () => {
-      toTopBtn.classList.toggle("show", window.scrollY > 400);
-    });
+  window.addEventListener("scroll", () => {
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
+  });
 
-    toTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 });
 </script>
 
