@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/voice-fix.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/css/gene-first-view.css">
 
 <style>
 .voice-intro-section{
@@ -524,112 +525,12 @@
 
 
 
-/* mobile breadcrumb hidden */
-@media (max-width:768px){
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* voice only mobile top alignment stronger final */
+/* voice actual selector typography final */
 @media (max-width:768px){
 
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-
-  html,
-  body{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  main,
-  #index-cards,
-  #voice-cards,
-  .voice-container,
-  .voice-wrapper,
-  .voice-list,
-  .page-container{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  /* voiceの冒頭ブロックを強制的に上へ */
-  main > *:first-child,
-  #index-cards > *:first-child,
-  #voice-cards > *:first-child,
-  .voice-container > *:first-child,
-  .voice-wrapper > *:first-child,
-  .voice-list > *:first-child,
-  .page-container > *:first-child{
-    margin-top:34px !important;
-    padding-top:0 !important;
-  }
-
-  /* 院内の雰囲気タイトル周辺の余白を削る */
-  h1:first-child,
-  h2:first-child,
-  .page-title,
-  .voice-title,
-  .section-title:first-child,
-  .info-card:first-child,
-  .intro-card:first-child{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  /* もしsection自体に大きな上下余白がある場合 */
-  section:first-of-type,
-  .section:first-of-type,
-  .voice-section:first-of-type,
-  .info-section:first-of-type{
-    margin-top:34px !important;
-    padding-top:0 !important;
-  }
-
-  /* タイトルと説明文はそのまま読みやすく */
-  .section:first-of-type h1,
-  .section:first-of-type h2,
-  .voice-section:first-of-type h1,
-  .voice-section:first-of-type h2,
-  .info-section:first-of-type h1,
-  .info-section:first-of-type h2{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-}
-
-
-
-
-
-
-
-/* voice top typography copied from index title style */
-@media (max-width:768px){
-
-  .voice-section:first-of-type h1,
-  .voice-section:first-of-type h2,
-  .info-section:first-of-type h1,
-  .info-section:first-of-type h2,
-  .section:first-of-type h1,
-  .section:first-of-type h2,
-  .page-title,
-  .voice-title{
-    font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
+  /* voice.html の実際のトップ見出しに直接指定 */
+  .voice-intro-head h2{
+    font-family:'Playfair Display',"Yu Mincho","Hiragino Mincho ProN","YuMincho","Noto Serif JP",serif !important;
     font-size:clamp(2.55rem, 9.6vw, 3.15rem) !important;
     font-weight:700 !important;
     line-height:1.25 !important;
@@ -640,16 +541,28 @@
     margin-bottom:28px !important;
   }
 
-  .voice-section:first-of-type p,
-  .info-section:first-of-type p,
-  .section:first-of-type p{
-    font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
+  .voice-intro-head p{
+    font-family:'Noto Serif JP',"Yu Mincho","Hiragino Mincho ProN","YuMincho",serif !important;
     font-size:clamp(1.02rem, 4.1vw, 1.18rem) !important;
     font-weight:400 !important;
     line-height:2.05 !important;
     letter-spacing:.035em !important;
     color:rgba(255,255,255,.92) !important;
     text-align:center !important;
+  }
+
+  .voice-intro-section{
+    padding-top:34px !important;
+  }
+}
+
+
+
+/* voice mobile breadcrumb hide */
+@media (max-width:768px){
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
   }
 }
 
