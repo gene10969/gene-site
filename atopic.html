@@ -443,12 +443,24 @@ body.atopic-page .menu-card{
   }
 }
 
+
+/* atopic menu timing sync */
+.atopic-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.atopic-fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 
 <body class="subpage atopic-page">
 
-<div id="global-logo-bg">
+<div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
 
@@ -472,13 +484,13 @@ body.atopic-page .menu-card{
   <a href="voice.html">院内・改善写真</a>
 </div>
 
-<h1 class="page-title">アトピーでお悩みの方へ</h1>
+<h1 class="page-title atopic-fade">アトピーでお悩みの方へ</h1>
 
-<p class="dizziness-lead">
+<p class="dizziness-lead atopic-fade">
   大阪 自律神経専門整体院 gene のアトピーページ。肌荒れ、かゆみ、自律神経やストレスと関係する不調についてご案内しています。
 </p>
 
-<div class="dizziness-intro-card">
+<div class="dizziness-intro-card atopic-fade">
   <p>
     アトピーは皮膚だけの問題ではなく、<br>
     睡眠不足、ストレス、呼吸の浅さ、自律神経の乱れなどが重なっているケースがあります。<br><br>
@@ -487,7 +499,7 @@ body.atopic-page .menu-card{
   </p>
 </div>
 
-<div class="dizziness-links">
+<div class="dizziness-links atopic-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善写真を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
@@ -495,7 +507,7 @@ body.atopic-page .menu-card{
 
 <div class="menu-container">
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>来院時によくある状態</h2>
     <p>
       ・かゆみで眠りが浅くなる<br>
@@ -505,7 +517,7 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>当院の見立て</h2>
     <p>
       皮膚だけでなく、呼吸、睡眠、緊張状態、循環、自律神経の偏りなども確認します。<br><br>
@@ -513,7 +525,7 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>施術の考え方</h2>
     <p>
       強い刺激ではなく、身体が過敏に反応しにくい範囲で施術を行います。<br><br>
@@ -521,7 +533,7 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>このような方に</h2>
     <p>
       ・薬以外の方向性も考えたい<br>
@@ -531,7 +543,7 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>ご案内</h2>
     <p>
       症状の経過や感じ方には個人差があります。<br>
@@ -539,7 +551,7 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card atopic-fade">
     <h2>ご相談・ご予約はこちら</h2>
     <p>
       現在の状態を整理するところからでも大丈夫です。<br>
@@ -623,16 +635,14 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const fadeItems = document.querySelectorAll(".atopic-fade");
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(() => {
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(() => {
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 900);
+    fadeItems.forEach(el => el.classList.add("show"));
   }, 900);
 
   const closeBtn = document.querySelector(".menu-close-btn");
@@ -671,11 +681,7 @@ window.addEventListener("load", () => {
   document.body.appendChild(toTopBtn);
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      toTopBtn.classList.add("show");
-    } else {
-      toTopBtn.classList.remove("show");
-    }
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
   });
 
   toTopBtn.addEventListener("click", () => {
