@@ -403,6 +403,32 @@
   }
 }
 
+
+/* access page timing: match menu.html */
+.page-title.hidden,
+.breadcrumb-fixed.hidden,
+.reserve-btn-sub.hidden,
+.menu-card.card-hidden{
+  opacity:0;
+}
+
+.page-title.hidden,
+.menu-card.card-hidden{
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.page-title.hidden.show,
+.menu-card.card-hidden.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.breadcrumb-fixed.hidden.show,
+.reserve-btn-sub.hidden.show{
+  opacity:1;
+}
+
 </style>
 </head>
 <body class="subpage">
