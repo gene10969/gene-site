@@ -347,6 +347,17 @@
   }
 }
 
+
+.faq-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.faq-fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 <body class="subpage">
@@ -382,37 +393,37 @@
 
 </div>
 
-<h1 class="page-title">よくある質問</h1>
+<h1 class="page-title faq-fade">よくある質問</h1>
 
 <div class="menu-container">
 
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>どんな施術ですか？</h2>
     <p>過剰な刺激を行わず、自律神経のバランスを整える施術です。ただし、症状の内容によっては刺激のある施術を行う場合がありますがお声がけをいたします。</p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>服装に指定はありますか？</h2>
     <p>お着替えのご用意はございますが、なるべくリラックスできる動きやすい服装でお越しください。</p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>支払い方法は何がありますか？</h2>
     <p>現金・クレジットカード・電子マネー・QR決済に対応しています。</p>
 
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>健康保険は使えますか？</h2>
     <p>完全実費施術となりますので「各種健康保健」は適用外となります。</p>
   </div>
   
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>予約なしでも大丈夫ですか？</h2>
     <p>当院は男性院長1人で施術しておりますので、完全予約制になります。空きがありましたら当日予約も承りますので、LINEでお問い合わせください。</p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card faq-fade">
     <h2>駐車場や駐輪場はありますか？</h2>
     <p>近隣のコインパーキングをご利用ください。駐輪場も建物敷地内にはございません。</p>
   </div>
@@ -493,11 +504,7 @@ window.addEventListener("load", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
 
-  if (ring) {
-    ring.classList.add("show");
-    setTimeout(()=> ring.classList.add("fadeout"), 1400);
-    setTimeout(()=> ring.style.display = "none", 2400);
-  }
+  const fadeItems = document.querySelectorAll(".faq-fade");
 
   /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(()=>{
@@ -505,7 +512,12 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 2400);
+
+    fadeItems.forEach(el=>{
+      el.classList.add("show");
+    });
+
+  }, 900);
 
 
   /* ============================
