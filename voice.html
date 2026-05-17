@@ -616,22 +616,23 @@
 
 
 
-/* voice top typography exact index match */
+
+
+/* voice top typography copied from index title style */
 @media (max-width:768px){
 
-  /* voice冒頭タイトルをindexの「大阪 自律神経専門整体院 / gene」と同系統へ強制統一 */
   .voice-section:first-of-type h1,
   .voice-section:first-of-type h2,
   .info-section:first-of-type h1,
   .info-section:first-of-type h2,
   .section:first-of-type h1,
   .section:first-of-type h2,
-  .voice-title,
-  .page-title{
+  .page-title,
+  .voice-title{
     font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
-    font-size:2.55rem !important;
+    font-size:clamp(2.55rem, 9.6vw, 3.15rem) !important;
     font-weight:700 !important;
-    line-height:1.28 !important;
+    line-height:1.25 !important;
     letter-spacing:.035em !important;
     color:#d9c17e !important;
     text-align:center !important;
@@ -639,16 +640,15 @@
     margin-bottom:28px !important;
   }
 
-  /* voice冒頭説明文をindexの説明文と近いサイズへ */
   .voice-section:first-of-type p,
   .info-section:first-of-type p,
   .section:first-of-type p{
     font-family:"Yu Mincho","Hiragino Mincho ProN","YuMincho","Times New Roman",serif !important;
-    font-size:1.05rem !important;
+    font-size:clamp(1.02rem, 4.1vw, 1.18rem) !important;
     font-weight:400 !important;
     line-height:2.05 !important;
     letter-spacing:.035em !important;
-    color:rgba(255,255,255,.9) !important;
+    color:rgba(255,255,255,.92) !important;
     text-align:center !important;
   }
 }
