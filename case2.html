@@ -31,12 +31,12 @@
 .case-detail-wrap{
   max-width:1100px;
   margin:0 auto;
-  padding:180px 20px 100px;
+  padding:260px 20px 100px;
 }
 
 .case-detail-head{
   text-align:center;
-  margin-bottom:34px;
+  margin-bottom:56px;
 }
 
 .case-detail-head h1{
@@ -49,7 +49,7 @@
 
 .case-intro-text{
   max-width:900px;
-  margin:28px auto 46px;
+  margin:40px auto 60px;
   line-height:2.2;
   color:rgba(255,255,255,0.9);
   font-size:1rem;
@@ -540,6 +540,18 @@
 .case-fade.show{
   opacity:1;
   transform:translateY(0);
+}
+
+
+/* PC case title position strict fix */
+@media (min-width:769px){
+  body.subpage .case-detail-wrap{
+    padding-top:260px !important;
+  }
+
+  body.subpage .case-detail-head{
+    margin-bottom:56px !important;
+  }
 }
 
 </style>
