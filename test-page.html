@@ -575,103 +575,69 @@
 
 
 
-/* gene bottom navigation gold refinement */
+/* gene bottom nav refined gold - fixed */
 @media (max-width:768px){
   .gene-mobile-bottom-nav{
-    gap:6px !important;
-    padding:7px 8px calc(7px + env(safe-area-inset-bottom)) !important;
-    background:rgba(5,5,5,.94) !important;
-    border-top:1px solid rgba(217,193,126,.34) !important;
-    box-shadow:0 -14px 34px rgba(0,0,0,.48), 0 -1px 0 rgba(217,193,126,.08) !important;
+    opacity:1 !important;
+    transform:none !important;
+    pointer-events:auto !important;
+    transition:none !important;
   }
 
   .gene-mobile-bottom-nav a,
   .gene-mobile-bottom-nav button{
-    min-height:50px !important;
-    padding:5px 3px !important;
     border:1px solid rgba(217,193,126,.24) !important;
     border-radius:16px !important;
-    background:rgba(217,193,126,.065) !important;
-    color:#d9c17e !important;
-    box-shadow:0 6px 18px rgba(217,193,126,.07) !important;
-    transition:background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease !important;
+    background:rgba(217,193,126,.045) !important;
+    color:rgba(217,193,126,.86) !important;
+    box-shadow:0 5px 16px rgba(217,193,126,.055) !important;
+    -webkit-tap-highlight-color:transparent !important;
+    transition:none !important;
+    transform:none !important;
   }
 
-  .gene-mobile-bottom-nav a:hover,
+  .gene-mobile-bottom-nav a:not(.line-nav):hover,
+  .gene-mobile-bottom-nav a:not(.line-nav):focus,
+  .gene-mobile-bottom-nav a:not(.line-nav):active,
   .gene-mobile-bottom-nav button:hover,
-  .gene-mobile-bottom-nav button[aria-expanded="true"]{
-    transform:translateY(-1px) !important;
-    background:linear-gradient(180deg, rgba(234,216,147,.95) 0%, rgba(217,193,126,.95) 100%) !important;
-    color:#111 !important;
-    border-color:rgba(217,193,126,.72) !important;
-    box-shadow:0 8px 22px rgba(217,193,126,.18) !important;
+  .gene-mobile-bottom-nav button:focus,
+  .gene-mobile-bottom-nav button:active{
+    background:rgba(217,193,126,.045) !important;
+    color:rgba(217,193,126,.86) !important;
+    box-shadow:0 5px 16px rgba(217,193,126,.055) !important;
+    transform:none !important;
+    opacity:1 !important;
   }
 
   .gene-mobile-bottom-nav .nav-icon,
   .gene-mobile-bottom-nav .nav-text{
-    color:inherit !important;
+    color:rgba(217,193,126,.88) !important;
+    font-weight:400 !important;
   }
 
   .gene-mobile-bottom-nav .line-nav{
+    border:1px solid rgba(234,216,147,.82) !important;
     color:#111 !important;
-    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%) !important;
-    border-color:rgba(234,216,147,.82) !important;
-    box-shadow:0 8px 24px rgba(217,193,126,.24) !important;
+    background:linear-gradient(180deg,#f0df9f 0%,#d9c17e 100%) !important;
+    box-shadow:0 8px 22px rgba(217,193,126,.22) !important;
+  }
+
+  .gene-mobile-bottom-nav .line-nav:hover,
+  .gene-mobile-bottom-nav .line-nav:focus,
+  .gene-mobile-bottom-nav .line-nav:active{
+    color:#111 !important;
+    background:linear-gradient(180deg,#f0df9f 0%,#d9c17e 100%) !important;
+    box-shadow:0 8px 22px rgba(217,193,126,.22) !important;
+    transform:none !important;
+    opacity:1 !important;
+  }
+
+  .gene-mobile-bottom-nav .line-nav .nav-icon,
+  .gene-mobile-bottom-nav .line-nav .nav-text{
+    color:#111 !important;
     font-weight:600 !important;
   }
-
-  .gene-mobile-bottom-nav .line-nav:hover{
-    transform:translateY(-1px) !important;
-    opacity:.94 !important;
-    box-shadow:0 10px 28px rgba(217,193,126,.30) !important;
-  }
-
-  .gene-mobile-symptom-grid a{
-    border:1px solid rgba(217,193,126,.34) !important;
-    background:rgba(217,193,126,.075) !important;
-    color:#d9c17e !important;
-    box-shadow:0 6px 18px rgba(217,193,126,.07) !important;
-    transition:background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease !important;
-  }
-
-  .gene-mobile-symptom-grid a::after{
-    content:"›" !important;
-    color:#d9c17e !important;
-    font-size:1.15rem !important;
-    line-height:1 !important;
-    transition:color .25s ease, transform .25s ease !important;
-  }
-
-  .gene-mobile-symptom-grid a:hover{
-    transform:translateY(-1px) !important;
-    background:linear-gradient(180deg, rgba(234,216,147,.95) 0%, rgba(217,193,126,.95) 100%) !important;
-    color:#111 !important;
-    border-color:rgba(217,193,126,.72) !important;
-    box-shadow:0 10px 24px rgba(217,193,126,.20) !important;
-  }
-
-  .gene-mobile-symptom-grid a:hover::after{
-    color:#111 !important;
-    transform:translateX(2px) !important;
-  }
-
-  .gene-mobile-extra-links a{
-    border-color:rgba(217,193,126,.34) !important;
-    background:rgba(217,193,126,.075) !important;
-    color:#d9c17e !important;
-    box-shadow:0 6px 18px rgba(217,193,126,.07) !important;
-    transition:background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease !important;
-  }
-
-  .gene-mobile-extra-links a:hover{
-    transform:translateY(-1px) !important;
-    background:linear-gradient(180deg, rgba(234,216,147,.95) 0%, rgba(217,193,126,.95) 100%) !important;
-    color:#111 !important;
-    border-color:rgba(217,193,126,.72) !important;
-    box-shadow:0 10px 24px rgba(217,193,126,.20) !important;
-  }
 }
-
 </style>
 </head>
 
