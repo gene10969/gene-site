@@ -252,6 +252,45 @@
 }
 
 
+/* index symptom links mobile clean grid */
+@media (max-width:640px){
+  .top-symptom-links{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    margin-top:22px;
+  }
+
+  .top-symptom-links a{
+    width:100%;
+    min-height:48px;
+    box-sizing:border-box;
+    justify-content:space-between;
+    padding:12px 14px;
+    border-radius:16px;
+    font-size:.92rem;
+    line-height:1.35;
+    text-align:left;
+    white-space:nowrap;
+  }
+
+  .top-symptom-links a::after{
+    margin-left:8px;
+    flex:0 0 auto;
+  }
+}
+
+@media (max-width:360px){
+  .top-symptom-links{
+    grid-template-columns:1fr;
+  }
+
+  .top-symptom-links a{
+    min-height:46px;
+  }
+}
+
+
 /* gene mobile bottom navigation */
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
