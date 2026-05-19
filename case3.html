@@ -911,5 +911,89 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })();
 </script>
 
+
+<script>
+(function(){
+  function setupGeneToTopPanelAvoidance(){
+    const panel = document.getElementById("gene-mobile-symptom-panel");
+    const toggle = document.getElementById("gene-mobile-symptom-toggle");
+    const close = document.getElementById("gene-mobile-symptom-close");
+    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+
+    if (!panel) return;
+    if (panel.dataset.toTopAvoidanceReady === "true") return;
+    panel.dataset.toTopAvoidanceReady = "true";
+
+    function getToTopBtn(){
+      return document.getElementById("to-top-btn");
+    }
+
+    function updateToTopPosition(){
+      const btn = getToTopBtn();
+      if (!btn) return;
+
+      if (window.innerWidth > 768) {
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
+        return;
+      }
+
+      if (panel.classList.contains("open")) {
+        const rect = panel.getBoundingClientRect();
+        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
+
+        btn.style.setProperty(
+          "bottom",
+          "calc(" + bottomValue + "px + env(safe-area-inset-bottom))",
+          "important"
+        );
+
+        btn.style.setProperty("z-index", "9999", "important");
+
+      } else {
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
+      }
+    }
+
+    const observer = new MutationObserver(updateToTopPosition);
+
+    observer.observe(panel, {
+      attributes:true,
+      attributeFilter:["class"]
+    });
+
+    [toggle, close, backdrop].forEach(function(el){
+      if (!el) return;
+
+      el.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 30);
+      });
+    });
+
+    panel.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 30);
+      });
+    });
+
+    window.addEventListener("resize", updateToTopPosition, { passive:true });
+    window.addEventListener("scroll", updateToTopPosition, { passive:true });
+
+    setTimeout(updateToTopPosition, 300);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
+  } else {
+    setupGeneToTopPanelAvoidance();
+  }
+
+  window.addEventListener("load", function(){
+    setTimeout(setupGeneToTopPanelAvoidance, 500);
+  });
+})();
+</script>
+
 </body>
 </html>
