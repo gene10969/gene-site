@@ -8,808 +8,437 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8KPJ55NQMT');
 </script>
-  
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>院内・改善事例 | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene の改善写真。実際の変化に加え、院内の雰囲気もご紹介します。">
+<title>施術内容｜gene自律神経調整整体｜大阪 自律神経専門整体院 gene</title>
+<meta name="description" content="大阪 自律神経専門整体院 geneの施術内容。gene自律神経調整整体では、一人ひとりの状態に合わせて身体全体のバランスから整えていきます。">
+
+<meta property="og:title" content="gene自律神経調整整体｜大阪 自律神経専門整体院 gene">
+<meta property="og:description" content="一人ひとりの状態に合わせて調整するオーダーメイド整体。自律神経の乱れによる不調に対応しています。">
+<meta property="og:url" content="https://gene-seitai.com/menu.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="profile_main.webp">
+<link rel="canonical" href="https://gene-seitai.com/menu.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "ホーム",
+    "item": "https://gene-seitai.com/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "施術内容",
+    "item": "https://gene-seitai.com/menu.html"
+  }]
+}
+</script>
 
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/voice-fix.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/menu-symptom-links.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
 
 <style>
-.voice-intro-section{
-  max-width:1100px;
-  margin:0 auto 100px;
-  padding:120px 20px 0;
+.menu-hero-card{
+  max-width: 980px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s ease, transform .8s ease;
 }
-
-.voice-intro-head{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.voice-intro-head h2{
-  font-size:2rem;
-  font-weight:500;
-  letter-spacing:.08em;
-  margin-bottom:16px;
-}
-
-.voice-intro-head p{
-  font-size:1rem;
-  line-height:2;
-  opacity:.9;
-}
-
-.voice-intro-grid{
+.menu-hero-card.show{ opacity:1; transform:translateY(0); }
+.menu-hero-inner{
   display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:28px;
-}
-
-.voice-intro-card{
-  margin:0;
-}
-
-.voice-intro-card img{
-  width:100%;
-  aspect-ratio:4 / 3;
-  object-fit:cover;
-  display:block;
-  border-radius:18px;
-}
-
-.voice-intro-card figcaption{
-  text-align:center;
-  margin-top:14px;
-  font-size:.98rem;
-  letter-spacing:.04em;
-  line-height:1.8;
-}
-
-@media (max-width: 768px){
-  .voice-intro-section{
-    padding:100px 16px 0;
-    margin-bottom:70px;
-  }
-
-  .voice-intro-head h2{
-    font-size:1.5rem;
-  }
-
-  .voice-intro-grid{
-    grid-template-columns:1fr;
-    gap:22px;
-  }
-
-  .voice-intro-card img{
-    border-radius:14px;
-  }
-}
-
-
-.voice-case-detail-link{
-  text-align:center;
-  margin:-4px 0 26px;
-}
-
-.voice-case-detail-link a{
-  display:inline-flex;
+  grid-template-columns:minmax(0,430px) minmax(0,1fr);
+  gap:34px;
   align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:8px 22px;
-  border:1px solid rgba(217,193,126,.38);
-  border-radius:999px;
-  color:#d9c17e;
-  background:rgba(217,193,126,.055);
-  text-decoration:none;
-  font-size:.92rem;
-  letter-spacing:.04em;
-  transition:opacity .25s ease, transform .25s ease, background .25s ease;
+  background:rgba(10,10,10,.72);
+  border:1px solid rgba(217,193,126,.22);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  backdrop-filter:blur(6px);
+  position:relative;
+  overflow:hidden;
 }
+.menu-main-photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;display:block;border:1px solid rgba(217,193,126,.24);}
+.menu-copy h2{font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.45;color:#f4ead0;margin:0 0 18px;font-weight:500;}
+.menu-copy p{white-space:pre-line;line-height:2.05;color:rgba(255,255,255,.9);margin:0 0 22px;}
+.menu-badges{display:flex;flex-wrap:wrap;gap:10px;}
+.menu-badges span{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 14px;border-radius:999px;border:1px solid rgba(217,193,126,.3);color:#f3e6bf;background:rgba(217,193,126,.08);font-size:.92rem;line-height:1.5;}
+.menu-section-image{width:100%;display:block;border-radius:16px;border:1px solid rgba(217,193,126,.22);}
+.menu-price-wrap{margin-top:0;padding:18px;border-radius:18px;background:transparent;border:none;box-shadow:none;backdrop-filter:none;}
+.menu-price-title{color:#d9c17e;font-size:1rem;letter-spacing:.08em;margin-bottom:10px;}
+.menu-price-main{font-size:clamp(1.45rem,3vw,1.95rem);color:#f4ead0;line-height:1.45;margin:0 0 8px;}
+.menu-price-sub{color:rgba(255,255,255,.78);line-height:1.9;white-space:pre-line;margin:0;}
+.price-gold{color:#d9c17e;}
+.symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;}
+.symptom-list div{border:1px solid rgba(217,193,126,.18);background:rgba(255,255,255,.02);border-radius:14px;padding:14px 14px 12px;color:rgba(255,255,255,.92);line-height:1.8;}
+.symptom-list a{display:block;color:rgba(255,255,255,.92);text-decoration:none;}
+.symptom-list div.has-link{transition:opacity .25s ease, transform .25s ease, border-color .25s ease;}
+.symptom-list div.has-link:hover{opacity:.86;transform:translateY(-1px);border-color:rgba(217,193,126,.32);}
+.menu-note{margin-top:18px;color:rgba(255,255,255,.76);line-height:1.95;white-space:pre-line;}
+.menu-cta-card{text-align:center;margin-top:24px;}
+.menu-cta-card p{white-space:pre-line;}
+.menu-cta-link{display:inline-flex;align-items:center;justify-content:center;margin-top:10px;min-height:48px;padding:12px 28px;border-radius:999px;text-decoration:none;color:#111;background:#d9c17e;font-size:1rem;letter-spacing:.06em;transition:transform .25s ease,opacity .25s ease;}
+.menu-cta-link:hover{transform:translateY(-2px);opacity:.92;}
+#index-cards{max-width:980px;margin:0 auto;padding:0 20px 80px;}
+#index-cards .info-card{margin-top:24px;overflow:hidden;position:relative;}
+#index-cards .info-card:first-child{margin-top:32px;}
+.menu-split{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px;align-items:start;}
+.menu-split.reverse{grid-template-columns:minmax(0,1fr) minmax(0,360px);}
+.menu-split.centered{align-items:center;}
+.menu-split-media{width:100%;}
+.menu-split-content h3{margin-top:0;}
+.menu-split-content p{white-space:pre-line;}
 
-.voice-case-detail-link a:hover{
-  opacity:.86;
-  transform:translateY(-1px);
-  background:rgba(217,193,126,.09);
+/* menu symptom card links */
+.menu-symptom-links-section{text-align:center;}
+.menu-symptom-links-section h3{text-align:center;}
+.menu-symptom-links-lead{max-width:760px;margin:0 auto 30px;color:rgba(255,255,255,.86);line-height:2;white-space:pre-line;text-align:center;}
+.menu-symptom-category{margin-top:34px;text-align:left;}
+.menu-symptom-category:first-of-type{margin-top:24px;}
+.menu-symptom-category-title{display:inline-flex;align-items:center;gap:10px;color:#d9c17e;font-size:1.05rem;letter-spacing:.12em;margin:0 0 16px;}
+.menu-symptom-category-title::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,rgba(217,193,126,.1),rgba(217,193,126,.8));}
+.menu-symptom-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:0;}
+.menu-symptom-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:126px;padding:24px 70px 24px 28px;border-radius:14px;border:1px solid rgba(217,193,126,.62);background:linear-gradient(135deg, rgba(217,193,126,.075), rgba(255,255,255,.025) 42%, rgba(0,0,0,.22));color:rgba(255,255,255,.9);text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.025);overflow:hidden;transition:opacity .25s ease, transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;}
+.menu-symptom-card::after{content:"›";position:absolute;right:24px;top:50%;transform:translateY(-50%);color:#d9c17e;font-size:2.8rem;line-height:1;font-weight:300;text-shadow:0 0 16px rgba(217,193,126,.34);transition:transform .25s ease, color .25s ease, text-shadow .25s ease;}
+.menu-symptom-card:hover{opacity:.98;transform:translateY(-3px);border-color:rgba(234,216,147,.95);background:linear-gradient(135deg, rgba(217,193,126,.14), rgba(255,255,255,.04) 42%, rgba(0,0,0,.20));box-shadow:0 18px 44px rgba(0,0,0,.28), 0 0 26px rgba(217,193,126,.18), inset 0 0 0 1px rgba(234,216,147,.12);}
+.menu-symptom-card:hover::after{transform:translate(5px,-50%);color:#f0dc93;text-shadow:0 0 22px rgba(217,193,126,.54);}
+.menu-symptom-title{display:block;color:#d9c17e;font-size:1.36rem;line-height:1.45;letter-spacing:.08em;margin-bottom:10px;font-weight:600;text-align:left;}
+.menu-symptom-text{display:block;color:rgba(255,255,255,.86);font-size:.98rem;line-height:1.85;text-align:left;}
+
+/* gene flow scroll effect: 静かな神経の流れ */
+.gene-scroll-rhythm,
+.gene-scroll-rhythm *{
+  will-change:transform, opacity, filter;
 }
-
-.voice-case-detail-link a:visited{
-  color:#d9c17e;
+.gene-flow-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:0;
+  transition:opacity 1.1s ease;
+  mix-blend-mode:screen;
 }
-
-
+.gene-flow-layer.show{opacity:.55;}
+.gene-flow-line{
+  position:absolute;
+  left:50%;
+  top:-12vh;
+  width:1px;
+  height:124vh;
+  background:linear-gradient(180deg, transparent, rgba(217,193,126,.16), rgba(217,193,126,.04), transparent);
+  filter:blur(.2px);
+  transform:translateX(-50%);
+}
+.gene-flow-line.line-a{margin-left:-42vw;opacity:.32;}
+.gene-flow-line.line-b{margin-left:43vw;opacity:.24;}
+.gene-flow-orb{
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(234,216,147,.9), rgba(217,193,126,.18) 48%, transparent 70%);
+  filter:blur(.1px);
+  opacity:.38;
+  transform:translate3d(0,0,0);
+}
+.gene-flow-orb.orb-a{left:12vw;top:20vh;}
+.gene-flow-orb.orb-b{right:13vw;top:68vh;width:7px;height:7px;opacity:.32;}
+.gene-scroll-rhythm .info-card,
+.gene-scroll-rhythm .menu-hero-inner,
+.gene-scroll-rhythm .menu-symptom-card,
+.gene-scroll-rhythm .symptom-list div{
+  --gene-depth:0;
+  --gene-glow:0;
+  --gene-sheen-x:-130%;
+}
+.gene-scroll-rhythm .info-card::before,
+.gene-scroll-rhythm .menu-hero-inner::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(217,193,126,calc(var(--gene-glow) * .13)), transparent 34%),
+    linear-gradient(90deg, transparent, rgba(234,216,147,calc(var(--gene-glow) * .22)), transparent);
+  transform:translateX(var(--gene-sheen-x));
+  opacity:var(--gene-glow);
+  transition:opacity .55s ease;
+}
+.gene-scroll-rhythm .info-card::after,
+.gene-scroll-rhythm .menu-hero-inner::after,
+.gene-scroll-rhythm .menu-symptom-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(135deg, rgba(217,193,126,calc(var(--gene-glow) * .09)), transparent 42%);
+  opacity:calc(var(--gene-depth) * .65);
+}
+.gene-scroll-rhythm .gene-depth-active{
+  transform:translate3d(0, calc((1 - var(--gene-depth)) * 10px), 0) scale(calc(.992 + var(--gene-depth) * .008));
+  filter:brightness(calc(.92 + var(--gene-depth) * .08));
+}
+.gene-scroll-rhythm .menu-section-image,
+.gene-scroll-rhythm .menu-main-photo{
+  transform:translate3d(0, calc((.5 - var(--gene-depth)) * 14px), 0) scale(calc(1.012 + var(--gene-depth) * .012));
+  transition:transform .18s linear;
+}
+.gene-scroll-rhythm .gene-text-current h3,
+.gene-scroll-rhythm .gene-text-current h2,
+.gene-scroll-rhythm .gene-text-current .menu-symptom-title{
+  text-shadow:0 0 calc(10px * var(--gene-glow)) rgba(217,193,126,.28);
+}
+@media (prefers-reduced-motion: reduce){
+  .gene-flow-layer{display:none !important;}
+  .gene-scroll-rhythm .gene-depth-active,
+  .gene-scroll-rhythm .menu-section-image,
+  .gene-scroll-rhythm .menu-main-photo{transform:none !important;filter:none !important;}
+  .gene-scroll-rhythm .info-card::before,
+  .gene-scroll-rhythm .menu-hero-inner::before,
+  .gene-scroll-rhythm .info-card::after,
+  .gene-scroll-rhythm .menu-hero-inner::after,
+  .gene-scroll-rhythm .menu-symptom-card::before{display:none !important;}
+}
 
 /* gene mobile bottom navigation */
-.gene-mobile-bottom-nav,
-.gene-mobile-symptom-panel,
-.gene-mobile-symptom-backdrop{
-  display:none;
-}
-
+.gene-mobile-bottom-nav,.gene-mobile-symptom-panel,.gene-mobile-symptom-backdrop{display:none;}
 @media (max-width: 768px){
-  body{
-    padding-bottom: calc(76px + env(safe-area-inset-bottom));
-  }
-
-  .gene-mobile-bottom-nav{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:9998;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:0;
-    padding:7px 8px calc(7px + env(safe-area-inset-bottom));
-    background:rgba(5,5,5,.94);
-    border-top:1px solid rgba(217,193,126,.28);
-    box-shadow:0 -12px 30px rgba(0,0,0,.42);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-  }
-
-  .gene-mobile-bottom-nav a,
-  .gene-mobile-bottom-nav button{
-    appearance:none;
-    -webkit-appearance:none;
-    border:0;
-    background:transparent;
-    color:rgba(255,255,255,.82);
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:3px;
-    min-width:0;
-    min-height:50px;
-    padding:4px 2px;
-    font-family:inherit;
-    letter-spacing:.04em;
-    font-size:10px;
-    line-height:1.25;
-    cursor:pointer;
-  }
-
-  .gene-mobile-bottom-nav .nav-icon{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:22px;
-    height:22px;
-    color:#d9c17e;
-    font-size:18px;
-    line-height:1;
-  }
-
-  .gene-mobile-bottom-nav .nav-text{
-    white-space:nowrap;
-  }
-
-  .gene-mobile-bottom-nav .line-nav{
-    color:#111;
-    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
-    border-radius:16px;
-    box-shadow:0 6px 18px rgba(217,193,126,.20);
-  }
-
-  .gene-mobile-bottom-nav .line-nav .nav-icon,
-  .gene-mobile-bottom-nav .line-nav .nav-text{
-    color:#111;
-    font-weight:600;
-  }
-
-  .gene-mobile-symptom-backdrop{
-    position:fixed;
-    inset:0;
-    z-index:9996;
-    background:rgba(0,0,0,.38);
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .25s ease;
-    display:block;
-  }
-
-  .gene-mobile-symptom-backdrop.open{
-    opacity:1;
-    pointer-events:auto;
-  }
-
-  .gene-mobile-symptom-panel{
-    position:fixed;
-    left:10px;
-    right:10px;
-    bottom:calc(72px + env(safe-area-inset-bottom));
-    z-index:9997;
-    display:block;
-    padding:16px;
-    border:1px solid rgba(217,193,126,.34);
-    border-radius:22px;
-    background:rgba(8,8,8,.96);
-    box-shadow:0 -16px 34px rgba(0,0,0,.5);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
-    transform:translateY(18px);
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .25s ease, transform .25s ease;
-  }
-
-  .gene-mobile-symptom-panel.open{
-    opacity:1;
-    transform:translateY(0);
-    pointer-events:auto;
-  }
-
-  .gene-mobile-symptom-panel-title{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    color:#d9c17e;
-    font-size:.95rem;
-    letter-spacing:.08em;
-    margin:0 0 12px;
-  }
-
-  .gene-mobile-symptom-close{
-    appearance:none;
-    -webkit-appearance:none;
-    border:1px solid rgba(217,193,126,.28);
-    background:rgba(255,255,255,.04);
-    color:#d9c17e;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    font-size:1.35rem;
-    line-height:1;
-    cursor:pointer;
-  }
-
-  .gene-mobile-symptom-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .gene-mobile-symptom-grid a{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    min-height:44px;
-    padding:11px 12px;
-    border-radius:14px;
-    border:1px solid rgba(217,193,126,.46);
-    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
-    color:#111;
-    text-decoration:none;
-    font-size:.88rem;
-    line-height:1.35;
-    box-shadow:0 8px 22px rgba(217,193,126,.16);
-  }
-
-  
-  .gene-mobile-extra-links{
-    margin-top:12px;
-    padding-top:12px;
-    border-top:1px solid rgba(217,193,126,.18);
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .gene-mobile-extra-links a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:42px;
-    padding:10px 12px;
-    border-radius:14px;
-    border:1px solid rgba(217,193,126,.28);
-    background:rgba(217,193,126,.075);
-    color:#d9c17e;
-    text-decoration:none;
-    font-size:.88rem;
-    line-height:1.35;
-  }
-
-  .gene-mobile-symptom-grid a::after{
-    content:"›";
-    color:#111;
-    font-size:1.15rem;
-    line-height:1;
-  }
+  body{padding-bottom: calc(76px + env(safe-area-inset-bottom));}
+  .gene-mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);border-top:1px solid rgba(217,193,126,.28);box-shadow:0 -12px 30px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+  .gene-mobile-bottom-nav a,.gene-mobile-bottom-nav button{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:rgba(255,255,255,.82);text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:50px;padding:4px 2px;font-family:inherit;letter-spacing:.04em;font-size:10px;line-height:1.25;cursor:pointer;}
+  .gene-mobile-bottom-nav .nav-icon{display:flex;align-items:center;justify-content:center;width:22px;height:22px;color:#d9c17e;font-size:18px;line-height:1;}
+  .gene-mobile-bottom-nav .nav-text{white-space:nowrap;}
+  .gene-mobile-bottom-nav .line-nav{color:#111;background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);border-radius:16px;box-shadow:0 6px 18px rgba(217,193,126,.20);}
+  .gene-mobile-bottom-nav .line-nav .nav-icon,.gene-mobile-bottom-nav .line-nav .nav-text{color:#111;font-weight:600;}
+  .gene-mobile-symptom-backdrop{position:fixed;inset:0;z-index:9996;background:rgba(0,0,0,.38);opacity:0;pointer-events:none;transition:opacity .25s ease;display:block;}
+  .gene-mobile-symptom-backdrop.open{opacity:1;pointer-events:auto;}
+  .gene-mobile-symptom-panel{position:fixed;left:10px;right:10px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:9997;display:block;padding:16px;border:1px solid rgba(217,193,126,.34);border-radius:22px;background:rgba(8,8,8,.96);box-shadow:0 -16px 34px rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(18px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;max-height:70vh;overflow:auto;}
+  .gene-mobile-symptom-panel.open{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .gene-mobile-symptom-panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d9c17e;font-size:.95rem;letter-spacing:.08em;margin:0 0 12px;}
+  .gene-mobile-symptom-close{appearance:none;-webkit-appearance:none;border:1px solid rgba(217,193,126,.28);background:rgba(255,255,255,.04);color:#d9c17e;width:34px;height:34px;border-radius:50%;font-size:1.35rem;line-height:1;cursor:pointer;}
+  .gene-mobile-symptom-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .gene-mobile-symptom-grid a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:11px 12px;border-radius:14px;border:1px solid rgba(217,193,126,.22);background:rgba(255,255,255,.045);color:rgba(255,255,255,.92);text-decoration:none;font-size:.88rem;line-height:1.35;}
+  .gene-mobile-symptom-grid a::after{content:"›";color:#d9c17e;font-size:1.15rem;line-height:1;}
+  .gene-mobile-extra-links{margin-top:12px;padding-top:12px;border-top:1px solid rgba(217,193,126,.18);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .gene-mobile-extra-links a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:10px 12px;border-radius:14px;border:1px solid rgba(217,193,126,.28);background:rgba(217,193,126,.075);color:#d9c17e;text-decoration:none;font-size:.88rem;line-height:1.35;}
+  .reserve-btn-sub,.hamburger-btn{display:none !important;}
+  #to-top-btn{bottom:calc(92px + env(safe-area-inset-bottom)) !important;transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;}
+  .breadcrumb,.breadcrumb-fixed{display:none !important;}
+  html,body{margin-top:0 !important;padding-top:0 !important;}
+  #hero-logo,.page-title,.main-title,.section-title,.page-heading,.access-title,.menu-title,.voice-title,.case-title{margin-top:0 !important;}
+  #hero-logo{padding-top:34px !important;margin-bottom:22px !important;}
+  #hero-logo .main-title,.main-title{margin-top:0 !important;margin-bottom:16px !important;}
+  #hero-logo .sub-catch,.sub-catch{margin-top:12px !important;margin-bottom:24px !important;line-height:1.9 !important;}
+  .page-title{padding-top:34px !important;padding-bottom:22px !important;margin-bottom:22px !important;}
+  main,#index-cards,.page-container,.menu-container,.voice-container,.case-container,.access-container,.faq-container,.profile-container,.news-container{margin-top:0 !important;padding-top:0 !important;}
+  .menu-hero-card,.top-hero-card,.profile-card,.intro-card,.case,.info-card:first-child,.access-card:first-child,.faq-card:first-child,.voice-card:first-child{margin-top:22px !important;}
 }
-
-
-
-/* gene mobile bottom navigation adjustment */
-@media (max-width: 768px){
-  .reserve-btn-sub,
-  .hamburger-btn{
-    display:none !important;
-  }
-
-  #to-top-btn{
-    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* gene voice pc-only center alignment */
-@media (min-width:769px){
-
-  .case{
-    width:90% !important;
-    max-width:760px !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    box-sizing:border-box !important;
-  }
-
-  .case-swiper{
-    width:100% !important;
-    max-width:560px !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    overflow:visible !important;
-    padding:0 !important;
-  }
-
-  .case-swiper .swiper-wrapper{
-    width:auto !important;
-    max-width:560px !important;
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    justify-content:center !important;
-    align-items:flex-start !important;
-    gap:12px !important;
-    transform:none !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    box-sizing:border-box !important;
-  }
-
-  .case-swiper .swiper-slide{
-    flex:0 0 auto !important;
-    width:128px !important;
-    max-width:128px !important;
-    margin:0 !important;
-    text-align:center !important;
-    display:block !important;
-  }
-
-  .case-swiper .swiper-slide img{
-    display:block !important;
-    width:128px !important;
-    max-width:128px !important;
-    height:auto !important;
-    margin:0 auto !important;
-    object-fit:cover !important;
-    border-radius:8px;
-  }
-
-  .case-swiper .swiper-slide span{
-    display:block !important;
-    width:100% !important;
-    text-align:center !important;
-    margin-top:8px !important;
-  }
-
-  .case-swiper .swiper-wrapper:has(.swiper-slide:nth-child(2):last-child){
-    max-width:268px !important;
-  }
-
-  .case-swiper .swiper-wrapper:has(.swiper-slide:nth-child(3):last-child){
-    max-width:408px !important;
-  }
-
-  .case-swiper .swiper-scrollbar{
-    display:none !important;
-  }
-}
-
-
-
-
-
-/* gene voice mobile swiper restore corrected */
-@media (max-width:768px){
-  .case-swiper{
-    width:100% !important;
-    max-width:100% !important;
-    overflow:hidden !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    padding-bottom:18px !important;
-  }
-
-  .case-swiper .swiper-wrapper{
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    justify-content:flex-start !important;
-    align-items:stretch !important;
-    gap:0 !important;
-    max-width:none !important;
-    width:100% !important;
-    margin-left:0 !important;
-    margin-right:0 !important;
-  }
-
-  .case-swiper .swiper-slide{
-    flex-shrink:0 !important;
-    width:auto !important;
-    max-width:none !important;
-    margin:0 !important;
-    display:block !important;
-  }
-
-  .case-swiper .swiper-slide img{
-    width:86vw !important;
-    max-width:320px !important;
-    height:auto !important;
-    display:block !important;
-    margin:0 auto !important;
-  }
-
-  .case-swiper .swiper-scrollbar{
-    display:block !important;
-  }
-}
-
-
-/* voice swiper mobile spacing adjustment */
-@media (max-width:768px){
-  .case-swiper .swiper-wrapper{
-    gap:14px !important;
-  }
-
-  .case-swiper .swiper-slide{
-    margin-right:0 !important;
-  }
-
-  .case-swiper .swiper-slide img{
-    border-radius:10px;
-  }
-}
-
-
-
-/* voice swiper offset final */
-@media (max-width:768px){
-
-  .case-swiper{
-    padding-left:0 !important;
-    padding-right:0 !important;
-    box-sizing:border-box !important;
-    overflow:hidden !important;
-  }
-
-  .case-swiper .swiper-wrapper{
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
-
-  .case-swiper .swiper-scrollbar{
-    width:calc(100% - 48px) !important;
-    left:24px !important;
-    right:24px !important;
-    bottom:0 !important;
-    box-sizing:border-box !important;
-  }
-}
-
-
-
-/* voice actual selector typography final */
-@media (max-width:768px){
-
-  /* voice.html の実際のトップ見出しに直接指定 */
-  .voice-intro-head h2{
-    font-family:'Playfair Display',"Yu Mincho","Hiragino Mincho ProN","YuMincho","Noto Serif JP",serif !important;
-    font-size:clamp(2.55rem, 9.6vw, 3.15rem) !important;
-    font-weight:700 !important;
-    line-height:1.25 !important;
-    letter-spacing:.035em !important;
-    color:#d9c17e !important;
-    text-align:center !important;
-    margin-top:0 !important;
-    margin-bottom:28px !important;
-  }
-
-  .voice-intro-head p{
-    font-family:'Noto Serif JP',"Yu Mincho","Hiragino Mincho ProN","YuMincho",serif !important;
-    font-size:clamp(1.02rem, 4.1vw, 1.18rem) !important;
-    font-weight:400 !important;
-    line-height:2.05 !important;
-    letter-spacing:.035em !important;
-    color:rgba(255,255,255,.92) !important;
-    text-align:center !important;
-  }
-
-  .voice-intro-section{
-    padding-top:34px !important;
-  }
-}
-
-
-
-/* voice mobile breadcrumb hide */
-@media (max-width:768px){
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-}
-
-
-.voice-fade{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .65s ease, transform .65s ease;
-}
-.voice-fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* mobile symptom panel / to-top avoidance */
-@media (max-width:768px){
-  #to-top-btn{
-    transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
-  }
-}
-
-
-.gene-mobile-symptom-grid a:visited{
-    color:#111;
-  }
-
+@media (max-width:860px){.menu-hero-inner{grid-template-columns:1fr;gap:24px;padding:22px}.menu-copy h2{font-size:1.55rem}.symptom-list{grid-template-columns:1fr}.menu-split,.menu-split.reverse{grid-template-columns:1fr;gap:18px}.menu-symptom-grid{grid-template-columns:1fr;gap:16px}.menu-symptom-card{min-height:118px;padding:22px 64px 22px 24px}}
+@media (max-width:640px){.menu-hero-card{padding:0 16px;margin-top:24px}.menu-hero-inner{border-radius:18px;padding:18px}.menu-main-photo{border-radius:14px}.menu-copy p{line-height:1.95}.menu-symptom-grid{gap:14px}.menu-symptom-card{min-height:auto;padding:20px 54px 20px 18px;border-radius:14px}.menu-symptom-card::after{right:18px;font-size:2.3rem}.menu-symptom-title{font-size:1.16rem;margin-bottom:8px}.menu-symptom-text{font-size:.92rem;line-height:1.75}}
+.menu-price-wrap,.info-card.show .menu-price-wrap{background:transparent;border:none;box-shadow:none;backdrop-filter:none;}
 </style>
 </head>
 
-<body class="subpage voice-page">
-
-<div id="global-logo-bg" class="fade-start">
-  <img src="assets/img/logo.svg" alt="">
+<body>
+<div class="particles"></div>
+<div class="gene-flow-layer" aria-hidden="true">
+  <span class="gene-flow-line line-a"></span>
+  <span class="gene-flow-line line-b"></span>
+  <span class="gene-flow-orb orb-a"></span>
+  <span class="gene-flow-orb orb-b"></span>
 </div>
-
-<nav class="breadcrumb-fixed hidden">
-  <a href="index.html">ホーム</a> ＞ <span>院内・改善事例</span>
-</nav>
-
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
-
+<div id="global-logo-bg" class="fade-start"><img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ"></div>
+<nav class="breadcrumb" style="opacity:0;"><a href="index.html">ホーム</a> ＞ <span>施術内容</span></nav>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
-
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
   <a href="index.html">ホーム</a>
   <a href="menu.html">施術内容</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
-  <a href="voice.html">院内・改善事例</a>
+  <a href="voice.html">院内・改善写真</a>
 </div>
+<div id="hero-logo" class="hidden">
+  <h1 class="main-title">施術内容</h1>
+  <p class="sub-catch">gene自律神経調整整体<br>一人ひとりの状態に合わせて整えるオーダーメイド整体</p>
+</div>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
 
-<main class="voice-wrap">
+<section class="menu-hero-card gene-depth-active">
+  <div class="menu-hero-inner gene-depth-active">
+    <div class="menu-photo-wrap"><img src="assets/img/gene-prone-treatment.webp" alt="gene自律神経調整整体の施術風景" class="menu-main-photo"></div>
+    <div class="menu-copy">
+      <h2>メニューは一つ。<br>状態に合わせて内容を調整します。</h2>
+      <p>gene自律神経調整整体では、
+症状名ごとに施術を分けるのではなく、
+今の身体の状態を丁寧に確認しながら、
+一人ひとりに合わせて調整を行います。
 
-<section class="voice-intro-section voice-fade">
-  <div class="voice-intro-head">
-    <h2>院内の雰囲気</h2>
-    <p>はじめての方にも安心してお越しいただけるよう、<br>院内空間をご紹介します。</p>
-  </div>
-
-  <div class="voice-intro-grid">
-
-    <figure class="voice-intro-card">
-      <img src="assets/img/gene-room.webp" alt="大阪 自律神経専門整体院 gene 院内風景">
-      <figcaption>院内風景</figcaption>
-    </figure>
-
-    <figure class="voice-intro-card">
-      <img src="assets/img/gene-treatment-room.webp" alt="大阪 自律神経専門整体院 gene 施術室">
-      <figcaption>施術室</figcaption>
-    </figure>
-
+めまい、不眠、動悸、耳鳴り、慢性的な疲労感、
+皮膚症状などのお悩みに対しても、
+身体全体のつながりを見ながら整えていきます。</p>
+      <div class="menu-badges"><span>オーダーメイド整体</span><span>身体全体を確認</span><span>強い刺激に頼らない</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ============================
-   ここから下は既存症例（変更なし）
-============================ -->
+<div id="index-cards">
+  <div class="info-card card-hidden gene-depth-active">
+    <div class="menu-split reverse centered">
+      <div class="menu-split-content">
+        <h3>gene自律神経調整整体</h3>
+        <p>当院では、自律神経の働きに関わる身体全体のバランスを確認しながら施術を行っています。
 
-<!-- ============================
-   症例1
-============================ -->
-<section class="case voice-fade">
-<h2>症例1</h2>
-<p class="voice-case-detail-link"><a href="case1.html">症例1の詳細ページを見る</a></p>
+呼吸の浅さ、筋緊張、皮膚の緊張感、循環の状態などを丁寧に見ていき、
+その時の身体にとって負担になりにくい刺激量で整えていきます。
 
-<h3>顔</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_face.webp" alt="症例1 顔 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_face.webp" alt="症例1 顔 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_face.webp" alt="症例1 顔 6か月目"><span>6か月目</span></div>
+強い刺激や無理な矯正を主とする方法ではなく、
+身体が防御反応を起こしにくい範囲で、自然に整っていける状態を目指します。</p>
+      </div>
+      <div class="menu-split-media"><img src="assets/img/gene-neck-treatment.webp" alt="首・頭部へのアプローチ" class="menu-section-image"></div>
+    </div>
   </div>
-  <div class="swiper-scrollbar"></div>
-</div>
 
-<h3>首</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_neck.webp" alt="症例1 首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_neck.webp" alt="症例1 首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_neck.webp" alt="症例1 首 6か月目"><span>6か月目</span></div>
+  <div class="info-card card-hidden gene-depth-active">
+    <div class="menu-price-wrap">
+      <div class="menu-price-title">料金</div>
+      <p class="menu-price-main">初回 <span class="price-gold">3,300円</span>（税込）</p>
+      <p class="menu-price-sub">はじめての方でも安心してご相談いただけるよう、
+        初回はこの価格でご案内しています。</p>
+      <p class="menu-price-sub">初回は問診・検査を含め、
+        現在の状態を丁寧に確認します。</p>
+      <p class="menu-price-main" style="margin-top:10px;">2回目以降 <span class="price-gold">5,500円</span>（税込）</p>
+      <p class="menu-price-sub">お支払い方法：現金・クレジットカード・電子マネー・QR決済に対応しています。</p>
+      <p class="menu-price-sub" style="margin-top:10px;">所要時間：初回 約60分 / 2回目以降 約30分</p>
+      <p class="menu-price-sub">※2回目以降は状態に合わせて施術を行うため、所要時間が短くなります</p>
+    </div>
   </div>
-  <div class="swiper-scrollbar"></div>
-</div>
 
-<h3>体（正面）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_body_front.webp" alt="症例1 体正面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_body_front.webp" alt="症例1 体正面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_body_front.webp" alt="症例1 体正面 6か月目"><span>6か月目</span></div>
+  <div class="info-card card-hidden gene-depth-active">
+    <h3>このようなお悩みの方へ</h3>
+    <p style="white-space: pre-line;">症状名だけで施術内容を分けるのではなく、
+「今どのようなことで困っているか」に合わせて身体の状態を確認していきます。</p>
+    <div class="symptom-list">
+      <div class="has-link"><a href="dizziness.html">ふわっとするめまいが続いている</a></div>
+      <div class="has-link"><a href="insomnia.html">寝つきが悪い、途中で何度も目が覚める</a></div>
+      <div class="has-link"><a href="palpitations.html">動悸や不安感が出ることがある</a></div>
+      <div class="has-link"><a href="tinnitus.html">耳鳴りが続いて気になっている</a></div>
+      <div class="has-link"><a href="fatigue.html">慢性的に疲れが抜けない</a></div>
+      <div class="has-link"><a href="irritable-bowel-syndrome.html">お腹の不調がストレスで乱れやすい</a></div>
+      <div class="has-link"><a href="atopic.html">アトピー性皮膚炎や皮膚の不調が気になる</a></div>
+      <div class="has-link"><a href="throat-discomfort.html">喉の違和感や息苦しさが気になる</a></div>
+    </div>
+    <p class="menu-note">主な対応症状：
+アトピー・皮膚症状、めまい、耳鳴り、パニック障害、不眠症、慢性疲労、
+PMS、冷え性、自律神経失調症、起立性調節障害、過敏性腸症候群、慢性便秘、息苦しさ、喉の違和感、足底筋膜炎、顎関節症、腱鞘炎など</p>
+    <p class="menu-note">上記以外のお悩みでも、
+自律神経の乱れと関わる可能性がある場合は対応できることがあります。
+まずはお気軽にご相談ください。</p>
   </div>
-  <div class="swiper-scrollbar"></div>
-</div>
 
-<h3>足首</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_ankle.webp" alt="症例1 足首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_ankle.webp" alt="症例1 足首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_ankle.webp" alt="症例1 足首 6か月目"><span>6か月目</span></div>
+  <section class="info-card card-hidden menu-symptom-links-section gene-depth-active" aria-labelledby="menu-symptom-links-title">
+    <h3 id="menu-symptom-links-title">症状について</h3>
+    <p class="menu-symptom-links-lead">自律神経の乱れと関わりやすい症状について、状態の考え方をページごとにまとめています。</p>
+
+    <div class="menu-symptom-category">
+      <h4 class="menu-symptom-category-title">自律神経・睡眠・感覚系</h4>
+      <div class="menu-symptom-grid" aria-label="自律神経・睡眠・感覚系の症状ページ">
+        <a href="dizziness.html" class="menu-symptom-card"><span class="menu-symptom-title">めまい</span><span class="menu-symptom-text">ふわふわ感や不安定感、繰り返すめまいについて。</span></a>
+        <a href="insomnia.html" class="menu-symptom-card"><span class="menu-symptom-title">不眠</span><span class="menu-symptom-text">寝つきの悪さや途中で目が覚めるなど、睡眠のお悩みについて。</span></a>
+        <a href="headache.html" class="menu-symptom-card"><span class="menu-symptom-title">頭痛</span><span class="menu-symptom-text">慢性的な頭痛や緊張感、首肩の負担について。</span></a>
+        <a href="tinnitus.html" class="menu-symptom-card"><span class="menu-symptom-title">耳鳴り</span><span class="menu-symptom-text">耳鳴り、首や顎まわりの緊張、自律神経との関係について。</span></a>
+        <a href="palpitations.html" class="menu-symptom-card"><span class="menu-symptom-title">動悸</span><span class="menu-symptom-text">不安感や呼吸の浅さを伴う動悸について。</span></a>
+        <a href="panic.html" class="menu-symptom-card"><span class="menu-symptom-title">パニック症状</span><span class="menu-symptom-text">不安感、緊張、呼吸の浅さを伴う状態について。</span></a>
+        <a href="fatigue.html" class="menu-symptom-card"><span class="menu-symptom-title">慢性疲労</span><span class="menu-symptom-text">休んでも抜けない疲労感や身体の重さについて。</span></a>
+        <a href="autonomic.html" class="menu-symptom-card"><span class="menu-symptom-title">自律神経失調症</span><span class="menu-symptom-text">原因がはっきりしにくい不調や身体の緊張について。</span></a>
+        <a href="orthostatic-dysregulation.html" class="menu-symptom-card"><span class="menu-symptom-title">起立性調節障害</span><span class="menu-symptom-text">立ちくらみ、朝のつらさ、体調の波について。</span></a>
+        <a href="breathlessness.html" class="menu-symptom-card"><span class="menu-symptom-title">息苦しさ</span><span class="menu-symptom-text">呼吸の浅さ、胸まわりの緊張、不安感との関係について。</span></a>
+        <a href="throat-discomfort.html" class="menu-symptom-card"><span class="menu-symptom-title">喉の違和感</span><span class="menu-symptom-text">喉のつかえ感、首まわりの緊張、ストレスとの関係について。</span></a>
+      </div>
+    </div>
+
+    <div class="menu-symptom-category">
+      <h4 class="menu-symptom-category-title">消化器・体温調整・女性系</h4>
+      <div class="menu-symptom-grid" aria-label="消化器・体温調整・女性系の症状ページ">
+        <a href="irritable-bowel-syndrome.html" class="menu-symptom-card"><span class="menu-symptom-title">過敏性腸症候群</span><span class="menu-symptom-text">ストレスで乱れやすいお腹の不調や緊張について。</span></a>
+        <a href="chronic-constipation.html" class="menu-symptom-card"><span class="menu-symptom-title">慢性便秘</span><span class="menu-symptom-text">お腹の張り、巡りの悪さ、生活リズムとの関係について。</span></a>
+        <a href="pms.html" class="menu-symptom-card"><span class="menu-symptom-title">PMS</span><span class="menu-symptom-text">月経前の不調、気分の波、身体の重さについて。</span></a>
+        <a href="coldness.html" class="menu-symptom-card"><span class="menu-symptom-title">冷え性</span><span class="menu-symptom-text">手足の冷え、巡りの悪さ、体温調整のお悩みについて。</span></a>
+        <a href="atopic.html" class="menu-symptom-card"><span class="menu-symptom-title">アトピー</span><span class="menu-symptom-text">皮膚症状、かゆみ、睡眠やストレスとの関係について。</span></a>
+        <a href="hyperhidrosis.html" class="menu-symptom-card"><span class="menu-symptom-title">多汗症</span><span class="menu-symptom-text">汗の出やすさ、緊張、体温調整との関係について。</span></a>
+      </div>
+    </div>
+
+    <div class="menu-symptom-category">
+      <h4 class="menu-symptom-category-title">筋肉・関節・姿勢系</h4>
+      <div class="menu-symptom-grid" aria-label="筋肉・関節・姿勢系の症状ページ">
+        <a href="tmj.html" class="menu-symptom-card"><span class="menu-symptom-title">顎関節症</span><span class="menu-symptom-text">顎まわりの緊張、噛みしめ、首肩との関係について。</span></a>
+        <a href="tenosynovitis.html" class="menu-symptom-card"><span class="menu-symptom-title">腱鞘炎</span><span class="menu-symptom-text">手首や指の負担、使い方、筋緊張との関係について。</span></a>
+        <a href="plantar-fasciitis.html" class="menu-symptom-card"><span class="menu-symptom-title">足底筋膜炎</span><span class="menu-symptom-text">足裏の痛み、歩行時の負担、身体全体の使い方について。</span></a>
+        <a href="lower-back-pain.html" class="menu-symptom-card"><span class="menu-symptom-title">腰痛</span><span class="menu-symptom-text">腰まわりの緊張、姿勢、疲労の蓄積について。</span></a>
+        <a href="cervical-hernia.html" class="menu-symptom-card"><span class="menu-symptom-title">頚椎ヘルニア</span><span class="menu-symptom-text">首まわりの負担、腕の違和感、姿勢との関係について。</span></a>
+        <a href="lumbar-hernia.html" class="menu-symptom-card"><span class="menu-symptom-title">腰椎ヘルニア</span><span class="menu-symptom-text">腰から脚への負担、動き方、緊張の偏りについて。</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="info-card card-hidden gene-depth-active">
+    <div class="menu-split">
+      <div class="menu-split-media"><img src="assets/img/gene-counseling-writing.webp" alt="カウンセリング時の様子" class="menu-section-image"></div>
+      <div class="menu-split-content">
+        <h3>施術の考え方</h3>
+        <p>不調が出ている場所だけを見ても、
+本当の原因がそこにあるとは限りません。
+
+そのため当院では、
+症状が出ている部位だけでなく、
+身体全体のつながりを確認することを大切にしています。
+
+今の状態を丁寧に把握し、
+必要なことを必要な分だけ行う。
+それが、gene自律神経調整整体の基本的な考え方です。</p>
+      </div>
+    </div>
   </div>
-  <div class="swiper-scrollbar"></div>
-</div>
 
-<p class="case-note">※得られる結果には個人差があります</p>
-</section>
+  <div class="info-card card-hidden menu-cta-card gene-depth-active">
+    <p style="white-space: pre-line;">どの症状として予約すればいいか迷う必要はありません。
+まずは現在の状態を整理するところからでも大丈夫です。
 
-<!-- ============================
-   症例2
-============================ -->
-<section class="case voice-fade">
-<h2>症例2</h2>
-<p class="voice-case-detail-link"><a href="case2.html">症例2の詳細ページを見る</a></p>
-
-<h3>前腕</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_forearm.webp" alt="症例2 前腕 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_forearm.webp" alt="症例2 前腕 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_forearm.webp" alt="症例2 前腕 6か月目"><span>6か月目</span></div>
+ご相談・ご予約はLINEから承っています。</p>
+    <a href="https://lin.ee/6bBKc67" class="menu-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
   </div>
-  <div class="swiper-scrollbar"></div>
-</div>
 
-<h3>体（正面）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_front.webp" alt="症例2 体正面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_front.webp" alt="症例2 体正面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_front.webp" alt="症例2 体正面 6か月目"><span>6か月目</span></div>
+  <div class="info-card card-hidden gene-depth-active">
+    <h3>初めての方へ</h3>
+    <p style="white-space: pre-line;">初めての来院は不安があって当然です。
+
+「何をされるのかわからない」
+「整体は初めてで不安」
+「本当に自分の悩みを相談していいのかわからない」
+
+そのような方こそ、一度ご相談ください。
+
+無理な施術や通院の強制は一切ありません。
+現在の状態を丁寧に確認し、
+今の身体に何が起きているのかを一緒に整理していきます。</p>
   </div>
-  <div class="swiper-scrollbar"></div>
 </div>
-
-<h3>体（背面）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_back.webp" alt="症例2 体背面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_back.webp" alt="症例2 体背面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_back.webp" alt="症例2 体背面 6か月目"><span>6か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<h3>脚</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_leg.webp" alt="症例2 脚 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_leg.webp" alt="症例2 脚 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_leg.webp" alt="症例2 脚 6か月目"><span>6か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<h3>足首</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_ankle.webp" alt="症例2 足首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_ankle.webp" alt="症例2 足首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_ankle.webp" alt="症例2 足首 6か月目"><span>6か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<p class="case-note">※得られる結果には個人差があります</p>
-</section>
-
-<!-- ============================
-   症例3
-============================ -->
-<section class="case voice-fade">
-<h2>症例3</h2>
-<p class="voice-case-detail-link"><a href="case3.html">症例3の詳細ページを見る</a></p>
-
-<h3>前腕（右）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_front.webp" alt="症例3 前腕右 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_front.webp" alt="症例3 前腕右 3か月目"><span>3か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<h3>前腕（左）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_back.webp" alt="症例3 前腕左 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_back.webp" alt="症例3 前腕左 3か月目"><span>3か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<h3>足首（右）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_right.webp" alt="症例3 足首右 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_right.webp" alt="症例3 足首右 3か月目"><span>3か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<h3>足首（左）</h3>
-<div class="swiper case-swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_left.webp" alt="症例3 足首左 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_left.webp" alt="症例3 足首左 3か月目"><span>3か月目</span></div>
-  </div>
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<p class="case-note">※得られる結果には個人差があります</p>
-</section>
-
-<section class="voice-cta voice-fade">
-  <p class="voice-cta-text">写真で見た変化は、特別な人だけのものではありません。</p>
-  <p class="voice-cta-sub">あなたの状態に合わせて、自律神経から静かに整えていきます。</p>
-  <a href="https://lin.ee/6bBKc67" class="voice-cta-btn" target="_blank">LINEで予約する</a>
-</section>
-
-</main>
-
 
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
 
@@ -830,162 +459,110 @@
     <a href="pms.html">PMS</a>
     <a href="coldness.html">冷え性</a>
     <a href="autonomic.html">自律神経失調症</a>
+    <a href="orthostatic-dysregulation.html">起立性調節障害</a>
+    <a href="irritable-bowel-syndrome.html">過敏性腸症候群</a>
+    <a href="chronic-constipation.html">慢性便秘</a>
+    <a href="breathlessness.html">息苦しさ</a>
+    <a href="throat-discomfort.html">喉の違和感</a>
     <a href="plantar-fasciitis.html">足底筋膜炎</a>
     <a href="tmj.html">顎関節症</a>
     <a href="tenosynovitis.html">腱鞘炎</a>
+    <a href="lower-back-pain.html">腰痛</a>
+    <a href="cervical-hernia.html">頚椎ヘルニア</a>
+    <a href="lumbar-hernia.html">腰椎ヘルニア</a>
   </div>
   <div class="gene-mobile-extra-links">
-    <a href="voice.html">院内・改善写真</a>
+    <a href="voice.html">改善例</a>
     <a href="faq.html">よくある質問</a>
   </div>
 </div>
 
 <nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
-  <a href="index.html">
-    <span class="nav-icon">⌂</span>
-    <span class="nav-text">ホーム</span>
-  </a>
-  <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel">
-    <span class="nav-icon">＋</span>
-    <span class="nav-text">症状</span>
-  </button>
-  <a href="menu.html">
-    <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
-  </a>
-  <a href="access.html">
-    <span class="nav-icon">⌖</span>
-    <span class="nav-text">アクセス</span>
-  </a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
-    <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
-  </a>
+  <a href="index.html"><span class="nav-icon">⌂</span><span class="nav-text">ホーム</span></a>
+  <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
+  <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術内容</span></a>
+  <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">LINE予約</span></a>
 </nav>
 
-
-<footer>
-  大阪 自律神経専門整体院 gene<br>
-  営業時間：11:00〜21:00（不定休）<br>
-  最終受付：初診 20:00 / 二回目以降 20:30<br>
-  <span class="address">
-    <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
-    <span class="address-line2">ラインビルド南船場703</span>
-  </span><br>
-  © gene. All Rights Reserved.
+<footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <p class="brand">自律神経整体サロン gene</p>
+      <p>大阪市中央区南船場1-10-12 ラインビルド南船場703</p>
+    </div>
+    <div>
+      <p>営業時間：11:00〜21:00（不定休）</p>
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="sitemap.xml">サイトマップ</a>
+    </div>
+  </div>
+  <p class="copy">© gene. All Rights Reserved.</p>
 </footer>
 
-<!-- ▲ 上へ戻る -->
-<div id="to-top-btn">▲</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+<script src="assets/script.js" defer></script>
 
 <script>
-(function(){
-  function initGeneMobileCaseSwiper(){
-    if (window.innerWidth > 768) return;
-    if (typeof Swiper === "undefined") return;
+window.addEventListener("load", () => {
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
+  const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const menuPanel = document.getElementById("hamburger-menu");
+  const hero = document.getElementById("hero-logo");
+  const heroCard = document.querySelector(".menu-hero-card");
+  const fadeItems = document.querySelectorAll(".card-hidden");
 
-    document.querySelectorAll(".case-swiper").forEach(function(el){
-      if (el.swiper) return;
+  setTimeout(() => {
+    if (breadcrumb) breadcrumb.classList.add("show");
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
+    if (hero) hero.classList.add("show");
+    if (heroCard) heroCard.classList.add("show");
+    fadeItems.forEach(el=>el.classList.add("show"));
+  }, 900);
 
-      new Swiper(el, {
-        slidesPerView: "auto",
-        spaceBetween: 14,
-        slidesOffsetBefore: 24,
-        slidesOffsetAfter: 24,
-        freeMode: true,
-        scrollbar: {
-          el: el.querySelector(".swiper-scrollbar"),
-          draggable: true
-        }
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
+    });
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
       });
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initGeneMobileCaseSwiper);
-  } else {
-    initGeneMobileCaseSwiper();
-  }
-
-  window.addEventListener("load", initGeneMobileCaseSwiper);
-})();
-</script>
-
-
-<script>
-window.addEventListener("load", () => {
-  
-const breadcrumb = document.querySelector(".breadcrumb-fixed");
-  const rsvBtn = document.querySelector(".reserve-btn-sub");
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const bgLogo = document.getElementById("global-logo-bg");
-
-  const fadeItems = document.querySelectorAll(".voice-fade");
-
-  setTimeout(()=>{
-    breadcrumb?.classList.add("show");
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
-
-    fadeItems.forEach(el=>{
-      el.classList.add("show");
-    });
-
-  }, 450);
-
-  const menuPanel = document.getElementById("hamburger-menu");
-  const closeBtn = document.querySelector(".menu-close-btn");
-
-  hamburgerBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.add("open");
-    document.body.classList.add("menu-open");
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+  window.addEventListener("scroll", () => {
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
   });
-
-  closeBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.remove("open");
-    document.body.classList.remove("menu-open");
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-  menuPanel?.addEventListener("click", e=>{
-    if(e.target===menuPanel){
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-
-  menuPanel?.querySelectorAll("a").forEach(link=>{
-    link.addEventListener("click", ()=>{
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    });
-  });
-});
-
-/* 上へ戻る */
-document.addEventListener("DOMContentLoaded", ()=>{
-  const btn=document.getElementById("to-top-btn");
-  if(!btn)return;
-  window.addEventListener("scroll",()=>{
-    btn.classList.toggle("show",window.scrollY>200);
-  });
-  btn.addEventListener("click",()=>{
-    window.scrollTo({top:0,behavior:"smooth"});
-  });
-});
-
-/* CTA表示 */
-window.addEventListener("scroll",()=>{
-  const cta=document.querySelector(".voice-cta");
-  if(cta && cta.getBoundingClientRect().top < window.innerHeight*0.8){
-    cta.classList.add("show");
-  }
 });
 </script>
-
 
 <script>
 (function(){
@@ -994,73 +571,45 @@ window.addEventListener("scroll",()=>{
     const panel = document.getElementById("gene-mobile-symptom-panel");
     const close = document.getElementById("gene-mobile-symptom-close");
     const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
-
     if (!toggle || !panel || !backdrop) return;
-
     function openPanel(){
       panel.classList.add("open");
       backdrop.classList.add("open");
       panel.setAttribute("aria-hidden", "false");
       toggle.setAttribute("aria-expanded", "true");
-
       if (typeof gtag === "function") {
-        gtag("event", "mobile_symptom_menu_open", {
-          event_category: "navigation",
-          event_label: "bottom_nav_symptom"
-        });
+        gtag("event", "mobile_symptom_menu_open", { event_category: "navigation", event_label: "bottom_nav_symptom" });
       }
     }
-
     function closePanel(){
       panel.classList.remove("open");
       backdrop.classList.remove("open");
       panel.setAttribute("aria-hidden", "true");
       toggle.setAttribute("aria-expanded", "false");
     }
-
-    toggle.addEventListener("click", function(){
-      if (panel.classList.contains("open")) {
-        closePanel();
-      } else {
-        openPanel();
-      }
-    });
-
+    toggle.addEventListener("click", function(){ panel.classList.contains("open") ? closePanel() : openPanel(); });
     if (close) close.addEventListener("click", closePanel);
     backdrop.addEventListener("click", closePanel);
-
     panel.querySelectorAll("a").forEach(function(link){
       link.addEventListener("click", function(){
         if (typeof gtag === "function") {
-          gtag("event", "symptom_link_click", {
-            event_category: "navigation",
-            event_label: link.getAttribute("href") || link.textContent.trim()
-          });
+          gtag("event", "symptom_link_click", { event_category: "navigation", event_label: link.getAttribute("href") || link.textContent.trim() });
         }
         closePanel();
       });
     });
-
     document.querySelectorAll(".gene-mobile-bottom-nav a").forEach(function(link){
       link.addEventListener("click", function(){
         if (typeof gtag === "function") {
-          gtag("event", "bottom_nav_click", {
-            event_category: "navigation",
-            event_label: link.getAttribute("href") || link.textContent.trim()
-          });
+          gtag("event", "bottom_nav_click", { event_category: "navigation", event_label: link.getAttribute("href") || link.textContent.trim() });
         }
       });
     });
   }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneMobileBottomNav);
-  } else {
-    setupGeneMobileBottomNav();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupGeneMobileBottomNav);
+  else setupGeneMobileBottomNav();
 })();
 </script>
-
 
 <script>
 (function(){
@@ -1069,25 +618,17 @@ window.addEventListener("scroll",()=>{
     const toggle = document.getElementById("gene-mobile-symptom-toggle");
     const close = document.getElementById("gene-mobile-symptom-close");
     const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
-
-    if (!panel) return;
-    if (panel.dataset.toTopAvoidanceReady === "true") return;
+    if (!panel || panel.dataset.toTopAvoidanceReady === "true") return;
     panel.dataset.toTopAvoidanceReady = "true";
-
-    function getToTopBtn(){
-      return document.getElementById("to-top-btn");
-    }
-
+    function getToTopBtn(){ return document.getElementById("to-top-btn"); }
     function updateToTopPosition(){
       const btn = getToTopBtn();
       if (!btn) return;
-
       if (window.innerWidth > 768) {
         btn.style.removeProperty("bottom");
         btn.style.removeProperty("z-index");
         return;
       }
-
       if (panel.classList.contains("open")) {
         const rect = panel.getBoundingClientRect();
         const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
@@ -1098,41 +639,71 @@ window.addEventListener("scroll",()=>{
         btn.style.removeProperty("z-index");
       }
     }
-
     const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-
-    [toggle, close, backdrop].forEach(function(el){
-      if (!el) return;
-      el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
+    observer.observe(panel, { attributes: true, attributeFilter: ["class"] });
+    [toggle, close, backdrop].forEach(function(el){ if (el) el.addEventListener("click", function(){ setTimeout(updateToTopPosition, 30); }); });
+    panel.querySelectorAll("a").forEach(function(link){ link.addEventListener("click", function(){ setTimeout(updateToTopPosition, 30); }); });
     window.addEventListener("resize", updateToTopPosition, { passive:true });
     window.addEventListener("scroll", updateToTopPosition, { passive:true });
-
     setTimeout(updateToTopPosition, 300);
   }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
+  else setupGeneToTopPanelAvoidance();
+  window.addEventListener("load", function(){ setTimeout(setupGeneToTopPanelAvoidance, 500); });
+})();
+</script>
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
-  } else {
-    setupGeneToTopPanelAvoidance();
+<script>
+(function(){
+  function setupGeneScrollRhythm(){
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.body.classList.add("gene-scroll-rhythm");
+    const flow = document.querySelector(".gene-flow-layer");
+    if (flow) setTimeout(()=>flow.classList.add("show"), 1100);
+    const targets = Array.from(document.querySelectorAll(".menu-hero-inner, #index-cards .info-card, .menu-symptom-card, .symptom-list div"));
+    const logo = document.getElementById("global-logo-bg");
+    const orbA = document.querySelector(".gene-flow-orb.orb-a");
+    const orbB = document.querySelector(".gene-flow-orb.orb-b");
+    const lineA = document.querySelector(".gene-flow-line.line-a");
+    const lineB = document.querySelector(".gene-flow-line.line-b");
+    let ticking = false;
+    function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+    function update(){
+      ticking = false;
+      const h = window.innerHeight || 1;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      const doc = Math.max(1, document.documentElement.scrollHeight - h);
+      const progress = clamp(scrollY / doc, 0, 1);
+      if (logo) {
+        logo.style.transform = "translate3d(0," + (-progress * 18).toFixed(2) + "px,0) rotate(" + (progress * 1.4).toFixed(3) + "deg)";
+      }
+      if (orbA) orbA.style.transform = "translate3d(" + Math.sin(progress * Math.PI * 2) * 18 + "px," + (progress * 58) + "vh,0)";
+      if (orbB) orbB.style.transform = "translate3d(" + Math.cos(progress * Math.PI * 2) * -14 + "px," + (-progress * 42) + "vh,0)";
+      if (lineA) lineA.style.transform = "translate3d(-50%," + (progress * 34) + "px,0)";
+      if (lineB) lineB.style.transform = "translate3d(-50%," + (-progress * 26) + "px,0)";
+      let nearest = null;
+      let nearestScore = 999;
+      targets.forEach(el=>{
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const distance = Math.abs(center - h * .52);
+        const depth = clamp(1 - distance / (h * .64), 0, 1);
+        const glow = Math.pow(depth, 1.7);
+        el.style.setProperty("--gene-depth", depth.toFixed(3));
+        el.style.setProperty("--gene-glow", glow.toFixed(3));
+        el.style.setProperty("--gene-sheen-x", ((depth * 260) - 130).toFixed(2) + "%");
+        el.classList.toggle("gene-text-current", depth > .72);
+        if (distance < nearestScore) { nearestScore = distance; nearest = el; }
+      });
+      targets.forEach(el=>el.classList.toggle("gene-scroll-current", el === nearest));
+    }
+    function requestUpdate(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener("scroll", requestUpdate, { passive:true });
+    window.addEventListener("resize", requestUpdate, { passive:true });
+    setTimeout(update, 1200);
   }
-
-  window.addEventListener("load", function(){
-    setTimeout(setupGeneToTopPanelAvoidance, 500);
-  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setupGeneScrollRhythm);
+  else setupGeneScrollRhythm();
 })();
 </script>
 
