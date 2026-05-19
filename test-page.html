@@ -283,13 +283,14 @@
     min-height:44px;
     padding:11px 12px;
     border-radius:14px;
-    border:1px solid rgba(217,193,126,.22);
-    background:rgba(255,255,255,.045);
-    color:rgba(255,255,255,.92);
+    border:1px solid rgba(217,193,126,.46);
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    color:#111;
     text-decoration:none;
     font-size:.88rem;
     line-height:1.35;
-  }
+    box-shadow:0 8px 22px rgba(217,193,126,.16);
+}
 
   
   .gene-mobile-extra-links{
@@ -318,10 +319,10 @@
 
   .gene-mobile-symptom-grid a::after{
     content:"›";
-    color:#d9c17e;
+    color:#111;
     font-size:1.15rem;
     line-height:1;
-  }
+}
 }
 
 
@@ -573,71 +574,6 @@
   }
 }
 
-
-
-/* gene bottom nav refined gold - fixed */
-@media (max-width:768px){
-  .gene-mobile-bottom-nav{
-    opacity:1 !important;
-    transform:none !important;
-    pointer-events:auto !important;
-    transition:none !important;
-  }
-
-  .gene-mobile-bottom-nav a,
-  .gene-mobile-bottom-nav button{
-    border:1px solid rgba(217,193,126,.24) !important;
-    border-radius:16px !important;
-    background:rgba(217,193,126,.045) !important;
-    color:rgba(217,193,126,.86) !important;
-    box-shadow:0 5px 16px rgba(217,193,126,.055) !important;
-    -webkit-tap-highlight-color:transparent !important;
-    transition:none !important;
-    transform:none !important;
-  }
-
-  .gene-mobile-bottom-nav a:not(.line-nav):hover,
-  .gene-mobile-bottom-nav a:not(.line-nav):focus,
-  .gene-mobile-bottom-nav a:not(.line-nav):active,
-  .gene-mobile-bottom-nav button:hover,
-  .gene-mobile-bottom-nav button:focus,
-  .gene-mobile-bottom-nav button:active{
-    background:rgba(217,193,126,.045) !important;
-    color:rgba(217,193,126,.86) !important;
-    box-shadow:0 5px 16px rgba(217,193,126,.055) !important;
-    transform:none !important;
-    opacity:1 !important;
-  }
-
-  .gene-mobile-bottom-nav .nav-icon,
-  .gene-mobile-bottom-nav .nav-text{
-    color:rgba(217,193,126,.88) !important;
-    font-weight:400 !important;
-  }
-
-  .gene-mobile-bottom-nav .line-nav{
-    border:1px solid rgba(234,216,147,.82) !important;
-    color:#111 !important;
-    background:linear-gradient(180deg,#f0df9f 0%,#d9c17e 100%) !important;
-    box-shadow:0 8px 22px rgba(217,193,126,.22) !important;
-  }
-
-  .gene-mobile-bottom-nav .line-nav:hover,
-  .gene-mobile-bottom-nav .line-nav:focus,
-  .gene-mobile-bottom-nav .line-nav:active{
-    color:#111 !important;
-    background:linear-gradient(180deg,#f0df9f 0%,#d9c17e 100%) !important;
-    box-shadow:0 8px 22px rgba(217,193,126,.22) !important;
-    transform:none !important;
-    opacity:1 !important;
-  }
-
-  .gene-mobile-bottom-nav .line-nav .nav-icon,
-  .gene-mobile-bottom-nav .line-nav .nav-text{
-    color:#111 !important;
-    font-weight:600 !important;
-  }
-}
 </style>
 </head>
 
