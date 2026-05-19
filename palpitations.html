@@ -276,12 +276,13 @@ body.palpitations-page .menu-card{
     min-height:44px;
     padding:11px 12px;
     border-radius:14px;
-    border:1px solid rgba(217,193,126,.22);
-    background:rgba(255,255,255,.045);
-    color:rgba(255,255,255,.92);
+    border:1px solid rgba(217,193,126,.46);
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    color:#111;
     text-decoration:none;
     font-size:.88rem;
     line-height:1.35;
+    box-shadow:0 8px 22px rgba(217,193,126,.16);
   }
 
   
@@ -311,7 +312,7 @@ body.palpitations-page .menu-card{
 
   .gene-mobile-symptom-grid a::after{
     content:"›";
-    color:#d9c17e;
+    color:#111;
     font-size:1.15rem;
     line-height:1;
   }
@@ -472,13 +473,13 @@ body.palpitations-page .menu-card{
   <a href="voice.html">院内・改善写真</a>
 </div>
 
-<h1 class="page-title">動悸でお悩みの方へ</h1>
+<h1 class="page-title dizziness-fade">動悸でお悩みの方へ</h1>
 
-<p class="dizziness-lead">
+<p class="dizziness-lead dizziness-fade">
   大阪 自律神経専門整体院 gene の動悸ページ。緊張や不安感を伴う動悸、自律神経の不調についてご案内しています。
 </p>
 
-<div class="dizziness-intro-card">
+<div class="dizziness-intro-card dizziness-fade">
   <p>
     動悸は心臓だけの問題ではなく、<br>
     緊張状態の継続、呼吸の浅さ、自律神経の乱れなどが関係していることがあります。<br><br>
@@ -487,7 +488,7 @@ body.palpitations-page .menu-card{
   </p>
 </div>
 
-<div class="dizziness-links">
+<div class="dizziness-links dizziness-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善事例を見る</a>
   <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
@@ -495,7 +496,7 @@ body.palpitations-page .menu-card{
 
 <div class="menu-container">
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>来院時によくある状態</h2>
     <p>
       ・急に心拍が気になる<br>
@@ -505,7 +506,7 @@ body.palpitations-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>当院の見立て</h2>
     <p>
       呼吸、循環、首や胸郭の緊張、自律神経の偏りなどを確認します。<br><br>
@@ -513,7 +514,7 @@ body.palpitations-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>施術の考え方</h2>
     <p>
       身体への負担を抑えながら、呼吸しやすい状態を目指して調整します。<br><br>
@@ -521,7 +522,7 @@ body.palpitations-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>このような方に</h2>
     <p>
       ・検査では異常がないと言われた<br>
@@ -531,7 +532,7 @@ body.palpitations-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>ご案内</h2>
     <p>
       症状の経過や感じ方には個人差があります。<br>
@@ -539,7 +540,7 @@ body.palpitations-page .menu-card{
     </p>
   </div>
 
-  <div class="menu-card">
+  <div class="menu-card dizziness-fade">
     <h2>ご相談・ご予約はこちら</h2>
     <p>
       現在の状態を整理するところからでも大丈夫です。<br>
@@ -572,6 +573,12 @@ body.palpitations-page .menu-card{
     <a href="palpitations.html">動悸</a>
     <a href="fatigue.html">慢性疲労</a>
     <a href="panic.html">パニック症状</a>
+    <a href="pms.html">PMS</a>
+    <a href="coldness.html">冷え性</a>
+    <a href="autonomic.html">自律神経失調症</a>
+    <a href="plantar-fasciitis.html">足底筋膜炎</a>
+    <a href="tmj.html">顎関節症</a>
+    <a href="tenosynovitis.html">腱鞘炎</a>
   </div>
   <div class="gene-mobile-extra-links">
     <a href="voice.html">院内・改善写真</a>
@@ -623,16 +630,18 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+  const fadeItems = document.querySelectorAll(".dizziness-fade");
 
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
-  setTimeout(() => {
-  /* パンくず・ハンバーガー・予約ボタン・背景ロゴ */
   setTimeout(() => {
     if (breadcrumb) breadcrumb.classList.add("show");
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
-  }, 900);
+
+    fadeItems.forEach(el=>{
+      el.classList.add("show");
+    });
+
   }, 900);
 
   const closeBtn = document.querySelector(".menu-close-btn");
@@ -756,6 +765,78 @@ window.addEventListener("load", () => {
   } else {
     setupGeneMobileBottomNav();
   }
+})();
+</script>
+
+
+<script>
+(function(){
+  function setupGeneToTopPanelAvoidance(){
+    const panel = document.getElementById("gene-mobile-symptom-panel");
+    const toggle = document.getElementById("gene-mobile-symptom-toggle");
+    const close = document.getElementById("gene-mobile-symptom-close");
+    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+
+    if (!panel) return;
+    if (panel.dataset.toTopAvoidanceReady === "true") return;
+    panel.dataset.toTopAvoidanceReady = "true";
+
+    function getToTopBtn(){
+      return document.getElementById("to-top-btn");
+    }
+
+    function updateToTopPosition(){
+      const btn = getToTopBtn();
+      if (!btn) return;
+
+      if (window.innerWidth > 768) {
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
+        return;
+      }
+
+      if (panel.classList.contains("open")) {
+        const rect = panel.getBoundingClientRect();
+        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
+        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
+        btn.style.setProperty("z-index", "9999", "important");
+      } else {
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
+      }
+    }
+
+    const observer = new MutationObserver(updateToTopPosition);
+    observer.observe(panel, { attributes: true, attributeFilter: ["class"] });
+
+    [toggle, close, backdrop].forEach(function(el){
+      if (!el) return;
+      el.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 30);
+      });
+    });
+
+    panel.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 30);
+      });
+    });
+
+    window.addEventListener("resize", updateToTopPosition, { passive:true });
+    window.addEventListener("scroll", updateToTopPosition, { passive:true });
+
+    setTimeout(updateToTopPosition, 300);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
+  } else {
+    setupGeneToTopPanelAvoidance();
+  }
+
+  window.addEventListener("load", function(){
+    setTimeout(setupGeneToTopPanelAvoidance, 500);
+  });
 })();
 </script>
 
