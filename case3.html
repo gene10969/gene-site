@@ -560,6 +560,19 @@
     color:#111;
   }
 
+
+/* case mobile symptom panel / to-top avoidance */
+@media (max-width:768px){
+  #to-top-btn{
+    transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
+  }
+
+  #to-top-btn.gene-panel-avoid{
+    bottom:calc(430px + env(safe-area-inset-bottom)) !important;
+    z-index:10000 !important;
+  }
+}
+
 </style>
 </head>
 
@@ -914,6 +927,71 @@ document.addEventListener("DOMContentLoaded", ()=>{
   } else {
     setupGeneMobileBottomNav();
   }
+})();
+</script>
+
+
+<script>
+(function(){
+  function setupGeneCaseToTopAvoidance(){
+    const panel = document.getElementById("gene-mobile-symptom-panel");
+    const toggle = document.getElementById("gene-mobile-symptom-toggle");
+    const close = document.getElementById("gene-mobile-symptom-close");
+    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+
+    if (!panel) return;
+    if (panel.dataset.caseToTopAvoidanceReady === "true") return;
+    panel.dataset.caseToTopAvoidanceReady = "true";
+
+    function getToTopBtn(){
+      return document.getElementById("to-top-btn");
+    }
+
+    function updateToTopPosition(){
+      const btn = getToTopBtn();
+      if (!btn) return;
+
+      if (window.innerWidth <= 768 && panel.classList.contains("open")) {
+        btn.classList.add("gene-panel-avoid");
+      } else {
+        btn.classList.remove("gene-panel-avoid");
+      }
+    }
+
+    const observer = new MutationObserver(updateToTopPosition);
+    observer.observe(panel, {
+      attributes:true,
+      attributeFilter:["class"]
+    });
+
+    [toggle, close, backdrop].forEach(function(el){
+      if (!el) return;
+      el.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 40);
+      });
+    });
+
+    panel.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click", function(){
+        setTimeout(updateToTopPosition, 40);
+      });
+    });
+
+    window.addEventListener("resize", updateToTopPosition, { passive:true });
+    window.addEventListener("scroll", updateToTopPosition, { passive:true });
+
+    setTimeout(updateToTopPosition, 500);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneCaseToTopAvoidance);
+  } else {
+    setupGeneCaseToTopAvoidance();
+  }
+
+  window.addEventListener("load", function(){
+    setTimeout(setupGeneCaseToTopAvoidance, 500);
+  });
 })();
 </script>
 
