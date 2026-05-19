@@ -153,30 +153,35 @@
 
 
 .top-symptom-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:24px;
 }
 .top-symptom-links a{
-  display:inline-flex;
+  display:flex;
   align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:10px 17px;
-  border-radius:999px;
+  justify-content:space-between;
+  width:100%;
+  min-height:52px;
+  padding:12px 16px;
+  box-sizing:border-box;
+  border-radius:18px;
   border:1px solid rgba(217,193,126,.46);
   color:#111;
   background:linear-gradient(180deg, #ead893 0%, #d9c17e 100%);
   box-shadow:0 8px 22px rgba(217,193,126,.16);
   font-size:.94rem;
-  line-height:1.5;
+  line-height:1.35;
+  text-align:left;
+  white-space:nowrap;
   text-decoration:none;
   transition:opacity .25s ease, transform .25s ease, box-shadow .25s ease;
 }
 .top-symptom-links a::after{
   content:"›";
   margin-left:8px;
+  flex:0 0 auto;
   font-size:1.1em;
   line-height:1;
 }
@@ -184,6 +189,43 @@
   opacity:.92;
   transform:translateY(-2px);
   box-shadow:0 12px 28px rgba(217,193,126,.22);
+}
+
+@media (max-width:860px){
+  .top-symptom-links{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .top-symptom-links a{
+    min-height:50px;
+    padding:12px 14px;
+    border-radius:17px;
+    font-size:.92rem;
+  }
+}
+
+@media (max-width:640px){
+  .top-symptom-links{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    margin-top:22px;
+  }
+
+  .top-symptom-links a{
+    min-height:48px;
+    border-radius:16px;
+  }
+}
+
+@media (max-width:360px){
+  .top-symptom-links{
+    grid-template-columns:1fr;
+  }
+
+  .top-symptom-links a{
+    min-height:46px;
+  }
 }
 
 .top-cta-card{
@@ -248,45 +290,6 @@
   #index-cards .info-card,
   #index-cards .menu-cta-card{
     padding:20px;
-  }
-}
-
-
-/* index symptom links mobile clean grid */
-@media (max-width:640px){
-  .top-symptom-links{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-    margin-top:22px;
-  }
-
-  .top-symptom-links a{
-    width:100%;
-    min-height:48px;
-    box-sizing:border-box;
-    justify-content:space-between;
-    padding:12px 14px;
-    border-radius:16px;
-    font-size:.92rem;
-    line-height:1.35;
-    text-align:left;
-    white-space:nowrap;
-  }
-
-  .top-symptom-links a::after{
-    margin-left:8px;
-    flex:0 0 auto;
-  }
-}
-
-@media (max-width:360px){
-  .top-symptom-links{
-    grid-template-columns:1fr;
-  }
-
-  .top-symptom-links a{
-    min-height:46px;
   }
 }
 
