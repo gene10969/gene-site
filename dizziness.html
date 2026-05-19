@@ -276,12 +276,13 @@ body.dizziness-page .menu-card{
     min-height:44px;
     padding:11px 12px;
     border-radius:14px;
-    border:1px solid rgba(217,193,126,.22);
-    background:rgba(255,255,255,.045);
-    color:rgba(255,255,255,.92);
+    border:1px solid rgba(217,193,126,.46);
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    color:#111;
     text-decoration:none;
     font-size:.88rem;
     line-height:1.35;
+    box-shadow:0 8px 22px rgba(217,193,126,.16);
   }
 
   
@@ -311,7 +312,7 @@ body.dizziness-page .menu-card{
 
   .gene-mobile-symptom-grid a::after{
     content:"›";
-    color:#d9c17e;
+    color:#111;
     font-size:1.15rem;
     line-height:1;
   }
@@ -461,6 +462,11 @@ body.dizziness-page .menu-card{
     transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
   }
 }
+
+
+.gene-mobile-symptom-grid a:visited{
+    color:#111;
+  }
 
 </style>
 </head>
