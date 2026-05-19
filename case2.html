@@ -561,15 +561,10 @@
   }
 
 
-/* case mobile symptom panel / to-top avoidance */
+/* mobile symptom panel / to-top avoidance */
 @media (max-width:768px){
   #to-top-btn{
     transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
-  }
-
-  #to-top-btn.gene-panel-avoid{
-    bottom:calc(430px + env(safe-area-inset-bottom)) !important;
-    z-index:10000 !important;
   }
 }
 
@@ -971,15 +966,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 <script>
 (function(){
-  function setupGeneCaseToTopAvoidance(){
+  function setupGeneToTopPanelAvoidance(){
     const panel = document.getElementById("gene-mobile-symptom-panel");
     const toggle = document.getElementById("gene-mobile-symptom-toggle");
     const close = document.getElementById("gene-mobile-symptom-close");
     const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
 
     if (!panel) return;
-    if (panel.dataset.caseToTopAvoidanceReady === "true") return;
-    panel.dataset.caseToTopAvoidanceReady = "true";
+    if (panel.dataset.toTopAvoidanceReady === "true") return;
+    panel.dataset.toTopAvoidanceReady = "true";
 
     function getToTopBtn(){
       return document.getElementById("to-top-btn");
@@ -989,46 +984,56 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const btn = getToTopBtn();
       if (!btn) return;
 
-      if (window.innerWidth <= 768 && panel.classList.contains("open")) {
-        btn.classList.add("gene-panel-avoid");
+      if (window.innerWidth > 768) {
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
+        return;
+      }
+
+      if (panel.classList.contains("open")) {
+        const rect = panel.getBoundingClientRect();
+        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
+        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
+        btn.style.setProperty("z-index", "9999", "important");
       } else {
-        btn.classList.remove("gene-panel-avoid");
+        btn.style.removeProperty("bottom");
+        btn.style.removeProperty("z-index");
       }
     }
 
     const observer = new MutationObserver(updateToTopPosition);
     observer.observe(panel, {
-      attributes:true,
-      attributeFilter:["class"]
+      attributes: true,
+      attributeFilter: ["class"]
     });
 
     [toggle, close, backdrop].forEach(function(el){
       if (!el) return;
       el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 40);
+        setTimeout(updateToTopPosition, 30);
       });
     });
 
     panel.querySelectorAll("a").forEach(function(link){
       link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 40);
+        setTimeout(updateToTopPosition, 30);
       });
     });
 
     window.addEventListener("resize", updateToTopPosition, { passive:true });
     window.addEventListener("scroll", updateToTopPosition, { passive:true });
 
-    setTimeout(updateToTopPosition, 500);
+    setTimeout(updateToTopPosition, 300);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneCaseToTopAvoidance);
+    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
   } else {
-    setupGeneCaseToTopAvoidance();
+    setupGeneToTopPanelAvoidance();
   }
 
   window.addEventListener("load", function(){
-    setTimeout(setupGeneCaseToTopAvoidance, 500);
+    setTimeout(setupGeneToTopPanelAvoidance, 500);
   });
 })();
 </script>
