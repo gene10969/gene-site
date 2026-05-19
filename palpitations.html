@@ -455,6 +455,19 @@ body.palpitations-page .menu-card{
   transform:translateY(0);
 }
 
+
+/* mobile symptom panel / to-top avoidance */
+@media (max-width:768px){
+  #to-top-btn{
+    transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
+  }
+}
+
+
+.gene-mobile-symptom-grid a:visited{
+    color:#111;
+  }
+
 </style>
 </head>
 
@@ -641,6 +654,7 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const menuPanel = document.getElementById("hamburger-menu");
+
   const fadeItems = document.querySelectorAll(".dizziness-fade");
 
   setTimeout(() => {
@@ -654,7 +668,6 @@ window.addEventListener("load", () => {
     });
 
   }, 900);
-
 
   const closeBtn = document.querySelector(".menu-close-btn");
 
@@ -819,7 +832,10 @@ window.addEventListener("load", () => {
     }
 
     const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(panel, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
 
     [toggle, close, backdrop].forEach(function(el){
       if (!el) return;
