@@ -416,7 +416,7 @@
 .page-title.hidden,
 .menu-card.card-hidden{
   transform:translateY(22px);
-  transition:opacity .8s ease, transform .8s ease;
+  transition:opacity .65s ease, transform .65s ease;
 }
 
 .page-title.hidden.show,
@@ -645,7 +645,7 @@ window.addEventListener("load", () => {
     if (pageTitle) pageTitle.classList.add("show");
     if (menuContainer) menuContainer.querySelectorAll(".menu-card").forEach(card => card.classList.add("show"));
     cards.forEach(c => c.classList.add("show"));
-  }, 900);
+  }, 450);
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {

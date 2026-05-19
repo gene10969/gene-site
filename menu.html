@@ -53,7 +53,7 @@
   padding: 0 20px;
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity .8s ease, transform .8s ease;
+  transition:opacity .65s ease, transform .65s ease;
 }
 .menu-hero-card.show{ opacity:1; transform:translateY(0); }
 .menu-hero-inner{
@@ -862,7 +862,7 @@ window.addEventListener("load", () => {
     if (menuHeroCard) menuHeroCard.classList.add("show");
     if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
     cards.forEach(c => c.classList.add("show"));
-  }, 900);
+  }, 450);
 
   if (hamburgerBtn && menuPanel) {
     hamburgerBtn.addEventListener("click", () => {

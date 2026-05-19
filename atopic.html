@@ -449,7 +449,7 @@ body.atopic-page .menu-card{
 .atopic-fade{
   opacity:0;
   transform:translateY(22px);
-  transition:opacity .8s ease, transform .8s ease;
+  transition:opacity .65s ease, transform .65s ease;
 }
 .atopic-fade.show{
   opacity:1;
@@ -663,7 +663,7 @@ window.addEventListener("load", () => {
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
     fadeItems.forEach(el => el.classList.add("show"));
-  }, 900);
+  }, 450);
 
   const closeBtn = document.querySelector(".menu-close-btn");
 
