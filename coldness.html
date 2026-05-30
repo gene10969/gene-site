@@ -477,6 +477,97 @@ body.coldness-page .menu-card{
     color:#111;
   }
 
+
+
+/* gene mobile symptom panel 19 links usability update */
+@media (max-width: 768px){
+  .gene-mobile-symptom-panel{
+    top:auto;
+    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:15px 14px 14px;
+  }
+
+  .gene-mobile-symptom-panel-title{
+    position:sticky;
+    top:-15px;
+    z-index:2;
+    margin:-15px -14px 12px;
+    padding:14px 14px 10px;
+    background:rgba(8,8,8,.98);
+    border-bottom:1px solid rgba(217,193,126,.16);
+  }
+
+  .gene-mobile-symptom-grid{
+    display:block;
+  }
+
+  .gene-mobile-symptom-group{
+    margin:0 0 14px;
+  }
+
+  .gene-mobile-symptom-group:last-child{
+    margin-bottom:0;
+  }
+
+  .gene-mobile-symptom-group-title{
+    margin:0 0 8px;
+    color:rgba(217,193,126,.92);
+    font-size:.78rem;
+    letter-spacing:.08em;
+    line-height:1.4;
+  }
+
+  .gene-mobile-symptom-list{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .gene-mobile-symptom-list a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    min-height:42px;
+    padding:10px 11px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.38);
+    background:rgba(217,193,126,.10);
+    color:#d9c17e;
+    text-decoration:none;
+    font-size:.84rem;
+    line-height:1.35;
+    box-shadow:none;
+  }
+
+  .gene-mobile-symptom-list a::after{
+    content:"›";
+    color:#d9c17e;
+    font-size:1.05rem;
+    line-height:1;
+    opacity:.85;
+  }
+
+  .gene-mobile-symptom-grid > a{
+    display:none !important;
+  }
+
+  .gene-mobile-symptom-grid a::after{
+    color:inherit;
+  }
+
+  .gene-mobile-extra-links{
+    position:sticky;
+    bottom:-14px;
+    margin:14px -14px -14px;
+    padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(8,8,8,.98);
+    border-top:1px solid rgba(217,193,126,.16);
+  }
+}
+
 </style>
 </head>
 
@@ -598,20 +689,48 @@ body.coldness-page .menu-card{
     <button type="button" class="gene-mobile-symptom-close" id="gene-mobile-symptom-close" aria-label="症状一覧を閉じる">×</button>
   </div>
   <div class="gene-mobile-symptom-grid">
-    <a href="atopic.html">アトピー</a>
-    <a href="tinnitus.html">耳鳴り</a>
-    <a href="dizziness.html">めまい</a>
-    <a href="insomnia.html">不眠</a>
-    <a href="headache.html">頭痛</a>
-    <a href="palpitations.html">動悸</a>
-    <a href="fatigue.html">慢性疲労</a>
-    <a href="panic.html">パニック症状</a>
-    <a href="pms.html">PMS</a>
-    <a href="coldness.html">冷え性</a>
-    <a href="autonomic.html">自律神経失調症</a>
-    <a href="plantar-fasciitis.html">足底筋膜炎</a>
-    <a href="tmj.html">顎関節症</a>
-    <a href="tenosynovitis.html">腱鞘炎</a>
+    <div class="gene-mobile-symptom-group">
+      <p class="gene-mobile-symptom-group-title">よく見られる不調</p>
+      <div class="gene-mobile-symptom-list">
+        <a href="dizziness.html">めまい</a>
+        <a href="insomnia.html">不眠</a>
+        <a href="headache.html">頭痛</a>
+        <a href="palpitations.html">動悸</a>
+        <a href="fatigue.html">慢性疲労</a>
+        <a href="panic.html">パニック症状</a>
+      </div>
+    </div>
+
+    <div class="gene-mobile-symptom-group">
+      <p class="gene-mobile-symptom-group-title">自律神経に関わる不調</p>
+      <div class="gene-mobile-symptom-list">
+        <a href="autonomic.html">自律神経失調症</a>
+        <a href="orthostatic-dysregulation.html">起立性調節障害</a>
+        <a href="shortness-of-breath.html">息苦しさ</a>
+        <a href="throat-discomfort.html">喉の違和感</a>
+        <a href="pms.html">PMS</a>
+        <a href="coldness.html">冷え性</a>
+      </div>
+    </div>
+
+    <div class="gene-mobile-symptom-group">
+      <p class="gene-mobile-symptom-group-title">胃腸・皮膚・その他</p>
+      <div class="gene-mobile-symptom-list">
+        <a href="ibs.html">過敏性腸症候群</a>
+        <a href="chronic-constipation.html">慢性便秘</a>
+        <a href="atopic.html">アトピー</a>
+        <a href="tinnitus.html">耳鳴り</a>
+      </div>
+    </div>
+
+    <div class="gene-mobile-symptom-group">
+      <p class="gene-mobile-symptom-group-title">痛み・身体の不調</p>
+      <div class="gene-mobile-symptom-list">
+        <a href="tmj.html">顎関節症</a>
+        <a href="tenosynovitis.html">腱鞘炎</a>
+        <a href="plantar-fasciitis.html">足底筋膜炎</a>
+      </div>
+    </div>
   </div>
   <div class="gene-mobile-extra-links">
     <a href="voice.html">院内・改善写真</a>
