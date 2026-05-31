@@ -835,6 +835,44 @@ body.atopic-page .menu-card{
   }
 }
 
+
+/* atopic improvement photos: narrow desktop readability */
+@media (min-width: 769px) and (max-width: 1180px){
+  .atopic-improvement-grid,
+  .atopic-case-gallery,
+  .atopic-photo-grid,
+  .atopic-case-photos,
+  .improvement-photo-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .atopic-improvement-item,
+  .atopic-photo-item,
+  .atopic-case-photo{
+    min-width:0 !important;
+  }
+
+  .atopic-improvement-item img,
+  .atopic-photo-item img,
+  .atopic-case-photo img,
+  .atopic-case-figure img{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 980px){
+  .atopic-improvement-grid,
+  .atopic-case-gallery,
+  .atopic-photo-grid,
+  .atopic-case-photos,
+  .improvement-photo-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
 </style>
 </head>
 
@@ -882,7 +920,6 @@ body.atopic-page .menu-card{
 <div class="dizziness-links atopic-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善写真を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
 </div>
 
 <div class="menu-container">
@@ -962,14 +999,14 @@ body.atopic-page .menu-card{
       </div>
 
       <div class="atopic-case-item">
-        <h3>腕まわりの変化</h3>
+        <h3>足首まわりの変化</h3>
         <div class="atopic-case-photos">
           <div class="atopic-case-photo">
-            <img src="cases/case2/osaka_seitai_atopy_case2_forearm_before.webp" alt="アトピー改善写真 腕 初回">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_1month.webp" alt="アトピー改善写真 足首 初回">
             <span>初回</span>
           </div>
           <div class="atopic-case-photo">
-            <img src="cases/case2/osaka_seitai_atopy_case2_forearm_6months.webp" alt="アトピー改善写真 腕 6か月目">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="アトピー改善写真 足首 6か月目">
             <span>6か月目</span>
           </div>
         </div>
@@ -983,7 +1020,6 @@ body.atopic-page .menu-card{
 
     <div class="atopic-case-actions">
       <a href="voice.html">その他の改善写真を見る</a>
-      <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
     </div>
   </div>
 
