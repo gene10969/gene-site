@@ -681,274 +681,127 @@ body.atopic-page .menu-card{
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
 
-/* atopic improvement photo section */
-.atopic-case-section{
+/* atopic case1 improvement photos */
+.atopic-case1-photo-card{
   overflow:hidden;
 }
 
-.atopic-case-lead{
-  margin:0 0 22px;
-  color:rgba(255,255,255,.9);
-  line-height:2;
+.atopic-case1-photo-card > p{
   text-align:center;
 }
 
-.atopic-case-grid{
+.atopic-case1-photo-list{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-  margin-top:22px;
+  grid-template-columns:1fr;
+  gap:28px;
+  margin:28px 0 18px;
 }
 
-.atopic-case-item{
-  border:1px solid rgba(217,193,126,.26);
+.atopic-case1-photo-block{
+  padding:22px;
+  border:1px solid rgba(217,193,126,.32);
   border-radius:20px;
   background:rgba(20,20,20,.72);
-  padding:16px;
   box-sizing:border-box;
 }
 
-.atopic-case-item h3{
-  margin:0 0 12px;
+.atopic-case1-photo-block h3{
+  margin:0 0 18px;
   color:#d9c17e;
-  font-size:1.02rem;
+  font-size:1.08rem;
   letter-spacing:.08em;
 }
 
-.atopic-case-photos{
+.atopic-case1-compare{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
+  gap:18px;
+  align-items:start;
 }
 
-.atopic-case-photo{
+.atopic-case1-figure{
+  margin:0;
   overflow:hidden;
+  border:1px solid rgba(217,193,126,.28);
   border-radius:16px;
-  border:1px solid rgba(217,193,126,.18);
-  background:rgba(255,255,255,.035);
+  background:rgba(10,10,10,.82);
 }
 
-.atopic-case-photo img{
+.atopic-case1-figure img{
   display:block;
   width:100%;
-  height:190px;
-  object-fit:cover;
+  height:auto;
+  object-fit:contain;
+  object-position:center center;
 }
 
-.atopic-case-photo span{
-  display:block;
-  padding:9px 8px;
+.atopic-case1-figure figcaption{
+  padding:10px 12px;
   text-align:center;
   color:#d9c17e;
-  font-size:.82rem;
+  font-size:.95rem;
   letter-spacing:.08em;
-  background:rgba(0,0,0,.35);
+  line-height:1.5;
+  border-top:1px solid rgba(217,193,126,.18);
+  background:rgba(12,12,12,.88);
 }
 
-.atopic-case-note{
-  margin:16px 0 0;
-  color:rgba(255,255,255,.72);
-  font-size:.82rem;
-  line-height:1.8;
+.atopic-case1-note{
   text-align:center;
+  color:rgba(255,255,255,.72);
+  font-size:.9rem;
+  line-height:1.9;
+  margin:22px 0 0;
 }
 
-.atopic-case-actions{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:22px;
-}
-
-.atopic-case-actions a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:46px;
-  padding:10px 20px;
-  border-radius:999px;
-  border:1px solid rgba(217,193,126,.42);
-  background:rgba(20,20,20,.9);
-  color:#d9c17e;
-  text-decoration:none;
-  letter-spacing:.06em;
-  box-shadow:0 10px 24px rgba(0,0,0,.28);
-}
-
-.atopic-case-actions a[href*="lin.ee"]{
-  color:#111;
-  border-color:rgba(255,236,161,.78);
-  background:linear-gradient(180deg,#fff1ad 0%,#d9c17e 100%);
-  font-weight:700;
-  box-shadow:0 10px 28px rgba(217,193,126,.30);
-}
-
-.atopic-case-actions a:visited{
-  color:#d9c17e;
-}
-
-.atopic-case-actions a[href*="lin.ee"]:visited{
-  color:#111;
-}
-
-@media (max-width:900px){
-  .atopic-case-grid{
-    grid-template-columns:1fr;
-  }
-
-  .atopic-case-photo img{
-    height:auto;
-    aspect-ratio:4 / 5;
-  }
-}
-
-@media (max-width:640px){
-  .atopic-case-lead{
-    text-align:left;
-  }
-
-  .atopic-case-item{
-    padding:14px;
-    border-radius:18px;
-  }
-
-  .atopic-case-photos{
-    gap:8px;
-  }
-
-  .atopic-case-photo{
-    border-radius:14px;
-  }
-
-  .atopic-case-photo span{
-    font-size:.78rem;
-  }
-
-  .atopic-case-actions{
-    flex-direction:column;
-  }
-
-  .atopic-case-actions a{
-    width:100%;
-    box-sizing:border-box;
-  }
-}
-
-
-
-
-
-</style>
-
-
-<style id="atopic-photo-layout-final">
-@media (min-width:769px){
-  .atopic-improvement-grid,
-  .atopic-case-gallery,
-  .atopic-photo-grid,
-  .atopic-case-photos,
-  .improvement-photo-grid,
-  .case-photo-grid{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:32px !important;
-    width:100% !important;
-  }
-
-  .atopic-improvement-item,
-  .atopic-photo-item,
-  .atopic-case-photo,
-  .improvement-photo-item,
-  .case-photo-item{
-    width:100% !important;
-    max-width:900px !important;
-    margin:0 auto !important;
-    box-sizing:border-box !important;
-  }
-
-  .atopic-improvement-pair,
-  .atopic-photo-pair,
-  .atopic-case-pair,
-  .improvement-photo-pair,
-  .case-photo-pair{
-    display:grid !important;
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    gap:22px !important;
-    align-items:start !important;
-    width:100% !important;
-  }
-
-  .atopic-improvement-pair > *,
-  .atopic-photo-pair > *,
-  .atopic-case-pair > *,
-  .improvement-photo-pair > *,
-  .case-photo-pair > *{
-    width:100% !important;
-    max-width:100% !important;
-  }
-
-  .atopic-improvement-item img,
-  .atopic-photo-item img,
-  .atopic-case-photo img,
-  .improvement-photo-item img,
-  .case-photo-item img,
-  .atopic-improvement-pair img,
-  .atopic-photo-pair img,
-  .atopic-case-pair img,
-  .improvement-photo-pair img,
-  .case-photo-pair img{
-    display:block !important;
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    aspect-ratio:auto !important;
-    object-fit:contain !important;
-    object-position:center center !important;
-  }
-
-  .atopic-improvement-item figcaption,
-  .atopic-photo-item figcaption,
-  .atopic-case-photo figcaption,
-  .improvement-photo-item figcaption,
-  .case-photo-item figcaption,
-  .atopic-improvement-pair figcaption,
-  .atopic-photo-pair figcaption,
-  .atopic-case-pair figcaption,
-  .improvement-photo-pair figcaption,
-  .case-photo-pair figcaption{
-    writing-mode:horizontal-tb !important;
-    text-orientation:mixed !important;
-    white-space:normal !important;
-    text-align:center !important;
-    line-height:1.5 !important;
-  }
+.atopic-case1-photo-card .map-open-btn{
+  background:rgba(20,20,20,.9) !important;
+  border:1px solid rgba(217,193,126,.56) !important;
+  color:#d9c17e !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
 }
 
 @media (max-width:768px){
-  .atopic-improvement-grid,
-  .atopic-case-gallery,
-  .atopic-photo-grid,
-  .atopic-case-photos,
-  .improvement-photo-grid,
-  .case-photo-grid{
-    display:grid !important;
-    grid-template-columns:1fr !important;
-    gap:22px !important;
+  .atopic-case1-photo-card > p{
+    text-align:left;
   }
 
-  .atopic-improvement-pair,
-  .atopic-photo-pair,
-  .atopic-case-pair,
-  .improvement-photo-pair,
-  .case-photo-pair{
-    display:grid !important;
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
-    gap:12px !important;
+  .atopic-case1-photo-block{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  .atopic-case1-compare{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .atopic-case1-photo-block h3{
+    font-size:1rem;
+  }
+
+  .atopic-case1-figure figcaption{
+    font-size:.86rem;
+    padding:9px 8px;
+  }
+
+  .atopic-case1-note{
+    text-align:left;
+    font-size:.86rem;
   }
 }
-</style>
 
+@media (max-width:420px){
+  .atopic-case1-compare{
+    gap:10px;
+  }
+
+  .atopic-case1-photo-block{
+    padding:14px;
+  }
+}
+
+</style>
 </head>
 
 <body class="subpage atopic-page">
@@ -995,6 +848,7 @@ body.atopic-page .menu-card{
 <div class="dizziness-links atopic-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善写真を見る</a>
+  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
 </div>
 
 <div class="menu-container">
@@ -1035,68 +889,71 @@ body.atopic-page .menu-card{
     </p>
   </div>
 
-
-
-  <div class="menu-card atopic-fade atopic-case-section">
+  <div class="menu-card atopic-fade atopic-case1-photo-card">
     <h2>改善写真・経過の一例</h2>
-    <p class="atopic-case-lead">
-      実際の変化は一人ひとり異なりますが、<br>
+    <p>
+      実際の変化には個人差がありますが、<br>
       皮膚の状態だけでなく、睡眠・緊張・呼吸・疲労の出方も含めて経過を確認しています。
     </p>
 
-    <div class="atopic-case-grid">
-      <div class="atopic-case-item">
+    <div class="atopic-case1-photo-list">
+
+      <div class="atopic-case1-photo-block">
         <h3>顔まわりの変化</h3>
-        <div class="atopic-case-photos">
-          <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="アトピー改善写真 顔 初回">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="アトピー改善写真 顔 6か月目">
-            <span>6か月目</span>
-          </div>
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="アトピー改善写真 顔まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="アトピー改善写真 顔まわり 6か月目">
+            <figcaption>6か月目</figcaption>
+          </figure>
         </div>
       </div>
 
-      <div class="atopic-case-item">
+      <div class="atopic-case1-photo-block">
         <h3>首まわりの変化</h3>
-        <div class="atopic-case-photos">
-          <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="アトピー改善写真 首 初回">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="アトピー改善写真 首 6か月目">
-            <span>6か月目</span>
-          </div>
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="アトピー改善写真 首まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="アトピー改善写真 首まわり 6か月目">
+            <figcaption>6か月目</figcaption>
+          </figure>
         </div>
       </div>
 
-      <div class="atopic-case-item">
+      <div class="atopic-case1-photo-block">
         <h3>足首まわりの変化</h3>
-        <div class="atopic-case-photos">
-          <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="アトピー改善写真 足首まわり 1か月目">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case-photo">
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="アトピー改善写真 足首まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
             <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="アトピー改善写真 足首まわり 6か月目">
-            <span>6か月目</span>
-          </div>
+            <figcaption>6か月目</figcaption>
+          </figure>
         </div>
       </div>
+
     </div>
 
-    <p class="atopic-case-note">
+    <p class="atopic-case1-note">
       ※写真は経過の一例です。得られる結果には個人差があります。<br>
-      ※必要に応じて、今後は1か月目・6か月目など、より見やすい比較構成に調整できます。
+      ※掲載写真はご本人の許可を得て使用しています。
     </p>
 
-    <div class="atopic-case-actions">
-      <a href="voice.html">その他の改善写真を見る</a>
-    </div>
+    <p style="text-align:center; margin-top:22px;">
+      <a href="voice.html" class="map-open-btn">
+        その他の改善写真を見る
+      </a>
+    </p>
   </div>
+
 
 
   <div class="menu-card atopic-fade">
