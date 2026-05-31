@@ -836,40 +836,110 @@ body.atopic-page .menu-card{
 }
 
 
-/* atopic improvement photos: narrow desktop readability */
-@media (min-width: 769px) and (max-width: 1180px){
+
+
+/* atopic improvement photos: fixed responsive readability */
+.atopic-improvement-card,
+.atopic-case-photo-card{
+  container-type:inline-size;
+}
+
+.atopic-improvement-grid,
+.atopic-case-gallery,
+.atopic-photo-grid,
+.atopic-case-photos,
+.improvement-photo-grid,
+.case-photo-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px !important;
+  align-items:stretch;
+}
+
+.atopic-improvement-item,
+.atopic-photo-item,
+.atopic-case-photo,
+.improvement-photo-item,
+.case-photo-item{
+  min-width:0 !important;
+}
+
+.atopic-improvement-pair,
+.atopic-photo-pair,
+.atopic-case-pair,
+.improvement-photo-pair,
+.case-photo-pair{
+  display:grid !important;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px !important;
+  align-items:start;
+}
+
+.atopic-improvement-item img,
+.atopic-photo-item img,
+.atopic-case-photo img,
+.improvement-photo-item img,
+.case-photo-item img,
+.atopic-improvement-pair img,
+.atopic-photo-pair img,
+.atopic-case-pair img,
+.improvement-photo-pair img,
+.case-photo-pair img{
+  width:100% !important;
+  max-width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* PCでも横幅が細い時は3列をやめる */
+@container (max-width: 780px){
   .atopic-improvement-grid,
   .atopic-case-gallery,
   .atopic-photo-grid,
   .atopic-case-photos,
-  .improvement-photo-grid{
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+  .improvement-photo-grid,
+  .case-photo-grid{
+    grid-template-columns:1fr !important;
   }
 
-  .atopic-improvement-item,
-  .atopic-photo-item,
-  .atopic-case-photo{
-    min-width:0 !important;
-  }
-
-  .atopic-improvement-item img,
-  .atopic-photo-item img,
-  .atopic-case-photo img,
-  .atopic-case-figure img{
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    object-fit:contain !important;
+  .atopic-improvement-pair,
+  .atopic-photo-pair,
+  .atopic-case-pair,
+  .improvement-photo-pair,
+  .case-photo-pair{
+    grid-template-columns:repeat(2, minmax(120px, 1fr)) !important;
   }
 }
 
-@media (min-width: 769px) and (max-width: 980px){
+@media (min-width:769px) and (max-width:1180px){
   .atopic-improvement-grid,
   .atopic-case-gallery,
   .atopic-photo-grid,
   .atopic-case-photos,
-  .improvement-photo-grid{
+  .improvement-photo-grid,
+  .case-photo-grid{
     grid-template-columns:1fr !important;
+  }
+}
+
+@media (max-width:768px){
+  .atopic-improvement-grid,
+  .atopic-case-gallery,
+  .atopic-photo-grid,
+  .atopic-case-photos,
+  .improvement-photo-grid,
+  .case-photo-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .atopic-improvement-pair,
+  .atopic-photo-pair,
+  .atopic-case-pair,
+  .improvement-photo-pair,
+  .case-photo-pair{
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
@@ -1002,11 +1072,11 @@ body.atopic-page .menu-card{
         <h3>足首まわりの変化</h3>
         <div class="atopic-case-photos">
           <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_1month.webp" alt="アトピー改善写真 足首 初回">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="アトピー改善写真 足首まわり 1か月目">
             <span>初回</span>
           </div>
           <div class="atopic-case-photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="アトピー改善写真 足首 6か月目">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="アトピー改善写真 足首まわり 6か月目">
             <span>6か月目</span>
           </div>
         </div>
