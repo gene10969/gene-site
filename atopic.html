@@ -35,6 +35,9 @@ if (
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
 
 <style>
+.symptom-sp-br{display:none;}
+@media (max-width:768px){.symptom-sp-br{display:inline;}}
+
 .dizziness-lead{
   width:90%;
   max-width:980px;
@@ -680,6 +683,127 @@ body.atopic-page .menu-card{
   transform:translateY(-2px);
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
+
+/* atopic case1 improvement photos */
+.atopic-case1-photo-card{
+  overflow:hidden;
+}
+
+.atopic-case1-photo-card > p{
+  text-align:center;
+}
+
+.atopic-case1-photo-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+  margin:28px 0 18px;
+}
+
+.atopic-case1-photo-block{
+  padding:22px;
+  border:1px solid rgba(217,193,126,.32);
+  border-radius:20px;
+  background:rgba(20,20,20,.72);
+  box-sizing:border-box;
+}
+
+.atopic-case1-photo-block h3{
+  margin:0 0 18px;
+  color:#d9c17e;
+  font-size:1.08rem;
+  letter-spacing:.08em;
+}
+
+.atopic-case1-compare{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  align-items:start;
+}
+
+.atopic-case1-figure{
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.28);
+  border-radius:16px;
+  background:rgba(10,10,10,.82);
+}
+
+.atopic-case1-figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center center;
+}
+
+.atopic-case1-figure figcaption{
+  padding:10px 12px;
+  text-align:center;
+  color:#d9c17e;
+  font-size:.95rem;
+  letter-spacing:.08em;
+  line-height:1.5;
+  border-top:1px solid rgba(217,193,126,.18);
+  background:rgba(12,12,12,.88);
+}
+
+.atopic-case1-note{
+  text-align:center;
+  color:rgba(255,255,255,.72);
+  font-size:.9rem;
+  line-height:1.9;
+  margin:22px 0 0;
+}
+
+.atopic-case1-photo-card .map-open-btn{
+  background:rgba(20,20,20,.9) !important;
+  border:1px solid rgba(217,193,126,.56) !important;
+  color:#d9c17e !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
+}
+
+@media (max-width:768px){
+  .atopic-case1-photo-card > p{
+    text-align:left;
+  }
+
+  .atopic-case1-photo-block{
+    padding:18px;
+    border-radius:18px;
+  }
+
+  .atopic-case1-compare{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .atopic-case1-photo-block h3{
+    font-size:1rem;
+  }
+
+  .atopic-case1-figure figcaption{
+    font-size:.86rem;
+    padding:9px 8px;
+  }
+
+  .atopic-case1-note{
+    text-align:left;
+    font-size:.86rem;
+  }
+}
+
+@media (max-width:420px){
+  .atopic-case1-compare{
+    gap:10px;
+  }
+
+  .atopic-case1-photo-block{
+    padding:14px;
+  }
+}
+
 </style>
 </head>
 
@@ -709,10 +833,10 @@ body.atopic-page .menu-card{
   <a href="voice.html">院内・改善写真</a>
 </div>
 
-<h1 class="page-title atopic-fade">アトピーでお悩みの方へ</h1>
+<h1 class="page-title atopic-fade">アトピーで<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
 
 <p class="dizziness-lead atopic-fade">
-  大阪 自律神経専門整体院 gene のアトピーページ。肌荒れ、かゆみ、自律神経やストレスと関係する不調についてご案内しています。
+  肌荒れやかゆみ、<br>自律神経やストレスと関係する不調についてご案内しています。
 </p>
 
 <div class="dizziness-intro-card atopic-fade">
@@ -767,6 +891,73 @@ body.atopic-page .menu-card{
       ・睡眠の質も崩れている
     </p>
   </div>
+
+  <div class="menu-card atopic-fade atopic-case1-photo-card">
+    <h2>改善写真・経過の一例</h2>
+    <p>
+      実際の変化には個人差がありますが、<br>
+      皮膚の状態だけでなく、睡眠・緊張・呼吸・疲労の出方も含めて経過を確認しています。
+    </p>
+
+    <div class="atopic-case1-photo-list">
+
+      <div class="atopic-case1-photo-block">
+        <h3>顔まわりの変化</h3>
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="アトピー改善写真 顔まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="アトピー改善写真 顔まわり 6か月目">
+            <figcaption>6か月目</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="atopic-case1-photo-block">
+        <h3>首まわりの変化</h3>
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="アトピー改善写真 首まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="アトピー改善写真 首まわり 6か月目">
+            <figcaption>6か月目</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="atopic-case1-photo-block">
+        <h3>足首まわりの変化</h3>
+        <div class="atopic-case1-compare">
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="アトピー改善写真 足首まわり 初回">
+            <figcaption>初回</figcaption>
+          </figure>
+          <figure class="atopic-case1-figure">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="アトピー改善写真 足首まわり 6か月目">
+            <figcaption>6か月目</figcaption>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="atopic-case1-note">
+      ※写真は経過の一例です。得られる結果には個人差があります。<br>
+      ※掲載写真はご本人の許可を得て使用しています。
+    </p>
+
+    <p style="text-align:center; margin-top:22px;">
+      <a href="voice.html" class="map-open-btn">
+        その他の改善写真を見る
+      </a>
+    </p>
+  </div>
+
+
 
   <div class="menu-card atopic-fade">
     <h2>ご案内</h2>
