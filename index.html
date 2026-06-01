@@ -273,6 +273,80 @@ if (
   opacity:.92;
 }
 
+
+.faq-preview-card{
+  position:relative;
+  overflow:hidden;
+}
+.faq-preview-card::before{
+  content:"FAQ";
+  position:absolute;
+  right:22px;
+  bottom:-24px;
+  color:rgba(217,193,126,.055);
+  font-size:clamp(4.5rem, 12vw, 8.5rem);
+  line-height:1;
+  font-family:serif;
+  letter-spacing:.04em;
+  pointer-events:none;
+}
+.faq-preview-list{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:16px;
+  margin-top:22px;
+}
+.faq-preview-item{
+  padding:18px 20px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.22);
+  background:rgba(255,255,255,.025);
+}
+.faq-preview-item strong{
+  display:block;
+  margin-bottom:8px;
+  color:#f3e6bf;
+  line-height:1.8;
+  letter-spacing:.03em;
+}
+.faq-preview-item p{
+  margin:0;
+  color:rgba(255,255,255,.88);
+  line-height:1.9;
+  white-space:normal;
+}
+.faq-preview-button{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:24px;
+  min-height:48px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.faq-preview-button::after{
+  content:"›";
+  margin-left:10px;
+  font-size:1.15em;
+  line-height:1;
+}
+.faq-preview-button:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10);
+}
+
 @media (max-width:860px){
   .top-hero-inner{
     grid-template-columns:1fr;
@@ -1080,6 +1154,36 @@ if (
 
 初めての整体は不安もあると思いますが、
 無理な施術や通院の強制は一切ありませんのでご安心ください。</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="info-card card-hidden faq-preview-card">
+    <div class="card-split no-image">
+      <div class="card-content">
+        <h3>よくあるご質問</h3>
+        <p>初めての方が不安に感じやすい内容を、先にまとめています。</p>
+
+        <div class="faq-preview-list">
+          <div class="faq-preview-item">
+            <strong>Q. 強い施術は行いますか？</strong>
+            <p>A. 無理な矯正や強い刺激は行っておりません。お身体の反応を確認しながら、負担の少ない範囲で調整します。</p>
+          </div>
+
+          <div class="faq-preview-item">
+            <strong>Q. 何回くらい通えば良くなりますか？</strong>
+            <p>A. 状態や経過によって異なります。初回時にお身体の状態を確認したうえで、現実的な見通しをお伝えしています。</p>
+          </div>
+
+          <div class="faq-preview-item">
+            <strong>Q. 健康保険は使えますか？</strong>
+            <p>A. 当院は自費施術のみとなります。自律神経の乱れに関わる不調を、身体全体の状態から確認していきます。</p>
+          </div>
+        </div>
+
+        <a href="faq.html" class="faq-preview-button">よくある質問をもっと見る</a>
       </div>
     </div>
   </div>
