@@ -109,4 +109,19 @@
     <loc>https://gene-seitai.com/case3.html</loc>
   </url>
 
+  <url>
+    <loc>https://gene-seitai.com/anxiety-disorder.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://gene-seitai.com/nausea.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://gene-seitai.com/stomach-discomfort.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
