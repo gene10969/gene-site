@@ -1514,3 +1514,12 @@ body.voice-page footer{
 #global-logo-bg{
   transition:opacity 1.1s ease !important;
 }
+.footer-address{
+  display:block;
+  line-height:1.8;
+}
+
+.footer-address .line1,
+.footer-address .line2{
+  display:block;
+}
