@@ -5,8 +5,17 @@
 
 <script>
 (function(){
-  if (window.location.pathname === "/index.html") {
-    window.location.replace("https://gene-seitai.com/" + window.location.search + window.location.hash);
+  if (
+    location.hostname !== "localhost" &&
+    location.hostname !== "127.0.0.1"
+  ) {
+    if (window.location.pathname === "/index.html") {
+      window.location.replace(
+        "https://gene-seitai.com/" +
+        window.location.search +
+        window.location.hash
+      );
+    }
   }
 })();
 </script>
