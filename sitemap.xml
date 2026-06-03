@@ -124,4 +124,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://gene-seitai.com/check.html</loc>
+  </url>
 </urlset>
