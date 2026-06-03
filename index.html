@@ -34,7 +34,15 @@ if (
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  (function(){
+const params=new URLSearchParams(location.search);
+if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
+if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
+const isInternal=localStorage.getItem('internalUser')==='true';
+if(!isInternal){
+gtag('config','G-8KPJ55NQMT');
+}
+})();
 }
 </script>
   
