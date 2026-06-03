@@ -1,21 +1,21 @@
 
 (function(){
   const questions = [
-    { id:"sleep_onset", category:"sleep", text:"寝つきが悪い、または眠りが浅いと感じることがありますか。" },
-    { id:"sleep_wakeup", category:"sleep", text:"夜中に目が覚める、朝起きても疲れが残ることがありますか。" },
-    { id:"fatigue", category:"fatigue", text:"慢性的に疲れやすく、休んでも回復しにくいと感じますか。" },
-    { id:"morning", category:"fatigue", text:"朝起きるのがつらい、午前中に身体が重いことがありますか。" },
-    { id:"stress", category:"stress", text:"気持ちが休まらず、緊張や不安を感じやすいですか。" },
-    { id:"irritability", category:"stress", text:"以前よりイライラしやすい、または気分の波を感じますか。" },
-    { id:"dizziness", category:"nerve", text:"めまい、ふらつき、頭がぼーっとする感覚がありますか。" },
-    { id:"headache", category:"nerve", text:"頭痛、頭の重さ、首肩の強いこりを感じることがありますか。" },
-    { id:"stomach", category:"digestive", text:"胃の不快感、吐き気、食欲の乱れを感じることがありますか。" },
-    { id:"bowel", category:"digestive", text:"便秘や下痢、お腹の張りなど、腸の不調を感じることがありますか。" },
-    { id:"breath", category:"breath", text:"呼吸が浅い、深呼吸がしづらい、息苦しさを感じることがありますか。" },
-    { id:"palpitation", category:"circulation", text:"動悸、胸のざわつき、手足の冷えを感じることがありますか。" },
-    { id:"sensitivity", category:"sensitivity", text:"音・光・においなどに敏感になったと感じることがありますか。" },
-    { id:"weather", category:"sensitivity", text:"天候や気圧、季節の変わり目で体調が変わりやすいですか。" },
-    { id:"skin", category:"skin", text:"皮膚のかゆみ、汗の異常、肌荒れなどが体調と連動していると感じますか。" }
+    { id:"sleep_onset", category:"sleep", text:"寝つきが悪い、または眠りが浅いと感じることがありますか？" },
+    { id:"sleep_wakeup", category:"sleep", text:"夜中に目が覚める、朝起きても疲れが残ることがありますか？" },
+    { id:"fatigue", category:"fatigue", text:"慢性的に疲れやすく、休んでも回復しにくいと感じますか？" },
+    { id:"morning", category:"fatigue", text:"朝起きるのがつらい、午前中に身体が重いことがありますか？" },
+    { id:"stress", category:"stress", text:"気持ちが休まらず、緊張や不安を感じやすいですか？" },
+    { id:"irritability", category:"stress", text:"以前よりイライラしやすい、または気分の波を感じますか？" },
+    { id:"dizziness", category:"nerve", text:"めまい、ふらつき、頭がぼーっとする感覚がありますか？" },
+    { id:"headache", category:"nerve", text:"頭痛、頭の重さ、首肩の強いこりを感じることがありますか？" },
+    { id:"stomach", category:"digestive", text:"胃の不快感、吐き気、食欲の乱れを感じることがありますか？" },
+    { id:"bowel", category:"digestive", text:"便秘や下痢、お腹の張りなど、腸の不調を感じることがありますか？" },
+    { id:"breath", category:"breath", text:"呼吸が浅い、深呼吸がしづらい、息苦しさを感じることがありますか？" },
+    { id:"palpitation", category:"circulation", text:"動悸、胸のざわつき、手足の冷えを感じることがありますか？" },
+    { id:"sensitivity", category:"sensitivity", text:"音・光・においなどに敏感になったと感じることがありますか？" },
+    { id:"weather", category:"sensitivity", text:"天候や気圧、季節の変わり目で体調が変わりやすいですか？" },
+    { id:"skin", category:"skin", text:"皮膚のかゆみ、汗の異常、肌荒れなどが体調と連動していると感じますか？" }
   ];
 
   const categoryMeta = {
@@ -337,15 +337,15 @@
         '<p>日々の体調は変化するため、気になる変化が出てきた際には、またこちらのチェックをご利用ください。</p>';
     }
     if(band === "mild"){
-      return '<p><strong>総合判定：軽度〜中等度手前</strong></p>' +
+      return '<p><strong>総合判定：注意</strong></p>' +
         '<p>一部に負担傾向はありますが、すぐに来院を強くすすめる段階ではありません。ただし、同じ不調が2週間以上続く、以前より回復しにくい、生活の質が落ちている場合は早めの確認が有効です。</p>';
     }
     if(band === "middle"){
-      return '<p><strong>総合判定：中程度</strong></p>' +
+      return '<p><strong>総合判定：要注意</strong></p>' +
         '<p>'+topLabels.join('・')+'を中心に、自律神経に関わる負担が積み重なっている可能性があります。この段階は、まだ我慢できる一方で、放置すると睡眠・胃腸・気分・疲労感など複数の不調へ広がりやすい状態です。</p>' +
         '<p>現在の状態を整理するために、来院時の82項目詳細チェックをおすすめします。</p>';
     }
-    return '<p><strong>総合判定：強め</strong></p>' +
+    return '<p><strong>総合判定：要確認</strong></p>' +
       '<p>'+topLabels.join('・')+'の負担が強く出ています。身体が休まりにくい状態が続くと、日常生活への影響が大きくなりやすく、自己判断だけで様子を見るよりも現在地を詳しく把握することが大切です。</p>' +
       '<p>来院時には82項目の詳細チェックで、睡眠・疲労・ストレス・胃腸・呼吸・循環などを総合的に確認します。中程度以上の結果の方には、早めのご相談をおすすめします。</p>';
   }
