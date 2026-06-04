@@ -34,15 +34,7 @@ if (
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  (function(){
-const params=new URLSearchParams(location.search);
-if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
-if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
-const isInternal=localStorage.getItem('internalUser')==='true';
-if(!isInternal){
-gtag('config','G-8KPJ55NQMT');
-}
-})();
+  gtag('config', 'G-8KPJ55NQMT');
 }
 </script>
   
@@ -958,6 +950,45 @@ gtag('config','G-8KPJ55NQMT');
   transform:translateY(-2px);
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
+
+/* policy card readability */
+#index-cards .info-card .card-content h4{
+  color:#f4ead0;
+  margin:28px 0 12px;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+#index-cards .info-card .card-content p{
+  max-width:none;
+}
+
+.gene-check-invite p{
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+  line-height:2;
+}
+
+@media (min-width:769px){
+  #index-cards .info-card .card-content p,
+  #index-cards .info-card .card-content li{
+    line-height:1.85;
+  }
+}
+
+@media (max-width:768px){
+  #index-cards .info-card .card-content p,
+  #index-cards .info-card .card-content li{
+    line-height:1.95;
+  }
+
+  .gene-check-invite p{
+    max-width:100%;
+    line-height:1.9;
+  }
+}
+
 </style>
 </head>
 
@@ -1123,11 +1154,61 @@ gtag('config','G-8KPJ55NQMT');
     </div>
   </div>
 
-  <div class="info-card card-hidden top-cta-card">
-    <p>まずは現在の状態を整理するところからでも大丈夫です。
-お気軽にご相談ください。</p>
-    <a href="https://lin.ee/6bBKc67" class="top-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
+  
+  <div class="info-card card-hidden">
+    <div class="card-split no-image">
+      <div class="card-content">
+        <h3>施術を受ける前にご確認ください</h3>
+        <p>
+当院では、不調のある部分だけではなく、
+現在のお身体の状態を丁寧に確認しながら、
+身体全体のバランスを整えていきます。
+
+そのため、以下のようなお考えの場合は、
+ご期待に添えないことがあります。
+        </p>
+
+        <h4>このようなお考えの方</h4>
+        <ul style="line-height:2; list-style:none; padding-left:0;">
+          <li>・1回の施術ですべて解決してほしい方</li>
+          <li>・強い刺激や慰安目的の施術を希望される方</li>
+          <li>・施術だけで改善すると考えている方</li>
+          <li>・生活習慣やお身体の状態と向き合う意思がない方</li>
+          <li>・ご予約やお約束を大切にしていただけない方</li>
+        </ul>
+
+        <h4>当院がお手伝いできる方</h4>
+        <ul style="line-height:2; list-style:none; padding-left:0;">
+          <li>・現在の状態をしっかり確認したい方</li>
+          <li>・原因のはっきりしない不調でお悩みの方</li>
+          <li>・身体全体のバランスを整えたい方</li>
+          <li>・ご自身のお身体と向き合いながら改善を目指したい方</li>
+          <li>・時間がかかっても、根本的な改善を目指したい方</li>
+          <li>・安心して通える場所を探している方</li>
+        </ul>
+
+        <p>
+まずは現在の状態を確認したい方は、
+当院オリジナルの自律神経チェックもご利用ください。
+        </p>
+      </div>
+    </div>
   </div>
+
+<section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-after-policy-title">
+  <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
+  <h2 id="gene-check-invite-after-policy-title">現在の状態を確認したい方へ</h2>
+  <p>
+現在の不調が、睡眠・ストレス・胃腸・呼吸など、
+どの負担と重なりやすいかを無料・登録なしで簡易的に確認できます。
+
+来院時には82項目の詳細チェックを行い、
+現在の状態をより詳しく確認できます。
+  </p>
+  <div class="gene-check-invite__actions">
+    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+  </div>
+</section>
 
   <div class="info-card card-hidden">
     <div class="card-split">
