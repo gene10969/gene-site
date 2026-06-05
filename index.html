@@ -989,6 +989,22 @@ if (
   }
 }
 
+
+/* secret page link */
+.secret-photo-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  border-radius:18px;
+}
+.secret-photo-link img{
+  transition:opacity .25s ease, transform .25s ease;
+}
+.secret-photo-link:hover img{
+  opacity:.96;
+  transform:translateY(-1px);
+}
+
 </style>
 </head>
 
@@ -1322,7 +1338,9 @@ if (
   <div class="info-card card-hidden">
     <div class="card-split">
       <div class="card-media">
-        <img src="assets/img/gene-profile.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基">
+        <a href="quiet-room.html" class="secret-photo-link" id="secret-page-link" aria-label="隠しページへ">
+          <img src="assets/img/gene-profile.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基">
+        </a>
       </div>
       <div class="card-content">
         <h3>最後に</h3>
@@ -1726,6 +1744,50 @@ window.addEventListener("load", () => {
   window.addEventListener("load", function(){
     setTimeout(setupGeneToTopPanelAvoidance, 500);
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  function setupSecretPageLink(){
+    const link = document.getElementById("secret-page-link");
+    if (!link) return;
+    if (link.dataset.secretReady === "true") return;
+    link.dataset.secretReady = "true";
+
+    link.addEventListener("click", function(event){
+      const href = link.getAttribute("href") || "quiet-room.html";
+
+      if (typeof gtag !== "function") {
+        return;
+      }
+
+      event.preventDefault();
+
+      let moved = false;
+      const go = function(){
+        if (moved) return;
+        moved = true;
+        window.location.href = href;
+      };
+
+      gtag("event", "secret_page_click", {
+        event_category: "secret_page",
+        event_label: "index_last_photo",
+        link_url: href,
+        event_callback: go
+      });
+
+      setTimeout(go, 700);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupSecretPageLink);
+  } else {
+    setupSecretPageLink();
+  }
 })();
 </script>
 
