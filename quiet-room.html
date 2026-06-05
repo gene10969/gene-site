@@ -392,6 +392,84 @@ if (
   }
 }
 
+
+/* final width and wrapping adjustment */
+.secret-page,
+.secret-hero-card{
+  max-width:1120px !important;
+}
+
+.secret-hero-card{
+  padding:0 20px !important;
+}
+
+.secret-hero-inner,
+.secret-card{
+  width:100% !important;
+  box-sizing:border-box !important;
+}
+
+.secret-hero-copy p,
+.secret-card p,
+.secret-card li,
+.secret-work-grid dd,
+.secret-work-grid dt{
+  white-space:normal !important;
+  word-break:normal !important;
+  overflow-wrap:break-word !important;
+}
+
+.sp-only-br{
+  display:none !important;
+}
+
+@media (max-width:640px){
+  .secret-page,
+  .secret-hero-card{
+    max-width:none !important;
+  }
+
+  .secret-hero-card,
+  .secret-page{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+
+  .secret-hero-inner,
+  .secret-card{
+    padding:22px !important;
+  }
+
+  .secret-hero-copy p,
+  .secret-card p{
+    font-size:1rem !important;
+    line-height:2.0 !important;
+    letter-spacing:.02em;
+    text-align:left !important;
+  }
+
+  .secret-room-title{
+    font-size:clamp(2.25rem,12vw,3.15rem) !important;
+    line-height:1.22 !important;
+    margin-bottom:32px !important;
+  }
+
+  .main-title{
+    line-height:1.45 !important;
+  }
+
+  .sub-catch{
+    line-height:1.8 !important;
+  }
+
+  #hero-logo .sp-only-br,
+  .main-title .sp-only-br,
+  .sub-catch .sp-only-br,
+  .secret-footer-message h2 .sp-br{
+    display:block !important;
+  }
+}
+
 </style>
 </head>
 
