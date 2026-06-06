@@ -11,15 +11,7 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  (function(){
-const params=new URLSearchParams(location.search);
-if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
-if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
-const isInternal=localStorage.getItem('internalUser')==='true';
-if(!isInternal){
-gtag('config','G-8KPJ55NQMT');
-}
-})();
+  gtag('config', 'G-8KPJ55NQMT');
 }
 </script>
 <meta charset="UTF-8">
@@ -52,6 +44,173 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 @media (max-width: 768px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom));}.gene-mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);border-top:1px solid rgba(217,193,126,.28);box-shadow:0 -12px 30px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}.gene-mobile-bottom-nav a,.gene-mobile-bottom-nav button{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:rgba(255,255,255,.82);text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:50px;padding:4px 2px;font-family:inherit;letter-spacing:.04em;font-size:10px;line-height:1.25;cursor:pointer;}.gene-mobile-bottom-nav .nav-icon{display:flex;align-items:center;justify-content:center;width:22px;height:22px;color:#d9c17e;font-size:18px;line-height:1;}.gene-mobile-bottom-nav .nav-text{white-space:nowrap;}.gene-mobile-bottom-nav .line-nav{color:#111;background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);border-radius:16px;box-shadow:0 6px 18px rgba(217,193,126,.20);}.gene-mobile-bottom-nav .line-nav .nav-icon,.gene-mobile-bottom-nav .line-nav .nav-text{color:#111;font-weight:600;}.gene-mobile-symptom-backdrop{position:fixed;inset:0;z-index:9996;background:rgba(0,0,0,.38);opacity:0;pointer-events:none;transition:opacity .25s ease;display:block;}.gene-mobile-symptom-backdrop.open{opacity:1;pointer-events:auto;}.gene-mobile-symptom-panel{position:fixed;left:10px;right:10px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:9997;display:block;padding:15px 14px 14px;border:1px solid rgba(217,193,126,.34);border-radius:22px;background:rgba(8,8,8,.96);box-shadow:0 -16px 34px rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(18px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;top:auto;max-height:calc(100vh - 112px - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;}.gene-mobile-symptom-panel.open{opacity:1;transform:translateY(0);pointer-events:auto;}.gene-mobile-symptom-panel-title{position:sticky;top:-15px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d9c17e;font-size:.95rem;letter-spacing:.08em;margin:-15px -14px 12px;padding:14px 14px 10px;background:rgba(8,8,8,.98);border-bottom:1px solid rgba(217,193,126,.16);}.gene-mobile-symptom-close{appearance:none;-webkit-appearance:none;border:1px solid rgba(217,193,126,.28);background:rgba(255,255,255,.04);color:#d9c17e;width:34px;height:34px;border-radius:50%;font-size:1.35rem;line-height:1;cursor:pointer;}.gene-mobile-symptom-grid{display:block;}.gene-mobile-symptom-group{margin:0 0 14px;}.gene-mobile-symptom-group:last-child{margin-bottom:0;}.gene-mobile-symptom-group-title{margin:0 0 8px;color:rgba(217,193,126,.92);font-size:.78rem;letter-spacing:.08em;line-height:1.4;}.gene-mobile-symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.gene-mobile-symptom-list a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;padding:10px 11px;border-radius:14px;border:1px solid rgba(217,193,126,.38);background:rgba(217,193,126,.10);color:#d9c17e;text-decoration:none;font-size:.84rem;line-height:1.35;box-shadow:none;}.gene-mobile-symptom-list a::after{content:"›";color:#d9c17e;font-size:1.05rem;line-height:1;opacity:.85;}.gene-mobile-extra-links{position:sticky;bottom:-14px;margin:14px -14px -14px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(8,8,8,.98);border-top:1px solid rgba(217,193,126,.16);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.gene-mobile-extra-links a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:10px 12px;border-radius:14px;border:1px solid rgba(217,193,126,.28);background:rgba(217,193,126,.075);color:#d9c17e;text-decoration:none;font-size:.88rem;line-height:1.35;}.reserve-btn-sub,.hamburger-btn{display:none !important;}#to-top-btn{bottom:calc(92px + env(safe-area-inset-bottom)) !important;}.breadcrumb,.breadcrumb-fixed{display:none !important;}html,body{margin-top:0 !important;padding-top:0 !important;}#hero-logo,.page-title,.main-title,.section-title,.page-heading,.access-title,.menu-title,.voice-title,.case-title{margin-top:0 !important;}.page-title{padding-top:34px !important;padding-bottom:22px !important;margin-bottom:22px !important;}main,#index-cards,.page-container,.menu-container,.voice-container,.case-container,.access-container,.faq-container,.profile-container,.news-container{margin-top:0 !important;padding-top:0 !important;}.menu-card:first-child{margin-top:22px !important;}}
 .dizziness-fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease, transform .65s ease;}.dizziness-fade.show{opacity:1;transform:translateY(0);}
 .top-symptom-links a,.menu-symptom-card,.gene-mobile-symptom-list a,.gene-mobile-symptom-list a:visited,.gene-mobile-extra-links a,.gene-mobile-extra-links a:visited,.gene-mobile-symptom-grid a,.gene-mobile-symptom-grid a:visited,.symptom-list div.has-link,.map-open-btn,.case-cta-btn,.voice-cta-btn{background:rgba(20,20,20,.9) !important;border:1px solid rgba(217,193,126,.56) !important;color:#d9c17e !important;box-shadow:0 10px 26px rgba(0,0,0,.22) !important;}.top-symptom-links a::after,.menu-symptom-card::after,.gene-mobile-symptom-list a::after,.gene-mobile-extra-links a::after,.gene-mobile-symptom-grid a::after{color:#d9c17e !important;}.top-symptom-links a:hover,.menu-symptom-card:hover,.gene-mobile-symptom-list a:hover,.gene-mobile-extra-links a:hover,.map-open-btn:hover,.case-cta-btn:hover,.voice-cta-btn:hover{background:rgba(28,26,20,.96) !important;border-color:rgba(234,216,147,.78) !important;transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10) !important;}.reserve-btn-sub,.reserve-btn-sub:visited,.gene-mobile-bottom-nav .line-nav,.gene-mobile-bottom-nav .line-nav:visited,.map-open-btn[href*="lin.ee"],.map-open-btn[href*="lin.ee"]:visited{background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;border:1px solid rgba(255,238,170,.88) !important;color:#111 !important;font-weight:700 !important;box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;}
+
+/* gene compact lifestyle card - symptom pages */
+.gene-compact-life-card{
+  width:100%;
+  max-width:none;
+  margin:0 0 22px;
+  padding:26px 24px 28px;
+  box-sizing:border-box;
+  border-radius:22px;
+  border:1px solid rgba(217,193,126,.32);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.12), transparent 38%),
+    linear-gradient(180deg, rgba(20,18,13,.72), rgba(8,8,8,.72));
+  box-shadow:0 16px 42px rgba(0,0,0,.28), inset 0 0 24px rgba(217,193,126,.035);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.gene-compact-life-card *{
+  box-sizing:border-box;
+}
+
+.gene-compact-life-card h2{
+  margin:0 0 12px;
+  color:#f4ead0;
+  font-size:clamp(1.28rem,2.4vw,1.72rem);
+  line-height:1.65;
+  letter-spacing:.08em;
+  font-weight:400;
+}
+
+.gene-compact-life-card h2 span{
+  color:#d9c17e;
+}
+
+.gene-compact-life-card p{
+  max-width:760px;
+  margin:0 auto 20px;
+  color:rgba(255,255,255,.86);
+  line-height:2;
+  letter-spacing:.04em;
+}
+
+.gene-compact-life-flow{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.2fr);
+  align-items:stretch;
+  gap:10px;
+  max-width:860px;
+  margin:0 auto;
+}
+
+.gene-compact-life-box{
+  min-height:86px;
+  padding:16px 14px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.36);
+  background:rgba(255,255,255,.025);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.gene-compact-life-box strong{
+  display:block;
+  color:#d9c17e;
+  font-size:1.05rem;
+  line-height:1.55;
+  letter-spacing:.1em;
+  font-weight:400;
+}
+
+.gene-compact-life-box span{
+  display:block;
+  margin-top:6px;
+  color:rgba(255,255,255,.8);
+  font-size:.84rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+}
+
+.gene-compact-life-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d9c17e;
+  font-size:1.2rem;
+  opacity:.9;
+}
+
+.gene-compact-habits{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:7px;
+  width:100%;
+}
+
+.gene-compact-habits span{
+  min-height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.24);
+  background:rgba(217,193,126,.055);
+  color:rgba(255,255,255,.84);
+  font-size:.82rem;
+  line-height:1.35;
+}
+
+@media (max-width:768px){
+  .gene-compact-life-card{
+    width:100%;
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  .gene-compact-life-card h2{
+    font-size:1.28rem;
+    text-align:center;
+  }
+
+  .gene-compact-life-card h2 span{
+    display:block;
+    margin:2px 0;
+  }
+
+  .gene-compact-life-card p{
+    text-align:center;
+    line-height:1.95;
+  }
+
+  .gene-compact-life-flow{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .gene-compact-life-arrow{
+    transform:rotate(90deg);
+    min-height:22px;
+  }
+
+  .gene-compact-life-box{
+    min-height:auto;
+    padding:15px 12px;
+  }
+
+  .gene-compact-habits{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+
+/* symptom page card width alignment */
+body.symptom-page .dizziness-intro-card,
+body.symptom-page .gene-check-invite{
+  width:90% !important;
+  max-width:760px !important;
+}
+
+body.symptom-page .dizziness-links{
+  max-width:760px !important;
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -204,6 +363,39 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
       <a href="fatigue.html">慢性疲労</a>
     </div>
   </div>
+
+  <section class="gene-compact-life-card dizziness-fade" aria-labelledby="gene-compact-life-title">
+    <h2 id="gene-compact-life-title">整体は<span>身体を整えるきっかけ</span>です</h2>
+    <p>症状だけを見るのではなく、生活習慣と身体全体の状態を合わせて確認し、整いやすい状態を目指します。</p>
+
+    <div class="gene-compact-life-flow" aria-label="生活習慣と整体の考え方">
+      <div class="gene-compact-life-box">
+        <strong>生活習慣</strong>
+        <div class="gene-compact-habits">
+          <span>睡眠</span>
+          <span>食事</span>
+          <span>運動</span>
+          <span>ストレス管理</span>
+        </div>
+      </div>
+
+      <div class="gene-compact-life-arrow" aria-hidden="true">▲</div>
+
+      <div class="gene-compact-life-box">
+        <strong>整体</strong>
+        <span>身体を整える<br>きっかけ・補助</span>
+      </div>
+
+      <div class="gene-compact-life-arrow" aria-hidden="true">▲</div>
+
+      <div class="gene-compact-life-box">
+        <strong>健康な身体</strong>
+        <span>自分で自分を整える力を<br>発揮しやすい状態</span>
+      </div>
+    </div>
+  </section>
+
+
   <div class="menu-card dizziness-fade">
     <h2>ご相談・ご予約はこちら</h2>
     <p>現在の状態を整理するところからでも大丈夫です。<br>ご相談・ご予約はLINEから承っています。</p>
