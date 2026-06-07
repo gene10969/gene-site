@@ -40,6 +40,75 @@ if (location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
 body.symptom-page .page-title,body.symptom-page .dizziness-lead,body.symptom-page .menu-container,body.symptom-page footer{position:relative;z-index:1;}
 body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 @media (max-width:640px){.dizziness-lead{text-align:left;font-size:.92rem;}.dizziness-intro-card{padding:22px 18px;border-radius:18px;}.dizziness-intro-card p{text-align:left;line-height:1.95;}.dizziness-links{gap:10px;width:92%;margin-bottom:30px;}.dizziness-links a{min-height:40px;padding:9px 14px;font-size:.86rem;letter-spacing:.03em;}}
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,.gene-mobile-symptom-panel,.gene-mobile-symptom-backdrop{display:none;}
 @media (max-width: 768px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom));}.gene-mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:9998;display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:rgba(5,5,5,.94);border-top:1px solid rgba(217,193,126,.28);box-shadow:0 -12px 30px rgba(0,0,0,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}.gene-mobile-bottom-nav a,.gene-mobile-bottom-nav button{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:rgba(255,255,255,.82);text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:50px;padding:4px 2px;font-family:inherit;letter-spacing:.04em;font-size:10px;line-height:1.25;cursor:pointer;}.gene-mobile-bottom-nav .nav-icon{display:flex;align-items:center;justify-content:center;width:22px;height:22px;color:#d9c17e;font-size:18px;line-height:1;}.gene-mobile-bottom-nav .nav-text{white-space:nowrap;}.gene-mobile-bottom-nav .line-nav{color:#111;background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);border-radius:16px;box-shadow:0 6px 18px rgba(217,193,126,.20);}.gene-mobile-bottom-nav .line-nav .nav-icon,.gene-mobile-bottom-nav .line-nav .nav-text{color:#111;font-weight:600;}.gene-mobile-symptom-backdrop{position:fixed;inset:0;z-index:9996;background:rgba(0,0,0,.38);opacity:0;pointer-events:none;transition:opacity .25s ease;display:block;}.gene-mobile-symptom-backdrop.open{opacity:1;pointer-events:auto;}.gene-mobile-symptom-panel{position:fixed;left:10px;right:10px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:9997;display:block;padding:15px 14px 14px;border:1px solid rgba(217,193,126,.34);border-radius:22px;background:rgba(8,8,8,.96);box-shadow:0 -16px 34px rgba(0,0,0,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(18px);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;top:auto;max-height:calc(100vh - 112px - env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;}.gene-mobile-symptom-panel.open{opacity:1;transform:translateY(0);pointer-events:auto;}.gene-mobile-symptom-panel-title{position:sticky;top:-15px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d9c17e;font-size:.95rem;letter-spacing:.08em;margin:-15px -14px 12px;padding:14px 14px 10px;background:rgba(8,8,8,.98);border-bottom:1px solid rgba(217,193,126,.16);}.gene-mobile-symptom-close{appearance:none;-webkit-appearance:none;border:1px solid rgba(217,193,126,.28);background:rgba(255,255,255,.04);color:#d9c17e;width:34px;height:34px;border-radius:50%;font-size:1.35rem;line-height:1;cursor:pointer;}.gene-mobile-symptom-grid{display:block;}.gene-mobile-symptom-group{margin:0 0 14px;}.gene-mobile-symptom-group:last-child{margin-bottom:0;}.gene-mobile-symptom-group-title{margin:0 0 8px;color:rgba(217,193,126,.92);font-size:.78rem;letter-spacing:.08em;line-height:1.4;}.gene-mobile-symptom-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.gene-mobile-symptom-list a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;padding:10px 11px;border-radius:14px;border:1px solid rgba(217,193,126,.38);background:rgba(217,193,126,.10);color:#d9c17e;text-decoration:none;font-size:.84rem;line-height:1.35;box-shadow:none;}.gene-mobile-symptom-list a::after{content:"›";color:#d9c17e;font-size:1.05rem;line-height:1;opacity:.85;}.gene-mobile-extra-links{position:sticky;bottom:-14px;margin:14px -14px -14px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(8,8,8,.98);border-top:1px solid rgba(217,193,126,.16);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.gene-mobile-extra-links a{display:flex;align-items:center;justify-content:center;min-height:42px;padding:10px 12px;border-radius:14px;border:1px solid rgba(217,193,126,.28);background:rgba(217,193,126,.075);color:#d9c17e;text-decoration:none;font-size:.88rem;line-height:1.35;}.reserve-btn-sub,.hamburger-btn{display:none !important;}#to-top-btn{bottom:calc(92px + env(safe-area-inset-bottom)) !important;}.breadcrumb,.breadcrumb-fixed{display:none !important;}html,body{margin-top:0 !important;padding-top:0 !important;}#hero-logo,.page-title,.main-title,.section-title,.page-heading,.access-title,.menu-title,.voice-title,.case-title{margin-top:0 !important;}.page-title{padding-top:34px !important;padding-bottom:22px !important;margin-bottom:22px !important;}main,#index-cards,.page-container,.menu-container,.voice-container,.case-container,.access-container,.faq-container,.profile-container,.news-container{margin-top:0 !important;padding-top:0 !important;}.menu-card:first-child{margin-top:22px !important;}}
 .dizziness-fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease, transform .65s ease;}.dizziness-fade.show{opacity:1;transform:translateY(0);}
@@ -281,6 +350,15 @@ body.symptom-page .dizziness-links{
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
 <h1 class="page-title dizziness-fade">喉の違和感で<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
 <p class="dizziness-lead dizziness-fade">喉が詰まる、飲み込みにくい、違和感が続く方へ。</p>
 <div class="dizziness-intro-card dizziness-fade"><p>喉の違和感は、炎症だけでなく、首肩の緊張、胸郭の硬さ、呼吸の浅さ、胃の不快感、ストレス反応が重なって起こることがあります。<br>
@@ -474,6 +552,7 @@ window.addEventListener("load", () => {
   const rsvBtn = document.querySelector(".reserve-btn-sub");
   const bgLogo = document.getElementById("global-logo-bg");
   const hamburgerBtn = document.getElementById("hamburger-btn");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const menuPanel = document.getElementById("hamburger-menu");
   const fadeItems = document.querySelectorAll(".dizziness-fade");
   setTimeout(() => {
@@ -481,6 +560,7 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
     fadeItems.forEach(el=>{el.classList.add("show");});
   }, 450);
   const closeBtn = document.querySelector(".menu-close-btn");

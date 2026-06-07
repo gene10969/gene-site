@@ -134,6 +134,75 @@ if (
 
 
 /* gene mobile bottom navigation */
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -1211,6 +1280,15 @@ if (
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
 <div id="hero-logo" class="hidden">
   <h1 class="main-title">施術内容</h1>
   <p class="sub-catch">gene自律神経調整整体<br>一人ひとりの状態に合わせて整えるオーダーメイド整体</p>
@@ -1624,6 +1702,7 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const cards = document.querySelectorAll(".card-hidden");
   const hamburgerBtn = document.getElementById("hamburger-btn");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const menuPanel = document.getElementById("hamburger-menu");
 
   setTimeout(() => {
@@ -1631,6 +1710,7 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
     if (heroLogo) heroLogo.classList.add("show");
     if (menuHeroCard) menuHeroCard.classList.add("show");
     if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
