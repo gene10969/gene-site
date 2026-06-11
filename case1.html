@@ -17,27 +17,30 @@ if (
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   (function(){
-const params=new URLSearchParams(location.search);
-if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
-if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
-const isInternal=localStorage.getItem('internalUser')==='true';
-if(!isInternal){
-gtag('config','G-8KPJ55NQMT');
-}
-})();
+    const params = new URLSearchParams(location.search);
+    if(params.get('internal') === 'true'){
+      localStorage.setItem('internalUser','true');
+    }
+    if(params.get('internal') === 'false'){
+      localStorage.removeItem('internalUser');
+    }
+    const isInternal = localStorage.getItem('internalUser') === 'true';
+    if(!isInternal){
+      gtag('config','G-8KPJ55NQMT');
+    }
+  })();
 }
 </script>
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 <link rel="canonical" href="https://gene-seitai.com/case1.html">
 <title>症例1 | 院内・改善事例 | 大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene の症例1ページ。顔・首・体正面・足首の経過写真を掲載しています。">
+<meta name="description" content="大阪 自律神経専門整体院 gene の症例1ページ。20代後半男性の皮膚症状について、顔・首・体正面・足首の初回から6か月目までの経過写真と説明を掲載しています。">
 
 <meta property="og:title" content="症例1 | 大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="症例1の経過写真を掲載しています。">
+<meta property="og:description" content="20代後半男性の皮膚症状の経過写真と説明を掲載しています。">
 <meta property="og:url" content="https://gene-seitai.com/case1.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_face_6months.webp">
@@ -100,6 +103,85 @@ gtag('config','G-8KPJ55NQMT');
   color:#d9c17e;
 }
 
+.case-analysis{
+  max-width:980px;
+  margin:0 auto 82px;
+  padding:36px 34px;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(217,193,126,.08),rgba(255,255,255,.025));
+  box-shadow:0 18px 42px rgba(0,0,0,.28);
+}
+
+.case-analysis h2{
+  margin:0 0 24px;
+  text-align:center;
+}
+
+.case-analysis h3{
+  margin:34px 0 14px;
+  color:#d9c17e;
+  font-size:1.08rem;
+  letter-spacing:.08em;
+}
+
+.case-analysis p{
+  margin:0 0 18px;
+  line-height:2.15;
+  color:rgba(255,255,255,.9);
+}
+
+.case-analysis-lead{
+  text-align:center;
+}
+
+.case-summary-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin:28px 0 34px;
+}
+
+.case-summary-list div{
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.18);
+  background:rgba(0,0,0,.22);
+}
+
+.case-summary-list dt{
+  margin:0 0 8px;
+  color:#d9c17e;
+  font-size:.86rem;
+  letter-spacing:.08em;
+}
+
+.case-summary-list dd{
+  margin:0;
+  line-height:1.8;
+  color:rgba(255,255,255,.92);
+}
+
+.case-analysis-point{
+  margin-top:24px;
+  padding:22px 24px;
+  border-left:3px solid rgba(217,193,126,.78);
+  border-radius:18px;
+  background:rgba(217,193,126,.07);
+}
+
+.case-analysis-point p:last-child{
+  margin-bottom:0;
+}
+
+.case-part-note{
+  max-width:860px;
+  margin:26px auto 0;
+  line-height:2;
+  color:rgba(255,255,255,.88);
+  text-align:left;
+}
+
 .case-block{
   margin-bottom:80px;
   text-align:center;
@@ -154,7 +236,34 @@ gtag('config','G-8KPJ55NQMT');
 }
 
 .case-note{
-  margin-top:20px;
+  margin-top:22px;
+  line-height:2;
+  color:rgba(255,255,255,.78);
+}
+
+.case-navigation{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin:32px auto 0;
+}
+
+.case-navigation a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:10px 22px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.46);
+  color:#d9c17e;
+  text-decoration:none;
+  background:rgba(20,20,20,.9);
+}
+
+.case-navigation a:visited{
+  color:#d9c17e;
 }
 
 .case-cta{
@@ -180,49 +289,16 @@ gtag('config','G-8KPJ55NQMT');
   border-radius:999px;
   text-decoration:none;
   color:#111;
-  background:#d9c17e;
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+  border:1px solid rgba(255,238,170,.88);
   margin-top:14px;
+  font-weight:700;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22);
 }
 
 .case-cta-btn:visited{
   color:#111;
 }
-
-@media (max-width:768px){
-  .case-detail-wrap{
-    padding:100px 16px 80px;
-  }
-
-  .case-detail-head{
-    margin-bottom:46px;
-  }
-
-  .case-intro-text{
-    text-align:left;
-    font-size:.95rem;
-    margin:30px auto 40px;
-  }
-
-  .case-block{
-    margin-bottom:64px;
-  }
-
-  .case-swiper .swiper-wrapper{
-    justify-content:flex-start;
-  }
-
-  .case-swiper .swiper-slide{
-    width:80%;
-  }
-
-  .case-cta{
-    margin-top:70px;
-    padding:28px 18px;
-  }
-}
-
-
-/* gene mobile bottom navigation */
 
 .gene-pc-side-nav{
   display:none;
@@ -261,7 +337,6 @@ gtag('config','G-8KPJ55NQMT');
     line-height:1;
     letter-spacing:.08em;
     text-decoration:none;
-    writing-mode:horizontal-tb;
     transition:color .28s ease, transform .28s ease;
   }
 
@@ -298,9 +373,74 @@ gtag('config','G-8KPJ55NQMT');
   display:none;
 }
 
-@media (max-width: 768px){
+@media (max-width:768px){
   body{
-    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+    padding-bottom:calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .case-detail-wrap{
+    padding:100px 16px 80px;
+  }
+
+  .case-detail-head{
+    margin-bottom:46px;
+  }
+
+  .case-intro-text{
+    text-align:left;
+    font-size:.95rem;
+    margin:30px auto 40px;
+  }
+
+  .case-analysis{
+    padding:28px 18px;
+    margin-bottom:62px;
+    border-radius:20px;
+  }
+
+  .case-analysis-lead{
+    text-align:left;
+  }
+
+  .case-summary-list{
+    grid-template-columns:1fr;
+  }
+
+  .case-block{
+    margin-bottom:64px;
+  }
+
+  .case-swiper .swiper-wrapper{
+    justify-content:flex-start;
+  }
+
+  .case-swiper .swiper-slide{
+    width:80%;
+  }
+
+  .case-cta{
+    margin-top:70px;
+    padding:28px 18px;
+  }
+
+  .reserve-btn-sub,
+  .hamburger-btn{
+    display:none !important;
+  }
+
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  html,
+  body{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  #to-top-btn{
+    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
   }
 
   .gene-mobile-bottom-nav{
@@ -360,7 +500,7 @@ gtag('config','G-8KPJ55NQMT');
 
   .gene-mobile-bottom-nav .line-nav{
     color:#111;
-    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
     border-radius:16px;
     box-shadow:0 6px 18px rgba(217,193,126,.20);
   }
@@ -394,7 +534,10 @@ gtag('config','G-8KPJ55NQMT');
     bottom:calc(72px + env(safe-area-inset-bottom));
     z-index:9997;
     display:block;
-    padding:16px;
+    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:15px 14px 14px;
     border:1px solid rgba(217,193,126,.34);
     border-radius:22px;
     background:rgba(8,8,8,.96);
@@ -414,14 +557,20 @@ gtag('config','G-8KPJ55NQMT');
   }
 
   .gene-mobile-symptom-panel-title{
+    position:sticky;
+    top:-15px;
+    z-index:2;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:12px;
+    margin:-15px -14px 12px;
+    padding:14px 14px 10px;
+    background:rgba(8,8,8,.98);
+    border-bottom:1px solid rgba(217,193,126,.16);
     color:#d9c17e;
     font-size:.95rem;
     letter-spacing:.08em;
-    margin:0 0 12px;
   }
 
   .gene-mobile-symptom-close{
@@ -439,255 +588,11 @@ gtag('config','G-8KPJ55NQMT');
   }
 
   .gene-mobile-symptom-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .gene-mobile-symptom-grid a{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    min-height:44px;
-    padding:11px 12px;
-    border-radius:14px;
-    border:1px solid rgba(217,193,126,.46);
-    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
-    color:#111;
-    text-decoration:none;
-    font-size:.88rem;
-    line-height:1.35;
-    box-shadow:0 8px 22px rgba(217,193,126,.16);
-  }
-
-  
-  .gene-mobile-extra-links{
-    margin-top:12px;
-    padding-top:12px;
-    border-top:1px solid rgba(217,193,126,.18);
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .gene-mobile-extra-links a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:42px;
-    padding:10px 12px;
-    border-radius:14px;
-    border:1px solid rgba(217,193,126,.28);
-    background:rgba(217,193,126,.075);
-    color:#d9c17e;
-    text-decoration:none;
-    font-size:.88rem;
-    line-height:1.35;
-  }
-
-  .gene-mobile-symptom-grid a::after{
-    content:"›";
-    color:#111;
-    font-size:1.15rem;
-    line-height:1;
-  }
-}
-
-
-
-/* gene mobile bottom navigation adjustment */
-@media (max-width: 768px){
-  .reserve-btn-sub,
-  .hamburger-btn{
-    display:none !important;
-  }
-
-  #to-top-btn{
-    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
-  }
-}
-
-
-
-/* mobile breadcrumb hidden */
-@media (max-width:768px){
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-}
-
-
-
-
-
-
-
-/* mobile first screen top alignment final */
-@media (max-width:768px){
-
-  html,
-  body{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-
-  /* 全ページ共通：最初の表示ブロックをアドレスバー下に近づける */
-  #hero-logo,
-  .page-title,
-  .main-title,
-  .section-title,
-  .page-heading,
-  .access-title,
-  .menu-title,
-  .voice-title,
-  .case-title{
-    margin-top:0 !important;
-  }
-
-  /* index / 多くの症状ページで使われるhero */
-  #hero-logo{
-    padding-top:34px !important;
-    margin-bottom:22px !important;
-  }
-
-  #hero-logo .main-title,
-  .main-title{
-    margin-top:0 !important;
-    margin-bottom:16px !important;
-  }
-
-  #hero-logo .sub-catch,
-  .sub-catch{
-    margin-top:12px !important;
-    margin-bottom:24px !important;
-    line-height:1.9 !important;
-  }
-
-  /* access / faq / voice などの単独タイトルページ */
-  .page-title{
-    padding-top:34px !important;
-    padding-bottom:22px !important;
-    margin-bottom:22px !important;
-  }
-
-  /* 先頭カード群の開始位置を統一 */
-  main,
-  #index-cards,
-  .page-container,
-  .menu-container,
-  .voice-container,
-  .case-container,
-  .access-container,
-  .faq-container,
-  .profile-container,
-  .news-container{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  .menu-hero-card,
-  .top-hero-card,
-  .profile-card,
-  .intro-card,
-  .case,
-  .info-card:first-child,
-  .access-card:first-child,
-  .faq-card:first-child,
-  .voice-card:first-child{
-    margin-top:22px !important;
-  }
-
-  /* accessで余白が大きくなりやすい先頭セクション */
-  .access-section:first-of-type,
-  .access-block:first-of-type,
-  .access-card:first-of-type,
-  .access-container > *:first-child{
-    margin-top:22px !important;
-  }
-
-  /* voice/caseで先頭カードが詰まりすぎないようにする */
-  .voice-container > *:first-child,
-  .case-container > *:first-child,
-  #voice-cards > *:first-child{
-    margin-top:22px !important;
-  }
-}
-
-
-.case-fade{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .65s ease, transform .65s ease;
-}
-.case-fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* PC case title position strict fix */
-@media (min-width:769px){
-  body.subpage .case-detail-wrap{
-    padding-top:260px !important;
-  }
-
-  body.subpage .case-detail-head{
-    margin-bottom:56px !important;
-  }
-}
-
-
-.gene-mobile-symptom-grid a:visited{
-    color:#d9c17e;
-  }
-
-
-/* mobile symptom panel / to-top avoidance */
-@media (max-width:768px){
-  #to-top-btn{
-    transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
-  }
-}
-
-
-
-/* gene mobile symptom panel 19 links usability update */
-@media (max-width: 768px){
-  .gene-mobile-symptom-panel{
-    top:auto;
-    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
-    overflow-y:auto;
-    overscroll-behavior:contain;
-    padding:15px 14px 14px;
-  }
-
-  .gene-mobile-symptom-panel-title{
-    position:sticky;
-    top:-15px;
-    z-index:2;
-    margin:-15px -14px 12px;
-    padding:14px 14px 10px;
-    background:rgba(8,8,8,.98);
-    border-bottom:1px solid rgba(217,193,126,.16);
-  }
-
-  .gene-mobile-symptom-grid{
     display:block;
   }
 
   .gene-mobile-symptom-group{
     margin:0 0 14px;
-  }
-
-  .gene-mobile-symptom-group:last-child{
-    margin-bottom:0;
   }
 
   .gene-mobile-symptom-group-title{
@@ -714,11 +619,10 @@ gtag('config','G-8KPJ55NQMT');
     border-radius:14px;
     border:1px solid rgba(217,193,126,.38);
     background:rgba(217,193,126,.10);
-    color:#d9c17e;
+    color:#d9c17e !important;
     text-decoration:none;
     font-size:.84rem;
     line-height:1.35;
-    box-shadow:none;
   }
 
   .gene-mobile-symptom-list a::after{
@@ -729,28 +633,6 @@ gtag('config','G-8KPJ55NQMT');
     opacity:.85;
   }
 
-  .gene-mobile-symptom-grid > a{
-    display:none !important;
-  }
-
-  .gene-mobile-symptom-grid a::after{
-    color:inherit;
-  }
-
-  .gene-mobile-symptom-list a,
-  .gene-mobile-symptom-list a:visited{
-    color:#d9c17e !important;
-  }
-
-  .gene-mobile-symptom-list a::after{
-    color:#d9c17e !important;
-  }
-
-  .gene-mobile-extra-links a,
-  .gene-mobile-extra-links a:visited{
-    color:#d9c17e !important;
-  }
-
   .gene-mobile-extra-links{
     position:sticky;
     bottom:-14px;
@@ -758,105 +640,46 @@ gtag('config','G-8KPJ55NQMT');
     padding:12px 14px calc(12px + env(safe-area-inset-bottom));
     background:rgba(8,8,8,.98);
     border-top:1px solid rgba(217,193,126,.16);
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-extra-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.28);
+    background:rgba(217,193,126,.075);
+    color:#d9c17e !important;
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
   }
 }
 
-
-
-/* gene link button color unification */
-.top-symptom-links a,
-.menu-symptom-card,
-.gene-mobile-symptom-list a,
-.gene-mobile-symptom-list a:visited,
-.gene-mobile-extra-links a,
-.gene-mobile-extra-links a:visited,
-.gene-mobile-symptom-grid a,
-.gene-mobile-symptom-grid a:visited,
-.symptom-list div.has-link,
-.map-open-btn,
-.case-cta-btn,
-.voice-cta-btn{
-  background:rgba(20,20,20,.9) !important;
-  border:1px solid rgba(217,193,126,.56) !important;
-  color:#d9c17e !important;
-  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
+.case-fade{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .65s ease, transform .65s ease;
 }
 
-.top-symptom-links a::after,
-.menu-symptom-card::after,
-.gene-mobile-symptom-list a::after,
-.gene-mobile-extra-links a::after,
-.gene-mobile-symptom-grid a::after{
-  color:#d9c17e !important;
+.case-fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.symptom-list div.has-link a,
-.symptom-list div.has-link a:visited,
-.menu-symptom-card .menu-symptom-title,
-.menu-symptom-card .menu-symptom-text{
-  color:#d9c17e !important;
-}
+@media (min-width:769px){
+  body.subpage .case-detail-wrap{
+    padding-top:260px !important;
+  }
 
-.menu-symptom-card .menu-symptom-text{
-  opacity:.86;
-}
-
-.top-symptom-links a:hover,
-.menu-symptom-card:hover,
-.gene-mobile-symptom-list a:hover,
-.gene-mobile-extra-links a:hover,
-.map-open-btn:hover,
-.case-cta-btn:hover,
-.voice-cta-btn:hover{
-  background:rgba(28,26,20,.96) !important;
-  border-color:rgba(234,216,147,.78) !important;
-  transform:translateY(-2px);
-  box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10) !important;
-}
-
-/* LINE buttons stay visually strongest */
-.reserve-btn-sub,
-.reserve-btn-sub:visited,
-.gene-mobile-bottom-nav .line-nav,
-.gene-mobile-bottom-nav .line-nav:visited,
-.map-open-btn[href*="lin.ee"],
-.map-open-btn[href*="lin.ee"]:visited,
-.top-cta-link,
-.top-cta-link:visited,
-.menu-cta-link,
-.menu-cta-link:visited,
-.case-cta-btn[href*="lin.ee"],
-.case-cta-btn[href*="lin.ee"]:visited,
-.voice-cta-btn[href*="lin.ee"],
-.voice-cta-btn[href*="lin.ee"]:visited{
-  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
-  border:1px solid rgba(255,238,170,.88) !important;
-  color:#111 !important;
-  font-weight:700 !important;
-  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
-}
-
-.gene-mobile-bottom-nav .line-nav .nav-icon,
-.gene-mobile-bottom-nav .line-nav .nav-text,
-.reserve-btn-sub *,
-.map-open-btn[href*="lin.ee"] *,
-.top-cta-link *,
-.menu-cta-link *,
-.case-cta-btn[href*="lin.ee"] *,
-.voice-cta-btn[href*="lin.ee"] *{
-  color:#111 !important;
-}
-
-.map-open-btn[href*="lin.ee"]:hover,
-.top-cta-link:hover,
-.menu-cta-link:hover,
-.case-cta-btn[href*="lin.ee"]:hover,
-.voice-cta-btn[href*="lin.ee"]:hover{
-  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
-  border-color:rgba(255,244,186,.98) !important;
-  color:#111 !important;
-  transform:translateY(-2px);
-  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+  body.subpage .case-detail-head{
+    margin-bottom:56px !important;
+  }
 }
 </style>
 </head>
@@ -868,7 +691,7 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 
 <nav class="breadcrumb-fixed hidden">
-  <a href="/">ホーム</a> ＞ 
+  <a href="index.html">ホーム</a> ＞ 
   <a href="voice.html">院内・改善事例</a> ＞ 
   <span>症例1</span>
 </nav>
@@ -881,7 +704,7 @@ gtag('config','G-8KPJ55NQMT');
 
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
-  <a href="/">ホーム</a>
+  <a href="index.html">ホーム</a>
   <a href="menu.html">施術内容</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
@@ -889,19 +712,18 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 
 <nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
-  <a href="/">ホーム</a>
+  <a href="index.html">ホーム</a>
   <a href="menu.html">施術内容</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </nav>
 
-
 <main class="case-detail-wrap">
 
 <section class="case-detail-head case-fade">
 <h1>症例1</h1>
-<p>顔・首・体正面・足首の経過写真です。</p>
+<p>20代後半男性の皮膚症状について、顔・首・体正面・足首の経過写真を掲載しています。</p>
 
 <div class="case-intro-text">
 <p>
@@ -910,8 +732,8 @@ gtag('config','G-8KPJ55NQMT');
 </p>
 
 <p>
-当院では、表面的な症状だけでなく、自律神経や身体全体のバランスを整えることで、
-皮膚の状態や体調の変化がどのように変わっていくかを経過として記録しています。
+来院前はステロイドを使用されており、できるだけステロイドに頼らずに過ごせる身体の状態を目指したいというご希望がありました。
+当院では、食事内容の見直しと整体を中心に、呼吸・姿勢・筋緊張・自律神経の働きなど、身体全体のつながりを確認しながら経過を見ていきました。
 </p>
 
 <p>
@@ -922,6 +744,61 @@ gtag('config','G-8KPJ55NQMT');
 <div class="case-detail-links">
 <a href="voice.html">院内・改善事例一覧に戻る</a>
 <a href="https://lin.ee/6bBKc67" target="_blank">LINEで相談する</a>
+</div>
+</section>
+
+<section class="case-analysis case-fade">
+<h2>症例の経過について</h2>
+<p class="case-analysis-lead">
+20代後半男性、現場仕事を中心とした肉体労働をされている方の皮膚症状の経過です。
+来院前はステロイドを使用されており、「できるだけステロイドに頼らずに過ごせる身体の状態を目指したい」というご希望がありました。
+</p>
+
+<dl class="case-summary-list">
+  <div>
+    <dt>年代・性別</dt>
+    <dd>20代後半・男性</dd>
+  </div>
+  <div>
+    <dt>仕事内容</dt>
+    <dd>肉体労働を伴う現場仕事</dd>
+  </div>
+  <div>
+    <dt>来院前の状態</dt>
+    <dd>ステロイドを使用。赤み・乾燥・掻き壊しが広範囲に見られる状態。</dd>
+  </div>
+  <div>
+    <dt>ご希望</dt>
+    <dd>できるだけ薬に頼らず過ごせる身体の状態を目指したい。</dd>
+  </div>
+</dl>
+
+<h3>初回時の状態</h3>
+<p>
+初回時は、顔・首・体幹・足首など広い範囲に、赤み・乾燥・掻き壊し・皮膚の厚みが見られました。
+特に首まわりや足首は、慢性的に刺激が入り続けていたような印象があり、体正面にも皮膚の色むらや荒れが確認できました。
+</p>
+
+<h3>6か月目の変化</h3>
+<p>
+6か月目には、顔まわりの赤みや皮むけが落ち着き、首・体幹・足首に見られた荒れや掻き壊しも目立ちにくくなっています。
+一部に色素沈着は残るものの、初回時と比べると皮膚表面の荒れ方が穏やかになり、全体として落ち着いた印象へ変化しています。
+</p>
+<p>
+この経過では、皮膚が少しずつ強くなり、浸出液が出にくくなったこと、乾燥が収まり、皮脂が自然に出てきていることを、皮膚状態が改善に向かっている大切な目安として見ています。
+</p>
+
+<h3>geneで行ったこと</h3>
+<p>
+当院では、皮膚だけを部分的に見るのではなく、食事内容の見直しと整体を中心に、呼吸・姿勢・筋緊張・自律神経の働きなど、身体全体のつながりを確認しながら施術を行いました。
+現場仕事による疲労、汗、衣類との摩擦、睡眠の乱れ、身体の緊張なども皮膚状態に影響しやすいため、生活背景も含めて無理のない範囲で整えていくことを大切にしました。
+</p>
+
+<div class="case-analysis-point">
+<p>
+皮膚症状は、食事・睡眠・疲労・ストレス・仕事環境・自律神経の状態など、複数の要因が関係することがあります。
+そのためgeneでは、症状のある部位だけでなく、身体全体の状態を確認しながら、日常生活の負担も含めて経過を見ていきます。
+</p>
 </div>
 </section>
 
@@ -944,6 +821,10 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 <div class="swiper-scrollbar"></div>
 </div>
+<p class="case-part-note">
+顔まわりは、初回時に赤み・乾燥・皮むけが目立っていましたが、6か月目には全体的に落ち着いた印象へ変化しています。
+特に頬や口まわりの荒れが目立ちにくくなり、皮膚表面の乾燥感も軽減して見えます。
+</p>
 </section>
 
 <section class="case-block case-fade">
@@ -965,6 +846,10 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 <div class="swiper-scrollbar"></div>
 </div>
+<p class="case-part-note">
+首まわりは、初回時に赤み・乾燥・皮膚の厚みが強く見られました。
+6か月目には、うなじから肩にかけての赤みや荒れが目立ちにくくなり、皮膚表面の状態も落ち着いた印象になっています。
+</p>
 </section>
 
 <section class="case-block case-fade">
@@ -986,6 +871,10 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 <div class="swiper-scrollbar"></div>
 </div>
+<p class="case-part-note">
+体正面は、初回時に胸まわり・鎖骨周辺・腕にかけて、乾燥や掻き壊し跡が見られました。
+6か月目には、胸まわりの赤みや荒れが目立ちにくくなり、体幹部全体の皮膚状態が落ち着いた印象へ変化しています。
+</p>
 </section>
 
 <section class="case-block case-fade">
@@ -1007,7 +896,15 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 <div class="swiper-scrollbar"></div>
 </div>
-<p class="case-note">※得られる結果には個人差があります</p>
+<p class="case-part-note">
+足首まわりは、初回時に赤み・掻き壊し・かさぶたのような状態が広く見られました。
+6か月目には、強い赤みや掻き壊しの範囲が大きく減り、皮膚表面が落ち着いた印象へ変化しています。
+</p>
+<p class="case-note">
+※掲載している経過は一例であり、変化には個人差があります。<br>
+※医療行為や治療効果を保証するものではありません。<br>
+※ステロイドなどのお薬については、医師の指示なく自己判断で中止することはおすすめしていません。
+</p>
 </section>
 
 <div class="case-navigation case-fade">
@@ -1022,7 +919,6 @@ gtag('config','G-8KPJ55NQMT');
 </section>
 
 </main>
-
 
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
 
@@ -1085,7 +981,7 @@ gtag('config','G-8KPJ55NQMT');
 </div>
 
 <nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
-  <a href="/">
+  <a href="index.html">
     <span class="nav-icon">⌂</span>
     <span class="nav-text">ホーム</span>
   </a>
@@ -1106,7 +1002,6 @@ gtag('config','G-8KPJ55NQMT');
     <span class="nav-text">LINE予約</span>
   </a>
 </nav>
-
 
 <footer>
   大阪 自律神経専門整体院 gene<br>
@@ -1142,7 +1037,6 @@ window.addEventListener("load", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const bgLogo = document.getElementById("global-logo-bg");
-
   const fadeItems = document.querySelectorAll(".case-fade");
 
   setTimeout(()=>{
@@ -1155,7 +1049,6 @@ window.addEventListener("load", () => {
     fadeItems.forEach(el=>{
       el.classList.add("show");
     });
-
   }, 450);
 
   const menuPanel = document.getElementById("hamburger-menu");
@@ -1172,7 +1065,7 @@ window.addEventListener("load", () => {
   });
 
   menuPanel?.addEventListener("click", e=>{
-    if(e.target===menuPanel){
+    if(e.target === menuPanel){
       menuPanel.classList.remove("open");
       document.body.classList.remove("menu-open");
     }
@@ -1187,17 +1080,16 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", ()=>{
-  const btn=document.getElementById("to-top-btn");
-  if(!btn)return;
+  const btn = document.getElementById("to-top-btn");
+  if(!btn) return;
   window.addEventListener("scroll",()=>{
-    btn.classList.toggle("show",window.scrollY>200);
+    btn.classList.toggle("show", window.scrollY > 200);
   });
   btn.addEventListener("click",()=>{
-    window.scrollTo({top:0,behavior:"smooth"});
+    window.scrollTo({top:0, behavior:"smooth"});
   });
 });
 </script>
-
 
 <script>
 (function(){
@@ -1272,7 +1164,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 })();
 </script>
-
 
 <script>
 (function(){
