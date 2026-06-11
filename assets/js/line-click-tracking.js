@@ -2,13 +2,7 @@
   if (window.__geneLineClickTrackingReady) return;
   window.__geneLineClickTrackingReady = true;
 
-  function isInternalUser(){
-    try{
-      return localStorage.getItem("internalUser") === "true";
-    }catch(e){
-      return false;
-    }
-  }
+  var GA_MEASUREMENT_ID = "G-8KPJ55NQMT";
 
   function isLineLink(url){
     try{
@@ -94,9 +88,27 @@
     return "unknown_line_link";
   }
 
+  function getTrackingFunction(){
+    if(typeof window.gtag === "function"){
+      return window.gtag;
+    }
+
+    if(typeof gtag === "function"){
+      return gtag;
+    }
+
+    if(window.dataLayer && typeof window.dataLayer.push === "function"){
+      return function(){
+        window.dataLayer.push(arguments);
+      };
+    }
+
+    return null;
+  }
+
   function sendLineClickEvent(link){
-    if(isInternalUser()) return;
-    if(typeof gtag !== "function") return;
+    var send = getTrackingFunction();
+    if(!send) return;
 
     var href = link.href || link.getAttribute("href") || "";
     if(!isLineLink(href)) return;
@@ -105,7 +117,10 @@
     var pageName = getCurrentPageName();
     var linkText = normalizeText(link.innerText || link.textContent || link.getAttribute("aria-label"));
 
-    gtag("event", "line_click", {
+    send("event", "line_click", {
+      send_to: GA_MEASUREMENT_ID,
+      event_category: "line",
+      event_label: lineArea,
       line_area: lineArea,
       page_name: pageName,
       page_path: location.pathname,
