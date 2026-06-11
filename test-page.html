@@ -19,23 +19,9 @@
   }
 })();
 </script>
-<!-- Google tag (gtag.js) -->
+<!-- GA4 disabled on test-page.html -->
 <script>
-if (
-  location.hostname !== "localhost" &&
-  location.hostname !== "127.0.0.1"
-) {
-  const script = document.createElement("script");
-  script.async = true;
-  script.src =
-    "https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT";
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
-}
+window.geneGaExcluded = true;
 </script>
   
 <meta charset="UTF-8">
