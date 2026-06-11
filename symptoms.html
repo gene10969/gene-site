@@ -273,18 +273,25 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 body.symptom-page .dizziness-intro-card,
 body.symptom-page .gene-check-invite{
   width:90% !important;
-  max-width:760px !important;
+  max-width:980px !important;
 }
 
 body.symptom-page .dizziness-links{
-  max-width:760px !important;
+  max-width:980px !important;
 }
 
 
 
 /* symptoms.html page-specific styles */
 .symptoms-page .dizziness-intro-card{
-  max-width:760px !important;
+  max-width:980px !important;
+}
+
+.symptoms-page .menu-container{
+  width:90% !important;
+  max-width:980px !important;
+  margin:0 auto;
+  box-sizing:border-box;
 }
 
 .symptoms-page .symptoms-overview{
@@ -457,7 +464,8 @@ body.symptom-page .dizziness-links{
 }
 
 .symptoms-page .symptoms-case-link{
-  min-height:150px;
+  min-height:178px;
+  justify-content:space-between;
 }
 
 .symptoms-page .symptoms-case-link strong{
@@ -482,9 +490,37 @@ body.symptom-page .dizziness-links{
   letter-spacing:.03em;
 }
 
+.symptoms-page .symptoms-case-link__button{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  min-height:38px;
+  margin-top:18px;
+  padding:8px 16px;
+  border-radius:999px;
+  border:1px solid rgba(234,216,147,.68);
+  background:linear-gradient(135deg, rgba(217,193,126,.18), rgba(18,18,18,.88));
+  color:#f3e4ad;
+  font-size:.86rem;
+  line-height:1.35;
+  letter-spacing:.06em;
+  box-shadow:0 10px 24px rgba(0,0,0,.22), inset 0 0 0 1px rgba(255,255,255,.035);
+}
+
+.symptoms-page .symptoms-case-link__button::after{
+  content:"→";
+  margin-left:8px;
+  color:#d9c17e;
+  font-size:.95rem;
+  line-height:1;
+}
+
 .symptoms-page .symptoms-note-card{
   width:90%;
-  max-width:760px;
+  max-width:980px;
   margin:0 auto 24px;
   padding:22px 24px;
   border-radius:20px;
@@ -507,7 +543,8 @@ body.symptom-page .dizziness-links{
 @media (max-width:640px){
   .symptoms-page .symptoms-overview,
   .symptoms-page .symptoms-case-band,
-  .symptoms-page .symptoms-note-card{
+  .symptoms-page .symptoms-note-card,
+  .symptoms-page .menu-container{
     width:92%;
   }
 
@@ -537,6 +574,11 @@ body.symptom-page .dizziness-links{
     min-height:auto;
     padding:15px 14px 14px;
     border-radius:16px;
+  }
+
+  .symptoms-page .symptoms-case-link__button{
+    width:100%;
+    margin-top:14px;
   }
 
   .symptoms-page .symptoms-case-band h2,
@@ -870,9 +912,9 @@ body.symptom-page .dizziness-links{
   <h2 id="symptoms-case-title">アトピー・皮膚症状の<span>症例写真</span>を見る</h2>
   <p class="symptoms-case-band__lead">症状ページだけでなく、実際の経過写真を確認したい方はこちらをご覧ください。写真は経過の一例であり、得られる結果には個人差があります。</p>
   <div class="symptoms-case-grid" aria-label="アトピー・皮膚症状の症例一覧">
-    <a href="case1.html" class="symptoms-case-link"><strong>症例1</strong><span>20代後半男性。顔・首・体正面・足首など、初回から6か月目までの経過。</span></a>
-    <a href="case2.html" class="symptoms-case-link"><strong>症例2</strong><span>30代後半男性。前腕・体幹部・脚・足首など、広い範囲の皮膚状態の経過。</span></a>
-    <a href="case3.html" class="symptoms-case-link"><strong>症例3</strong><span>前腕前面・前腕背面・右足首・左足首の変化を確認できる症例。</span></a>
+    <a href="case1.html" class="symptoms-case-link"><strong>症例1を詳しく見る</strong><span>20代後半男性。顔・首・体正面・足首など、初回から6か月目までの経過。</span><span class="symptoms-case-link__button">症例写真を見る</span></a>
+    <a href="case2.html" class="symptoms-case-link"><strong>症例2を詳しく見る</strong><span>30代後半男性。前腕・体幹部・脚・足首など、広い範囲の皮膚状態の経過。</span><span class="symptoms-case-link__button">症例写真を見る</span></a>
+    <a href="case3.html" class="symptoms-case-link"><strong>症例3を詳しく見る</strong><span>前腕前面・前腕背面・右足首・左足首の変化を確認できる症例。</span><span class="symptoms-case-link__button">症例写真を見る</span></a>
   </div>
 </section>
 
@@ -895,7 +937,7 @@ body.symptom-page .dizziness-links{
           <span>睡眠</span>
           <span>食事</span>
           <span>運動</span>
-          <span>ストレス<br>管理</span>
+          <span>ストレス管理</span>
         </div>
       </div>
 
