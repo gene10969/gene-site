@@ -19,9 +19,23 @@
   }
 })();
 </script>
-<!-- GA4 disabled on test-page.html -->
+<!-- Google tag (gtag.js) -->
 <script>
-window.geneGaExcluded = true;
+if (
+  location.hostname !== "localhost" &&
+  location.hostname !== "127.0.0.1"
+) {
+  const script = document.createElement("script");
+  script.async = true;
+  script.src =
+    "https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT";
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8KPJ55NQMT');
+}
 </script>
   
 <meta charset="UTF-8">
@@ -1542,7 +1556,7 @@ window.geneGaExcluded = true;
 
   <span class="pc-only">
 健康な身体は、施術だけで作られるものではありません。<br>
-睡眠・食事・運動・ストレス管理など、日々の生活習慣が土台になります。<br>
+睡眠・食事・運動・ストレス<br>管理など、日々の生活習慣が土台になります。<br>
 geneでは、その土台を大切にしながら、<br>
 身体が本来の働きを発揮しやすい状態を目指して整体を行います。
 </span>
@@ -1551,7 +1565,7 @@ geneでは、その土台を大切にしながら、<br>
     健康な身体は、施術だけで<br>
     作られるものではありません。<br><br>
 
-    睡眠・食事・運動・ストレス管理など、<br>
+    睡眠・食事・運動・ストレス<br>管理など、<br>
     日々の生活習慣が土台になります。<br><br>
 
     geneでは、その土台を大切にしながら、<br>
@@ -1574,7 +1588,7 @@ geneでは、その土台を大切にしながら、<br>
       <span>身体を整えるきっかけ・補助</span>
     </div>
 
-    <div class="gene-house-arrow" aria-hidden="true">▲</div>
+    <div class="gene-house-arrow" aria-hidden="true">▶</div>
 
     <div class="gene-habit-grid">
       <div class="gene-habit-card">
@@ -1623,7 +1637,7 @@ geneでは、その土台を大切にしながら、<br>
             <path d="M8.5 12L10.2 10L12 14L13.7 11L15.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </div>
-        <strong>ストレス管理</strong>
+        <strong>ストレス<br>管理</strong>
         <span>心身の緊張をゆるめる<br>大切な習慣</span>
       </div>
     </div>
