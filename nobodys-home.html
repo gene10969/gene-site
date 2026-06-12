@@ -917,8 +917,24 @@ window.addEventListener("load", function(){
 
 <script>
 (function () {
+  var currentPath = window.location.pathname.replace(/\/+$/, "");
+  var isNobodyHomePage = currentPath === "/nobodys-home.html" || currentPath.endsWith("/nobodys-home.html");
+
+  if (!isNobodyHomePage) {
+    return;
+  }
+
   var params = new URLSearchParams(window.location.search);
-  var isInternal = params.get("internal") === "true";
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
 
   if (isInternal) {
     return;
