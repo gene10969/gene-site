@@ -1711,6 +1711,104 @@ if (
     min-height:46px;
   }
 }
+
+/* top access / business hours card */
+.top-access-card .card-content p{
+  max-width:none;
+}
+
+.top-access-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:24px;
+}
+
+.top-access-item{
+  margin:0;
+  padding:18px 20px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.22);
+  background:rgba(255,255,255,.022);
+}
+
+.top-access-item dt{
+  margin:0 0 8px;
+  color:#d9c17e;
+  font-size:.92rem;
+  line-height:1.6;
+  letter-spacing:.08em;
+}
+
+.top-access-item dd{
+  margin:0;
+  color:rgba(255,255,255,.9);
+  font-size:.98rem;
+  line-height:1.9;
+}
+
+.top-access-note{
+  margin-top:22px !important;
+  color:rgba(255,255,255,.84) !important;
+}
+
+.top-access-link-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:24px;
+}
+
+.top-access-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-access-link::after{
+  content:"›";
+  margin-left:10px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-access-link:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+@media (max-width:640px){
+  .top-access-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:22px;
+  }
+
+  .top-access-item{
+    padding:16px 18px;
+  }
+
+  .top-access-item dd{
+    font-size:.96rem;
+    line-height:1.85;
+  }
+
+  .top-access-link{
+    width:100%;
+    max-width:320px;
+  }
+}
+
 </style>
 </head>
 
@@ -2152,6 +2250,45 @@ geneでは、その土台を大切にしながら、<br>
 
 今の状態を整理するところから、
 一緒に進めていければと思います。</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="info-card card-hidden top-access-card" aria-labelledby="top-access-title">
+    <div class="card-split no-image">
+      <div class="card-content">
+        <h3 id="top-access-title">アクセス・営業時間</h3>
+        <p>大阪市中央区・南船場にある自律神経専門整体院です。
+長堀橋駅から徒歩圏内で、心斎橋・南船場エリアからも通いやすい場所にあります。</p>
+
+        <dl class="top-access-grid" aria-label="大阪 自律神経専門整体院 geneの基本情報">
+          <div class="top-access-item">
+            <dt>住所</dt>
+            <dd>大阪市中央区南船場1-10-12<br>ラインビルド南船場703</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>最寄りエリア</dt>
+            <dd>長堀橋・心斎橋・南船場エリアから通いやすい整体院です。</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>営業時間</dt>
+            <dd>11:00〜21:00<br>不定休</dd>
+          </div>
+
+          <div class="top-access-item">
+            <dt>最終受付</dt>
+            <dd>初診 20:00<br>二回目以降 20:30</dd>
+          </div>
+        </dl>
+
+        <p class="top-access-note">ご相談・ご予約はLINEから承っています。場所が分からない場合も、LINEからお気軽にご連絡ください。</p>
+
+        <div class="top-access-link-wrap">
+          <a href="access.html" class="top-access-link">アクセスページを見る</a>
+        </div>
       </div>
     </div>
   </div>
