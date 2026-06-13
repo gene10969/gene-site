@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1712,6 +1713,198 @@ if (
   }
 }
 
+
+/* top case / improvement photo links - improved readability */
+.top-case-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.top-case-card::before{
+  opacity:.055 !important;
+}
+
+.top-case-card .card-content{
+  position:relative;
+  z-index:1;
+}
+
+.top-case-card .card-content p{
+  max-width:none;
+}
+
+.top-case-card h3{
+  margin-bottom:18px;
+}
+
+.top-case-lead{
+  max-width:760px !important;
+}
+
+.top-case-links{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:26px;
+}
+
+.top-case-link{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:16px;
+  min-height:82px;
+  padding:17px 20px;
+  box-sizing:border-box;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.58);
+  background:
+    linear-gradient(90deg, rgba(217,193,126,.12), rgba(255,255,255,.018) 46%, rgba(0,0,0,.16)),
+    rgba(13,13,13,.94);
+  color:#d9c17e;
+  text-decoration:none;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.top-case-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  min-height:42px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.42);
+  background:rgba(217,193,126,.08);
+  color:#d9c17e;
+  font-size:.88rem;
+  line-height:1;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+
+.top-case-body{
+  display:block;
+  min-width:0;
+}
+
+.top-case-body strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1.04rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:500;
+}
+
+.top-case-body small{
+  display:block;
+  margin-top:4px;
+  color:rgba(255,255,255,.76);
+  font-size:.84rem;
+  line-height:1.65;
+  letter-spacing:.03em;
+}
+
+.top-case-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:106px;
+  min-height:40px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+  color:#111;
+  font-size:.86rem;
+  line-height:1;
+  letter-spacing:.04em;
+  font-weight:700;
+  box-shadow:0 8px 20px rgba(217,193,126,.18);
+  white-space:nowrap;
+}
+
+.top-case-action::after{
+  content:"›";
+  margin-left:8px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-case-link:hover{
+  background:
+    linear-gradient(90deg, rgba(217,193,126,.17), rgba(255,255,255,.026) 48%, rgba(0,0,0,.18)),
+    rgba(20,20,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10);
+}
+
+.top-case-related{
+  margin-top:20px !important;
+  color:rgba(255,255,255,.82) !important;
+  font-size:.94rem;
+  line-height:1.9 !important;
+}
+
+.top-case-related a,
+.top-case-related a:visited{
+  color:#d9c17e;
+  text-decoration:none;
+  border-bottom:1px solid rgba(217,193,126,.38);
+}
+
+.top-case-related a:hover{
+  border-bottom-color:rgba(234,216,147,.78);
+}
+
+.top-case-note{
+  margin-top:18px !important;
+  padding-top:16px;
+  border-top:1px solid rgba(217,193,126,.16);
+  color:rgba(255,255,255,.72) !important;
+  font-size:.9rem;
+  line-height:1.9 !important;
+}
+
+@media (max-width:760px){
+  .top-case-link{
+    grid-template-columns:1fr;
+    gap:10px;
+    min-height:0;
+    padding:16px;
+  }
+
+  .top-case-number{
+    width:max-content;
+    min-width:64px;
+    min-height:36px;
+    font-size:.82rem;
+  }
+
+  .top-case-body strong{
+    font-size:1rem;
+    line-height:1.65;
+  }
+
+  .top-case-action{
+    width:100%;
+    min-height:42px;
+    margin-top:2px;
+  }
+}
+
+@media (max-width:420px){
+  .top-case-body strong{
+    font-size:.96rem;
+  }
+
+  .top-case-body small{
+    font-size:.8rem;
+  }
+}
+
 /* top access / business hours card */
 .top-access-card .card-content p{
   max-width:none;
@@ -2111,6 +2304,59 @@ geneでは、その土台を大切にしながら、<br>
   </p>
   <div class="gene-check-invite__actions">
     <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+  </div>
+</section>
+
+
+<section class="info-card card-hidden top-case-card" aria-labelledby="top-case-title">
+  <div class="card-split no-image">
+    <div class="card-content">
+      <h3 id="top-case-title">アトピー・皮膚症状の経過写真</h3>
+      <p class="top-case-lead">
+アトピー・皮膚症状でお悩みの方へ。
+geneでは、身体の状態・生活習慣・食事内容なども確認しながら、
+整体と食事指導を組み合わせてサポートしています。
+
+実際の経過写真を、症例ごとにご覧いただけます。
+      </p>
+
+      <div class="top-case-links" aria-label="アトピー・皮膚症状の症例ページ">
+        <a href="case1.html" class="top-case-link">
+          <span class="top-case-number">症例1</span>
+          <span class="top-case-body">
+            <strong>1か月目から6か月目の変化を見る</strong>
+            <small>皮膚状態の変化を時系列で確認できます</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+
+        <a href="case2.html" class="top-case-link">
+          <span class="top-case-number">症例2</span>
+          <span class="top-case-body">
+            <strong>皮膚症状の経過写真を見る</strong>
+            <small>状態の変化を写真で確認できます</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+
+        <a href="case3.html" class="top-case-link">
+          <span class="top-case-number">症例3</span>
+          <span class="top-case-body">
+            <strong>前腕・足首の経過写真を見る</strong>
+            <small>前腕前面・前腕背面・足首の写真を掲載しています</small>
+          </span>
+          <span class="top-case-action">写真を見る</span>
+        </a>
+      </div>
+
+      <p class="top-case-related">
+アトピー・皮膚症状について詳しく知りたい方は、<a href="atopic.html">アトピー・皮膚症状ページ</a>もご覧ください。
+      </p>
+
+      <p class="top-case-note">
+※経過には個人差があります。掲載している写真は、施術・食事指導・生活習慣の見直しを含めた取り組みの一例であり、同様の結果を保証するものではありません。
+      </p>
+    </div>
   </div>
 </section>
 
