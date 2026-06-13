@@ -1551,6 +1551,102 @@ if (
   }
 
 }
+
+.top-symptom-nav{
+  display:grid;
+  gap:22px;
+  margin-top:28px;
+}
+
+.top-symptom-group{
+  padding:18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.18);
+  background:rgba(255,255,255,.018);
+}
+
+.top-symptom-group h4{
+  margin:0 0 14px;
+  color:#f4ead0;
+  font-size:1rem;
+  line-height:1.7;
+  letter-spacing:.06em;
+  font-weight:500;
+}
+
+.top-symptom-group .top-symptom-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.top-symptom-group .top-symptom-links li{
+  min-width:0;
+}
+
+.top-symptom-group .top-symptom-links a{
+  min-height:50px;
+  white-space:normal;
+  line-height:1.45;
+}
+
+.top-symptom-all-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:26px;
+}
+
+.top-symptom-all-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 26px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  letter-spacing:.05em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-symptom-all-link::after{
+  content:"›";
+  margin-left:10px;
+  font-size:1.15em;
+  line-height:1;
+}
+
+.top-symptom-all-link:hover{
+  background:rgba(28,26,20,.96);
+  border-color:rgba(234,216,147,.78);
+  transform:translateY(-2px);
+}
+
+@media (max-width:860px){
+  .top-symptom-group .top-symptom-links{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:480px){
+  .top-symptom-group{
+    padding:16px;
+  }
+
+  .top-symptom-group .top-symptom-links{
+    grid-template-columns:1fr;
+  }
+
+  .top-symptom-group .top-symptom-links a{
+    min-height:46px;
+  }
+}
 </style>
 </head>
 
@@ -1731,45 +1827,73 @@ geneでは、その土台を大切にしながら、<br>
   </div>
 </section>
 
-  <div class="info-card card-hidden">
-    <div class="card-split no-image">
-      <div class="card-content">
-        <h3>このようなお悩みの方へ</h3>
-        <p>めまい、耳鳴り、不眠、動悸、慢性的な疲労感、アトピー性皮膚炎、
-起立性調節障害、過敏性腸症候群、慢性便秘、息苦しさ、喉の違和感など、
-自律神経の乱れと関わるお悩みに対応しています。
+  <div class="info-card card-hidden top-symptom-seo-card">
+  <div class="card-split no-image">
+    <div class="card-content">
+           <h3>大阪・南船場で自律神経の不調にお悩みの方へ</h3>
+      <p>
+めまい、耳鳴り、不眠、動悸、慢性的な疲労感、アトピー性皮膚炎など、
+自律神経の乱れと関わる不調は、症状だけでなく身体全体の状態を確認することが大切です。
 
-「どこに相談すればいいかわからない」
-「何をしてもすっきりしない」
-という方も、まずは一度ご相談ください。</p>
-        <div class="top-symptom-links" aria-label="主な症状ページ">
-          <a href="symptoms.html">症状別一覧を見る</a>
-          <a href="atopic.html">アトピー</a>
-          <a href="tinnitus.html">耳鳴り</a>
-          <a href="dizziness.html">めまい</a>
-          <a href="insomnia.html">不眠</a>
-          <a href="headache.html">頭痛</a>
-          <a href="palpitations.html">動悸</a>
-          <a href="fatigue.html">慢性疲労</a>
-          <a href="panic.html">パニック症状</a>
-          <a href="anxiety-disorder.html">不安障害</a>
-          <a href="nausea.html">吐き気</a>
-          <a href="stomach-discomfort.html">胃の不快感</a>
-          <a href="pms.html">PMS</a>
-          <a href="coldness.html">冷え性</a>
-          <a href="autonomic.html">自律神経失調症</a>
-          <a href="plantar-fasciitis.html">足底筋膜炎</a>
-          <a href="tmj.html">顎関節症</a>
-          <a href="tenosynovitis.html">腱鞘炎</a>
-          <a href="orthostatic-dysregulation.html">起立性調節障害</a>
-          <a href="ibs.html">過敏性腸症候群</a>
-          <a href="chronic-constipation.html">慢性便秘</a>
-          <a href="shortness-of-breath.html">息苦しさ</a>
-          <a href="throat-discomfort.html">喉の違和感</a>
+大阪市中央区・南船場、長堀橋・心斎橋エリアで、
+原因のはっきりしない不調や慢性的なお悩みでお困りの方は、
+下記の症状別ページもご覧ください。
+      </p>
+
+      <nav class="top-symptom-nav" aria-label="自律神経に関わる症状別ページ">
+        <div class="top-symptom-group">
+          <h4>よく見られる自律神経の不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="dizziness.html">めまいでお悩みの方へ</a></li>
+            <li><a href="tinnitus.html">耳鳴りと自律神経の乱れ</a></li>
+            <li><a href="insomnia.html">不眠・眠りの不調</a></li>
+            <li><a href="headache.html">頭痛と自律神経の関係</a></li>
+            <li><a href="palpitations.html">動悸・胸のざわつき</a></li>
+            <li><a href="fatigue.html">慢性的な疲労感</a></li>
+            <li><a href="autonomic.html">自律神経失調症</a></li>
+          </ul>
         </div>
+
+        <div class="top-symptom-group">
+          <h4>不安・ストレスと関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="panic.html">パニック症状でお悩みの方へ</a></li>
+            <li><a href="anxiety-disorder.html">不安障害と身体の緊張</a></li>
+            <li><a href="shortness-of-breath.html">息苦しさ・呼吸のしづらさ</a></li>
+            <li><a href="throat-discomfort.html">喉の違和感・つかえ感</a></li>
+          </ul>
+        </div>
+
+        <div class="top-symptom-group">
+          <h4>胃腸・体質に関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="atopic.html">アトピー・皮膚症状</a></li>
+            <li><a href="nausea.html">吐き気・気持ち悪さ</a></li>
+            <li><a href="stomach-discomfort.html">胃の不快感・胃もたれ</a></li>
+            <li><a href="ibs.html">過敏性腸症候群</a></li>
+            <li><a href="chronic-constipation.html">慢性便秘</a></li>
+            <li><a href="coldness.html">冷え性・巡りの悪さ</a></li>
+          </ul>
+        </div>
+
+        <div class="top-symptom-group">
+          <h4>姿勢・身体の使い方と関わる不調</h4>
+          <ul class="top-symptom-links">
+            <li><a href="tmj.html">顎関節症・噛みしめ</a></li>
+            <li><a href="tenosynovitis.html">腱鞘炎・手首の違和感</a></li>
+            <li><a href="plantar-fasciitis.html">足底筋膜炎・足裏の痛み</a></li>
+            <li><a href="orthostatic-dysregulation.html">起立性調節障害</a></li>
+            <li><a href="pms.html">PMS・生理前の不調</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="top-symptom-all-wrap">
+        <a href="symptoms.html" class="top-symptom-all-link">症状別ページをすべて見る</a>
       </div>
     </div>
   </div>
+</div>
 
 
   
