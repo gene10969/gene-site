@@ -32,9 +32,11 @@ if (
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8KPJ55NQMT');
+  window.gtag = window.gtag || function(){
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-8KPJ55NQMT');
 }
 </script>
   
@@ -1943,7 +1945,7 @@ geneでは、その土台を大切にしながら、<br>
   <div class="info-card card-hidden">
     <div class="card-split">
       <div class="card-media">
-        <a href="quiet-room.html" class="secret-photo-link" id="secret-page-link" aria-label="隠しページへ">
+        <a href="nobodys-home.html" class="secret-photo-link" id="secret-page-link" aria-label="隠しページへ">
           <img src="assets/img/gene-profile.webp" alt="大阪 自律神経専門整体院 gene 院長 高田裕基">
         </a>
       </div>
@@ -2358,36 +2360,56 @@ window.addEventListener("load", () => {
 
 <script>
 (function(){
+  const secretPageUrl = "nobodys-home.html";
+
   function setupSecretPageLink(){
     const link = document.getElementById("secret-page-link");
     if (!link) return;
     if (link.dataset.secretReady === "true") return;
     link.dataset.secretReady = "true";
+    link.setAttribute("href", secretPageUrl);
 
     link.addEventListener("click", function(event){
-      const href = link.getAttribute("href") || "quiet-room.html";
-
-      if (typeof gtag !== "function") {
-        return;
-      }
-
       event.preventDefault();
 
+      const href = link.getAttribute("href") || secretPageUrl;
       let moved = false;
+
       const go = function(){
         if (moved) return;
         moved = true;
         window.location.href = href;
       };
 
-      gtag("event", "secret_page_click", {
-        event_category: "secret_page",
-        event_label: "index_last_photo",
+      const params = {
+        event_category: "hidden_page",
+        event_label: "nobodys_home_last_photo",
+        source_page: location.pathname.split("/").pop() || "index.html",
+        destination_page: "nobodys-home.html",
         link_url: href,
-        event_callback: go
-      });
+        transport_type: "beacon",
+        event_callback: go,
+        event_timeout: 700
+      };
 
-      setTimeout(go, 700);
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "nobodys_home_click", params);
+        setTimeout(go, 700);
+        return;
+      }
+
+      if (window.dataLayer && typeof window.dataLayer.push === "function") {
+        window.dataLayer.push({
+          event: "nobodys_home_click",
+          event_category: params.event_category,
+          event_label: params.event_label,
+          source_page: params.source_page,
+          destination_page: params.destination_page,
+          link_url: params.link_url
+        });
+      }
+
+      go();
     });
   }
 
