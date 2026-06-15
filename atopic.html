@@ -677,13 +677,57 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 
 /* symptom page card width alignment */
 body.symptom-page .dizziness-intro-card,
-body.symptom-page .gene-check-invite{
+body.symptom-page .gene-check-invite,
+body.symptom-page > .atopic-case1-compare{
   width:90% !important;
   max-width:760px !important;
 }
 
+body.symptom-page > .atopic-case1-compare{
+  margin:0 auto 28px !important;
+}
+
 body.symptom-page .dizziness-links{
   max-width:760px !important;
+}
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
 }
 
 </style>
@@ -747,7 +791,7 @@ body.symptom-page .dizziness-links{
 <body class="subpage symptom-page atopic-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
 <nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>アトピー・皮膚症状でお悩みの方へ</span></nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
@@ -777,8 +821,69 @@ body.symptom-page .dizziness-links{
   <a href="menu.html">施術内容を見る</a>
   <a href="symptoms.html">症状別に見る</a>
   <a href="#atopic-case-links">症例1〜3を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
+  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">まずは相談してみる</a>
 </div>
+
+<section class="atopic-case1-compare dizziness-fade" aria-labelledby="atopic-case1-compare-title">
+    <h2 id="atopic-case1-compare-title">改善写真・経過の一例</h2>
+    <p class="atopic-case1-compare__lead">
+      実際の変化は一人ひとり異なりますが、<br>
+      皮膚の状態だけでなく、睡眠・緊張・呼吸・疲労の出方も含めて経過を確認しています。
+    </p>
+
+    <div class="atopic-case1-compare__grid">
+      <div class="atopic-case1-compare__item">
+        <h3>顔まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 顔 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 顔 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="atopic-case1-compare__item">
+        <h3>首まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 首 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 首 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="atopic-case1-compare__item">
+        <h3>足首まわりの変化</h3>
+        <div class="atopic-case1-compare__photos">
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 足首 初回">
+            <span>初回</span>
+          </div>
+          <div class="atopic-case1-compare__photo">
+            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 足首 6か月目">
+            <span>6か月目</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="atopic-case1-compare__note">※写真は経過の一例です。得られる結果には個人差があります。</p>
+    <p class="atopic-case1-compare__note">※必要に応じて、今後は1か月目・6か月目など、より見やすい比較構成に調整できます。</p>
+
+    <div class="atopic-case1-compare__actions">
+      <a href="case1.html">症例1の詳細を見る</a>
+      <a href="#atopic-case-links">症例1〜3をまとめて見る</a>
+      <a href="https://lin.ee/6bBKc67" class="atopic-case1-compare__line gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">無料で相談する</span><span class="gene-cta-two-line__sub">LINEでお気軽にご相談ください</span></a>
+    </div>
+  </section>
 
 <section class="gene-check-invite dizziness-fade" aria-labelledby="gene-check-invite-title">
   <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
@@ -852,67 +957,6 @@ body.symptom-page .dizziness-links{
   </div>
 
   
-  <section class="atopic-case1-compare dizziness-fade" aria-labelledby="atopic-case1-compare-title">
-    <h2 id="atopic-case1-compare-title">改善写真・経過の一例</h2>
-    <p class="atopic-case1-compare__lead">
-      実際の変化は一人ひとり異なりますが、<br>
-      皮膚の状態だけでなく、睡眠・緊張・呼吸・疲労の出方も含めて経過を確認しています。
-    </p>
-
-    <div class="atopic-case1-compare__grid">
-      <div class="atopic-case1-compare__item">
-        <h3>顔まわりの変化</h3>
-        <div class="atopic-case1-compare__photos">
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 顔 初回">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 顔 6か月目">
-            <span>6か月目</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="atopic-case1-compare__item">
-        <h3>首まわりの変化</h3>
-        <div class="atopic-case1-compare__photos">
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 首 初回">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 首 6か月目">
-            <span>6か月目</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="atopic-case1-compare__item">
-        <h3>足首まわりの変化</h3>
-        <div class="atopic-case1-compare__photos">
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 足首 初回">
-            <span>初回</span>
-          </div>
-          <div class="atopic-case1-compare__photo">
-            <img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="大阪 自律神経専門整体院 gene アトピー症例1 足首 6か月目">
-            <span>6か月目</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <p class="atopic-case1-compare__note">※写真は経過の一例です。得られる結果には個人差があります。</p>
-    <p class="atopic-case1-compare__note">※必要に応じて、今後は1か月目・6か月目など、より見やすい比較構成に調整できます。</p>
-
-    <div class="atopic-case1-compare__actions">
-      <a href="case1.html">症例1の詳細を見る</a>
-      <a href="#atopic-case-links">症例1〜3をまとめて見る</a>
-      <a href="https://lin.ee/6bBKc67" class="atopic-case1-compare__line" target="_blank" rel="noopener">LINEで相談する</a>
-    </div>
-  </section>
-
   <section class="atopic-case-direct dizziness-fade" id="atopic-case-links" aria-labelledby="atopic-case-direct-title">
     <p class="atopic-case-direct__eyebrow">CASE PHOTOS</p>
     <h2 id="atopic-case-direct-title">アトピー・皮膚症状の<span>症例1〜3</span>を見る</h2>
@@ -1010,9 +1054,9 @@ body.symptom-page .dizziness-links{
 
 
   <div class="menu-card dizziness-fade">
-    <h2>ご相談・ご予約はこちら</h2>
-    <p>現在の状態を整理するところからでも大丈夫です。<br>ご相談・ご予約はLINEから承っています。</p>
-    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn" target="_blank" rel="noopener">LINEで予約する</a></p>
+    <h2>まずは相談してみる</h2>
+    <p>現在の状態を整理するところからでも大丈夫です。<br>LINEで症状やご不安をお送りください。</p>
+    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEで症状やご不安をお送りください</span></a></p>
   </div>
 </div>
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
@@ -1073,7 +1117,7 @@ body.symptom-page .dizziness-links{
   <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
   <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術内容</span></a>
   <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">LINE予約</span></a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">空き状況</span></a>
 </nav>
 <footer>
   大阪 自律神経専門整体院 gene<br>
