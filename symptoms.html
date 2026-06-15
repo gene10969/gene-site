@@ -592,34 +592,38 @@ body.symptom-page .dizziness-links{
   .symptoms-page .symptoms-note-card{
     text-align:left;
   }
-}
-  /* symptoms.html 下部カード幅の統一 */
-.symptoms-page .menu-container{
-  width:90% !important;
-  max-width:980px !important;
-  margin:0 auto !important;
-  padding:0 !important;
-  box-sizing:border-box !important;
-}
-
-.symptoms-page .menu-container .menu-card,
-.symptoms-page .menu-container .gene-compact-life-card{
-  width:100% !important;
-  max-width:100% !important;
-  margin-left:0 !important;
-  margin-right:0 !important;
-  box-sizing:border-box !important;
-}
-
+  
+/* symptoms.html スマホ時：中央カード幅の強制統一 */
 @media (max-width:640px){
-  .symptoms-page .menu-container{
-    width:92% !important;
+
+  body.symptoms-page .symptoms-note-card,
+  body.symptoms-page .menu-container,
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    width:calc(100% - 32px) !important;
+    max-width:980px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
   }
 
-  .symptoms-page .menu-container .menu-card,
-  .symptoms-page .menu-container .gene-compact-life-card{
-    width:100% !important;
-    max-width:100% !important;
+  body.symptoms-page .symptoms-note-card{
+    padding:22px 18px !important;
+    border-radius:20px !important;
+    text-align:left !important;
+    overflow:hidden !important;
+  }
+
+  body.symptoms-page .menu-container{
+    padding:0 !important;
+  }
+
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    padding-left:18px !important;
+    padding-right:18px !important;
+    border-radius:20px !important;
+    overflow:hidden !important;
   }
 }
 </style>
