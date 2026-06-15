@@ -593,6 +593,35 @@ body.symptom-page .dizziness-links{
     text-align:left;
   }
 }
+  /* symptoms.html 下部カード幅の統一 */
+.symptoms-page .menu-container{
+  width:90% !important;
+  max-width:980px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+}
+
+.symptoms-page .menu-container .menu-card,
+.symptoms-page .menu-container .gene-compact-life-card{
+  width:100% !important;
+  max-width:100% !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  box-sizing:border-box !important;
+}
+
+@media (max-width:640px){
+  .symptoms-page .menu-container{
+    width:92% !important;
+  }
+
+  .symptoms-page .menu-container .menu-card,
+  .symptoms-page .menu-container .gene-compact-life-card{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
 </style>
 <script type="application/ld+json">
 {
