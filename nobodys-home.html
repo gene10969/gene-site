@@ -461,6 +461,46 @@ if (
   }
 }
 
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
 </style>
 </head>
 
@@ -509,9 +549,7 @@ if (
 </p>
 </div>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">
-  LINE<br class="sp-only-br">予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 
 <section class="secret-hero-card">
   <div class="secret-hero-inner secret-hero-inner-text-only">

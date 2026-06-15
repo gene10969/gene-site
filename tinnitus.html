@@ -279,6 +279,46 @@ body.symptom-page .dizziness-links{
   max-width:760px !important;
 }
 
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -340,7 +380,7 @@ body.symptom-page .dizziness-links{
 <body class="subpage symptom-page tinnitus-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
 <nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>耳鳴りでお悩みの方へ</span></nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
@@ -369,7 +409,7 @@ body.symptom-page .dizziness-links{
 <div class="dizziness-links dizziness-fade">
   <a href="menu.html">施術内容を見る</a>
   <a href="voice.html">院内・改善事例を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
+  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">まずは相談してみる</a>
 </div>
 
 <section class="gene-check-invite dizziness-fade" aria-labelledby="gene-check-invite-title">
@@ -476,9 +516,9 @@ body.symptom-page .dizziness-links{
 
 
   <div class="menu-card dizziness-fade">
-    <h2>ご相談・ご予約はこちら</h2>
-    <p>現在の状態を整理するところからでも大丈夫です。<br>ご相談・ご予約はLINEから承っています。</p>
-    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn" target="_blank" rel="noopener">LINEで予約する</a></p>
+    <h2>どの症状として相談すればいいか迷う方へ</h2>
+    <p>現在の状態を整理するところからでも大丈夫です。<br>症状名がはっきりしなくてもご相談いただけます。</p>
+    <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a></p>
   </div>
 </div>
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
@@ -539,7 +579,7 @@ body.symptom-page .dizziness-links{
   <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
   <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術内容</span></a>
   <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">LINE予約</span></a>
+  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">空き状況</span></a>
 </nav>
 <footer>
   大阪 自律神経専門整体院 gene<br>

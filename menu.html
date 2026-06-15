@@ -1264,6 +1264,46 @@ if (
   }
 }
 
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
 </style>
 </head>
 
@@ -1295,7 +1335,7 @@ if (
   <h1 class="main-title">施術内容</h1>
   <p class="sub-catch">gene自律神経調整整体<br>一人ひとりの状態に合わせて整えるオーダーメイド整体</p>
 </div>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 
 <section class="menu-hero-card">
   <div class="menu-hero-inner">
@@ -1594,11 +1634,9 @@ if (
   </div>
 
   <div class="info-card card-hidden menu-cta-card">
-    <p style="white-space: pre-line;">どの症状として予約すればいいか迷う必要はありません。
-まずは現在の状態を整理するところからでも大丈夫です。
-
-ご相談・ご予約はLINEから承っています。</p>
-    <a href="https://lin.ee/6bBKc67" class="menu-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
+    <p style="white-space: pre-line;">どの症状として相談すればいいか迷う必要はありません。
+現在の状態を整理するところからでも大丈夫です。</p>
+    <a href="https://lin.ee/6bBKc67" class="menu-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a>
   </div>
 
   <div class="info-card card-hidden">
@@ -1697,7 +1735,7 @@ if (
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 

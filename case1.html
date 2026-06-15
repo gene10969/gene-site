@@ -681,6 +681,46 @@ if (
     margin-bottom:56px !important;
   }
 }
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
 </style>
 </head>
 
@@ -696,9 +736,7 @@ if (
   <span>症例1</span>
 </nav>
 
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">
-  LINE<br>予約
-</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">空き状況<br>を見る</a>
 
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
@@ -745,7 +783,7 @@ if (
 
 <div class="case-detail-links">
 <a href="voice.html">院内・改善事例一覧に戻る</a>
-<a href="https://lin.ee/6bBKc67" target="_blank">LINEで相談する</a>
+<a href="https://lin.ee/6bBKc67" target="_blank">まずは相談してみる</a>
 </div>
 </section>
 
@@ -915,9 +953,9 @@ if (
 </div>
   
 <section class="case-cta case-fade">
-<h2>ご相談・ご予約はこちら</h2>
-<p>ご相談・ご予約はLINEから承っています。</p>
-<a href="https://lin.ee/6bBKc67" class="case-cta-btn" target="_blank">LINEで予約する</a>
+<h2>写真で見た変化は、特別な人だけのものではありません。</h2>
+<p>現在の状態に合わせて、無理のない形で整えていきます。</p>
+<a href="https://lin.ee/6bBKc67" class="case-cta-btn gene-cta-two-line" target="_blank"><span class="gene-cta-two-line__main">無料で相談する</span><span class="gene-cta-two-line__sub">LINEでお気軽にご相談ください</span></a>
 </section>
 
 </main>
@@ -1001,7 +1039,7 @@ if (
   </a>
   <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
     <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
+    <span class="nav-text">空き状況</span>
   </a>
 </nav>
 
