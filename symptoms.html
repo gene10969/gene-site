@@ -625,6 +625,30 @@ body.symptom-page .dizziness-links{
     border-radius:20px !important;
     overflow:hidden !important;
   }
+  /* symptoms.html PC表示：下部カード幅を他カードと揃える */
+@media (min-width:641px){
+
+  body.symptoms-page .symptoms-note-card,
+  body.symptoms-page .menu-container{
+    width:72% !important;
+    max-width:860px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+
+  body.symptoms-page .menu-container{
+    padding:0 !important;
+  }
+
+  body.symptoms-page .menu-container .menu-card,
+  body.symptoms-page .menu-container .gene-compact-life-card{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+  }
 }
 </style>
 <script type="application/ld+json">
