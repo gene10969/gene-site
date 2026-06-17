@@ -3048,6 +3048,58 @@ window.addEventListener("load", () => {
 </script>
 
 
+<script>
+(function () {
+  var currentPath = window.location.pathname.replace(/\/+$/, "");
+  var isTopPage = currentPath === "" || currentPath === "/" || currentPath === "/index.html";
+
+  if (!isTopPage) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+  }
+
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var storageKey = "top_page_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: "index.html",
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
+})();
+</script>
+
 <script src="assets/js/line-click-tracking.js"></script>
 
 </body>
