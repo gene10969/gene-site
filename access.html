@@ -1154,81 +1154,51 @@ window.addEventListener("load", () => {
 </script>
 
 
+
+
 <script>
 (function () {
-  const GAS_WEB_APP_URL =
-    "https://script.google.com/macros/s/1NXQkrIgIDzh4_LmmBZp-H_gjsJv694-usNCcBovgnTA/exec";
-
-  const isLocalhost =
-    location.hostname === "localhost" ||
-    location.hostname === "127.0.0.1";
-
-  const params =
-    new URLSearchParams(location.search);
+  var params = new URLSearchParams(window.location.search);
 
   if (params.get("internal") === "true") {
     localStorage.setItem("internalUser", "true");
-    return;
   }
 
   if (params.get("internal") === "false") {
     localStorage.removeItem("internalUser");
   }
 
-  const isInternal =
-    localStorage.getItem("internalUser") === "true";
+  var isInternal = localStorage.getItem("internalUser") === "true";
 
-  if (isLocalhost || isInternal) {
+  if (isInternal) {
     return;
   }
 
-  const path =
-    window.location.pathname;
-
-  const page =
-    path.split("/").pop() || "index.html";
-
-  const url =
-    window.location.href;
-
-  const referrer =
-    document.referrer || "直接アクセス / 不明";
-
-  const userAgent =
-    navigator.userAgent || "不明";
-
-  const storageKey =
-    "gene_access_notice_" + page;
-
-  const lastSent =
-    Number(sessionStorage.getItem(storageKey) || 0);
-
-  const now =
-    Date.now();
-
-  const oneHour =
-    60 * 60 * 1000;
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
 
   if (now - lastSent < oneHour) {
     return;
   }
 
-  sessionStorage.setItem(storageKey, String(now));
+  localStorage.setItem(storageKey, String(now));
 
-  fetch(GAS_WEB_APP_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain"
-    },
-    body: JSON.stringify({
-      page: page,
-      url: url,
-      referrer: referrer,
-      userAgent: userAgent,
-      internal: false
-    })
-  }).catch(function () {});
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
 })();
 </script>
 
