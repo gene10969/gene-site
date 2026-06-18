@@ -3,6 +3,7 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script>
 if (
   location.hostname !== "localhost" &&
@@ -15,77 +16,31 @@ if (
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+
   (function(){
-const params=new URLSearchParams(location.search);
-if(params.get('internal')==='true'){localStorage.setItem('internalUser','true');}
-if(params.get('internal')==='false'){localStorage.removeItem('internalUser');}
-const isInternal=localStorage.getItem('internalUser')==='true';
-if(!isInternal){
-gtag('config','G-8KPJ55NQMT');
+    const params = new URLSearchParams(location.search);
+
+    if (params.get("internal") === "true") {
+      localStorage.setItem("internalUser", "true");
+    }
+
+    if (params.get("internal") === "false") {
+      localStorage.removeItem("internalUser");
+    }
+
+    const isInternal =
+      localStorage.getItem("internalUser") === "true";
+
+    if (!isInternal) {
+      gtag("config", "G-8KPJ55NQMT");
+    }
+  })();
 }
-})();
-}
-(function () {
-  const GAS_WEB_APP_URL =
-    "YOUR_GAS_WEB_APP_URL";
-
-  const path =
-    window.location.pathname;
-
-  const page =
-    path.split("/").pop() || "index.html";
-
-  const url =
-    window.location.href;
-
-  const referrer =
-    document.referrer || "直接アクセス / 不明";
-
-  const userAgent =
-    navigator.userAgent || "不明";
-
-  const params =
-    new URLSearchParams(window.location.search);
-
-  if (params.get("internal") === "true") {
-    return;
-  }
-
-  const storageKey =
-    "gene_access_notice_" + page;
-
-  const lastSent =
-    Number(sessionStorage.getItem(storageKey) || 0);
-
-  const now =
-    Date.now();
-
-  const oneHour =
-    60 * 60 * 1000;
-
-  if (now - lastSent < oneHour) {
-    return;
-  }
-
-  sessionStorage.setItem(storageKey, String(now));
-
-  fetch(GAS_WEB_APP_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain"
-    },
-    body: JSON.stringify({
-      page: page,
-      url: url,
-      referrer: referrer,
-      userAgent: userAgent,
-      internal: false
-    })
-  }).catch(function () {});
-})();
 </script>
   
 <meta charset="UTF-8">
@@ -1200,79 +1155,82 @@ window.addEventListener("load", () => {
 
 
 <script>
-(function(){
-  function setupGeneToTopPanelAvoidance(){
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+(function () {
+  const GAS_WEB_APP_URL =
+    "https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXXXXXX/exec";
 
-    if (!panel) return;
-    if (panel.dataset.toTopAvoidanceReady === "true") return;
-    panel.dataset.toTopAvoidanceReady = "true";
+  const isLocalhost =
+    location.hostname === "localhost" ||
+    location.hostname === "127.0.0.1";
 
-    function getToTopBtn(){
-      return document.getElementById("to-top-btn");
-    }
+  const params =
+    new URLSearchParams(location.search);
 
-    function updateToTopPosition(){
-      const btn = getToTopBtn();
-      if (!btn) return;
-
-      if (window.innerWidth > 768) {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-        return;
-      }
-
-      if (panel.classList.contains("open")) {
-        const rect = panel.getBoundingClientRect();
-        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
-        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
-        btn.style.setProperty("z-index", "9999", "important");
-      } else {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-      }
-    }
-
-    const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-
-    [toggle, close, backdrop].forEach(function(el){
-      if (!el) return;
-      el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    window.addEventListener("resize", updateToTopPosition, { passive:true });
-    window.addEventListener("scroll", updateToTopPosition, { passive:true });
-
-    setTimeout(updateToTopPosition, 300);
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
+    return;
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
-  } else {
-    setupGeneToTopPanelAvoidance();
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
   }
 
-  window.addEventListener("load", function(){
-    setTimeout(setupGeneToTopPanelAvoidance, 500);
-  });
+  const isInternal =
+    localStorage.getItem("internalUser") === "true";
+
+  if (isLocalhost || isInternal) {
+    return;
+  }
+
+  const path =
+    window.location.pathname;
+
+  const page =
+    path.split("/").pop() || "index.html";
+
+  const url =
+    window.location.href;
+
+  const referrer =
+    document.referrer || "直接アクセス / 不明";
+
+  const userAgent =
+    navigator.userAgent || "不明";
+
+  const storageKey =
+    "gene_access_notice_" + page;
+
+  const lastSent =
+    Number(sessionStorage.getItem(storageKey) || 0);
+
+  const now =
+    Date.now();
+
+  const oneHour =
+    60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  sessionStorage.setItem(storageKey, String(now));
+
+  fetch(GAS_WEB_APP_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain"
+    },
+    body: JSON.stringify({
+      page: page,
+      url: url,
+      referrer: referrer,
+      userAgent: userAgent,
+      internal: false
+    })
+  }).catch(function () {});
 })();
 </script>
-
 
 <script src="assets/js/line-click-tracking.js"></script>
 
