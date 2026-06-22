@@ -592,7 +592,8 @@ body.symptom-page .dizziness-links{
   .symptoms-page .symptoms-note-card{
     text-align:left;
   }
-  
+}
+
 /* symptoms.html スマホ時：中央カード幅の強制統一 */
 @media (max-width:640px){
 
@@ -625,7 +626,9 @@ body.symptom-page .dizziness-links{
     border-radius:20px !important;
     overflow:hidden !important;
   }
-  /* symptoms.html PC表示：下部カード幅を他カードと揃える */
+}
+
+/* symptoms.html PC表示：下部カード幅を他カードと揃える */
 @media (min-width:641px){
 
   body.symptoms-page .symptoms-note-card,
@@ -650,6 +653,45 @@ body.symptom-page .dizziness-links{
     box-sizing:border-box !important;
   }
 }
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    position:fixed !important;
+    top:95px !important;
+    right:24px !important;
+    bottom:auto !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -801,7 +843,7 @@ body.symptom-page .dizziness-links{
 <body class="subpage symptom-page symptoms-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
 <nav class="breadcrumb-fixed hidden"><a href="/">ホーム</a> ＞ <span>症状別に見る</span></nav>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
