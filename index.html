@@ -2062,6 +2062,155 @@ if (
   }
 }
 
+
+/* top atopic focus lead card */
+.top-atopic-focus{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(217,193,126,.34) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(217,193,126,.14), transparent 46%),
+    linear-gradient(180deg, rgba(20,18,13,.74), rgba(8,8,8,.78)) !important;
+}
+
+.top-atopic-focus::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(217,193,126,.08);
+  border-radius:18px;
+  pointer-events:none;
+}
+
+.top-atopic-focus .card-content{
+  position:relative;
+  z-index:1;
+}
+
+.top-atopic-focus__eyebrow{
+  margin:0 0 10px !important;
+  text-align:center;
+  color:rgba(217,193,126,.86) !important;
+  font-size:.78rem !important;
+  line-height:1.5 !important;
+  letter-spacing:.16em !important;
+}
+
+.top-atopic-focus h3{
+  text-align:center;
+  color:#f4ead0;
+}
+
+.top-atopic-focus__lead{
+  max-width:760px;
+  margin:0 auto 18px !important;
+  text-align:center;
+}
+
+.top-atopic-focus__points{
+  max-width:720px;
+  margin:18px auto 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  list-style:none;
+}
+
+.top-atopic-focus__points li{
+  padding:11px 12px;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+  color:rgba(255,255,255,.88);
+  font-size:.92rem;
+  line-height:1.65;
+  text-align:center;
+}
+
+.top-atopic-focus__actions{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+
+.top-atopic-focus__btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:10px 24px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.56);
+  background:rgba(20,20,20,.9);
+  color:#d9c17e;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.04em;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.top-atopic-focus__btn:visited{
+  color:#d9c17e;
+}
+
+.top-atopic-focus__btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(234,216,147,.78);
+  background:rgba(28,26,20,.96);
+}
+
+.top-atopic-focus__note{
+  margin:18px auto 0 !important;
+  max-width:760px;
+  color:rgba(255,255,255,.68) !important;
+  font-size:.86rem !important;
+  line-height:1.8 !important;
+  text-align:center;
+}
+
+@media (max-width:768px){
+  .top-atopic-focus{
+    padding:24px 18px !important;
+  }
+
+  .top-atopic-focus__lead,
+  .top-atopic-focus__note{
+    text-align:left;
+  }
+
+  .top-atopic-focus__points{
+    grid-template-columns:1fr;
+  }
+
+  .top-atopic-focus__points li{
+    text-align:left;
+  }
+
+  .top-atopic-focus__actions a{
+    width:100%;
+    max-width:320px;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
 </style>
 </head>
 
@@ -2137,6 +2286,32 @@ if (
 </section>
 
 <div id="index-cards">
+
+
+<section class="info-card card-hidden top-atopic-focus" aria-labelledby="top-atopic-focus-title">
+  <div class="card-split no-image">
+    <div class="card-content">
+      <p class="top-atopic-focus__eyebrow">ATOPY / SKIN SYMPTOMS</p>
+      <h3 id="top-atopic-focus-title">薬だけでは波が戻るアトピー・皮膚症状でお悩みの方へ</h3>
+      <p class="top-atopic-focus__lead">
+肌だけの問題として見るのではなく、睡眠・ストレス・呼吸・胃腸・身体の緊張、自律神経の偏りまで確認します。<br>
+病院や薬を否定するのではなく、身体全体の状態を整える別の視点としてご相談ください。
+      </p>
+      <ul class="top-atopic-focus__points">
+        <li>薬を続けているが、状態の波が戻りやすい</li>
+        <li>かゆみや赤みで、睡眠や日常生活に影響がある</li>
+        <li>薬以外の方向性も、身体全体から考えたい</li>
+      </ul>
+      <div class="top-atopic-focus__actions">
+        <a href="atopic.html" class="top-atopic-focus__btn">アトピーのページを見る</a>
+        <a href="voice.html#case1" class="top-atopic-focus__btn">経過写真を見る</a>
+        <a href="https://lin.ee/6bBKc67" class="top-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">LINEで相談する</span><span class="gene-cta-two-line__sub">現在の状態をお聞かせください</span></a>
+      </div>
+      <p class="top-atopic-focus__note">※医療機関での治療やお薬を否定するものではありません。お薬の変更・中止は医師の指示に従ってください。</p>
+    </div>
+  </div>
+</section>
+
 
 <section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-title">
   <h2 class="gene-lifestyle-title" id="gene-lifestyle-title">

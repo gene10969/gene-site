@@ -924,6 +924,69 @@ gtag('config','G-8KPJ55NQMT');
   }
 }
 
+
+/* voice page SEO h1 */
+.voice-page-title{
+  margin:0 0 18px;
+  text-align:center;
+  color:#d9c17e;
+  font-family:'Playfair Display',"Yu Mincho","Hiragino Mincho ProN","YuMincho","Noto Serif JP",serif;
+  font-size:2rem;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:.04em;
+}
+
+.voice-page-title-sub{
+  margin:0 auto 38px !important;
+  max-width:760px;
+  text-align:center;
+  color:rgba(255,255,255,.86);
+  line-height:2;
+  letter-spacing:.04em;
+}
+
+.voice-intro-head .voice-page-title-sub + h2{
+  margin:0 0 16px !important;
+  color:#f4ead0 !important;
+  font-size:clamp(1.35rem,2.6vw,1.85rem) !important;
+  font-weight:500 !important;
+  line-height:1.55 !important;
+  letter-spacing:.08em !important;
+}
+
+@media (max-width:768px){
+  .voice-page-title{
+    font-size:2rem;
+    margin-bottom:18px;
+  }
+
+  .voice-page-title-sub{
+    text-align:left;
+    margin-bottom:34px !important;
+  }
+
+  .voice-intro-head .voice-page-title-sub + h2{
+    font-size:1.42rem !important;
+    margin-bottom:14px !important;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
 </style>
 </head>
 
@@ -965,6 +1028,8 @@ gtag('config','G-8KPJ55NQMT');
 
 <section class="voice-intro-section voice-fade">
   <div class="voice-intro-head">
+    <h1 class="voice-page-title">院内・改善写真</h1>
+    <p class="voice-page-title-sub">大阪 自律神経専門整体院 gene の院内空間と、アトピー・皮膚症状の経過写真を掲載しています。</p>
     <h2>院内の雰囲気</h2>
     <p>はじめての方にも安心してお越しいただけるよう、<br>院内空間をご紹介します。</p>
   </div>
@@ -991,7 +1056,7 @@ gtag('config','G-8KPJ55NQMT');
 <!-- ============================
    症例1
 ============================ -->
-<section class="case voice-fade">
+<section class="case voice-fade" id="case1">
 <h2>症例1</h2>
 <p class="voice-case-detail-link"><a href="case1.html">症例1の詳細ページを見る</a></p>
 
@@ -1041,7 +1106,7 @@ gtag('config','G-8KPJ55NQMT');
 <!-- ============================
    症例2
 ============================ -->
-<section class="case voice-fade">
+<section class="case voice-fade" id="case2">
 <h2>症例2</h2>
 <p class="voice-case-detail-link"><a href="case2.html">症例2の詳細ページを見る</a></p>
 
@@ -1101,7 +1166,7 @@ gtag('config','G-8KPJ55NQMT');
 <!-- ============================
    症例3
 ============================ -->
-<section class="case voice-fade">
+<section class="case voice-fade" id="case3">
 <h2>症例3</h2>
 <p class="voice-case-detail-link"><a href="case3.html">症例3の詳細ページを見る</a></p>
 

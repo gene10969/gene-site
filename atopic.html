@@ -730,6 +730,56 @@ body.symptom-page .dizziness-links{
   }
 }
 
+
+/* atopic first view strengthening */
+.atopic-hero-points{
+  max-width:760px;
+  margin:20px auto 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.atopic-hero-points li{
+  padding:12px 14px;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:14px;
+  background:rgba(217,193,126,.055);
+  color:rgba(255,255,255,.88);
+  line-height:1.7;
+  letter-spacing:.04em;
+}
+
+.atopic-hero-note{
+  margin-top:18px !important;
+  color:rgba(255,255,255,.68) !important;
+  font-size:.88rem !important;
+  line-height:1.8 !important;
+}
+
+@media (max-width:640px){
+  .atopic-hero-points{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -812,16 +862,27 @@ body.symptom-page .dizziness-links{
   <a href="voice.html">院内・改善写真</a>
 </nav>
 
-<h1 class="page-title dizziness-fade">アトピー・皮膚症状で<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
-<p class="dizziness-lead dizziness-fade">かゆみや赤みが長引く時、皮膚だけでなく睡眠・ストレス・胃腸・自律神経の状態が重なっていることがあります。</p>
-<div class="dizziness-intro-card dizziness-fade"><p>アトピーや慢性的な皮膚症状は、皮膚表面の問題だけでなく、かゆみによる睡眠低下、ストレス反応、胃腸の状態、冷えや緊張などが複雑に関わることがあります。<br>
-    <br>
-    当院では皮膚そのものを直接治すというより、身体全体の緊張・呼吸・循環・自律神経の偏りを確認し、負担の少ない範囲で整えていきます。</p></div>
+<h1 class="page-title dizziness-fade">大阪でアトピー・皮膚症状に<span class="symptom-sp-br"><br></span>お悩みの方へ</h1>
+<p class="dizziness-lead dizziness-fade">薬だけでは波が戻る、ストレスや睡眠で肌の状態が揺れやすい方へ。皮膚だけでなく、身体全体の状態から確認します。</p>
+<div class="dizziness-intro-card dizziness-fade">
+  <p>
+アトピーや慢性的な皮膚症状は、皮膚表面の問題だけでなく、かゆみによる睡眠低下、ストレス反応、胃腸の状態、冷えや緊張などが複雑に関わることがあります。<br>
+<br>
+当院では、病院や薬を否定するのではなく、薬だけでは不安が残る方のために、呼吸・循環・睡眠・食事・筋緊張・自律神経の偏りを確認しながら、負担の少ない範囲で身体全体を整えていきます。
+  </p>
+  <ul class="atopic-hero-points">
+    <li>薬を続けているが、赤みやかゆみの波が戻りやすい</li>
+    <li>かゆみで眠りが浅く、疲労やストレスで悪化しやすい</li>
+    <li>病院の治療と併用しながら、体質面も見直したい</li>
+    <li>薬だけに頼らない方向性を、身体全体から相談したい</li>
+  </ul>
+  <p class="atopic-hero-note">※医療機関での治療やお薬を否定するものではありません。お薬の変更・中止は医師の指示に従ってください。</p>
+</div>
 <div class="dizziness-links dizziness-fade">
-  <a href="menu.html">施術内容を見る</a>
-  <a href="symptoms.html">症状別に見る</a>
   <a href="#atopic-case-links">症例1〜3を見る</a>
-  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">まずは相談してみる</a>
+  <a href="voice.html">経過写真を見る</a>
+  <a href="menu.html">施術内容を見る</a>
+  <a href="https://lin.ee/6bBKc67" target="_blank" rel="noopener">LINEで相談する</a>
 </div>
 
 <section class="atopic-case1-compare dizziness-fade" aria-labelledby="atopic-case1-compare-title">
@@ -876,8 +937,6 @@ body.symptom-page .dizziness-links{
     </div>
 
     <p class="atopic-case1-compare__note">※写真は経過の一例です。得られる結果には個人差があります。</p>
-    <p class="atopic-case1-compare__note">※必要に応じて、今後は1か月目・6か月目など、より見やすい比較構成に調整できます。</p>
-
     <div class="atopic-case1-compare__actions">
       <a href="case1.html">症例1の詳細を見る</a>
       <a href="#atopic-case-links">症例1〜3をまとめて見る</a>
