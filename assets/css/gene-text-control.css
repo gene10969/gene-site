@@ -267,3 +267,58 @@
     overflow-wrap:anywhere !important;
   }
 }
+/* =========================================================
+   menu price card typography adjustment
+   料金カードだけ文字の圧を少し抑える
+   ========================================================= */
+
+.menu-price-wrap{
+  font-size:.94rem !important;
+  line-height:1.9 !important;
+}
+
+.menu-price-title{
+  font-size:.96rem !important;
+  line-height:1.6 !important;
+  letter-spacing:.08em !important;
+  margin-bottom:12px !important;
+}
+
+.menu-price-main{
+  font-size:clamp(1.12rem, 2.4vw, 1.34rem) !important;
+  line-height:1.55 !important;
+  letter-spacing:.035em !important;
+  margin-bottom:8px !important;
+}
+
+.menu-price-main .price-gold{
+  font-size:1.08em !important;
+  letter-spacing:.03em !important;
+}
+
+.menu-price-sub{
+  font-size:clamp(.9rem, 2.1vw, .98rem) !important;
+  line-height:1.9 !important;
+  letter-spacing:.035em !important;
+  color:rgba(255,255,255,.78) !important;
+}
+
+@media (max-width:768px){
+  .menu-price-wrap{
+    font-size:.92rem !important;
+  }
+
+  .menu-price-title{
+    font-size:.92rem !important;
+  }
+
+  .menu-price-main{
+    font-size:clamp(1.06rem, 4.2vw, 1.22rem) !important;
+    line-height:1.55 !important;
+  }
+
+  .menu-price-sub{
+    font-size:clamp(.86rem, 3.45vw, .94rem) !important;
+    line-height:1.88 !important;
+  }
+}
