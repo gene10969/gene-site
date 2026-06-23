@@ -529,15 +529,23 @@ gtag('config','G-8KPJ55NQMT');
 
 
 
-/* gene voice mobile swiper restore corrected */
+/* gene voice mobile swiper functional fix */
 @media (max-width:768px){
   .case-swiper{
     width:100% !important;
     max-width:100% !important;
-    overflow:hidden !important;
     margin-left:auto !important;
     margin-right:auto !important;
-    padding-bottom:18px !important;
+    padding:0 0 22px !important;
+    box-sizing:border-box !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    touch-action:pan-y !important;
+  }
+
+  .case-swiper.swiper-initialized{
+    overflow:hidden !important;
   }
 
   .case-swiper .swiper-wrapper{
@@ -546,67 +554,49 @@ gtag('config','G-8KPJ55NQMT');
     justify-content:flex-start !important;
     align-items:stretch !important;
     gap:0 !important;
+    width:auto !important;
     max-width:none !important;
-    width:100% !important;
     margin-left:0 !important;
     margin-right:0 !important;
+    padding-left:0 !important;
+    padding-right:0 !important;
+    box-sizing:content-box !important;
+  }
+
+  .case-swiper:not(.swiper-initialized) .swiper-wrapper{
+    width:max-content !important;
+    transform:none !important;
   }
 
   .case-swiper .swiper-slide{
-    flex-shrink:0 !important;
-    width:auto !important;
-    max-width:none !important;
-    margin:0 !important;
+    flex:0 0 auto !important;
+    width:calc(100vw - 80px) !important;
+    max-width:320px !important;
+    min-width:0 !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+    margin-left:0 !important;
+    text-align:center !important;
     display:block !important;
+    box-sizing:border-box !important;
   }
 
   .case-swiper .swiper-slide img{
-    width:86vw !important;
+    width:100% !important;
     max-width:320px !important;
     height:auto !important;
     display:block !important;
     margin:0 auto !important;
+    object-fit:cover !important;
+    border-radius:10px !important;
+    -webkit-user-drag:none !important;
+    user-select:none !important;
   }
 
-  .case-swiper .swiper-scrollbar{
+  .case-swiper .swiper-scrollbar,
+  .case-swiper.swiper-horizontal > .swiper-scrollbar,
+  .case-swiper .swiper-scrollbar.swiper-scrollbar-horizontal{
     display:block !important;
-  }
-}
-
-
-/* voice swiper mobile spacing adjustment */
-@media (max-width:768px){
-  .case-swiper .swiper-wrapper{
-    gap:14px !important;
-  }
-
-  .case-swiper .swiper-slide{
-    margin-right:0 !important;
-  }
-
-  .case-swiper .swiper-slide img{
-    border-radius:10px;
-  }
-}
-
-
-
-/* voice swiper offset final */
-@media (max-width:768px){
-
-  .case-swiper{
-    padding-left:0 !important;
-    padding-right:0 !important;
-    box-sizing:border-box !important;
-    overflow:hidden !important;
-  }
-
-  .case-swiper .swiper-wrapper{
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
-
-  .case-swiper .swiper-scrollbar{
     width:calc(100% - 48px) !important;
     left:24px !important;
     right:24px !important;
@@ -1087,22 +1077,22 @@ gtag('config','G-8KPJ55NQMT');
 </section>
 
 <!-- ============================
-   ここから下は既存症例（変更なし）
+   ここから下はアトピー・皮膚症状の改善例
 ============================ -->
 
 <!-- ============================
-   症例1
+   改善例1
 ============================ -->
 <section class="case voice-fade" id="case1">
-<h2>症例1</h2>
-<p class="voice-case-detail-link"><a href="case1.html">症例1の詳細ページを見る</a></p>
+<h2>全身にアトピー症状が出ていた方の改善例</h2>
+<p class="voice-case-detail-link"><a href="case1.html">この改善例の詳細ページを見る</a></p>
 
 <h3>顔</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_face.webp" alt="症例1 顔 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_face.webp" alt="症例1 顔 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_face.webp" alt="症例1 顔 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_face.webp" alt="全身アトピーの改善例 顔 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_face.webp" alt="全身アトピーの改善例 顔 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_face.webp" alt="全身アトピーの改善例 顔 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1110,9 +1100,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>首</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_neck.webp" alt="症例1 首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_neck.webp" alt="症例1 首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_neck.webp" alt="症例1 首 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_neck.webp" alt="全身アトピーの改善例 首 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_neck.webp" alt="全身アトピーの改善例 首 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_neck.webp" alt="全身アトピーの改善例 首 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1120,9 +1110,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>体（正面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_body_front.webp" alt="症例1 体正面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_body_front.webp" alt="症例1 体正面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_body_front.webp" alt="症例1 体正面 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_body_front.webp" alt="全身アトピーの改善例 体正面 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_body_front.webp" alt="全身アトピーの改善例 体正面 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_body_front.webp" alt="全身アトピーの改善例 体正面 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1130,9 +1120,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>足首</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case1/month0_ankle.webp" alt="症例1 足首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month3_ankle.webp" alt="症例1 足首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case1/month6_ankle.webp" alt="症例1 足首 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month0_ankle.webp" alt="全身アトピーの改善例 足首 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month3_ankle.webp" alt="全身アトピーの改善例 足首 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case1/month6_ankle.webp" alt="全身アトピーの改善例 足首 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1141,18 +1131,18 @@ gtag('config','G-8KPJ55NQMT');
 </section>
 
 <!-- ============================
-   症例2
+   改善例2
 ============================ -->
 <section class="case voice-fade" id="case2">
-<h2>症例2</h2>
-<p class="voice-case-detail-link"><a href="case2.html">症例2の詳細ページを見る</a></p>
+<h2>前腕・体幹・脚まわりにアトピー症状が出ていた方の改善例</h2>
+<p class="voice-case-detail-link"><a href="case2.html">この改善例の詳細ページを見る</a></p>
 
 <h3>前腕</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_forearm.webp" alt="症例2 前腕 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_forearm.webp" alt="症例2 前腕 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_forearm.webp" alt="症例2 前腕 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_forearm.webp" alt="前腕・体幹・脚の改善例 前腕 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_forearm.webp" alt="前腕・体幹・脚の改善例 前腕 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_forearm.webp" alt="前腕・体幹・脚の改善例 前腕 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1160,9 +1150,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>体（正面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_front.webp" alt="症例2 体正面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_front.webp" alt="症例2 体正面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_front.webp" alt="症例2 体正面 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_body_front.webp" alt="前腕・体幹・脚の改善例 体正面 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_body_front.webp" alt="前腕・体幹・脚の改善例 体正面 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_body_front.webp" alt="前腕・体幹・脚の改善例 体正面 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1170,9 +1160,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>体（背面）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_body_back.webp" alt="症例2 体背面 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_body_back.webp" alt="症例2 体背面 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_body_back.webp" alt="症例2 体背面 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_body_back.webp" alt="前腕・体幹・脚の改善例 体背面 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_body_back.webp" alt="前腕・体幹・脚の改善例 体背面 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_body_back.webp" alt="前腕・体幹・脚の改善例 体背面 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1180,9 +1170,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>脚</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_leg.webp" alt="症例2 脚 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_leg.webp" alt="症例2 脚 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_leg.webp" alt="症例2 脚 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_leg.webp" alt="前腕・体幹・脚の改善例 脚 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_leg.webp" alt="前腕・体幹・脚の改善例 脚 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_leg.webp" alt="前腕・体幹・脚の改善例 脚 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1190,9 +1180,9 @@ gtag('config','G-8KPJ55NQMT');
 <h3>足首</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case2/month0_ankle.webp" alt="症例2 足首 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month3_ankle.webp" alt="症例2 足首 3か月目"><span>3か月目</span></div>
-    <div class="swiper-slide"><img src="cases/case2/month6_ankle.webp" alt="症例2 足首 6か月目"><span>6か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month0_ankle.webp" alt="前腕・体幹・脚の改善例 足首 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month3_ankle.webp" alt="前腕・体幹・脚の改善例 足首 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case2/month6_ankle.webp" alt="前腕・体幹・脚の改善例 足首 6か月目"><span>6か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1201,17 +1191,17 @@ gtag('config','G-8KPJ55NQMT');
 </section>
 
 <!-- ============================
-   症例3
+   改善例3
 ============================ -->
 <section class="case voice-fade" id="case3">
-<h2>症例3</h2>
-<p class="voice-case-detail-link"><a href="case3.html">症例3の詳細ページを見る</a></p>
+<h2>腕・足首まわりのアトピー症状の改善例</h2>
+<p class="voice-case-detail-link"><a href="case3.html">この改善例の詳細ページを見る</a></p>
 
 <h3>前腕（右）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_front.webp" alt="症例3 前腕右 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_front.webp" alt="症例3 前腕右 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_forearm_front.webp" alt="腕・足首まわりの改善例 前腕右 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_forearm_front.webp" alt="腕・足首まわりの改善例 前腕右 3か月目"><span>3か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1219,8 +1209,8 @@ gtag('config','G-8KPJ55NQMT');
 <h3>前腕（左）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_forearm_back.webp" alt="症例3 前腕左 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_forearm_back.webp" alt="症例3 前腕左 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_forearm_back.webp" alt="腕・足首まわりの改善例 前腕左 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_forearm_back.webp" alt="腕・足首まわりの改善例 前腕左 3か月目"><span>3か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1228,8 +1218,8 @@ gtag('config','G-8KPJ55NQMT');
 <h3>足首（右）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_right.webp" alt="症例3 足首右 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_right.webp" alt="症例3 足首右 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_ankle_right.webp" alt="腕・足首まわりの改善例 足首右 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_ankle_right.webp" alt="腕・足首まわりの改善例 足首右 3か月目"><span>3か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1237,8 +1227,8 @@ gtag('config','G-8KPJ55NQMT');
 <h3>足首（左）</h3>
 <div class="swiper case-swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="cases/case3/month0_ankle_left.webp" alt="症例3 足首左 初回"><span>初回</span></div>
-    <div class="swiper-slide"><img src="cases/case3/month3_ankle_left.webp" alt="症例3 足首左 3か月目"><span>3か月目</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month0_ankle_left.webp" alt="腕・足首まわりの改善例 足首左 初回"><span>初回</span></div>
+    <div class="swiper-slide"><img src="cases/case3/month3_ankle_left.webp" alt="腕・足首まわりの改善例 足首左 3か月目"><span>3か月目</span></div>
   </div>
   <div class="swiper-scrollbar"></div>
 </div>
@@ -1261,7 +1251,7 @@ gtag('config','G-8KPJ55NQMT');
 どの負担と重なりやすいかを<br>
 無料・登録なしで簡易的に確認できます。<br><br>
 
-来院時には82項目の詳細チェックを行い、<br>
+来院時には82項目(3分程度)の詳細チェックを行い、<br>
 現在の状態をより詳しく確認できます。</p>
   <div class="gene-check-invite__actions">
     <a href="check.html?from=voice.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'voice.html'});}">自律神経チェックを行う</a>
@@ -1374,34 +1364,72 @@ gtag('config','G-8KPJ55NQMT');
 
 <script>
 (function(){
+  var mobileQuery = window.matchMedia("(max-width: 768px)");
+
   function initGeneMobileCaseSwiper(){
-    if (window.innerWidth > 768) return;
     if (typeof Swiper === "undefined") return;
 
     document.querySelectorAll(".case-swiper").forEach(function(el){
-      if (el.swiper) return;
+      if (!mobileQuery.matches) {
+        if (el.swiper) {
+          el.swiper.destroy(true, true);
+        }
+        return;
+      }
+
+      if (el.swiper) {
+        el.swiper.update();
+        return;
+      }
 
       new Swiper(el, {
         slidesPerView: "auto",
         spaceBetween: 14,
         slidesOffsetBefore: 24,
         slidesOffsetAfter: 24,
-        freeMode: true,
+        freeMode: {
+          enabled: true,
+          momentum: true
+        },
+        watchOverflow: false,
+        observer: true,
+        observeParents: true,
+        resizeObserver: true,
+        simulateTouch: true,
+        touchEventsTarget: "container",
+        touchStartPreventDefault: false,
+        nested: true,
         scrollbar: {
           el: el.querySelector(".swiper-scrollbar"),
-          draggable: true
+          draggable: true,
+          hide: false
         }
       });
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initGeneMobileCaseSwiper);
-  } else {
+  function scheduleGeneMobileCaseSwiper(){
     initGeneMobileCaseSwiper();
+    setTimeout(initGeneMobileCaseSwiper, 250);
+    setTimeout(initGeneMobileCaseSwiper, 800);
   }
 
-  window.addEventListener("load", initGeneMobileCaseSwiper);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scheduleGeneMobileCaseSwiper);
+  } else {
+    scheduleGeneMobileCaseSwiper();
+  }
+
+  window.addEventListener("load", scheduleGeneMobileCaseSwiper);
+  window.addEventListener("orientationchange", function(){
+    setTimeout(scheduleGeneMobileCaseSwiper, 300);
+  });
+
+  var resizeTimer;
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(scheduleGeneMobileCaseSwiper, 180);
+  });
 })();
 </script>
 
