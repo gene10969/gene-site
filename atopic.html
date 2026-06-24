@@ -875,6 +875,76 @@ body.symptom-page .dizziness-links{
 }
 </script>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
+<style>
+/* atopic mobile text readability fix - placed after gene-text-control.css */
+.atopic-mobile-break{display:none;}
+
+@media (max-width:640px){
+  body.atopic-page .atopic-mobile-break{
+    display:inline;
+  }
+
+  body.atopic-page .menu-card,
+  body.atopic-page .dizziness-intro-card,
+  body.atopic-page .gene-check-invite,
+  body.atopic-page .atopic-case1-compare,
+  body.atopic-page .atopic-case-direct,
+  body.atopic-page .gene-compact-life-card{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+
+  body.atopic-page .menu-card h2,
+  body.atopic-page .gene-check-invite h2,
+  body.atopic-page .atopic-case1-compare h2,
+  body.atopic-page .atopic-case-direct h2,
+  body.atopic-page .gene-compact-life-card h2{
+    font-size:clamp(1.32rem,5.15vw,1.68rem) !important;
+    line-height:1.65 !important;
+    letter-spacing:.035em !important;
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  body.atopic-page .dizziness-lead,
+  body.atopic-page .dizziness-intro-card p,
+  body.atopic-page .gene-check-invite p,
+  body.atopic-page .menu-card p,
+  body.atopic-page .atopic-case1-compare__lead,
+  body.atopic-page .atopic-case1-compare__note,
+  body.atopic-page .atopic-case-direct__lead,
+  body.atopic-page .atopic-case-direct__meta,
+  body.atopic-page .atopic-case-direct__text,
+  body.atopic-page .atopic-case-direct__note,
+  body.atopic-page .gene-compact-life-card p{
+    font-size:.96rem !important;
+    line-height:2.04 !important;
+    letter-spacing:.015em !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  body.atopic-page .atopic-case-direct h2,
+  body.atopic-page .atopic-case-direct__lead,
+  body.atopic-page .menu-card h2,
+  body.atopic-page .menu-card p{
+    text-align:left !important;
+  }
+
+  body.atopic-page .atopic-case-direct__card h3{
+    font-size:1rem !important;
+    line-height:1.68 !important;
+    letter-spacing:.035em !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+}
+</style>
 </head>
 <body class="subpage symptom-page atopic-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
@@ -1013,17 +1083,17 @@ body.symptom-page .dizziness-links{
   <div class="menu-card dizziness-fade"><h2>ご案内</h2><p>症状の経過や感じ方には個人差があります。<br>現在の状態を確認した上で、無理のない範囲で進めていきます。</p></div>
   <div class="menu-card dizziness-fade"><h2>アトピー・皮膚症状のよくある質問</h2><p>よくいただくご質問をまとめました。<br>症状の出方には個人差がありますので、現在の状態に合わせて確認していきます。</p></div>
   <div class="menu-card dizziness-fade">
-    <h2>病院で異常なしと言われた<wbr><span class="gene-nowrap">アトピー</span>でも相談できますか？</h2>
+    <h2>病院で異常なしと言われた<br class="atopic-mobile-break"><span class="gene-nowrap">アトピー</span>でも相談できますか？</h2>
     <p>ご相談いただけます。検査で大きな異常がない場合でも、身体の緊張、自律神経、睡眠、ストレス、姿勢などが重なって不調が続くことがあります。</p>
   </div>
 
   <div class="menu-card dizziness-fade">
-    <h2>アトピーと自律神経は関係ありますか？</h2>
+    <h2>アトピーと自律神経は<br class="atopic-mobile-break">関係ありますか？</h2>
     <p>関係することがあります。自律神経は呼吸、循環、消化、睡眠、筋緊張などに関わるため、症状の背景として確認することがあります。</p>
   </div>
 
   <div class="menu-card dizziness-fade">
-    <h2>東洋医学ではどのように考えますか？</h2>
+    <h2>東洋医学では<br class="atopic-mobile-break">どのように考えますか？</h2>
     <p>症状名だけで判断せず、気血水、五臓、冷え・熱、緊張、胃腸の状態などを見ながら、身体全体の偏りとして整理します。</p>
   </div>
 
@@ -1033,7 +1103,7 @@ body.symptom-page .dizziness-links{
   </div>
 
   <div class="menu-card dizziness-fade">
-    <h2>薬や病院の治療と併用できますか？</h2>
+    <h2>薬や病院の治療と<br class="atopic-mobile-break">併用できますか？</h2>
     <p>併用していただけます。急な悪化や強い症状がある場合は、まず医療機関での確認を優先してください。</p>
   </div>
 
@@ -1056,9 +1126,9 @@ body.symptom-page .dizziness-links{
   
   <section class="atopic-case-direct dizziness-fade" id="atopic-case-links" aria-labelledby="atopic-case-direct-title">
     <p class="atopic-case-direct__eyebrow">CASE PHOTOS</p>
-    <h2 id="atopic-case-direct-title">アトピー・皮膚症状の<span>改善例</span>を見る</h2>
+    <h2 id="atopic-case-direct-title">アトピー・皮膚症状の<br class="atopic-mobile-break"><span>改善例</span>を見る</h2>
     <p class="atopic-case-direct__lead">
-      写真だけで判断せず、どの部位がどの期間でどのように変化しているかを確認できるよう、改善例ごとの詳細ページへ進める導線を設けています。
+      写真だけで判断せず、<br class="atopic-mobile-break">どの部位がどの期間で<br class="atopic-mobile-break">どのように変化しているかを確認できるよう、<br class="atopic-mobile-break">改善例ごとの詳細ページへ進める導線を設けています。
     </p>
 
     <div class="atopic-case-direct__grid" aria-label="アトピー・皮膚症状の改善例一覧">
