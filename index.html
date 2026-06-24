@@ -2087,16 +2087,9 @@ if (
   z-index:1;
 }
 
-.top-atopic-focus__eyebrow{
-  margin:0 0 10px !important;
-  text-align:center;
-  color:rgba(217,193,126,.86) !important;
-  font-size:.78rem !important;
-  line-height:1.5 !important;
-  letter-spacing:.16em !important;
-}
 
 .top-atopic-focus h3{
+  margin-top:0;
   text-align:center;
   color:#f4ead0;
 }
@@ -2108,23 +2101,23 @@ if (
 }
 
 .top-atopic-focus__points{
-  max-width:720px;
+  max-width:900px;
   margin:18px auto 0;
   padding:0;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:10px;
+  gap:12px;
   list-style:none;
 }
 
 .top-atopic-focus__points li{
-  padding:11px 12px;
+  padding:14px 18px;
   border:1px solid rgba(217,193,126,.24);
   border-radius:14px;
   background:rgba(255,255,255,.035);
   color:rgba(255,255,255,.88);
   font-size:.92rem;
-  line-height:1.65;
+  line-height:1.7;
   text-align:center;
 }
 
@@ -2248,6 +2241,270 @@ if (
   }
 }
 
+
+
+/* index GUIDE card readability refinement */
+.gene-guide-card{
+  position:relative;
+  overflow:hidden;
+  padding:36px 32px 34px !important;
+}
+
+.gene-guide-card > *{
+  position:relative;
+  z-index:1;
+}
+
+
+.gene-guide-card #gene-udl-top-title{
+  max-width:820px;
+  margin:0 auto !important;
+  color:#f4ead0 !important;
+  font-size:clamp(1.62rem, 3.35vw, 2.48rem) !important;
+  line-height:1.55 !important;
+  letter-spacing:.055em !important;
+  text-align:center;
+  font-weight:500;
+  text-wrap:balance;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+.gene-guide-impact-title{
+  position:relative;
+}
+
+.gene-guide-title-main,
+.gene-guide-title-accent{
+  display:inline;
+}
+
+.gene-guide-title-accent{
+  position:relative;
+  display:inline-block;
+  margin:0 .08em;
+  padding:0 .08em .08em;
+  color:#d9c17e;
+  font-size:1.06em;
+  text-shadow:0 0 18px rgba(217,193,126,.18);
+  background:none;
+}
+
+.gene-guide-title-accent::after{
+  content:"";
+  position:absolute;
+  left:.08em;
+  right:.08em;
+  bottom:.03em;
+  height:1px;
+  background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.72), rgba(217,193,126,0));
+  box-shadow:0 0 10px rgba(217,193,126,.18);
+  pointer-events:none;
+}
+
+.gene-guide-catch{
+  margin:22px auto 18px !important;
+  max-width:760px;
+  color:#f4ead0 !important;
+  font-size:clamp(1.05rem, 2.2vw, 1.32rem) !important;
+  line-height:2 !important;
+  letter-spacing:.05em !important;
+  text-align:center;
+  font-weight:600;
+  white-space:normal !important;
+}
+
+.gene-guide-copy{
+  max-width:820px;
+  margin:0 auto;
+}
+
+.gene-guide-copy p{
+  margin:0 0 12px !important;
+  color:rgba(255,255,255,.9) !important;
+  font-size:1rem !important;
+  line-height:2.05 !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+}
+
+.gene-guide-copy p:last-child{
+  margin-bottom:0 !important;
+}
+
+.gene-guide-lead{
+  margin:24px auto 0 !important;
+  max-width:760px;
+  color:#f3e6bf !important;
+  font-size:1rem !important;
+  line-height:1.9 !important;
+  letter-spacing:.05em !important;
+  text-align:center;
+  font-weight:600;
+  white-space:normal !important;
+}
+
+.gene-guide-options{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-top:26px;
+}
+
+.gene-guide-option,
+.gene-guide-option:visited{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+  min-height:188px;
+  padding:20px 18px;
+  box-sizing:border-box;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.48);
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.10), rgba(255,255,255,.02)),
+    rgba(12,12,12,.92);
+  color:#d9c17e !important;
+  text-decoration:none !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+  transition:transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.gene-guide-option:hover{
+  transform:translateY(-2px);
+  border-color:rgba(234,216,147,.76);
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.14), rgba(255,255,255,.026)),
+    rgba(18,18,18,.96);
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10);
+}
+
+.gene-guide-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  min-width:48px;
+  min-height:28px;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid rgba(217,193,126,.34);
+  background:rgba(217,193,126,.08);
+  color:#d9c17e;
+  font-size:.78rem;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+.gene-guide-option strong{
+  display:block;
+  color:#f4ead0;
+  font-size:1.06rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+.gene-guide-option small{
+  display:block;
+  color:rgba(255,255,255,.78);
+  font-size:.9rem;
+  line-height:1.8;
+  letter-spacing:.03em;
+}
+
+.gene-guide-option--line,
+.gene-guide-option--line:visited{
+  border-color:rgba(217,193,126,.48) !important;
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.10), rgba(255,255,255,.02)),
+    rgba(12,12,12,.92) !important;
+  color:#d9c17e !important;
+  box-shadow:0 12px 28px rgba(0,0,0,.24) !important;
+}
+
+.gene-guide-option--line .gene-guide-number{
+  border-color:rgba(217,193,126,.34) !important;
+  background:rgba(217,193,126,.08) !important;
+  color:#d9c17e !important;
+}
+
+.gene-guide-option--line strong{
+  color:#f4ead0 !important;
+}
+
+.gene-guide-option--line small{
+  color:rgba(255,255,255,.78) !important;
+  opacity:1;
+}
+
+.gene-guide-option--line:hover{
+  border-color:rgba(234,216,147,.76) !important;
+  background:
+    linear-gradient(180deg, rgba(217,193,126,.14), rgba(255,255,255,.026)),
+    rgba(18,18,18,.96) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.30), 0 0 18px rgba(217,193,126,.10) !important;
+}
+
+@media (max-width:860px){
+  .gene-guide-options{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .gene-guide-option{
+    min-height:0;
+  }
+}
+
+@media (max-width:640px){
+  .gene-guide-card{
+    padding:26px 20px 24px !important;
+  }
+
+  .gene-guide-card #gene-udl-top-title{
+    font-size:1.46rem !important;
+    line-height:1.7 !important;
+    text-align:left;
+  }
+
+  .gene-guide-title-main,
+  .gene-guide-title-accent{
+    display:inline;
+  }
+
+  .gene-guide-title-accent{
+    margin:0 .04em;
+    padding:0 .06em .07em;
+  }
+
+  .gene-guide-title-accent::after{
+    left:.06em;
+    right:.06em;
+  }
+
+  .gene-guide-catch{
+    margin-top:18px !important;
+    text-align:left;
+    line-height:1.9 !important;
+  }
+
+  .gene-guide-copy p{
+    line-height:1.95 !important;
+  }
+
+  .gene-guide-lead{
+    text-align:left;
+    line-height:1.85 !important;
+  }
+
+  .gene-guide-option{
+    padding:18px 16px;
+    border-radius:18px;
+  }
+}
+
 </style>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
@@ -2325,27 +2582,65 @@ if (
 
 <div id="index-cards">
 
+<section class="info-card card-hidden gene-udl-section gene-udl-section--top gene-guide-card" aria-labelledby="gene-udl-top-title">
+  <h3 id="gene-udl-top-title" class="gene-guide-impact-title">
+    <span class="gene-guide-title-main">その不調、</span><span class="gene-guide-title-accent">どこから来ているのか</span><span class="gene-guide-title-main">確認してみませんか？</span>
+  </h3>
+
+  <p class="gene-guide-catch">検査では異常がないと言われた。<br>でも、つらさは続いている。</p>
+
+  <div class="gene-guide-copy">
+    <p>そのような不調は、症状名だけで追いかけると、本当の背景が見えにくくなることがあります。</p>
+    <p>geneでは、今いちばん困っている症状だけでなく、呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで含めて、今の状態を一つずつ確認しながら見ていきます。</p>
+  </div>
+
+  <p class="gene-guide-lead">下の3つからお選びください。</p>
+
+  <div class="gene-guide-options" aria-label="今の状態に合わせた入口">
+    <a href="symptoms.html" class="gene-guide-option">
+      <span class="gene-guide-number">01</span>
+      <strong>症状から探す</strong>
+      <small>めまい・不眠・頭痛・動悸・アトピーなど、今いちばん気になっている症状から確認できます。</small>
+    </a>
+
+    <a href="check.html?from=index.html" class="gene-guide-option">
+      <span class="gene-guide-number">02</span>
+      <strong>15問の簡易チェックをする</strong>
+      <small>症状が一つに絞れない方は、HP内の簡易チェックで今の状態を確認できます。</small>
+    </a>
+
+    <a href="https://lin.ee/6bBKc67" class="gene-guide-option gene-guide-option--line" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','line_consult_click',{event_category:'contact',source_page:location.pathname.split('/').pop()||'index.html'});}">
+      <span class="gene-guide-number">03</span>
+      <strong>LINEで相談する</strong>
+      <small>どのページを見ればいいか分からない方も、今の状態をそのままご相談ください。</small>
+    </a>
+  </div>
+</section>
+
+
 
 <section class="info-card card-hidden top-atopic-focus" aria-labelledby="top-atopic-focus-title">
   <div class="card-split no-image">
     <div class="card-content">
-      <p class="top-atopic-focus__eyebrow">ATOPY / SKIN SYMPTOMS</p>
-      <h3 id="top-atopic-focus-title">薬だけでは波が戻るアトピー・皮膚症状でお悩みの方へ</h3>
+      <h3 id="top-atopic-focus-title">薬だけでは波があるアトピー・皮膚症状でお悩みの方へ</h3>
       <p class="top-atopic-focus__lead">
-肌だけの問題として見るのではなく、睡眠・ストレス・呼吸・胃腸・身体の緊張、自律神経の偏りまで確認します。<br>
-病院や薬を否定するのではなく、身体全体の状態を整える別の視点としてご相談ください。
+肌だけの問題として見るのではなく、
+睡眠・ストレス・呼吸・胃腸・身体の緊張、自律神経の偏りまで確認します。<br>
+病院や薬を否定するのではなく、
+身体全体の状態を整える別の視点としてご相談ください。
       </p>
       <ul class="top-atopic-focus__points">
-        <li>薬を続けているが、状態の波が戻りやすい</li>
-        <li>かゆみや赤みで、睡眠や日常生活に影響がある</li>
-        <li>薬以外の方向性も、身体全体から考えたい</li>
+        <li>薬を続ける不安がある<br>薬以外の方法も考えたい</li>
+        <li>かゆみ・赤み・浸出液で<br>睡眠や日常生活に影響がある</li>
+        <li>肌を気にせず<br>外出やおしゃれをしたい</li>
       </ul>
       <div class="top-atopic-focus__actions">
         <a href="atopic.html" class="top-atopic-focus__btn">アトピーのページを見る</a>
         <a href="voice.html#case1" class="top-atopic-focus__btn">経過写真を見る</a>
         <a href="https://lin.ee/6bBKc67" class="top-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">LINEで相談する</span><span class="gene-cta-two-line__sub">現在の状態をお聞かせください</span></a>
       </div>
-      <p class="top-atopic-focus__note">※医療機関での治療やお薬を否定するものではありません。お薬の変更・中止は医師の指示に従ってください。</p>
+      <p class="top-atopic-focus__note">※医療機関での治療やお薬を否定するものではありません。
+        お薬の変更・中止は医師の指示に従ってください。</p>
     </div>
   </div>
 </section>
@@ -2528,12 +2823,10 @@ geneでは、その土台を大切にしながら、<br>
       <div class="card-content">
         <h3>施術を受ける前にご確認ください</h3>
         <p>
-当院では、不調のある部分だけではなく、
-現在のお身体の状態を丁寧に確認しながら、
+当院では、不調のある部分だけではなく、現在のお身体の状態を丁寧に確認しながら、
 身体全体のバランスを整えていきます。
 
-そのため、以下のようなお考えの場合は、
-ご期待に添えないことがあります。
+そのため、以下のようなお考えの場合は、ご期待に添えないことがあります。
         </p>
 
         <h4>このようなお考えの方</h4>
@@ -2568,13 +2861,14 @@ geneでは、その土台を大切にしながら、<br>
   <h2 id="gene-check-invite-after-policy-title">現在の状態を確認したい方へ</h2>
   <p>
 現在の不調が、睡眠・ストレス・胃腸・呼吸など、
-どの負担と重なりやすいかを無料・登録なしで簡易的に確認できます。
+どの負担と重なりやすいかを無料・登録なしで確認できます。
 
-来院時には82項目(3分程度)の詳細チェックを行い、
-現在の状態をより詳しく確認できます。
+HP内では15問の簡易チェックで現在の傾向を確認し、
+来院時には82項目(3分程度)の詳細チェックで、
+現在の状態をより詳しく確認していきます。
   </p>
   <div class="gene-check-invite__actions">
-    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">自律神経チェックを行う</a>
+    <a href="check.html?from=index.html" class="gene-check-btn" onclick="if(typeof gtag==='function'){gtag('event','quick_check_entry_click',{event_category:'gene_quick_check',source_page:location.pathname.split('/').pop()||'index.html'});}">15問の簡易チェックを行う</a>
   </div>
 </section>
 
@@ -2765,7 +3059,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
 
 無理な施術や通院の強制は一切ありません。
 
-今の状態を整理するところから、
+今の状態を確認するところから、
 一緒に進めていければと思います。</p>
       </div>
     </div>
@@ -2777,7 +3071,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
       <div class="card-content">
         <h3 id="top-access-title">アクセス・営業時間</h3>
         <p>大阪市中央区・南船場にある自律神経専門整体院です。
-長堀橋駅から徒歩圏内で、心斎橋・南船場エリアからも通いやすい場所にあります。</p>
+長堀橋駅から徒歩圏内で、心斎橋・南船場エリアからも通いやすいと好評です。</p>
 
         <dl class="top-access-grid" aria-label="大阪 自律神経専門整体院 geneの基本情報">
           <div class="top-access-item">
@@ -2787,7 +3081,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
 
           <div class="top-access-item">
             <dt>最寄りエリア</dt>
-            <dd>長堀橋・心斎橋・南船場エリアから通いやすい整体院です。</dd>
+            <dd>長堀橋・心斎橋・南船場エリア</dd>
           </div>
 
           <div class="top-access-item">
@@ -2801,7 +3095,8 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
           </div>
         </dl>
 
-        <p class="top-access-note">ご相談・ご予約はLINEから承っています。場所が分からない場合も、LINEからお気軽にご連絡ください。</p>
+        <p class="top-access-note">ご相談・ご予約はLINEから承っています。
+          場所が分からない場合も、LINEからお気軽にご連絡ください。</p>
 
         <div class="top-access-link-wrap">
           <a href="access.html" class="top-access-link">アクセスページを見る</a>
@@ -2811,7 +3106,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
   </div>
 
   <div class="info-card card-hidden top-cta-card">
-    <h3>初めての方も、現在のお悩みを整理するところから</h3>
+    <h3>初めての方も、現在のお悩みを確認するところから</h3>
     <p>丁寧に対応しています。<br><br>ご予約・ご相談はLINEから承っています。</p>
     <a href="https://lin.ee/6bBKc67" class="top-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">空き状況を見る</span><span class="gene-cta-two-line__sub">LINEで確認できます</span></a>
   </div>
