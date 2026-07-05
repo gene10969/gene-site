@@ -2875,6 +2875,198 @@ if (
 
 </style>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
+
+<style id="gene-mobile-cvr-text-fix">
+/* mobile CVR text line-break refinement */
+@media (max-width:640px){
+  .gene-cvr-section{
+    padding:24px 18px !important;
+  }
+
+  .gene-cvr-title{
+    max-width:100% !important;
+    font-size:clamp(1.32rem, 5.8vw, 1.58rem) !important;
+    line-height:1.64 !important;
+    letter-spacing:.026em !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+    line-break:strict !important;
+    text-wrap:balance;
+  }
+
+  .gene-cvr-title span{
+    display:inline !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+  }
+
+  .gene-cvr-lead{
+    max-width:100% !important;
+    font-size:.96rem !important;
+    line-height:1.92 !important;
+    letter-spacing:.018em !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+
+  .gene-cvr-problem-points li,
+  .gene-cvr-reason-card,
+  .gene-cvr-safety-card,
+  .gene-cvr-env-item,
+  .gene-cvr-flow-card{
+    text-align:left !important;
+  }
+
+  .gene-cvr-problem-points li,
+  .gene-cvr-reason-card p,
+  .gene-cvr-safety-card span,
+  .gene-cvr-env-item span,
+  .gene-cvr-flow-card p,
+  .gene-cvr-station-text span{
+    font-size:.92rem !important;
+    line-height:1.82 !important;
+    letter-spacing:.012em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+
+  .gene-cvr-problem-points strong,
+  .gene-cvr-reason-card strong,
+  .gene-cvr-safety-card strong,
+  .gene-cvr-env-item strong,
+  .gene-cvr-flow-card strong,
+  .gene-cvr-station-text strong{
+    font-size:1.02rem !important;
+    line-height:1.62 !important;
+    letter-spacing:.026em !important;
+    white-space:normal !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+    line-break:strict !important;
+  }
+
+  .gene-cvr-problem-points,
+  .gene-cvr-reason-grid,
+  .gene-cvr-safety-grid,
+  .gene-cvr-env-grid,
+  .gene-cvr-flow-grid{
+    gap:12px !important;
+  }
+
+  .gene-cvr-problem-points li{
+    min-height:0 !important;
+    padding:15px 16px !important;
+  }
+
+  .gene-cvr-reason-card,
+  .gene-cvr-safety-card,
+  .gene-cvr-env-item,
+  .gene-cvr-flow-card{
+    padding:18px 16px !important;
+    border-radius:18px !important;
+  }
+
+  .gene-cvr-safety-card{
+    min-height:0 !important;
+  }
+
+  .gene-cvr-icon{
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  .top-atopic-focus h3{
+    font-size:clamp(1.3rem, 5.6vw, 1.54rem) !important;
+    line-height:1.64 !important;
+    letter-spacing:.026em !important;
+    text-align:center !important;
+    white-space:normal !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+    line-break:strict !important;
+    text-wrap:balance;
+  }
+
+  .top-atopic-focus__lead,
+  .top-atopic-focus__note{
+    font-size:.96rem !important;
+    line-height:1.92 !important;
+    letter-spacing:.018em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+
+  .top-atopic-focus__points li{
+    font-size:.92rem !important;
+    line-height:1.82 !important;
+    letter-spacing:.012em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+  }
+
+  .gene-cvr-access-visual{
+    gap:10px !important;
+  }
+
+  .gene-cvr-station-card{
+    padding:14px 16px !important;
+    align-items:center !important;
+  }
+
+  .gene-cvr-station-icon{
+    flex-basis:44px !important;
+    width:44px !important;
+    height:44px !important;
+  }
+}
+
+@media (max-width:380px){
+  .gene-cvr-section{
+    padding:22px 16px !important;
+  }
+
+  .gene-cvr-title{
+    font-size:1.24rem !important;
+    line-height:1.62 !important;
+    letter-spacing:.018em !important;
+  }
+
+  .gene-cvr-lead,
+  .top-atopic-focus__lead,
+  .top-atopic-focus__note{
+    font-size:.93rem !important;
+    line-height:1.9 !important;
+  }
+
+  .top-atopic-focus h3{
+    font-size:1.24rem !important;
+    line-height:1.62 !important;
+    letter-spacing:.018em !important;
+  }
+
+  .gene-cvr-problem-points li,
+  .gene-cvr-reason-card p,
+  .gene-cvr-safety-card span,
+  .gene-cvr-env-item span,
+  .gene-cvr-flow-card p,
+  .top-atopic-focus__points li{
+    font-size:.9rem !important;
+    line-height:1.8 !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -3626,7 +3818,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
             <span class="gene-cvr-station-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg>
             </span>
-            <span class="gene-cvr-station-text"><strong>心斎橋駅</strong><span>徒歩約15分</span></span>
+            <span class="gene-cvr-station-text"><strong>心斎橋駅</strong><span>徒歩約12分</span></span>
           </div>
         </div>
 
