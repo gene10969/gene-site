@@ -2876,193 +2876,218 @@ if (
 </style>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
 
-<style id="gene-mobile-cvr-text-fix">
-/* mobile CVR text line-break refinement */
-@media (max-width:640px){
-  .gene-cvr-section{
+<style id="gene-cvr-mobile-layout-fix">
+/* gene CVR mobile readability final fix */
+@media (max-width: 768px){
+  html,
+  body{
+    overflow-x:hidden !important;
+  }
+
+  #index-cards{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+
+  #index-cards .gene-cvr-section,
+  #index-cards .top-atopic-focus{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
     padding:24px 18px !important;
   }
 
-  .gene-cvr-title{
-    max-width:100% !important;
-    font-size:clamp(1.32rem, 5.8vw, 1.58rem) !important;
-    line-height:1.64 !important;
-    letter-spacing:.026em !important;
-    text-align:left !important;
-    white-space:normal !important;
-    word-break:keep-all !important;
-    overflow-wrap:normal !important;
-    line-break:strict !important;
-    text-wrap:balance;
+  #index-cards .gene-cvr-section::before,
+  #index-cards .top-atopic-focus::before{
+    inset:12px !important;
+    border-radius:16px !important;
   }
 
-  .gene-cvr-title span{
+  #index-cards .gene-cvr-section .card-split,
+  #index-cards .gene-cvr-section .card-content,
+  #index-cards .top-atopic-focus .card-content{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  #index-cards .gene-cvr-title,
+  #index-cards .top-atopic-focus h3{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    font-size:clamp(1.18rem, 5.2vw, 1.46rem) !important;
+    line-height:1.7 !important;
+    letter-spacing:.015em !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
+    text-wrap:wrap !important;
+  }
+
+  #index-cards .gene-cvr-title span{
     display:inline !important;
-    word-break:keep-all !important;
-    overflow-wrap:normal !important;
+    white-space:normal !important;
   }
 
-  .gene-cvr-lead{
+  #index-cards .gene-cvr-readable-copy,
+  #index-cards .gene-cvr-lead,
+  #index-cards .top-atopic-focus__lead,
+  #index-cards .top-atopic-focus .card-content p{
+    width:100% !important;
     max-width:100% !important;
-    font-size:.96rem !important;
-    line-height:1.92 !important;
-    letter-spacing:.018em !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    font-size:.94rem !important;
+    line-height:2.02 !important;
+    letter-spacing:.01em !important;
     text-align:left !important;
     white-space:normal !important;
     word-break:normal !important;
     overflow-wrap:break-word !important;
     line-break:strict !important;
+    text-wrap:wrap !important;
   }
 
-  .gene-cvr-problem-points li,
-  .gene-cvr-reason-card,
-  .gene-cvr-safety-card,
-  .gene-cvr-env-item,
-  .gene-cvr-flow-card{
-    text-align:left !important;
-  }
-
-  .gene-cvr-problem-points li,
-  .gene-cvr-reason-card p,
-  .gene-cvr-safety-card span,
-  .gene-cvr-env-item span,
-  .gene-cvr-flow-card p,
-  .gene-cvr-station-text span{
-    font-size:.92rem !important;
-    line-height:1.82 !important;
-    letter-spacing:.012em !important;
+  #index-cards .gene-cvr-readable-copy p{
+    margin:0 0 14px !important;
+    color:rgba(255,255,255,.88) !important;
+    font-size:.94rem !important;
+    line-height:2.02 !important;
+    letter-spacing:.01em !important;
     white-space:normal !important;
     word-break:normal !important;
     overflow-wrap:break-word !important;
-    line-break:strict !important;
   }
 
-  .gene-cvr-problem-points strong,
-  .gene-cvr-reason-card strong,
-  .gene-cvr-safety-card strong,
-  .gene-cvr-env-item strong,
-  .gene-cvr-flow-card strong,
-  .gene-cvr-station-text strong{
-    font-size:1.02rem !important;
-    line-height:1.62 !important;
-    letter-spacing:.026em !important;
-    white-space:normal !important;
-    word-break:keep-all !important;
-    overflow-wrap:normal !important;
-    line-break:strict !important;
+  #index-cards .gene-cvr-readable-copy p:last-child{
+    margin-bottom:0 !important;
   }
 
-  .gene-cvr-problem-points,
-  .gene-cvr-reason-grid,
-  .gene-cvr-safety-grid,
-  .gene-cvr-env-grid,
-  .gene-cvr-flow-grid{
+  #index-cards .gene-cvr-problem-points,
+  #index-cards .gene-cvr-reason-grid,
+  #index-cards .gene-cvr-safety-grid,
+  #index-cards .gene-cvr-env-grid,
+  #index-cards .gene-cvr-flow-grid,
+  #index-cards .gene-cvr-access-visual,
+  #index-cards .top-atopic-focus__points{
+    width:100% !important;
+    max-width:100% !important;
+    grid-template-columns:1fr !important;
     gap:12px !important;
+    box-sizing:border-box !important;
   }
 
-  .gene-cvr-problem-points li{
+  #index-cards .gene-cvr-problem-points{
+    margin-top:24px !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li,
+  #index-cards .gene-cvr-reason-card,
+  #index-cards .gene-cvr-safety-card,
+  #index-cards .gene-cvr-env-item,
+  #index-cards .gene-cvr-flow-card,
+  #index-cards .gene-cvr-station-card,
+  #index-cards .top-atopic-focus__points li{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
     min-height:0 !important;
-    padding:15px 16px !important;
+    box-sizing:border-box !important;
+    text-align:left !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    line-break:strict !important;
   }
 
-  .gene-cvr-reason-card,
-  .gene-cvr-safety-card,
-  .gene-cvr-env-item,
-  .gene-cvr-flow-card{
-    padding:18px 16px !important;
-    border-radius:18px !important;
+  #index-cards .gene-cvr-problem-points li{
+    padding:16px 17px !important;
+    font-size:.92rem !important;
+    line-height:1.9 !important;
   }
 
-  .gene-cvr-safety-card{
-    min-height:0 !important;
+  #index-cards .gene-cvr-problem-points li strong{
+    display:block !important;
+    margin-bottom:6px !important;
+    color:#f3e6bf !important;
+    font-size:1rem !important;
+    line-height:1.65 !important;
+    letter-spacing:.02em !important;
   }
 
-  .gene-cvr-icon{
+  #index-cards .gene-cvr-problem-points li span{
+    display:block !important;
+    color:rgba(255,255,255,.84) !important;
+    font-size:.9rem !important;
+    line-height:1.85 !important;
+  }
+
+  #index-cards .gene-cvr-reason-card strong,
+  #index-cards .gene-cvr-safety-card strong,
+  #index-cards .gene-cvr-env-item strong,
+  #index-cards .gene-cvr-flow-card strong{
+    font-size:1rem !important;
+    line-height:1.7 !important;
+    letter-spacing:.02em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #index-cards .gene-cvr-reason-card p,
+  #index-cards .gene-cvr-safety-card span,
+  #index-cards .gene-cvr-env-item span,
+  #index-cards .gene-cvr-flow-card p{
+    font-size:.9rem !important;
+    line-height:1.85 !important;
+    letter-spacing:.01em !important;
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #index-cards .gene-cvr-icon{
     margin-left:0 !important;
     margin-right:0 !important;
   }
 
-  .top-atopic-focus h3{
-    font-size:clamp(1.3rem, 5.6vw, 1.54rem) !important;
-    line-height:1.64 !important;
-    letter-spacing:.026em !important;
-    text-align:center !important;
-    white-space:normal !important;
-    word-break:keep-all !important;
-    overflow-wrap:normal !important;
-    line-break:strict !important;
-    text-wrap:balance;
-  }
-
-  .top-atopic-focus__lead,
-  .top-atopic-focus__note{
-    font-size:.96rem !important;
-    line-height:1.92 !important;
-    letter-spacing:.018em !important;
-    white-space:normal !important;
-    word-break:normal !important;
-    overflow-wrap:break-word !important;
-    line-break:strict !important;
-  }
-
-  .top-atopic-focus__points li{
-    font-size:.92rem !important;
-    line-height:1.82 !important;
-    letter-spacing:.012em !important;
-    white-space:normal !important;
-    word-break:normal !important;
-    overflow-wrap:break-word !important;
-    line-break:strict !important;
-  }
-
-  .gene-cvr-access-visual{
-    gap:10px !important;
-  }
-
-  .gene-cvr-station-card{
-    padding:14px 16px !important;
-    align-items:center !important;
-  }
-
-  .gene-cvr-station-icon{
-    flex-basis:44px !important;
-    width:44px !important;
-    height:44px !important;
+  #index-cards .gene-cvr-flow-card:not(:last-child)::after{
+    right:50% !important;
+    top:auto !important;
+    bottom:-19px !important;
+    transform:translateX(50%) !important;
   }
 }
 
-@media (max-width:380px){
-  .gene-cvr-section{
+@media (max-width: 390px){
+  #index-cards .gene-cvr-section,
+  #index-cards .top-atopic-focus{
     padding:22px 16px !important;
   }
 
-  .gene-cvr-title{
-    font-size:1.24rem !important;
-    line-height:1.62 !important;
-    letter-spacing:.018em !important;
+  #index-cards .gene-cvr-title,
+  #index-cards .top-atopic-focus h3{
+    font-size:1.16rem !important;
+    line-height:1.72 !important;
   }
 
-  .gene-cvr-lead,
-  .top-atopic-focus__lead,
-  .top-atopic-focus__note{
-    font-size:.93rem !important;
-    line-height:1.9 !important;
-  }
-
-  .top-atopic-focus h3{
-    font-size:1.24rem !important;
-    line-height:1.62 !important;
-    letter-spacing:.018em !important;
-  }
-
-  .gene-cvr-problem-points li,
-  .gene-cvr-reason-card p,
-  .gene-cvr-safety-card span,
-  .gene-cvr-env-item span,
-  .gene-cvr-flow-card p,
-  .top-atopic-focus__points li{
+  #index-cards .gene-cvr-readable-copy p,
+  #index-cards .gene-cvr-lead,
+  #index-cards .top-atopic-focus__lead,
+  #index-cards .top-atopic-focus .card-content p{
     font-size:.9rem !important;
-    line-height:1.8 !important;
+    line-height:2 !important;
+  }
+
+  #index-cards .gene-cvr-problem-points li{
+    padding:15px 16px !important;
   }
 }
 </style>
@@ -3179,22 +3204,44 @@ if (
 </section>
 
 
-<section class="info-card card-hidden gene-cvr-section" aria-labelledby="gene-cvr-problem-title">
+<section class="info-card card-hidden gene-cvr-section gene-cvr-problem-section" aria-labelledby="gene-cvr-problem-title">
   <div class="card-split no-image">
     <div class="card-content">
-      <h3 id="gene-cvr-problem-title" class="gene-cvr-title">大阪で、<span>どこに行っても良くならなかった不調</span>でお悩みの方へ</h3>
-      <p class="gene-cvr-lead">
-薬だけでは波があるアトピー、原因が分からないめまい、不眠、慢性疲労。
-検査では大きな異常がないと言われても、つらさが続いている方は少なくありません。
+      <h3 id="gene-cvr-problem-title" class="gene-cvr-title">
+        大阪で、<span>どこに行っても良くならなかった不調</span>でお悩みの方へ
+      </h3>
 
-geneでは、症状だけを追いかけるのではなく、
-呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで含めて、
-今の不調がどこから来ているのかを身体全体から確認します。
-      </p>
-      <ul class="gene-cvr-problem-points">
-        <li><strong>原因が分からない</strong>検査では異常がないのに、つらさが続いている</li>
-        <li><strong>薬だけでは波がある</strong>その場しのぎではなく、身体の土台から見直したい</li>
-        <li><strong>相談先に迷っている</strong>自律神経の乱れと関係しているのか確認したい</li>
+      <div class="gene-cvr-readable-copy">
+        <p>薬だけでは波があるアトピー、原因が分からないめまい、不眠、慢性疲労。</p>
+        <p>検査では大きな異常がないと言われても、つらさが続いている方は少なくありません。</p>
+        <p>geneでは、症状だけを追いかけるのではなく、呼吸・姿勢・身体の緊張・睡眠・ストレスの影響まで含めて、今の不調がどこから来ているのかを身体全体から確認します。</p>
+      </div>
+
+      <ul class="gene-cvr-problem-points gene-cvr-problem-points--expanded">
+        <li>
+          <strong>原因が分からない</strong>
+          <span>検査では異常がないのに、つらさが続いている</span>
+        </li>
+        <li>
+          <strong>薬だけでは波がある</strong>
+          <span>その場しのぎではなく、身体の土台から見直したい</span>
+        </li>
+        <li>
+          <strong>アトピー・皮膚症状</strong>
+          <span>かゆみ・赤み・浸出液などで日常生活に影響がある</span>
+        </li>
+        <li>
+          <strong>不眠・眠りが浅い</strong>
+          <span>寝ても回復せず、朝から身体が重く感じる</span>
+        </li>
+        <li>
+          <strong>めまい・慢性疲労</strong>
+          <span>ふらつきやだるさが続き、仕事や生活に支障が出ている</span>
+        </li>
+        <li>
+          <strong>相談先に迷っている</strong>
+          <span>自律神経の乱れと関係しているのか確認したい</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -3650,7 +3697,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
 という想いを込めています。
 </p>
 
-不調として現れている部分だけではなく、
+<p>不調として現れている部分だけではなく、
 生活習慣、身体の使い方、緊張の抜けにくさなど、
 その人の奥にある状態を丁寧に確認しながら、
 再発しにくい身体づくりを目指して施術を行っています。</p>
