@@ -826,6 +826,242 @@ if (
   }
 }
 
+
+/* access nearest station cards - matched with index design */
+.access-station-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-station-card::before{
+  opacity:.055 !important;
+}
+
+.access-station-card h2{
+  position:relative;
+  z-index:1;
+}
+
+.access-station-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-station-visual{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0 4px;
+}
+
+.access-station-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-width:0;
+  padding:18px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+.access-station-icon{
+  flex:0 0 46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(217,193,126,.34);
+  color:#d9c17e;
+  background:rgba(217,193,126,.07);
+}
+
+.access-station-icon svg{
+  display:block;
+  width:25px;
+  height:25px;
+}
+
+.access-station-text{
+  display:block;
+  min-width:0;
+}
+
+.access-station-text strong{
+  display:block;
+  color:#f4ead0;
+  font-size:.98rem;
+  line-height:1.5;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+.access-station-text span{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.82);
+  font-size:.86rem;
+  line-height:1.55;
+}
+
+.access-station-text small{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.66);
+  font-size:.78rem;
+  line-height:1.65;
+  letter-spacing:.02em;
+}
+
+@media (max-width:860px){
+  .access-station-visual{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .access-station-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-station-card{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .access-station-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-station-item{
+    padding:16px 16px;
+    border-radius:17px;
+  }
+
+  .access-station-icon{
+    flex-basis:44px;
+    width:44px;
+    height:44px;
+  }
+
+  .access-station-text strong{
+    font-size:.96rem;
+  }
+}
+
+
+/* access guide photos - building entrance flow */
+.access-guide-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-guide-card::before{
+  opacity:.055 !important;
+}
+
+.access-guide-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-guide-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:26px 0 4px;
+}
+
+.access-guide-item{
+  margin:0;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 12px 30px rgba(0,0,0,.24);
+}
+
+.access-guide-item img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:15px;
+  border:1px solid rgba(217,193,126,.18);
+  background:#050505;
+}
+
+.access-guide-item figcaption{
+  margin-top:10px;
+  color:rgba(244,234,208,.86);
+  font-size:.86rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  text-align:center;
+}
+
+.access-guide-item figcaption strong{
+  color:#d9c17e;
+  font-weight:600;
+}
+
+@media (max-width:860px){
+  .access-guide-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .access-guide-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-guide-card{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .access-guide-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-guide-item{
+    padding:9px;
+    border-radius:18px;
+  }
+
+  .access-guide-item img{
+    border-radius:13px;
+  }
+
+  .access-guide-item figcaption{
+    font-size:.82rem;
+  }
+}
+
+
 </style>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
@@ -875,48 +1111,71 @@ if (
 <div class="menu-container">
 
 <!-- 最寄駅 -->
-<div class="menu-card card-hidden">
+<div class="menu-card card-hidden access-station-card">
   <h2>最寄駅</h2>
+  <p class="access-station-lead">
+    長堀橋駅・松屋町駅・心斎橋駅からご来院いただけます。
+  </p>
 
-  <table class="station-table station-wide">
-    <thead>
-      <tr>
-        <th>駅名</th>
-        <th>路線</th>
-        <th>出口</th>
-      </tr>
-    </thead>
+  <div class="access-station-visual" aria-label="大阪 自律神経専門整体院 geneの最寄駅">
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>長堀橋駅</strong>
+        <span>徒歩約5分</span>
+        <small>長堀鶴見緑地線<br>堺筋線<br>北改札口 1番出口</small>
+      </span>
+    </div>
 
-    <tbody>
-      <tr>
-        <td><strong>長堀橋駅（徒歩5分）</strong></td>
-        <td>長堀鶴見緑地線 / 堺筋線</td>
-        <td>北改札口 1番出口</td>
-      </tr>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>松屋町駅</strong>
+        <span>徒歩約6分</span>
+        <small>長堀鶴見緑地線<br>1番出口</small>
+      </span>
+    </div>
 
-      <tr>
-        <td><strong>松屋町駅（徒歩6分）</strong></td>
-        <td>長堀鶴見緑地線</td>
-        <td>1番出口</td>
-      </tr>
-
-      <tr>
-        <td><strong>心斎橋駅（徒歩15分）</strong></td>
-        <td>御堂筋線</td>
-        <td>北8出口 / 北9出口</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>心斎橋駅</strong>
+        <span>徒歩約14分</span>
+        <small>御堂筋線<br>北8出口 / 北9出口</small>
+      </span>
+    </div>
+  </div>
 </div>
 
-  <!-- アクセス案内 -->
-  <div class="menu-card card-hidden">
-    <h2>駅からのアクセス案内</h2>
-    <p>
-      長堀通沿いのビルです。<br>
-      ビル入口には「<strong style="color:#d9c17e;">あい歯科 長堀橋院</strong>」さんの看板があります。<br>
-      建物右側の通路を奥へ進み、エレベーターで7階へお越しください。
+<!-- 建物入口から院内まで -->
+  <div class="menu-card card-hidden access-guide-card">
+    <h2>建物入口から院内まで</h2>
+    <p class="access-guide-lead">
+      ビル到着後は、以下の写真を目印にお進みください。<br>
+      入口、エレベーター、703号室のインターホンまで順番にご確認いただけます。
     </p>
+
+    <div class="access-guide-grid" aria-label="geneまでの建物内アクセス案内">
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-guide.webp" alt="geneが入るビル外観と入口の案内" width="1200" height="1600" loading="lazy">
+        <figcaption><strong>1. ビル入口</strong><br>1階のあい歯科様の右側が入口です。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-entrance-guide.webp" alt="ビル入口から奥のエレベーターへ進む案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>2. 建物内通路</strong><br>扉の奥にエレベーターがあります。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-elevator-hall-guide.webp" alt="エレベーターホールで7階へ上がる案内" width="630" height="840" loading="lazy">
+        <figcaption><strong>3. エレベーター</strong><br>エレベーターで7階へお上がりください。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-door-guide.webp" alt="703号室geneの玄関とインターホン案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>4. 703号室</strong><br>到着されましたらインターホンを押してください。</figcaption>
+      </figure>
+    </div>
   </div>
 
   <!-- MAP -->
