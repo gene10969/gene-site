@@ -184,7 +184,7 @@ if (
   opacity:0;
   visibility:hidden;
   pointer-events:none;
-  transition:opacity 1.25s ease, visibility 1.25s ease;
+  transition:opacity 1.2s ease, visibility 1.2s ease;
 }
 .gene-hero-slide.is-active{
   z-index:2;
@@ -3503,22 +3503,22 @@ if (
       <!-- 写真を交換する場合は、以下4スライド内の src と alt だけを変更してください。 -->
       <div class="gene-hero-slideshow" data-gene-hero-slideshow role="region" aria-roledescription="カルーセル" aria-label="院長・院内・アクセス・改善例の写真">
         <div class="gene-hero-stage" id="gene-hero-stage">
-          <figure class="gene-hero-slide gene-hero-slide--profile is-active" data-gene-hero-slide data-slide-id="director" data-slide-label="院長 高田裕基" aria-hidden="false">
+          <figure class="gene-hero-slide gene-hero-slide--profile is-active" data-gene-hero-slide data-slide-id="director" data-slide-label="院長 高田裕基" data-slide-duration="2800" aria-hidden="false">
             <img src="assets/img/gene-profile.webp?v=20260708" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo" width="800" height="800" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.alt='大阪 自律神経専門整体院 gene カウンセリング風景'; this.src='assets/img/gene-counseling.webp?v=20260708';">
             <figcaption class="gene-hero-caption">院長　高田 裕基</figcaption>
           </figure>
 
-          <figure class="gene-hero-slide gene-hero-slide--room" data-gene-hero-slide data-slide-id="interior" data-slide-label="落ち着いて相談できる院内" aria-hidden="true">
+          <figure class="gene-hero-slide gene-hero-slide--room" data-gene-hero-slide data-slide-id="interior" data-slide-label="落ち着いて相談できる院内" data-slide-duration="4500" aria-hidden="true">
             <img src="assets/img/gene-room.webp" alt="大阪 自律神経専門整体院 gene の明るく落ち着いた院内" class="top-main-photo" width="1200" height="800" loading="lazy" decoding="async">
             <figcaption class="gene-hero-caption">落ち着いて相談できる院内</figcaption>
           </figure>
 
-          <figure class="gene-hero-slide gene-hero-slide--building" data-gene-hero-slide data-slide-id="exterior" data-slide-label="ラインビルド南船場の外観" aria-hidden="true">
+          <figure class="gene-hero-slide gene-hero-slide--building" data-gene-hero-slide data-slide-id="exterior" data-slide-label="ラインビルド南船場の外観" data-slide-duration="4500" aria-hidden="true">
             <img src="assets/img/gene-building.webp" alt="大阪 自律神経専門整体院 gene が入るラインビルド南船場の外観" class="top-main-photo" width="1200" height="801" loading="lazy" decoding="async">
             <figcaption class="gene-hero-caption">ラインビルド南船場 703</figcaption>
           </figure>
 
-          <a class="gene-hero-slide gene-hero-slide--case" data-gene-hero-slide data-slide-id="case1" data-slide-label="case1 初回から6か月目の経過" href="case1.html" aria-label="case1 全身にアトピー症状が出ていた方の改善例を見る" aria-hidden="true" tabindex="-1">
+          <a class="gene-hero-slide gene-hero-slide--case" data-gene-hero-slide data-slide-id="case1" data-slide-label="case1 初回から6か月目の経過" data-slide-duration="5500" href="case1.html" aria-label="case1 全身にアトピー症状が出ていた方の改善例を見る" aria-hidden="true" tabindex="-1">
             <span class="gene-hero-case-grid" aria-hidden="true">
               <span class="gene-hero-case-item">
                 <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="" width="1200" height="900" loading="lazy" decoding="async">
@@ -4626,11 +4626,16 @@ window.addEventListener("load", () => {
       stopAuto();
       if (reducedMotion || manualControlUsed || autoStepCount >= slides.length) return;
 
+      const configuredDuration = Number(slides[activeIndex].dataset.slideDuration);
+      const displayDuration = Number.isFinite(configuredDuration) && configuredDuration > 0
+        ? configuredDuration
+        : 7000;
+
       autoTimer = window.setTimeout(function(){
         showSlide(activeIndex + 1, "auto");
         autoStepCount += 1;
         scheduleNext();
-      }, 7000);
+      }, displayDuration);
     }
 
     function start(){
