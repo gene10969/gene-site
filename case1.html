@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google tag (gtag.js) -->
+
+<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script>
 if (
   location.hostname !== "localhost" &&
@@ -14,19 +16,28 @@ if (
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+
   (function(){
     const params = new URLSearchParams(location.search);
-    if(params.get('internal') === 'true'){
-      localStorage.setItem('internalUser','true');
+
+    if (params.get("internal") === "true") {
+      localStorage.setItem("internalUser", "true");
     }
-    if(params.get('internal') === 'false'){
-      localStorage.removeItem('internalUser');
+
+    if (params.get("internal") === "false") {
+      localStorage.removeItem("internalUser");
     }
-    const isInternal = localStorage.getItem('internalUser') === 'true';
-    if(!isInternal){
-      gtag('config','G-8KPJ55NQMT');
+
+    const isInternal =
+      localStorage.getItem("internalUser") === "true";
+
+    if (!isInternal) {
+      gtag("config", "G-8KPJ55NQMT");
     }
   })();
 }
@@ -34,271 +45,17 @@ if (
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="大阪市中央区・南船場の自律神経専門整体院 geneへのアクセス案内。最寄り駅、道順、院内までの行き方をご確認いただけます。">
 
-<link rel="canonical" href="https://gene-seitai.com/case1.html">
-<title>全身にアトピー症状が出ていた方の改善例｜大阪 自律神経専門整体院 gene</title>
-<meta name="description" content="大阪 自律神経専門整体院 gene の全身にアトピー症状が出ていた方の改善例。20代後半男性のアトピー・皮膚症状について、顔・首・体正面・足首の初回から6か月目までの経過写真と説明を掲載しています。">
-
-<meta property="og:title" content="全身にアトピー症状が出ていた方の改善例｜大阪 自律神経専門整体院 gene">
-<meta property="og:description" content="20代後半男性のアトピー・皮膚症状について、顔・首・体正面・足首の初回から6か月目までの経過写真と説明を掲載しています。">
-<meta property="og:url" content="https://gene-seitai.com/case1.html">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://gene-seitai.com/cases/case1/osaka_seitai_atopy_case1_face_6months.webp">
-
+<link rel="canonical" href="https://gene-seitai.com/access.html">
+<meta property="og:title" content="アクセス・営業時間｜長堀橋駅徒歩約5分｜大阪 自律神経専門整体院 gene">
+<meta property="og:url" content="https://gene-seitai.com/access.html">
+<title>アクセス・営業時間｜長堀橋駅徒歩約5分｜大阪 自律神経専門整体院 gene</title>
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
-
 <style>
-.case-detail-wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:260px 20px 100px;
-}
 
-.case-detail-head{
-  text-align:center;
-  margin-bottom:56px;
-}
-
-.case-detail-head h1{
-  margin-bottom:24px;
-}
-
-.case-detail-head p{
-  line-height:2;
-}
-
-.case-intro-text{
-  max-width:900px;
-  margin:40px auto 60px;
-  line-height:2.2;
-  color:rgba(255,255,255,0.9);
-  font-size:1rem;
-  text-align:center;
-}
-
-.case-detail-links{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:28px;
-}
-
-.case-detail-links a{
-  color:#d9c17e;
-  text-decoration:none;
-  border-bottom:1px solid rgba(217,193,126,.38);
-  padding-bottom:2px;
-  transition:opacity .3s ease, border-color .3s ease;
-}
-
-.case-detail-links a:hover{
-  opacity:.72;
-  border-bottom-color:rgba(217,193,126,.22);
-}
-
-.case-detail-links a:visited{
-  color:#d9c17e;
-}
-
-.case-analysis{
-  max-width:980px;
-  margin:0 auto 82px;
-  padding:36px 34px;
-  border:1px solid rgba(217,193,126,.24);
-  border-radius:24px;
-  background:linear-gradient(180deg,rgba(217,193,126,.08),rgba(255,255,255,.025));
-  box-shadow:0 18px 42px rgba(0,0,0,.28);
-}
-
-.case-analysis h2{
-  margin:0 0 24px;
-  text-align:center;
-}
-
-.case-analysis h3{
-  margin:34px 0 14px;
-  color:#d9c17e;
-  font-size:1.08rem;
-  letter-spacing:.08em;
-}
-
-.case-analysis p{
-  margin:0 0 18px;
-  line-height:2.15;
-  color:rgba(255,255,255,.9);
-}
-
-.case-analysis-lead{
-  text-align:center;
-}
-
-.case-summary-list{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-  margin:28px 0 34px;
-}
-
-.case-summary-list div{
-  padding:16px 18px;
-  border-radius:18px;
-  border:1px solid rgba(217,193,126,.18);
-  background:rgba(0,0,0,.22);
-}
-
-.case-summary-list dt{
-  margin:0 0 8px;
-  color:#d9c17e;
-  font-size:.86rem;
-  letter-spacing:.08em;
-}
-
-.case-summary-list dd{
-  margin:0;
-  line-height:1.8;
-  color:rgba(255,255,255,.92);
-}
-
-.case-analysis-point{
-  margin-top:24px;
-  padding:22px 24px;
-  border-left:3px solid rgba(217,193,126,.78);
-  border-radius:18px;
-  background:rgba(217,193,126,.07);
-}
-
-.case-analysis-point p:last-child{
-  margin-bottom:0;
-}
-
-.case-part-note{
-  max-width:860px;
-  margin:26px auto 0;
-  line-height:2;
-  color:rgba(255,255,255,.88);
-  text-align:left;
-}
-
-.case-block{
-  margin-bottom:80px;
-  text-align:center;
-}
-
-.case-block h2{
-  margin-bottom:28px;
-}
-
-.case-swiper{
-  max-width:1000px;
-  margin:0 auto;
-  overflow:hidden;
-}
-
-.case-swiper .swiper-wrapper{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-.case-swiper .swiper-slide{
-  width:300px;
-  flex-shrink:0;
-}
-
-.case-swiper img{
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  border-radius:18px;
-  border:1px solid rgba(217,193,126,.22);
-  display:block;
-}
-
-.case-swiper span{
-  display:block;
-  text-align:center;
-  margin-top:10px;
-}
-
-.case-swiper .swiper-scrollbar{
-  position:static;
-  margin:22px auto 0;
-  height:4px;
-  max-width:920px;
-  background:rgba(217,193,126,.12);
-}
-
-.case-swiper .swiper-scrollbar-drag{
-  background:#d9c17e;
-}
-
-.case-note{
-  margin-top:22px;
-  line-height:2;
-  color:rgba(255,255,255,.78);
-}
-
-.case-navigation{
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
-  margin:32px auto 0;
-}
-
-.case-navigation a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:44px;
-  padding:10px 22px;
-  border-radius:999px;
-  border:1px solid rgba(217,193,126,.46);
-  color:#d9c17e;
-  text-decoration:none;
-  background:rgba(20,20,20,.9);
-}
-
-.case-navigation a:visited{
-  color:#d9c17e;
-}
-
-.case-cta{
-  text-align:center;
-  margin-top:90px;
-  padding:34px 20px;
-  border-radius:22px;
-  border:1px solid rgba(217,193,126,.22);
-  background:rgba(217,193,126,.06);
-}
-
-.case-cta h2{
-  margin-bottom:12px;
-}
-
-.case-cta p{
-  line-height:1.9;
-}
-
-.case-cta-btn{
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:999px;
-  text-decoration:none;
-  color:#111;
-  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
-  border:1px solid rgba(255,238,170,.88);
-  margin-top:14px;
-  font-weight:700;
-  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22);
-}
-
-.case-cta-btn:visited{
-  color:#111;
-}
+/* gene mobile bottom navigation */
 
 .gene-pc-side-nav{
   display:none;
@@ -337,6 +94,7 @@ if (
     line-height:1;
     letter-spacing:.08em;
     text-decoration:none;
+    writing-mode:horizontal-tb;
     transition:color .28s ease, transform .28s ease;
   }
 
@@ -373,74 +131,9 @@ if (
   display:none;
 }
 
-@media (max-width:768px){
+@media (max-width: 768px){
   body{
-    padding-bottom:calc(76px + env(safe-area-inset-bottom));
-  }
-
-  .case-detail-wrap{
-    padding:100px 16px 80px;
-  }
-
-  .case-detail-head{
-    margin-bottom:46px;
-  }
-
-  .case-intro-text{
-    text-align:left;
-    font-size:.95rem;
-    margin:30px auto 40px;
-  }
-
-  .case-analysis{
-    padding:28px 18px;
-    margin-bottom:62px;
-    border-radius:20px;
-  }
-
-  .case-analysis-lead{
-    text-align:left;
-  }
-
-  .case-summary-list{
-    grid-template-columns:1fr;
-  }
-
-  .case-block{
-    margin-bottom:64px;
-  }
-
-  .case-swiper .swiper-wrapper{
-    justify-content:flex-start;
-  }
-
-  .case-swiper .swiper-slide{
-    width:80%;
-  }
-
-  .case-cta{
-    margin-top:70px;
-    padding:28px 18px;
-  }
-
-  .reserve-btn-sub,
-  .hamburger-btn{
-    display:none !important;
-  }
-
-  .breadcrumb,
-  .breadcrumb-fixed{
-    display:none !important;
-  }
-
-  html,
-  body{
-    margin-top:0 !important;
-    padding-top:0 !important;
-  }
-
-  #to-top-btn{
-    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
   .gene-mobile-bottom-nav{
@@ -500,7 +193,7 @@ if (
 
   .gene-mobile-bottom-nav .line-nav{
     color:#111;
-    background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
     border-radius:16px;
     box-shadow:0 6px 18px rgba(217,193,126,.20);
   }
@@ -534,10 +227,7 @@ if (
     bottom:calc(72px + env(safe-area-inset-bottom));
     z-index:9997;
     display:block;
-    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
-    overflow-y:auto;
-    overscroll-behavior:contain;
-    padding:15px 14px 14px;
+    padding:16px;
     border:1px solid rgba(217,193,126,.34);
     border-radius:22px;
     background:rgba(8,8,8,.96);
@@ -557,20 +247,14 @@ if (
   }
 
   .gene-mobile-symptom-panel-title{
-    position:sticky;
-    top:-15px;
-    z-index:2;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:12px;
-    margin:-15px -14px 12px;
-    padding:14px 14px 10px;
-    background:rgba(8,8,8,.98);
-    border-bottom:1px solid rgba(217,193,126,.16);
     color:#d9c17e;
     font-size:.95rem;
     letter-spacing:.08em;
+    margin:0 0 12px;
   }
 
   .gene-mobile-symptom-close{
@@ -588,11 +272,314 @@ if (
   }
 
   .gene-mobile-symptom-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-symptom-grid a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    min-height:44px;
+    padding:11px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.46);
+    background:linear-gradient(180deg,#ead893 0%,#d9c17e 100%);
+    color:#111;
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
+    box-shadow:0 8px 22px rgba(217,193,126,.16);
+  }
+
+  
+  .gene-mobile-extra-links{
+    margin-top:12px;
+    padding-top:12px;
+    border-top:1px solid rgba(217,193,126,.18);
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .gene-mobile-extra-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:10px 12px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.28);
+    background:rgba(217,193,126,.075);
+    color:#d9c17e;
+    text-decoration:none;
+    font-size:.88rem;
+    line-height:1.35;
+  }
+
+  .gene-mobile-symptom-grid a::after{
+    content:"›";
+    color:#111;
+    font-size:1.15rem;
+    line-height:1;
+  }
+}
+
+
+
+/* gene mobile bottom navigation adjustment */
+@media (max-width: 768px){
+  .reserve-btn-sub,
+  .hamburger-btn{
+    display:none !important;
+  }
+
+  #to-top-btn{
+    bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+
+
+/* mobile breadcrumb hidden */
+@media (max-width:768px){
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+}
+
+
+
+
+
+
+
+/* mobile first screen top alignment final */
+@media (max-width:768px){
+
+  html,
+  body{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  /* 全ページ共通：最初の表示ブロックをアドレスバー下に近づける */
+  #hero-logo,
+  .page-title,
+  .main-title,
+  .section-title,
+  .page-heading,
+  .access-title,
+  .menu-title,
+  .voice-title,
+  .case-title{
+    margin-top:0 !important;
+  }
+
+  /* index / 多くの症状ページで使われるhero */
+  #hero-logo{
+    padding-top:34px !important;
+    margin-bottom:22px !important;
+  }
+
+  #hero-logo .main-title,
+  .main-title{
+    margin-top:0 !important;
+    margin-bottom:16px !important;
+  }
+
+  #hero-logo .sub-catch,
+  .sub-catch{
+    margin-top:12px !important;
+    margin-bottom:24px !important;
+    line-height:1.9 !important;
+  }
+
+  /* access / faq / voice などの単独タイトルページ */
+  .page-title{
+    padding-top:34px !important;
+    padding-bottom:22px !important;
+    margin-bottom:22px !important;
+  }
+
+  /* 先頭カード群の開始位置を統一 */
+  main,
+  #index-cards,
+  .page-container,
+  .menu-container,
+  .voice-container,
+  .case-container,
+  .access-container,
+  .faq-container,
+  .profile-container,
+  .news-container{
+    margin-top:0 !important;
+    padding-top:0 !important;
+  }
+
+  .menu-hero-card,
+  .top-hero-card,
+  .profile-card,
+  .intro-card,
+  .case,
+  .info-card:first-child,
+  .access-card:first-child,
+  .faq-card:first-child,
+  .voice-card:first-child{
+    margin-top:22px !important;
+  }
+
+  /* accessで余白が大きくなりやすい先頭セクション */
+  .access-section:first-of-type,
+  .access-block:first-of-type,
+  .access-card:first-of-type,
+  .access-container > *:first-child{
+    margin-top:22px !important;
+  }
+
+  /* voice/caseで先頭カードが詰まりすぎないようにする */
+  .voice-container > *:first-child,
+  .case-container > *:first-child,
+  #voice-cards > *:first-child{
+    margin-top:22px !important;
+  }
+}
+
+
+
+/* access voice mobile top alignment fix */
+@media (max-width:768px){
+
+  .breadcrumb,
+  .breadcrumb-fixed{
+    display:none !important;
+  }
+
+  /* access / voice はタイトル位置を個別にindex基準へ寄せる */
+  body:has(.access-container) #hero-logo,
+  body:has(.voice-container) #hero-logo,
+  body:has(.access-container) .page-title,
+  body:has(.voice-container) .page-title,
+  body:has(#voice-cards) #hero-logo,
+  body:has(#voice-cards) .page-title{
+    padding-top:34px !important;
+    margin-top:0 !important;
+    margin-bottom:22px !important;
+  }
+
+  body:has(.access-container) main,
+  body:has(.voice-container) main,
+  body:has(#voice-cards) main,
+  body:has(.access-container) .access-container,
+  body:has(.voice-container) .voice-container,
+  body:has(#voice-cards) #voice-cards{
+    padding-top:0 !important;
+    margin-top:0 !important;
+  }
+
+  body:has(.access-container) .info-card:first-child,
+  body:has(.access-container) .access-card:first-child,
+  body:has(.access-container) .access-section:first-of-type,
+  body:has(.access-container) .access-container > *:first-child,
+  body:has(.voice-container) .info-card:first-child,
+  body:has(.voice-container) .voice-card:first-child,
+  body:has(.voice-container) .voice-container > *:first-child,
+  body:has(#voice-cards) #voice-cards > *:first-child{
+    margin-top:22px !important;
+  }
+
+  /* accessでタイトルが下がりすぎる場合の保険 */
+  body:has(.access-container) .main-title,
+  body:has(.access-container) .section-title,
+  body:has(.access-container) h1,
+  body:has(.voice-container) .main-title,
+  body:has(.voice-container) .section-title,
+  body:has(.voice-container) h1,
+  body:has(#voice-cards) .main-title,
+  body:has(#voice-cards) h1{
+    margin-top:0 !important;
+  }
+}
+
+
+/* access page timing: match menu.html */
+.page-title.hidden,
+.breadcrumb-fixed.hidden,
+.reserve-btn-sub.hidden,
+.menu-card.card-hidden{
+  opacity:0;
+}
+
+.page-title.hidden,
+.menu-card.card-hidden{
+  transform:translateY(22px);
+  transition:opacity .65s ease, transform .65s ease;
+}
+
+.page-title.hidden.show,
+.menu-card.card-hidden.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.breadcrumb-fixed.hidden.show,
+.reserve-btn-sub.hidden.show{
+  opacity:1;
+}
+
+
+/* mobile symptom panel / to-top avoidance */
+@media (max-width:768px){
+  #to-top-btn{
+    transition:bottom .25s ease, opacity .25s ease, transform .25s ease !important;
+  }
+}
+
+
+.gene-mobile-symptom-grid a:visited{
+    color:#d9c17e;
+  }
+
+
+
+/* gene mobile symptom panel 19 links usability update */
+@media (max-width: 768px){
+  .gene-mobile-symptom-panel{
+    top:auto;
+    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:15px 14px 14px;
+  }
+
+  .gene-mobile-symptom-panel-title{
+    position:sticky;
+    top:-15px;
+    z-index:2;
+    margin:-15px -14px 12px;
+    padding:14px 14px 10px;
+    background:rgba(8,8,8,.98);
+    border-bottom:1px solid rgba(217,193,126,.16);
+  }
+
+  .gene-mobile-symptom-grid{
     display:block;
   }
 
   .gene-mobile-symptom-group{
     margin:0 0 14px;
+  }
+
+  .gene-mobile-symptom-group:last-child{
+    margin-bottom:0;
   }
 
   .gene-mobile-symptom-group-title{
@@ -619,10 +606,11 @@ if (
     border-radius:14px;
     border:1px solid rgba(217,193,126,.38);
     background:rgba(217,193,126,.10);
-    color:#d9c17e !important;
+    color:#d9c17e;
     text-decoration:none;
     font-size:.84rem;
     line-height:1.35;
+    box-shadow:none;
   }
 
   .gene-mobile-symptom-list a::after{
@@ -633,6 +621,28 @@ if (
     opacity:.85;
   }
 
+  .gene-mobile-symptom-grid > a{
+    display:none !important;
+  }
+
+  .gene-mobile-symptom-grid a::after{
+    color:inherit;
+  }
+
+  .gene-mobile-symptom-list a,
+  .gene-mobile-symptom-list a:visited{
+    color:#d9c17e !important;
+  }
+
+  .gene-mobile-symptom-list a::after{
+    color:#d9c17e !important;
+  }
+
+  .gene-mobile-extra-links a,
+  .gene-mobile-extra-links a:visited{
+    color:#d9c17e !important;
+  }
+
   .gene-mobile-extra-links{
     position:sticky;
     bottom:-14px;
@@ -640,46 +650,105 @@ if (
     padding:12px 14px calc(12px + env(safe-area-inset-bottom));
     background:rgba(8,8,8,.98);
     border-top:1px solid rgba(217,193,126,.16);
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .gene-mobile-extra-links a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:42px;
-    padding:10px 12px;
-    border-radius:14px;
-    border:1px solid rgba(217,193,126,.28);
-    background:rgba(217,193,126,.075);
-    color:#d9c17e !important;
-    text-decoration:none;
-    font-size:.88rem;
-    line-height:1.35;
   }
 }
 
-.case-fade{
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .65s ease, transform .65s ease;
+
+
+/* gene link button color unification */
+.top-symptom-links a,
+.menu-symptom-card,
+.gene-mobile-symptom-list a,
+.gene-mobile-symptom-list a:visited,
+.gene-mobile-extra-links a,
+.gene-mobile-extra-links a:visited,
+.gene-mobile-symptom-grid a,
+.gene-mobile-symptom-grid a:visited,
+.symptom-list div.has-link,
+.map-open-btn,
+.case-cta-btn,
+.voice-cta-btn{
+  background:rgba(20,20,20,.9) !important;
+  border:1px solid rgba(217,193,126,.56) !important;
+  color:#d9c17e !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
 }
 
-.case-fade.show{
-  opacity:1;
-  transform:translateY(0);
+.top-symptom-links a::after,
+.menu-symptom-card::after,
+.gene-mobile-symptom-list a::after,
+.gene-mobile-extra-links a::after,
+.gene-mobile-symptom-grid a::after{
+  color:#d9c17e !important;
 }
 
-@media (min-width:769px){
-  body.subpage .case-detail-wrap{
-    padding-top:260px !important;
-  }
+.symptom-list div.has-link a,
+.symptom-list div.has-link a:visited,
+.menu-symptom-card .menu-symptom-title,
+.menu-symptom-card .menu-symptom-text{
+  color:#d9c17e !important;
+}
 
-  body.subpage .case-detail-head{
-    margin-bottom:56px !important;
-  }
+.menu-symptom-card .menu-symptom-text{
+  opacity:.86;
+}
+
+.top-symptom-links a:hover,
+.menu-symptom-card:hover,
+.gene-mobile-symptom-list a:hover,
+.gene-mobile-extra-links a:hover,
+.map-open-btn:hover,
+.case-cta-btn:hover,
+.voice-cta-btn:hover{
+  background:rgba(28,26,20,.96) !important;
+  border-color:rgba(234,216,147,.78) !important;
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10) !important;
+}
+
+/* LINE buttons stay visually strongest */
+.reserve-btn-sub,
+.reserve-btn-sub:visited,
+.gene-mobile-bottom-nav .line-nav,
+.gene-mobile-bottom-nav .line-nav:visited,
+.map-open-btn[href*="lin.ee"],
+.map-open-btn[href*="lin.ee"]:visited,
+.top-cta-link,
+.top-cta-link:visited,
+.menu-cta-link,
+.menu-cta-link:visited,
+.case-cta-btn[href*="lin.ee"],
+.case-cta-btn[href*="lin.ee"]:visited,
+.voice-cta-btn[href*="lin.ee"],
+.voice-cta-btn[href*="lin.ee"]:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.gene-mobile-bottom-nav .line-nav .nav-icon,
+.gene-mobile-bottom-nav .line-nav .nav-text,
+.reserve-btn-sub *,
+.map-open-btn[href*="lin.ee"] *,
+.top-cta-link *,
+.menu-cta-link *,
+.case-cta-btn[href*="lin.ee"] *,
+.voice-cta-btn[href*="lin.ee"] *{
+  color:#111 !important;
+}
+
+.map-open-btn[href*="lin.ee"]:hover,
+.top-cta-link:hover,
+.menu-cta-link:hover,
+.case-cta-btn[href*="lin.ee"]:hover,
+.voice-cta-btn[href*="lin.ee"]:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
 
 
@@ -722,53 +791,6 @@ if (
 }
 
 
-/* case consult bridge: photo + explanation + LINE */
-.case-consult-card{
-  margin:34px 0 52px;
-  padding:28px 22px;
-  border-radius:22px;
-  border:1px solid rgba(217,193,126,.26);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(217,193,126,.10), transparent 48%),
-    rgba(217,193,126,.045);
-  text-align:center;
-}
-
-.case-consult-card h2{
-  margin:0 0 12px;
-  color:#f4ead0;
-  font-size:clamp(1.22rem,2vw,1.58rem);
-  line-height:1.7;
-  letter-spacing:.06em;
-  font-weight:500;
-}
-
-.case-consult-card p{
-  max-width:760px;
-  margin:0 auto;
-  color:rgba(255,255,255,.86);
-  line-height:2;
-  letter-spacing:.04em;
-}
-
-.case-consult-card .case-cta-btn{
-  margin-top:18px;
-}
-
-@media (max-width:640px){
-  .case-consult-card{
-    margin:28px 0 42px;
-    padding:24px 18px;
-    text-align:left;
-  }
-
-  .case-consult-card .case-cta-btn{
-    width:100%;
-    box-sizing:border-box;
-  }
-}
-
-
 
 /* reserve button color match */
 .reserve-btn-sub,
@@ -791,7 +813,6 @@ if (
   box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
 }
 
-
 /* PC fixed CTA / side navigation alignment */
 @media (min-width: 769px){
   .reserve-btn-sub{
@@ -805,38 +826,279 @@ if (
     right:24px !important;
   }
 }
+
+
+/* access nearest station cards - matched with index design */
+.access-station-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-station-card::before{
+  opacity:.055 !important;
+}
+
+.access-station-card h2{
+  position:relative;
+  z-index:1;
+}
+
+.access-station-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-station-visual{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0 4px;
+}
+
+.access-station-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-width:0;
+  padding:18px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+.access-station-icon{
+  flex:0 0 46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(217,193,126,.34);
+  color:#d9c17e;
+  background:rgba(217,193,126,.07);
+}
+
+.access-station-icon svg{
+  display:block;
+  width:25px;
+  height:25px;
+}
+
+.access-station-text{
+  display:block;
+  min-width:0;
+}
+
+.access-station-text strong{
+  display:block;
+  color:#f4ead0;
+  font-size:.98rem;
+  line-height:1.5;
+  letter-spacing:.04em;
+  font-weight:600;
+}
+
+.access-station-text span{
+  display:block;
+  margin-top:3px;
+  color:rgba(255,255,255,.82);
+  font-size:.86rem;
+  line-height:1.55;
+}
+
+.access-station-text small{
+  display:block;
+  margin-top:8px;
+  color:rgba(255,255,255,.66);
+  font-size:.78rem;
+  line-height:1.65;
+  letter-spacing:.02em;
+}
+
+@media (max-width:860px){
+  .access-station-visual{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .access-station-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-station-card{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .access-station-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-station-item{
+    padding:16px 16px;
+    border-radius:17px;
+  }
+
+  .access-station-icon{
+    flex-basis:44px;
+    width:44px;
+    height:44px;
+  }
+
+  .access-station-text strong{
+    font-size:.96rem;
+  }
+}
+
+
+/* access guide photos - building entrance flow */
+.access-guide-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.access-guide-card::before{
+  opacity:.055 !important;
+}
+
+.access-guide-lead{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:0 auto 24px !important;
+  color:rgba(255,255,255,.86) !important;
+  text-align:center;
+  line-height:2 !important;
+  white-space:normal !important;
+}
+
+.access-guide-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin:26px 0 4px;
+}
+
+.access-guide-item{
+  margin:0;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(217,193,126,.28);
+  background:rgba(255,255,255,.026);
+  box-shadow:0 12px 30px rgba(0,0,0,.24);
+}
+
+.access-guide-item img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:15px;
+  border:1px solid rgba(217,193,126,.18);
+  background:#050505;
+}
+
+.access-guide-item figcaption{
+  margin-top:10px;
+  color:rgba(244,234,208,.86);
+  font-size:.86rem;
+  line-height:1.65;
+  letter-spacing:.04em;
+  text-align:center;
+}
+
+.access-guide-item figcaption strong{
+  color:#d9c17e;
+  font-weight:600;
+}
+
+@media (max-width:860px){
+  .access-guide-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .access-guide-lead{
+    text-align:left;
+  }
+}
+
+@media (max-width:640px){
+  .access-guide-card{
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+
+  .access-guide-lead{
+    margin-bottom:22px !important;
+    line-height:1.95 !important;
+  }
+
+  .access-guide-item{
+    padding:9px;
+    border-radius:18px;
+  }
+
+  .access-guide-item img{
+    border-radius:13px;
+  }
+
+  .access-guide-item figcaption{
+    font-size:.82rem;
+  }
+}
+
+
 </style>
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
 </head>
-
 <body class="subpage">
 
 <div id="global-logo-bg" class="fade-start">
   <img src="assets/img/logo.svg" alt="">
 </div>
 
+<!-- パンくず -->
 <nav class="breadcrumb-fixed hidden">
-  <a href="index.html">ホーム</a> ＞ 
-  <a href="voice.html">院内・改善写真</a> ＞
-  <span>全身アトピーの改善例</span>
+  <a href="/">ホーム</a> ＞ <span>アクセス・営業時間</span>
 </nav>
 
 <a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank">空き状況<br>を見る</a>
 
+<!-- ハンバーガーアイコン -->
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 
+<!-- ハンバーガーメニュー本体 -->
 <div id="hamburger-menu" class="hamburger-menu">
+
+  <!-- × ボタン -->
   <button class="menu-close-btn">×</button>
-  <a href="index.html">ホーム</a>
-  <a href="menu.html">施術内容・料金</a>
-  <a href="symptoms.html">症状別に見る</a>
-  <a href="access.html">アクセス</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="voice.html">院内・改善写真</a>
+
+  <a href="/">ホーム</a>
+<a href="menu.html">施術内容・料金</a>
+<a href="symptoms.html">症状別に見る</a>
+<a href="access.html">アクセス</a>
+<a href="faq.html">よくある質問</a>
+<!-- <a href="news.html">お知らせ</a> -->
+<a href="voice.html">院内・改善写真</a>
 </div>
 
 <nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
-  <a href="index.html">ホーム</a>
+  <a href="/">ホーム</a>
   <a href="menu.html">施術内容・料金</a>
   <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
@@ -844,215 +1106,107 @@ if (
   <a href="voice.html">院内・改善写真</a>
 </nav>
 
-<main class="case-detail-wrap">
 
-<section class="case-detail-head case-fade">
-<h1>全身にアトピー症状が出ていた方の改善例</h1>
-<p>20代後半男性のアトピー・皮膚症状について、顔・首・体正面・足首の経過写真を掲載しています。</p>
+<h1 class="page-title hidden">アクセス・営業時間</h1>
 
-<div class="case-intro-text">
-<p>
-このページは、大阪 自律神経専門整体院 gene における改善例の経過記録です。<br>
-顔・首・体・足首の状態を、初回・3か月・6か月の経過で掲載しています。
-</p>
+<div class="menu-container">
 
-<p>
-来院前はステロイドを使用されており、できるだけステロイドに頼らずに過ごせる身体の状態を目指したいというご希望がありました。
-当院では、食事内容の見直しと整体を中心に、呼吸・姿勢・筋緊張・自律神経の働きなど、身体全体のつながりを確認しながら経過を見ていきました。
-</p>
+<!-- 最寄駅 -->
+<div class="menu-card card-hidden access-station-card">
+  <h2>最寄駅</h2>
+  <p class="access-station-lead">
+    長堀橋駅・松屋町駅・心斎橋駅からご来院いただけます。
+  </p>
 
-<p>
-同じような症状でお悩みの方が、ご自身の身体の変化の参考としてご覧いただければ幸いです。
-</p>
-</div>
+  <div class="access-station-visual" aria-label="大阪 自律神経専門整体院 geneの最寄駅">
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>長堀橋駅</strong>
+        <span>徒歩約5分</span>
+        <small>長堀鶴見緑地線<br>堺筋線<br>北改札口 1番出口</small>
+      </span>
+    </div>
 
-<div class="case-detail-links">
-<a href="voice.html">院内・改善写真に戻る</a>
-<a href="https://lin.ee/6bBKc67" target="_blank">まずは相談してみる</a>
-</div>
-</section>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>松屋町駅</strong>
+        <span>徒歩約6分</span>
+        <small>長堀鶴見緑地線<br>1番出口</small>
+      </span>
+    </div>
 
-<section class="case-analysis case-fade">
-<h2>改善例の経過について</h2>
-<p class="case-analysis-lead">
-20代後半男性、現場仕事を中心とした肉体労働をされている方の皮膚症状の経過です。
-来院前はステロイドを使用されており、「できるだけステロイドに頼らずに過ごせる身体の状態を目指したい」というご希望がありました。
-</p>
-
-<dl class="case-summary-list">
-  <div>
-    <dt>年代・性別</dt>
-    <dd>20代後半・男性</dd>
+    <div class="access-station-item">
+      <span class="access-station-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8H15.5M9 20L11 17M15 20L13 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="13" r="1" fill="currentColor"/><circle cx="14.5" cy="13" r="1" fill="currentColor"/></svg></span>
+      <span class="access-station-text">
+        <strong>心斎橋駅</strong>
+        <span>徒歩約14分</span>
+        <small>御堂筋線<br>北8出口 / 北9出口</small>
+      </span>
+    </div>
   </div>
-  <div>
-    <dt>仕事内容</dt>
-    <dd>肉体労働を伴う現場仕事</dd>
+</div>
+
+<!-- 建物入口から院内まで -->
+  <div class="menu-card card-hidden access-guide-card">
+    <h2>建物入口から院内まで</h2>
+    <p class="access-guide-lead">
+      ビル到着後は、以下の写真を目印にお進みください。<br>
+      入口、エレベーター、703号室のインターホンまで順番にご確認いただけます。
+    </p>
+
+    <div class="access-guide-grid" aria-label="geneまでの建物内アクセス案内">
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-guide.webp" alt="geneが入るビル外観と入口の案内" width="1200" height="1600" loading="lazy">
+        <figcaption><strong>1. ビル入口</strong><br>1階のあい歯科様の右側が入口です。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-building-entrance-guide.webp" alt="ビル入口から奥のエレベーターへ進む案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>2. 建物内通路</strong><br>扉の奥にエレベーターがあります。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-elevator-hall-guide.webp" alt="エレベーターホールで7階へ上がる案内" width="630" height="840" loading="lazy">
+        <figcaption><strong>3. エレベーター</strong><br>エレベーターで7階へお上がりください。</figcaption>
+      </figure>
+
+      <figure class="access-guide-item">
+        <img src="assets/img/gene-door-guide.webp" alt="703号室geneの玄関とインターホン案内" width="1536" height="2048" loading="lazy">
+        <figcaption><strong>4. 703号室</strong><br>到着されましたらインターホンを押してください。</figcaption>
+      </figure>
+    </div>
   </div>
-  <div>
-    <dt>来院前の状態</dt>
-    <dd>ステロイドを使用。赤み・乾燥・掻き壊しが広範囲に見られる状態。</dd>
+
+  <!-- MAP -->
+  <div class="menu-card card-hidden">
+    <h2>MAP</h2>
+
+    <div class="map-frame">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2342003427737!2d135.50825!3d34.67695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f15.2!3m3!1m2!1s0x6000e7257425c235%3A0xf4e07b187adda1ad!2z5pel5pys44CB5aSn6Ziq5bqc56aP5bC-5YyW5Ye65YmN5rW35L-d!5e0!3m2!1sja!2sjp!4v1763599999999!5m2!1sja!2sjp"
+    width="100%"
+    height="260"
+    style="border:0; border-radius:12px;"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
+    <p style="text-align:center; margin-top:16px;">
+      <a href="https://www.google.com/maps/place/%E5%A4%A7%E9%98%AA+%E8%87%AA%E5%BE%8B%E7%A5%9E%E7%B5%8C%E5%B0%82%E9%96%80%E6%95%B4%E4%BD%93%E9%99%A2+gene/@34.6754976,135.5086321,21z/data=!4m6!3m5!1s0x6000e7257425c235:0xf4e07b187adda1ad!8m2!3d34.6754694!4d135.5085652!16s%2Fg%2F11yql9gnks?hl=ja&entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D"
+   class="map-open-btn"
+   target="_blank">
+  Google MAPで見る
+</a>
+
+    </p>
+
   </div>
-  <div>
-    <dt>ご希望</dt>
-    <dd>できるだけ薬に頼らず過ごせる身体の状態を目指したい。</dd>
-  </div>
-</dl>
 
-<h3>初回時の状態</h3>
-<p>
-初回時は、顔・首・体幹・足首など広い範囲に、赤み・乾燥・掻き壊し・皮膚の厚みが見られました。
-特に首まわりや足首は、慢性的に刺激が入り続けていたような印象があり、体正面にも皮膚の色むらや荒れが確認できました。
-</p>
+</div>
 
-<h3>6か月目の変化</h3>
-<p>
-6か月目には、顔まわりの赤みや皮むけが落ち着き、首・体幹・足首に見られた荒れや掻き壊しも目立ちにくくなっています。
-一部に色素沈着は残るものの、初回時と比べると皮膚表面の荒れ方が穏やかになり、全体として落ち着いた印象へ変化しています。
-</p>
-<p>
-この経過では、皮膚が少しずつ強くなり、浸出液が出にくくなったこと、乾燥が収まり、皮脂が自然に出てきていることを、皮膚状態が改善に向かっている大切な目安として見ています。
-</p>
-
-<h3>geneで行ったこと</h3>
-<p>
-当院では、皮膚だけを部分的に見るのではなく、食事内容の見直しと整体を中心に、呼吸・姿勢・筋緊張・自律神経の働きなど、身体全体のつながりを確認しながら施術を行いました。
-現場仕事による疲労、汗、衣類との摩擦、睡眠の乱れ、身体の緊張なども皮膚状態に影響しやすいため、生活背景も含めて無理のない範囲で整えていくことを大切にしました。
-</p>
-
-<div class="case-analysis-point">
-<p>
-皮膚症状は、食事・睡眠・疲労・ストレス・仕事環境・自律神経の状態など、複数の要因が関係することがあります。
-そのためgeneでは、症状のある部位だけでなく、身体全体の状態を確認しながら、日常生活の負担も含めて経過を見ていきます。
-</p>
-</div>
-</section>
-
-<section class="case-consult-card case-fade" aria-labelledby="case-consult-title">
-<h2 id="case-consult-title">同じようなアトピー・皮膚症状でお悩みの方へ</h2>
-<p>
-写真の変化だけでは、ご自身の状態に当てはまるか判断しにくいことがあります。<br>
-顔・首・体幹・足首などの赤み、乾燥、掻き壊しが長引いている方は、現在の状態をLINEでご相談ください。
-</p>
-<a href="https://lin.ee/6bBKc67" class="case-cta-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">LINEで相談する</span><span class="gene-cta-two-line__sub">全身アトピーの改善例を見た方へ</span></a>
-</section>
-
-<section class="case-block case-fade">
-<h2>顔</h2>
-<div class="swiper case-swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_face_before.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 顔 初回">
-<span>初回</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_face_3months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 顔 3か月目">
-<span>3か月目</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_face_6months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 顔 6か月目">
-<span>6か月目</span>
-</div>
-</div>
-<div class="swiper-scrollbar"></div>
-</div>
-<p class="case-part-note">
-顔まわりは、初回時に赤み・乾燥・皮むけが目立っていましたが、6か月目には全体的に落ち着いた印象へ変化しています。
-特に頬や口まわりの荒れが目立ちにくくなり、皮膚表面の乾燥感も軽減して見えます。
-</p>
-</section>
-
-<section class="case-block case-fade">
-<h2>首</h2>
-<div class="swiper case-swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 首 初回">
-<span>初回</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_neck_3months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 首 3か月目">
-<span>3か月目</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 首 6か月目">
-<span>6か月目</span>
-</div>
-</div>
-<div class="swiper-scrollbar"></div>
-</div>
-<p class="case-part-note">
-首まわりは、初回時に赤み・乾燥・皮膚の厚みが強く見られました。
-6か月目には、うなじから肩にかけての赤みや荒れが目立ちにくくなり、皮膚表面の状態も落ち着いた印象になっています。
-</p>
-</section>
-
-<section class="case-block case-fade">
-<h2>体（正面）</h2>
-<div class="swiper case-swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_body_front_before.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 体正面 初回">
-<span>初回</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_body_front_3months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 体正面 3か月目">
-<span>3か月目</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_body_front_6months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 体正面 6か月目">
-<span>6か月目</span>
-</div>
-</div>
-<div class="swiper-scrollbar"></div>
-</div>
-<p class="case-part-note">
-体正面は、初回時に胸まわり・鎖骨周辺・腕にかけて、乾燥や掻き壊し跡が見られました。
-6か月目には、胸まわりの赤みや荒れが目立ちにくくなり、体幹部全体の皮膚状態が落ち着いた印象へ変化しています。
-</p>
-</section>
-
-<section class="case-block case-fade">
-<h2>足首</h2>
-<div class="swiper case-swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_ankle_before.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 足首 初回">
-<span>初回</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_ankle_3months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 足首 3か月目">
-<span>3か月目</span>
-</div>
-<div class="swiper-slide">
-<img src="cases/case1/osaka_seitai_atopy_case1_ankle_6months.webp" alt="大阪 自律神経専門整体院 gene 全身アトピーの改善例 足首 6か月目">
-<span>6か月目</span>
-</div>
-</div>
-<div class="swiper-scrollbar"></div>
-</div>
-<p class="case-part-note">
-足首まわりは、初回時に赤み・掻き壊し・かさぶたのような状態が広く見られました。
-6か月目には、強い赤みや掻き壊しの範囲が大きく減り、皮膚表面が落ち着いた印象へ変化しています。
-</p>
-<p class="case-note">
-※掲載している経過は一例であり、変化には個人差があります。<br>
-※医療行為や治療効果を保証するものではありません。<br>
-※ステロイドなどのお薬については、医師の指示なく自己判断で中止することはおすすめしていません。
-</p>
-</section>
-
-<div class="case-navigation case-fade">
-  <a href="case2.html">前腕・体幹・脚まわりの改善例を見る</a>
-  <a href="case3.html">腕・足首まわりの改善例を見る</a>
-</div>
-  
-<section class="case-cta case-fade">
-<h2>写真だけでは判断しきれない現在の状態を、LINEでご相談ください。</h2>
-<p>経過には個人差があります。無理な判断はせず、まずは今の状態を整理するところから丁寧に確認します。</p>
-<a href="https://lin.ee/6bBKc67" class="case-cta-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">LINEで相談する</span><span class="gene-cta-two-line__sub">現在の状態をお聞かせください</span></a>
-</section>
-
-</main>
 
 <div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
 
@@ -1115,7 +1269,7 @@ if (
 </div>
 
 <nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
-  <a href="index.html">
+  <a href="/">
     <span class="nav-icon">⌂</span>
     <span class="nav-text">ホーム</span>
   </a>
@@ -1137,93 +1291,91 @@ if (
   </a>
 </nav>
 
+
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
   最終受付：初診 20:00 / 二回目以降 20:30<br>
+
   <span class="address">
     <span class="address-line1">住所：大阪市中央区南船場1-10-12</span>
     <span class="address-line2">ラインビルド南船場703</span>
   </span><br>
+
   © gene. All Rights Reserved.
 </footer>
 
-<div id="to-top-btn">▲</div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
 window.addEventListener("load", () => {
-
-  document.querySelectorAll('.case-swiper').forEach(el=>{
-    new Swiper(el,{
-      slidesPerView:'auto',
-      spaceBetween:24,
-      watchOverflow:true,
-      scrollbar:{
-        el:el.querySelector('.swiper-scrollbar'),
-        draggable:true
-      }
-    });
-  });
-
-  const breadcrumb = document.querySelector(".breadcrumb-fixed");
+  const pageTitle = document.querySelector(".page-title");
+  const menuContainer = document.querySelector(".menu-container");
+  const breadcrumb = document.querySelector(".breadcrumb, .breadcrumb-fixed");
   const rsvBtn = document.querySelector(".reserve-btn-sub");
+  const bgLogo = document.getElementById("global-logo-bg");
+  const cards = document.querySelectorAll(".card-hidden, .menu-card");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const pcSideNav = document.querySelector(".gene-pc-side-nav");
-  const bgLogo = document.getElementById("global-logo-bg");
-  const fadeItems = document.querySelectorAll(".case-fade");
+  const menuPanel = document.getElementById("hamburger-menu");
 
-  setTimeout(()=>{
-    breadcrumb?.classList.add("show");
-    hamburgerBtn?.classList.add("show");
-    rsvBtn?.classList.add("show");
-    bgLogo?.classList.add("fade-in");
+  setTimeout(() => {
+    if (breadcrumb) {
+      breadcrumb.classList.add("show");
+      breadcrumb.style.opacity = "1";
+    }
+    if (hamburgerBtn) hamburgerBtn.classList.add("show");
+    if (rsvBtn) rsvBtn.classList.add("show");
+    if (bgLogo) bgLogo.classList.add("fade-in");
     if (pcSideNav) pcSideNav.classList.add("show");
-
-    fadeItems.forEach(el=>{
-      el.classList.add("show");
-    });
+    if (pageTitle) pageTitle.classList.add("show");
+    if (menuContainer) menuContainer.querySelectorAll(".menu-card").forEach(card => card.classList.add("show"));
+    cards.forEach(c => c.classList.add("show"));
   }, 450);
 
-  const menuPanel = document.getElementById("hamburger-menu");
-  const closeBtn = document.querySelector(".menu-close-btn");
-
-  hamburgerBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.add("open");
-    document.body.classList.add("menu-open");
-  });
-
-  closeBtn?.addEventListener("click", ()=>{
-    menuPanel.classList.remove("open");
-    document.body.classList.remove("menu-open");
-  });
-
-  menuPanel?.addEventListener("click", e=>{
-    if(e.target === menuPanel){
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-
-  menuPanel?.querySelectorAll("a").forEach(link=>{
-    link.addEventListener("click", ()=>{
-      menuPanel.classList.remove("open");
-      document.body.classList.remove("menu-open");
+  if (hamburgerBtn && menuPanel) {
+    hamburgerBtn.addEventListener("click", () => {
+      menuPanel.classList.add("open");
+      document.body.classList.add("menu-open");
     });
-  });
-});
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  const btn = document.getElementById("to-top-btn");
-  if(!btn) return;
-  window.addEventListener("scroll",()=>{
-    btn.classList.toggle("show", window.scrollY > 200);
+    const closeBtn = document.querySelector(".menu-close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    }
+
+    menuPanel.addEventListener("click", e => {
+      if (e.target === menuPanel) {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+
+    menuPanel.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+  const toTopBtn = document.createElement("div");
+  toTopBtn.id = "to-top-btn";
+  toTopBtn.textContent = "▲";
+  document.body.appendChild(toTopBtn);
+
+  window.addEventListener("scroll", () => {
+    toTopBtn.classList.toggle("show", window.scrollY > 400);
   });
-  btn.addEventListener("click",()=>{
-    window.scrollTo({top:0, behavior:"smooth"});
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 </script>
+
 
 <script>
 (function(){
@@ -1299,79 +1451,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })();
 </script>
 
-<script>
-(function(){
-  function setupGeneToTopPanelAvoidance(){
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
-
-    if (!panel) return;
-    if (panel.dataset.toTopAvoidanceReady === "true") return;
-    panel.dataset.toTopAvoidanceReady = "true";
-
-    function getToTopBtn(){
-      return document.getElementById("to-top-btn");
-    }
-
-    function updateToTopPosition(){
-      const btn = getToTopBtn();
-      if (!btn) return;
-
-      if (window.innerWidth > 768) {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-        return;
-      }
-
-      if (panel.classList.contains("open")) {
-        const rect = panel.getBoundingClientRect();
-        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
-        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
-        btn.style.setProperty("z-index", "9999", "important");
-      } else {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-      }
-    }
-
-    const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-
-    [toggle, close, backdrop].forEach(function(el){
-      if (!el) return;
-      el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    window.addEventListener("resize", updateToTopPosition, { passive:true });
-    window.addEventListener("scroll", updateToTopPosition, { passive:true });
-
-    setTimeout(updateToTopPosition, 300);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
-  } else {
-    setupGeneToTopPanelAvoidance();
-  }
-
-  window.addEventListener("load", function(){
-    setTimeout(setupGeneToTopPanelAvoidance, 500);
-  });
-})();
-</script>
 
 
 
