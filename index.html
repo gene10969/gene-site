@@ -156,6 +156,186 @@ if (
   display:block;
   border:1px solid rgba(217,193,126,.24);
 }
+.top-photo-wrap{
+  min-width:0;
+}
+.gene-hero-slideshow{
+  position:relative;
+  width:100%;
+}
+.gene-hero-stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  border:1px solid rgba(217,193,126,.24);
+  border-radius:18px;
+  background:#0b0b0b;
+  box-shadow:0 14px 34px rgba(0,0,0,.24);
+  touch-action:pan-y;
+}
+.gene-hero-slide{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  display:block;
+  margin:0;
+  color:#fff;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity 1.25s ease, visibility 1.25s ease;
+}
+.gene-hero-slide.is-active{
+  z-index:2;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.gene-hero-slide > .top-main-photo{
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:0;
+  object-fit:cover;
+}
+.gene-hero-slide--profile > .top-main-photo{
+  object-position:center;
+}
+.gene-hero-slide--room > .top-main-photo{
+  object-position:center;
+}
+.gene-hero-slide--building > .top-main-photo{
+  object-position:center 48%;
+}
+.gene-hero-caption{
+  position:absolute;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:34px 18px 15px;
+  background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.78) 72%);
+  color:#f8f1dc;
+  font-size:.92rem;
+  line-height:1.55;
+  letter-spacing:.05em;
+  text-shadow:0 1px 8px rgba(0,0,0,.9);
+}
+.gene-hero-caption small{
+  color:rgba(255,255,255,.78);
+  font-size:.72rem;
+  letter-spacing:.02em;
+}
+.gene-hero-case-grid{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  width:100%;
+  height:100%;
+}
+.gene-hero-case-item{
+  position:relative;
+  min-height:0;
+  overflow:hidden;
+}
+.gene-hero-case-item:first-child{
+  border-bottom:1px solid rgba(217,193,126,.72);
+}
+.gene-hero-case-item img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 55%;
+}
+.gene-hero-case-label{
+  position:absolute;
+  top:10px;
+  left:10px;
+  z-index:2;
+  padding:5px 10px;
+  border:1px solid rgba(217,193,126,.56);
+  border-radius:999px;
+  background:rgba(9,9,9,.78);
+  color:#f4e7bd;
+  font-size:.72rem;
+  line-height:1.3;
+  letter-spacing:.06em;
+}
+.gene-hero-slide--case .gene-hero-caption{
+  padding-top:38px;
+}
+.gene-hero-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:44px;
+  margin-top:10px;
+}
+.gene-hero-arrow,
+.gene-hero-dot{
+  appearance:none;
+  -webkit-appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  padding:0;
+  border:1px solid rgba(217,193,126,.34);
+  background:rgba(12,12,12,.76);
+  color:#e6d39a;
+  cursor:pointer;
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.gene-hero-arrow{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:1.25rem;
+  line-height:1;
+}
+.gene-hero-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.gene-hero-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+.gene-hero-dot[aria-pressed="true"]{
+  background:#d9c17e;
+  border-color:#eadb9e;
+  box-shadow:0 0 0 3px rgba(217,193,126,.12);
+}
+.gene-hero-arrow:hover,
+.gene-hero-arrow:focus-visible,
+.gene-hero-dot:hover,
+.gene-hero-dot:focus-visible{
+  background:rgba(217,193,126,.2);
+  border-color:rgba(234,216,147,.78);
+  outline:none;
+}
+.gene-hero-arrow:active{
+  transform:scale(.94);
+}
+.gene-hero-sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
+}
 .top-copy h2{
   font-size:clamp(1.7rem, 3vw, 2.4rem);
   line-height:1.45;
@@ -443,6 +623,17 @@ if (
   .top-main-photo{
     border-radius:14px;
   }
+  .gene-hero-stage{
+    border-radius:14px;
+  }
+  .gene-hero-caption{
+    padding:30px 14px 12px;
+    font-size:.84rem;
+  }
+  .gene-hero-arrow{
+    width:40px;
+    height:40px;
+  }
   .top-lead{
     line-height:1.95;
   }
@@ -452,6 +643,14 @@ if (
   #index-cards .info-card,
   #index-cards .menu-cta-card{
     padding:20px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gene-hero-slide,
+  .gene-hero-arrow,
+  .gene-hero-dot{
+    transition:none !important;
   }
 }
 
@@ -3301,7 +3500,51 @@ if (
 <section class="top-hero-card">
   <div class="top-hero-inner">
     <div class="top-photo-wrap">
-      <img src="assets/img/gene-profile.webp?v=20260708" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo" width="800" height="800" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.alt='大阪 自律神経専門整体院 gene カウンセリング風景'; this.src='assets/img/gene-counseling.webp?v=20260708';">
+      <!-- 写真を交換する場合は、以下4スライド内の src と alt だけを変更してください。 -->
+      <div class="gene-hero-slideshow" data-gene-hero-slideshow role="region" aria-roledescription="カルーセル" aria-label="院長・院内・アクセス・改善例の写真">
+        <div class="gene-hero-stage" id="gene-hero-stage">
+          <figure class="gene-hero-slide gene-hero-slide--profile is-active" data-gene-hero-slide data-slide-id="director" data-slide-label="院長 高田裕基" aria-hidden="false">
+            <img src="assets/img/gene-profile.webp?v=20260708" alt="大阪 自律神経専門整体院 gene 院長 高田裕基" class="top-main-photo" width="800" height="800" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.alt='大阪 自律神経専門整体院 gene カウンセリング風景'; this.src='assets/img/gene-counseling.webp?v=20260708';">
+            <figcaption class="gene-hero-caption">院長　高田 裕基</figcaption>
+          </figure>
+
+          <figure class="gene-hero-slide gene-hero-slide--room" data-gene-hero-slide data-slide-id="interior" data-slide-label="落ち着いて相談できる院内" aria-hidden="true">
+            <img src="assets/img/gene-room.webp" alt="大阪 自律神経専門整体院 gene の明るく落ち着いた院内" class="top-main-photo" width="1200" height="800" loading="lazy" decoding="async">
+            <figcaption class="gene-hero-caption">落ち着いて相談できる院内</figcaption>
+          </figure>
+
+          <figure class="gene-hero-slide gene-hero-slide--building" data-gene-hero-slide data-slide-id="exterior" data-slide-label="ラインビルド南船場の外観" aria-hidden="true">
+            <img src="assets/img/gene-building.webp" alt="大阪 自律神経専門整体院 gene が入るラインビルド南船場の外観" class="top-main-photo" width="1200" height="801" loading="lazy" decoding="async">
+            <figcaption class="gene-hero-caption">ラインビルド南船場 703</figcaption>
+          </figure>
+
+          <a class="gene-hero-slide gene-hero-slide--case" data-gene-hero-slide data-slide-id="case1" data-slide-label="case1 初回から6か月目の経過" href="case1.html" aria-label="case1 全身にアトピー症状が出ていた方の改善例を見る" aria-hidden="true" tabindex="-1">
+            <span class="gene-hero-case-grid" aria-hidden="true">
+              <span class="gene-hero-case-item">
+                <img src="cases/case1/osaka_seitai_atopy_case1_neck_before.webp" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                <span class="gene-hero-case-label">初回</span>
+              </span>
+              <span class="gene-hero-case-item">
+                <img src="cases/case1/osaka_seitai_atopy_case1_neck_6months.webp" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                <span class="gene-hero-case-label">6か月目</span>
+              </span>
+            </span>
+            <span class="gene-hero-caption">case1　首まわりの経過<small>写真は経過の一例です。得られる結果には個人差があります。</small></span>
+          </a>
+        </div>
+
+        <div class="gene-hero-controls" aria-label="写真の切り替え">
+          <button type="button" class="gene-hero-arrow gene-hero-prev" aria-label="前の写真" aria-controls="gene-hero-stage">‹</button>
+          <div class="gene-hero-dots">
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="0" aria-label="1枚目：院長" aria-pressed="true"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="1" aria-label="2枚目：院内" aria-pressed="false"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="2" aria-label="3枚目：外観" aria-pressed="false"></button>
+            <button type="button" class="gene-hero-dot" data-gene-hero-dot="3" aria-label="4枚目：case1の経過" aria-pressed="false"></button>
+          </div>
+          <button type="button" class="gene-hero-arrow gene-hero-next" aria-label="次の写真" aria-controls="gene-hero-stage">›</button>
+        </div>
+        <span class="gene-hero-sr-only" data-gene-hero-status aria-live="polite">1枚目：院長 高田裕基</span>
+      </div>
     </div>
     <div class="top-copy">
       <div class="top-name-wrap">
@@ -4217,6 +4460,9 @@ window.addEventListener("load", () => {
   const revealPage = () => {
     if (heroLogo) heroLogo.classList.add("show");
     if (topHeroCard) topHeroCard.classList.add("show");
+    if (typeof window.geneStartHeroSlideshow === "function") {
+      window.geneStartHeroSlideshow();
+    }
     if (indexCards) {
       indexCards.querySelectorAll(".info-card").forEach(card => {
         card.classList.add("show");
@@ -4299,6 +4545,180 @@ window.addEventListener("load", () => {
   });
 
 });
+</script>
+
+
+<script>
+(function(){
+  function setupGeneHeroSlideshow(){
+    const root = document.querySelector("[data-gene-hero-slideshow]");
+    if (!root || root.dataset.heroReady === "true") return;
+
+    const stage = root.querySelector(".gene-hero-stage");
+    const slides = Array.from(root.querySelectorAll("[data-gene-hero-slide]"));
+    const dots = Array.from(root.querySelectorAll("[data-gene-hero-dot]"));
+    const prev = root.querySelector(".gene-hero-prev");
+    const next = root.querySelector(".gene-hero-next");
+    const status = root.querySelector("[data-gene-hero-status]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!stage || slides.length < 2) return;
+
+    root.dataset.heroReady = "true";
+    let activeIndex = 0;
+    let autoStepCount = 0;
+    let autoTimer = null;
+    let hasStarted = false;
+    let manualControlUsed = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    function stopAuto(){
+      if (autoTimer) {
+        window.clearTimeout(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    function trackManualChange(method){
+      const slide = slides[activeIndex];
+      if (typeof window.gtag !== "function" || !slide) return;
+
+      window.gtag("event", "index_hero_slide_change", {
+        slide_id: slide.dataset.slideId || String(activeIndex + 1),
+        slide_label: slide.dataset.slideLabel || "",
+        slide_position: activeIndex + 1,
+        change_method: method,
+        source_page: location.pathname.split("/").pop() || "index.html"
+      });
+    }
+
+    function showSlide(index, method){
+      const nextIndex = (index + slides.length) % slides.length;
+      activeIndex = nextIndex;
+
+      slides.forEach(function(slide, slideIndex){
+        const isActive = slideIndex === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+        if (slide.matches("a")) {
+          slide.setAttribute("tabindex", isActive ? "0" : "-1");
+        }
+      });
+
+      dots.forEach(function(dot, dotIndex){
+        dot.setAttribute("aria-pressed", dotIndex === activeIndex ? "true" : "false");
+      });
+
+      if (status) {
+        const label = slides[activeIndex].dataset.slideLabel || "写真";
+        status.textContent = (activeIndex + 1) + "枚目：" + label;
+      }
+
+      if (method && method !== "auto") {
+        manualControlUsed = true;
+        stopAuto();
+        trackManualChange(method);
+      }
+    }
+
+    function scheduleNext(){
+      stopAuto();
+      if (reducedMotion || manualControlUsed || autoStepCount >= slides.length) return;
+
+      autoTimer = window.setTimeout(function(){
+        showSlide(activeIndex + 1, "auto");
+        autoStepCount += 1;
+        scheduleNext();
+      }, 7000);
+    }
+
+    function start(){
+      if (hasStarted) return;
+      hasStarted = true;
+      showSlide(0);
+      scheduleNext();
+    }
+
+    window.geneStartHeroSlideshow = start;
+
+    if (prev) {
+      prev.addEventListener("click", function(){
+        showSlide(activeIndex - 1, "previous_button");
+      });
+    }
+
+    if (next) {
+      next.addEventListener("click", function(){
+        showSlide(activeIndex + 1, "next_button");
+      });
+    }
+
+    dots.forEach(function(dot){
+      dot.addEventListener("click", function(){
+        showSlide(Number(dot.dataset.geneHeroDot || 0), "dot");
+      });
+    });
+
+    root.addEventListener("keydown", function(event){
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(activeIndex - 1, "keyboard");
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(activeIndex + 1, "keyboard");
+      }
+    });
+
+    stage.addEventListener("touchstart", function(event){
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive:true });
+
+    stage.addEventListener("touchend", function(event){
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+
+      const deltaX = touch.clientX - touchStartX;
+      const deltaY = touch.clientY - touchStartY;
+      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+      showSlide(activeIndex + (deltaX < 0 ? 1 : -1), "swipe");
+    }, { passive:true });
+
+    const caseLink = root.querySelector(".gene-hero-slide--case");
+    if (caseLink) {
+      caseLink.addEventListener("click", function(){
+        if (typeof window.gtag !== "function") return;
+        window.gtag("event", "index_hero_case_click", {
+          case_id: "case1",
+          source_page: location.pathname.split("/").pop() || "index.html",
+          destination_page: "case1.html"
+        });
+      });
+    }
+
+    document.addEventListener("visibilitychange", function(){
+      if (document.hidden) {
+        stopAuto();
+      } else if (hasStarted) {
+        scheduleNext();
+      }
+    });
+
+    const topHeroCard = document.querySelector(".top-hero-card");
+    if (topHeroCard && topHeroCard.classList.contains("show")) start();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupGeneHeroSlideshow);
+  } else {
+    setupGeneHeroSlideshow();
+  }
+})();
 </script>
 
 
