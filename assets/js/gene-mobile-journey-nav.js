@@ -83,7 +83,7 @@
       '<a href="check.html?from='+encodeURIComponent(sourcePage)+'">15問の簡易チェック<span>›</span></a>'+
       '<a href="voice.html">院内・改善写真<span>›</span></a>'+
       '<a href="faq.html">よくある質問<span>›</span></a>'+
-      '<a href="access.html">アクセス<span>›</span></a></div>'
+      '<a href="access.html">アクセス・営業時間<span>›</span></a></div>'
   };
 
   let lastTrigger=null;

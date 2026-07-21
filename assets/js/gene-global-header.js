@@ -44,6 +44,65 @@
     },true);
   }
 
+  function isAccessLink(link){
+    if(!(link instanceof HTMLAnchorElement)) return false;
+    const rawHref=link.getAttribute("href") || "";
+    try{
+      const destination=new URL(rawHref,document.baseURI);
+      return /(?:^|\/)access\.html$/.test(destination.pathname);
+    }catch(error){
+      return false;
+    }
+  }
+
+  function replaceAccessLabel(element){
+    if(!(element instanceof Element)) return;
+    const label=String(element.textContent || "").replace(/\s+/g," ").trim();
+
+    if(label === "アクセス"){
+      element.textContent="アクセス・営業時間";
+    }else if(label === "アクセスページを見る"){
+      element.textContent="アクセス・営業時間を見る";
+    }
+  }
+
+  function normalizeAccessLink(link){
+    if(!isAccessLink(link)) return;
+
+    replaceAccessLabel(link);
+    link.querySelectorAll(".nav-text, small, span").forEach(function(labelElement){
+      replaceAccessLabel(labelElement);
+    });
+
+    const ariaLabel=link.getAttribute("aria-label");
+    if(ariaLabel === "アクセス"){
+      link.setAttribute("aria-label","アクセス・営業時間");
+    }
+  }
+
+  function normalizeAccessLinks(root){
+    if(root instanceof HTMLAnchorElement) normalizeAccessLink(root);
+    if(!(root instanceof Element || root instanceof Document)) return;
+    root.querySelectorAll('a[href]').forEach(normalizeAccessLink);
+  }
+
+  function observeAccessLinks(){
+    normalizeAccessLinks(document);
+
+    const observer=new MutationObserver(function(records){
+      records.forEach(function(record){
+        record.addedNodes.forEach(function(node){
+          if(node instanceof Element) normalizeAccessLinks(node);
+        });
+      });
+    });
+
+    observer.observe(document.body,{
+      childList:true,
+      subtree:true
+    });
+  }
+
   function createHeader(){
     if(document.querySelector(".gene-global-header")) return;
 
@@ -59,7 +118,7 @@
         '<a href="menu.html" data-gene-page="menu">施術内容・料金</a>'+
         '<a href="'+CHECK_URL+'" class="gene-global-header__check" data-gene-page="check">15問チェック</a>'+
         '<a href="voice.html" data-gene-page="voice">院内・改善写真</a>'+
-        '<a href="access.html" data-gene-page="access">アクセス</a>'+
+        '<a href="access.html" data-gene-page="access">アクセス・営業時間</a>'+
         '<a href="'+LINE_URL+'" class="gene-global-header__line" target="_blank" rel="noopener">空き状況</a>'+
       '</nav>';
 
@@ -109,6 +168,7 @@
   function init(){
     setupCheckLinks();
     createHeader();
+    observeAccessLinks();
   }
 
   if(document.readyState === "loading"){
