@@ -405,6 +405,8 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 <link rel="stylesheet" href="assets/css/gene-text-control.css">
 <link rel="stylesheet" href="assets/css/gene-content-accordion.css">
 <script src="assets/js/gene-content-accordion.js" defer></script>
+<link rel="stylesheet" href="assets/css/gene-global-header.css?v=20260722-4">
+  <link rel="stylesheet" href="assets/css/gene-mobile-journey-nav.css?v=20260722-2">
 </head>
 <body class="subpage symptom-page anxiety-disorder-page">
 <div id="global-logo-bg"><img src="assets/img/logo.svg" alt=""></div>
@@ -442,7 +444,6 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
 </div>
 
 <section class="gene-check-invite dizziness-fade" aria-labelledby="gene-check-invite-title">
-  <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
   <h2 id="gene-check-invite-title">現在の状態を確認したい方へ</h2>
   <p>現在の不調が、<br>
 睡眠・ストレス・胃腸・呼吸など、<br>
@@ -562,66 +563,6 @@ body.symptom-page .menu-card{background:rgba(255,255,255,.055);}
     <p style="text-align:center; margin-top:18px;"><a href="https://lin.ee/6bBKc67" class="map-open-btn gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a></p>
   </div>
 </div>
-<div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
-<div class="gene-mobile-symptom-panel" id="gene-mobile-symptom-panel" aria-hidden="true">
-  <div class="gene-mobile-symptom-panel-title"><span>症状から探す</span><button type="button" class="gene-mobile-symptom-close" id="gene-mobile-symptom-close" aria-label="症状一覧を閉じる">×</button></div>
-  <div class="gene-mobile-symptom-grid">
-    <div class="gene-mobile-symptom-group">
-      <p class="gene-mobile-symptom-group-title">よく見られる不調</p>
-      <div class="gene-mobile-symptom-list">
-        <a href="dizziness.html">めまい</a>
-        <a href="insomnia.html">不眠</a>
-        <a href="headache.html">頭痛</a>
-        <a href="palpitations.html">動悸</a>
-        <a href="fatigue.html">慢性疲労</a>
-        <a href="panic.html">パニック症状</a>
-        <a href="anxiety-disorder.html">不安障害</a>
-        <a href="nausea.html">吐き気</a>
-      </div>
-    </div>
-
-    <div class="gene-mobile-symptom-group">
-      <p class="gene-mobile-symptom-group-title">自律神経に関わる不調</p>
-      <div class="gene-mobile-symptom-list">
-        <a href="autonomic.html">自律神経失調症</a>
-        <a href="orthostatic-dysregulation.html">起立性調節障害</a>
-        <a href="shortness-of-breath.html">息苦しさ</a>
-        <a href="throat-discomfort.html">喉の違和感</a>
-        <a href="pms.html">PMS</a>
-        <a href="coldness.html">冷え性</a>
-      </div>
-    </div>
-
-    <div class="gene-mobile-symptom-group">
-      <p class="gene-mobile-symptom-group-title">胃腸・皮膚・その他</p>
-      <div class="gene-mobile-symptom-list">
-        <a href="ibs.html">過敏性腸症候群</a>
-        <a href="chronic-constipation.html">慢性便秘</a>
-        <a href="stomach-discomfort.html">胃の不快感</a>
-        <a href="atopic.html">アトピー</a>
-        <a href="tinnitus.html">耳鳴り</a>
-      </div>
-    </div>
-
-    <div class="gene-mobile-symptom-group">
-      <p class="gene-mobile-symptom-group-title">痛み・身体の不調</p>
-      <div class="gene-mobile-symptom-list">
-        <a href="tmj.html">顎関節症</a>
-        <a href="tenosynovitis.html">腱鞘炎</a>
-        <a href="plantar-fasciitis.html">足底筋膜炎</a>
-      </div>
-    </div>
-  </div>
-  <div class="gene-mobile-extra-links"><a href="voice.html">院内・改善写真</a><a href="faq.html">よくある質問</a>
-</div>
-</div>
-<nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
-  <a href="/"><span class="nav-icon">⌂</span><span class="nav-text">ホーム</span></a>
-  <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel"><span class="nav-icon">＋</span><span class="nav-text">症状</span></button>
-  <a href="menu.html"><span class="nav-icon">◇</span><span class="nav-text">施術料金</span></a>
-  <a href="access.html"><span class="nav-icon">⌖</span><span class="nav-text">アクセス</span></a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener"><span class="nav-icon">↗</span><span class="nav-text">空き状況</span></a>
-</nav>
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
@@ -662,47 +603,13 @@ window.addEventListener("load", () => {
   toTopBtn.addEventListener("click", () => {window.scrollTo({ top: 0, behavior: "smooth" });});
 });
 </script>
-<script>
-(function(){
-  function setupGeneMobileBottomNav(){
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
-    if (!toggle || !panel || !backdrop) return;
-    function openPanel(){panel.classList.add("open");backdrop.classList.add("open");panel.setAttribute("aria-hidden", "false");toggle.setAttribute("aria-expanded", "true");if (typeof gtag === "function") {gtag("event", "mobile_symptom_menu_open", {event_category: "navigation",event_label: "bottom_nav_symptom"});}}
-    function closePanel(){panel.classList.remove("open");backdrop.classList.remove("open");panel.setAttribute("aria-hidden", "true");toggle.setAttribute("aria-expanded", "false");}
-    toggle.addEventListener("click", function(){if (panel.classList.contains("open")) {closePanel();} else {openPanel();}});
-    if (close) close.addEventListener("click", closePanel);
-    backdrop.addEventListener("click", closePanel);
-    panel.querySelectorAll("a").forEach(function(link){link.addEventListener("click", function(){if (typeof gtag === "function") {gtag("event", "symptom_link_click", {event_category: "navigation",event_label: link.getAttribute("href") || link.textContent.trim()});}closePanel();});});
-    document.querySelectorAll(".gene-mobile-bottom-nav a").forEach(function(link){link.addEventListener("click", function(){if (typeof gtag === "function") {gtag("event", "bottom_nav_click", {event_category: "navigation",event_label: link.getAttribute("href") || link.textContent.trim()});}});});
-  }
-  if (document.readyState === "loading") {document.addEventListener("DOMContentLoaded", setupGeneMobileBottomNav);} else {setupGeneMobileBottomNav();}
-})();
-</script>
-<script>
-(function(){
-  function setupGeneToTopPanelAvoidance(){
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
-    if (!panel) return; if (panel.dataset.toTopAvoidanceReady === "true") return; panel.dataset.toTopAvoidanceReady = "true";
-    function getToTopBtn(){return document.getElementById("to-top-btn");}
-    function updateToTopPosition(){const btn = getToTopBtn(); if (!btn) return; if (window.innerWidth > 768) {btn.style.removeProperty("bottom");btn.style.removeProperty("z-index");return;} if (panel.classList.contains("open")) {const rect = panel.getBoundingClientRect(); const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12)); btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important"); btn.style.setProperty("z-index", "9999", "important");} else {btn.style.removeProperty("bottom");btn.style.removeProperty("z-index");}}
-    const observer = new MutationObserver(updateToTopPosition); observer.observe(panel, {attributes: true,attributeFilter: ["class"]});
-    [toggle, close, backdrop].forEach(function(el){if (!el) return; el.addEventListener("click", function(){setTimeout(updateToTopPosition, 30);});});
-    panel.querySelectorAll("a").forEach(function(link){link.addEventListener("click", function(){setTimeout(updateToTopPosition, 30);});});
-    window.addEventListener("resize", updateToTopPosition, { passive:true }); window.addEventListener("scroll", updateToTopPosition, { passive:true }); setTimeout(updateToTopPosition, 300);
-  }
-  if (document.readyState === "loading") {document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);} else {setupGeneToTopPanelAvoidance();}
-  window.addEventListener("load", function(){setTimeout(setupGeneToTopPanelAvoidance, 500);});
-})();
-</script>
+
+
 
 
 <script src="assets/js/line-click-tracking.js"></script>
 
+<script src="assets/js/gene-global-header.js?v=20260722-4"></script>
+  <script src="assets/js/gene-mobile-journey-nav.js?v=20260722-3"></script>
 </body>
 </html>

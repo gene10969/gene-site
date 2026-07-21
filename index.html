@@ -122,6 +122,8 @@ if (
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/css/gene-first-view.css">
 <link rel="stylesheet" href="assets/css/gene-quick-check.css">
+<link rel="stylesheet" href="assets/css/gene-mobile-journey-nav.css?v=20260722-2">
+<link rel="stylesheet" href="assets/css/gene-global-header.css?v=20260722-4">
 
 <style>
 .top-hero-card{
@@ -3999,7 +4001,6 @@ geneでは、不調が出てから整えるだけでなく、<br>
   </details>
 
 <section class="gene-check-invite info-card card-hidden" aria-labelledby="gene-check-invite-after-policy-title">
-  <p class="gene-check-invite__eyebrow">CONDITION CHECK</p>
   <h2 id="gene-check-invite-after-policy-title">現在の状態を確認したい方へ</h2>
   <p>
 現在の不調が、睡眠・ストレス・胃腸・呼吸など、
@@ -4109,7 +4110,7 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
     </div>
   </details>
 
-  <details class="info-card card-hidden gene-index-accordion" aria-labelledby="top-first-visit-title" data-accordion-id="first_visit">
+  <details class="info-card card-hidden gene-index-accordion" id="gene-first-time" aria-labelledby="top-first-visit-title" data-accordion-id="first_visit">
     <summary><h3 id="top-first-visit-title">初めての方へ</h3></summary>
     <div class="card-split no-image">
       <div class="card-content">
@@ -4220,22 +4221,22 @@ geneでは、身体の状態・生活習慣・食事内容なども確認しな�
         </p>
         <div class="gene-cvr-flow-grid" aria-label="ご予約から施術までの流れ">
           <div class="gene-cvr-flow-card">
-            <span class="gene-cvr-step">STEP 1</span>
+            <span class="gene-cvr-step">手順 1</span>
             <strong>LINEから相談・予約</strong>
             <p>症状やご希望日時をLINEでお送りください。</p>
           </div>
           <div class="gene-cvr-flow-card">
-            <span class="gene-cvr-step">STEP 2</span>
+            <span class="gene-cvr-step">手順 2</span>
             <strong>空き状況の確認</strong>
             <p>ご希望に合わせて、来院日時をご案内します。</p>
           </div>
           <div class="gene-cvr-flow-card">
-            <span class="gene-cvr-step">STEP 3</span>
+            <span class="gene-cvr-step">手順 3</span>
             <strong>ご来院・カウンセリング</strong>
             <p>現在の不調、生活習慣、睡眠、ストレスなどを確認します。</p>
           </div>
           <div class="gene-cvr-flow-card">
-            <span class="gene-cvr-step">STEP 4</span>
+            <span class="gene-cvr-step">手順 4</span>
             <strong>状態に合わせた施術</strong>
             <p>呼吸・姿勢・緊張状態を見ながら、無理のない施術を行います。</p>
           </div>
@@ -4474,6 +4475,8 @@ window.addEventListener("load", () => {
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
     if (mobileBottomNav) mobileBottomNav.classList.add("show");
+    document.documentElement.classList.add("gene-index-page-revealed");
+    document.dispatchEvent(new CustomEvent("gene:index-page-revealed"));
   };
 
   if (reducedMotion || hasShownRing) {
@@ -4647,20 +4650,34 @@ window.addEventListener("load", () => {
 
     window.geneStartHeroSlideshow = start;
 
-    if (prev) {
-      prev.addEventListener("click", function(){
-        showSlide(activeIndex - 1, "previous_button");
+    function bindHeroControl(control, action){
+      if (!control) return;
+      let lastTouchPointerAt = 0;
+
+      control.addEventListener("pointerup", function(event){
+        if (event.pointerType !== "touch" && event.pointerType !== "pen") return;
+        event.preventDefault();
+        lastTouchPointerAt = Date.now();
+        action();
+      });
+
+      control.addEventListener("click", function(event){
+        if (Date.now() - lastTouchPointerAt < 700) return;
+        event.preventDefault();
+        action();
       });
     }
 
-    if (next) {
-      next.addEventListener("click", function(){
-        showSlide(activeIndex + 1, "next_button");
-      });
-    }
+    bindHeroControl(prev, function(){
+      showSlide(activeIndex - 1, "previous_button");
+    });
+
+    bindHeroControl(next, function(){
+      showSlide(activeIndex + 1, "next_button");
+    });
 
     dots.forEach(function(dot){
-      dot.addEventListener("click", function(){
+      bindHeroControl(dot, function(){
         showSlide(Number(dot.dataset.geneHeroDot || 0), "dot");
       });
     });
@@ -5012,6 +5029,8 @@ window.addEventListener("load", () => {
 })();
 </script>
 
+<script src="assets/js/gene-global-header.js?v=20260722-4"></script>
+<script src="assets/js/gene-mobile-journey-nav.js?v=20260722-3"></script>
 <script src="assets/js/line-click-tracking.js"></script>
 
 </body>
