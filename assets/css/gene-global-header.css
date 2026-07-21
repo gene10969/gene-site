@@ -1,0 +1,203 @@
+:root{
+  --gene-global-header-height:72px;
+  --gene-global-header-gold:#d9c17e;
+  --gene-global-header-text:#f3eee4;
+}
+
+.gene-global-header{
+  display:none;
+}
+
+@media (min-width:769px){
+  html{
+    scroll-padding-top:calc(var(--gene-global-header-height) + 18px);
+  }
+
+  body{
+    padding-top:var(--gene-global-header-height) !important;
+  }
+
+  .gene-global-header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:12000;
+    height:var(--gene-global-header-height);
+    padding:0 clamp(12px,2vw,32px);
+    display:flex;
+    align-items:center;
+    gap:clamp(12px,1.8vw,30px);
+    border-bottom:1px solid rgba(217,193,126,.28);
+    background:rgba(4,4,4,.94);
+    box-shadow:0 12px 34px rgba(0,0,0,.34);
+    -webkit-backdrop-filter:blur(16px);
+    backdrop-filter:blur(16px);
+    box-sizing:border-box;
+    opacity:0;
+    transform:translateY(-10px);
+    transition:opacity .45s ease,transform .45s ease;
+  }
+
+  .gene-global-header.is-ready{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .gene-global-header__brand{
+    min-width:clamp(170px,17vw,220px);
+    flex:0 0 auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    color:var(--gene-global-header-gold);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  .gene-global-header__clinic-name{
+    color:var(--gene-global-header-gold);
+    font-size:clamp(.72rem,.86vw,.88rem);
+    font-weight:500;
+    line-height:1;
+    letter-spacing:.045em;
+  }
+
+  .gene-global-header__nav{
+    min-width:0;
+    flex:1 1 auto;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:clamp(5px,1.15vw,18px);
+    overflow:visible;
+  }
+
+  .gene-global-header__nav a{
+    position:relative;
+    min-height:42px;
+    padding:0 2px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(243,238,228,.82);
+    flex:0 0 auto;
+    font-size:clamp(.64rem,.8vw,.82rem);
+    font-weight:500;
+    line-height:1.25;
+    letter-spacing:.045em;
+    text-decoration:none;
+    text-align:center;
+    white-space:nowrap;
+    transition:color .24s ease;
+  }
+
+  .gene-global-header__nav a::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:3px;
+    left:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gene-global-header-gold),transparent);
+    opacity:0;
+    transform:scaleX(.45);
+    transition:opacity .24s ease,transform .24s ease;
+  }
+
+  .gene-global-header__nav a:hover,
+  .gene-global-header__nav a:focus-visible,
+  .gene-global-header__nav a[aria-current="page"]{
+    color:var(--gene-global-header-gold);
+  }
+
+  .gene-global-header__nav a:hover::after,
+  .gene-global-header__nav a:focus-visible::after,
+  .gene-global-header__nav a[aria-current="page"]::after{
+    opacity:1;
+    transform:scaleX(1);
+  }
+
+  .gene-global-header__nav .gene-global-header__line,
+  .gene-global-header__nav .gene-global-header__line:visited{
+    min-height:40px;
+    padding:0 clamp(12px,1.4vw,20px);
+    border:1px solid rgba(255,238,170,.88);
+    border-radius:999px;
+    color:#111;
+    background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%);
+    box-shadow:0 8px 22px rgba(217,193,126,.2);
+    font-weight:700;
+  }
+
+  .gene-global-header__nav .gene-global-header__check{
+    color:var(--gene-global-header-gold);
+    font-weight:600;
+  }
+
+  .gene-global-header__nav .gene-global-header__line::after{
+    display:none;
+  }
+
+  .gene-global-header__nav .gene-global-header__line:hover,
+  .gene-global-header__nav .gene-global-header__line:focus-visible{
+    color:#111;
+    background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%);
+  }
+
+  .gene-pc-side-nav,
+  .breadcrumb,
+  .breadcrumb-fixed,
+  .reserve-btn-sub,
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
+@media (min-width:769px) and (max-width:1050px){
+  :root{
+    --gene-global-header-height:94px;
+  }
+
+  .gene-global-header{
+    padding:7px 10px 6px;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    gap:3px;
+  }
+
+  .gene-global-header__brand{
+    min-width:0;
+    align-items:center;
+  }
+
+  .gene-global-header__clinic-name{
+    font-size:.67rem;
+    letter-spacing:.045em;
+  }
+
+  .gene-global-header__nav{
+    width:100%;
+    justify-content:space-between;
+    gap:4px;
+  }
+
+  .gene-global-header__nav a{
+    min-height:34px;
+    font-size:.61rem;
+    letter-spacing:0;
+  }
+
+  .gene-global-header__nav .gene-global-header__line{
+    padding-right:10px;
+    padding-left:10px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gene-global-header{
+    transition:none !important;
+  }
+}

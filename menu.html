@@ -3,22 +3,33 @@
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT"></script>
 <script>
+if (
+  location.hostname !== "localhost" &&
+  location.hostname !== "127.0.0.1"
+) {
+  const script = document.createElement("script");
+  script.async = true;
+  script.src =
+    "https://www.googletagmanager.com/gtag/js?id=G-8KPJ55NQMT";
+  document.head.appendChild(script);
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8KPJ55NQMT');
+}
 </script>
   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>施術内容｜gene自律神経調整整体｜大阪 自律神経専門整体院 gene</title>
+
+<link rel="canonical" href="https://gene-seitai.com/menu.html">
+<title>施術内容・料金｜大阪・心斎橋の自律神経専門整体院 gene</title>
 <meta name="description" content="大阪 自律神経専門整体院 geneの施術内容。gene自律神経調整整体では、一人ひとりの状態に合わせて身体全体のバランスから整えていきます。">
 
-<meta property="og:title" content="gene自律神経調整整体｜大阪 自律神経専門整体院 gene">
+<meta property="og:title" content="施術内容・料金｜大阪・心斎橋の自律神経専門整体院 gene">
 <meta property="og:description" content="一人ひとりの状態に合わせて調整するオーダーメイド整体。自律神経の乱れによる不調に対応しています。">
 <meta property="og:url" content="https://gene-seitai.com/menu.html">
 <meta property="og:type" content="website">
@@ -36,7 +47,7 @@
   },{
     "@type": "ListItem",
     "position": 2,
-    "name": "施術内容",
+    "name": "施術内容・料金",
     "item": "https://gene-seitai.com/menu.html"
   }]
 }
@@ -78,6 +89,31 @@
 .menu-price-title{color:#d9c17e;font-size:1rem;letter-spacing:.08em;margin-bottom:10px;}
 .menu-price-main{font-size:clamp(1.45rem,3vw,1.95rem);color:#f4ead0;line-height:1.45;margin:0 0 8px;}
 .menu-price-sub{color:rgba(255,255,255,.78);line-height:1.9;white-space:pre-line;margin:0;}
+.menu-support-note{
+  margin:20px 0 0;
+  padding:14px 0 0;
+  border:0;
+  border-top:1px solid rgba(217,193,126,.20);
+  border-radius:0;
+  background:none;
+  color:rgba(255,255,255,.72);
+  font-size:clamp(.86rem,1.2vw,.94rem);
+  line-height:1.75;
+}
+.menu-support-note p{margin:0;}
+.menu-support-note-detail{
+  display:block;
+  margin-top:2px;
+  color:rgba(255,255,255,.60);
+}
+@media (max-width:640px){
+  .menu-support-note{
+    margin-top:18px;
+    padding-top:12px;
+    font-size:.82rem;
+    line-height:1.7;
+  }
+}
 
 .symptom-list a{
   display:block;
@@ -123,6 +159,75 @@
 
 
 /* gene mobile bottom navigation */
+
+.gene-pc-side-nav{
+  display:none;
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    position:fixed;
+    right:60px;
+    top:50%;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:18px;
+    transform:translateY(-50%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .75s ease;
+  }
+
+  .gene-pc-side-nav.show{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .gene-pc-side-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:22px;
+    padding:0 0 0 28px;
+    color:rgba(244,234,208,.82);
+    font-size:.9rem;
+    line-height:1;
+    letter-spacing:.08em;
+    text-decoration:none;
+    writing-mode:horizontal-tb;
+    transition:color .28s ease, transform .28s ease;
+  }
+
+  .gene-pc-side-nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    height:1px;
+    background:linear-gradient(90deg, rgba(217,193,126,0), rgba(217,193,126,.86));
+    transform:translateY(-50%);
+    transition:width .28s ease;
+  }
+
+  .gene-pc-side-nav a:hover{
+    color:#d9c17e;
+    transform:translateX(-3px);
+  }
+
+  .gene-pc-side-nav a:hover::before{
+    width:18px;
+  }
+
+  .hamburger-btn,
+  #hamburger-btn{
+    display:none !important;
+  }
+}
+
 .gene-mobile-bottom-nav,
 .gene-mobile-symptom-panel,
 .gene-mobile-symptom-backdrop{
@@ -576,30 +681,725 @@
 
 
 .gene-mobile-symptom-grid a:visited{
-    color:#111;
+    color:#d9c17e;
   }
 
+
+
+/* gene mobile symptom panel 19 links usability update */
+@media (max-width: 768px){
+  .gene-mobile-symptom-panel{
+    top:auto;
+    max-height:calc(100vh - 112px - env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding:15px 14px 14px;
+  }
+
+  .gene-mobile-symptom-panel-title{
+    position:sticky;
+    top:-15px;
+    z-index:2;
+    margin:-15px -14px 12px;
+    padding:14px 14px 10px;
+    background:rgba(8,8,8,.98);
+    border-bottom:1px solid rgba(217,193,126,.16);
+  }
+
+  .gene-mobile-symptom-grid{
+    display:block;
+  }
+
+  .gene-mobile-symptom-group{
+    margin:0 0 14px;
+  }
+
+  .gene-mobile-symptom-group:last-child{
+    margin-bottom:0;
+  }
+
+  .gene-mobile-symptom-group-title{
+    margin:0 0 8px;
+    color:rgba(217,193,126,.92);
+    font-size:.78rem;
+    letter-spacing:.08em;
+    line-height:1.4;
+  }
+
+  .gene-mobile-symptom-list{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .gene-mobile-symptom-list a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    min-height:42px;
+    padding:10px 11px;
+    border-radius:14px;
+    border:1px solid rgba(217,193,126,.38);
+    background:rgba(217,193,126,.10);
+    color:#d9c17e;
+    text-decoration:none;
+    font-size:.84rem;
+    line-height:1.35;
+    box-shadow:none;
+  }
+
+  .gene-mobile-symptom-list a::after{
+    content:"›";
+    color:#d9c17e;
+    font-size:1.05rem;
+    line-height:1;
+    opacity:.85;
+  }
+
+  .gene-mobile-symptom-grid > a{
+    display:none !important;
+  }
+
+  .gene-mobile-symptom-grid a::after{
+    color:inherit;
+  }
+
+  .gene-mobile-symptom-list a,
+  .gene-mobile-symptom-list a:visited{
+    color:#d9c17e !important;
+  }
+
+  .gene-mobile-symptom-list a::after{
+    color:#d9c17e !important;
+  }
+
+  .gene-mobile-extra-links a,
+  .gene-mobile-extra-links a:visited{
+    color:#d9c17e !important;
+  }
+
+  .gene-mobile-extra-links{
+    position:sticky;
+    bottom:-14px;
+    margin:14px -14px -14px;
+    padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(8,8,8,.98);
+    border-top:1px solid rgba(217,193,126,.16);
+  }
+}
+
+
+
+/* gene link button color unification */
+.top-symptom-links a,
+.menu-symptom-card,
+.gene-mobile-symptom-list a,
+.gene-mobile-symptom-list a:visited,
+.gene-mobile-extra-links a,
+.gene-mobile-extra-links a:visited,
+.gene-mobile-symptom-grid a,
+.gene-mobile-symptom-grid a:visited,
+.symptom-list div.has-link,
+.map-open-btn,
+.case-cta-btn,
+.voice-cta-btn{
+  background:rgba(20,20,20,.9) !important;
+  border:1px solid rgba(217,193,126,.56) !important;
+  color:#d9c17e !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
+}
+
+.top-symptom-links a::after,
+.menu-symptom-card::after,
+.gene-mobile-symptom-list a::after,
+.gene-mobile-extra-links a::after,
+.gene-mobile-symptom-grid a::after{
+  color:#d9c17e !important;
+}
+
+.symptom-list div.has-link a,
+.symptom-list div.has-link a:visited,
+.menu-symptom-card .menu-symptom-title,
+.menu-symptom-card .menu-symptom-text{
+  color:#d9c17e !important;
+}
+
+.menu-symptom-card .menu-symptom-text{
+  opacity:.86;
+}
+
+.top-symptom-links a:hover,
+.menu-symptom-card:hover,
+.gene-mobile-symptom-list a:hover,
+.gene-mobile-extra-links a:hover,
+.map-open-btn:hover,
+.case-cta-btn:hover,
+.voice-cta-btn:hover{
+  background:rgba(28,26,20,.96) !important;
+  border-color:rgba(234,216,147,.78) !important;
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(0,0,0,.28), 0 0 18px rgba(217,193,126,.10) !important;
+}
+
+/* LINE buttons stay visually strongest */
+.reserve-btn-sub,
+.reserve-btn-sub:visited,
+.gene-mobile-bottom-nav .line-nav,
+.gene-mobile-bottom-nav .line-nav:visited,
+.map-open-btn[href*="lin.ee"],
+.map-open-btn[href*="lin.ee"]:visited,
+.top-cta-link,
+.top-cta-link:visited,
+.menu-cta-link,
+.menu-cta-link:visited,
+.case-cta-btn[href*="lin.ee"],
+.case-cta-btn[href*="lin.ee"]:visited,
+.voice-cta-btn[href*="lin.ee"],
+.voice-cta-btn[href*="lin.ee"]:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.gene-mobile-bottom-nav .line-nav .nav-icon,
+.gene-mobile-bottom-nav .line-nav .nav-text,
+.reserve-btn-sub *,
+.map-open-btn[href*="lin.ee"] *,
+.top-cta-link *,
+.menu-cta-link *,
+.case-cta-btn[href*="lin.ee"] *,
+.voice-cta-btn[href*="lin.ee"] *{
+  color:#111 !important;
+}
+
+.map-open-btn[href*="lin.ee"]:hover,
+.top-cta-link:hover,
+.menu-cta-link:hover,
+.case-cta-btn[href*="lin.ee"]:hover,
+.voice-cta-btn[href*="lin.ee"]:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* gene lifestyle figure card - menu timing fixed */
+.gene-lifestyle-figure {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 24px 0 0;
+  padding: 34px 24px 38px;
+  box-sizing: border-box;
+  overflow: visible;
+  border-radius: 24px;
+  border: 1px solid rgba(217, 193, 126, 0.34);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(20, 18, 13, 0.97), rgba(5, 5, 5, 0.98));
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.42),
+    inset 0 0 30px rgba(217, 193, 126, 0.045);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "HGS明朝E", serif;
+}
+
+.gene-lifestyle-figure.card-hidden {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.gene-lifestyle-figure.card-hidden.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gene-lifestyle-figure,
+.gene-lifestyle-figure * {
+  box-sizing: border-box;
+}
+
+.gene-lifestyle-title {
+  margin: 0 0 16px;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.65;
+  letter-spacing: 0.1em;
+  text-align: center;
+  font-weight: 400;
+}
+
+.gene-lifestyle-title span {
+  color: #d9c17e;
+  display: inline;
+}
+
+.gene-lifestyle-lead {
+  max-width: 860px;
+  margin: 0 auto 34px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.98rem;
+  line-height: 2.05;
+  letter-spacing: 0.045em;
+  text-align: center;
+  white-space: normal !important;
+}
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+.gene-lifestyle-lead br {
+  display: block;
+}
+
+.gene-house-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 106px 28px 28px;
+  border-left: 1px solid rgba(217, 193, 126, 0.22);
+  border-right: 1px solid rgba(217, 193, 126, 0.22);
+  overflow: visible;
+}
+
+.gene-house-roof {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(94%, 800px);
+  height: 150px;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 74%, 96% 82%, 50% 20%, 4% 82%, 0% 74%);
+  background:
+    linear-gradient(135deg, rgba(255, 239, 170, 0.48), rgba(217, 193, 126, 0.12) 36%, rgba(8, 8, 8, 0.96) 64%);
+  border: 1px solid rgba(217, 193, 126, 0.58);
+  filter: drop-shadow(0 0 18px rgba(217, 193, 126, 0.16));
+}
+
+.gene-house-head {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.gene-house-head strong {
+  display: block;
+  color: #f4ead0;
+  font-size: clamp(1.45rem, 4vw, 2.05rem);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-house-head span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-treatment-bar {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 56px);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 18px 20px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.15), rgba(217, 193, 126, 0.045)),
+    rgba(8, 8, 8, 0.9);
+  text-align: center;
+}
+
+.gene-treatment-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.gene-treatment-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.gene-house-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 14px 0 16px;
+  color: #d9c17e;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.gene-habit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.gene-habit-card {
+  position: relative;
+  min-width: 0;
+  min-height: 214px;
+  padding: 22px 10px 18px;
+  border-radius: 16px 16px 8px 8px;
+  border: 1px solid rgba(217, 193, 126, 0.42);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(217, 193, 126, 0.09), transparent 42%),
+    linear-gradient(180deg, rgba(217, 193, 126, 0.09), rgba(255, 255, 255, 0.018)),
+    rgba(8, 8, 8, 0.78);
+  text-align: center;
+  overflow: visible;
+}
+
+.gene-habit-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  width: 1px;
+  height: 16px;
+  background: rgba(217, 193, 126, 0.34);
+  transform: translateX(-50%);
+}
+
+.gene-habit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 193, 126, 0.48);
+  color: #d9c17e;
+  background: rgba(217, 193, 126, 0.06);
+  box-shadow:
+    inset 0 0 14px rgba(217, 193, 126, 0.05),
+    0 0 18px rgba(217, 193, 126, 0.08);
+}
+
+.gene-habit-icon svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+}
+
+.gene-habit-card strong {
+  display: block;
+  width: 100%;
+  color: #f3e6bf;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.gene-habit-card span {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.gene-foundation-bar {
+  width: calc(100% - 56px);
+  max-width: 760px;
+  margin: 16px auto 0;
+  padding: 20px 18px;
+  border-radius: 8px 8px 18px 18px;
+  border: 1px solid rgba(217, 193, 126, 0.52);
+  background:
+    linear-gradient(180deg, rgba(217, 193, 126, 0.20), rgba(217, 193, 126, 0.07)),
+    rgba(8, 8, 8, 0.94);
+  text-align: center;
+  overflow: visible;
+}
+
+.gene-foundation-bar strong {
+  display: block;
+  color: #d9c17e;
+  font-size: 1.45rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.gene-foundation-bar span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  white-space: normal;
+}
+
+@media (max-width: 700px) {
+  .gene-lifestyle-figure {
+    padding: 26px 16px 30px;
+    border-radius: 22px;
+  }
+
+  .gene-lifestyle-title {
+    text-align: center !important;
+  }
+
+  .gene-lifestyle-title span {
+    display: block !important;
+    margin: 4px 0;
+  }
+
+  .gene-lifestyle-lead {
+    text-align: center !important;
+    line-height: 2.1 !important;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  .gene-house-diagram {
+    padding: 86px 10px 18px;
+  }
+
+  .gene-house-roof {
+    width: 100%;
+    height: 122px;
+  }
+
+  .gene-house-head {
+    margin-bottom: 18px;
+  }
+
+  .gene-house-head strong {
+    font-size: 1.28rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-house-head span {
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-treatment-bar,
+  .gene-foundation-bar {
+    width: calc(100% - 24px);
+    max-width: none;
+  }
+
+  .gene-treatment-bar {
+    padding: 15px 12px;
+  }
+
+  .gene-treatment-bar strong,
+  .gene-foundation-bar strong {
+    font-size: 1.18rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gene-habit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gene-habit-card {
+    min-height: 176px;
+    padding: 18px 8px 15px;
+  }
+
+  .gene-habit-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .gene-habit-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.98rem;
+    letter-spacing: 0.06em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.78rem;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 390px) {
+  .gene-habit-card {
+    min-height: 168px;
+    padding: 16px 7px 14px;
+  }
+
+  .gene-habit-card strong {
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+  }
+
+  .gene-habit-card span {
+    font-size: 0.74rem;
+  }
+}
+
+
+
+/* gene CTA wording refinement */
+.gene-cta-two-line{
+  display:inline-flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  text-align:center;
+  line-height:1.35;
+}
+
+.gene-cta-two-line__main{
+  display:block;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.05em;
+}
+
+.gene-cta-two-line__sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:.03em;
+  opacity:.86;
+}
+
+.reserve-btn-sub{
+  line-height:1.38;
+  text-align:center;
+}
+
+@media (max-width:640px){
+  .gene-cta-two-line__sub{
+    font-size:.72rem;
+  }
+}
+
+
+
+/* reserve button color match */
+.reserve-btn-sub,
+.reserve-btn-sub:visited{
+  background:linear-gradient(180deg,#fff0a8 0%,#ead893 42%,#d9c17e 100%) !important;
+  border:1px solid rgba(255,238,170,.88) !important;
+  color:#111 !important;
+  font-weight:700 !important;
+  box-shadow:0 12px 30px rgba(217,193,126,.28), 0 0 22px rgba(217,193,126,.22) !important;
+}
+
+.reserve-btn-sub *{
+  color:#111 !important;
+}
+
+.reserve-btn-sub:hover{
+  background:linear-gradient(180deg,#fff4ba 0%,#eedf9e 45%,#dcc47f 100%) !important;
+  border-color:rgba(255,244,186,.98) !important;
+  color:#111 !important;
+  box-shadow:0 16px 36px rgba(217,193,126,.36), 0 0 28px rgba(217,193,126,.28) !important;
+}
+
+/* PC fixed CTA / side navigation alignment */
+@media (min-width: 769px){
+  .reserve-btn-sub{
+    top:95px !important;
+    right:24px !important;
+  }
+}
+
+@media (min-width:1200px){
+  .gene-pc-side-nav{
+    right:24px !important;
+  }
+}
+
 </style>
+<link rel="stylesheet" href="assets/css/gene-text-control.css">
+<link rel="stylesheet" href="assets/css/gene-global-header.css?v=20260722-4">
+  <link rel="stylesheet" href="assets/css/gene-mobile-journey-nav.css?v=20260722-2">
 </head>
 
 <body>
 <div class="particles"></div>
 <div id="global-logo-bg" class="fade-start"><img src="assets/img/logo.svg" alt="大阪 自律神経専門整体院 gene ロゴ"></div>
-<nav class="breadcrumb" style="opacity:0;"><a href="index.html">ホーム</a> ＞ <span>施術内容</span></nav>
 <button id="hamburger-btn" class="hamburger-btn">≡</button>
 <div id="hamburger-menu" class="hamburger-menu">
   <button class="menu-close-btn">×</button>
-  <a href="index.html">ホーム</a>
-  <a href="menu.html">施術内容</a>
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
   <a href="access.html">アクセス</a>
   <a href="faq.html">よくある質問</a>
   <a href="voice.html">院内・改善写真</a>
 </div>
+
+<nav class="gene-pc-side-nav" aria-label="PC用サイドナビゲーション">
+  <a href="/">ホーム</a>
+  <a href="menu.html">施術内容・料金</a>
+  <a href="symptoms.html">症状別に見る</a>
+  <a href="access.html">アクセス</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="voice.html">院内・改善写真</a>
+</nav>
+
 <div id="hero-logo" class="hidden">
-  <h1 class="main-title">施術内容</h1>
+  <h1 class="main-title">施術内容・料金</h1>
   <p class="sub-catch">gene自律神経調整整体<br>一人ひとりの状態に合わせて整えるオーダーメイド整体</p>
 </div>
-<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">LINE<br>予約</a>
+<a href="https://lin.ee/6bBKc67" class="reserve-btn-sub hidden" target="_blank" rel="noopener">空き状況<br>を見る</a>
 
 <section class="menu-hero-card">
   <div class="menu-hero-inner">
@@ -620,6 +1420,91 @@
 </section>
 
 <div id="index-cards">
+
+  <section class="gene-lifestyle-figure card-hidden" aria-labelledby="gene-lifestyle-title">
+    <h2 class="gene-lifestyle-title" id="gene-lifestyle-title">
+      整体は<span>身体を整えるきっかけ</span>です
+    </h2>
+
+    <p class="gene-lifestyle-lead">
+      <span class="pc-only">健康な身体は、施術だけで作られるものではありません。<br>睡眠・食事・運動・ストレス<br>管理など、日々の生活習慣が土台になります。<br>geneでは、その土台を大切にしながら、<br>身体が本来の働きを発揮しやすい状態を目指して整体を行います。</span>
+      <span class="sp-only">健康な身体は、施術だけで<br>作られるものではありません。<br><br>睡眠・食事・運動・ストレス<br>管理など、<br>日々の生活習慣が土台になります。<br><br>geneでは、その土台を大切にしながら、<br>身体が本来の働きを発揮しやすい状態を<br>目指して整体を行います。</span>
+    </p>
+
+    <div class="gene-house-diagram">
+      <div class="gene-house-roof" aria-hidden="true"></div>
+
+      <div class="gene-house-head">
+        <strong>健康な身体</strong>
+        <span>自分で自分を整える力を発揮しやすい状態</span>
+      </div>
+
+      <div class="gene-treatment-bar">
+        <strong>整体</strong>
+        <span>身体を整えるきっかけ・補助</span>
+      </div>
+
+      <div class="gene-house-arrow" aria-hidden="true">▼</div>
+
+      <div class="gene-habit-grid">
+        <div class="gene-habit-card">
+          <div class="gene-habit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 3C12 4 10 7 10 10.5C10 15 13.5 18.5 18 18.5C19 18.5 20 18.3 21 17.8C19.6 20.3 17 22 14 22C8.5 22 4 17.5 4 12C4 7.3 7.2 3.4 11.5 2.2C12.8 1.9 14.2 1.9 15.5 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              <circle cx="18.5" cy="6" r="1" fill="currentColor"></circle>
+              <circle cx="21" cy="9" r="0.8" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <strong>睡眠</strong>
+          <span>身体を休め<br>自律神経を整える土台</span>
+        </div>
+
+        <div class="gene-habit-card">
+          <div class="gene-habit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="6.5" stroke="currentColor" stroke-width="1.8"></circle>
+              <line x1="4" y1="5" x2="4" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+              <line x1="7" y1="5" x2="7" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+              <line x1="20" y1="5" x2="20" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <strong>食事</strong>
+          <span>身体をつくり<br>回復を支える源</span>
+        </div>
+
+        <div class="gene-habit-card">
+          <div class="gene-habit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 9V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M6 7V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M18 7V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M21 9V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M6 12H18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <strong>運動</strong>
+          <span>血流や代謝を促し<br>しなやかな身体へ</span>
+        </div>
+
+        <div class="gene-habit-card">
+          <div class="gene-habit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21C11.5 20.5 10.7 19.8 9.6 18.9C5.3 15.4 3 12.9 3 9.7C3 7.1 5 5 7.6 5C9.1 5 10.5 5.7 11.4 6.9L12 7.7L12.6 6.9C13.5 5.7 14.9 5 16.4 5C19 5 21 7.1 21 9.7C21 12.9 18.7 15.4 14.4 18.9C13.3 19.8 12.5 20.5 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path>
+              <path d="M8.5 12L10.2 10L12 14L13.7 11L15.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <strong>ストレス<br>管理</strong>
+          <span>心身の緊張をゆるめる<br>大切な習慣</span>
+        </div>
+      </div>
+
+      <div class="gene-foundation-bar">
+        <strong>生活習慣</strong>
+        <span>毎日の積み重ねが、健康の土台になります</span>
+      </div>
+    </div>
+  </section>
+
   <div class="info-card card-hidden">
     <div class="menu-split reverse centered">
       <div class="menu-split-content">
@@ -648,6 +1533,9 @@
       <p class="menu-price-sub">お支払い方法：現金・クレジットカード・電子マネー・QR決済に対応しています。</p>
       <p class="menu-price-sub" style="margin-top:10px;">所要時間：初回 約60分 / 2回目以降 約30分</p>
       <p class="menu-price-sub">※2回目以降は状態に合わせて施術を行うため、所要時間が短くなります</p>
+      <aside class="menu-support-note" aria-label="サポートプランのご案内">
+        <p>継続して施術を受けたい方へ、サポートプランもご用意しております。<span class="menu-support-note-detail">詳しくは院内にてご案内いたします。</span></p>
+      </aside>
     </div>
   </div>
 
@@ -656,18 +1544,43 @@
     <p style="white-space: pre-line;">症状名だけで施術内容を分けるのではなく、
 「今どのようなことで困っているか」に合わせて身体の状態を確認していきます。</p>
     <div class="symptom-list">
-      <div class="has-link"><a href="dizziness.html">ふわっとするめまいが続いている</a></div>
-      <div class="has-link"><a href="insomnia.html">寝つきが悪い、途中で何度も目が覚める</a></div>
-      <div class="has-link"><a href="palpitations.html">動悸や不安感が出ることがある</a></div>
-      <div class="has-link"><a href="tinnitus.html">耳鳴りが続いて気になっている</a></div>
-      <div class="has-link"><a href="fatigue.html">慢性的に疲れが抜けない</a></div>
-      <div>検査では異常がないのにしんどい</div>
-      <div class="has-link"><a href="atopic.html">アトピー性皮膚炎や皮膚の不調が気になる</a></div>
-      <div>常に身体に力が入っていて抜けにくい</div>
+      <div class="has-link"><a href="dizziness.html">ふわっとするめまいが続いている</a>
+</div>
+      <div class="has-link"><a href="insomnia.html">寝つきが悪い、途中で何度も目が覚める</a>
+</div>
+      <div class="has-link"><a href="palpitations.html">動悸や不安感が出ることがある</a>
+</div>
+      <div class="has-link"><a href="anxiety-disorder.html">理由の分からない不安や緊張が続いている</a>
+</div>
+      <div class="has-link"><a href="tinnitus.html">耳鳴りが続いて気になっている</a>
+</div>
+      <div class="has-link"><a href="fatigue.html">慢性的に疲れが抜けない</a>
+</div>
+      <div class="has-link"><a href="autonomic.html">検査では異常がないのにしんどい</a>
+</div>
+      <div class="has-link"><a href="atopic.html">アトピー性皮膚炎や皮膚の不調が気になる</a>
+</div>
+      <div class="has-link"><a href="orthostatic-dysregulation.html">立ちくらみや朝の不調が続いている</a>
+</div>
+      <div class="has-link"><a href="ibs.html">下痢や便秘などお腹の不調を繰り返す</a>
+</div>
+      <div class="has-link"><a href="nausea.html">吐き気や胃のむかつきが続いている</a>
+</div>
+      <div class="has-link"><a href="stomach-discomfort.html">胃もたれや胃の不快感が気になっている</a>
+</div>
+      <div class="has-link"><a href="chronic-constipation.html">慢性的な便秘で身体の重さを感じる</a>
+</div>
+      <div class="has-link"><a href="shortness-of-breath.html">息苦しさや呼吸の浅さが気になる</a>
+</div>
+      <div class="has-link"><a href="throat-discomfort.html">喉の詰まり感や違和感が続いている</a>
+</div>
+      <div class="has-link"><a href="autonomic.html">常に身体に力が入っていて抜けにくい</a>
+</div>
     </div>
     <p class="menu-note">主な対応症状：
-アトピー・皮膚症状、めまい、耳鳴り、パニック障害、不眠症、慢性疲労、
-PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱鞘炎など</p>
+アトピー・皮膚症状、めまい、耳鳴り、パニック障害、不安障害、不眠症、慢性疲労、
+吐き気、胃の不快感、PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱鞘炎、
+起立性調節障害、過敏性腸症候群、慢性便秘、息苦しさ、喉の違和感など</p>
     <p class="menu-note">上記以外のお悩みでも、
 自律神経の乱れと関わる可能性がある場合は対応できることがあります。
 まずはお気軽にご相談ください。</p>
@@ -709,6 +1622,10 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
         <span class="menu-symptom-title">パニック症状</span>
         <span class="menu-symptom-text">不安感、緊張、呼吸の浅さを伴う状態について。</span>
       </a>
+      <a href="anxiety-disorder.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">不安障害</span>
+        <span class="menu-symptom-text">理由の分からない不安、緊張、動悸や胃腸症状との関係について。</span>
+      </a>
       <a href="pms.html" class="menu-symptom-card">
         <span class="menu-symptom-title">PMS</span>
         <span class="menu-symptom-text">月経前の不調、気分の波、身体の重さについて。</span>
@@ -733,6 +1650,34 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
         <span class="menu-symptom-title">腱鞘炎</span>
         <span class="menu-symptom-text">手首や指の負担、使い方、筋緊張との関係について。</span>
       </a>
+      <a href="orthostatic-dysregulation.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">起立性調節障害</span>
+        <span class="menu-symptom-text">朝の起きづらさ、立ちくらみ、日内変動のある不調について。</span>
+      </a>
+      <a href="ibs.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">過敏性腸症候群</span>
+        <span class="menu-symptom-text">下痢や便秘を繰り返すお腹の不調、緊張や自律神経との関係について。</span>
+      </a>
+      <a href="nausea.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">吐き気</span>
+        <span class="menu-symptom-text">吐き気、胃のむかつき、めまいや不安感を伴う不調について。</span>
+      </a>
+      <a href="stomach-discomfort.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">胃の不快感</span>
+        <span class="menu-symptom-text">胃もたれ、みぞおちの重さ、緊張や呼吸との関係について。</span>
+      </a>
+      <a href="chronic-constipation.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">慢性便秘</span>
+        <span class="menu-symptom-text">慢性的な便秘、腹部の緊張、巡りや呼吸との関係について。</span>
+      </a>
+      <a href="shortness-of-breath.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">息苦しさ</span>
+        <span class="menu-symptom-text">呼吸の浅さ、胸まわりの緊張、不安感を伴う息苦しさについて。</span>
+      </a>
+      <a href="throat-discomfort.html" class="menu-symptom-card">
+        <span class="menu-symptom-title">喉の違和感</span>
+        <span class="menu-symptom-text">喉の詰まり感、首まわりの緊張、ストレスとの関係について。</span>
+      </a>
     </div>
   </section>
 
@@ -756,11 +1701,9 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
   </div>
 
   <div class="info-card card-hidden menu-cta-card">
-    <p style="white-space: pre-line;">どの症状として予約すればいいか迷う必要はありません。
-まずは現在の状態を整理するところからでも大丈夫です。
-
-ご相談・ご予約はLINEから承っています。</p>
-    <a href="https://lin.ee/6bBKc67" class="menu-cta-link" target="_blank" rel="noopener">LINEで相談する</a>
+    <p style="white-space: pre-line;">どの症状として相談すればいいか迷う必要はありません。
+現在の状態を整理するところからでも大丈夫です。</p>
+    <a href="https://lin.ee/6bBKc67" class="menu-cta-link gene-cta-two-line" target="_blank" rel="noopener"><span class="gene-cta-two-line__main">まずは相談してみる</span><span class="gene-cta-two-line__sub">LINEでご相談いただけます</span></a>
   </div>
 
   <div class="info-card card-hidden">
@@ -778,61 +1721,6 @@ PMS、冷え性、自律神経失調症、足底筋膜炎、顎関節症、腱�
 今の身体に何が起きているのかを一緒に整理していきます。</p>
   </div>
 </div>
-
-
-<div class="gene-mobile-symptom-backdrop" id="gene-mobile-symptom-backdrop"></div>
-
-<div class="gene-mobile-symptom-panel" id="gene-mobile-symptom-panel" aria-hidden="true">
-  <div class="gene-mobile-symptom-panel-title">
-    <span>症状から探す</span>
-    <button type="button" class="gene-mobile-symptom-close" id="gene-mobile-symptom-close" aria-label="症状一覧を閉じる">×</button>
-  </div>
-  <div class="gene-mobile-symptom-grid">
-    <a href="atopic.html">アトピー</a>
-    <a href="tinnitus.html">耳鳴り</a>
-    <a href="dizziness.html">めまい</a>
-    <a href="insomnia.html">不眠</a>
-    <a href="headache.html">頭痛</a>
-    <a href="palpitations.html">動悸</a>
-    <a href="fatigue.html">慢性疲労</a>
-    <a href="panic.html">パニック症状</a>
-    <a href="pms.html">PMS</a>
-    <a href="coldness.html">冷え性</a>
-    <a href="autonomic.html">自律神経失調症</a>
-    <a href="plantar-fasciitis.html">足底筋膜炎</a>
-    <a href="tmj.html">顎関節症</a>
-    <a href="tenosynovitis.html">腱鞘炎</a>
-  </div>
-  <div class="gene-mobile-extra-links">
-    <a href="voice.html">院内・改善写真</a>
-    <a href="faq.html">よくある質問</a>
-  </div>
-</div>
-
-<nav class="gene-mobile-bottom-nav" aria-label="スマホ下部固定メニュー">
-  <a href="index.html">
-    <span class="nav-icon">⌂</span>
-    <span class="nav-text">ホーム</span>
-  </a>
-  <button type="button" id="gene-mobile-symptom-toggle" aria-expanded="false" aria-controls="gene-mobile-symptom-panel">
-    <span class="nav-icon">＋</span>
-    <span class="nav-text">症状</span>
-  </button>
-  <a href="menu.html">
-    <span class="nav-icon">◇</span>
-    <span class="nav-text">施術内容</span>
-  </a>
-  <a href="access.html">
-    <span class="nav-icon">⌖</span>
-    <span class="nav-text">アクセス</span>
-  </a>
-  <a href="https://lin.ee/6bBKc67" class="line-nav" target="_blank" rel="noopener">
-    <span class="nav-icon">↗</span>
-    <span class="nav-text">LINE予約</span>
-  </a>
-</nav>
-
-
 <footer>
   大阪 自律神経専門整体院 gene<br>
   営業時間：11:00〜21:00（不定休）<br>
@@ -851,6 +1739,7 @@ window.addEventListener("load", () => {
   const bgLogo = document.getElementById("global-logo-bg");
   const cards = document.querySelectorAll(".card-hidden");
   const hamburgerBtn = document.getElementById("hamburger-btn");
+  const pcSideNav = document.querySelector(".gene-pc-side-nav");
   const menuPanel = document.getElementById("hamburger-menu");
 
   setTimeout(() => {
@@ -858,6 +1747,7 @@ window.addEventListener("load", () => {
     if (hamburgerBtn) hamburgerBtn.classList.add("show");
     if (rsvBtn) rsvBtn.classList.add("show");
     if (bgLogo) bgLogo.classList.add("fade-in");
+    if (pcSideNav) pcSideNav.classList.add("show");
     if (heroLogo) heroLogo.classList.add("show");
     if (menuHeroCard) menuHeroCard.classList.add("show");
     if (indexCards) indexCards.querySelectorAll(".info-card").forEach(card => card.classList.add("show"));
@@ -908,154 +1798,81 @@ window.addEventListener("load", () => {
 });
 </script>
 
-<script>
-(function(){
-  function setupGeneMobileBottomNav(){
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
 
-    if (!toggle || !panel || !backdrop) return;
 
-    function openPanel(){
-      panel.classList.add("open");
-      backdrop.classList.add("open");
-      panel.setAttribute("aria-hidden", "false");
-      toggle.setAttribute("aria-expanded", "true");
 
-      if (typeof gtag === "function") {
-        gtag("event", "mobile_symptom_menu_open", {
-          event_category: "navigation",
-          event_label: "bottom_nav_symptom"
-        });
-      }
-    }
 
-    function closePanel(){
-      panel.classList.remove("open");
-      backdrop.classList.remove("open");
-      panel.setAttribute("aria-hidden", "true");
-      toggle.setAttribute("aria-expanded", "false");
-    }
 
-    toggle.addEventListener("click", function(){
-      if (panel.classList.contains("open")) {
-        closePanel();
-      } else {
-        openPanel();
-      }
-    });
-
-    if (close) close.addEventListener("click", closePanel);
-    backdrop.addEventListener("click", closePanel);
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        if (typeof gtag === "function") {
-          gtag("event", "symptom_link_click", {
-            event_category: "navigation",
-            event_label: link.getAttribute("href") || link.textContent.trim()
-          });
-        }
-        closePanel();
-      });
-    });
-
-    document.querySelectorAll(".gene-mobile-bottom-nav a").forEach(function(link){
-      link.addEventListener("click", function(){
-        if (typeof gtag === "function") {
-          gtag("event", "bottom_nav_click", {
-            event_category: "navigation",
-            event_label: link.getAttribute("href") || link.textContent.trim()
-          });
-        }
-      });
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneMobileBottomNav);
-  } else {
-    setupGeneMobileBottomNav();
-  }
-})();
-</script>
 
 
 <script>
-(function(){
-  function setupGeneToTopPanelAvoidance(){
-    const panel = document.getElementById("gene-mobile-symptom-panel");
-    const toggle = document.getElementById("gene-mobile-symptom-toggle");
-    const close = document.getElementById("gene-mobile-symptom-close");
-    const backdrop = document.getElementById("gene-mobile-symptom-backdrop");
+(function () {
+  var params = new URLSearchParams(window.location.search);
 
-    if (!panel) return;
-    if (panel.dataset.toTopAvoidanceReady === "true") return;
-    panel.dataset.toTopAvoidanceReady = "true";
-
-    function getToTopBtn(){
-      return document.getElementById("to-top-btn");
-    }
-
-    function updateToTopPosition(){
-      const btn = getToTopBtn();
-      if (!btn) return;
-
-      if (window.innerWidth > 768) {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-        return;
-      }
-
-      if (panel.classList.contains("open")) {
-        const rect = panel.getBoundingClientRect();
-        const bottomValue = Math.max(120, Math.round(window.innerHeight - rect.top + 12));
-        btn.style.setProperty("bottom", "calc(" + bottomValue + "px + env(safe-area-inset-bottom))", "important");
-        btn.style.setProperty("z-index", "9999", "important");
-      } else {
-        btn.style.removeProperty("bottom");
-        btn.style.removeProperty("z-index");
-      }
-    }
-
-    const observer = new MutationObserver(updateToTopPosition);
-    observer.observe(panel, {
-      attributes: true,
-      attributeFilter: ["class"]
-    });
-
-    [toggle, close, backdrop].forEach(function(el){
-      if (!el) return;
-      el.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    panel.querySelectorAll("a").forEach(function(link){
-      link.addEventListener("click", function(){
-        setTimeout(updateToTopPosition, 30);
-      });
-    });
-
-    window.addEventListener("resize", updateToTopPosition, { passive:true });
-    window.addEventListener("scroll", updateToTopPosition, { passive:true });
-
-    setTimeout(updateToTopPosition, 300);
+  if (params.get("internal") === "true") {
+    localStorage.setItem("internalUser", "true");
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupGeneToTopPanelAvoidance);
-  } else {
-    setupGeneToTopPanelAvoidance();
+  if (params.get("internal") === "false") {
+    localStorage.removeItem("internalUser");
   }
 
-  window.addEventListener("load", function(){
-    setTimeout(setupGeneToTopPanelAvoidance, 500);
-  });
+
+  function isLocalPreview() {
+    var host = window.location.hostname;
+
+    return (
+      window.location.protocol === "file:" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "::1" ||
+      /^192\.168\./.test(host) ||
+      /^10\./.test(host) ||
+      /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(host)
+    );
+  }
+
+  if (isLocalPreview()) {
+    return;
+  }
+
+  var isInternal = localStorage.getItem("internalUser") === "true";
+
+  if (isInternal) {
+    return;
+  }
+
+  var page = window.location.pathname.split("/").pop() || "index.html";
+  var storageKey = page.replace(/[^a-z0-9_-]/gi, "_") + "_notify_last_sent";
+  var now = Date.now();
+  var lastSent = Number(localStorage.getItem(storageKey) || 0);
+  var oneHour = 60 * 60 * 1000;
+
+  if (now - lastSent < oneHour) {
+    return;
+  }
+
+  localStorage.setItem(storageKey, String(now));
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyzDrbDgk6Hqkl8n-0PToOPC5oisxZscgAZupO_Gqjm3YLYhvQanuuvtp7leo2RmwLk/exec",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        page: page,
+        url: window.location.href,
+        referrer: document.referrer || "直接アクセス / 不明",
+        userAgent: navigator.userAgent,
+        internal: false
+      })
+    }
+  );
 })();
 </script>
 
+<script src="assets/js/line-click-tracking.js"></script>
+
+<script src="assets/js/gene-global-header.js?v=20260722-4"></script>
+  <script src="assets/js/gene-mobile-journey-nav.js?v=20260722-3"></script>
 </body>
 </html>
