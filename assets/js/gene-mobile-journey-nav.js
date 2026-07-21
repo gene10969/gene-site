@@ -7,7 +7,6 @@
   const HOME_URL=location.hostname.endsWith("github.io") ? "index.html" : "/";
   const INDEX_HASH=function(hash){ return HOME_URL + hash; };
   const sourcePage=location.pathname.split("/").pop() || "index.html";
-  const CHECK_URL="check.html?from="+encodeURIComponent(sourcePage);
 
   const symptomGroups=[
     {title:"よく見られる不調",links:[
@@ -81,7 +80,7 @@
       '<div class="gene-drawer-heading"><div><h2>その他のご案内</h2></div><button type="button" class="gene-drawer-close" aria-label="閉じる">×</button></div>'+
       '<div class="gene-drawer-other-list">'+
       '<a href="'+INDEX_HASH('#gene-first-time')+'">初めての方へ<span>›</span></a>'+
-      '<a href="'+CHECK_URL+'" data-gene-check-link>15問の簡易チェック<span>›</span></a>'+
+      '<a href="check.html?from='+encodeURIComponent(sourcePage)+'">15問の簡易チェック<span>›</span></a>'+
       '<a href="voice.html">院内・改善写真<span>›</span></a>'+
       '<a href="faq.html">よくある質問<span>›</span></a>'+
       '<a href="access.html">アクセス<span>›</span></a></div>'
