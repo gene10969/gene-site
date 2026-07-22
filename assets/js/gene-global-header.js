@@ -107,14 +107,59 @@
   function updateAccessDoorGuide(){
     if(sourcePage !== "access.html") return;
 
-    const image=document.querySelector('img[src="assets/img/gene-door-guide.webp"]');
+    const image=document.querySelector('img[src*="gene-door-guide"]');
     if(!image) return;
 
-    image.src="assets/img/gene-door-guide-20260723.svg?v=20260723-4";
     image.alt="703号室geneの玄関とドア側のインターホン案内";
     image.width=480;
     image.height=640;
     image.decoding="async";
+
+    const parts=[
+      "assets/img/gene-door-guide-v5/part-01.b64?v=20260723-5",
+      "assets/img/gene-door-guide-v5/part-02.b64?v=20260723-5",
+      "assets/img/gene-door-guide-v5/part-03.b64?v=20260723-5",
+      "assets/img/gene-door-guide-v5/part-04.b64?v=20260723-5"
+    ];
+
+    Promise.all(parts.map(function(path){
+      return fetch(path,{cache:"no-store"}).then(function(response){
+        if(!response.ok) throw new Error("door guide image data load failed: "+path);
+        return response.text();
+      });
+    })).then(function(chunks){
+      const base64=chunks.join("").replace(/\s+/g,"");
+      const binary=atob(base64);
+
+      if(binary.slice(0,4)!=="RIFF" || binary.slice(8,12)!=="WEBP"){
+        throw new Error("door guide image data is invalid");
+      }
+
+      const bytes=new Uint8Array(binary.length);
+      for(let index=0;index<binary.length;index+=1){
+        bytes[index]=binary.charCodeAt(index);
+      }
+
+      const objectUrl=URL.createObjectURL(new Blob([bytes],{type:"image/webp"}));
+
+      image.onload=function(){
+        URL.revokeObjectURL(objectUrl);
+        image.onload=null;
+        image.onerror=null;
+      };
+
+      image.onerror=function(){
+        URL.revokeObjectURL(objectUrl);
+        image.onload=null;
+        image.onerror=null;
+        image.src="assets/img/gene-door-guide.webp";
+      };
+
+      image.src=objectUrl;
+    }).catch(function(error){
+      console.error(error);
+      image.src="assets/img/gene-door-guide.webp";
+    });
 
     const figure=image.closest("figure");
     const caption=figure ? figure.querySelector("figcaption") : null;
