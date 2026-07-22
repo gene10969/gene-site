@@ -115,6 +115,7 @@
     image.decoding="async";
 
     const parts=[
+      "assets/img/gene-door-guide-data/missing-head-01.b64",
       "assets/img/gene-door-guide-data/part-01.b64",
       "assets/img/gene-door-guide-data/part-02.b64",
       "assets/img/gene-door-guide-data/part-03.b64",
