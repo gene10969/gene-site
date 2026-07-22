@@ -2,7 +2,8 @@
   "use strict";
 
   const LINE_URL="https://lin.ee/6bBKc67";
-  const sourcePage=location.pathname.split("/").pop() || "index.html";
+  const pageToken=location.pathname.split("/").filter(Boolean).pop() || "index.html";
+  const sourcePage=pageToken.includes(".") ? pageToken : pageToken+".html";
   const filePreview=location.protocol === "file:";
   const githubPages=location.hostname.endsWith("github.io");
   const HOME_URL=(filePreview || githubPages) ? "index.html" : "/";
@@ -49,7 +50,7 @@
     const rawHref=link.getAttribute("href") || "";
     try{
       const destination=new URL(rawHref,document.baseURI);
-      return /(?:^|\/)access\.html$/.test(destination.pathname);
+      return /(?:^|\/)access(?:\.html)?$/.test(destination.pathname);
     }catch(error){
       return false;
     }
@@ -109,7 +110,7 @@
     const image=document.querySelector('img[src="assets/img/gene-door-guide.webp"]');
     if(!image) return;
 
-    image.src="assets/img/gene-door-guide-20260723.svg?v=20260723-3";
+    image.src="assets/img/gene-door-guide-20260723.svg?v=20260723-4";
     image.alt="703号室geneの玄関とドア側のインターホン案内";
     image.width=480;
     image.height=640;
@@ -143,7 +144,8 @@
 
     document.body.prepend(header);
 
-    const currentFile=location.pathname.split("/").pop() || "index.html";
+    const currentToken=location.pathname.split("/").filter(Boolean).pop() || "index.html";
+    const currentFile=currentToken.includes(".") ? currentToken : currentToken+".html";
     const activeMap={
       "index.html":"home",
       "symptoms.html":"symptoms",
