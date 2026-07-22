@@ -109,10 +109,30 @@
     const image=document.querySelector('img[src="assets/img/gene-door-guide.webp"]');
     if(!image) return;
 
-    image.src="assets/img/gene-door-guide-20260723.svg";
     image.alt="703号室geneの玄関とドア側のインターホン案内";
-    image.width=360;
-    image.height=480;
+    image.width=1086;
+    image.height=1448;
+    image.decoding="async";
+
+    const parts=[
+      "assets/img/gene-door-guide-data/part-01.b64",
+      "assets/img/gene-door-guide-data/part-02.b64",
+      "assets/img/gene-door-guide-data/part-03.b64",
+      "assets/img/gene-door-guide-data/part-04.b64",
+      "assets/img/gene-door-guide-data/part-05.b64"
+    ];
+
+    Promise.all(parts.map(function(path){
+      return fetch(path,{cache:"force-cache"}).then(function(response){
+        if(!response.ok) throw new Error("door guide image data load failed");
+        return response.text();
+      });
+    })).then(function(chunks){
+      image.src="data:image/webp;base64,"+chunks.join("");
+    }).catch(function(error){
+      console.error(error);
+      image.src="assets/img/gene-door-guide-20260723.svg";
+    });
 
     const figure=image.closest("figure");
     const caption=figure ? figure.querySelector("figcaption") : null;
