@@ -103,6 +103,24 @@
     });
   }
 
+  function updateAccessDoorGuide(){
+    if(sourcePage !== "access.html") return;
+
+    const image=document.querySelector('img[src="assets/img/gene-door-guide.webp"]');
+    if(!image) return;
+
+    image.src="assets/img/gene-door-guide-20260723.svg";
+    image.alt="703号室geneの玄関とドア側のインターホン案内";
+    image.width=360;
+    image.height=480;
+
+    const figure=image.closest("figure");
+    const caption=figure ? figure.querySelector("figcaption") : null;
+    if(caption){
+      caption.innerHTML="<strong>4. 703号室</strong><br>到着されましたら<br>ドア側のインターホンを押してください。";
+    }
+  }
+
   function createHeader(){
     if(document.querySelector(".gene-global-header")) return;
 
@@ -167,6 +185,7 @@
 
   function init(){
     setupCheckLinks();
+    updateAccessDoorGuide();
     createHeader();
     observeAccessLinks();
   }
