@@ -115,24 +115,47 @@
     image.decoding="async";
 
     const parts=[
-      "assets/img/gene-door-guide-data/missing-head-01.b64",
-      "assets/img/gene-door-guide-data/part-01.b64",
-      "assets/img/gene-door-guide-data/part-02.b64",
-      "assets/img/gene-door-guide-data/part-03.b64",
-      "assets/img/gene-door-guide-data/part-04.b64",
-      "assets/img/gene-door-guide-data/part-05.b64"
+      "assets/img/gene-door-guide-data/missing-head-01.b64?v=20260723-2",
+      "assets/img/gene-door-guide-data/part-01.b64?v=20260723-2",
+      "assets/img/gene-door-guide-data/part-02.b64?v=20260723-2",
+      "assets/img/gene-door-guide-data/part-03.b64?v=20260723-2",
+      "assets/img/gene-door-guide-data/part-04.b64?v=20260723-2",
+      "assets/img/gene-door-guide-data/part-05.b64?v=20260723-2"
     ];
 
     Promise.all(parts.map(function(path){
-      return fetch(path,{cache:"force-cache"}).then(function(response){
+      return fetch(path,{cache:"no-store"}).then(function(response){
         if(!response.ok) throw new Error("door guide image data load failed");
         return response.text();
       });
     })).then(function(chunks){
-      image.src="data:image/webp;base64,"+chunks.join("");
+      const base64=chunks.join("").replace(/\s+/g,"");
+      const binary=atob(base64);
+      const bytes=new Uint8Array(binary.length);
+
+      for(let index=0;index<binary.length;index+=1){
+        bytes[index]=binary.charCodeAt(index);
+      }
+
+      const objectUrl=URL.createObjectURL(new Blob([bytes],{type:"image/webp"}));
+
+      image.onload=function(){
+        URL.revokeObjectURL(objectUrl);
+        image.onload=null;
+        image.onerror=null;
+      };
+
+      image.onerror=function(){
+        URL.revokeObjectURL(objectUrl);
+        image.onload=null;
+        image.onerror=null;
+        image.src="assets/img/gene-door-guide.webp";
+      };
+
+      image.src=objectUrl;
     }).catch(function(error){
       console.error(error);
-      image.src="assets/img/gene-door-guide-20260723.svg";
+      image.src="assets/img/gene-door-guide.webp";
     });
 
     const figure=image.closest("figure");
