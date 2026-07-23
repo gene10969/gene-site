@@ -1,0 +1,224 @@
+/* =========================================================
+   gene shared responsive layouts
+   ページ固有の見た目は各HTMLに残し、
+   複数ページで同一のレスポンシブ配置だけを管理します。
+
+   Breakpoints:
+   - mobile: 768px以下
+   - tablet / narrow PC: 769px〜1050px
+   - desktop: 1051px以上
+   ========================================================= */
+
+/* =========================================================
+   INDEX：改善例カード
+   旧760px判定を768px以下へ統一
+   ========================================================= */
+@media (max-width:768px){
+  .top-case-link{
+    grid-template-columns:1fr;
+    gap:10px;
+    min-height:0;
+    padding:16px;
+  }
+
+  .top-case-number{
+    width:max-content;
+    min-width:64px;
+    min-height:36px;
+    font-size:.82rem;
+  }
+
+  .top-case-body strong{
+    font-size:1rem;
+    line-height:1.65;
+  }
+
+  .top-case-action{
+    width:100%;
+    max-width:100%;
+    min-height:42px;
+    margin-top:2px;
+    box-sizing:border-box;
+  }
+}
+
+/* =========================================================
+   CASE1・CASE2・CASE3 共通
+   既存の body.subpage と case専用クラスの組み合わせで限定適用
+   ========================================================= */
+@media (min-width:769px){
+  body.subpage .case-detail-wrap{
+    padding-top:120px !important;
+  }
+
+  body.subpage .case-detail-head{
+    margin-bottom:56px !important;
+  }
+}
+
+@media (max-width:768px){
+  body.subpage .case-detail-wrap{
+    padding:100px 16px 80px !important;
+  }
+
+  body.subpage .case-detail-head{
+    margin-bottom:46px;
+  }
+
+  body.subpage .case-intro-text{
+    margin:30px auto 40px;
+    text-align:left;
+    font-size:.95rem;
+  }
+
+  body.subpage .case-analysis{
+    margin-bottom:62px;
+    padding:28px 18px;
+    border-radius:20px;
+  }
+
+  body.subpage .case-analysis-lead{
+    text-align:left;
+  }
+
+  body.subpage .case-summary-list{
+    grid-template-columns:1fr;
+  }
+
+  body.subpage .case-block{
+    margin-bottom:64px;
+  }
+
+  body.subpage .case-swiper .swiper-wrapper{
+    justify-content:flex-start;
+  }
+
+  body.subpage .case-swiper .swiper-slide{
+    width:80%;
+  }
+
+  body.subpage .case-cta{
+    margin-top:70px;
+    padding:28px 18px;
+  }
+}
+
+/* =========================================================
+   症状ページ共通
+   ========================================================= */
+body.symptom-page .symptom-sp-br{
+  display:none;
+}
+
+@media (max-width:768px){
+  body.symptom-page .symptom-sp-br{
+    display:inline;
+  }
+
+  body.symptom-page .menu-container > .menu-card:first-child{
+    margin-top:22px !important;
+  }
+
+  body.symptom-page .menu-container > .menu-card:last-child{
+    text-align:center !important;
+  }
+
+  body.symptom-page .menu-container > .menu-card:last-child > h2,
+  body.symptom-page .menu-container > .menu-card:last-child > p{
+    max-width:760px;
+    margin-right:auto !important;
+    margin-left:auto !important;
+    text-align:center !important;
+    line-break:strict;
+    overflow-wrap:normal;
+  }
+
+  body.symptom-page .menu-container > .menu-card:last-child > h2{
+    text-wrap:balance;
+  }
+
+  body.symptom-page .menu-container > .menu-card:last-child > p{
+    text-wrap:pretty;
+  }
+
+  body.symptom-page .menu-container > .menu-card:last-child > p > br{
+    display:none;
+  }
+
+  body.symptom-page .gene-compact-life-card{
+    width:100%;
+    padding:22px 18px 24px;
+    border-radius:20px;
+  }
+
+  body.symptom-page .gene-compact-life-card h2{
+    font-size:1.28rem;
+    text-align:center;
+  }
+
+  body.symptom-page .gene-compact-life-card h2 span{
+    display:block;
+    margin:2px 0;
+  }
+
+  body.symptom-page .gene-compact-life-card p{
+    text-align:center;
+    line-height:1.95;
+  }
+
+  body.symptom-page .gene-compact-life-flow{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  body.symptom-page .gene-compact-life-arrow{
+    min-height:22px;
+    transform:rotate(90deg);
+  }
+
+  body.symptom-page .gene-compact-life-box{
+    min-height:auto;
+    padding:15px 12px;
+  }
+
+  body.symptom-page .gene-compact-habits{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:640px){
+  body.symptom-page .dizziness-lead{
+    text-align:left;
+    font-size:.92rem;
+  }
+
+  body.symptom-page .dizziness-intro-card{
+    padding:22px 18px;
+    border-radius:18px;
+  }
+
+  body.symptom-page .dizziness-intro-card p{
+    text-align:left;
+    line-height:1.95;
+  }
+
+  body.symptom-page .dizziness-links{
+    width:92%;
+    margin-bottom:30px;
+    gap:10px;
+  }
+
+  body.symptom-page .dizziness-links a{
+    min-height:40px;
+    padding:9px 14px;
+    font-size:.86rem;
+    letter-spacing:.03em;
+  }
+}
+
+@supports not (text-wrap:balance){
+  body.symptom-page .menu-container > .menu-card:last-child > h2,
+  body.symptom-page .menu-container > .menu-card:last-child > p{
+    overflow-wrap:anywhere;
+  }
+}
